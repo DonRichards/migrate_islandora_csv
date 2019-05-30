@@ -1,5 +1,5 @@
 {
-  "name": "drupal/migrate_islandora_csv",
+  "name": "islandora/migrate_islandora_csv",
   "type": "drupal-module",
   "description": "A tutorial on how to migrate files into Islandora using a CSV file",
   "keywords": ["Drupal"],
