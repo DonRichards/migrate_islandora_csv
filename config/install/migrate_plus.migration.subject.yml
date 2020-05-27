@@ -1,0 +1,42 @@
+# Uninstall this config when the feature is uninstalled
+dependencies:
+  enforced:
+    module:
+      - migrate_islandora_csv
+
+id: subject
+label: Import subjects from CSV
+migration_group: migrate_islandora_csv
+
+source:
+  plugin: csv
+  path: modules/contrib/migrate_islandora_csv/data/subjects.csv
+
+  # 1 means you have a header row, 0 means you don't
+  header_row_count: 1
+
+    # You can't enter string literals into a process plugin, but you can give it a constant as a 'source'.
+  constants:
+    # Everything gets created as admin
+    uid: 1
+
+  keys:
+    - subject
+
+# Set fields using values from the CSV
+process:
+  uid: constants/uid
+  name: subject
+  # description: description
+
+  # This maps taxonomy term => AUTHORITY SOURCES  
+  # -> Source
+  field_authority_link/source: subject_authority
+  # -> URL
+  field_authority_link/uri: subject_uri
+  # -> Alternate link text
+  field_authority_link/title: subject
+
+destination:
+  plugin: entity:taxonomy_term
+  default_bundle: subject
