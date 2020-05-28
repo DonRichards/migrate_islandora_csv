@@ -5,7 +5,7 @@ dependencies:
       - migrate_islandora_csv
 
 id: node
-label: Import Nodes from CSV
+label: Import Knoxville Garden Slides Nodes
 migration_group: migrate_islandora_csv
 
 source:
@@ -17,7 +17,7 @@ source:
 
   # Each migration needs a unique key per row in the csv.  Here we're using the file path.
   keys:
-    - file
+    - ID
 
   # You can't enter string literals into a process plugin, but you can give it a constant as a 'source'.
   constants:
@@ -31,8 +31,9 @@ source:
 
 # Set fields using values from the CSV
 process:
-  title: supplied_title
+  title: title_transcribed
   uid: constants/uid
+  plugin: log
 
   # We use the skip_on_empty plugin because
   # not every row in the CSV has subtitle filled
@@ -44,7 +45,7 @@ process:
 
   field_alternative_title:
     plugin: skip_on_empty
-    source: subtitle
+    source: supplied_title
     method: process
 
   field_description:
@@ -53,7 +54,10 @@ process:
     method: process
 
   # Dates are EDTF strings
-  field_edtf_date: issued
+  field_edtf_date:
+    plugin: skip_on_empty
+    source: date
+    method: process
 
   # Make the object an 'Image'
   field_model:
@@ -78,8 +82,11 @@ process:
   field_subject:
     -
       plugin: skip_on_empty
-      source: utk_mods_subject_topic_ms
+      source: subject
       method: process
+    -
+      plugin: explode
+      delimiter: '|'
     -
       plugin: entity_generate
       entity_type: taxonomy_term
@@ -119,7 +126,7 @@ process:
 
   field_right:
     plugin: skip_on_empty
-    source: dc.rights
+    source: rights
     method: process
 
   field_member_of:
