@@ -6,11 +6,11 @@ dependencies:
 
 id: node
 label: Import Knoxville Garden Slides Nodes
-migration_group: migrate_islandora_csv
+migration_group: knoxgardens_migrate_islandora_csv
 
 source:
   plugin: csv
-  path: modules/contrib/migrate_islandora_csv/data/migration.csv
+  path: modules/contrib/migrate_islandora_csv/data/knoxgardens_migration.csv
 
   # 1 means you have a header row, 0 means you don't
   header_row_count: 1

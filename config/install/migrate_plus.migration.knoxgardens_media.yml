@@ -6,11 +6,11 @@ dependencies:
 
 id: media
 label: Import Knoxville Garden Slides Media
-migration_group: migrate_islandora_csv
+migration_group: knoxgardens_migrate_islandora_csv
 
 source:
   plugin: csv
-  path: modules/contrib/migrate_islandora_csv/data/migration.csv
+  path: modules/contrib/migrate_islandora_csv/data/knoxgardens_migration.csv
 
   header_row_count: 1
 
