@@ -4,13 +4,13 @@ dependencies:
     module:
       - migrate_islandora_csv
 
-id: subject
+id: knoxgardens_subject
 label: Import subjects from CSV
-migration_group: migrate_islandora_csv
+migration_group: knoxgardens_migrate_islandora_csv
 
 source:
   plugin: csv
-  path: modules/contrib/migrate_islandora_csv/data/subjects.csv
+  path: modules/contrib/migrate_islandora_csv/data/knoxgardens_subjects.csv
 
   # 1 means you have a header row, 0 means you don't
   header_row_count: 1
@@ -29,7 +29,7 @@ process:
   name: subject
   # description: description
 
-  # This maps taxonomy term => AUTHORITY SOURCES  
+  # This maps taxonomy term => AUTHORITY SOURCES
   # -> Source
   field_authority_link/source: subject_authority
   # -> URL

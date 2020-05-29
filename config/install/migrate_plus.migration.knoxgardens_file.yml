@@ -4,13 +4,13 @@ dependencies:
     module:
       - migrate_islandora_csv
 
-id: file
+id: knoxgardens_file
 label: Import Knoxville Garden Slides Image Files
-migration_group: migrate_islandora_csv
+migration_group: knoxgardens_migrate_islandora_csv
 
 source:
   plugin: csv
-  path: 'modules/contrib/migrate_islandora_csv/data/migration.csv'
+  path: 'modules/contrib/migrate_islandora_csv/data/knoxgardens_migration.csv'
   delimiter: ','
 
   header_row_count: 1
