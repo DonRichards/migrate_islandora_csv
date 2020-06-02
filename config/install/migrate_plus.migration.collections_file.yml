@@ -1,0 +1,55 @@
+# Uninstall this config when the feature is uninstalled
+dependencies:
+  enforced:
+    module:
+      - migrate_islandora_csv
+
+id: collection_file
+label: Import Collection banner image Files
+migration_group: collection_migrate_islandora_csv
+
+source:
+  plugin: csv
+  path: 'modules/contrib/migrate_islandora_csv/data/collection.csv'
+  delimiter: ','
+
+  header_row_count: 1
+
+  keys:
+    - ID
+
+  constants:
+    destination_dir: 'fedora://csv_migration'
+    mime: image/jpg
+    uid: 1
+
+process:
+  filemime: constants/mimetype
+  uid: constants/uid
+
+  filename:
+    -
+      plugin: callback
+      callable: pathinfo
+      source: file
+    -
+      plugin: extract
+      index:
+        - basename
+
+  destination:
+    plugin: concat
+    delimiter: /
+    source:
+      - constants/destination_dir
+      - '@filename'
+
+  uri:
+    plugin: file_copy
+    source:
+      - file
+      - '@destination'
+
+destination:
+  plugin: 'entity:file'
+  type: file
