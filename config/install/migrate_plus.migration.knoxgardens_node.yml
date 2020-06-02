@@ -97,7 +97,7 @@ process:
   parent_id:
     plugin: migration_lookup
     source: parent_id
-    migration: node
+    migration: knoxgardens_node
     no_stub: true
 
   collection_id:

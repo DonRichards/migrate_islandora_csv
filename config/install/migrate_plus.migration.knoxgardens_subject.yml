@@ -5,8 +5,9 @@ dependencies:
       - migrate_islandora_csv
 
 id: knoxgardens_subject
-label: Import subjects from CSV
+label: Import Knoxville Garden Slides subjects
 migration_group: knoxgardens_migrate_islandora_csv
+
 
 source:
   plugin: csv
@@ -27,15 +28,9 @@ source:
 process:
   uid: constants/uid
   name: subject
-  # description: description
-
-  # This maps taxonomy term => AUTHORITY SOURCES
-  # -> Source
-  field_authority_link/source: subject_authority
-  # -> URL
-  field_authority_link/uri: subject_uri
-  # -> Alternate link text
   field_authority_link/title: subject
+  field_authority_link/source: subject_authority
+  field_authority_link/uri: subject_uri
 
 destination:
   plugin: entity:taxonomy_term

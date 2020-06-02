@@ -46,7 +46,7 @@ process:
   field_media_of:
     plugin: migration_lookup
     source: ID
-    migration: node
+    migration: knoxgardens_node
     no_stub: true
 
   field_pid:
@@ -58,7 +58,7 @@ process:
   field_media_of:
     plugin: migration_lookup
     source: ID
-    migration: node
+    migration: knoxgardens_node
     no_stub: true
 
   bundle: type
