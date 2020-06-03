@@ -5,7 +5,7 @@ dependencies:
       - migrate_islandora_csv
 
 id: pcard00_media
-label: Step 2 - Import postcard Media
+label: Step 3 - Import postcard Media
 migration_group: pcard00_migrate_islandora_csv
 
 source:

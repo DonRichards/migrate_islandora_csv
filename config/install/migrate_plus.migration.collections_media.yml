@@ -4,25 +4,28 @@ dependencies:
     module:
       - migrate_islandora_csv
 
-id: collection_media
-label: Import collection Media
-migration_group: collection_migrate_islandora_csv
+id: collections_media
+label: Step 3 - Import collection Media
+migration_group: collections_migrate_islandora_csv
 
 source:
   plugin: csv
-  path: modules/contrib/migrate_islandora_csv/data/migration.csv
+  path: modules/contrib/migrate_islandora_csv/data/collections.csv
 
   header_row_count: 1
 
   keys:
-    - ID
+    - PID
 
   constants:
     use: Service File
+
     uid: 1
+    alt: banner image
+    ftype: image
 
 process:
-  name: title_transcribed
+  name: title
   uid: constants/uid
 
   # Make the media an 'Original File'
@@ -38,27 +41,27 @@ process:
   # Lookup the migrated file in the file migration.
   field_media_image:
     plugin: migration_lookup
-    source: ID
-    migration: collection_file
+    source: PID
+    migration: collections_file
     no_stub: true
 
   # Lookup the migrated node in the node migration
   field_media_of:
     plugin: migration_lookup
-    source: ID
-    migration: collection_node
+    source: PID
+    migration: collections_node
     no_stub: true
 
   field_pid:
     plugin: skip_on_empty
-    source: ID
+    source: PID
     method: process
 
   # Lookup the migrated node in the node migration
   field_media_of:
     plugin: migration_lookup
-    source: ID
-    migration: collection_node
+    source: PID
+    migration: collections_node
     no_stub: true
 
   bundle: type
@@ -69,6 +72,6 @@ destination:
 
 migration_dependencies:
   required:
-    - migrate_plus.migration.collection_file
-    - migrate_plus.migration.collection_node
+    - migrate_plus.migration.collections_file
+    - migrate_plus.migration.collections_node
   optional: {  }

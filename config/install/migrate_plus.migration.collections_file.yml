@@ -4,19 +4,19 @@ dependencies:
     module:
       - migrate_islandora_csv
 
-id: collection_file
-label: Import Collection banner image Files
-migration_group: collection_migrate_islandora_csv
+id: collections_file
+label: Step 1 - Import Collection banner image Files
+migration_group: collections_migrate_islandora_csv
 
 source:
   plugin: csv
-  path: 'modules/contrib/migrate_islandora_csv/data/collection.csv'
+  path: 'modules/contrib/migrate_islandora_csv/data/collections.csv'
   delimiter: ','
 
   header_row_count: 1
 
   keys:
-    - ID
+    - PID
 
   constants:
     destination_dir: 'fedora://csv_migration'
@@ -24,6 +24,7 @@ source:
     uid: 1
 
 process:
+  # plugin: log
   filemime: constants/mimetype
   uid: constants/uid
 
@@ -31,24 +32,31 @@ process:
     -
       plugin: callback
       callable: pathinfo
-      source: file
+      source: banner
     -
       plugin: extract
       index:
         - basename
+    -
+      plugin: skip_on_empty
+      method: row
+      message: 'Cannot import empty image filename.'
 
   destination:
-    plugin: concat
-    delimiter: /
-    source:
-      - constants/destination_dir
-      - '@filename'
+    -
+      plugin: concat
+      delimiter: /
+      source:
+        - constants/destination_dir
+        - '@filename'
+      file_exists: 'rename'
 
   uri:
     plugin: file_copy
     source:
-      - file
+      - banner
       - '@destination'
+
 
 destination:
   plugin: 'entity:file'

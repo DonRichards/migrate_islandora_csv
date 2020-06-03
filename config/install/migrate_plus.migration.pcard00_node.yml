@@ -5,7 +5,7 @@ dependencies:
       - migrate_islandora_csv
 
 id: pcard00_node
-label: Step 3 - Import postcard Nodes
+label: Step 2 - Import postcard Nodes
 migration_group: pcard00_migrate_islandora_csv
 
 source:
@@ -170,3 +170,8 @@ process:
 destination:
   plugin: 'entity:node'
   default_bundle: islandora_object
+
+migration_dependencies:
+  required:
+    - migrate_plus.migration.pcard00_file
+  optional: {  }

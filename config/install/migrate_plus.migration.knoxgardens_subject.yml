@@ -5,9 +5,8 @@ dependencies:
       - migrate_islandora_csv
 
 id: knoxgardens_subject
-label: Import Knoxville Garden Slides subjects
+label: Step 1 - Import Knoxville Garden Slides subjects
 migration_group: knoxgardens_migrate_islandora_csv
-
 
 source:
   plugin: csv

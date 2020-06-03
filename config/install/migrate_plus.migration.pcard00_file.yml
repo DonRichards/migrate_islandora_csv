@@ -26,7 +26,7 @@ source:
     # to put these files in Fedora in a 'csv_migration' folder.  It doesn't matter if the directory
     # doesn't exist yet, it will get created for you automatically.
     destination_dir: 'fedora://csv_migration'
-    mime: image/tiff
+    mime:	image/jp2
     # Everything gets created as admin
     uid: 1
 

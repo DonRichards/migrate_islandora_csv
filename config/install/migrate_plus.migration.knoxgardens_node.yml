@@ -5,7 +5,7 @@ dependencies:
       - migrate_islandora_csv
 
 id: knoxgardens_node
-label: Import Knoxville Garden Slides Nodes
+label: Step 3 - Import Knoxville Garden Slides Nodes
 migration_group: knoxgardens_migrate_islandora_csv
 
 source:
@@ -245,3 +245,9 @@ process:
 destination:
   plugin: 'entity:node'
   default_bundle: islandora_object
+
+migration_dependencies:
+  required:
+    - migrate_plus.migration.knoxgardens_subject
+    - migrate_plus.migration.knoxgardens_file
+  optional: {  }

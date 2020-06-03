@@ -4,9 +4,9 @@ dependencies:
     module:
       - migrate_islandora_csv
 
-id: collection_node
-label: Import Collection Nodes
-migration_group: collections_ingest_csv
+id: collections_node
+label: Step 2 - Import Collection Nodes
+migration_group: collections_migrate_islandora_csv
 
 source:
   plugin: csv
@@ -17,7 +17,7 @@ source:
 
   # Each migration needs a unique key per row in the csv.  Here we're using the file path.
   keys:
-    - ID
+    - PID
 
   # You can't enter string literals into a process plugin, but you can give it a constant as a 'source'.
   constants:
@@ -51,8 +51,14 @@ process:
     -
       plugin: migration_lookup
       source: parent_id
-      migration: collections
+      migration: collections_node
       no_stub: true
+
+  parent_id:
+    plugin: migration_lookup
+    source: parent_id
+    migration: collections_node
+    no_stub: true
 
   languages:
     -
@@ -84,3 +90,8 @@ process:
 destination:
   plugin: 'entity:node'
   default_bundle: islandora_object
+
+migration_dependencies:
+  required:
+    - migrate_plus.migration.collections_file
+  optional: {  }

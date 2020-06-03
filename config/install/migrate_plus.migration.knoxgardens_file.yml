@@ -5,7 +5,7 @@ dependencies:
       - migrate_islandora_csv
 
 id: knoxgardens_file
-label: Import Knoxville Garden Slides Image Files
+label: Step 2 - Import Knoxville Garden Slides Image Files
 migration_group: knoxgardens_migrate_islandora_csv
 
 source:
@@ -55,3 +55,8 @@ process:
 destination:
   plugin: 'entity:file'
   type: file
+
+migration_dependencies:
+  required:
+    - migrate_plus.migration.knoxgardens_subject
+  optional: {  }
