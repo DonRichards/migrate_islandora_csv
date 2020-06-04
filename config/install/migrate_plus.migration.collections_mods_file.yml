@@ -4,8 +4,8 @@ dependencies:
     module:
       - migrate_islandora_csv
 
-id: collections_file
-label: Step 1 - Import banner image Files
+id: collections_mods_file
+label: Step 2 - Import MODS Files
 migration_group: collections_migrate_islandora_csv
 
 source:
@@ -20,7 +20,7 @@ source:
 
   constants:
     destination_dir: 'fedora://csv_migration'
-    mime: image/jpg
+    mime: application/xml
     uid: 1
 
 process:
@@ -61,3 +61,8 @@ process:
 destination:
   plugin: 'entity:file'
   type: file
+
+migration_dependencies:
+  required:
+    - migrate_plus.migration.collections_file
+  optional: {  }

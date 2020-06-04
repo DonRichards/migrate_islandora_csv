@@ -5,7 +5,7 @@ dependencies:
       - migrate_islandora_csv
 
 id: collections_node
-label: Step 2 - Import Collection Nodes
+label: Step 5 - Import Nodes
 migration_group: collections_migrate_islandora_csv
 
 source:
@@ -21,7 +21,6 @@ source:
 
   # You can't enter string literals into a process plugin, but you can give it a constant as a 'source'.
   constants:
-
     # Everything gets created as admin
     uid: 1
 
@@ -29,6 +28,8 @@ source:
 process:
   title: title
   uid: constants/uid
+
+  promote: promote
 
   field_description:
     plugin: skip_on_empty
@@ -94,4 +95,6 @@ destination:
 migration_dependencies:
   required:
     - migrate_plus.migration.collections_file
+    - migrate_plus.migration.collections_mods_file
+    - migrate_plus.migration.collections_tn_file
   optional: {  }

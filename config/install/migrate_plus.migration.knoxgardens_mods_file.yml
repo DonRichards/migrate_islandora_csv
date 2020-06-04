@@ -4,27 +4,26 @@ dependencies:
     module:
       - migrate_islandora_csv
 
-id: collections_file
-label: Step 1 - Import banner image Files
-migration_group: collections_migrate_islandora_csv
+id: knoxgardens_mods_file
+label: Step 2 - Import Knoxville Garden Slides MODS Files
+migration_group: knoxgardens_migrate_islandora_csv
 
 source:
   plugin: csv
-  path: 'modules/contrib/migrate_islandora_csv/data/collections.csv'
+  path: 'modules/contrib/migrate_islandora_csv/data/knoxgardens_migration.csv'
   delimiter: ','
 
   header_row_count: 1
 
   keys:
-    - PID
+    - ID
 
   constants:
     destination_dir: 'fedora://csv_migration'
-    mime: image/jpg
+    mime: application/xml
     uid: 1
 
 process:
-  # plugin: log
   filemime: constants/mimetype
   uid: constants/uid
 
@@ -32,32 +31,33 @@ process:
     -
       plugin: callback
       callable: pathinfo
-      source: banner
+      source: MODS
     -
       plugin: extract
       index:
         - basename
     -
-      plugin: skip_on_empty
-      method: row
-      message: 'Cannot import empty image filename.'
+      plugin: log
 
   destination:
-    -
-      plugin: concat
-      delimiter: /
-      source:
-        - constants/destination_dir
-        - '@filename'
-      file_exists: 'rename'
+    plugin: concat
+    delimiter: /
+    source:
+      - constants/destination_dir
+      - '@filename'
 
   uri:
     plugin: file_copy
     source:
-      - banner
+      - file
       - '@destination'
-
 
 destination:
   plugin: 'entity:file'
   type: file
+
+migration_dependencies:
+  required:
+    - migrate_plus.migration.knoxgardens_subject
+    - migrate_plus.migration.knoxgardens_file
+  optional: {  }

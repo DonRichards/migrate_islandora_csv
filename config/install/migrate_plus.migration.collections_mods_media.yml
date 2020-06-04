@@ -4,8 +4,8 @@ dependencies:
     module:
       - migrate_islandora_csv
 
-id: collections_media
-label: Step 4 - Generate Collection Media
+id: collections_mods_media
+label: Step 6 - Import MODS Media
 migration_group: collections_migrate_islandora_csv
 
 source:
@@ -19,10 +19,7 @@ source:
 
   constants:
     use: Service File
-    seconduse: Thumbnail Image
     uid: 1
-    alt: banner image
-    ftype: image
 
 process:
   name: title
@@ -39,7 +36,7 @@ process:
       bundle: islandora_media_use
 
   # Lookup the migrated file in the file migration.
-  field_media_image:
+  field_media_file:
     plugin: migration_lookup
     source: PID
     migration: collections_file
@@ -68,10 +65,10 @@ process:
 
 destination:
   plugin: 'entity:media'
-  default_bundle: image
+  default_bundle: file
 
 migration_dependencies:
   required:
-    - migrate_plus.migration.collections_file
+    - migrate_plus.migration.collections_mods_file
     - migrate_plus.migration.collections_node
   optional: {  }

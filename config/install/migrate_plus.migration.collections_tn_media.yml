@@ -4,9 +4,10 @@ dependencies:
     module:
       - migrate_islandora_csv
 
-id: collections_media
-label: Step 4 - Generate Collection Media
+id: collections_tn_media
+label: Step 7 - Import TN Media
 migration_group: collections_migrate_islandora_csv
+
 
 source:
   plugin: csv
@@ -18,11 +19,8 @@ source:
     - PID
 
   constants:
-    use: Service File
-    seconduse: Thumbnail Image
+    use: Thumbnail Image
     uid: 1
-    alt: banner image
-    ftype: image
 
 process:
   name: title
@@ -72,6 +70,6 @@ destination:
 
 migration_dependencies:
   required:
-    - migrate_plus.migration.collections_file
+    - migrate_plus.migration.collections_tn_file
     - migrate_plus.migration.collections_node
   optional: {  }
