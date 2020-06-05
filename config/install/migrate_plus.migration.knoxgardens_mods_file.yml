@@ -5,7 +5,7 @@ dependencies:
       - migrate_islandora_csv
 
 id: knoxgardens_mods_file
-label: Step 2 - Import Knoxville Garden Slides MODS Files
+label: Step 3 - Import Knoxville Garden Slides MODS Files
 migration_group: knoxgardens_migrate_islandora_csv
 
 source:

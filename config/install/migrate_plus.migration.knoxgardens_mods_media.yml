@@ -5,7 +5,7 @@ dependencies:
       - migrate_islandora_csv
 
 id: knoxgardens_mods_media
-label: Step 4 - Import Knoxville Garden Slides Media
+label: Step 5 - Import Knoxville Garden Slides Media
 migration_group: knoxgardens_migrate_islandora_csv
 
 source:
