@@ -34,7 +34,6 @@ process:
   status: status
   created: timestamp
   changed: timestamp
-  fid: fid
 
   filename:
     -
@@ -45,8 +44,6 @@ process:
       plugin: extract
       index:
         - basename
-    -
-      plugin: log
 
   destination:
     plugin: concat
@@ -68,4 +65,5 @@ destination:
 migration_dependencies:
   required:
     - migrate_plus.migration.knoxgardens_subject
-  optional: {  }
+  optional:
+    - migrate_plus.migration.knoxgardens_subject

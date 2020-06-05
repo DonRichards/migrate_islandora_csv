@@ -18,11 +18,8 @@ source:
     - PID
 
   constants:
-    use: Service File
-    seconduse: Thumbnail Image
+    use: Original File
     uid: 1
-    alt: banner image
-    ftype: image
 
 process:
   name: title

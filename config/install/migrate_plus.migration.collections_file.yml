@@ -24,7 +24,6 @@ source:
     uid: 1
 
 process:
-  # plugin: log
   filemime: constants/mimetype
   uid: constants/uid
 

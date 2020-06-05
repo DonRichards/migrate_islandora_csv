@@ -33,7 +33,7 @@ source:
 process:
   title: title_transcribed
   uid: constants/uid
-  plugin: log
+  # plugin: log
 
   # We use the skip_on_empty plugin because
   # not every row in the CSV has subtitle filled
