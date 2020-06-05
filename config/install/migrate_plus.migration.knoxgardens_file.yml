@@ -24,8 +24,17 @@ source:
     uid: 1
 
 process:
-  filemime: constants/mimetype
-  uid: constants/uid
+  # filemime: constants/mimetype
+  # uid: constants/uid
+  uid:
+    plugin: default_value
+    default_value: 1
+
+  filemime: filemime
+  status: status
+  created: timestamp
+  changed: timestamp
+  fid: fid
 
   filename:
     -

@@ -24,8 +24,10 @@ source:
     uid: 1
 
 process:
-  # filemime: constants/mimetype
-  uid: constants/uid
+
+  uid:
+    plugin: default_value
+    default_value: 1
 
   filename:
     -
@@ -40,6 +42,10 @@ process:
       plugin: skip_on_empty
       method: row
       message: 'Cannot import empty MODS filename.'
+    -
+      plugin: skip_row_if_not_set
+      plugin: log
+      source: 'Connot import MODS file that is not set.'
 
   destination:
     -

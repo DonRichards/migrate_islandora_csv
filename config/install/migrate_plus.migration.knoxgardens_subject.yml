@@ -25,7 +25,11 @@ source:
 
 # Set fields using values from the CSV
 process:
-  uid: constants/uid
+  # uid: constants/uid
+  uid:
+    plugin: default_value
+    default_value: 1
+
   name: subject
   field_authority_link/title: subject
   field_authority_link/source: subject_authority

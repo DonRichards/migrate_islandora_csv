@@ -58,10 +58,6 @@ process:
 
   bundle: type
 
-  # http://localhost:8000/_flysystem/fedora/2020-06/collections_bcpl.xml
-  # http://localhost:8000/_flysystem/fedora/csv_migration/collections_bcpl.xml
-  # http://localhost:8000/_flysystem/fedora/csv_migration/collections_bcpl.jpg
-
 destination:
   plugin: 'entity:media'
   default_bundle: file
