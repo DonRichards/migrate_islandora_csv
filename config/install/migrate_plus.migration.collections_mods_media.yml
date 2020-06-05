@@ -5,12 +5,13 @@ dependencies:
       - migrate_islandora_csv
 
 id: collections_mods_media
-label: Step 6 - Import MODS Media
+label: Step 5 - Import MODS Media
 migration_group: collections_migrate_islandora_csv
 
 source:
   plugin: csv
-  path: modules/contrib/migrate_islandora_csv/data/collections.csv
+  path: 'modules/contrib/migrate_islandora_csv/data/collections.csv'
+  delimiter: ','
 
   header_row_count: 1
 
@@ -20,12 +21,15 @@ source:
   constants:
     use: Service File
     uid: 1
+    mime: application/xml
 
 process:
-  name: title
-  uid: constants/uid
 
-  # Make the media an 'Original File'
+  uid: constants/uid
+  name: PID
+
+  field_mime_type: constants/mime
+
   field_media_use:
     -
       plugin: entity_lookup
@@ -35,14 +39,12 @@ process:
       bundle_key: vid
       bundle: islandora_media_use
 
-  # Lookup the migrated file in the file migration.
   field_media_file:
     plugin: migration_lookup
     source: PID
-    migration: collections_file
+    migration: collections_mods_file
     no_stub: true
 
-  # Lookup the migrated node in the node migration
   field_media_of:
     plugin: migration_lookup
     source: PID
@@ -54,14 +56,11 @@ process:
     source: PID
     method: process
 
-  # Lookup the migrated node in the node migration
-  field_media_of:
-    plugin: migration_lookup
-    source: PID
-    migration: collections_node
-    no_stub: true
-
   bundle: type
+
+  # http://localhost:8000/_flysystem/fedora/2020-06/collections_bcpl.xml
+  # http://localhost:8000/_flysystem/fedora/csv_migration/collections_bcpl.xml
+  # http://localhost:8000/_flysystem/fedora/csv_migration/collections_bcpl.jpg
 
 destination:
   plugin: 'entity:media'

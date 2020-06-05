@@ -49,7 +49,6 @@ process:
       source:
         - constants/destination_dir
         - '@filename'
-      file_exists: 'rename'
 
   uri:
     plugin: file_copy

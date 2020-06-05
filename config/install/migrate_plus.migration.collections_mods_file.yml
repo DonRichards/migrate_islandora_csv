@@ -24,15 +24,14 @@ source:
     uid: 1
 
 process:
-  # plugin: log
-  filemime: constants/mimetype
+  # filemime: constants/mimetype
   uid: constants/uid
 
   filename:
     -
       plugin: callback
       callable: pathinfo
-      source: banner
+      source: MODS
     -
       plugin: extract
       index:
@@ -40,7 +39,7 @@ process:
     -
       plugin: skip_on_empty
       method: row
-      message: 'Cannot import empty image filename.'
+      message: 'Cannot import empty MODS filename.'
 
   destination:
     -
@@ -49,19 +48,30 @@ process:
       source:
         - constants/destination_dir
         - '@filename'
-      file_exists: 'rename'
+    -
+      plugin: urlencode
 
   uri:
-    plugin: file_copy
-    source:
-      - banner
-      - '@destination'
+    -
+      plugin: download
+      source:
+        - banner
+        - '@destination'
+      file_exists: 'rename'
+      move: FALSE
 
+  filemime: filemime
+  status: status
+  created: timestamp
+  changed: timestamp
+  fid: fid
 
 destination:
   plugin: 'entity:file'
   type: file
 
+  # plugin: log
+  #     source: MODS
 migration_dependencies:
   required:
     - migrate_plus.migration.collections_file

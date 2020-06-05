@@ -5,7 +5,7 @@ dependencies:
       - migrate_islandora_csv
 
 id: collections_node
-label: Step 5 - Import Nodes
+label: Step 3 - Import Nodes
 migration_group: collections_migrate_islandora_csv
 
 source:
