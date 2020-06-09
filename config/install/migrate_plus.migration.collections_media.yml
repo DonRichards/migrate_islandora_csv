@@ -5,7 +5,7 @@ dependencies:
       - migrate_islandora_csv
 
 id: collections_media
-label: Step 4 - Generate Collection Media
+label: Step 3 - Generate Collection Media
 migration_group: collections_migrate_islandora_csv
 
 source:
@@ -15,7 +15,7 @@ source:
   header_row_count: 1
 
   keys:
-    - PID
+    - ID
 
   constants:
     use: Original File
@@ -38,28 +38,19 @@ process:
   # Lookup the migrated file in the file migration.
   field_media_image:
     plugin: migration_lookup
-    source: PID
+    source: ID
     migration: collections_file
     no_stub: true
 
   field_media_image/target_id:
       plugin: migration_lookup
       migration: collections_file
-      source: PID
-
-  thumbnail/target_id:
-      plugin: migration_lookup
-      migration: collections_file
-      source: PID
-
-  thumbnail/alt: title
-  thumbnail/title: title
+      source: ID
 
   # Lookup the migrated node in the node migration
-
   field_media_of:
     plugin: migration_lookup
-    source: PID
+    source: ID
     migration: collections_node
     no_stub: true
 
@@ -71,7 +62,7 @@ process:
   # Lookup the migrated node in the node migration
   field_media_of:
     plugin: migration_lookup
-    source: PID
+    source: ID
     migration: collections_node
     no_stub: true
 

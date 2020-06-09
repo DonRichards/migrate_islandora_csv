@@ -16,7 +16,7 @@ source:
   header_row_count: 1
 
   keys:
-    - PID
+    - ID
 
   constants:
     destination_dir: 'fedora://csv_migration'

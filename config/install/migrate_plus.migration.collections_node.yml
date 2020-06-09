@@ -17,7 +17,7 @@ source:
 
   # Each migration needs a unique key per row in the csv.  Here we're using the file path.
   keys:
-    - PID
+    - ID
 
   # You can't enter string literals into a process plugin, but you can give it a constant as a 'source'.
   constants:
@@ -55,12 +55,6 @@ process:
       migration: collections_node
       no_stub: true
 
-  parent_id:
-    plugin: migration_lookup
-    source: parent_id
-    migration: collections_node
-    no_stub: true
-
   languages:
     -
       source: languages
@@ -95,6 +89,4 @@ destination:
 migration_dependencies:
   required:
     - migrate_plus.migration.collections_file
-    - migrate_plus.migration.collections_mods_file
-    - migrate_plus.migration.collections_tn_file
   optional: {  }
