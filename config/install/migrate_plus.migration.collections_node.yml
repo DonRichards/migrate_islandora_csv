@@ -27,6 +27,7 @@ source:
 # Set fields using values from the CSV
 process:
   title: title
+  alt: !title
   uid: constants/uid
 
   promote: promote

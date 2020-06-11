@@ -64,6 +64,5 @@ destination:
 
 migration_dependencies:
   required:
-    - migrate_plus.migration.collections_mods_file
     - migrate_plus.migration.collections_node
   optional: {  }
