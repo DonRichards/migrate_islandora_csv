@@ -20,7 +20,7 @@ source:
 
   constants:
     destination_dir: 'fedora://csv_migration'
-    mime: image/jpg
+    mime: image/jpeg
     uid: 1
 
 process:

@@ -22,7 +22,8 @@ source:
     uid: 1
 
 process:
-  name: title
+
+  name: file_name
   uid: constants/uid
 
   # Make the media an 'Original File'
