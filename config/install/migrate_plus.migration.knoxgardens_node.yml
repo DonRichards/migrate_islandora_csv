@@ -17,7 +17,7 @@ source:
 
   # Each migration needs a unique key per row in the csv.  Here we're using the file path.
   keys:
-    - ID
+    - file
 
   # You can't enter string literals into a process plugin, but you can give it a constant as a 'source'.
   constants:
@@ -25,73 +25,70 @@ source:
     model: Image
 
     display: Open Seadragon
-    collection: Migration Test Collection
+    collection: Knoxville Garden Slides
     uid: 1
+    promote: 0
 
 # Set fields using values from the CSV
 process:
   title: title_transcribed
   uid: constants/uid
-  # plugin: log
 
   # We use the skip_on_empty plugin because
   # not every row in the CSV has subtitle filled
   # in.
-  fields_identifier:
-    plugin: skip_on_empty
-    source: ID
-    method: process
-
   field_alternative_title:
     plugin: skip_on_empty
     source: supplied_title
     method: process
 
-  field_description:
+  # Dates are EDTF strings
+  field_edtf_date_issued:
     plugin: skip_on_empty
-    source: abstract
+    source: date_issued
     method: process
 
   # Dates are EDTF strings
-  field_edtf_date:
+  field_edtf_date_created:
     plugin: skip_on_empty
-    source: date
+    source: date_accessioned
     method: process
+
+  field_identifier:
+    plugin: skip_on_empty
+    source: identifier_other
+    method: process
+
+  field_description:
+    plugin: skip_on_empty
+    source: description
+    method: process
+
+  field_rights:
+    plugin: skip_on_empty
+    source: rights
+    method: process
+
+  field_display_hints:
+    -
+      plugin: skip_on_empty
+      source: display
+      method: process
+    -
+      plugin: entity_lookup
+      entity_type: taxonomy_term
+      value_key: name
+      bundle_key: vid
+      bundle: islandora_display
 
   # Make the object an 'Image'
   field_model:
     plugin: entity_lookup
-    source: constants/model
+    source: model
     entity_type: taxonomy_term
     value_key: name
     bundle_key: vid
     bundle: islandora_models
-
-   # Set display to 'Openseadragon'
-  field_display_hints:
-    plugin: entity_lookup
-    source: constants/display
-    entity_type: taxonomy_term
-    value_key: name
-    bundle_key: vid
-    bundle: islandora_display
-
-  # Split up our pipe-delimited string of
-  # subjects, and generate terms for each.
-  field_subject:
-    -
-      plugin: skip_on_empty
-      source: subject
-      method: process
-    -
-      plugin: explode
-      delimiter: '|'
-    -
-      plugin: entity_generate
-      entity_type: taxonomy_term
-      value_key: name
-      bundle_key: vid
-      bundle: subject
 
   parent_id:
     plugin: migration_lookup
@@ -101,33 +98,13 @@ process:
 
   collection_id:
     plugin: entity_lookup
-    source: constants/collection
+    source: collection
     entity_type: node
     value_key: title
     bundle_key: type
     bundle: islandora_object
     ignore_case: true
     message: 'Failed to find collection object'
-
-  # collection_id:
-  #   plugin: entity_lookup
-  #   source: constants/collection
-  #   entity_type: node
-  #   value_key: title
-  #   bundle_key: type
-  #   bundle: islandora_object
-  #   ignore_case: true
-  #   message: 'Failed to find collection object'
-
-  field_pid:
-    plugin: skip_on_empty
-    source: PID
-    method: process
-
-  field_right:
-    plugin: skip_on_empty
-    source: rights
-    method: process
 
   field_member_of:
     -
@@ -139,21 +116,26 @@ process:
     -
       plugin: skip_on_empty
       method: process
-
-  # If you have multiple values of a complex
-  # field, iterate over them using sub_process.
-  # But sub_process requires structured data
-  # i.e. an associative array, not a string
-  # or list of strings. To turn strings into
-  # associative arrays, use the custom
-  # process plugin str_to_assoc.
-
-  # Extract a list of names from the column
-  # called photographer, and transform it into
-  # an array of associative arrays.
-  photographers:
+  # Split up our pipe-delimited string of
+  # subjects, and generate terms for each.
+  field_subject:
     -
-      source: photographer
+      plugin: skip_on_empty
+      source: subjects
+      method: process
+    -
+      plugin: explode
+      delimiter: '|'
+    -
+      plugin: entity_generate
+      entity_type: taxonomy_term
+      value_key: name
+      bundle_key: vid
+      bundle: subject
+
+  languages:
+    -
+      source: languages
       plugin: skip_on_empty
       method: process
     -
@@ -163,77 +145,23 @@ process:
       plugin: str_to_assoc
       key: 'name'
 
-  # Iterate over the array of associative arrays.
-  # We create the taxonomy terms here so that we
-  # can specify the bundle - other columns which
-  # might feed into Linked Agent may contain
-  # corporate bodies or families. The resulting
-  # array contains the resulting term id (tid)
-  # under the key 'target_id'.
-  # We also add a key-value pair
-  # 'rel_type' => 'relators:pht'. Other columns
-  # might use different relators.
-  linked_agent_pht:
+  languages_creator:
     plugin: sub_process
-    source: '@photographers'
+    source: '@languages'
     process:
-      target_id:
-        plugin: entity_generate
-        source: name
-        entity_type: taxonomy_term
-        value_key: name
-        bundle_key: vid
-        bundle: person
-      rel_type:
-        plugin: default_value
-        default_value: 'relators:pht'
+        target_id:
+          plugin: entity_generate
+          source: name
+          entity_type: taxonomy_term
+          value_key: name
+          bundle_key: vid
+          bundle: 'language'
 
-  # Extract an array of names from the column
-  # called provider
-  providers:
-    -
-      source: provider
-      plugin: skip_on_empty
-      method: process
-    -
-      plugin: explode
-      delimiter: '|'
-    -
-      plugin: str_to_assoc
-      key: 'name'
-  # Generate/lookup taxonomy terms in the
-  # corporate body vocab, and add the rel_type.
-  linked_agent_prv:
-    plugin: sub_process
-    source: '@providers'
-    process:
-      target_id:
-        plugin: entity_generate
-        source: name
-        entity_type: taxonomy_term
-        value_key: name
-        bundle_key: vid
-        bundle: 'corporate_body'
-      rel_type:
-        plugin: default_value
-        default_value: 'relators:prv'
+  field_language: '@languages'
 
-  # Write to the linked agent field. In this case
-  # we first want to merge the info from the
-  # photographer and provider columns. Since we
-  # already prepared our structured array using
-  # the components of the typed_relation field as
-  # keys ('target_id' and 'rel_type'), we can just
-  # pass this array into field_linked_agent.
-  field_linked_agent:
-    plugin: merge
-    source:
-      - '@linked_agent_pht'
-      - '@linked_agent_prv'
-
-  field_note:
+  field_weight:
     plugin: skip_on_empty
-    source: note
+    source: sequence_id
     method: process
 
 # We're making nodes

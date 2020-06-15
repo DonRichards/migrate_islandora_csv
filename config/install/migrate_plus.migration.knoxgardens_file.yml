@@ -12,11 +12,10 @@ source:
   plugin: csv
   path: 'modules/contrib/migrate_islandora_csv/data/knoxgardens_migration.csv'
   delimiter: ','
-
   header_row_count: 1
 
   keys:
-    - ID
+    - file
 
   constants:
     destination_dir: 'fedora://csv_migration'
@@ -24,16 +23,8 @@ source:
     uid: 1
 
 process:
-  # filemime: constants/mimetype
-  # uid: constants/uid
-  uid:
-    plugin: default_value
-    default_value: 1
-
-  filemime: filemime
-  status: status
-  created: timestamp
-  changed: timestamp
+  filemime: constants/mimetype
+  uid: constants/uid
 
   filename:
     -
@@ -66,4 +57,4 @@ migration_dependencies:
   required:
     - migrate_plus.migration.knoxgardens_subject
   optional:
-    - migrate_plus.migration.knoxgardens_subject
+    { }
