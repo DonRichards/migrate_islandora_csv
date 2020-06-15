@@ -23,11 +23,18 @@ source:
   constants:
     # Everything gets created as admin
     uid: 1
+    newtitle: Banner
 
 # Set fields using values from the CSV
 process:
   title: title
-  alt: !title
+  alt:
+    plugin: concat
+    source:
+      - constants/newtitle
+      - title
+    delimiter: ' '
+
   uid: constants/uid
 
   promote: promote
@@ -81,6 +88,11 @@ process:
           bundle: 'language'
 
   field_language: '@languages'
+
+  field_pid:
+    plugin: skip_on_empty
+    source: PID
+    method: process
 
 # We're making nodes
 destination:
