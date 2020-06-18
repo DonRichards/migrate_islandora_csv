@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>Islandora 8 Overview</title>
+    <link href="https://donrichards.github.io/migrate_islandora_csv/feed.xml" rel="self" />
+    <link href="https://donrichards.github.io/migrate_islandora_csv" />
+    <updated>1969-12-31T19:00:00-05:00</updated>
+    <author>
+        <name>Don Richards</name>
+    </author>
+    <id>https://donrichards.github.io/migrate_islandora_csv</id>
+
+    <entry>
+        <title>Background</title>
+        <author>
+            <name>Don Richards</name>
+        </author>
+        <link href="https://donrichards.github.io/migrate_islandora_csv/background.html"/>
+        <id>https://donrichards.github.io/migrate_islandora_csv/background.html</id>
+            <category term="history"/>
+            <category term="Drupal 8 "/>
+            <category term="Background"/>
+
+        <updated>2020-06-18T16:13:06-04:00</updated>
+            <summary>
+                <![CDATA[
+                        <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/2/background.jpg" alt="100 universities using Drupal" />
+                    Islandora 7 is a monolithic application that glues Drupal 6/7 to Fedora 3 with an optional institutional repository (IR) addon. Islandora 7 had several pain points, such as workflows, most of which required substantial coding to work around these issues. Although Islandora is a collection&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                    <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/2/background.jpg" alt="100 universities using Drupal" />
+                <p>Islandora 7 is a monolithic application that glues Drupal 6/7 to Fedora 3 with an optional institutional repository (IR) addon. Islandora 7 had several pain points, such as workflows, most of which required substantial coding to work around these issues. Although Islandora is  a collection of several Drupal 6/7 modules, it wasn’t written in a way that leveraged much of Drupal’s content management functionality. Fortunately for 8 this has been remedied.</p>
+<p><figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/85065965-0cfa1b00-b17c-11ea-83c6-cb08ebd23ff9.png" data-is-external-image="true"  alt="I8" /></figure></p>
+<p>The Drupal 8 release in 2015 had a major overhaul of the code base. This meant that upgrading from Drupal 7 into Drupal 8 broke content libraries, functions, and theming. Drupal 8’s migration is an Extract, Transform, Load (ETL) process as part of its Migrate API. The data can come from a variety of places; a database, CSV, JSON, or REST function, and then transformed, imported, and processed (Migrate API overview, 2019).</p>
+<p>Future upgrades of Drupal versions will look substantially different than before. Gone are the days of major migration planning as Drupal has completely overhauled their application lifecycle. With Drupal 9 being released in June 2020 the process of upgrading won’t cause any loss in functionality or any libraries to break; the core is completely backwards compatible. This important feature was adopted  for the new life cycle for all future version releases. It was explained simply by Alex Lopez, “You’ll just get notices advising you to upgrade libraries, function calls, and anything else in your code that would make your module incompatible with a Drupal 10 version. But, theoretically, nothing that would break your module/site.”(2018). A large focus of Drupal core and module development for the 8 release was on specific industries, including but not limited to big data and higher education. “Build a wide range of solutions from university websites, applications, scholarly publishing, and more.” (Drupal for education, 2020).</p>
+<p><figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/85065822-db814f80-b17b-11ea-8eb5-4ee294bae8fb.jpg" data-is-external-image="true"  alt="background" /></figure></p>
+<p>Islandora changed the development approach to align with Drupal 8’s direction. A major focus on Islandora 8 is to build the stack in a way that fully utilizes Drupal 8 and make the contributed modules available. There are so many modules currently  developed and actively managed by other institutions that provide content modeling  and developing metadata has become exceedingly easier. As the need for IRs increases, the number of options available have increased as well making it sometimes difficult to sift through to find the best option for the community. Since these are so new, many of these lack sufficient documentation or guidance on how to best utilize the modules for a digital or institutional repository. The Islandora community makes every effort to bring content models together by research, community vetting, writing documentation, and creating solutions to help provide a ready made (turn key) solution.Islandora 8 content is now utilizing Drupal nodes as the primary representation instead of how Islandora 7 overwrote Drupal routing to provide an object and it’s content. Islandora 8 content is Drupal content (stored in Fedora 5) and is completely compatible with 3rd party addons.</p>
+
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Islandora 8 Overview</title>
+        <author>
+            <name>Don Richards</name>
+        </author>
+        <link href="https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html"/>
+        <id>https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html</id>
+
+        <updated>2020-06-18T16:13:06-04:00</updated>
+            <summary>
+                <![CDATA[
+                    There are over 300 universities running Islandora according to the latest survey with 4 currently running Islandora 8 in production with several in beta. These numbers do not include government or private instances which commonly don’t report or aren’t publicly accessible like UTK’s TRACE. Here’s&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>There are over 300 universities running Islandora according to the latest survey with 4 currently running Islandora 8 in production with several in beta. These numbers do not include government or private instances which commonly don’t report or aren’t publicly accessible like UTK’s <a href="https://trace.utk.edu">TRACE</a>. </p>
+<h1 id="quick-summary">Quick Summary</h1>
+<p>Here’s a list of all the Islandora features currently available with the 1.1.0 release (including those that come for free from contributed modules):</p>
+<ul>
+<li>Model content using core Drupal entities and fields</li>
+<li>Out of the box support for<ul>
+<li>Collections</li>
+<li>Images</li>
+<li>Books</li>
+<li>Newspapers</li>
+<li>Audio</li>
+<li>Video</li>
+<li>PDF</li>
+<li>Binaries</li>
+</ul>
+</li>
+<li>Control how content is displayed using the UI</li>
+<li>Configure forms for content using the UI</li>
+<li>Categorize content using taxonomy terms</li>
+<li>Expandable file storage<ul>
+<li>Drupal’s public file system</li>
+<li>Multiple private file systems using <a href="https://www.drupal.org/project/flysystem">flysystem</a> (check this link for a full list of supported adapters)<ul>
+<li>Fedora</li>
+<li>Local or networked storage</li>
+<li>Sftp</li>
+<li>AWS S3</li>
+<li>and more…</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>REST API<ul>
+<li>Basic CRUD operations with Drupal REST and JSON</li>
+<li>Read-only JSONLD serialization</li>
+<li>Extensive use of Link headers for discoverability</li>
+<li>Add files to objects with PUT</li>
+</ul>
+</li>
+<li>Solr search (<a href="https://www.drupal.org/project/search_api_solr">using search_api_solr</a>)<ul>
+<li>Configure search index through the UI</li>
+</ul>
+</li>
+<li>Custom viewers<ul>
+<li>Openseadragon</li>
+<li>PDF.js using the <a href="https://www.drupal.org/project/pdf">pdf</a> module</li>
+</ul>
+</li>
+<li>Custom field types<ul>
+<li>Extended Date Time Format (EDTF)</li>
+<li>Typed Relation</li>
+<li>Authority Link</li>
+</ul>
+</li>
+<li>Custom entities for:<ul>
+<li>People</li>
+<li>Families</li>
+<li>Organizations</li>
+<li>Locations</li>
+<li>Subjects</li>
+</ul>
+</li>
+<li>Derivatives<ul>
+<li>Convert / transform images (or just use<a href="https://www.drupal.org/docs/user_guide/en/structure-image-style-create.html"> Drupal image styles</a>!)</li>
+<li>Extract images from PDFs</li>
+<li>Extract images from Video</li>
+<li>Convert audio formats</li>
+<li>Convert video formats</li>
+<li>All derivative operations have forms and can be configured through the UI</li>
+</ul>
+</li>
+<li>Access control<ul>
+<li>Hide content from users and search with the <a href="https://www.drupal.org/project/permissions_by_term">permissions_by_term</a> module</li>
+<li>Hide sensitive fields from users using the <a href="https://www.drupal.org/project/field_permissions">field_permissions</a> module</li>
+</ul>
+</li>
+<li>Control repository events through the UI using the<a href="https://www.drupal.org/project/context"> context</a> module<ul>
+<li>Index RDF in Fedora</li>
+<li>Index RDF in a Triplestore</li>
+<li>Derivatives</li>
+<li>Switching themes</li>
+<li>Switching displays/viewers</li>
+<li>Switching forms</li>
+<li>And much much more….</li>
+</ul>
+</li>
+<li>Multi-lingual support<ul>
+<li>Translated content is included in metadata and indexed in both Fedora and the Triplestore with proper language tags</li>
+<li>The user interface can be translated to languages other than English</li>
+</ul>
+</li>
+<li>Bulk ingest using CSVs<ul>
+<li>See the<a href="https://github.com/Islandora-CLAW/migrate_islandora_csv"> islandora_migrate_csv</a> module for a detailed tutorial</li>
+</ul>
+</li>
+<li><a href="https://www.drupal.org/docs/user_guide/en/views-concept.html">Views</a>! You can filter, sort, display, and otherwise manipulate lists of content in all kinds of ways. For example:<ul>
+<li>Make a browse by collections page (see <a href="http://future.islandora.ca/collections">this example</a> on the sandbox, which can be customized <a href="http://future.islandora.ca/admin/structure/views/view/islandora_content/edit/page_1?destination=/collections">here</a>).</li>
+<li>Make an image gallery (see <a href="http://future.islandora.ca/node/7">this example</a> on the sandbox, which can be customized <a href="http://future.islandora.ca/admin/structure/views/view/sandbox_members_image_gallery/edit/block_1?destination=/node/7">here</a>)</li>
+<li>Make a slideshow (see <a href="http://future.islandora.ca/">this example</a> on the sandbox, which can be customized <a href="http://future.islandora.ca/admin/structure/views/view/sandbox_slideshow/edit/block_1?destination=/node/6">here</a>) using <a href="https://www.drupal.org/project/views_slideshow">views_slideshow</a>.</li>
+<li>Put pins on a Google map using the <a href="https://www.drupal.org/project/geolocation">geolocation</a> module</li>
+<li>Execute actions in bulk on views results using the <a href="https://www.drupal.org/project/views_bulk_operations">views_bulk_operations</a> module<ul>
+<li>Re-index content</li>
+<li>Re-generate derivatives</li>
+<li>And everything else you can do with Drupal actions (pretty much anything!)</li>
+</ul>
+</li>
+<li>Bulk edit metadata using <a href="https://www.drupal.org/project/views_bulk_edit">views_bulk_edit</a> (see <a href="http://future.islandora.ca/islandora-batch-edit">this example</a> on the sandbox, which can be customized <a href="http://future.islandora.ca/admin/structure/views/view/islandora_batch_edit/edit/page_1?destination=/islandora-batch-edit">here</a>)</li>
+</ul>
+</li>
+<li>Paged Content<ul>
+<li>Order sequences of content using a weight field</li>
+<li>Generate IIIF manifests for presenting paged content</li>
+<li>View paged content with the Openseadragon viewer</li>
+</ul>
+</li>
+<li>Extracted Text<ul>
+<li>Extract text from both TIFFs and PDFs</li>
+<li>Extracted text can be indexed in Solr</li>
+</ul>
+</li>
+<li>FITS Derivatives<ul>
+<li>FITS XML is generated for new file uploads</li>
+</ul>
+</li>
+<li>Versioning<ul>
+<li>Drupal revisions create Memento versions in Fedora</li>
+</ul>
+</li>
+<li>OAI-PMH Endpoint<ul>
+<li>Configurable using views</li>
+</ul>
+</li>
+<li>Better Search / Discovery<ul>
+<li>Default configuration for search indexing</li>
+<li>Default configuration for faceting</li>
+</ul>
+</li>
+</ul>
+<p>[List came from <a href="https://islandora.ca/content/islandora-8-now-available">link</a> <a href="https://www.islandora.ca/content/islandora-8-v110-now-available">link</a>]</p>
+
+            ]]>
+        </content>
+    </entry>
+</feed>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="https://donrichards.github.io/migrate_islandora_csv/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<url>
+<loc>https://donrichards.github.io/migrate_islandora_csv/</loc>
+</url>
+<url>
+<loc>https://donrichards.github.io/migrate_islandora_csv/background.html</loc>
+<lastmod>2020-06-18T15:55:17-04:00</lastmod>
+<image:image>
+<image:loc>https://donrichards.github.io/migrate_islandora_csv/media/posts/2/background.jpg</image:loc>
+<image:title><![CDATA[100 universities using Drupal]]></image:title>
+</image:image>
+</url>
+<url>
+<loc>https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html</loc>
+<lastmod>2020-06-18T15:44:59-04:00</lastmod>
+</url>
+</urlset>
