@@ -32,8 +32,8 @@
                    "Mirador",
                    "BigData"
             ],
-            "date_published": "2020-06-19T11:43:31-04:00",
-            "date_modified": "2020-06-19T11:43:31-04:00"
+            "date_published": "2020-06-19T13:47:41-04:00",
+            "date_modified": "2020-06-19T13:47:41-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/general-content-models.html",
@@ -54,15 +54,15 @@
                    "PCDM",
                    "BigData"
             ],
-            "date_published": "2020-06-19T11:43:31-04:00",
-            "date_modified": "2020-06-19T11:43:31-04:00"
+            "date_published": "2020-06-19T13:47:41-04:00",
+            "date_modified": "2020-06-19T13:47:41-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/content-modeling.html",
             "url": "https://donrichards.github.io/migrate_islandora_csv/content-modeling.html",
             "title": "Content Models Overview",
             "summary": "Islandora 8 compartmentalized content model behaviors by opting for a mix of microservices, context, and action solutions. Islandora objects are referred to as nodes. A node’s type is called a resource model. The resource models include (but are not limited to) audio, binary, collections, digital&hellip;",
-            "content_html": "<p>Islandora 8 compartmentalized content model behaviors by opting for a mix of microservices, context, and action solutions. Islandora objects are referred to as nodes. A node’s type is called a resource model. The resource models include (but are not limited to) audio, binary, collections, digital documents, images, pages, paged content, publication issue, and videos. In Islandora 7, content models refer to how derivatives are generated and how the object is displayed, however in Islandora 8 this concept doesn’t fit the behavior completely. When a model tag is applied to an object/node, this indicates to Drupal which context(s) to use resulting in corresponding actions to be fired. generating appropriate derivatives, resource mapping, and specifying an appropriate default viewer.</p>\n<p>“Islandora 8 Data Model. Between the original capabilities of Drupal 8, the wealth of available modules, and the work that has already been done with Islandora 8, nearly any standard Islandora 7 content model can be represented in Islandora 8 from the simple (binary, PDF, image, audio, video) to the complex (compounds, books, newspapers). This is all done via the Repository Item content model which contains nearly all of the fields necessary to describe any type of object, and is the core of most of Islandora 8’s Drupal features. Many Drupal views and contexts can be triggered by targeting one or more of the fields in a Repository Item node in a way that makes requiring separate content types unnecessary. Examples include changing the template for displaying a node based on what “type” it is, or changing the viewer that is used based on the type of file a node has.” [<a href=\"https://docs.google.com/document/d/11Y7kGyVlrRW3uIqFPzMgQ2nj3gzB3U2FEO75X2n3bo8\">link</a>]</p>\n<ul>\n<li>An object is a <em>node</em> (a.k.a. <em>content</em>).</li>\n<li>Nodes have properties that can be configured called <em>fields</em>.</li>\n<li>Fields for nodes are grouped together as <em>content types</em>.</li>\n<li>Datastreams are <em>media</em>, which are <em>files</em> that can have their own fields and <em>media types</em>.</li>\n<li>Metadata used to categorize entities are <em>taxonomy terms</em>, which also have their own fields and <em>vocabularies</em>. They can represent everything from simple labels to more complex concepts such as people, places, and subjects.</li>\n</ul>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://github.com/DonRichards/migrate_islandora_csv/raw/gh-pages/media/posts/3/diagram.png\" data-is-external-image=\"true\"  alt=\"diagram\" /></figure></p>\n",
+            "content_html": "<p>Islandora 8 compartmentalized content model behaviors by opting for a mix of microservices, context, and action solutions. Islandora objects are referred to as nodes. A node’s type is called a resource model. The resource models include (but are not limited to) audio, binary, collections, digital documents, images, pages, paged content, publication issue, and videos. In Islandora 7, content models refer to how derivatives are generated and how the object is displayed, however in Islandora 8 this concept doesn’t fit the behavior completely. When a model tag is applied to an object/node, this indicates to Drupal which context(s) to use resulting in corresponding actions to be fired. generating appropriate derivatives, resource mapping, and specifying an appropriate default viewer.</p>\n<p>“Islandora 8 Data Model. Between the original capabilities of Drupal 8, the wealth of available modules, and the work that has already been done with Islandora 8, nearly any standard Islandora 7 content model can be represented in Islandora 8 from the simple (binary, PDF, image, audio, video) to the complex (compounds, books, newspapers). This is all done via the Repository Item content model which contains nearly all of the fields necessary to describe any type of object, and is the core of most of Islandora 8’s Drupal features. Many Drupal views and contexts can be triggered by targeting one or more of the fields in a Repository Item node in a way that makes requiring separate content types unnecessary. Examples include changing the template for displaying a node based on what “type” it is, or changing the viewer that is used based on the type of file a node has.” [<a href=\"https://docs.google.com/document/d/11Y7kGyVlrRW3uIqFPzMgQ2nj3gzB3U2FEO75X2n3bo8\">link</a>] </p>\n<ul>\n<li>An object is a <em>node</em> (a.k.a. <em>content</em>).</li>\n<li>Nodes have properties that can be configured called <em>fields</em>.</li>\n<li>Fields for nodes are grouped together as <em>content types</em>.</li>\n<li>Datastreams are <em>media</em>, which are <em>files</em> that can have their own fields and <em>media types</em>.</li>\n<li>Metadata used to categorize entities are <em>taxonomy terms</em>, which also have their own fields and <em>vocabularies</em>. They can represent everything from simple labels to more complex concepts such as people, places, and subjects.</li>\n</ul>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://github.com/DonRichards/migrate_islandora_csv/raw/gh-pages/media/posts/3/diagram.png\" data-is-external-image=\"true\"  alt=\"diagram\" /></figure></p>\n<p>Continue Reading <a href=\"general-content-models.html\">General Content Models</a></p>\n",
             "image": "https://donrichards.github.io/migrate_islandora_csv/media/posts/3/diagram.png",
             "author": {
                 "name": "Don Richards"
@@ -72,8 +72,8 @@
                    "microservice",
                    "content modeling"
             ],
-            "date_published": "2020-06-19T11:43:31-04:00",
-            "date_modified": "2020-06-19T11:43:31-04:00"
+            "date_published": "2020-06-19T13:47:41-04:00",
+            "date_modified": "2020-06-19T13:47:41-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/background.html",
@@ -90,8 +90,8 @@
                    "Drupal 8 ",
                    "Background"
             ],
-            "date_published": "2020-06-19T11:43:31-04:00",
-            "date_modified": "2020-06-19T11:43:31-04:00"
+            "date_published": "2020-06-19T13:47:41-04:00",
+            "date_modified": "2020-06-19T13:47:41-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html",
@@ -105,8 +105,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-06-19T11:43:31-04:00",
-            "date_modified": "2020-06-19T11:43:31-04:00"
+            "date_published": "2020-06-19T13:47:41-04:00",
+            "date_modified": "2020-06-19T13:47:41-04:00"
         }
     ]
 }
