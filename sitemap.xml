@@ -14,7 +14,7 @@
 </url>
 <url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/content-modeling.html</loc>
-<lastmod>2020-06-19T13:47:34-04:00</lastmod>
+<lastmod>2020-06-19T14:21:30-04:00</lastmod>
 <image:image>
 <image:loc>https://donrichards.github.io/migrate_islandora_csv/media/posts/3/diagram.png</image:loc>
 <image:title><![CDATA[Islandora 8 Architecture]]></image:title>
@@ -22,7 +22,7 @@
 </url>
 <url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/general-content-models.html</loc>
-<lastmod>2020-06-19T09:44:28-04:00</lastmod>
+<lastmod>2020-06-19T14:25:04-04:00</lastmod>
 <image:image>
 <image:loc>https://donrichards.github.io/migrate_islandora_csv/media/posts/4/PCDM_diagram.jpg</image:loc>
 <image:title><![CDATA[Islandora 8 PCDM diagram]]></image:title>
@@ -42,6 +42,25 @@
 <image:image>
 <image:loc>https://donrichards.github.io/migrate_islandora_csv/media/posts/1/seadragon-zoomed.jpg</image:loc>
 <image:title><![CDATA[]]></image:title>
+</image:image>
+</url>
+<url>
+<loc>https://donrichards.github.io/migrate_islandora_csv/other-content-types.html</loc>
+<lastmod>2020-06-19T14:49:00-04:00</lastmod>
+<image:image>
+<image:loc>https://donrichards.github.io/migrate_islandora_csv/media/posts/6/Screen-Shot-2020-06-19-at-2.44.27-PM.png</image:loc>
+<image:title><![CDATA[Drupal 8 Add Custom Content type]]></image:title>
+</image:image>
+</url>
+<url>
+<loc>https://donrichards.github.io/migrate_islandora_csv/page/2/</loc>
+</url>
+<url>
+<loc>https://donrichards.github.io/migrate_islandora_csv/uploading-ingesting-and-migration.html</loc>
+<lastmod>2020-06-19T15:17:43-04:00</lastmod>
+<image:image>
+<image:loc>https://donrichards.github.io/migrate_islandora_csv/media/posts/7/migration-middle-format-process.jpg</image:loc>
+<image:title><![CDATA[Typical Drupal 8 migration]]></image:title>
 </image:image>
 </url>
 </urlset>
