@@ -14,10 +14,26 @@
 </url>
 <url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/content-modeling.html</loc>
-<lastmod>2020-06-18T16:28:28-04:00</lastmod>
+<lastmod>2020-06-19T09:43:46-04:00</lastmod>
 <image:image>
 <image:loc>https://donrichards.github.io/migrate_islandora_csv/media/posts/3/diagram.png</image:loc>
 <image:title><![CDATA[Islandora 8 Architecture]]></image:title>
+</image:image>
+</url>
+<url>
+<loc>https://donrichards.github.io/migrate_islandora_csv/general-content-models.html</loc>
+<lastmod>2020-06-19T09:44:28-04:00</lastmod>
+<image:image>
+<image:loc>https://donrichards.github.io/migrate_islandora_csv/media/posts/4/PCDM_diagram.jpg</image:loc>
+<image:title><![CDATA[Islandora 8 PCDM diagram]]></image:title>
+</image:image>
+</url>
+<url>
+<loc>https://donrichards.github.io/migrate_islandora_csv/images-books-and-pages.html</loc>
+<lastmod>2020-06-19T10:29:56-04:00</lastmod>
+<image:image>
+<image:loc>https://donrichards.github.io/migrate_islandora_csv/media/posts/5/CONTENT-MODELING-DRUPAL8.jpg</image:loc>
+<image:title><![CDATA[Book viewer example]]></image:title>
 </image:image>
 </url>
 <url>

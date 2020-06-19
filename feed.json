@@ -11,11 +11,58 @@
     },
     "items": [
         {
+            "id": "https://donrichards.github.io/migrate_islandora_csv/images-books-and-pages.html",
+            "url": "https://donrichards.github.io/migrate_islandora_csv/images-books-and-pages.html",
+            "title": "Images, Books, and Pages",
+            "summary": "A suite of microservices (Crayfish) are initiated during the process of ingesting an object, which maps resources to Fedora and generates derivative files among other things. Unlike previous versions of Islandora, version 8 asynchronously manages and queues these microservices for scalability, stability, and speed. Specifically&hellip;",
+            "content_html": "<p>A suite of microservices (Crayfish) are initiated during the process of ingesting an object, which maps resources to Fedora and generates derivative files among other things. Unlike previous versions of Islandora, version 8 asynchronously manages and queues these microservices for scalability, stability, and speed. Specifically some of these microservices generate derivatives like thumbnails, browser sized images, and OCR. The system defaults come with OpenSeadragon with an IIIF image server. The viewer can be switched to Mirador or Universal Viewer with a relatively small amount of code (Zoller, 2019).</p>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85142859-f5bc3b80-b216-11ea-970a-86c91f02a527.jpeg\" data-is-external-image=\"true\"  alt=\"mirador_example\" /></figure></p>\n<ol>\n<li>Supports the deposit and characterization of preservation-quality large image (TIFs &amp; JP2s). This process creates derivatives including but not limited to technical metadata generation and other access media for browser consumption.</li>\n<li>Supports the deposit of books with preservation-quality large images as pages. Most objects in Islandora are treated like paged objects to begin with so there is little difference between a page versus a large image. The difference is the microservices that are triggered and how that changes the behavior of the viewer.</li>\n<li>Automates the generation of access copies and other derivatives when an object is ingested and/or modified. This includes but is not limited to lower resolution media for browsers and thumbnail image generation for small &amp; large images, video and audio files (Waveform generation from original audio file for thumbnail generation).</li>\n<li>Serves high quality access derivatives with image-zooming capability via a viewer (OpenSeaDragon, Mirador, or Universal Viewer). The default image viewer is Open Seadragon.</li>\n<li>Renders images with a IIIF image server.</li>\n<li>Automating the generation of the OCR microform is taken care of through Hypercube/Tesseract microservice. Tesseract is fully capable but it’s unclear how to configure Drupal to export hOCR. This may be user error and not a limitation of the stack.</li>\n<li>Allows for bulk uploads from the admin console. <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85143458-c659fe80-b217-11ea-90dd-f6f583c4c30e.png\" data-is-external-image=\"true\"  alt=\"bulk uploader\" /></figure></li>\n</ol>\n",
+            "image": "https://donrichards.github.io/migrate_islandora_csv/media/posts/5/CONTENT-MODELING-DRUPAL8.jpg",
+            "author": {
+                "name": "Don Richards"
+            },
+            "tags": [
+                   "viewer",
+                   "paged",
+                   "modeling",
+                   "derivative",
+                   "content model",
+                   "book",
+                   "Universal viewer",
+                   "OCR",
+                   "Mirador",
+                   "BigData"
+            ],
+            "date_published": "2020-06-19T10:30:07-04:00",
+            "date_modified": "2020-06-19T10:30:07-04:00"
+        },
+        {
+            "id": "https://donrichards.github.io/migrate_islandora_csv/general-content-models.html",
+            "url": "https://donrichards.github.io/migrate_islandora_csv/general-content-models.html",
+            "title": "General Content Models",
+            "summary": "Islandora 8 is a “complete integration between Drupal resources and a datastore, to manage RDF conversion and asset storage” (Summary, n.d.). Islandora 8 can be configured to use a variety of datastores but it defaults to Duraspace’s Fedora 5.x Repository. Islandora 8.x-1.x makes use of&hellip;",
+            "content_html": "<ol>\n<li><p>Islandora 8 is a “complete integration between Drupal resources and a datastore, to manage RDF conversion and asset storage” (Summary, n.d.). Islandora 8 can be configured to use a variety of datastores but it defaults to Duraspace’s Fedora 5.x Repository. Islandora 8.x-1.x makes use of the Portland Common Data Model (PCDM) as a layer of abstraction over LDPCs to make containment simpler to understand for users; a <em>pcdm:Collection</em> may contain other <em>pcdm:Collections</em> or <em>pcdm:Objects</em> (similar to an Islandora 7.x-1.x collection content model), and a <em>pcdm:Object</em> may contain other <em>pcdm:Objects</em> (similar to the way an Islandora 7.x-1.x compound object has child objects) or <em>pcdm:Files</em> (similar to the way Islandora 7.x-1.x objects have datastreams). (What’s the difference between Islandora 1.x and Islandora 8.x., n.d.). (See Figure 1 below.)</p>\n<p> <em>Figure 1: PCDM layers and how they relate to Drupal/Islandora resources (What’s the difference between Islandora 1.x and Islandora 8.x., n.d.).</em></p>\n</li>\n<li><p>Islandora uses Blazegraph for querying its triple store. “Blazegraph DB is an ultra high-performance graph database supporting Blueprints and RDF/SPARQL APIs. It supports up to 50 Billion edges on a single node.” (Blazegraph, n.d.). “This replaces Mulgara. Formerly known as BigData. The intended use is solely for maintaining performant support of large Fedora repositories containing millions of objects.” (Replacing Mulgara with Blazegraph for High-Performance Low-Level Storage, n.d.). [summarized <a href=\"https://islandora-collaboration-group.github.io/ISLE/optional-components/blazegraph/\">link</a>]</p>\n</li>\n</ol>\n<p>Islandora 8 supports nearly limitless use cases because of how the system is integrated to allow Drupal contributed modules to treat Fedora assets just like Drupal assets. The following are examples of use cases available in Islandora 8 and currently in varying stages of development. As they are active cases, most are not yet completely documented:</p>\n<ul>\n<li>Collections</li>\n<li>Images (Large sized TIff/JP2 &amp; typical size JPG/GIF/BMP) </li>\n<li>Paged content (Paged Content, n.d.)<ul>\n<li>Books (Paged Content, n.d.)</li>\n<li>Scrapbooks (mixed content books)</li>\n<li>Periodicals</li>\n<li>Newspapers</li>\n<li>Serials</li>\n<li>Photographs (with a front &amp; back), like postcards</li>\n<li>Compound</li>\n<li>Etc.</li>\n</ul>\n</li>\n<li>Video, Audio, and Oral History</li>\n<li>PDFs</li>\n<li>Binary files</li>\n<li>Exhibits [personally involved in the generation of this] (Jordan, Keiser-Clark, Richards, van Schaik, Stanley, &amp; Tillay, 2019)</li>\n<li>Scholarly<ul>\n<li>Journal article</li>\n<li>Presentation</li>\n<li>Poster</li>\n<li>Research data (1 set)</li>\n<li>Data Sets (2 or more sets)<ul>\n<li>An example of a Drupal module for datasets can be seen here: <a href=\"https://demo.getdkan.com/dataset/cedcd327-4e5d-43f9-8eb1-c11850fa7c55\">https://demo.getdkan.com/dataset/cedcd327-4e5d-43f9-8eb1-c11850fa7c55</a> (DKAN, n.d.)]</li>\n</ul>\n</li>\n<li>Modeling GIS Data (Mairo, 2019)</li>\n<li>Electronic Theses &amp; Dissertations (ETDs)</li>\n<li>Bibliography &amp; Citations (ADCI Solutions, 2017)</li>\n<li>Orcid (Shen, 2017)</li>\n<li>IRUS Counts (scholarly statistics)</li>\n<li>Utilization of Ontologies (BIBO, COAR, and SPAR) (Lamb, 2017). Currently conceptual, so it’s not certain  how complex it is.</li>\n</ul>\n</li>\n<li>Accessing Islandora with Amazon Alexa (Anez, 2019) </li>\n<li>Islandora Research Management Platform (O’Neill &amp; Stanley, 2020) </li>\n</ul>\n",
+            "image": "https://donrichards.github.io/migrate_islandora_csv/media/posts/4/PCDM_diagram.jpg",
+            "author": {
+                "name": "Don Richards"
+            },
+            "tags": [
+                   "stanley",
+                   "scholar",
+                   "portland",
+                   "fedora",
+                   "blazegraph",
+                   "PCDM",
+                   "BigData"
+            ],
+            "date_published": "2020-06-19T10:30:07-04:00",
+            "date_modified": "2020-06-19T10:30:07-04:00"
+        },
+        {
             "id": "https://donrichards.github.io/migrate_islandora_csv/content-modeling.html",
             "url": "https://donrichards.github.io/migrate_islandora_csv/content-modeling.html",
-            "title": "CONTENT MODELING",
+            "title": "Content Models Overview",
             "summary": "Islandora 8 compartmentalized content model behaviors by opting for a mix of microservices, context, and action solutions. Islandora objects are referred to as nodes. A node’s type is called a resource model. The resource models include (but are not limited to) audio, binary, collections, digital&hellip;",
-            "content_html": "<p>Islandora 8 compartmentalized content model behaviors by opting for a mix of microservices, context, and action solutions. Islandora objects are referred to as nodes. A node’s type is called a resource model. The resource models include (but are not limited to) audio, binary, collections, digital documents, images, pages, paged content, publication issue, and videos. In Islandora 7, content models refer to how derivatives are generated and how the object is displayed, however in Islandora 8 this concept doesn’t fit the behavior completely. When a model tag is applied to an object/node, this indicates to Drupal which context(s) to use resulting in corresponding actions to be fired. generating appropriate derivatives, resource mapping, and specifying an appropriate default viewer.</p>\n<p>“Islandora 8 Data Model. Between the original capabilities of Drupal 8, the wealth of available modules, and the work that has already been done with Islandora 8, nearly any standard Islandora 7 content model can be represented in Islandora 8 from the simple (binary, PDF, image, audio, video) to the complex (compounds, books, newspapers). This is all done via the Repository Item content model which contains nearly all of the fields necessary to describe any type of object, and is the core of most of Islandora 8’s Drupal features. Many Drupal views and contexts can be triggered by targeting one or more of the fields in a Repository Item node in a way that makes requiring separate content types unnecessary. Examples include changing the template for displaying a node based on what “type” it is, or changing the viewer that is used based on the type of file a node has.” [<a href=\"https://docs.google.com/document/d/11Y7kGyVlrRW3uIqFPzMgQ2nj3gzB3U2FEO75X2n3bo8\">link</a>]</p>\n<ul>\n<li>An object is a <em>node</em> (a.k.a. <em>content</em>).</li>\n<li>Nodes have properties that can be configured called <em>fields</em>.</li>\n<li>Fields for nodes are grouped together as <em>content types</em>.</li>\n<li>Datastreams are <em>media</em>, which are <em>files</em> that can have their own fields and <em>media types</em>.</li>\n<li>Metadata used to categorize entities are <em>taxonomy terms</em>, which also have their own fields and <em>vocabularies</em>. They can represent everything from simple labels to more complex concepts such as people, places, and subjects.</li>\n</ul>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85067990-952def80-b17f-11ea-810f-fc8c0b59e90b.png\" data-is-external-image=\"true\"  alt=\"diagram\" /></figure></p>\n",
+            "content_html": "<p>Islandora 8 compartmentalized content model behaviors by opting for a mix of microservices, context, and action solutions. Islandora objects are referred to as nodes. A node’s type is called a resource model. The resource models include (but are not limited to) audio, binary, collections, digital documents, images, pages, paged content, publication issue, and videos. In Islandora 7, content models refer to how derivatives are generated and how the object is displayed, however in Islandora 8 this concept doesn’t fit the behavior completely. When a model tag is applied to an object/node, this indicates to Drupal which context(s) to use resulting in corresponding actions to be fired. generating appropriate derivatives, resource mapping, and specifying an appropriate default viewer.</p>\n<p>“Islandora 8 Data Model. Between the original capabilities of Drupal 8, the wealth of available modules, and the work that has already been done with Islandora 8, nearly any standard Islandora 7 content model can be represented in Islandora 8 from the simple (binary, PDF, image, audio, video) to the complex (compounds, books, newspapers). This is all done via the Repository Item content model which contains nearly all of the fields necessary to describe any type of object, and is the core of most of Islandora 8’s Drupal features. Many Drupal views and contexts can be triggered by targeting one or more of the fields in a Repository Item node in a way that makes requiring separate content types unnecessary. Examples include changing the template for displaying a node based on what “type” it is, or changing the viewer that is used based on the type of file a node has.” [<a href=\"https://docs.google.com/document/d/11Y7kGyVlrRW3uIqFPzMgQ2nj3gzB3U2FEO75X2n3bo8\">link</a>]</p>\n<ul>\n<li>An object is a <em>node</em> (a.k.a. <em>content</em>).</li>\n<li>Nodes have properties that can be configured called <em>fields</em>.</li>\n<li>Fields for nodes are grouped together as <em>content types</em>.</li>\n<li>Datastreams are <em>media</em>, which are <em>files</em> that can have their own fields and <em>media types</em>.</li>\n<li>Metadata used to categorize entities are <em>taxonomy terms</em>, which also have their own fields and <em>vocabularies</em>. They can represent everything from simple labels to more complex concepts such as people, places, and subjects.</li>\n</ul>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://github.com/DonRichards/migrate_islandora_csv/raw/gh-pages/media/posts/3/diagram.png\" data-is-external-image=\"true\"  alt=\"diagram\" /></figure></p>\n",
             "image": "https://donrichards.github.io/migrate_islandora_csv/media/posts/3/diagram.png",
             "author": {
                 "name": "Don Richards"
@@ -25,8 +72,8 @@
                    "microservice",
                    "content modeling"
             ],
-            "date_published": "2020-06-19T09:14:36-04:00",
-            "date_modified": "2020-06-19T09:14:36-04:00"
+            "date_published": "2020-06-19T10:30:07-04:00",
+            "date_modified": "2020-06-19T10:30:07-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/background.html",
@@ -43,8 +90,8 @@
                    "Drupal 8 ",
                    "Background"
             ],
-            "date_published": "2020-06-19T09:14:36-04:00",
-            "date_modified": "2020-06-19T09:14:36-04:00"
+            "date_published": "2020-06-19T10:30:07-04:00",
+            "date_modified": "2020-06-19T10:30:07-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html",
@@ -57,8 +104,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-06-19T09:14:36-04:00",
-            "date_modified": "2020-06-19T09:14:36-04:00"
+            "date_published": "2020-06-19T10:30:07-04:00",
+            "date_modified": "2020-06-19T10:30:07-04:00"
         }
     ]
 }
