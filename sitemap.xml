@@ -13,6 +13,14 @@
 </image:image>
 </url>
 <url>
+<loc>https://donrichards.github.io/migrate_islandora_csv/content-modeling.html</loc>
+<lastmod>2020-06-18T16:28:28-04:00</lastmod>
+<image:image>
+<image:loc>https://donrichards.github.io/migrate_islandora_csv/media/posts/3/diagram.png</image:loc>
+<image:title><![CDATA[Islandora 8 Architecture]]></image:title>
+</image:image>
+</url>
+<url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html</loc>
 <lastmod>2020-06-18T15:44:59-04:00</lastmod>
 </url>
