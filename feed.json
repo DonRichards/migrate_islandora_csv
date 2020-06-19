@@ -15,7 +15,7 @@
             "url": "https://donrichards.github.io/migrate_islandora_csv/images-books-and-pages.html",
             "title": "Images, Books, and Pages",
             "summary": "A suite of microservices (Crayfish) are initiated during the process of ingesting an object, which maps resources to Fedora and generates derivative files among other things. Unlike previous versions of Islandora, version 8 asynchronously manages and queues these microservices for scalability, stability, and speed. Specifically&hellip;",
-            "content_html": "<p>A suite of microservices (Crayfish) are initiated during the process of ingesting an object, which maps resources to Fedora and generates derivative files among other things. Unlike previous versions of Islandora, version 8 asynchronously manages and queues these microservices for scalability, stability, and speed. Specifically some of these microservices generate derivatives like thumbnails, browser sized images, and OCR. The system defaults come with OpenSeadragon with an IIIF image server. The viewer can be switched to Mirador or Universal Viewer with a relatively small amount of code (Zoller, 2019).</p>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85142859-f5bc3b80-b216-11ea-970a-86c91f02a527.jpeg\" data-is-external-image=\"true\"  alt=\"mirador_example\" /></figure></p>\n<ol>\n<li>Supports the deposit and characterization of preservation-quality large image (TIFs &amp; JP2s). This process creates derivatives including but not limited to technical metadata generation and other access media for browser consumption.</li>\n<li>Supports the deposit of books with preservation-quality large images as pages. Most objects in Islandora are treated like paged objects to begin with so there is little difference between a page versus a large image. The difference is the microservices that are triggered and how that changes the behavior of the viewer.</li>\n<li>Automates the generation of access copies and other derivatives when an object is ingested and/or modified. This includes but is not limited to lower resolution media for browsers and thumbnail image generation for small &amp; large images, video and audio files (Waveform generation from original audio file for thumbnail generation).</li>\n<li>Serves high quality access derivatives with image-zooming capability via a viewer (OpenSeaDragon, Mirador, or Universal Viewer). The default image viewer is Open Seadragon.</li>\n<li>Renders images with a IIIF image server.</li>\n<li>Automating the generation of the OCR microform is taken care of through Hypercube/Tesseract microservice. Tesseract is fully capable but it’s unclear how to configure Drupal to export hOCR. This may be user error and not a limitation of the stack.</li>\n<li>Allows for bulk uploads from the admin console. <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85143458-c659fe80-b217-11ea-90dd-f6f583c4c30e.png\" data-is-external-image=\"true\"  alt=\"bulk uploader\" /></figure></li>\n</ol>\n",
+            "content_html": "<p>A suite of microservices (Crayfish) are initiated during the process of ingesting an object, which maps resources to Fedora and generates derivative files among other things. Unlike previous versions of Islandora, version 8 asynchronously manages and queues these microservices for scalability, stability, and speed. Specifically some of these microservices generate derivatives like thumbnails, browser sized images, and OCR. The system defaults come with OpenSeadragon with an IIIF image server. The viewer can be switched to Mirador or Universal Viewer with a relatively small amount of code (Zoller, 2019).</p>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85142859-f5bc3b80-b216-11ea-970a-86c91f02a527.jpeg\" data-is-external-image=\"true\"  alt=\"mirador_example\" /></figure></p>\n<ol>\n<li>Supports the deposit and characterization of preservation-quality large image (TIFs &amp; JP2s). This process creates derivatives including but not limited to technical metadata generation and other access media for browser consumption.</li>\n<li>Supports the deposit of books with preservation-quality large images as pages. Most objects in Islandora are treated like paged objects to begin with so there is little difference between a page versus a large image. The difference is the microservices that are triggered and how that changes the behavior of the viewer.</li>\n<li>Automates the generation of access copies and other derivatives when an object is ingested and/or modified. This includes but is not limited to lower resolution media for browsers and thumbnail image generation for small &amp; large images, video and audio files (Waveform generation from original audio file for thumbnail generation).</li>\n<li>Serves high quality access derivatives with image-zooming capability via a viewer (OpenSeaDragon, Mirador, or Universal Viewer). The default image viewer is Open Seadragon. <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85144983-e8ed1700-b219-11ea-8cec-6558ff985901.jpg\" data-is-external-image=\"true\"  alt=\"seadragon-zoomed\" /></figure></li>\n<li>Renders images with a IIIF image server.</li>\n<li>Automating the generation of the OCR microform is taken care of through Hypercube/Tesseract microservice. Tesseract is fully capable but it’s unclear how to configure Drupal to export hOCR. This may be user error and not a limitation of the stack.</li>\n<li>Allows for bulk uploads from the admin console. <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85143458-c659fe80-b217-11ea-90dd-f6f583c4c30e.png\" data-is-external-image=\"true\"  alt=\"bulk uploader\" /></figure></li>\n</ol>\n",
             "image": "https://donrichards.github.io/migrate_islandora_csv/media/posts/5/CONTENT-MODELING-DRUPAL8.jpg",
             "author": {
                 "name": "Don Richards"
@@ -32,8 +32,8 @@
                    "Mirador",
                    "BigData"
             ],
-            "date_published": "2020-06-19T10:30:07-04:00",
-            "date_modified": "2020-06-19T10:30:07-04:00"
+            "date_published": "2020-06-19T10:51:23-04:00",
+            "date_modified": "2020-06-19T10:51:23-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/general-content-models.html",
@@ -54,8 +54,8 @@
                    "PCDM",
                    "BigData"
             ],
-            "date_published": "2020-06-19T10:30:07-04:00",
-            "date_modified": "2020-06-19T10:30:07-04:00"
+            "date_published": "2020-06-19T10:51:23-04:00",
+            "date_modified": "2020-06-19T10:51:23-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/content-modeling.html",
@@ -72,8 +72,8 @@
                    "microservice",
                    "content modeling"
             ],
-            "date_published": "2020-06-19T10:30:07-04:00",
-            "date_modified": "2020-06-19T10:30:07-04:00"
+            "date_published": "2020-06-19T10:51:23-04:00",
+            "date_modified": "2020-06-19T10:51:23-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/background.html",
@@ -90,8 +90,8 @@
                    "Drupal 8 ",
                    "Background"
             ],
-            "date_published": "2020-06-19T10:30:07-04:00",
-            "date_modified": "2020-06-19T10:30:07-04:00"
+            "date_published": "2020-06-19T10:51:23-04:00",
+            "date_modified": "2020-06-19T10:51:23-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html",
@@ -104,8 +104,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-06-19T10:30:07-04:00",
-            "date_modified": "2020-06-19T10:30:07-04:00"
+            "date_published": "2020-06-19T10:51:23-04:00",
+            "date_modified": "2020-06-19T10:51:23-04:00"
         }
     ]
 }

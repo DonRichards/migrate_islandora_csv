@@ -27,7 +27,7 @@
             <category term="Mirador"/>
             <category term="BigData"/>
 
-        <updated>2020-06-19T10:30:07-04:00</updated>
+        <updated>2020-06-19T10:51:23-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/5/CONTENT-MODELING-DRUPAL8.jpg" alt="Book viewer example" />
@@ -43,7 +43,7 @@
 <li>Supports the deposit and characterization of preservation-quality large image (TIFs &amp; JP2s). This process creates derivatives including but not limited to technical metadata generation and other access media for browser consumption.</li>
 <li>Supports the deposit of books with preservation-quality large images as pages. Most objects in Islandora are treated like paged objects to begin with so there is little difference between a page versus a large image. The difference is the microservices that are triggered and how that changes the behavior of the viewer.</li>
 <li>Automates the generation of access copies and other derivatives when an object is ingested and/or modified. This includes but is not limited to lower resolution media for browsers and thumbnail image generation for small &amp; large images, video and audio files (Waveform generation from original audio file for thumbnail generation).</li>
-<li>Serves high quality access derivatives with image-zooming capability via a viewer (OpenSeaDragon, Mirador, or Universal Viewer). The default image viewer is Open Seadragon.</li>
+<li>Serves high quality access derivatives with image-zooming capability via a viewer (OpenSeaDragon, Mirador, or Universal Viewer). The default image viewer is Open Seadragon. <figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/85144983-e8ed1700-b219-11ea-8cec-6558ff985901.jpg" data-is-external-image="true"  alt="seadragon-zoomed" /></figure></li>
 <li>Renders images with a IIIF image server.</li>
 <li>Automating the generation of the OCR microform is taken care of through Hypercube/Tesseract microservice. Tesseract is fully capable but it’s unclear how to configure Drupal to export hOCR. This may be user error and not a limitation of the stack.</li>
 <li>Allows for bulk uploads from the admin console. <figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/85143458-c659fe80-b217-11ea-90dd-f6f583c4c30e.png" data-is-external-image="true"  alt="bulk uploader" /></figure></li>
@@ -67,7 +67,7 @@
             <category term="PCDM"/>
             <category term="BigData"/>
 
-        <updated>2020-06-19T10:30:07-04:00</updated>
+        <updated>2020-06-19T10:51:23-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/4/PCDM_diagram.jpg" alt="Islandora 8 PCDM diagram" />
@@ -138,7 +138,7 @@
             <category term="microservice"/>
             <category term="content modeling"/>
 
-        <updated>2020-06-19T10:30:07-04:00</updated>
+        <updated>2020-06-19T10:51:23-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/3/diagram.png" alt="Islandora 8 Architecture" />
@@ -173,7 +173,7 @@
             <category term="Drupal 8 "/>
             <category term="Background"/>
 
-        <updated>2020-06-19T10:30:07-04:00</updated>
+        <updated>2020-06-19T10:51:23-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/2/background.jpg" alt="100 universities using Drupal" />
@@ -201,7 +201,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html</id>
 
-        <updated>2020-06-19T10:30:07-04:00</updated>
+        <updated>2020-06-19T10:51:23-04:00</updated>
             <summary>
                 <![CDATA[
                     There are over 300 universities running Islandora according to the latest survey with 4 currently running Islandora 8 in production with several in beta. These numbers do not include government or private instances which commonly don’t report or aren’t publicly accessible like UTK’s TRACE. Here’s&hellip;
