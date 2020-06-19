@@ -45,6 +45,18 @@
 </image:image>
 </url>
 <url>
+<loc>https://donrichards.github.io/migrate_islandora_csv/metadata-and-metadata-sharing.html</loc>
+<lastmod>2020-06-19T16:21:05-04:00</lastmod>
+</url>
+<url>
+<loc>https://donrichards.github.io/migrate_islandora_csv/next-level-discoverability-solutions.html</loc>
+<lastmod>2020-06-19T16:25:09-04:00</lastmod>
+<image:image>
+<image:loc>https://donrichards.github.io/migrate_islandora_csv/media/posts/10/LTR_modeling.jpg</image:loc>
+<image:title><![CDATA[Learn to Rank]]></image:title>
+</image:image>
+</url>
+<url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/other-content-types.html</loc>
 <lastmod>2020-06-19T14:49:00-04:00</lastmod>
 <image:image>
@@ -54,6 +66,10 @@
 </url>
 <url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/page/2/</loc>
+</url>
+<url>
+<loc>https://donrichards.github.io/migrate_islandora_csv/preservation.html</loc>
+<lastmod>2020-06-19T16:07:14-04:00</lastmod>
 </url>
 <url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/uploading-ingesting-and-migration.html</loc>

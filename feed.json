@@ -11,6 +11,54 @@
     },
     "items": [
         {
+            "id": "https://donrichards.github.io/migrate_islandora_csv/next-level-discoverability-solutions.html",
+            "url": "https://donrichards.github.io/migrate_islandora_csv/next-level-discoverability-solutions.html",
+            "title": "Next Level Discoverability Solutions",
+            "summary": "A search/discoverability enhancement “Learning to Rank (LTR) is a class of techniques that apply supervised machine learning (ML) to solve ranking problems.“ [link] LTR is a query reranking Solr plugin. Another comment on this from [link] to better summarize LTR, “Learning to rank (LTR) is&hellip;",
+            "content_html": "<ol>\n<li>A search/discoverability enhancement “Learning to Rank (LTR) is a class of techniques that apply supervised machine learning (ML) to solve ranking problems.“ [<a href=\"https://medium.com/@nikhilbd/intuitive-explanation-of-learning-to-rank-and-ranknet-lambdarank-and-lambdamart-fe1e17fac418\">link</a>] LTR is a query reranking Solr plugin. Another comment on this from [<a href=\"https://lucidworks.com/post/abcs-learning-to-rank/\">link</a>] to better summarize LTR, “Learning to rank (LTR) is a class of algorithmic techniques that apply supervised machine learning to solve ranking problems in search relevancy. In other words, it’s what orders query results. Done well, you have happy employees and customers; done poorly, at best you have frustrations, and worse, they will never return.” <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85176643-48621b80-b248-11ea-8060-55991e6eddcf.jpg\" data-is-external-image=\"true\"  alt=\"LTR_modeling\" /></figure></li>\n<li>Automatic Alternative Text [<a href=\"https://www.drupal.org/project/auto_alter\">link</a>] implement AI capabilities into the process  <ol>\n<li>Detecting content</li>\n<li>Identifying faces/geographical features in a given image</li>\n<li>Determining the prevailing colors</li>\n</ol>\n</li>\n<li>Oxford Common File Layout Specification (OCFL) is coming next year with the release of Fedora 6.x according to Danny Lamb and David Wilcox. This should be available within Islandora as part of upgrading Fedora to 6.x.</li>\n</ol>\n",
+            "image": "https://donrichards.github.io/migrate_islandora_csv/media/posts/10/LTR_modeling.jpg",
+            "author": {
+                "name": "Don Richards"
+            },
+            "tags": [
+                   "tagging",
+                   "solr",
+                   "learn to rank",
+                   "LTR",
+                   "AI"
+            ],
+            "date_published": "2020-06-19T16:25:32-04:00",
+            "date_modified": "2020-06-19T16:25:32-04:00"
+        },
+        {
+            "id": "https://donrichards.github.io/migrate_islandora_csv/metadata-and-metadata-sharing.html",
+            "url": "https://donrichards.github.io/migrate_islandora_csv/metadata-and-metadata-sharing.html",
+            "title": "Metadata and Metadata sharing",
+            "summary": "RDF Mapping; “In Islandora, the JSON-LD Module transforms nodes (or media, or taxonomy terms) into the RDF that is synced into Fedora and the Triplestore. It uses RDF mappings, a concept defined by the RDF Module, and exposes them through the REST API” (RDF Generation,&hellip;",
+            "content_html": "<ol>\n<li>RDF Mapping; “In Islandora, the JSON-LD Module transforms nodes (or media, or taxonomy terms) into the RDF that is synced into Fedora and the Triplestore. It uses RDF mappings, a concept defined by the RDF Module, and exposes them through the REST API” (RDF Generation, n.d.).<ol>\n<li>“The RDF Module is part of Drupal Core, but has no official documentation. The RDF Module embeds RDFa, a form of linked data, within the Drupal-generated HTML when you load the web page for a node, media, or taxonomy term. Official line is that this will allow Google to provide “rich snippets” such as star-ratings, contact info, and business hours.” [<a href=\"https://islandora.github.io/documentation/islandora/rdf-mapping/\">link</a>]</li>\n<li>A custom module rdfui exists, and is installed-but-not-enabled on boxes provisioned by the islandora-playbook. We don’t use it because it is very rudimentary and limited to the schema.org vocabulary. </li>\n<li>URI Mapping with persistent identifiers [<a href=\"https://github.com/mjordan/persistent_identifiers\">link</a>]</li>\n<li>The Dupal Schema.org Dataset module recently updated to extend the schema.org metatag module to support schema.org dataset spec. “DOI minting is part of UPEI’s publication workflow, where the system only registers the dataset with Datacite when a curator user ‘publishes’ the dataset, making it public. At that point it sends an XML version of the node fields content to Dataset’s API” [paraphrased from Alexander O’Neill from UPEI via slack chat] <a href=\"https://www.drupal.org/project/schema_dataset\">https://www.drupal.org/project/schema_dataset</a></li>\n</ol>\n</li>\n<li>Migrating metadata (even complex metadata) is a simple process. In controlled_access_terms, we have an understanding of a typed_relation, which is an entity reference coupled with a MARC relator. The migration script expects an associative array that looks like this: <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85176275-7430d180-b247-11ea-9841-a5086a7ea3f7.png\" data-is-external-image=\"true\"  alt=\"associative_array\" /></figure></li>\n</ol>\n<p>This is an example of the JSON output for an imported value. To see any entity’s json value add <code>_?_format=json_</code> at the end of the URL of the entity. <code>_jsonld_</code> will work as well to get the jsonld values as well. Example, <em><a href=\"http://localhost:8000/taxonomy/term/339?_format=json\">http://localhost:8000/taxonomy/term/339?_format=json</a></em> \n<figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85176333-99bddb00-b247-11ea-8ac7-77573747ae3f.png\" data-is-external-image=\"true\"  alt=\"example_json\" /></figure></p>\n<ol start=\"5\">\n<li>Although not absolutely essential it is my understanding that taxonomy vocabulary to categorized metadata should be migrated as entities first before the Islandora 7 objects and their metadata. Generating taxonomy from within a node’s migration is limited. For instance, a Subject’s authority has a title, associated authority and a URI. Automatically generating the subject from within the node migration limits to only the title. Whereas a separate migration allows for all 3 fields to be imported and referenced. Here is the list of taxonomy vocabulary list of “_categories_” of metadata.<ol>\n<li><strong>Corporate Body,</strong> an organization or group of persons that is identified by a particular name</li>\n<li><strong>Family,</strong> two or more who present themselves as a family</li>\n<li><strong>Genre</strong>,  a category characterizing a particular style</li>\n<li><strong>Geographic Location</strong>, Geographic area</li>\n<li><strong>Islandora access</strong>, Terms used to limit, restrict or coordinate access</li>\n<li><strong>Person</strong>, an individual of the human species.</li>\n<li><strong>Subject</strong>, topics, events, people, and organizations.</li>\n</ol>\n</li>\n</ol>\n",
+            "author": {
+                "name": "Don Richards"
+            },
+            "tags": [
+            ],
+            "date_published": "2020-06-19T16:25:32-04:00",
+            "date_modified": "2020-06-19T16:25:32-04:00"
+        },
+        {
+            "id": "https://donrichards.github.io/migrate_islandora_csv/preservation.html",
+            "url": "https://donrichards.github.io/migrate_islandora_csv/preservation.html",
+            "title": "Preservation",
+            "summary": "Islandora 8 uses FITS, Fixity auditing, bag exporting, and preservation reporting for preservation (Jordan, 2019).Leverages Fedora 5 as the preservation layer. According to SFU’s Library DPF Action Plan in the following snippet [link] Supports versioning of binaries within an object. Islandora processes all objects as&hellip;",
+            "content_html": "<ol>\n<li>Islandora 8 uses FITS, Fixity auditing, bag exporting, and preservation reporting for preservation (Jordan, 2019).</li>\n<li>Leverages Fedora 5 as the preservation layer. <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85175851-6890db00-b246-11ea-92f2-afec89a71145.png\" data-is-external-image=\"true\"  alt=\"sfu_doc\" /></figure> According to SFU’s Library DPF Action Plan in the following snippet [link] </li>\n<li>Supports versioning of binaries within an object. Islandora processes all objects as binary objects into Fedora.</li>\n</ol>\n",
+            "author": {
+                "name": "Don Richards"
+            },
+            "tags": [
+            ],
+            "date_published": "2020-06-19T16:25:32-04:00",
+            "date_modified": "2020-06-19T16:25:32-04:00"
+        },
+        {
             "id": "https://donrichards.github.io/migrate_islandora_csv/uploading-ingesting-and-migration.html",
             "url": "https://donrichards.github.io/migrate_islandora_csv/uploading-ingesting-and-migration.html",
             "title": "Uploading, ingesting, and migration",
@@ -29,8 +77,8 @@
                    "MODS",
                    "CSV"
             ],
-            "date_published": "2020-06-19T15:18:51-04:00",
-            "date_modified": "2020-06-19T15:18:51-04:00"
+            "date_published": "2020-06-19T16:25:32-04:00",
+            "date_modified": "2020-06-19T16:25:32-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/other-content-types.html",
@@ -56,8 +104,8 @@
                    "PDF",
                    "Moore"
             ],
-            "date_published": "2020-06-19T15:18:51-04:00",
-            "date_modified": "2020-06-19T15:18:51-04:00"
+            "date_published": "2020-06-19T16:25:32-04:00",
+            "date_modified": "2020-06-19T16:25:32-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/images-books-and-pages.html",
@@ -81,8 +129,8 @@
                    "Mirador",
                    "BigData"
             ],
-            "date_published": "2020-06-19T15:18:51-04:00",
-            "date_modified": "2020-06-19T15:18:51-04:00"
+            "date_published": "2020-06-19T16:25:32-04:00",
+            "date_modified": "2020-06-19T16:25:32-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/general-content-models.html",
@@ -103,8 +151,8 @@
                    "PCDM",
                    "BigData"
             ],
-            "date_published": "2020-06-19T15:18:51-04:00",
-            "date_modified": "2020-06-19T15:18:51-04:00"
+            "date_published": "2020-06-19T16:25:32-04:00",
+            "date_modified": "2020-06-19T16:25:32-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/content-modeling.html",
@@ -121,8 +169,8 @@
                    "microservice",
                    "content modeling"
             ],
-            "date_published": "2020-06-19T15:18:51-04:00",
-            "date_modified": "2020-06-19T15:18:51-04:00"
+            "date_published": "2020-06-19T16:25:32-04:00",
+            "date_modified": "2020-06-19T16:25:32-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/background.html",
@@ -139,8 +187,8 @@
                    "Drupal 8 ",
                    "Background"
             ],
-            "date_published": "2020-06-19T15:18:51-04:00",
-            "date_modified": "2020-06-19T15:18:51-04:00"
+            "date_published": "2020-06-19T16:25:32-04:00",
+            "date_modified": "2020-06-19T16:25:32-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html",
@@ -154,8 +202,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-06-19T15:18:51-04:00",
-            "date_modified": "2020-06-19T15:18:51-04:00"
+            "date_published": "2020-06-19T16:25:32-04:00",
+            "date_modified": "2020-06-19T16:25:32-04:00"
         }
     ]
 }
