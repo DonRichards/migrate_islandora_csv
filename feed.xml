@@ -27,7 +27,7 @@
             <category term="Mirador"/>
             <category term="BigData"/>
 
-        <updated>2020-06-19T10:51:23-04:00</updated>
+        <updated>2020-06-19T11:43:31-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/5/CONTENT-MODELING-DRUPAL8.jpg" alt="Book viewer example" />
@@ -67,7 +67,7 @@
             <category term="PCDM"/>
             <category term="BigData"/>
 
-        <updated>2020-06-19T10:51:23-04:00</updated>
+        <updated>2020-06-19T11:43:31-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/4/PCDM_diagram.jpg" alt="Islandora 8 PCDM diagram" />
@@ -138,7 +138,7 @@
             <category term="microservice"/>
             <category term="content modeling"/>
 
-        <updated>2020-06-19T10:51:23-04:00</updated>
+        <updated>2020-06-19T11:43:31-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/3/diagram.png" alt="Islandora 8 Architecture" />
@@ -173,7 +173,7 @@
             <category term="Drupal 8 "/>
             <category term="Background"/>
 
-        <updated>2020-06-19T10:51:23-04:00</updated>
+        <updated>2020-06-19T11:43:31-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/2/background.jpg" alt="100 universities using Drupal" />
@@ -201,14 +201,16 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html</id>
 
-        <updated>2020-06-19T10:51:23-04:00</updated>
+        <updated>2020-06-19T11:43:31-04:00</updated>
             <summary>
                 <![CDATA[
+                        <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/1/seadragon-zoomed.jpg" alt="" />
                     There are over 300 universities running Islandora according to the latest survey with 4 currently running Islandora 8 in production with several in beta. These numbers do not include government or private instances which commonly don’t report or aren’t publicly accessible like UTK’s TRACE. Here’s&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
+                    <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/1/seadragon-zoomed.jpg" alt="" />
                 <p>There are over 300 universities running Islandora according to the latest survey with 4 currently running Islandora 8 in production with several in beta. These numbers do not include government or private instances which commonly don’t report or aren’t publicly accessible like UTK’s <a href="https://trace.utk.edu">TRACE</a>. </p>
 <h1 id="quick-summary">Quick Summary</h1>
 <p>Here’s a list of all the Islandora features currently available with the 1.1.0 release (including those that come for free from contributed modules):</p>
