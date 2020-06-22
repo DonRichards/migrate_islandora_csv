@@ -22,7 +22,7 @@
             <category term="LTR"/>
             <category term="AI"/>
 
-        <updated>2020-06-22T14:12:30-04:00</updated>
+        <updated>2020-06-22T15:19:09-04:00</updated>
             <summary>
                 <![CDATA[
                     A search/discoverability enhancement “Learning to Rank (LTR) is a class of techniques that apply supervised machine learning (ML) to solve ranking problems.“ [link] LTR is a query reranking Solr plugin. Another comment on this from [link] to better summarize LTR, “Learning to rank (LTR) is&hellip;
@@ -65,7 +65,7 @@
             <category term="JSON"/>
             <category term="API"/>
 
-        <updated>2020-06-22T14:12:30-04:00</updated>
+        <updated>2020-06-22T15:19:09-04:00</updated>
             <summary>
                 <![CDATA[
                     RDF Mapping; “In Islandora, the JSON-LD Module transforms nodes (or media, or taxonomy terms) into the RDF that is synced into Fedora and the Triplestore. It uses RDF mappings, a concept defined by the RDF Module, and exposes them through the REST API” (RDF Generation,&hellip;
@@ -77,7 +77,7 @@
 <li>RDF Mapping; “In Islandora, the JSON-LD Module transforms nodes (or media, or taxonomy terms) into the RDF that is synced into Fedora and the Triplestore. It uses RDF mappings, a concept defined by the RDF Module, and exposes them through the REST API” (RDF Generation, n.d.).<ol>
 <li>“The RDF Module is part of Drupal Core, but has no official documentation. The RDF Module embeds RDFa, a form of linked data, within the Drupal-generated HTML when you load the web page for a node, media, or taxonomy term. Official line is that this will allow Google to provide “rich snippets” such as star-ratings, contact info, and business hours.” [<a href="https://islandora.github.io/documentation/islandora/rdf-mapping/">link</a>]</li>
 <li>A custom module rdfui exists, and is installed-but-not-enabled on boxes provisioned by the islandora-playbook. We don’t use it because it is very rudimentary and limited to the schema.org vocabulary. </li>
-<li>URI Mapping with persistent identifiers [<a href="https://github.com/mjordan/persistent_identifiers">link</a>]</li>
+<li>URI Mapping with persistent identifiers. With access to an API for minting persistent identifiers (e.g., DataCite, EZID, etc.).  <figure class="post__image"><img loading="lazy" src="https://github.com/mjordan/persistent_identifiers/raw/master/docs/images/mint_checkbox.png" data-is-external-image="true"  alt="mint persistent_identifiers" /></figure> [<a href="https://github.com/mjordan/persistent_identifiers">link</a>]</li>
 <li>The Dupal Schema.org Dataset module recently updated to extend the schema.org metatag module to support schema.org dataset spec. “DOI minting is part of UPEI’s publication workflow, where the system only registers the dataset with Datacite when a curator user ‘publishes’ the dataset, making it public. At that point it sends an XML version of the node fields content to Dataset’s API” [paraphrased from Alexander O’Neill from UPEI via slack chat] <a href="https://www.drupal.org/project/schema_dataset">https://www.drupal.org/project/schema_dataset</a></li>
 </ol>
 </li>
@@ -109,18 +109,19 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/preservation.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/preservation.html</id>
 
-        <updated>2020-06-22T14:12:30-04:00</updated>
+        <updated>2020-06-22T15:19:09-04:00</updated>
             <summary>
                 <![CDATA[
-                    Islandora 8 uses FITS, Fixity auditing, bag exporting, and preservation reporting for preservation (Jordan, 2019).Leverages Fedora 5 as the preservation layer. According to SFU’s Library DPF Action Plan in the following snippet [link] Supports versioning of binaries within an object. Islandora processes all objects as&hellip;
+                    Islandora 8 utilizes Harvard’s File Information Tool Set (FITS), Fixity auditing, bag exporting, and preservation reporting for preservation (Jordan, 2019).Leverages Fedora 5 as the preservation layer. According to SFU’s Library DPF Action Plan in the following snippet [link]Supports versioning of binaries within an object. Islandora&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
                 <ol>
-<li>Islandora 8 uses FITS, Fixity auditing, bag exporting, and preservation reporting for preservation (Jordan, 2019).</li>
-<li>Leverages Fedora 5 as the preservation layer. <figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/85175851-6890db00-b246-11ea-92f2-afec89a71145.png" data-is-external-image="true"  alt="sfu_doc" /></figure> According to SFU’s Library DPF Action Plan in the following snippet [link] </li>
-<li>Supports versioning of binaries within an object. Islandora processes all objects as binary objects into Fedora.</li>
+<li>Islandora 8 utilizes Harvard’s File Information Tool Set (FITS), Fixity auditing, bag exporting, and preservation reporting for preservation (Jordan, 2019).</li>
+<li>Leverages Fedora 5 as the preservation layer. <figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/85175851-6890db00-b246-11ea-92f2-afec89a71145.png" data-is-external-image="true"  alt="sfu_doc" /></figure> According to SFU’s Library DPF Action Plan in the following snippet [link]</li>
+<li>Supports versioning of binaries within an object. Islandora processes all objects as binary objects into Fedora. <pre><code>   a. The migration process currently does not support migrating old versions of an object. This can be done but will take some custom processing.</code></pre></li>
+<li>Islandora 8 leverages PCDM classes for means to keep the preservation file system layer oganized. <figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/5439169/58195794-a6a38000-7c7d-11e9-8050-7b7a6817bd9d.png" data-is-external-image="true"  alt="Islandora Object in Drupal and Fedora as original file" /></figure></li>
 </ol>
 
             ]]>
@@ -141,7 +142,7 @@
             <category term="MODS"/>
             <category term="CSV"/>
 
-        <updated>2020-06-22T14:12:30-04:00</updated>
+        <updated>2020-06-22T15:19:09-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/7/migration-middle-format-process.jpg" alt="Typical Drupal 8 migration" />
@@ -192,7 +193,7 @@
             <category term="PDF"/>
             <category term="Moore"/>
 
-        <updated>2020-06-22T14:12:30-04:00</updated>
+        <updated>2020-06-22T15:19:09-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/6/Screen-Shot-2020-06-19-at-2.44.27-PM.png" alt="Drupal 8 Add Custom Content type" />
@@ -232,7 +233,7 @@
             <category term="Mirador"/>
             <category term="BigData"/>
 
-        <updated>2020-06-22T14:12:30-04:00</updated>
+        <updated>2020-06-22T15:19:09-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/5/CONTENT-MODELING-DRUPAL8.jpg" alt="Book viewer example" />
@@ -272,7 +273,7 @@
             <category term="PCDM"/>
             <category term="BigData"/>
 
-        <updated>2020-06-22T14:12:30-04:00</updated>
+        <updated>2020-06-22T15:19:09-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/4/PCDM_diagram.jpg" alt="Islandora 8 PCDM diagram" />
@@ -344,7 +345,7 @@
             <category term="microservice"/>
             <category term="content modeling"/>
 
-        <updated>2020-06-22T14:12:30-04:00</updated>
+        <updated>2020-06-22T15:19:09-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/3/diagram.png" alt="Islandora 8 Architecture" />
@@ -379,7 +380,7 @@
             <category term="Drupal 8 "/>
             <category term="Background"/>
 
-        <updated>2020-06-22T14:12:30-04:00</updated>
+        <updated>2020-06-22T15:19:09-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/2/background.jpg" alt="100 universities using Drupal" />
@@ -389,12 +390,11 @@
         <content type="html">
             <![CDATA[
                     <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/2/background.jpg" alt="100 universities using Drupal" />
-                <p>Islandora 7 is a monolithic application that glues Drupal 6/7 to Fedora 3 with an optional institutional repository (IR) addon. Islandora 7 had several pain points, such as workflows, most of which required substantial coding to work around these issues. Although Islandora is  a collection of several Drupal 6/7 modules, it wasn’t written in a way that leveraged much of Drupal’s content management functionality. Fortunately for 8 this has been remedied.</p>
-<p><figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/85065965-0cfa1b00-b17c-11ea-83c6-cb08ebd23ff9.png" data-is-external-image="true"  alt="I8" /></figure></p>
+                <p>Islandora 7 is a monolithic application that glues Drupal 6/7 to Fedora 3 with an optional institutional repository (IR) addon. Islandora 7 had several pain points, such as workflows, most of which required substantial coding to work around these issues. Although Islandora is  a collection of several Drupal 6/7 modules, it wasn’t written in a way that leveraged much of Drupal’s content management functionality. Fortunately the release of Drupal 8 has remedied this.</p>
 <p>The Drupal 8 release in 2015 had a major overhaul of the code base. This meant that upgrading from Drupal 7 into Drupal 8 broke content libraries, functions, and theming. Drupal 8’s migration is an Extract, Transform, Load (ETL) process as part of its Migrate API. The data can come from a variety of places; a database, CSV, JSON, or REST function, and then transformed, imported, and processed (Migrate API overview, 2019).</p>
-<p>Future upgrades of Drupal versions will look substantially different than before. Gone are the days of major migration planning as Drupal has completely overhauled their application lifecycle. With Drupal 9 being released in June 2020 the process of upgrading won’t cause any loss in functionality or any libraries to break; the core is completely backwards compatible. This important feature was adopted  for the new life cycle for all future version releases. It was explained simply by Alex Lopez, “You’ll just get notices advising you to upgrade libraries, function calls, and anything else in your code that would make your module incompatible with a Drupal 10 version. But, theoretically, nothing that would break your module/site.”(2018). A large focus of Drupal core and module development for the 8 release was on specific industries, including but not limited to big data and higher education. “Build a wide range of solutions from university websites, applications, scholarly publishing, and more.” (Drupal for education, 2020).</p>
+<p>Future upgrades of Drupal versions will look substantially different than before. Gone are the days of major migration planning as Drupal has completely overhauled their application lifecycle. Drupal 9 was released in June 2020 the process of upgrading won’t cause any loss in functionality or any libraries to break; the core is completely backwards compatible. This important feature was adopted  for the new life cycle for all future version releases. It was explained simply by Alex Lopez, “You’ll just get notices advising you to upgrade libraries, function calls, and anything else in your code that would make your module incompatible with a Drupal 10 version. But, theoretically, nothing that would break your module/site.”(2018). A large focus of Drupal core and module development for the 8 release was on specific industries, including but not limited to big data and higher education. “Build a wide range of solutions from university websites, applications, scholarly publishing, and more.” (Drupal for education, 2020).</p>
 <p><figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/85065822-db814f80-b17b-11ea-8eb5-4ee294bae8fb.jpg" data-is-external-image="true"  alt="background" /></figure></p>
-<p>Islandora changed the development approach to align with Drupal 8’s direction. A major focus on Islandora 8 is to build the stack in a way that fully utilizes Drupal 8 and make the contributed modules available. There are so many modules currently  developed and actively managed by other institutions that provide content modeling  and developing metadata has become exceedingly easier. As the need for IRs increases, the number of options available have increased as well making it sometimes difficult to sift through to find the best option for the community. Since these are so new, many of these lack sufficient documentation or guidance on how to best utilize the modules for a digital or institutional repository. The Islandora community makes every effort to bring content models together by research, community vetting, writing documentation, and creating solutions to help provide a ready made (turn key) solution.Islandora 8 content is now utilizing Drupal nodes as the primary representation instead of how Islandora 7 overwrote Drupal routing to provide an object and it’s content. Islandora 8 content is Drupal content (stored in Fedora 5) and is completely compatible with 3rd party addons.</p>
+<p>Islandora changed the development approach to align with Drupal 8’s direction. A major focus on Islandora 8 is to build the stack in a way that fully utilizes Drupal 8 and make the contributed modules available. There are so many modules currently  developed and actively managed by other institutions that provide content modeling  and developing metadata has become exceedingly easier. As the need for IRs increases, the number of options available have increased as well making it sometimes difficult to sift through to find the best option for the community. Since these are so new, many of these lack sufficient documentation or guidance on how to best utilize the modules for a digital or institutional repository. The Islandora community makes every effort to bring content models together by research, community vetting, writing documentation, and creating solutions to help provide a ready made (turn key) solution. Islandora 8 content is now utilizing Drupal nodes as the primary representation instead of how Islandora 7 overwrote Drupal routing to provide an object and it’s content. Islandora 8 content is Drupal content (stored in Fedora 5) and is completely compatible with 3rd party addons. In almost every cases the Islandora content is treated exactly the same as any other content imported into a base Drupal. </p>
 
             ]]>
         </content>
@@ -407,7 +407,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html</id>
 
-        <updated>2020-06-22T14:12:30-04:00</updated>
+        <updated>2020-06-22T15:19:09-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/1/seadragon-zoomed.jpg" alt="" />
