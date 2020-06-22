@@ -46,15 +46,11 @@
 </url>
 <url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/metadata-and-metadata-sharing.html</loc>
-<lastmod>2020-06-19T16:21:05-04:00</lastmod>
+<lastmod>2020-06-22T14:12:02-04:00</lastmod>
 </url>
 <url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/next-level-discoverability-solutions.html</loc>
-<lastmod>2020-06-19T16:25:09-04:00</lastmod>
-<image:image>
-<image:loc>https://donrichards.github.io/migrate_islandora_csv/media/posts/10/LTR_modeling.jpg</image:loc>
-<image:title><![CDATA[Learn to Rank]]></image:title>
-</image:image>
+<lastmod>2020-06-22T14:10:04-04:00</lastmod>
 </url>
 <url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/other-content-types.html</loc>
@@ -73,7 +69,7 @@
 </url>
 <url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/uploading-ingesting-and-migration.html</loc>
-<lastmod>2020-06-19T15:17:43-04:00</lastmod>
+<lastmod>2020-06-22T12:23:34-04:00</lastmod>
 <image:image>
 <image:loc>https://donrichards.github.io/migrate_islandora_csv/media/posts/7/migration-middle-format-process.jpg</image:loc>
 <image:title><![CDATA[Typical Drupal 8 migration]]></image:title>

@@ -22,25 +22,24 @@
             <category term="LTR"/>
             <category term="AI"/>
 
-        <updated>2020-06-19T16:25:32-04:00</updated>
+        <updated>2020-06-22T14:12:30-04:00</updated>
             <summary>
                 <![CDATA[
-                        <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/10/LTR_modeling.jpg" alt="Learn to Rank" />
                     A search/discoverability enhancement “Learning to Rank (LTR) is a class of techniques that apply supervised machine learning (ML) to solve ranking problems.“ [link] LTR is a query reranking Solr plugin. Another comment on this from [link] to better summarize LTR, “Learning to rank (LTR) is&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
-                    <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/10/LTR_modeling.jpg" alt="Learn to Rank" />
                 <ol>
 <li>A search/discoverability enhancement “Learning to Rank (LTR) is a class of techniques that apply supervised machine learning (ML) to solve ranking problems.“ [<a href="https://medium.com/@nikhilbd/intuitive-explanation-of-learning-to-rank-and-ranknet-lambdarank-and-lambdamart-fe1e17fac418">link</a>] LTR is a query reranking Solr plugin. Another comment on this from [<a href="https://lucidworks.com/post/abcs-learning-to-rank/">link</a>] to better summarize LTR, “Learning to rank (LTR) is a class of algorithmic techniques that apply supervised machine learning to solve ranking problems in search relevancy. In other words, it’s what orders query results. Done well, you have happy employees and customers; done poorly, at best you have frustrations, and worse, they will never return.” <figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/85176643-48621b80-b248-11ea-8060-55991e6eddcf.jpg" data-is-external-image="true"  alt="LTR_modeling" /></figure></li>
-<li>Automatic Alternative Text [<a href="https://www.drupal.org/project/auto_alter">link</a>] implement AI capabilities into the process  <ol>
-<li>Detecting content</li>
-<li>Identifying faces/geographical features in a given image</li>
-<li>Determining the prevailing colors</li>
-</ol>
+<li>Automatic Alternative Text [<a href="https://www.drupal.org/project/auto_alter">link</a>] implement AI capabilities into the process <figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/85311654-c2caaf80-b483-11ea-905f-521f304b6535.jpg" data-is-external-image="true"  alt="ai" /></figure> 
+ i. Detecting content
+ ii. Identifying faces/geographical features in a given image
+ iii. Determining the prevailing colors</li>
+<li>Oxford Common File Layout Specification (OCFL) is coming next year with the release of Fedora 6.x according to Danny Lamb and David Wilcox. This should be available within Islandora as part of upgrading Fedora to 6.x. <blockquote>
+<p>The previously mentioned disadvantages of the Fedora API may be mitigated by a relatedcommunity initiative called the Oxford Common File Layout (OCFL). The OCFL is acommunity-based effort to develop “an application-independent approach to the storage ofdigital information in a structured, transparent, and predictable manner. It is designed topromote long-term object management best practices within digital repositories.” The originalidea for this effort came from a Fedora Camp hosted at the University of Oxford in September2017, so it has roots in the Fedora community even though the OCFL is not dependent onFedora in any way. However, if Fedora were to store repository resources as specified by theOCFL, major upgrades in the future may become much easier. One of the primary motivatinguse cases of the OCFL is to reduce the need for data migrations; both because moving largeamounts of data is time-consuming and because such migrations risk data corruption and loss.The OCFL decouples the structure of files on disk from the application(s) that manage the filesby defining a file and folder hierarchy to which applications must conform. Thus, the files can beleft in place and new software applications can implement the OCFL specification in order tomanage the files. - [<a href="https://wiki.lyrasis.org/download/attachments/131533003/Designing%20a%20Migration%20Path%20-%20Final%20Report.pdf">link</a>]</p>
+</blockquote>
 </li>
-<li>Oxford Common File Layout Specification (OCFL) is coming next year with the release of Fedora 6.x according to Danny Lamb and David Wilcox. This should be available within Islandora as part of upgrading Fedora to 6.x.</li>
 </ol>
 
             ]]>
@@ -53,8 +52,20 @@
         </author>
         <link href="https://donrichards.github.io/migrate_islandora_csv/metadata-and-metadata-sharing.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/metadata-and-metadata-sharing.html</id>
+            <category term="taxonomy"/>
+            <category term="subject"/>
+            <category term="sharing"/>
+            <category term="mapping"/>
+            <category term="linked data"/>
+            <category term="genre"/>
+            <category term="Schema"/>
+            <category term="RDFa"/>
+            <category term="RDF"/>
+            <category term="JSON-LD"/>
+            <category term="JSON"/>
+            <category term="API"/>
 
-        <updated>2020-06-19T16:25:32-04:00</updated>
+        <updated>2020-06-22T14:12:30-04:00</updated>
             <summary>
                 <![CDATA[
                     RDF Mapping; “In Islandora, the JSON-LD Module transforms nodes (or media, or taxonomy terms) into the RDF that is synced into Fedora and the Triplestore. It uses RDF mappings, a concept defined by the RDF Module, and exposes them through the REST API” (RDF Generation,&hellip;
@@ -98,7 +109,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/preservation.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/preservation.html</id>
 
-        <updated>2020-06-19T16:25:32-04:00</updated>
+        <updated>2020-06-22T14:12:30-04:00</updated>
             <summary>
                 <![CDATA[
                     Islandora 8 uses FITS, Fixity auditing, bag exporting, and preservation reporting for preservation (Jordan, 2019).Leverages Fedora 5 as the preservation layer. According to SFU’s Library DPF Action Plan in the following snippet [link] Supports versioning of binaries within an object. Islandora processes all objects as&hellip;
@@ -130,7 +141,7 @@
             <category term="MODS"/>
             <category term="CSV"/>
 
-        <updated>2020-06-19T16:25:32-04:00</updated>
+        <updated>2020-06-22T14:12:30-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/7/migration-middle-format-process.jpg" alt="Typical Drupal 8 migration" />
@@ -181,7 +192,7 @@
             <category term="PDF"/>
             <category term="Moore"/>
 
-        <updated>2020-06-19T16:25:32-04:00</updated>
+        <updated>2020-06-22T14:12:30-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/6/Screen-Shot-2020-06-19-at-2.44.27-PM.png" alt="Drupal 8 Add Custom Content type" />
@@ -221,7 +232,7 @@
             <category term="Mirador"/>
             <category term="BigData"/>
 
-        <updated>2020-06-19T16:25:32-04:00</updated>
+        <updated>2020-06-22T14:12:30-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/5/CONTENT-MODELING-DRUPAL8.jpg" alt="Book viewer example" />
@@ -261,7 +272,7 @@
             <category term="PCDM"/>
             <category term="BigData"/>
 
-        <updated>2020-06-19T16:25:32-04:00</updated>
+        <updated>2020-06-22T14:12:30-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/4/PCDM_diagram.jpg" alt="Islandora 8 PCDM diagram" />
@@ -333,7 +344,7 @@
             <category term="microservice"/>
             <category term="content modeling"/>
 
-        <updated>2020-06-19T16:25:32-04:00</updated>
+        <updated>2020-06-22T14:12:30-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/3/diagram.png" alt="Islandora 8 Architecture" />
@@ -368,7 +379,7 @@
             <category term="Drupal 8 "/>
             <category term="Background"/>
 
-        <updated>2020-06-19T16:25:32-04:00</updated>
+        <updated>2020-06-22T14:12:30-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/2/background.jpg" alt="100 universities using Drupal" />
@@ -396,7 +407,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html</id>
 
-        <updated>2020-06-19T16:25:32-04:00</updated>
+        <updated>2020-06-22T14:12:30-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/1/seadragon-zoomed.jpg" alt="" />

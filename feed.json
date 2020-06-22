@@ -15,8 +15,7 @@
             "url": "https://donrichards.github.io/migrate_islandora_csv/next-level-discoverability-solutions.html",
             "title": "Next Level Discoverability Solutions",
             "summary": "A search/discoverability enhancement “Learning to Rank (LTR) is a class of techniques that apply supervised machine learning (ML) to solve ranking problems.“ [link] LTR is a query reranking Solr plugin. Another comment on this from [link] to better summarize LTR, “Learning to rank (LTR) is&hellip;",
-            "content_html": "<ol>\n<li>A search/discoverability enhancement “Learning to Rank (LTR) is a class of techniques that apply supervised machine learning (ML) to solve ranking problems.“ [<a href=\"https://medium.com/@nikhilbd/intuitive-explanation-of-learning-to-rank-and-ranknet-lambdarank-and-lambdamart-fe1e17fac418\">link</a>] LTR is a query reranking Solr plugin. Another comment on this from [<a href=\"https://lucidworks.com/post/abcs-learning-to-rank/\">link</a>] to better summarize LTR, “Learning to rank (LTR) is a class of algorithmic techniques that apply supervised machine learning to solve ranking problems in search relevancy. In other words, it’s what orders query results. Done well, you have happy employees and customers; done poorly, at best you have frustrations, and worse, they will never return.” <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85176643-48621b80-b248-11ea-8060-55991e6eddcf.jpg\" data-is-external-image=\"true\"  alt=\"LTR_modeling\" /></figure></li>\n<li>Automatic Alternative Text [<a href=\"https://www.drupal.org/project/auto_alter\">link</a>] implement AI capabilities into the process  <ol>\n<li>Detecting content</li>\n<li>Identifying faces/geographical features in a given image</li>\n<li>Determining the prevailing colors</li>\n</ol>\n</li>\n<li>Oxford Common File Layout Specification (OCFL) is coming next year with the release of Fedora 6.x according to Danny Lamb and David Wilcox. This should be available within Islandora as part of upgrading Fedora to 6.x.</li>\n</ol>\n",
-            "image": "https://donrichards.github.io/migrate_islandora_csv/media/posts/10/LTR_modeling.jpg",
+            "content_html": "<ol>\n<li>A search/discoverability enhancement “Learning to Rank (LTR) is a class of techniques that apply supervised machine learning (ML) to solve ranking problems.“ [<a href=\"https://medium.com/@nikhilbd/intuitive-explanation-of-learning-to-rank-and-ranknet-lambdarank-and-lambdamart-fe1e17fac418\">link</a>] LTR is a query reranking Solr plugin. Another comment on this from [<a href=\"https://lucidworks.com/post/abcs-learning-to-rank/\">link</a>] to better summarize LTR, “Learning to rank (LTR) is a class of algorithmic techniques that apply supervised machine learning to solve ranking problems in search relevancy. In other words, it’s what orders query results. Done well, you have happy employees and customers; done poorly, at best you have frustrations, and worse, they will never return.” <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85176643-48621b80-b248-11ea-8060-55991e6eddcf.jpg\" data-is-external-image=\"true\"  alt=\"LTR_modeling\" /></figure></li>\n<li>Automatic Alternative Text [<a href=\"https://www.drupal.org/project/auto_alter\">link</a>] implement AI capabilities into the process <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85311654-c2caaf80-b483-11ea-905f-521f304b6535.jpg\" data-is-external-image=\"true\"  alt=\"ai\" /></figure> \n i. Detecting content\n ii. Identifying faces/geographical features in a given image\n iii. Determining the prevailing colors</li>\n<li>Oxford Common File Layout Specification (OCFL) is coming next year with the release of Fedora 6.x according to Danny Lamb and David Wilcox. This should be available within Islandora as part of upgrading Fedora to 6.x. <blockquote>\n<p>The previously mentioned disadvantages of the Fedora API may be mitigated by a relatedcommunity initiative called the Oxford Common File Layout (OCFL). The OCFL is acommunity-based effort to develop “an application-independent approach to the storage ofdigital information in a structured, transparent, and predictable manner. It is designed topromote long-term object management best practices within digital repositories.” The originalidea for this effort came from a Fedora Camp hosted at the University of Oxford in September2017, so it has roots in the Fedora community even though the OCFL is not dependent onFedora in any way. However, if Fedora were to store repository resources as specified by theOCFL, major upgrades in the future may become much easier. One of the primary motivatinguse cases of the OCFL is to reduce the need for data migrations; both because moving largeamounts of data is time-consuming and because such migrations risk data corruption and loss.The OCFL decouples the structure of files on disk from the application(s) that manage the filesby defining a file and folder hierarchy to which applications must conform. Thus, the files can beleft in place and new software applications can implement the OCFL specification in order tomanage the files. - [<a href=\"https://wiki.lyrasis.org/download/attachments/131533003/Designing%20a%20Migration%20Path%20-%20Final%20Report.pdf\">link</a>]</p>\n</blockquote>\n</li>\n</ol>\n",
             "author": {
                 "name": "Don Richards"
             },
@@ -27,8 +26,8 @@
                    "LTR",
                    "AI"
             ],
-            "date_published": "2020-06-19T16:25:32-04:00",
-            "date_modified": "2020-06-19T16:25:32-04:00"
+            "date_published": "2020-06-22T14:12:30-04:00",
+            "date_modified": "2020-06-22T14:12:30-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/metadata-and-metadata-sharing.html",
@@ -40,9 +39,21 @@
                 "name": "Don Richards"
             },
             "tags": [
+                   "taxonomy",
+                   "subject",
+                   "sharing",
+                   "mapping",
+                   "linked data",
+                   "genre",
+                   "Schema",
+                   "RDFa",
+                   "RDF",
+                   "JSON-LD",
+                   "JSON",
+                   "API"
             ],
-            "date_published": "2020-06-19T16:25:32-04:00",
-            "date_modified": "2020-06-19T16:25:32-04:00"
+            "date_published": "2020-06-22T14:12:30-04:00",
+            "date_modified": "2020-06-22T14:12:30-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/preservation.html",
@@ -55,8 +66,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-06-19T16:25:32-04:00",
-            "date_modified": "2020-06-19T16:25:32-04:00"
+            "date_published": "2020-06-22T14:12:30-04:00",
+            "date_modified": "2020-06-22T14:12:30-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/uploading-ingesting-and-migration.html",
@@ -77,8 +88,8 @@
                    "MODS",
                    "CSV"
             ],
-            "date_published": "2020-06-19T16:25:32-04:00",
-            "date_modified": "2020-06-19T16:25:32-04:00"
+            "date_published": "2020-06-22T14:12:30-04:00",
+            "date_modified": "2020-06-22T14:12:30-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/other-content-types.html",
@@ -104,8 +115,8 @@
                    "PDF",
                    "Moore"
             ],
-            "date_published": "2020-06-19T16:25:32-04:00",
-            "date_modified": "2020-06-19T16:25:32-04:00"
+            "date_published": "2020-06-22T14:12:30-04:00",
+            "date_modified": "2020-06-22T14:12:30-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/images-books-and-pages.html",
@@ -129,8 +140,8 @@
                    "Mirador",
                    "BigData"
             ],
-            "date_published": "2020-06-19T16:25:32-04:00",
-            "date_modified": "2020-06-19T16:25:32-04:00"
+            "date_published": "2020-06-22T14:12:30-04:00",
+            "date_modified": "2020-06-22T14:12:30-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/general-content-models.html",
@@ -151,8 +162,8 @@
                    "PCDM",
                    "BigData"
             ],
-            "date_published": "2020-06-19T16:25:32-04:00",
-            "date_modified": "2020-06-19T16:25:32-04:00"
+            "date_published": "2020-06-22T14:12:30-04:00",
+            "date_modified": "2020-06-22T14:12:30-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/content-modeling.html",
@@ -169,8 +180,8 @@
                    "microservice",
                    "content modeling"
             ],
-            "date_published": "2020-06-19T16:25:32-04:00",
-            "date_modified": "2020-06-19T16:25:32-04:00"
+            "date_published": "2020-06-22T14:12:30-04:00",
+            "date_modified": "2020-06-22T14:12:30-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/background.html",
@@ -187,8 +198,8 @@
                    "Drupal 8 ",
                    "Background"
             ],
-            "date_published": "2020-06-19T16:25:32-04:00",
-            "date_modified": "2020-06-19T16:25:32-04:00"
+            "date_published": "2020-06-22T14:12:30-04:00",
+            "date_modified": "2020-06-22T14:12:30-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html",
@@ -202,8 +213,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-06-19T16:25:32-04:00",
-            "date_modified": "2020-06-19T16:25:32-04:00"
+            "date_published": "2020-06-22T14:12:30-04:00",
+            "date_modified": "2020-06-22T14:12:30-04:00"
         }
     ]
 }
