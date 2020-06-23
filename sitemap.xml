@@ -13,6 +13,10 @@
 </image:image>
 </url>
 <url>
+<loc>https://donrichards.github.io/migrate_islandora_csv/bibliography-and-citation.html</loc>
+<lastmod>2020-06-23T14:43:07-04:00</lastmod>
+</url>
+<url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/cloud-hosting-solution.html</loc>
 <lastmod>2020-06-22T15:26:12-04:00</lastmod>
 </url>
@@ -49,8 +53,12 @@
 </image:image>
 </url>
 <url>
+<loc>https://donrichards.github.io/migrate_islandora_csv/institutional-repository.html</loc>
+<lastmod>2020-06-23T15:46:50-04:00</lastmod>
+</url>
+<url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html</loc>
-<lastmod>2020-06-22T21:24:26-04:00</lastmod>
+<lastmod>2020-06-23T13:51:21-04:00</lastmod>
 <image:image>
 <image:loc>https://donrichards.github.io/migrate_islandora_csv/media/posts/1/seadragon-zoomed.jpg</image:loc>
 <image:title><![CDATA[]]></image:title>
@@ -58,11 +66,15 @@
 </url>
 <url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/metadata-and-metadata-sharing.html</loc>
-<lastmod>2020-06-22T15:18:32-04:00</lastmod>
+<lastmod>2020-06-23T16:23:05-04:00</lastmod>
 </url>
 <url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/next-level-discoverability-solutions.html</loc>
 <lastmod>2020-06-22T14:10:04-04:00</lastmod>
+</url>
+<url>
+<loc>https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html</loc>
+<lastmod>2020-06-23T14:54:40-04:00</lastmod>
 </url>
 <url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/other-content-types.html</loc>
@@ -71,6 +83,9 @@
 <image:loc>https://donrichards.github.io/migrate_islandora_csv/media/posts/6/Screen-Shot-2020-06-19-at-2.44.27-PM.png</image:loc>
 <image:title><![CDATA[Drupal 8 Add Custom Content type]]></image:title>
 </image:image>
+</url>
+<url>
+<loc>https://donrichards.github.io/migrate_islandora_csv/page/2/</loc>
 </url>
 <url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/preservation.html</loc>
