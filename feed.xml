@@ -31,7 +31,7 @@
             <category term="Google"/>
             <category term="Delta"/>
 
-        <updated>2020-06-23T10:23:48-04:00</updated>
+        <updated>2020-06-23T10:39:16-04:00</updated>
             <summary>
                 <![CDATA[
                     230+ public sites, 1414 listserv members, 144 GitHub members, 28 Committers, 25+ Contributed Modules, 30+ Foundation members, 12 Interest Groups, 10 Community-led software releases, 19&hellip;
@@ -83,7 +83,7 @@
             <category term="VM"/>
             <category term="ISLE"/>
 
-        <updated>2020-06-23T10:23:48-04:00</updated>
+        <updated>2020-06-23T10:39:16-04:00</updated>
             <summary>
                 <![CDATA[
                     For self hosted soltutions there are 2 basic deployment options; Ansible(a style we’re currently using) or deploying through Docker images. All of these options can&hellip;
@@ -121,7 +121,7 @@
             <category term="GB"/>
             <category term="CPU"/>
 
-        <updated>2020-06-23T10:23:48-04:00</updated>
+        <updated>2020-06-23T10:39:16-04:00</updated>
             <summary>
                 <![CDATA[
                     Drupal 8 completely supports CAS authentication [link].Islandora 8 provides several different reports out-of-the-box. From microservice stats to usage stats. There are several options and are&hellip;
@@ -150,7 +150,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/rights-and-restrictions.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/rights-and-restrictions.html</id>
 
-        <updated>2020-06-23T10:23:48-04:00</updated>
+        <updated>2020-06-23T10:39:16-04:00</updated>
             <summary>
                 <![CDATA[
                     Rightsstatements.org is not specifically discussed in the documentation. Although extensive URI integration for controlled access terms is documented on the site, an assessment by the&hellip;
@@ -179,7 +179,7 @@
             <category term="hosting"/>
             <category term="cloud"/>
 
-        <updated>2020-06-23T10:23:48-04:00</updated>
+        <updated>2020-06-23T10:39:16-04:00</updated>
             <summary>
                 <![CDATA[
                     A few solutions are available for vendors to host a solution for a fee.Able to run the stack on a cloud hosting provider like Amazon’s&hellip;
@@ -213,7 +213,7 @@
             <category term="LTR"/>
             <category term="AI"/>
 
-        <updated>2020-06-23T10:23:48-04:00</updated>
+        <updated>2020-06-23T10:39:16-04:00</updated>
             <summary>
                 <![CDATA[
                     A search/discoverability enhancement “Learning to Rank (LTR) is a class of techniques that apply supervised machine learning (ML) to solve ranking problems.“ [link] LTR is&hellip;
@@ -256,7 +256,7 @@
             <category term="JSON"/>
             <category term="API"/>
 
-        <updated>2020-06-23T10:23:48-04:00</updated>
+        <updated>2020-06-23T10:39:16-04:00</updated>
             <summary>
                 <![CDATA[
                     RDF Mapping; “In Islandora, the JSON-LD Module transforms nodes (or media, or taxonomy terms) into the RDF that is synced into Fedora and the Triplestore.
@@ -300,7 +300,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/preservation.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/preservation.html</id>
 
-        <updated>2020-06-23T10:23:48-04:00</updated>
+        <updated>2020-06-23T10:39:16-04:00</updated>
             <summary>
                 <![CDATA[
                     Islandora 8 utilizes Harvard’s File Information Tool Set (FITS), Fixity auditing, bag exporting, and preservation reporting for preservation (Jordan, 2019).Leverages Fedora 5 as the preservation&hellip;
@@ -333,7 +333,7 @@
             <category term="MODS"/>
             <category term="CSV"/>
 
-        <updated>2020-06-23T10:23:48-04:00</updated>
+        <updated>2020-06-23T10:39:16-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/7/migration-middle-format-process.jpg" alt="Typical Drupal 8 migration" />
@@ -384,7 +384,7 @@
             <category term="PDF"/>
             <category term="Moore"/>
 
-        <updated>2020-06-23T10:23:48-04:00</updated>
+        <updated>2020-06-23T10:39:16-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/6/Screen-Shot-2020-06-19-at-2.44.27-PM.png" alt="Drupal 8 Add Custom Content type" />
