@@ -15,14 +15,22 @@
             "url": "https://donrichards.github.io/migrate_islandora_csv/deployment-options.html",
             "title": "Deployment Options",
             "summary": "For self hosted soltutions there are 2 basic deployment options; Ansible(a style we’re currently using) or deploying through Docker images. All of these options can utilize a continous development (automated deployment) life cycle. ",
-            "content_html": "<p>For self hosted soltutions there are 2 basic deployment options; Ansible(a style we’re currently using) or deploying through Docker images.</p>\n<ol>\n<li>Islandora’s <a href=\"https://github.com/Islandora-Devops/islandora-playbook\">Ansible playbook</a> comes with 2 preconfigured operating system defaults; Ubuntu 18.04 and CentOS/7. The deployment can be configured for a local VM or a production deployment. “Ansible is the simplest solution for configuration management available. It’s designed to be minimal in nature, consistent, secure and highly reliable, with an extremely low learning curve for administrators, developers and IT managers.” - [<a href=\"https://www.ansible.com/use-cases/configuration-management\">link</a>]</li>\n<li>Docker (ISLE Project)<ol>\n<li>Full deploy and integrate with continuous development on Github. </li>\n<li>[<a href=\"https://github.com/Islandora-Collaboration-Group/ISLE\">link</a>] <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85332417-e999dd80-b4a5-11ea-9aa2-8d1a14f8655e.jpg\" data-is-external-image=\"true\"  alt=\"isle_prototype\" /></figure></li>\n</ol>\n</li>\n<li>The stack can also be a standard manual development and deployment. Although there is nothing technically wrong with this option, it is generally considered time comsuming to initially setup and generally considered realatively unnessisary.</li>\n</ol>\n<p>All of these options can utilize a continous development (automated deployment) life cycle. </p>\n",
+            "content_html": "<p>For self hosted soltutions there are 2 basic deployment options; Ansible(a style we’re currently using) or deploying through Docker images.</p>\n<ol>\n<li>Islandora’s <a href=\"https://github.com/Islandora-Devops/islandora-playbook\">Ansible playbook</a> comes with 2 preconfigured operating system defaults; Ubuntu 18.04 and CentOS/7. The deployment can be configured for a local VM or a production deployment. “Ansible is the simplest solution for configuration management available. It’s designed to be minimal in nature, consistent, secure and highly reliable, with an extremely low learning curve for administrators, developers and IT managers.” - [<a href=\"https://www.ansible.com/use-cases/configuration-management\">link</a>]</li>\n<li>ISLE Project facilitating creation and management of Islandora 8 Infrastructure with Docker (containerized server). This is the bleeding edge technology for deployent. This would require some infrastructure and training to prepare our staff for this option. <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85332417-e999dd80-b4a5-11ea-9aa2-8d1a14f8655e.jpg\" data-is-external-image=\"true\"  alt=\"isle_prototype\" /></figure><ul>\n<li>Full deploy and integrate with continuous development on Github. </li>\n<li>[<a href=\"https://github.com/Islandora-Collaboration-Group/ISLE\">link</a>] <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://github.com/jesseduffield/lazydocker/raw/master/docs/resources/demo3.gif\" data-is-external-image=\"true\"  alt=\"Lazy Docker\" /></figure></li>\n</ul>\n</li>\n<li>The stack can also be a standard manual development and deployment. Although there is nothing technically wrong with this option, it is generally considered time comsuming to initially setup and generally considered realatively unnessisary. This has historically been Digital Initiative’s pattern of operations.</li>\n</ol>\n<p>All of these options can utilize a continous development (automated deployment) life cycle. </p>\n",
             "author": {
                 "name": "Don Richards"
             },
             "tags": [
+                   "prototype",
+                   "production",
+                   "docker",
+                   "deploy",
+                   "container",
+                   "ansible",
+                   "VM",
+                   "ISLE"
             ],
-            "date_published": "2020-06-23T07:40:39-04:00",
-            "date_modified": "2020-06-23T07:40:39-04:00"
+            "date_published": "2020-06-23T08:35:13-04:00",
+            "date_modified": "2020-06-23T08:35:13-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/technical-infrastructure.html",
@@ -43,8 +51,8 @@
                    "GB",
                    "CPU"
             ],
-            "date_published": "2020-06-23T07:40:39-04:00",
-            "date_modified": "2020-06-23T07:40:39-04:00"
+            "date_published": "2020-06-23T08:35:13-04:00",
+            "date_modified": "2020-06-23T08:35:13-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/rights-and-restrictions.html",
@@ -57,8 +65,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-06-23T07:40:39-04:00",
-            "date_modified": "2020-06-23T07:40:39-04:00"
+            "date_published": "2020-06-23T08:35:13-04:00",
+            "date_modified": "2020-06-23T08:35:13-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/cloud-hosting-solution.html",
@@ -76,8 +84,8 @@
                    "hosting",
                    "cloud"
             ],
-            "date_published": "2020-06-23T07:40:39-04:00",
-            "date_modified": "2020-06-23T07:40:39-04:00"
+            "date_published": "2020-06-23T08:35:13-04:00",
+            "date_modified": "2020-06-23T08:35:13-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/next-level-discoverability-solutions.html",
@@ -95,8 +103,8 @@
                    "LTR",
                    "AI"
             ],
-            "date_published": "2020-06-23T07:40:39-04:00",
-            "date_modified": "2020-06-23T07:40:39-04:00"
+            "date_published": "2020-06-23T08:35:13-04:00",
+            "date_modified": "2020-06-23T08:35:13-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/metadata-and-metadata-sharing.html",
@@ -121,8 +129,8 @@
                    "JSON",
                    "API"
             ],
-            "date_published": "2020-06-23T07:40:39-04:00",
-            "date_modified": "2020-06-23T07:40:39-04:00"
+            "date_published": "2020-06-23T08:35:13-04:00",
+            "date_modified": "2020-06-23T08:35:13-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/preservation.html",
@@ -135,8 +143,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-06-23T07:40:39-04:00",
-            "date_modified": "2020-06-23T07:40:39-04:00"
+            "date_published": "2020-06-23T08:35:13-04:00",
+            "date_modified": "2020-06-23T08:35:13-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/uploading-ingesting-and-migration.html",
@@ -157,8 +165,8 @@
                    "MODS",
                    "CSV"
             ],
-            "date_published": "2020-06-23T07:40:39-04:00",
-            "date_modified": "2020-06-23T07:40:39-04:00"
+            "date_published": "2020-06-23T08:35:13-04:00",
+            "date_modified": "2020-06-23T08:35:13-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/other-content-types.html",
@@ -184,8 +192,8 @@
                    "PDF",
                    "Moore"
             ],
-            "date_published": "2020-06-23T07:40:39-04:00",
-            "date_modified": "2020-06-23T07:40:39-04:00"
+            "date_published": "2020-06-23T08:35:13-04:00",
+            "date_modified": "2020-06-23T08:35:13-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/images-books-and-pages.html",
@@ -209,8 +217,8 @@
                    "Mirador",
                    "BigData"
             ],
-            "date_published": "2020-06-23T07:40:39-04:00",
-            "date_modified": "2020-06-23T07:40:39-04:00"
+            "date_published": "2020-06-23T08:35:13-04:00",
+            "date_modified": "2020-06-23T08:35:13-04:00"
         }
     ]
 }
