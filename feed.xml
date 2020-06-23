@@ -17,23 +17,25 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/deployment-options.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/deployment-options.html</id>
 
-        <updated>2020-06-22T21:24:52-04:00</updated>
+        <updated>2020-06-23T07:40:39-04:00</updated>
             <summary>
                 <![CDATA[
-                    For self hosted soltutions there are 2 basic deployment options; Ansible(a style we’re currently using) or deploying through Docker images.AnsibleDocker (ISLE Project)Full deploy and integrate with continuous development on Github. [link] 
+                    For self hosted soltutions there are 2 basic deployment options; Ansible(a style we’re currently using) or deploying through Docker images. All of these options can utilize a continous development (automated deployment) life cycle. 
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
                 <p>For self hosted soltutions there are 2 basic deployment options; Ansible(a style we’re currently using) or deploying through Docker images.</p>
 <ol>
-<li>Ansible</li>
+<li>Islandora’s <a href="https://github.com/Islandora-Devops/islandora-playbook">Ansible playbook</a> comes with 2 preconfigured operating system defaults; Ubuntu 18.04 and CentOS/7. The deployment can be configured for a local VM or a production deployment. “Ansible is the simplest solution for configuration management available. It’s designed to be minimal in nature, consistent, secure and highly reliable, with an extremely low learning curve for administrators, developers and IT managers.” - [<a href="https://www.ansible.com/use-cases/configuration-management">link</a>]</li>
 <li>Docker (ISLE Project)<ol>
 <li>Full deploy and integrate with continuous development on Github. </li>
 <li>[<a href="https://github.com/Islandora-Collaboration-Group/ISLE">link</a>] <figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/85332417-e999dd80-b4a5-11ea-9aa2-8d1a14f8655e.jpg" data-is-external-image="true"  alt="isle_prototype" /></figure></li>
 </ol>
 </li>
+<li>The stack can also be a standard manual development and deployment. Although there is nothing technically wrong with this option, it is generally considered time comsuming to initially setup and generally considered realatively unnessisary.</li>
 </ol>
+<p>All of these options can utilize a continous development (automated deployment) life cycle. </p>
 
             ]]>
         </content>
@@ -54,7 +56,7 @@
             <category term="GB"/>
             <category term="CPU"/>
 
-        <updated>2020-06-22T21:24:52-04:00</updated>
+        <updated>2020-06-23T07:40:39-04:00</updated>
             <summary>
                 <![CDATA[
                     Drupal 8 completely supports CAS authentication [link].Islandora 8 provides several different reports out-of-the-box. From microservice stats to usage stats. There are several options and are highly configurable. Here is an example of Mark Jordan’s module that provides a collection of graphical reports on various aspects&hellip;
@@ -83,7 +85,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/rights-and-restrictions.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/rights-and-restrictions.html</id>
 
-        <updated>2020-06-22T21:24:52-04:00</updated>
+        <updated>2020-06-23T07:40:39-04:00</updated>
             <summary>
                 <![CDATA[
                     Rightsstatements.org is not specifically discussed in the documentation. Although extensive URI integration for controlled access terms is documented on the site, an assessment by the metadata librarian would give a clearer picture.Drupal is the gatekeeper for access. Although Fedora offers WebAC access control as a&hellip;
@@ -112,7 +114,7 @@
             <category term="hosting"/>
             <category term="cloud"/>
 
-        <updated>2020-06-22T21:24:52-04:00</updated>
+        <updated>2020-06-23T07:40:39-04:00</updated>
             <summary>
                 <![CDATA[
                     A few solutions are available for vendors to host a solution for a fee.Able to run the stack on a cloud hosting provider like Amazon’s AWS. The demo is running on EC2 and Lightsail (an Amazon cloud solution).Price modeling on any AWS solution is complicated&hellip;
@@ -146,7 +148,7 @@
             <category term="LTR"/>
             <category term="AI"/>
 
-        <updated>2020-06-22T21:24:52-04:00</updated>
+        <updated>2020-06-23T07:40:39-04:00</updated>
             <summary>
                 <![CDATA[
                     A search/discoverability enhancement “Learning to Rank (LTR) is a class of techniques that apply supervised machine learning (ML) to solve ranking problems.“ [link] LTR is a query reranking Solr plugin. Another comment on this from [link] to better summarize LTR, “Learning to rank (LTR) is&hellip;
@@ -189,7 +191,7 @@
             <category term="JSON"/>
             <category term="API"/>
 
-        <updated>2020-06-22T21:24:52-04:00</updated>
+        <updated>2020-06-23T07:40:39-04:00</updated>
             <summary>
                 <![CDATA[
                     RDF Mapping; “In Islandora, the JSON-LD Module transforms nodes (or media, or taxonomy terms) into the RDF that is synced into Fedora and the Triplestore. It uses RDF mappings, a concept defined by the RDF Module, and exposes them through the REST API” (RDF Generation,&hellip;
@@ -233,7 +235,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/preservation.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/preservation.html</id>
 
-        <updated>2020-06-22T21:24:52-04:00</updated>
+        <updated>2020-06-23T07:40:39-04:00</updated>
             <summary>
                 <![CDATA[
                     Islandora 8 utilizes Harvard’s File Information Tool Set (FITS), Fixity auditing, bag exporting, and preservation reporting for preservation (Jordan, 2019).Leverages Fedora 5 as the preservation layer. According to SFU’s Library DPF Action Plan in the following snippet [link]Supports versioning of binaries within an object. Islandora&hellip;
@@ -266,7 +268,7 @@
             <category term="MODS"/>
             <category term="CSV"/>
 
-        <updated>2020-06-22T21:24:52-04:00</updated>
+        <updated>2020-06-23T07:40:39-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/7/migration-middle-format-process.jpg" alt="Typical Drupal 8 migration" />
@@ -317,7 +319,7 @@
             <category term="PDF"/>
             <category term="Moore"/>
 
-        <updated>2020-06-22T21:24:52-04:00</updated>
+        <updated>2020-06-23T07:40:39-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/6/Screen-Shot-2020-06-19-at-2.44.27-PM.png" alt="Drupal 8 Add Custom Content type" />
@@ -357,7 +359,7 @@
             <category term="Mirador"/>
             <category term="BigData"/>
 
-        <updated>2020-06-22T21:24:52-04:00</updated>
+        <updated>2020-06-23T07:40:39-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/5/CONTENT-MODELING-DRUPAL8.jpg" alt="Book viewer example" />
