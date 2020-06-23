@@ -11,11 +11,39 @@
     },
     "items": [
         {
+            "id": "https://donrichards.github.io/migrate_islandora_csv/community-and-sustainability.html",
+            "url": "https://donrichards.github.io/migrate_islandora_csv/community-and-sustainability.html",
+            "title": "Community &amp; Sustainability",
+            "summary": "230+ public sites, 1414 listserv members, 144 GitHub members, 28 Committers, 25+ Contributed Modules, 30+ Foundation members, 12 Interest Groups, 10 Community-led software releases, 19 Camps, 3 conferences, 2 major versions with 2 full time employees.In May 2020 the Islandora Foundation announced they joined the&hellip;",
+            "content_html": "<ol>\n<li>230+ public sites, 1414 listserv members, 144 GitHub members, 28 Committers, 25+ Contributed Modules, 30+ Foundation members, 12 Interest Groups, 10 Community-led software releases, 19 Camps, 3 conferences, 2 major versions with 2 full time employees.</li>\n<li>In May 2020 the Islandora Foundation announced they joined the Drupal Association as part of their Supporting Partner Program. [<a href=\"https://islandora.ca/content/islandora-foundation-joins-drupal-association\">link</a>] The Drupal Association is an educational non-profit organization that tasks itself with fostering and supporting the Drupal software project, the community and its growth.\n<figure class=\"post__image\"><img loading=\"lazy\" src=\"https://www.drupal.org/files/da-supporting-partner-program-rgb.png\" data-is-external-image=\"true\"  alt=\"Drupal Partnership\" /></figure></li>\n<li>Islandora utilizes multiple technologies for community involvement including but not limited to<ol>\n<li>Slack Chat</li>\n<li>Zoom Chat</li>\n<li>IRC (infrequently used)</li>\n<li>Email/phone</li>\n<li>Github issues/Pull requests</li>\n<li>JIRA ticketing</li>\n<li>Drupal Gitlabs</li>\n</ol>\n</li>\n<li>Islandora has several Interest groups and collaboration groups that work regularly on community projects. A recent example of this was the survey and development of the Institutional repository Delta document. Although a IR repository is possible to assemble without a dedicated module it wouldn’t be a standardized process making community assistance a challenge. With help from the Google Scholar engineering team, the community developed with the help with feedback from the community drafted a document proposing an “Islandora Scholar” module that would bring together all the needed resources for a “turnkey” IR solution. Several options were left out deliberately that weren’t essential and could easily be accomplished with few steps from a tutorial. The Islandora interest group surveyed the community, reviewed existing IR options, and consulted with leading industry engineers. Creating a plan for a solution that meets the community’s needs and to precisely align the content in accordance with the Google Scholar engineering team’s feedback. Islandora has years of experience developing an institutional repository, originally developed in 2012 and the community is well equipped to handle the challenge of developing a solution that meets the community’s needs.</li>\n<li>Vendors are constantly participating and contributing to the progression of the Islandora community and stack. They participate at a nearly daily occurance and provide a lot of assistance to community.</li>\n<li>The onboarding process is well established with frequent workshops, video tutorials, 1-on-1 assistance from community members through zoom, and chat options. This makes the stack highly approachable to small colleges and large universities alike.</li>\n<li>The Islandora community is a self-sustaining community of over 300 universities and an unknown number of private institutions, it’s clear that the community is well established.</li>\n<li>With the platform mainly a “turnkey” repository option providing small and large repositories alike a relatively standardized solution with the flexibility of future growth built in.</li>\n<li>The community has gravitated towards providing the options for the users to implement the latest information technology standards, iteratively improve the quality of the platform and inclusivity for the community to meet all of their needs for a repository. </li>\n<li>The community engaged pedagogy embraces co-learning and is rooted in a respect for the prior knowledge and experiences that community partners bring to the conversation.</li>\n<li>Expert discovery efforts (identifying improvements and developing solutions).</li>\n<li>New efforts integrate the community into a broader community with Drupal. This means automated code review for security issues from Drupal, code hosting is hosted directly on Drupal’s gitlab servers. Having all of Islandora and its contrib modules on Drupal means the update feature in the UI will recognize the modules and allow for module conflict avoidence and update integrations.</li>\n</ol>\n",
+            "author": {
+                "name": "Don Richards"
+            },
+            "tags": [
+                   "zoom",
+                   "sustainability",
+                   "slack",
+                   "security",
+                   "scholar",
+                   "modules",
+                   "members",
+                   "knowledge",
+                   "gitlabs",
+                   "drupal",
+                   "community",
+                   "committers",
+                   "Google",
+                   "Delta"
+            ],
+            "date_published": "2020-06-23T10:05:06-04:00",
+            "date_modified": "2020-06-23T10:05:06-04:00"
+        },
+        {
             "id": "https://donrichards.github.io/migrate_islandora_csv/deployment-options.html",
             "url": "https://donrichards.github.io/migrate_islandora_csv/deployment-options.html",
             "title": "Deployment Options",
             "summary": "For self hosted soltutions there are 2 basic deployment options; Ansible(a style we’re currently using) or deploying through Docker images. All of these options can utilize a continous development (automated deployment) life cycle. ",
-            "content_html": "<p>For self hosted soltutions there are 2 basic deployment options; Ansible(a style we’re currently using) or deploying through Docker images.</p>\n<ol>\n<li>Islandora’s <a href=\"https://github.com/Islandora-Devops/islandora-playbook\">Ansible playbook</a> comes with 2 preconfigured operating system defaults; Ubuntu 18.04 and CentOS/7. The deployment can be configured for a local VM or a production deployment. “Ansible is the simplest solution for configuration management available. It’s designed to be minimal in nature, consistent, secure and highly reliable, with an extremely low learning curve for administrators, developers and IT managers.” - [<a href=\"https://www.ansible.com/use-cases/configuration-management\">link</a>]</li>\n<li>ISLE Project facilitating creation and management of Islandora 8 Infrastructure with Docker (containerized server). This is the bleeding edge technology for deployent. This would require some infrastructure and training to prepare our staff for this option. <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85332417-e999dd80-b4a5-11ea-9aa2-8d1a14f8655e.jpg\" data-is-external-image=\"true\"  alt=\"isle_prototype\" /></figure><ul>\n<li>Full deploy and integrate with continuous development on Github. </li>\n<li>[<a href=\"https://github.com/Islandora-Collaboration-Group/ISLE\">link</a>] <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://github.com/jesseduffield/lazydocker/raw/master/docs/resources/demo3.gif\" data-is-external-image=\"true\"  alt=\"Lazy Docker\" /></figure></li>\n</ul>\n</li>\n<li>The stack can also be a standard manual development and deployment. Although there is nothing technically wrong with this option, it is generally considered time comsuming to initially setup and generally considered realatively unnessisary. This has historically been Digital Initiative’s pattern of operations.</li>\n</ol>\n<p>All of these options can utilize a continous development (automated deployment) life cycle. </p>\n",
+            "content_html": "<p>For self hosted soltutions there are 2 basic deployment options; Ansible(a style we’re currently using) or deploying through Docker images.</p>\n<ol>\n<li>Islandora’s <a href=\"https://github.com/Islandora-Devops/islandora-playbook\">Ansible playbook</a> comes with 2 preconfigured operating system defaults; Ubuntu 18.04 and CentOS/7. The deployment can be configured for a local VM or a production deployment. “Ansible is the simplest solution for configuration management available. It’s designed to be minimal in nature, consistent, secure and highly reliable, with an extremely low learning curve for administrators, developers and IT managers.” - [<a href=\"https://www.ansible.com/use-cases/configuration-management\">link</a>]</li>\n<li>ISLE Project facilitating creation and management of Islandora 8 Infrastructure with Docker (containerized server). This is bleeding edge technology for deployment. This would require some infrastructure and training to prepare our staff for this option. <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85332417-e999dd80-b4a5-11ea-9aa2-8d1a14f8655e.jpg\" data-is-external-image=\"true\"  alt=\"isle_prototype\" /></figure><ul>\n<li>Full deploy and integrate with continuous development on Github[<a href=\"https://github.com/Islandora-Collaboration-Group/ISLE\">link</a>] <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://github.com/jesseduffield/lazydocker/raw/master/docs/resources/demo3.gif\" data-is-external-image=\"true\"  alt=\"Lazy Docker\" /></figure></li>\n</ul>\n</li>\n<li>The stack can also be a standard manual development and deployment. Although there is nothing technically wrong with this option, it is generally considered time comsuming to initially setup and generally considered realatively unnessisary. This has historically been Digital Initiative’s pattern of operations.</li>\n</ol>\n<p>All of these options can utilize a continous development (automated deployment) life cycle. </p>\n",
             "author": {
                 "name": "Don Richards"
             },
@@ -29,8 +57,8 @@
                    "VM",
                    "ISLE"
             ],
-            "date_published": "2020-06-23T08:35:13-04:00",
-            "date_modified": "2020-06-23T08:35:13-04:00"
+            "date_published": "2020-06-23T10:05:06-04:00",
+            "date_modified": "2020-06-23T10:05:06-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/technical-infrastructure.html",
@@ -51,8 +79,8 @@
                    "GB",
                    "CPU"
             ],
-            "date_published": "2020-06-23T08:35:13-04:00",
-            "date_modified": "2020-06-23T08:35:13-04:00"
+            "date_published": "2020-06-23T10:05:06-04:00",
+            "date_modified": "2020-06-23T10:05:06-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/rights-and-restrictions.html",
@@ -65,8 +93,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-06-23T08:35:13-04:00",
-            "date_modified": "2020-06-23T08:35:13-04:00"
+            "date_published": "2020-06-23T10:05:06-04:00",
+            "date_modified": "2020-06-23T10:05:06-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/cloud-hosting-solution.html",
@@ -84,8 +112,8 @@
                    "hosting",
                    "cloud"
             ],
-            "date_published": "2020-06-23T08:35:13-04:00",
-            "date_modified": "2020-06-23T08:35:13-04:00"
+            "date_published": "2020-06-23T10:05:06-04:00",
+            "date_modified": "2020-06-23T10:05:06-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/next-level-discoverability-solutions.html",
@@ -103,8 +131,8 @@
                    "LTR",
                    "AI"
             ],
-            "date_published": "2020-06-23T08:35:13-04:00",
-            "date_modified": "2020-06-23T08:35:13-04:00"
+            "date_published": "2020-06-23T10:05:06-04:00",
+            "date_modified": "2020-06-23T10:05:06-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/metadata-and-metadata-sharing.html",
@@ -129,8 +157,8 @@
                    "JSON",
                    "API"
             ],
-            "date_published": "2020-06-23T08:35:13-04:00",
-            "date_modified": "2020-06-23T08:35:13-04:00"
+            "date_published": "2020-06-23T10:05:06-04:00",
+            "date_modified": "2020-06-23T10:05:06-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/preservation.html",
@@ -143,8 +171,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-06-23T08:35:13-04:00",
-            "date_modified": "2020-06-23T08:35:13-04:00"
+            "date_published": "2020-06-23T10:05:06-04:00",
+            "date_modified": "2020-06-23T10:05:06-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/uploading-ingesting-and-migration.html",
@@ -165,8 +193,8 @@
                    "MODS",
                    "CSV"
             ],
-            "date_published": "2020-06-23T08:35:13-04:00",
-            "date_modified": "2020-06-23T08:35:13-04:00"
+            "date_published": "2020-06-23T10:05:06-04:00",
+            "date_modified": "2020-06-23T10:05:06-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/other-content-types.html",
@@ -192,33 +220,8 @@
                    "PDF",
                    "Moore"
             ],
-            "date_published": "2020-06-23T08:35:13-04:00",
-            "date_modified": "2020-06-23T08:35:13-04:00"
-        },
-        {
-            "id": "https://donrichards.github.io/migrate_islandora_csv/images-books-and-pages.html",
-            "url": "https://donrichards.github.io/migrate_islandora_csv/images-books-and-pages.html",
-            "title": "Images, Books, and Pages",
-            "summary": "A suite of microservices (Crayfish) are initiated during the process of ingesting an object, which maps resources to Fedora and generates derivative files among other things. Unlike previous versions of Islandora, version 8 asynchronously manages and queues these microservices for scalability, stability, and speed. Specifically&hellip;",
-            "content_html": "<p>A suite of microservices (Crayfish) are initiated during the process of ingesting an object, which maps resources to Fedora and generates derivative files among other things. Unlike previous versions of Islandora, version 8 asynchronously manages and queues these microservices for scalability, stability, and speed. Specifically some of these microservices generate derivatives like thumbnails, browser sized images, and OCR. The system defaults come with OpenSeadragon with an IIIF image server. The viewer can be switched to Mirador or Universal Viewer with a relatively small amount of code (Zoller, 2019).</p>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85142859-f5bc3b80-b216-11ea-970a-86c91f02a527.jpeg\" data-is-external-image=\"true\"  alt=\"mirador_example\" /></figure></p>\n<ol>\n<li>Supports the deposit and characterization of preservation-quality large image (TIFs &amp; JP2s). This process creates derivatives including but not limited to technical metadata generation and other access media for browser consumption.</li>\n<li>Supports the deposit of books with preservation-quality large images as pages. Most objects in Islandora are treated like paged objects to begin with so there is little difference between a page versus a large image. The difference is the microservices that are triggered and how that changes the behavior of the viewer.</li>\n<li>Automates the generation of access copies and other derivatives when an object is ingested and/or modified. This includes but is not limited to lower resolution media for browsers and thumbnail image generation for small &amp; large images, video and audio files (Waveform generation from original audio file for thumbnail generation).</li>\n<li>Serves high quality access derivatives with image-zooming capability via a viewer (OpenSeaDragon, Mirador, or Universal Viewer). The default image viewer is Open Seadragon. <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85144983-e8ed1700-b219-11ea-8cec-6558ff985901.jpg\" data-is-external-image=\"true\"  alt=\"seadragon-zoomed\" /></figure></li>\n<li>Renders images with a IIIF image server.</li>\n<li>Automating the generation of the OCR microform is taken care of through Hypercube/Tesseract microservice. Tesseract is fully capable but it’s unclear how to configure Drupal to export hOCR. This may be user error and not a limitation of the stack.</li>\n<li>Allows for bulk uploads from the admin console. <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85143458-c659fe80-b217-11ea-90dd-f6f583c4c30e.png\" data-is-external-image=\"true\"  alt=\"bulk uploader\" /></figure></li>\n</ol>\n",
-            "image": "https://donrichards.github.io/migrate_islandora_csv/media/posts/5/CONTENT-MODELING-DRUPAL8.jpg",
-            "author": {
-                "name": "Don Richards"
-            },
-            "tags": [
-                   "viewer",
-                   "paged",
-                   "modeling",
-                   "derivative",
-                   "content model",
-                   "book",
-                   "Universal viewer",
-                   "OCR",
-                   "Mirador",
-                   "BigData"
-            ],
-            "date_published": "2020-06-23T08:35:13-04:00",
-            "date_modified": "2020-06-23T08:35:13-04:00"
+            "date_published": "2020-06-23T10:05:06-04:00",
+            "date_modified": "2020-06-23T10:05:06-04:00"
         }
     ]
 }

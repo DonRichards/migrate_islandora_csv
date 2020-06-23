@@ -10,6 +10,64 @@
     <id>https://donrichards.github.io/migrate_islandora_csv</id>
 
     <entry>
+        <title>Community &amp; Sustainability</title>
+        <author>
+            <name>Don Richards</name>
+        </author>
+        <link href="https://donrichards.github.io/migrate_islandora_csv/community-and-sustainability.html"/>
+        <id>https://donrichards.github.io/migrate_islandora_csv/community-and-sustainability.html</id>
+            <category term="zoom"/>
+            <category term="sustainability"/>
+            <category term="slack"/>
+            <category term="security"/>
+            <category term="scholar"/>
+            <category term="modules"/>
+            <category term="members"/>
+            <category term="knowledge"/>
+            <category term="gitlabs"/>
+            <category term="drupal"/>
+            <category term="community"/>
+            <category term="committers"/>
+            <category term="Google"/>
+            <category term="Delta"/>
+
+        <updated>2020-06-23T10:05:06-04:00</updated>
+            <summary>
+                <![CDATA[
+                    230+ public sites, 1414 listserv members, 144 GitHub members, 28 Committers, 25+ Contributed Modules, 30+ Foundation members, 12 Interest Groups, 10 Community-led software releases, 19 Camps, 3 conferences, 2 major versions with 2 full time employees.In May 2020 the Islandora Foundation announced they joined the&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <ol>
+<li>230+ public sites, 1414 listserv members, 144 GitHub members, 28 Committers, 25+ Contributed Modules, 30+ Foundation members, 12 Interest Groups, 10 Community-led software releases, 19 Camps, 3 conferences, 2 major versions with 2 full time employees.</li>
+<li>In May 2020 the Islandora Foundation announced they joined the Drupal Association as part of their Supporting Partner Program. [<a href="https://islandora.ca/content/islandora-foundation-joins-drupal-association">link</a>] The Drupal Association is an educational non-profit organization that tasks itself with fostering and supporting the Drupal software project, the community and its growth.
+<figure class="post__image"><img loading="lazy" src="https://www.drupal.org/files/da-supporting-partner-program-rgb.png" data-is-external-image="true"  alt="Drupal Partnership" /></figure></li>
+<li>Islandora utilizes multiple technologies for community involvement including but not limited to<ol>
+<li>Slack Chat</li>
+<li>Zoom Chat</li>
+<li>IRC (infrequently used)</li>
+<li>Email/phone</li>
+<li>Github issues/Pull requests</li>
+<li>JIRA ticketing</li>
+<li>Drupal Gitlabs</li>
+</ol>
+</li>
+<li>Islandora has several Interest groups and collaboration groups that work regularly on community projects. A recent example of this was the survey and development of the Institutional repository Delta document. Although a IR repository is possible to assemble without a dedicated module it wouldn’t be a standardized process making community assistance a challenge. With help from the Google Scholar engineering team, the community developed with the help with feedback from the community drafted a document proposing an “Islandora Scholar” module that would bring together all the needed resources for a “turnkey” IR solution. Several options were left out deliberately that weren’t essential and could easily be accomplished with few steps from a tutorial. The Islandora interest group surveyed the community, reviewed existing IR options, and consulted with leading industry engineers. Creating a plan for a solution that meets the community’s needs and to precisely align the content in accordance with the Google Scholar engineering team’s feedback. Islandora has years of experience developing an institutional repository, originally developed in 2012 and the community is well equipped to handle the challenge of developing a solution that meets the community’s needs.</li>
+<li>Vendors are constantly participating and contributing to the progression of the Islandora community and stack. They participate at a nearly daily occurance and provide a lot of assistance to community.</li>
+<li>The onboarding process is well established with frequent workshops, video tutorials, 1-on-1 assistance from community members through zoom, and chat options. This makes the stack highly approachable to small colleges and large universities alike.</li>
+<li>The Islandora community is a self-sustaining community of over 300 universities and an unknown number of private institutions, it’s clear that the community is well established.</li>
+<li>With the platform mainly a “turnkey” repository option providing small and large repositories alike a relatively standardized solution with the flexibility of future growth built in.</li>
+<li>The community has gravitated towards providing the options for the users to implement the latest information technology standards, iteratively improve the quality of the platform and inclusivity for the community to meet all of their needs for a repository. </li>
+<li>The community engaged pedagogy embraces co-learning and is rooted in a respect for the prior knowledge and experiences that community partners bring to the conversation.</li>
+<li>Expert discovery efforts (identifying improvements and developing solutions).</li>
+<li>New efforts integrate the community into a broader community with Drupal. This means automated code review for security issues from Drupal, code hosting is hosted directly on Drupal’s gitlab servers. Having all of Islandora and its contrib modules on Drupal means the update feature in the UI will recognize the modules and allow for module conflict avoidence and update integrations.</li>
+</ol>
+
+            ]]>
+        </content>
+    </entry>
+    <entry>
         <title>Deployment Options</title>
         <author>
             <name>Don Richards</name>
@@ -25,7 +83,7 @@
             <category term="VM"/>
             <category term="ISLE"/>
 
-        <updated>2020-06-23T08:35:13-04:00</updated>
+        <updated>2020-06-23T10:05:06-04:00</updated>
             <summary>
                 <![CDATA[
                     For self hosted soltutions there are 2 basic deployment options; Ansible(a style we’re currently using) or deploying through Docker images. All of these options can utilize a continous development (automated deployment) life cycle. 
@@ -36,9 +94,8 @@
                 <p>For self hosted soltutions there are 2 basic deployment options; Ansible(a style we’re currently using) or deploying through Docker images.</p>
 <ol>
 <li>Islandora’s <a href="https://github.com/Islandora-Devops/islandora-playbook">Ansible playbook</a> comes with 2 preconfigured operating system defaults; Ubuntu 18.04 and CentOS/7. The deployment can be configured for a local VM or a production deployment. “Ansible is the simplest solution for configuration management available. It’s designed to be minimal in nature, consistent, secure and highly reliable, with an extremely low learning curve for administrators, developers and IT managers.” - [<a href="https://www.ansible.com/use-cases/configuration-management">link</a>]</li>
-<li>ISLE Project facilitating creation and management of Islandora 8 Infrastructure with Docker (containerized server). This is the bleeding edge technology for deployent. This would require some infrastructure and training to prepare our staff for this option. <figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/85332417-e999dd80-b4a5-11ea-9aa2-8d1a14f8655e.jpg" data-is-external-image="true"  alt="isle_prototype" /></figure><ul>
-<li>Full deploy and integrate with continuous development on Github. </li>
-<li>[<a href="https://github.com/Islandora-Collaboration-Group/ISLE">link</a>] <figure class="post__image"><img loading="lazy" src="https://github.com/jesseduffield/lazydocker/raw/master/docs/resources/demo3.gif" data-is-external-image="true"  alt="Lazy Docker" /></figure></li>
+<li>ISLE Project facilitating creation and management of Islandora 8 Infrastructure with Docker (containerized server). This is bleeding edge technology for deployment. This would require some infrastructure and training to prepare our staff for this option. <figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/85332417-e999dd80-b4a5-11ea-9aa2-8d1a14f8655e.jpg" data-is-external-image="true"  alt="isle_prototype" /></figure><ul>
+<li>Full deploy and integrate with continuous development on Github[<a href="https://github.com/Islandora-Collaboration-Group/ISLE">link</a>] <figure class="post__image"><img loading="lazy" src="https://github.com/jesseduffield/lazydocker/raw/master/docs/resources/demo3.gif" data-is-external-image="true"  alt="Lazy Docker" /></figure></li>
 </ul>
 </li>
 <li>The stack can also be a standard manual development and deployment. Although there is nothing technically wrong with this option, it is generally considered time comsuming to initially setup and generally considered realatively unnessisary. This has historically been Digital Initiative’s pattern of operations.</li>
@@ -64,7 +121,7 @@
             <category term="GB"/>
             <category term="CPU"/>
 
-        <updated>2020-06-23T08:35:13-04:00</updated>
+        <updated>2020-06-23T10:05:06-04:00</updated>
             <summary>
                 <![CDATA[
                     Drupal 8 completely supports CAS authentication [link].Islandora 8 provides several different reports out-of-the-box. From microservice stats to usage stats. There are several options and are highly configurable. Here is an example of Mark Jordan’s module that provides a collection of graphical reports on various aspects&hellip;
@@ -93,7 +150,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/rights-and-restrictions.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/rights-and-restrictions.html</id>
 
-        <updated>2020-06-23T08:35:13-04:00</updated>
+        <updated>2020-06-23T10:05:06-04:00</updated>
             <summary>
                 <![CDATA[
                     Rightsstatements.org is not specifically discussed in the documentation. Although extensive URI integration for controlled access terms is documented on the site, an assessment by the metadata librarian would give a clearer picture.Drupal is the gatekeeper for access. Although Fedora offers WebAC access control as a&hellip;
@@ -122,7 +179,7 @@
             <category term="hosting"/>
             <category term="cloud"/>
 
-        <updated>2020-06-23T08:35:13-04:00</updated>
+        <updated>2020-06-23T10:05:06-04:00</updated>
             <summary>
                 <![CDATA[
                     A few solutions are available for vendors to host a solution for a fee.Able to run the stack on a cloud hosting provider like Amazon’s AWS. The demo is running on EC2 and Lightsail (an Amazon cloud solution).Price modeling on any AWS solution is complicated&hellip;
@@ -156,7 +213,7 @@
             <category term="LTR"/>
             <category term="AI"/>
 
-        <updated>2020-06-23T08:35:13-04:00</updated>
+        <updated>2020-06-23T10:05:06-04:00</updated>
             <summary>
                 <![CDATA[
                     A search/discoverability enhancement “Learning to Rank (LTR) is a class of techniques that apply supervised machine learning (ML) to solve ranking problems.“ [link] LTR is a query reranking Solr plugin. Another comment on this from [link] to better summarize LTR, “Learning to rank (LTR) is&hellip;
@@ -199,7 +256,7 @@
             <category term="JSON"/>
             <category term="API"/>
 
-        <updated>2020-06-23T08:35:13-04:00</updated>
+        <updated>2020-06-23T10:05:06-04:00</updated>
             <summary>
                 <![CDATA[
                     RDF Mapping; “In Islandora, the JSON-LD Module transforms nodes (or media, or taxonomy terms) into the RDF that is synced into Fedora and the Triplestore. It uses RDF mappings, a concept defined by the RDF Module, and exposes them through the REST API” (RDF Generation,&hellip;
@@ -243,7 +300,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/preservation.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/preservation.html</id>
 
-        <updated>2020-06-23T08:35:13-04:00</updated>
+        <updated>2020-06-23T10:05:06-04:00</updated>
             <summary>
                 <![CDATA[
                     Islandora 8 utilizes Harvard’s File Information Tool Set (FITS), Fixity auditing, bag exporting, and preservation reporting for preservation (Jordan, 2019).Leverages Fedora 5 as the preservation layer. According to SFU’s Library DPF Action Plan in the following snippet [link]Supports versioning of binaries within an object. Islandora&hellip;
@@ -276,7 +333,7 @@
             <category term="MODS"/>
             <category term="CSV"/>
 
-        <updated>2020-06-23T08:35:13-04:00</updated>
+        <updated>2020-06-23T10:05:06-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/7/migration-middle-format-process.jpg" alt="Typical Drupal 8 migration" />
@@ -327,7 +384,7 @@
             <category term="PDF"/>
             <category term="Moore"/>
 
-        <updated>2020-06-23T08:35:13-04:00</updated>
+        <updated>2020-06-23T10:05:06-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/6/Screen-Shot-2020-06-19-at-2.44.27-PM.png" alt="Drupal 8 Add Custom Content type" />
@@ -344,49 +401,6 @@
 <li>Supports the deposit and presentation of audio objects. Most of the functionality specific to audio is carried out by Drupal modules. Audio transcript editing/display, playback, and thumbnail generation of the audio’s waveform are all Drupal core and contributed features.</li>
 <li>Supports the deposit and presentation of video objects. Most of the functionality specific to video is carried out by Drupal modules. Video transcript editing/display, thumbnail generation and playback are all Drupal core and contributed features. An Islandora 8 code submission is pending approval for transcripts (Manimjs_drupal, 2020) and an oral history step by step instruction as proof of concept is available (Shaw, 2019).</li>
 <li>Supports the deposit and presentation of oral history objects. The only discernible difference between audio/video objects and oral history objects is the presence of transcripts, transcripts are already part of the audio/video features indicating this is completely covered as well. </li>
-</ol>
-
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>Images, Books, and Pages</title>
-        <author>
-            <name>Don Richards</name>
-        </author>
-        <link href="https://donrichards.github.io/migrate_islandora_csv/images-books-and-pages.html"/>
-        <id>https://donrichards.github.io/migrate_islandora_csv/images-books-and-pages.html</id>
-            <category term="viewer"/>
-            <category term="paged"/>
-            <category term="modeling"/>
-            <category term="derivative"/>
-            <category term="content model"/>
-            <category term="book"/>
-            <category term="Universal viewer"/>
-            <category term="OCR"/>
-            <category term="Mirador"/>
-            <category term="BigData"/>
-
-        <updated>2020-06-23T08:35:13-04:00</updated>
-            <summary>
-                <![CDATA[
-                        <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/5/CONTENT-MODELING-DRUPAL8.jpg" alt="Book viewer example" />
-                    A suite of microservices (Crayfish) are initiated during the process of ingesting an object, which maps resources to Fedora and generates derivative files among other things. Unlike previous versions of Islandora, version 8 asynchronously manages and queues these microservices for scalability, stability, and speed. Specifically&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                    <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/5/CONTENT-MODELING-DRUPAL8.jpg" alt="Book viewer example" />
-                <p>A suite of microservices (Crayfish) are initiated during the process of ingesting an object, which maps resources to Fedora and generates derivative files among other things. Unlike previous versions of Islandora, version 8 asynchronously manages and queues these microservices for scalability, stability, and speed. Specifically some of these microservices generate derivatives like thumbnails, browser sized images, and OCR. The system defaults come with OpenSeadragon with an IIIF image server. The viewer can be switched to Mirador or Universal Viewer with a relatively small amount of code (Zoller, 2019).</p>
-<p><figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/85142859-f5bc3b80-b216-11ea-970a-86c91f02a527.jpeg" data-is-external-image="true"  alt="mirador_example" /></figure></p>
-<ol>
-<li>Supports the deposit and characterization of preservation-quality large image (TIFs &amp; JP2s). This process creates derivatives including but not limited to technical metadata generation and other access media for browser consumption.</li>
-<li>Supports the deposit of books with preservation-quality large images as pages. Most objects in Islandora are treated like paged objects to begin with so there is little difference between a page versus a large image. The difference is the microservices that are triggered and how that changes the behavior of the viewer.</li>
-<li>Automates the generation of access copies and other derivatives when an object is ingested and/or modified. This includes but is not limited to lower resolution media for browsers and thumbnail image generation for small &amp; large images, video and audio files (Waveform generation from original audio file for thumbnail generation).</li>
-<li>Serves high quality access derivatives with image-zooming capability via a viewer (OpenSeaDragon, Mirador, or Universal Viewer). The default image viewer is Open Seadragon. <figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/85144983-e8ed1700-b219-11ea-8cec-6558ff985901.jpg" data-is-external-image="true"  alt="seadragon-zoomed" /></figure></li>
-<li>Renders images with a IIIF image server.</li>
-<li>Automating the generation of the OCR microform is taken care of through Hypercube/Tesseract microservice. Tesseract is fully capable but it’s unclear how to configure Drupal to export hOCR. This may be user error and not a limitation of the stack.</li>
-<li>Allows for bulk uploads from the admin console. <figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/85143458-c659fe80-b217-11ea-90dd-f6f583c4c30e.png" data-is-external-image="true"  alt="bulk uploader" /></figure></li>
 </ol>
 
             ]]>
