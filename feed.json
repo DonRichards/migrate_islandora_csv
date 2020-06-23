@@ -21,15 +21,15 @@
             },
             "tags": [
             ],
-            "date_published": "2020-06-22T21:20:25-04:00",
-            "date_modified": "2020-06-22T21:20:25-04:00"
+            "date_published": "2020-06-22T21:24:52-04:00",
+            "date_modified": "2020-06-22T21:24:52-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/technical-infrastructure.html",
             "url": "https://donrichards.github.io/migrate_islandora_csv/technical-infrastructure.html",
             "title": "Technical Infrastructure",
             "summary": "Drupal 8 completely supports CAS authentication [link].Islandora 8 provides several different reports out-of-the-box. From microservice stats to usage stats. There are several options and are highly configurable. Here is an example of Mark Jordan’s module that provides a collection of graphical reports on various aspects&hellip;",
-            "content_html": "<ol>\n<li>Drupal 8 completely supports CAS authentication [<a href=\"https://www.drupal.org/project/cas\">link</a>].</li>\n<li>Islandora 8 provides several different reports out-of-the-box. From microservice stats to usage stats. There are several options and are highly configurable. Here is an example of Mark Jordan’s module that provides a collection of graphical reports on various aspects of an Islandora repository. <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://github.com/mjordan/islandora_repository_reports/raw/master/docs/images/random_pie.png\" data-is-external-image=\"true\"  alt=\"pie chart\" /></figure> <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://github.com/mjordan/islandora_repository_reports/raw/master/docs/images/random_bar.png\" data-is-external-image=\"true\"  alt=\"bar chart\" /></figure></li>\n<li>“Supports logging of manual dashboard processes by authenticated users” <strong>I am uncertain as to what this is referring to at this time.</strong></li>\n<li>Like any other web servers, Islandora 8 can be hosted locally. The biggest benefits are leveraging the power of CPU multithreading and large memory size utilization are the most cost effective. However, self hosted hardware costs money to maintain and upgrade. Please see <a href=\"#\">Cloud Hosting</a> for other options.</li>\n<li>Another option is using a cloud hosted provider like any one of the numerous options Amazon’s cloud hosting provides. Again please see <a href=\"#\">Cloud Hosting</a> for cloud options.</li>\n<li>Another option to include is a decoupled headless version. This solution was recently demonstrated by Discovery Gardens. It allows for all of the management side of development to be done on the Drupal server but the frontend to be a Reactjs solution. This improves speed and allows a much more flexible frontend solution to be applied. This would allow us to develop the entire site’s frontend behavior to be implemented the same way we’ve created the digital collection’s landing page. </li>\n<li>The bare minimum to run Islandora 8 in a virtual machine (for development) is 1 CPU core with 4GB of RAM and 8GB of storage. A more comprehensive specification needs to consider applications in the stack with large needs for scalability. “Cantaloupe uses a thread-per-request model, and maintains its own thread pool to carry out certain tasks asynchronously and spread work across processors. Response times will benefit from multiple fast cores.” (Deployment, 2020) Blazegraph has a few complicated tradeoffs for RAM vs harddrive performance for ideal implementations. The configuration they suggest is a 4 core (3.5GHz) system with 16GB RAM on a pair of SSDs. For 1 billion RDF triple is 83.8GB of storage/32GB if in RAM (Bebee, 2020). In conclusion for the infrastructure, the system depends on the desired scalability and performance expected. This is a full content management system with several high performance applications.</li>\n</ol>\n",
+            "content_html": "<ol>\n<li>Drupal 8 completely supports CAS authentication [<a href=\"https://www.drupal.org/project/cas\">link</a>].</li>\n<li>Islandora 8 provides several different reports out-of-the-box. From microservice stats to usage stats. There are several options and are highly configurable. Here is an example of Mark Jordan’s module that provides a collection of graphical reports on various aspects of an Islandora repository. <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://github.com/mjordan/islandora_repository_reports/raw/master/docs/images/random_pie.png\" data-is-external-image=\"true\"  alt=\"pie chart\" /></figure> <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://github.com/mjordan/islandora_repository_reports/raw/master/docs/images/random_bar.png\" data-is-external-image=\"true\"  alt=\"bar chart\" /></figure></li>\n<li>“Supports logging of manual dashboard processes by authenticated users” <strong>I am uncertain as to what this is referring to at this time.</strong></li>\n<li>Like any other web servers, Islandora 8 can be hosted locally. The biggest benefits are leveraging the power of CPU multithreading and large memory size utilization are the most cost effective. However, self hosted hardware costs money to maintain and upgrade. Please see <a href=\"cloud-hosting-solution.html\">Cloud Hosting</a> for other options.</li>\n<li>Another option is using a cloud hosted provider like any one of the numerous options Amazon’s cloud hosting provides. Again please see <a href=\"cloud-hosting-solution.html\">Cloud Hosting</a> for cloud options.</li>\n<li>Another option to include is a decoupled headless version. This solution was recently demonstrated by Discovery Gardens. It allows for all of the management side of development to be done on the Drupal server but the frontend to be a Reactjs solution. This improves speed and allows a much more flexible frontend solution to be applied. This would allow us to develop the entire site’s frontend behavior to be implemented the same way we’ve created the digital collection’s landing page. </li>\n<li>The bare minimum to run Islandora 8 in a virtual machine (for development) is 1 CPU core with 4GB of RAM and 8GB of storage. A more comprehensive specification needs to consider applications in the stack with large needs for scalability. “Cantaloupe uses a thread-per-request model, and maintains its own thread pool to carry out certain tasks asynchronously and spread work across processors. Response times will benefit from multiple fast cores.” (Deployment, 2020) Blazegraph has a few complicated tradeoffs for RAM vs harddrive performance for ideal implementations. The configuration they suggest is a 4 core (3.5GHz) system with 16GB RAM on a pair of SSDs. For 1 billion RDF triple is 83.8GB of storage/32GB if in RAM (Bebee, 2020). In conclusion for the infrastructure, the system depends on the desired scalability and performance expected. This is a full content management system with several high performance applications.</li>\n</ol>\n",
             "author": {
                 "name": "Don Richards"
             },
@@ -43,8 +43,8 @@
                    "GB",
                    "CPU"
             ],
-            "date_published": "2020-06-22T21:20:25-04:00",
-            "date_modified": "2020-06-22T21:20:25-04:00"
+            "date_published": "2020-06-22T21:24:52-04:00",
+            "date_modified": "2020-06-22T21:24:52-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/rights-and-restrictions.html",
@@ -57,8 +57,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-06-22T21:20:25-04:00",
-            "date_modified": "2020-06-22T21:20:25-04:00"
+            "date_published": "2020-06-22T21:24:52-04:00",
+            "date_modified": "2020-06-22T21:24:52-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/cloud-hosting-solution.html",
@@ -76,8 +76,8 @@
                    "hosting",
                    "cloud"
             ],
-            "date_published": "2020-06-22T21:20:25-04:00",
-            "date_modified": "2020-06-22T21:20:25-04:00"
+            "date_published": "2020-06-22T21:24:52-04:00",
+            "date_modified": "2020-06-22T21:24:52-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/next-level-discoverability-solutions.html",
@@ -95,8 +95,8 @@
                    "LTR",
                    "AI"
             ],
-            "date_published": "2020-06-22T21:20:25-04:00",
-            "date_modified": "2020-06-22T21:20:25-04:00"
+            "date_published": "2020-06-22T21:24:52-04:00",
+            "date_modified": "2020-06-22T21:24:52-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/metadata-and-metadata-sharing.html",
@@ -121,8 +121,8 @@
                    "JSON",
                    "API"
             ],
-            "date_published": "2020-06-22T21:20:25-04:00",
-            "date_modified": "2020-06-22T21:20:25-04:00"
+            "date_published": "2020-06-22T21:24:52-04:00",
+            "date_modified": "2020-06-22T21:24:52-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/preservation.html",
@@ -135,8 +135,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-06-22T21:20:25-04:00",
-            "date_modified": "2020-06-22T21:20:25-04:00"
+            "date_published": "2020-06-22T21:24:52-04:00",
+            "date_modified": "2020-06-22T21:24:52-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/uploading-ingesting-and-migration.html",
@@ -157,8 +157,8 @@
                    "MODS",
                    "CSV"
             ],
-            "date_published": "2020-06-22T21:20:25-04:00",
-            "date_modified": "2020-06-22T21:20:25-04:00"
+            "date_published": "2020-06-22T21:24:52-04:00",
+            "date_modified": "2020-06-22T21:24:52-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/other-content-types.html",
@@ -184,8 +184,8 @@
                    "PDF",
                    "Moore"
             ],
-            "date_published": "2020-06-22T21:20:25-04:00",
-            "date_modified": "2020-06-22T21:20:25-04:00"
+            "date_published": "2020-06-22T21:24:52-04:00",
+            "date_modified": "2020-06-22T21:24:52-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/images-books-and-pages.html",
@@ -209,8 +209,8 @@
                    "Mirador",
                    "BigData"
             ],
-            "date_published": "2020-06-22T21:20:25-04:00",
-            "date_modified": "2020-06-22T21:20:25-04:00"
+            "date_published": "2020-06-22T21:24:52-04:00",
+            "date_modified": "2020-06-22T21:24:52-04:00"
         }
     ]
 }
