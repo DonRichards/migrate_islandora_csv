@@ -10,6 +10,42 @@
     <id>https://donrichards.github.io/migrate_islandora_csv</id>
 
     <entry>
+        <title>Book &amp; Large Image Viewer</title>
+        <author>
+            <name>Don Richards</name>
+        </author>
+        <link href="https://donrichards.github.io/migrate_islandora_csv/book-and-large-image-viewer.html"/>
+        <id>https://donrichards.github.io/migrate_islandora_csv/book-and-large-image-viewer.html</id>
+
+        <updated>2020-06-24T08:29:07-04:00</updated>
+            <summary>
+                <![CDATA[
+                    IIIF (International Image Interoperability Framework) is a set of specifications that provides interoperability of image-based collections across platforms. What this means for a repository platform&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p><a href="https://iiif.io">IIIF</a> (International Image Interoperability Framework) is a set of specifications that provides interoperability of image-based collections across platforms. What this means for a repository platform like Islandora at a general level is that image-based objects such as (still) images and paged content can be managed by Islandora but viewed in external applications, and that Islandora can bring in image-based content from elsewhere to supplement locally managed content. If this intrigues you, see the section “Looking under the hood (and beyond)” below.</p>
+<p>At a practial level, because Islandora supports several of the IIIF specifications, we can:</p>
+<ul>
+<li>Zoom, pan, and rotate images within OpenSeadragon</li>
+<li>Islandora uses an IIIF-compliant image server (by default, <a href="https://cantaloupe-project.github.io/">Cantaloupe</a>) that utilizes the IIIF Image API. This capablity is similar to what Islandora 7.x users experience when they view a Large Image.</li>
+<li>Display thumbnails for all pages of a book or newspaper issue within image viewers</li>
+<li>IIIF-compliant image viewers such as OpenSeadragon or Mirador can display a “collection” of images such as all the pages of a book or newspaper issue using the <a href="https://iiif.io/api/presentation/2.1/">IIIF Presentation API</a>. For example, here is a screenshot of OpenSeadragon rendering all the pages of a book: <figure class="post__image"><img loading="lazy" src="https://islandora.github.io/documentation/assets/osd_collection_mode.png" data-is-external-image="true"  alt="pages of a book" /></figure></li>
+</ul>
+<h3 id="using-iiif-in-islandora-8">Using IIIF in Islandora 8</h3>
+<p>Implementation of the IIIF Presentation API is new in Islandora 8, and using it is as simple as configuring a Context (in fact, you don’t even need to configure it; the Context, Openseadragon Block, already exists by default). To use this Context, all that is required is for your book or newspaper (or other paged content) to be given a model of “Paged Content” or “Publication Issue”. Then, in the Openseadragon Block Context, make sure the term used in the “Node has term” condition (you can register more than one term there). Now, when you view a paged content Islandora object, you will see thumbnails of all of its child pages (assuming you have added some child pages to the object) in the OpenSeadragon viewer as illustrated above.</p>
+<p>To view an object’s <strong>manifest</strong> navigate to the node’s URL and add <code>/manifest</code></p>
+<p>Example: <code>http://myrepo.edu/node/23/manifest</code></p>
+<h3 id="bonus">Bonus</h3>
+<p>IIIF-compliant viewers don’t need to be embedded in Islandora websites. If a viewer on another website knows the URL of a IIIF manifest like the ones that Islandora can produce, that viewer can display the content described in the manifest.
+<figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/85555851-4e634e00-b5f4-11ea-8bef-496bc6357385.png" data-is-external-image="true"  alt="Mirador example with multiple sources" /></figure></p>
+<p>For more information see Islandora’s documentation on <a href="https://islandora.github.io/documentation/user-documentation/iiif/#using-iiif-in-islandora-8">Using iiif in Islandora 8</a>. Almost all of the test from this page was taken directly from this URL.</p>
+
+            ]]>
+        </content>
+    </entry>
+    <entry>
         <title>Institutional Repository</title>
         <author>
             <name>Don Richards</name>
@@ -17,7 +53,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/institutional-repository.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/institutional-repository.html</id>
 
-        <updated>2020-06-23T16:25:09-04:00</updated>
+        <updated>2020-06-24T08:29:07-04:00</updated>
             <summary>
                 <![CDATA[
                     Institutional Repository (IR) &amp; Research Data Management (RDM) solutions As of the writing of this there is 1 university running Islandora 8 as an IR,&hellip;
@@ -39,7 +75,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/bibliography-and-citation.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/bibliography-and-citation.html</id>
 
-        <updated>2020-06-23T16:25:09-04:00</updated>
+        <updated>2020-06-24T08:29:07-04:00</updated>
             <summary>
                 <![CDATA[
                     Drupal is a very popular and well-known CMS for educational websites. And it’s very important that Drupal has tools to deal with bibliography and citations.
@@ -80,7 +116,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html</id>
 
-        <updated>2020-06-23T16:25:09-04:00</updated>
+        <updated>2020-06-24T08:29:07-04:00</updated>
             <summary>
                 <![CDATA[
                     OAI-PMH Persistent Identifiers: Module for minting and persisting persistent identifiers (Handles, DOIs, ARKs, etc.). Persistent identifiers can be minted by a variety of sources, such&hellip;
@@ -122,7 +158,7 @@
             <category term="Google"/>
             <category term="Delta"/>
 
-        <updated>2020-06-23T16:25:09-04:00</updated>
+        <updated>2020-06-24T08:29:07-04:00</updated>
             <summary>
                 <![CDATA[
                     230+ public sites, 1414 listserv members, 144 GitHub members, 28 Committers, 25+ Contributed Modules, 30+ Foundation members, 12 Interest Groups, 10 Community-led software releases, 19&hellip;
@@ -174,7 +210,7 @@
             <category term="VM"/>
             <category term="ISLE"/>
 
-        <updated>2020-06-23T16:25:09-04:00</updated>
+        <updated>2020-06-24T08:29:07-04:00</updated>
             <summary>
                 <![CDATA[
                     For self hosted soltutions there are 2 basic deployment options; Ansible(a style we’re currently using) or deploying through Docker images. All of these options can&hellip;
@@ -212,7 +248,7 @@
             <category term="GB"/>
             <category term="CPU"/>
 
-        <updated>2020-06-23T16:25:09-04:00</updated>
+        <updated>2020-06-24T08:29:07-04:00</updated>
             <summary>
                 <![CDATA[
                     Drupal 8 completely supports CAS authentication [link].Islandora 8 provides several different reports out-of-the-box. From microservice stats to usage stats. There are several options and are&hellip;
@@ -241,7 +277,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/rights-and-restrictions.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/rights-and-restrictions.html</id>
 
-        <updated>2020-06-23T16:25:09-04:00</updated>
+        <updated>2020-06-24T08:29:07-04:00</updated>
             <summary>
                 <![CDATA[
                     Rightsstatements.org is not specifically discussed in the documentation. Although extensive URI integration for controlled access terms is documented on the site, an assessment by the&hellip;
@@ -270,7 +306,7 @@
             <category term="hosting"/>
             <category term="cloud"/>
 
-        <updated>2020-06-23T16:25:09-04:00</updated>
+        <updated>2020-06-24T08:29:07-04:00</updated>
             <summary>
                 <![CDATA[
                     A few solutions are available for vendors to host a solution for a fee.Able to run the stack on a cloud hosting provider like Amazon’s&hellip;
@@ -304,7 +340,7 @@
             <category term="LTR"/>
             <category term="AI"/>
 
-        <updated>2020-06-23T16:25:09-04:00</updated>
+        <updated>2020-06-24T08:29:07-04:00</updated>
             <summary>
                 <![CDATA[
                     A search/discoverability enhancement “Learning to Rank (LTR) is a class of techniques that apply supervised machine learning (ML) to solve ranking problems.“ [link] LTR is&hellip;
@@ -321,62 +357,6 @@
 <li>Oxford Common File Layout Specification (OCFL) is coming next year with the release of Fedora 6.x according to Danny Lamb and David Wilcox. This should be available within Islandora as part of upgrading Fedora to 6.x. <blockquote>
 <p>The previously mentioned disadvantages of the Fedora API may be mitigated by a relatedcommunity initiative called the Oxford Common File Layout (OCFL). The OCFL is acommunity-based effort to develop “an application-independent approach to the storage ofdigital information in a structured, transparent, and predictable manner. It is designed topromote long-term object management best practices within digital repositories.” The originalidea for this effort came from a Fedora Camp hosted at the University of Oxford in September2017, so it has roots in the Fedora community even though the OCFL is not dependent onFedora in any way. However, if Fedora were to store repository resources as specified by theOCFL, major upgrades in the future may become much easier. One of the primary motivatinguse cases of the OCFL is to reduce the need for data migrations; both because moving largeamounts of data is time-consuming and because such migrations risk data corruption and loss.The OCFL decouples the structure of files on disk from the application(s) that manage the filesby defining a file and folder hierarchy to which applications must conform. Thus, the files can beleft in place and new software applications can implement the OCFL specification in order tomanage the files. - [<a href="https://wiki.lyrasis.org/download/attachments/131533003/Designing%20a%20Migration%20Path%20-%20Final%20Report.pdf">link</a>]</p>
 </blockquote>
-</li>
-</ol>
-
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>Metadata and Metadata sharing</title>
-        <author>
-            <name>Don Richards</name>
-        </author>
-        <link href="https://donrichards.github.io/migrate_islandora_csv/metadata-and-metadata-sharing.html"/>
-        <id>https://donrichards.github.io/migrate_islandora_csv/metadata-and-metadata-sharing.html</id>
-            <category term="taxonomy"/>
-            <category term="subject"/>
-            <category term="sharing"/>
-            <category term="mapping"/>
-            <category term="linked data"/>
-            <category term="genre"/>
-            <category term="Schema"/>
-            <category term="RDFa"/>
-            <category term="RDF"/>
-            <category term="JSON-LD"/>
-            <category term="JSON"/>
-            <category term="API"/>
-
-        <updated>2020-06-23T16:25:09-04:00</updated>
-            <summary>
-                <![CDATA[
-                    RDF Mapping; “In Islandora, the JSON-LD Module transforms nodes (or media, or taxonomy terms) into the RDF that is synced into Fedora and the Triplestore.
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                <ol>
-<li>RDF Mapping; “In Islandora, the JSON-LD Module transforms nodes (or media, or taxonomy terms) into the RDF that is synced into Fedora and the Triplestore. It uses RDF mappings, a concept defined by the RDF Module, and exposes them through the REST API” (RDF Generation, n.d.).  <figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/85457087-a014c580-b56d-11ea-843d-780d6b13cd27.png" data-is-external-image="true"  alt="Mapping" /></figure><ol start="2">
-<li>“The RDF Module is part of Drupal Core, but has no official documentation. The RDF Module embeds RDFa, a form of linked data, within the Drupal-generated HTML when you load the web page for a node, media, or taxonomy term. Official line is that this will allow Google to provide “rich snippets” such as star-ratings, contact info, and business hours.” [<a href="https://islandora.github.io/documentation/islandora/rdf-mapping/">link</a>]</li>
-<li>A custom module rdfui exists, and is installed-but-not-enabled on boxes provisioned by the islandora-playbook. We don’t use it because it is very rudimentary and limited to the schema.org vocabulary. </li>
-<li>URI Mapping with persistent identifiers. With access to an API for minting persistent identifiers (e.g., DataCite, EZID, etc.).  <figure class="post__image"><img loading="lazy" src="https://github.com/mjordan/persistent_identifiers/raw/master/docs/images/mint_checkbox.png" data-is-external-image="true"  alt="mint persistent_identifiers" /></figure> [<a href="https://github.com/mjordan/persistent_identifiers">link</a>]</li>
-<li>The Dupal Schema.org Dataset module recently updated to extend the schema.org metatag module to support schema.org dataset spec. “DOI minting is part of UPEI’s publication workflow, where the system only registers the dataset with Datacite when a curator user ‘publishes’ the dataset, making it public. At that point it sends an XML version of the node fields content to Dataset’s API” [paraphrased from Alexander O’Neill from UPEI via slack chat] <a href="https://www.drupal.org/project/schema_dataset">https://www.drupal.org/project/schema_dataset</a></li>
-</ol>
-</li>
-<li>Migrating metadata (even complex metadata) is a simple process. In controlled_access_terms, we have an understanding of a typed_relation, which is an entity reference coupled with a MARC relator. The migration script expects an associative array that looks like this: <figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/85176275-7430d180-b247-11ea-9841-a5086a7ea3f7.png" data-is-external-image="true"  alt="associative_array" /></figure></li>
-</ol>
-<p>This is an example of the JSON output for an imported value. To see any entity’s json value add <code>_?_format=json_</code> at the end of the URL of the entity. <code>_jsonld_</code> will work as well to get the jsonld values as well. Example, <em><a href="http://localhost:8000/taxonomy/term/339?_format=json">http://localhost:8000/taxonomy/term/339?_format=json</a></em> 
-<figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/85176333-99bddb00-b247-11ea-8ac7-77573747ae3f.png" data-is-external-image="true"  alt="example_json" /></figure></p>
-<ol start="5">
-<li>Although not absolutely essential it is my understanding that taxonomy vocabulary to categorized metadata should be migrated as entities first before the Islandora 7 objects and their metadata. Generating taxonomy from within a node’s migration is limited. For instance, a Subject’s authority has a title, associated authority and a URI. Automatically generating the subject from within the node migration limits to only the title. Whereas a separate migration allows for all 3 fields to be imported and referenced. Here is the list of taxonomy vocabulary list of “_categories_” of metadata.<ol>
-<li><strong>Corporate Body,</strong> an organization or group of persons that is identified by a particular name</li>
-<li><strong>Family,</strong> two or more who present themselves as a family</li>
-<li><strong>Genre</strong>,  a category characterizing a particular style</li>
-<li><strong>Geographic Location</strong>, Geographic area</li>
-<li><strong>Islandora access</strong>, Terms used to limit, restrict or coordinate access</li>
-<li><strong>Person</strong>, an individual of the human species.</li>
-<li><strong>Subject</strong>, topics, events, people, and organizations.</li>
-</ol>
 </li>
 </ol>
 
