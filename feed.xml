@@ -17,7 +17,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/book-and-large-image-viewer.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/book-and-large-image-viewer.html</id>
 
-        <updated>2020-06-24T08:29:07-04:00</updated>
+        <updated>2020-06-24T13:37:58-04:00</updated>
             <summary>
                 <![CDATA[
                     IIIF (International Image Interoperability Framework) is a set of specifications that provides interoperability of image-based collections across platforms. What this means for a repository platform&hellip;
@@ -38,7 +38,7 @@
 <p>To view an object’s <strong>manifest</strong> navigate to the node’s URL and add <code>/manifest</code></p>
 <p>Example: <code>http://myrepo.edu/node/23/manifest</code></p>
 <h3 id="bonus">Bonus</h3>
-<p>IIIF-compliant viewers don’t need to be embedded in Islandora websites. If a viewer on another website knows the URL of a IIIF manifest like the ones that Islandora can produce, that viewer can display the content described in the manifest.
+<p>IIIF-compliant viewers don’t need to be embedded in Islandora websites. If a viewer on another website knows the URL of a IIIF manifest like the ones that Islandora can produce, that viewer can display the content described in the manifest. Here’s an example of how a viewer can display from multiple external domains with just a manifest.
 <figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/85555851-4e634e00-b5f4-11ea-8bef-496bc6357385.png" data-is-external-image="true"  alt="Mirador example with multiple sources" /></figure></p>
 <p>For more information see Islandora’s documentation on <a href="https://islandora.github.io/documentation/user-documentation/iiif/#using-iiif-in-islandora-8">Using iiif in Islandora 8</a>. Almost all of the test from this page was taken directly from this URL.</p>
 
@@ -53,16 +53,64 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/institutional-repository.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/institutional-repository.html</id>
 
-        <updated>2020-06-24T08:29:07-04:00</updated>
+        <updated>2020-06-24T13:37:58-04:00</updated>
             <summary>
                 <![CDATA[
-                    Institutional Repository (IR) &amp; Research Data Management (RDM) solutions As of the writing of this there is 1 university running Islandora 8 as an IR,&hellip;
+                    There are several top universities that have been using Drupal for a veriety of acedemic purposes. Some have recently migrated to the platform where some&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
-                <p>Institutional Repository (IR) &amp; Research Data Management (RDM) solutions</p>
-<p>As of the writing of this there is 1 university running Islandora 8 as an IR, <a href="https://oaks.kent.edu/">Kent State University</a> and 1 an Islandora 8 RDM portal at <a href="https://islandora-rdm.researchspaces.ca/">UPEI</a></p>
+                <p><figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/85573503-f3d1ee00-b603-11ea-9142-52e80f4e8951.png" data-is-external-image="true"  alt="Drupal for higher education" /></figure>
+There are several top universities that have been using Drupal for a veriety of acedemic purposes. Some have recently migrated to the platform where some have been using it for years. </p>
+<ol>
+<li><a href="http://www.ox.ac.uk">Oxford University</a> Drupal 7.72</li>
+<li><a href="https://online-learning.harvard.edu">Harvard University</a> Drupal 7.69</li>
+<li><a href="https://web.mit.edu">Massachusetts Institute of Technology</a> Drupal 8.x</li>
+<li><a href="duke.edu">Duke University</a> <a href="https://researchfunding.duke.edu/CHANGELOG.txt">Drupal 7.72</a></li>
+<li><a href="ucla.edu">UCLA</a> <a href="https://www3.research.ucla.edu/CHANGELOG.txt">Drupal 7.70</a></li>
+<li><a href="https://arizona.edu">University of Arizona</a> <a href="https://rgw.arizona.edu/CHANGELOG.txt">Drupal 7.72</a></li>
+<li><a href="https://www.psu.edu">Penn State</a> Drupal 7.x &amp; 8.x</li>
+<li><a href="https://research.utoronto.ca">University of Toronto</a> Drupal 8.x</li>
+<li><a href="https://www.library.jhu.edu">Johns Hopkins University</a> Drupal 7.x &amp; 8.x</li>
+</ol>
+<p>There are Institutional Repository (IR) &amp; Research Data Management (RDM) solutions in production.</p>
+<h3 id="institutional-repository-ir-in-production">Institutional Repository (IR) in production</h3>
+<p>As of the writing of this there is 1 university running Islandora 8 as an IR in production, <a href="https://oaks.kent.edu">Kent State University</a> and 1 an Islandora 8 RDM portal at <a href="https://islandora-rdm.researchspaces.ca">UPEI</a></p>
+<p><a href="https://oaks.kent.edu">Kent State University</a> migrated from Bepress according to Jonathan Hunt from Catalyst IT in New Zealand.</p>
+<p>Thier repository “formats” according to thier <a href="https://oaks.kent.edu/search?s=&amp;">search</a> include:</p>
+<ul>
+<li>Articles</li>
+<li>Conference Proceedings</li>
+<li>Images</li>
+<li>Text</li>
+<li>Newspapers</li>
+<li>Books</li>
+<li>Book Reviews</li>
+<li>Yearbooks</li>
+<li>Newsletters</li>
+<li>Videos</li>
+<li>Events</li>
+<li>Journals</li>
+<li>Magazines</li>
+<li>Dissertations</li>
+<li>Editorials</li>
+<li>News Articles</li>
+<li>Datasets</li>
+<li>Presentations</li>
+<li><a href="https://oaks.kent.edu/esdri2020">Symposiums</a></li>
+</ul>
+<p><figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/85563647-95087680-b5fb-11ea-9f99-5e791c317856.png" data-is-external-image="true"  alt="kent_state" /></figure></p>
+<p>Thier listing of “format” is a bit misleading. All of the data was migrated from Bepress and alligned with thier format limitations. Several items are PDFs when a different format would be expected.</p>
+<p>The company that migrated Kent State University Catalyst IT also has another Islandora 8 in production “<a href="https://canterburystories.nz">Christ Church City Libraries</a>“ and several more New Zealand sites in beta.</p>
+<h3 id="research-data-management-rdm-in-production">Research Data Management (RDM) in production</h3>
+<p>This project is supported by <a href="https://www.canarie.ca/rdm-funding-call-recipients">CANARIE Awards</a> Research Data Management (RDM) Funding Call 1.</p>
+<p><figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/85565717-655a6e00-b5fd-11ea-95ec-e532ab781ac4.png" data-is-external-image="true"  alt="CANARIE_Awards" /></figure></p>
+<p>Develop features in Islandora 8 and integrations with other services that provides a comprehensive research data management platform that is informed by the <a href="https://islandora-rdm.researchspaces.ca/node/4">FAIR principles</a>. The project seeks to develop integrations with identifier, metadata, authentication, storage, and dissemination systems and services that support the research data lifecycle and FAIR principles - that is making research data Findable, Accessible, Interoperable, and Reusable. The project is an out-of the box profile (with configurable but sensible defaults) for institutions wanting to curate and manage research data over its lifecycle.</p>
+<p><figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/85566753-50320f00-b5fe-11ea-9110-ad59539bd930.jpg" data-is-external-image="true"  alt="Islandora RDM Webinar - November 7 2019" /></figure></p>
+<p>This system created a Drupal content type that represents a research data management plan.  DMPRoadMap is software used by DMPTool in the US, DMPOnline in Europe. In Canada, the DMP Assistant in Canada is moving towards that framework. The draft Tri-Agency Research Data Management Policy highlights the importance of DMPs as a best practices in research data management and this feature provides researchers with a tool to help them meet emerging funding requirements. This content type models a generic funder template and associated guidance modeled on the DMPRoadMap. It is possible to have Conditional fields to provide specific funder templates.</p>
+<p>This module directly integrates ORCID oauth login relating their user profile with thier ORCID ID and giving them the ability to link thier submitted content with ORCID.
+<a href="http://drive.google.com/file/d/1N6UzoLoP4dz5ZjP9Biw-_NBB599xrlWt/view" title="Logging in"><figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/85570432-570e5100-b601-11ea-9578-f73b3198d24c.png" data-is-external-image="true"  alt="Logging into ORCID" /></figure></a></p>
 
             ]]>
         </content>
@@ -75,7 +123,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/bibliography-and-citation.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/bibliography-and-citation.html</id>
 
-        <updated>2020-06-24T08:29:07-04:00</updated>
+        <updated>2020-06-24T13:37:58-04:00</updated>
             <summary>
                 <![CDATA[
                     Drupal is a very popular and well-known CMS for educational websites. And it’s very important that Drupal has tools to deal with bibliography and citations.
@@ -116,7 +164,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html</id>
 
-        <updated>2020-06-24T08:29:07-04:00</updated>
+        <updated>2020-06-24T13:37:58-04:00</updated>
             <summary>
                 <![CDATA[
                     OAI-PMH Persistent Identifiers: Module for minting and persisting persistent identifiers (Handles, DOIs, ARKs, etc.). Persistent identifiers can be minted by a variety of sources, such&hellip;
@@ -158,7 +206,7 @@
             <category term="Google"/>
             <category term="Delta"/>
 
-        <updated>2020-06-24T08:29:07-04:00</updated>
+        <updated>2020-06-24T13:37:58-04:00</updated>
             <summary>
                 <![CDATA[
                     230+ public sites, 1414 listserv members, 144 GitHub members, 28 Committers, 25+ Contributed Modules, 30+ Foundation members, 12 Interest Groups, 10 Community-led software releases, 19&hellip;
@@ -210,7 +258,7 @@
             <category term="VM"/>
             <category term="ISLE"/>
 
-        <updated>2020-06-24T08:29:07-04:00</updated>
+        <updated>2020-06-24T13:37:58-04:00</updated>
             <summary>
                 <![CDATA[
                     For self hosted soltutions there are 2 basic deployment options; Ansible(a style we’re currently using) or deploying through Docker images. All of these options can&hellip;
@@ -248,7 +296,7 @@
             <category term="GB"/>
             <category term="CPU"/>
 
-        <updated>2020-06-24T08:29:07-04:00</updated>
+        <updated>2020-06-24T13:37:58-04:00</updated>
             <summary>
                 <![CDATA[
                     Drupal 8 completely supports CAS authentication [link].Islandora 8 provides several different reports out-of-the-box. From microservice stats to usage stats. There are several options and are&hellip;
@@ -277,7 +325,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/rights-and-restrictions.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/rights-and-restrictions.html</id>
 
-        <updated>2020-06-24T08:29:07-04:00</updated>
+        <updated>2020-06-24T13:37:58-04:00</updated>
             <summary>
                 <![CDATA[
                     Rightsstatements.org is not specifically discussed in the documentation. Although extensive URI integration for controlled access terms is documented on the site, an assessment by the&hellip;
@@ -306,7 +354,7 @@
             <category term="hosting"/>
             <category term="cloud"/>
 
-        <updated>2020-06-24T08:29:07-04:00</updated>
+        <updated>2020-06-24T13:37:58-04:00</updated>
             <summary>
                 <![CDATA[
                     A few solutions are available for vendors to host a solution for a fee.Able to run the stack on a cloud hosting provider like Amazon’s&hellip;
@@ -340,7 +388,7 @@
             <category term="LTR"/>
             <category term="AI"/>
 
-        <updated>2020-06-24T08:29:07-04:00</updated>
+        <updated>2020-06-24T13:37:58-04:00</updated>
             <summary>
                 <![CDATA[
                     A search/discoverability enhancement “Learning to Rank (LTR) is a class of techniques that apply supervised machine learning (ML) to solve ranking problems.“ [link] LTR is&hellip;

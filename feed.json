@@ -14,28 +14,28 @@
             "url": "https://donrichards.github.io/migrate_islandora_csv/book-and-large-image-viewer.html",
             "title": "Book &amp; Large Image Viewer",
             "summary": "IIIF (International Image Interoperability Framework) is a set of specifications that provides interoperability of image-based collections across platforms. What this means for a repository platform&hellip;",
-            "content_html": "<p><a href=\"https://iiif.io\">IIIF</a> (International Image Interoperability Framework) is a set of specifications that provides interoperability of image-based collections across platforms. What this means for a repository platform like Islandora at a general level is that image-based objects such as (still) images and paged content can be managed by Islandora but viewed in external applications, and that Islandora can bring in image-based content from elsewhere to supplement locally managed content. If this intrigues you, see the section “Looking under the hood (and beyond)” below.</p>\n<p>At a practial level, because Islandora supports several of the IIIF specifications, we can:</p>\n<ul>\n<li>Zoom, pan, and rotate images within OpenSeadragon</li>\n<li>Islandora uses an IIIF-compliant image server (by default, <a href=\"https://cantaloupe-project.github.io/\">Cantaloupe</a>) that utilizes the IIIF Image API. This capablity is similar to what Islandora 7.x users experience when they view a Large Image.</li>\n<li>Display thumbnails for all pages of a book or newspaper issue within image viewers</li>\n<li>IIIF-compliant image viewers such as OpenSeadragon or Mirador can display a “collection” of images such as all the pages of a book or newspaper issue using the <a href=\"https://iiif.io/api/presentation/2.1/\">IIIF Presentation API</a>. For example, here is a screenshot of OpenSeadragon rendering all the pages of a book: <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://islandora.github.io/documentation/assets/osd_collection_mode.png\" data-is-external-image=\"true\"  alt=\"pages of a book\" /></figure></li>\n</ul>\n<h3 id=\"using-iiif-in-islandora-8\">Using IIIF in Islandora 8</h3>\n<p>Implementation of the IIIF Presentation API is new in Islandora 8, and using it is as simple as configuring a Context (in fact, you don’t even need to configure it; the Context, Openseadragon Block, already exists by default). To use this Context, all that is required is for your book or newspaper (or other paged content) to be given a model of “Paged Content” or “Publication Issue”. Then, in the Openseadragon Block Context, make sure the term used in the “Node has term” condition (you can register more than one term there). Now, when you view a paged content Islandora object, you will see thumbnails of all of its child pages (assuming you have added some child pages to the object) in the OpenSeadragon viewer as illustrated above.</p>\n<p>To view an object’s <strong>manifest</strong> navigate to the node’s URL and add <code>/manifest</code></p>\n<p>Example: <code>http://myrepo.edu/node/23/manifest</code></p>\n<h3 id=\"bonus\">Bonus</h3>\n<p>IIIF-compliant viewers don’t need to be embedded in Islandora websites. If a viewer on another website knows the URL of a IIIF manifest like the ones that Islandora can produce, that viewer can display the content described in the manifest.\n<figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85555851-4e634e00-b5f4-11ea-8bef-496bc6357385.png\" data-is-external-image=\"true\"  alt=\"Mirador example with multiple sources\" /></figure></p>\n<p>For more information see Islandora’s documentation on <a href=\"https://islandora.github.io/documentation/user-documentation/iiif/#using-iiif-in-islandora-8\">Using iiif in Islandora 8</a>. Almost all of the test from this page was taken directly from this URL.</p>\n",
+            "content_html": "<p><a href=\"https://iiif.io\">IIIF</a> (International Image Interoperability Framework) is a set of specifications that provides interoperability of image-based collections across platforms. What this means for a repository platform like Islandora at a general level is that image-based objects such as (still) images and paged content can be managed by Islandora but viewed in external applications, and that Islandora can bring in image-based content from elsewhere to supplement locally managed content. If this intrigues you, see the section “Looking under the hood (and beyond)” below.</p>\n<p>At a practial level, because Islandora supports several of the IIIF specifications, we can:</p>\n<ul>\n<li>Zoom, pan, and rotate images within OpenSeadragon</li>\n<li>Islandora uses an IIIF-compliant image server (by default, <a href=\"https://cantaloupe-project.github.io/\">Cantaloupe</a>) that utilizes the IIIF Image API. This capablity is similar to what Islandora 7.x users experience when they view a Large Image.</li>\n<li>Display thumbnails for all pages of a book or newspaper issue within image viewers</li>\n<li>IIIF-compliant image viewers such as OpenSeadragon or Mirador can display a “collection” of images such as all the pages of a book or newspaper issue using the <a href=\"https://iiif.io/api/presentation/2.1/\">IIIF Presentation API</a>. For example, here is a screenshot of OpenSeadragon rendering all the pages of a book: <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://islandora.github.io/documentation/assets/osd_collection_mode.png\" data-is-external-image=\"true\"  alt=\"pages of a book\" /></figure></li>\n</ul>\n<h3 id=\"using-iiif-in-islandora-8\">Using IIIF in Islandora 8</h3>\n<p>Implementation of the IIIF Presentation API is new in Islandora 8, and using it is as simple as configuring a Context (in fact, you don’t even need to configure it; the Context, Openseadragon Block, already exists by default). To use this Context, all that is required is for your book or newspaper (or other paged content) to be given a model of “Paged Content” or “Publication Issue”. Then, in the Openseadragon Block Context, make sure the term used in the “Node has term” condition (you can register more than one term there). Now, when you view a paged content Islandora object, you will see thumbnails of all of its child pages (assuming you have added some child pages to the object) in the OpenSeadragon viewer as illustrated above.</p>\n<p>To view an object’s <strong>manifest</strong> navigate to the node’s URL and add <code>/manifest</code></p>\n<p>Example: <code>http://myrepo.edu/node/23/manifest</code></p>\n<h3 id=\"bonus\">Bonus</h3>\n<p>IIIF-compliant viewers don’t need to be embedded in Islandora websites. If a viewer on another website knows the URL of a IIIF manifest like the ones that Islandora can produce, that viewer can display the content described in the manifest. Here’s an example of how a viewer can display from multiple external domains with just a manifest.\n<figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85555851-4e634e00-b5f4-11ea-8bef-496bc6357385.png\" data-is-external-image=\"true\"  alt=\"Mirador example with multiple sources\" /></figure></p>\n<p>For more information see Islandora’s documentation on <a href=\"https://islandora.github.io/documentation/user-documentation/iiif/#using-iiif-in-islandora-8\">Using iiif in Islandora 8</a>. Almost all of the test from this page was taken directly from this URL.</p>\n",
             "author": {
                 "name": "Don Richards"
             },
             "tags": [
             ],
-            "date_published": "2020-06-24T08:29:07-04:00",
-            "date_modified": "2020-06-24T08:29:07-04:00"
+            "date_published": "2020-06-24T13:37:58-04:00",
+            "date_modified": "2020-06-24T13:37:58-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/institutional-repository.html",
             "url": "https://donrichards.github.io/migrate_islandora_csv/institutional-repository.html",
             "title": "Institutional Repository",
-            "summary": "Institutional Repository (IR) &amp; Research Data Management (RDM) solutions As of the writing of this there is 1 university running Islandora 8 as an IR,&hellip;",
-            "content_html": "<p>Institutional Repository (IR) &amp; Research Data Management (RDM) solutions</p>\n<p>As of the writing of this there is 1 university running Islandora 8 as an IR, <a href=\"https://oaks.kent.edu/\">Kent State University</a> and 1 an Islandora 8 RDM portal at <a href=\"https://islandora-rdm.researchspaces.ca/\">UPEI</a></p>\n",
+            "summary": "There are several top universities that have been using Drupal for a veriety of acedemic purposes. Some have recently migrated to the platform where some&hellip;",
+            "content_html": "<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85573503-f3d1ee00-b603-11ea-9142-52e80f4e8951.png\" data-is-external-image=\"true\"  alt=\"Drupal for higher education\" /></figure>\nThere are several top universities that have been using Drupal for a veriety of acedemic purposes. Some have recently migrated to the platform where some have been using it for years. </p>\n<ol>\n<li><a href=\"http://www.ox.ac.uk\">Oxford University</a> Drupal 7.72</li>\n<li><a href=\"https://online-learning.harvard.edu\">Harvard University</a> Drupal 7.69</li>\n<li><a href=\"https://web.mit.edu\">Massachusetts Institute of Technology</a> Drupal 8.x</li>\n<li><a href=\"duke.edu\">Duke University</a> <a href=\"https://researchfunding.duke.edu/CHANGELOG.txt\">Drupal 7.72</a></li>\n<li><a href=\"ucla.edu\">UCLA</a> <a href=\"https://www3.research.ucla.edu/CHANGELOG.txt\">Drupal 7.70</a></li>\n<li><a href=\"https://arizona.edu\">University of Arizona</a> <a href=\"https://rgw.arizona.edu/CHANGELOG.txt\">Drupal 7.72</a></li>\n<li><a href=\"https://www.psu.edu\">Penn State</a> Drupal 7.x &amp; 8.x</li>\n<li><a href=\"https://research.utoronto.ca\">University of Toronto</a> Drupal 8.x</li>\n<li><a href=\"https://www.library.jhu.edu\">Johns Hopkins University</a> Drupal 7.x &amp; 8.x</li>\n</ol>\n<p>There are Institutional Repository (IR) &amp; Research Data Management (RDM) solutions in production.</p>\n<h3 id=\"institutional-repository-ir-in-production\">Institutional Repository (IR) in production</h3>\n<p>As of the writing of this there is 1 university running Islandora 8 as an IR in production, <a href=\"https://oaks.kent.edu\">Kent State University</a> and 1 an Islandora 8 RDM portal at <a href=\"https://islandora-rdm.researchspaces.ca\">UPEI</a></p>\n<p><a href=\"https://oaks.kent.edu\">Kent State University</a> migrated from Bepress according to Jonathan Hunt from Catalyst IT in New Zealand.</p>\n<p>Thier repository “formats” according to thier <a href=\"https://oaks.kent.edu/search?s=&amp;\">search</a> include:</p>\n<ul>\n<li>Articles</li>\n<li>Conference Proceedings</li>\n<li>Images</li>\n<li>Text</li>\n<li>Newspapers</li>\n<li>Books</li>\n<li>Book Reviews</li>\n<li>Yearbooks</li>\n<li>Newsletters</li>\n<li>Videos</li>\n<li>Events</li>\n<li>Journals</li>\n<li>Magazines</li>\n<li>Dissertations</li>\n<li>Editorials</li>\n<li>News Articles</li>\n<li>Datasets</li>\n<li>Presentations</li>\n<li><a href=\"https://oaks.kent.edu/esdri2020\">Symposiums</a></li>\n</ul>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85563647-95087680-b5fb-11ea-9f99-5e791c317856.png\" data-is-external-image=\"true\"  alt=\"kent_state\" /></figure></p>\n<p>Thier listing of “format” is a bit misleading. All of the data was migrated from Bepress and alligned with thier format limitations. Several items are PDFs when a different format would be expected.</p>\n<p>The company that migrated Kent State University Catalyst IT also has another Islandora 8 in production “<a href=\"https://canterburystories.nz\">Christ Church City Libraries</a>“ and several more New Zealand sites in beta.</p>\n<h3 id=\"research-data-management-rdm-in-production\">Research Data Management (RDM) in production</h3>\n<p>This project is supported by <a href=\"https://www.canarie.ca/rdm-funding-call-recipients\">CANARIE Awards</a> Research Data Management (RDM) Funding Call 1.</p>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85565717-655a6e00-b5fd-11ea-95ec-e532ab781ac4.png\" data-is-external-image=\"true\"  alt=\"CANARIE_Awards\" /></figure></p>\n<p>Develop features in Islandora 8 and integrations with other services that provides a comprehensive research data management platform that is informed by the <a href=\"https://islandora-rdm.researchspaces.ca/node/4\">FAIR principles</a>. The project seeks to develop integrations with identifier, metadata, authentication, storage, and dissemination systems and services that support the research data lifecycle and FAIR principles - that is making research data Findable, Accessible, Interoperable, and Reusable. The project is an out-of the box profile (with configurable but sensible defaults) for institutions wanting to curate and manage research data over its lifecycle.</p>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85566753-50320f00-b5fe-11ea-9110-ad59539bd930.jpg\" data-is-external-image=\"true\"  alt=\"Islandora RDM Webinar - November 7 2019\" /></figure></p>\n<p>This system created a Drupal content type that represents a research data management plan.  DMPRoadMap is software used by DMPTool in the US, DMPOnline in Europe. In Canada, the DMP Assistant in Canada is moving towards that framework. The draft Tri-Agency Research Data Management Policy highlights the importance of DMPs as a best practices in research data management and this feature provides researchers with a tool to help them meet emerging funding requirements. This content type models a generic funder template and associated guidance modeled on the DMPRoadMap. It is possible to have Conditional fields to provide specific funder templates.</p>\n<p>This module directly integrates ORCID oauth login relating their user profile with thier ORCID ID and giving them the ability to link thier submitted content with ORCID.\n<a href=\"http://drive.google.com/file/d/1N6UzoLoP4dz5ZjP9Biw-_NBB599xrlWt/view\" title=\"Logging in\"><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85570432-570e5100-b601-11ea-9578-f73b3198d24c.png\" data-is-external-image=\"true\"  alt=\"Logging into ORCID\" /></figure></a></p>\n",
             "author": {
                 "name": "Don Richards"
             },
             "tags": [
             ],
-            "date_published": "2020-06-24T08:29:07-04:00",
-            "date_modified": "2020-06-24T08:29:07-04:00"
+            "date_published": "2020-06-24T13:37:58-04:00",
+            "date_modified": "2020-06-24T13:37:58-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/bibliography-and-citation.html",
@@ -48,8 +48,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-06-24T08:29:07-04:00",
-            "date_modified": "2020-06-24T08:29:07-04:00"
+            "date_published": "2020-06-24T13:37:58-04:00",
+            "date_modified": "2020-06-24T13:37:58-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html",
@@ -62,8 +62,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-06-24T08:29:07-04:00",
-            "date_modified": "2020-06-24T08:29:07-04:00"
+            "date_published": "2020-06-24T13:37:58-04:00",
+            "date_modified": "2020-06-24T13:37:58-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/community-and-sustainability.html",
@@ -90,8 +90,8 @@
                    "Google",
                    "Delta"
             ],
-            "date_published": "2020-06-24T08:29:07-04:00",
-            "date_modified": "2020-06-24T08:29:07-04:00"
+            "date_published": "2020-06-24T13:37:58-04:00",
+            "date_modified": "2020-06-24T13:37:58-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/deployment-options.html",
@@ -112,8 +112,8 @@
                    "VM",
                    "ISLE"
             ],
-            "date_published": "2020-06-24T08:29:07-04:00",
-            "date_modified": "2020-06-24T08:29:07-04:00"
+            "date_published": "2020-06-24T13:37:58-04:00",
+            "date_modified": "2020-06-24T13:37:58-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/technical-infrastructure.html",
@@ -134,8 +134,8 @@
                    "GB",
                    "CPU"
             ],
-            "date_published": "2020-06-24T08:29:07-04:00",
-            "date_modified": "2020-06-24T08:29:07-04:00"
+            "date_published": "2020-06-24T13:37:58-04:00",
+            "date_modified": "2020-06-24T13:37:58-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/rights-and-restrictions.html",
@@ -148,8 +148,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-06-24T08:29:07-04:00",
-            "date_modified": "2020-06-24T08:29:07-04:00"
+            "date_published": "2020-06-24T13:37:58-04:00",
+            "date_modified": "2020-06-24T13:37:58-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/cloud-hosting-solution.html",
@@ -167,8 +167,8 @@
                    "hosting",
                    "cloud"
             ],
-            "date_published": "2020-06-24T08:29:07-04:00",
-            "date_modified": "2020-06-24T08:29:07-04:00"
+            "date_published": "2020-06-24T13:37:58-04:00",
+            "date_modified": "2020-06-24T13:37:58-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/next-level-discoverability-solutions.html",
@@ -186,8 +186,8 @@
                    "LTR",
                    "AI"
             ],
-            "date_published": "2020-06-24T08:29:07-04:00",
-            "date_modified": "2020-06-24T08:29:07-04:00"
+            "date_published": "2020-06-24T13:37:58-04:00",
+            "date_modified": "2020-06-24T13:37:58-04:00"
         }
     ]
 }
