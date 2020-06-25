@@ -17,7 +17,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/book-and-large-image-viewer.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/book-and-large-image-viewer.html</id>
 
-        <updated>2020-06-24T15:50:02-04:00</updated>
+        <updated>2020-06-25T15:25:40-04:00</updated>
             <summary>
                 <![CDATA[
                     IIIF (International Image Interoperability Framework) is a set of specifications that provides interoperability of image-based collections across platforms. What this means for a repository platform&hellip;
@@ -68,7 +68,7 @@
             <category term="Citation"/>
             <category term="Bibliography"/>
 
-        <updated>2020-06-24T15:50:02-04:00</updated>
+        <updated>2020-06-25T15:25:40-04:00</updated>
             <summary>
                 <![CDATA[
                      Drupal for higher education is a large industry. There are several top universities that have been using Drupal for a veriety of acedemic purposes.
@@ -97,6 +97,7 @@
 <li><a href="https://www.drupal.org/project/linked_data_field">Linked Data Lookup Field</a>: Supports Library of Congress Subject Headings, Global Research Identifier Database (GRID) entries, and CrossRef Funder identifiers and autocompletes the values out of the box. <figure class="post__image"><img loading="lazy" src="https://www.drupal.org/files/project-images/Screen%20Shot%202019-04-30%20at%202.22.31%20PM_0.png" data-is-external-image="true"  alt="Linked Data Lookup Field screenshot" /></figure></li>
 <li><a href="https://github.com/mjordan/persistent_identifiers">Persistent Identifiers</a>: for minting and persisting persistent identifiers (Handles, DOIs, ARKs, etc.). <figure class="post__image"><img loading="lazy" src="https://github.com/mjordan/persistent_identifiers/raw/master/docs/images/mint_checkbox.png" data-is-external-image="true"  alt="mint screenshot" /></figure></li>
 <li><a href="https://www.drupal.org/project/orcid">ORCID</a>: ORCID integration and allowing users to login with ORCID credentials</li>
+<li><a href="https://www.drupal.org/project/user_progress">User Progress API</a>: The User progress API module was sponsored by the Pennsylvania State University. It has been developed for charting students’ progression throughout a system.</li>
 </ul>
 <p><a href="https://www.drupal.org/docs/8/core/modules/workflows/overview">Drupal Workflows</a> is a core Drupal feature and is well documented. This was complicated in Drupal 7/Islandora 7 but now this process is trivial and is built into Drupal 8.</p>
 <p>Here is a separate page for <a href="bibliography-and-citation.html">Bibliography and Citation</a> </p>
@@ -187,7 +188,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/bibliography-and-citation.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/bibliography-and-citation.html</id>
 
-        <updated>2020-06-24T15:50:02-04:00</updated>
+        <updated>2020-06-25T15:25:40-04:00</updated>
             <summary>
                 <![CDATA[
                     Drupal is a very popular and well-known CMS for educational websites. And it’s very important that Drupal has tools to deal with bibliography and citations.
@@ -228,7 +229,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html</id>
 
-        <updated>2020-06-24T15:50:02-04:00</updated>
+        <updated>2020-06-25T15:25:40-04:00</updated>
             <summary>
                 <![CDATA[
                     OAI-PMH Persistent Identifiers: Module for minting and persisting persistent identifiers (Handles, DOIs, ARKs, etc.). Persistent identifiers can be minted by a variety of sources, such&hellip;
@@ -270,7 +271,7 @@
             <category term="Google"/>
             <category term="Delta"/>
 
-        <updated>2020-06-24T15:50:02-04:00</updated>
+        <updated>2020-06-25T15:25:40-04:00</updated>
             <summary>
                 <![CDATA[
                     230+ public sites, 1414 listserv members, 144 GitHub members, 28 Committers, 25+ Contributed Modules, 30+ Foundation members, 12 Interest Groups, 10 Community-led software releases, 19&hellip;
@@ -322,7 +323,7 @@
             <category term="VM"/>
             <category term="ISLE"/>
 
-        <updated>2020-06-24T15:50:02-04:00</updated>
+        <updated>2020-06-25T15:25:40-04:00</updated>
             <summary>
                 <![CDATA[
                     For self hosted soltutions there are 2 basic deployment options; Ansible(a style we’re currently using) or deploying through Docker images. All of these options can&hellip;
@@ -360,7 +361,7 @@
             <category term="GB"/>
             <category term="CPU"/>
 
-        <updated>2020-06-24T15:50:02-04:00</updated>
+        <updated>2020-06-25T15:25:40-04:00</updated>
             <summary>
                 <![CDATA[
                     Drupal 8 completely supports CAS authentication [link].Islandora 8 provides several different reports out-of-the-box. From microservice stats to usage stats. There are several options and are&hellip;
@@ -394,7 +395,7 @@
             <category term="access"/>
             <category term="WebAC"/>
 
-        <updated>2020-06-24T15:50:02-04:00</updated>
+        <updated>2020-06-25T15:25:40-04:00</updated>
             <summary>
                 <![CDATA[
                     Rightsstatements.org is not specifically discussed in the documentation. Although extensive URI integration for controlled access terms is documented on the site, an assessment by the&hellip;
@@ -423,7 +424,7 @@
             <category term="hosting"/>
             <category term="cloud"/>
 
-        <updated>2020-06-24T15:50:02-04:00</updated>
+        <updated>2020-06-25T15:25:40-04:00</updated>
             <summary>
                 <![CDATA[
                     A few solutions are available for vendors to host a solution for a fee.Able to run the stack on a cloud hosting provider like Amazon’s&hellip;
@@ -457,7 +458,7 @@
             <category term="LTR"/>
             <category term="AI"/>
 
-        <updated>2020-06-24T15:50:02-04:00</updated>
+        <updated>2020-06-25T15:25:40-04:00</updated>
             <summary>
                 <![CDATA[
                     A search/discoverability enhancement “Learning to Rank (LTR) is a class of techniques that apply supervised machine learning (ML) to solve ranking problems.“ [link] LTR is&hellip;
