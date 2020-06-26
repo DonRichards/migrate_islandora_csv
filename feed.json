@@ -13,15 +13,15 @@
             "id": "https://donrichards.github.io/migrate_islandora_csv/step-by-step-setup-ir.html",
             "url": "https://donrichards.github.io/migrate_islandora_csv/step-by-step-setup-ir.html",
             "title": "Step by Step Setup (IR)",
-            "summary": "This will cover these topic After the module is installed, enable webforms, webforms UI, Webform Access, Webform Attachmen, Webform Image Select, module. You may need&hellip;",
-            "content_html": "<p>This will cover these topic</p>\n<ul>\n<li>Needed modules</li>\n<li>User groups</li>\n<li>Submission process</li>\n<li>Review/Publication process</li>\n<li>Google Scholar Indexing</li>\n<li>Sharing  Metadata</li>\n<li>Embargos</li>\n<li>Tombstoning</li>\n</ul>\n<h3 id=\"needed-modules\">Needed Modules</h3>\n<ul>\n<li>Webforms</li>\n<li>Token</li>\n</ul>\n<h3 id=\"user-groups\">User groups</h3>\n<h3 id=\"submission-process\">Submission process</h3>\n<p>After the module is installed, enable webforms, webforms UI, Webform Access,  Webform Attachmen, Webform Image Select, module. You may need to fix library permissions and move libraries for performance reasons after enabling both.\nAfter the module is installed, enable webforms, webforms UI, Webform Access,  Webform Attachmen, Webform Image Select, module. You may need to fix library permissions and move libraries for performance reasons after enabling both.</p>\n<pre><code class=\"language-shell\">$ sudo chown vagrant:www-data /var/www/html/drupal/web/libraries\n$ drush wfld\n$ drush webform:libraries:composer &gt; /var/www/html/drupal/composer.libraries.json</code></pre>\n<p>Add to the composer “extra: {” section</p>\n<pre><code class=\"language-yml\">        &quot;merge-plugin&quot;: {\n            &quot;include&quot;: [\n                &quot;composer.libraries.json&quot;\n            ]\n        },</code></pre>\n<p>Then to trigger composer to copy the files. \n<code>$ composer update --lock</code></p>\n<h4 id=\"add-webform\">Add Webform</h4>\n<p>admin &gt; structure &gt; Webforms &gt; build &gt; elements</p>\n<p>In the current Bepress submission portal a student gets a form with elements to fill in. \n<figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85883320-cd03eb00-b7ae-11ea-8305-c3078f2ba97f.png\" data-is-external-image=\"true\"  alt=\"Webforms compared to Bepress\" /></figure></p>\n<p>Click <strong>+ Add Element</strong> and select the type of elements needed.\n<figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85883715-70ed9680-b7af-11ea-8b1d-7cac12bd6049.png\" data-is-external-image=\"true\"  alt=\"Element Type\" /></figure></p>\n<p>After selecting the type and filling out the form the element can be made a conditional element. In this example the last option in this list is going to be a dropdown list of Degree Names. The only names that should show for a Thesis <strong>Degree Type</strong>  should be <strong>Masters</strong> degree names. This option is found under the <strong>Conditions</strong> tab and the elements will auto fill your Value. </p>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85884267-5c5dce00-b7b0-11ea-82ea-3c2f7ef34092.png\" data-is-external-image=\"true\"  alt=\"Form Conditions\" /></figure></p>\n<p>The arrangement of these elements are drag and drop.\n<figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85884328-79929c80-b7b0-11ea-8a31-a7e77722f9fc.png\" data-is-external-image=\"true\"  alt=\"Resulting menu\" /></figure></p>\n<p>Clicking <strong>Source</strong> will give a yaml file that can be imported into a different maching development vs production servers making the development cycle that much easier.\n<figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85884857-4997c900-b7b1-11ea-902f-460a0b56c0cb.png\" data-is-external-image=\"true\"  alt=\"yml example\" /></figure></p>\n<p>There are numerous other features that had been utilized in TRACE. There is a <strong>Email / Handlers</strong> tab to allows additional actions and behaviors to be processed when a webform or submission is created, updated, or deleted. Handlers are used to route submitted data to external applications and send notifications &amp; confirmations.</p>\n<p>Permissions can be set for the form submissions with the Webforms modules and within the separate Drupal’s permissions section.\n<figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85885168-e9eded80-b7b1-11ea-91cf-915dce33bc70.png\" data-is-external-image=\"true\"  alt=\"Webform Permissions\" /></figure></p>\n<h3 id=\"reviewpublication-process\">Review/Publication process</h3>\n<h3 id=\"google-scholar-indexing\">Google Scholar Indexing</h3>\n<h3 id=\"sharing--metadata\">Sharing  Metadata</h3>\n<h3 id=\"embargos\">Embargos</h3>\n<h3 id=\"tombstoning\">Tombstoning</h3>\n",
+            "summary": "This will cover these topic The simpliest way to implement a highly customizable submit, review, accept, publish workflow is to leverage Drupal’s Content Moderation. Most&hellip;",
+            "content_html": "<p>This will cover these topic</p>\n<ul>\n<li>Needed modules</li>\n<li>User groups</li>\n<li>Create a Custom “Thesis” content type</li>\n<li>Moderation Workflow Setup</li>\n<li>Submission process</li>\n<li>Review/Publication process</li>\n<li>Google Scholar Indexing</li>\n<li>Sharing Metadata</li>\n<li>Embargos</li>\n<li>Tombstoning</li>\n</ul>\n<p>The simpliest way to implement a highly customizable submit, review, accept, publish workflow is to leverage Drupal’s Content Moderation. Most of the needed steps have already be accomplished by existing modules and workflows. Once the content has been reviewed it can be passed as a node and several aditional actions can be fired at this or and other stage of the submissions/publish process.</p>\n<h3 id=\"needed-modules\">Needed Modules</h3>\n<p>★ Drupal’s Core Module Content Moderation</p>\n<h3 id=\"user-groups\">User groups</h3>\n<p>Create some user roles (admin &gt; people &gt; roles). For this example the following roles would be useful to add.</p>\n<ul>\n<li>Student</li>\n<li>Thesis Manager</li>\n<li>Dissertation Manager</li>\n</ul>\n<p>We will set thier permissions later but for now create a user for each of these and add the corresponding roles. </p>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85894536-eadb4b00-b7c2-11ea-86e5-fd7b0b825b59.png\" data-is-external-image=\"true\"  alt=\"users and roles\" /></figure></p>\n<h3 id=\"create-custom-types\">Create Custom types</h3>\n<p>Create Custom “Thesis, Dissertation, and Supplemental” <strong>media</strong> types and “Thesis, Dissertation” <strong>content</strong> types. Create the media types first. </p>\n<h4 id=\"create-media-types\">Create Media Types</h4>\n<p>The Media Types list should now include Supplimental, Thesis and Dissertation (Admin &gt; Structure &gt; Media Types)</p>\n<p>Since objects in Islandora 8 are stored in Drupal as Nodes, we use the standard Drupal Content Types system to create and edit our ‘ingest forms’ <a href=\"https://www.drupal.org/docs/8/administering-drupal-8-site/managing-content-0/working-with-content-types-and-fields\">Content Types in Drupal 8</a>. Islandora 8 forms are Drupal forms, and if you are already familiar with Drupal Field UI, you’re already well equipped to create and modify your own ingest forms in Islandora 8.</p>\n<p>Highly recomended that you follow the <a href=\"https://islandora.github.io/documentation/user-documentation/content_types/#create-a-content-type\">Islandora documentation</a> instructions. </p>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://islandora.github.io/documentation/assets/content_types_managefields.png\" data-is-external-image=\"true\"  alt=\"content types manage fields screenshot\" /></figure></p>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85893252-84552d80-b7c0-11ea-9404-17408b4a6307.png\" data-is-external-image=\"true\"  alt=\"Creating a custom Media type\" /></figure></p>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85893352-bcf50700-b7c0-11ea-9a41-64417c0f2e9a.png\" data-is-external-image=\"true\"  alt=\"Media types added\" /></figure></p>\n<h4 id=\"create-content-types\">Create Content Types</h4>\n<ul>\n<li>Go to admin &gt; structure &gt; content types and click Add content type</li>\n<li>Give it a name “Thesis Content”<ul>\n<li>In the default options, uncheck <strong>Published</strong> and <strong>Promoted to front page</strong> then click save and manage fields. </li>\n</ul>\n</li>\n</ul>\n<p>By default it comes with a <strong>Body</strong> field. We need to add 2 File types (1 for the PDF and 1 for any supplimental files) to attach to the sumission. The PDF is required but the supplimental files isn’t. </p>\n<ul>\n<li>Click Add Field</li>\n<li>Select from the “Add a new field” dropdown <strong>Media</strong><ul>\n<li>Add a label “thesis_pdf” and click save</li>\n<li>Check Flysystem: fedora &amp; Limited to 1</li>\n<li>Check Required field is checked and Media type <strong>Thesis</strong></li>\n</ul>\n</li>\n<li>Click Add Field again</li>\n<li>Select from the “Add a new field” dropdown <strong>File</strong><ul>\n<li>Add a label “thesis_supplimental” and click save</li>\n<li>Settings Flysystem: fedora &amp; Unlimited</li>\n<li>Setting on the next page is Required field is unchecked </li>\n<li>Allowed file extensions doesn’t allow for wildcards so you’ll need to put in every expected extension.</li>\n<li>Maximum upload size 10GB (this is per-file)</li>\n</ul>\n</li>\n</ul>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85897384-33e1ce00-b7c8-11ea-988a-25ddeceabf04.png\" data-is-external-image=\"true\"  alt=\"Manage fields after adding content\" /></figure></p>\n<p>Click on Manage Form Display and drag <strong>Published</strong>, <strong>Sticky at the top of the lists</strong>, and <strong>Promote to front page</strong> to the disabled section and hit save.</p>\n<h3 id=\"moderation-workflow-setup\">Moderation Workflow Setup</h3>\n<p>There are 3 categories to set up; states, transitions, assign to specific content types.</p>\n<ul>\n<li><strong>States</strong>: The different states the submission could possible be in<ul>\n<li>Submitted, reviewed and waiting for update, embargoed, published, tombstoned, etc.</li>\n</ul>\n</li>\n<li><strong>Transitions</strong>: Applying actions when transitioning from one state to another.<ul>\n<li><em>From (submitted, waiting for update, under review) to published</em></li>\n<li><em>From (published, embargoed) to tombstoned</em></li>\n</ul>\n</li>\n</ul>\n<p>Create all of the states and transitions. There is very little instructions needed to achieve this. Add <strong>This workflow applies to:</strong> to <strong>media Type</strong>  <em>Thesis</em></p>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85893801-8e2b6080-b7c1-11ea-8041-f71074bd2fce.png\" data-is-external-image=\"true\"  alt=\"workflow applies to\" /></figure></p>\n<h3 id=\"submission-process\">Submission process</h3>\n<p>..</p>\n<h3 id=\"reviewpublication-process\">Review/Publication process</h3>\n<p><a href=\"http://www.youtube.com/watch?v=8R2qiFMU8v8\" title=\"Content Moderation Basics for Drupal 8\"><figure class=\"post__image\"><img loading=\"lazy\" src=\"http://img.youtube.com/vi/8R2qiFMU8v8/0.jpg\" data-is-external-image=\"true\"  alt=\"https://img.youtube.com/vi/8R2qiFMU8v8/hqdefault.jpg\" /></figure></a></p>\n<h3 id=\"google-scholar-indexing\">Google Scholar Indexing</h3>\n<p>…</p>\n<h3 id=\"sharing--metadata\">Sharing  Metadata</h3>\n<p>…</p>\n<h3 id=\"embargos\">Embargos</h3>\n<p>…</p>\n<h3 id=\"tombstoning\">Tombstoning</h3>\n<p>…</p>\n",
             "author": {
                 "name": "Don Richards"
             },
             "tags": [
             ],
-            "date_published": "2020-06-26T13:39:48-04:00",
-            "date_modified": "2020-06-26T13:39:48-04:00"
+            "date_published": "2020-06-26T16:30:27-04:00",
+            "date_modified": "2020-06-26T16:30:27-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/book-and-large-image-viewer.html",
@@ -34,8 +34,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-06-26T13:39:48-04:00",
-            "date_modified": "2020-06-26T13:39:48-04:00"
+            "date_published": "2020-06-26T16:30:27-04:00",
+            "date_modified": "2020-06-26T16:30:27-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/institutional-repository.html",
@@ -63,8 +63,8 @@
                    "Citation",
                    "Bibliography"
             ],
-            "date_published": "2020-06-26T13:39:48-04:00",
-            "date_modified": "2020-06-26T13:39:48-04:00"
+            "date_published": "2020-06-26T16:30:27-04:00",
+            "date_modified": "2020-06-26T16:30:27-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/bibliography-and-citation.html",
@@ -77,8 +77,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-06-26T13:39:48-04:00",
-            "date_modified": "2020-06-26T13:39:48-04:00"
+            "date_published": "2020-06-26T16:30:27-04:00",
+            "date_modified": "2020-06-26T16:30:27-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html",
@@ -91,8 +91,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-06-26T13:39:48-04:00",
-            "date_modified": "2020-06-26T13:39:48-04:00"
+            "date_published": "2020-06-26T16:30:27-04:00",
+            "date_modified": "2020-06-26T16:30:27-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/community-and-sustainability.html",
@@ -119,8 +119,8 @@
                    "Google",
                    "Delta"
             ],
-            "date_published": "2020-06-26T13:39:48-04:00",
-            "date_modified": "2020-06-26T13:39:48-04:00"
+            "date_published": "2020-06-26T16:30:27-04:00",
+            "date_modified": "2020-06-26T16:30:27-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/deployment-options.html",
@@ -141,8 +141,8 @@
                    "VM",
                    "ISLE"
             ],
-            "date_published": "2020-06-26T13:39:48-04:00",
-            "date_modified": "2020-06-26T13:39:48-04:00"
+            "date_published": "2020-06-26T16:30:27-04:00",
+            "date_modified": "2020-06-26T16:30:27-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/technical-infrastructure.html",
@@ -163,8 +163,8 @@
                    "GB",
                    "CPU"
             ],
-            "date_published": "2020-06-26T13:39:48-04:00",
-            "date_modified": "2020-06-26T13:39:48-04:00"
+            "date_published": "2020-06-26T16:30:27-04:00",
+            "date_modified": "2020-06-26T16:30:27-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/rights-and-restrictions.html",
@@ -182,8 +182,8 @@
                    "access",
                    "WebAC"
             ],
-            "date_published": "2020-06-26T13:39:48-04:00",
-            "date_modified": "2020-06-26T13:39:48-04:00"
+            "date_published": "2020-06-26T16:30:27-04:00",
+            "date_modified": "2020-06-26T16:30:27-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/cloud-hosting-solution.html",
@@ -201,8 +201,8 @@
                    "hosting",
                    "cloud"
             ],
-            "date_published": "2020-06-26T13:39:48-04:00",
-            "date_modified": "2020-06-26T13:39:48-04:00"
+            "date_published": "2020-06-26T16:30:27-04:00",
+            "date_modified": "2020-06-26T16:30:27-04:00"
         }
     ]
 }
