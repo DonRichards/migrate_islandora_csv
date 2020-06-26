@@ -10,6 +10,77 @@
     <id>https://donrichards.github.io/migrate_islandora_csv</id>
 
     <entry>
+        <title>Step by Step Setup (IR)</title>
+        <author>
+            <name>Don Richards</name>
+        </author>
+        <link href="https://donrichards.github.io/migrate_islandora_csv/step-by-step-setup-ir.html"/>
+        <id>https://donrichards.github.io/migrate_islandora_csv/step-by-step-setup-ir.html</id>
+
+        <updated>2020-06-26T13:39:48-04:00</updated>
+            <summary>
+                <![CDATA[
+                    This will cover these topic After the module is installed, enable webforms, webforms UI, Webform Access, Webform Attachmen, Webform Image Select, module. You may need&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>This will cover these topic</p>
+<ul>
+<li>Needed modules</li>
+<li>User groups</li>
+<li>Submission process</li>
+<li>Review/Publication process</li>
+<li>Google Scholar Indexing</li>
+<li>Sharing  Metadata</li>
+<li>Embargos</li>
+<li>Tombstoning</li>
+</ul>
+<h3 id="needed-modules">Needed Modules</h3>
+<ul>
+<li>Webforms</li>
+<li>Token</li>
+</ul>
+<h3 id="user-groups">User groups</h3>
+<h3 id="submission-process">Submission process</h3>
+<p>After the module is installed, enable webforms, webforms UI, Webform Access,  Webform Attachmen, Webform Image Select, module. You may need to fix library permissions and move libraries for performance reasons after enabling both.
+After the module is installed, enable webforms, webforms UI, Webform Access,  Webform Attachmen, Webform Image Select, module. You may need to fix library permissions and move libraries for performance reasons after enabling both.</p>
+<pre><code class="language-shell">$ sudo chown vagrant:www-data /var/www/html/drupal/web/libraries
+$ drush wfld
+$ drush webform:libraries:composer &gt; /var/www/html/drupal/composer.libraries.json</code></pre>
+<p>Add to the composer “extra: {” section</p>
+<pre><code class="language-yml">        &quot;merge-plugin&quot;: {
+            &quot;include&quot;: [
+                &quot;composer.libraries.json&quot;
+            ]
+        },</code></pre>
+<p>Then to trigger composer to copy the files. 
+<code>$ composer update --lock</code></p>
+<h4 id="add-webform">Add Webform</h4>
+<p>admin &gt; structure &gt; Webforms &gt; build &gt; elements</p>
+<p>In the current Bepress submission portal a student gets a form with elements to fill in. 
+<figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/85883320-cd03eb00-b7ae-11ea-8305-c3078f2ba97f.png" data-is-external-image="true"  alt="Webforms compared to Bepress" /></figure></p>
+<p>Click <strong>+ Add Element</strong> and select the type of elements needed.
+<figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/85883715-70ed9680-b7af-11ea-8b1d-7cac12bd6049.png" data-is-external-image="true"  alt="Element Type" /></figure></p>
+<p>After selecting the type and filling out the form the element can be made a conditional element. In this example the last option in this list is going to be a dropdown list of Degree Names. The only names that should show for a Thesis <strong>Degree Type</strong>  should be <strong>Masters</strong> degree names. This option is found under the <strong>Conditions</strong> tab and the elements will auto fill your Value. </p>
+<p><figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/85884267-5c5dce00-b7b0-11ea-82ea-3c2f7ef34092.png" data-is-external-image="true"  alt="Form Conditions" /></figure></p>
+<p>The arrangement of these elements are drag and drop.
+<figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/85884328-79929c80-b7b0-11ea-8a31-a7e77722f9fc.png" data-is-external-image="true"  alt="Resulting menu" /></figure></p>
+<p>Clicking <strong>Source</strong> will give a yaml file that can be imported into a different maching development vs production servers making the development cycle that much easier.
+<figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/85884857-4997c900-b7b1-11ea-902f-460a0b56c0cb.png" data-is-external-image="true"  alt="yml example" /></figure></p>
+<p>There are numerous other features that had been utilized in TRACE. There is a <strong>Email / Handlers</strong> tab to allows additional actions and behaviors to be processed when a webform or submission is created, updated, or deleted. Handlers are used to route submitted data to external applications and send notifications &amp; confirmations.</p>
+<p>Permissions can be set for the form submissions with the Webforms modules and within the separate Drupal’s permissions section.
+<figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/85885168-e9eded80-b7b1-11ea-91cf-915dce33bc70.png" data-is-external-image="true"  alt="Webform Permissions" /></figure></p>
+<h3 id="reviewpublication-process">Review/Publication process</h3>
+<h3 id="google-scholar-indexing">Google Scholar Indexing</h3>
+<h3 id="sharing--metadata">Sharing  Metadata</h3>
+<h3 id="embargos">Embargos</h3>
+<h3 id="tombstoning">Tombstoning</h3>
+
+            ]]>
+        </content>
+    </entry>
+    <entry>
         <title>Book &amp; Large Image Viewer</title>
         <author>
             <name>Don Richards</name>
@@ -17,7 +88,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/book-and-large-image-viewer.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/book-and-large-image-viewer.html</id>
 
-        <updated>2020-06-25T15:25:40-04:00</updated>
+        <updated>2020-06-26T13:39:48-04:00</updated>
             <summary>
                 <![CDATA[
                     IIIF (International Image Interoperability Framework) is a set of specifications that provides interoperability of image-based collections across platforms. What this means for a repository platform&hellip;
@@ -68,7 +139,7 @@
             <category term="Citation"/>
             <category term="Bibliography"/>
 
-        <updated>2020-06-25T15:25:40-04:00</updated>
+        <updated>2020-06-26T13:39:48-04:00</updated>
             <summary>
                 <![CDATA[
                      Drupal for higher education is a large industry. There are several top universities that have been using Drupal for a veriety of acedemic purposes.
@@ -188,7 +259,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/bibliography-and-citation.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/bibliography-and-citation.html</id>
 
-        <updated>2020-06-25T15:25:40-04:00</updated>
+        <updated>2020-06-26T13:39:48-04:00</updated>
             <summary>
                 <![CDATA[
                     Drupal is a very popular and well-known CMS for educational websites. And it’s very important that Drupal has tools to deal with bibliography and citations.
@@ -229,7 +300,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html</id>
 
-        <updated>2020-06-25T15:25:40-04:00</updated>
+        <updated>2020-06-26T13:39:48-04:00</updated>
             <summary>
                 <![CDATA[
                     OAI-PMH Persistent Identifiers: Module for minting and persisting persistent identifiers (Handles, DOIs, ARKs, etc.). Persistent identifiers can be minted by a variety of sources, such&hellip;
@@ -271,7 +342,7 @@
             <category term="Google"/>
             <category term="Delta"/>
 
-        <updated>2020-06-25T15:25:40-04:00</updated>
+        <updated>2020-06-26T13:39:48-04:00</updated>
             <summary>
                 <![CDATA[
                     230+ public sites, 1414 listserv members, 144 GitHub members, 28 Committers, 25+ Contributed Modules, 30+ Foundation members, 12 Interest Groups, 10 Community-led software releases, 19&hellip;
@@ -323,7 +394,7 @@
             <category term="VM"/>
             <category term="ISLE"/>
 
-        <updated>2020-06-25T15:25:40-04:00</updated>
+        <updated>2020-06-26T13:39:48-04:00</updated>
             <summary>
                 <![CDATA[
                     For self hosted soltutions there are 2 basic deployment options; Ansible(a style we’re currently using) or deploying through Docker images. All of these options can&hellip;
@@ -361,7 +432,7 @@
             <category term="GB"/>
             <category term="CPU"/>
 
-        <updated>2020-06-25T15:25:40-04:00</updated>
+        <updated>2020-06-26T13:39:48-04:00</updated>
             <summary>
                 <![CDATA[
                     Drupal 8 completely supports CAS authentication [link].Islandora 8 provides several different reports out-of-the-box. From microservice stats to usage stats. There are several options and are&hellip;
@@ -395,7 +466,7 @@
             <category term="access"/>
             <category term="WebAC"/>
 
-        <updated>2020-06-25T15:25:40-04:00</updated>
+        <updated>2020-06-26T13:39:48-04:00</updated>
             <summary>
                 <![CDATA[
                     Rightsstatements.org is not specifically discussed in the documentation. Although extensive URI integration for controlled access terms is documented on the site, an assessment by the&hellip;
@@ -424,7 +495,7 @@
             <category term="hosting"/>
             <category term="cloud"/>
 
-        <updated>2020-06-25T15:25:40-04:00</updated>
+        <updated>2020-06-26T13:39:48-04:00</updated>
             <summary>
                 <![CDATA[
                     A few solutions are available for vendors to host a solution for a fee.Able to run the stack on a cloud hosting provider like Amazon’s&hellip;
@@ -440,42 +511,6 @@
 </li>
 <li>A few options specifically beneficial to cloud hosting include load balancing VM cluster servers (multiple identical servers) and a simple snapshot process for backing up. These can be achieved in hardware, they would require some expensive investments. Cloud hosting also makes hosting hardware unnecessary. An additional note is that some functions can be automated for either solution like scheduled backups, automated application deployment, and system monitoring. There is absolutely no mitigation of fully automated systems and application maintenance and most cloud solutions cost are prohibitively high when scaling to high numbers of CPU cores or large amounts of RAM.</li>
 <li>A few vendors are available like Discovery Garden and Born Digital offering several options; anything from migration consultation, to migrating content from 7 to 8, develop a Islandora 8 solution that meets the institution’s needs, Islandora-as-a-service and several other options. </li>
-</ol>
-
-            ]]>
-        </content>
-    </entry>
-    <entry>
-        <title>Next Level Discoverability Solutions</title>
-        <author>
-            <name>Don Richards</name>
-        </author>
-        <link href="https://donrichards.github.io/migrate_islandora_csv/next-level-discoverability-solutions.html"/>
-        <id>https://donrichards.github.io/migrate_islandora_csv/next-level-discoverability-solutions.html</id>
-            <category term="tagging"/>
-            <category term="solr"/>
-            <category term="learn to rank"/>
-            <category term="LTR"/>
-            <category term="AI"/>
-
-        <updated>2020-06-25T15:25:40-04:00</updated>
-            <summary>
-                <![CDATA[
-                    A search/discoverability enhancement “Learning to Rank (LTR) is a class of techniques that apply supervised machine learning (ML) to solve ranking problems.“ [link] LTR is&hellip;
-                ]]>
-            </summary>
-        <content type="html">
-            <![CDATA[
-                <ol>
-<li>A search/discoverability enhancement “Learning to Rank (LTR) is a class of techniques that apply supervised machine learning (ML) to solve ranking problems.“ [<a href="https://medium.com/@nikhilbd/intuitive-explanation-of-learning-to-rank-and-ranknet-lambdarank-and-lambdamart-fe1e17fac418">link</a>] LTR is a query reranking Solr plugin. Another comment on this from [<a href="https://lucidworks.com/post/abcs-learning-to-rank/">link</a>] to better summarize LTR, “Learning to rank (LTR) is a class of algorithmic techniques that apply supervised machine learning to solve ranking problems in search relevancy. In other words, it’s what orders query results. Done well, you have happy employees and customers; done poorly, at best you have frustrations, and worse, they will never return.” <figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/85176643-48621b80-b248-11ea-8060-55991e6eddcf.jpg" data-is-external-image="true"  alt="LTR_modeling" /></figure></li>
-<li>Automatic Alternative Text [<a href="https://www.drupal.org/project/auto_alter">link</a>] implement AI capabilities into the process <figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/85311654-c2caaf80-b483-11ea-905f-521f304b6535.jpg" data-is-external-image="true"  alt="ai" /></figure> 
- i. Detecting content
- ii. Identifying faces/geographical features in a given image
- iii. Determining the prevailing colors</li>
-<li>Oxford Common File Layout Specification (OCFL) is coming next year with the release of Fedora 6.x according to Danny Lamb and David Wilcox. This should be available within Islandora as part of upgrading Fedora to 6.x. <blockquote>
-<p>The previously mentioned disadvantages of the Fedora API may be mitigated by a relatedcommunity initiative called the Oxford Common File Layout (OCFL). The OCFL is acommunity-based effort to develop “an application-independent approach to the storage ofdigital information in a structured, transparent, and predictable manner. It is designed topromote long-term object management best practices within digital repositories.” The originalidea for this effort came from a Fedora Camp hosted at the University of Oxford in September2017, so it has roots in the Fedora community even though the OCFL is not dependent onFedora in any way. However, if Fedora were to store repository resources as specified by theOCFL, major upgrades in the future may become much easier. One of the primary motivatinguse cases of the OCFL is to reduce the need for data migrations; both because moving largeamounts of data is time-consuming and because such migrations risk data corruption and loss.The OCFL decouples the structure of files on disk from the application(s) that manage the filesby defining a file and folder hierarchy to which applications must conform. Thus, the files can beleft in place and new software applications can implement the OCFL specification in order tomanage the files. - [<a href="https://wiki.lyrasis.org/download/attachments/131533003/Designing%20a%20Migration%20Path%20-%20Final%20Report.pdf">link</a>]</p>
-</blockquote>
-</li>
 </ol>
 
             ]]>

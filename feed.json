@@ -10,6 +10,20 @@
     },
     "items": [
         {
+            "id": "https://donrichards.github.io/migrate_islandora_csv/step-by-step-setup-ir.html",
+            "url": "https://donrichards.github.io/migrate_islandora_csv/step-by-step-setup-ir.html",
+            "title": "Step by Step Setup (IR)",
+            "summary": "This will cover these topic After the module is installed, enable webforms, webforms UI, Webform Access, Webform Attachmen, Webform Image Select, module. You may need&hellip;",
+            "content_html": "<p>This will cover these topic</p>\n<ul>\n<li>Needed modules</li>\n<li>User groups</li>\n<li>Submission process</li>\n<li>Review/Publication process</li>\n<li>Google Scholar Indexing</li>\n<li>Sharing  Metadata</li>\n<li>Embargos</li>\n<li>Tombstoning</li>\n</ul>\n<h3 id=\"needed-modules\">Needed Modules</h3>\n<ul>\n<li>Webforms</li>\n<li>Token</li>\n</ul>\n<h3 id=\"user-groups\">User groups</h3>\n<h3 id=\"submission-process\">Submission process</h3>\n<p>After the module is installed, enable webforms, webforms UI, Webform Access,  Webform Attachmen, Webform Image Select, module. You may need to fix library permissions and move libraries for performance reasons after enabling both.\nAfter the module is installed, enable webforms, webforms UI, Webform Access,  Webform Attachmen, Webform Image Select, module. You may need to fix library permissions and move libraries for performance reasons after enabling both.</p>\n<pre><code class=\"language-shell\">$ sudo chown vagrant:www-data /var/www/html/drupal/web/libraries\n$ drush wfld\n$ drush webform:libraries:composer &gt; /var/www/html/drupal/composer.libraries.json</code></pre>\n<p>Add to the composer “extra: {” section</p>\n<pre><code class=\"language-yml\">        &quot;merge-plugin&quot;: {\n            &quot;include&quot;: [\n                &quot;composer.libraries.json&quot;\n            ]\n        },</code></pre>\n<p>Then to trigger composer to copy the files. \n<code>$ composer update --lock</code></p>\n<h4 id=\"add-webform\">Add Webform</h4>\n<p>admin &gt; structure &gt; Webforms &gt; build &gt; elements</p>\n<p>In the current Bepress submission portal a student gets a form with elements to fill in. \n<figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85883320-cd03eb00-b7ae-11ea-8305-c3078f2ba97f.png\" data-is-external-image=\"true\"  alt=\"Webforms compared to Bepress\" /></figure></p>\n<p>Click <strong>+ Add Element</strong> and select the type of elements needed.\n<figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85883715-70ed9680-b7af-11ea-8b1d-7cac12bd6049.png\" data-is-external-image=\"true\"  alt=\"Element Type\" /></figure></p>\n<p>After selecting the type and filling out the form the element can be made a conditional element. In this example the last option in this list is going to be a dropdown list of Degree Names. The only names that should show for a Thesis <strong>Degree Type</strong>  should be <strong>Masters</strong> degree names. This option is found under the <strong>Conditions</strong> tab and the elements will auto fill your Value. </p>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85884267-5c5dce00-b7b0-11ea-82ea-3c2f7ef34092.png\" data-is-external-image=\"true\"  alt=\"Form Conditions\" /></figure></p>\n<p>The arrangement of these elements are drag and drop.\n<figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85884328-79929c80-b7b0-11ea-8a31-a7e77722f9fc.png\" data-is-external-image=\"true\"  alt=\"Resulting menu\" /></figure></p>\n<p>Clicking <strong>Source</strong> will give a yaml file that can be imported into a different maching development vs production servers making the development cycle that much easier.\n<figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85884857-4997c900-b7b1-11ea-902f-460a0b56c0cb.png\" data-is-external-image=\"true\"  alt=\"yml example\" /></figure></p>\n<p>There are numerous other features that had been utilized in TRACE. There is a <strong>Email / Handlers</strong> tab to allows additional actions and behaviors to be processed when a webform or submission is created, updated, or deleted. Handlers are used to route submitted data to external applications and send notifications &amp; confirmations.</p>\n<p>Permissions can be set for the form submissions with the Webforms modules and within the separate Drupal’s permissions section.\n<figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85885168-e9eded80-b7b1-11ea-91cf-915dce33bc70.png\" data-is-external-image=\"true\"  alt=\"Webform Permissions\" /></figure></p>\n<h3 id=\"reviewpublication-process\">Review/Publication process</h3>\n<h3 id=\"google-scholar-indexing\">Google Scholar Indexing</h3>\n<h3 id=\"sharing--metadata\">Sharing  Metadata</h3>\n<h3 id=\"embargos\">Embargos</h3>\n<h3 id=\"tombstoning\">Tombstoning</h3>\n",
+            "author": {
+                "name": "Don Richards"
+            },
+            "tags": [
+            ],
+            "date_published": "2020-06-26T13:39:48-04:00",
+            "date_modified": "2020-06-26T13:39:48-04:00"
+        },
+        {
             "id": "https://donrichards.github.io/migrate_islandora_csv/book-and-large-image-viewer.html",
             "url": "https://donrichards.github.io/migrate_islandora_csv/book-and-large-image-viewer.html",
             "title": "Book &amp; Large Image Viewer",
@@ -20,8 +34,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-06-25T15:25:40-04:00",
-            "date_modified": "2020-06-25T15:25:40-04:00"
+            "date_published": "2020-06-26T13:39:48-04:00",
+            "date_modified": "2020-06-26T13:39:48-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/institutional-repository.html",
@@ -49,8 +63,8 @@
                    "Citation",
                    "Bibliography"
             ],
-            "date_published": "2020-06-25T15:25:40-04:00",
-            "date_modified": "2020-06-25T15:25:40-04:00"
+            "date_published": "2020-06-26T13:39:48-04:00",
+            "date_modified": "2020-06-26T13:39:48-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/bibliography-and-citation.html",
@@ -63,8 +77,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-06-25T15:25:40-04:00",
-            "date_modified": "2020-06-25T15:25:40-04:00"
+            "date_published": "2020-06-26T13:39:48-04:00",
+            "date_modified": "2020-06-26T13:39:48-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html",
@@ -77,8 +91,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-06-25T15:25:40-04:00",
-            "date_modified": "2020-06-25T15:25:40-04:00"
+            "date_published": "2020-06-26T13:39:48-04:00",
+            "date_modified": "2020-06-26T13:39:48-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/community-and-sustainability.html",
@@ -105,8 +119,8 @@
                    "Google",
                    "Delta"
             ],
-            "date_published": "2020-06-25T15:25:40-04:00",
-            "date_modified": "2020-06-25T15:25:40-04:00"
+            "date_published": "2020-06-26T13:39:48-04:00",
+            "date_modified": "2020-06-26T13:39:48-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/deployment-options.html",
@@ -127,8 +141,8 @@
                    "VM",
                    "ISLE"
             ],
-            "date_published": "2020-06-25T15:25:40-04:00",
-            "date_modified": "2020-06-25T15:25:40-04:00"
+            "date_published": "2020-06-26T13:39:48-04:00",
+            "date_modified": "2020-06-26T13:39:48-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/technical-infrastructure.html",
@@ -149,8 +163,8 @@
                    "GB",
                    "CPU"
             ],
-            "date_published": "2020-06-25T15:25:40-04:00",
-            "date_modified": "2020-06-25T15:25:40-04:00"
+            "date_published": "2020-06-26T13:39:48-04:00",
+            "date_modified": "2020-06-26T13:39:48-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/rights-and-restrictions.html",
@@ -168,8 +182,8 @@
                    "access",
                    "WebAC"
             ],
-            "date_published": "2020-06-25T15:25:40-04:00",
-            "date_modified": "2020-06-25T15:25:40-04:00"
+            "date_published": "2020-06-26T13:39:48-04:00",
+            "date_modified": "2020-06-26T13:39:48-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/cloud-hosting-solution.html",
@@ -187,27 +201,8 @@
                    "hosting",
                    "cloud"
             ],
-            "date_published": "2020-06-25T15:25:40-04:00",
-            "date_modified": "2020-06-25T15:25:40-04:00"
-        },
-        {
-            "id": "https://donrichards.github.io/migrate_islandora_csv/next-level-discoverability-solutions.html",
-            "url": "https://donrichards.github.io/migrate_islandora_csv/next-level-discoverability-solutions.html",
-            "title": "Next Level Discoverability Solutions",
-            "summary": "A search/discoverability enhancement “Learning to Rank (LTR) is a class of techniques that apply supervised machine learning (ML) to solve ranking problems.“ [link] LTR is&hellip;",
-            "content_html": "<ol>\n<li>A search/discoverability enhancement “Learning to Rank (LTR) is a class of techniques that apply supervised machine learning (ML) to solve ranking problems.“ [<a href=\"https://medium.com/@nikhilbd/intuitive-explanation-of-learning-to-rank-and-ranknet-lambdarank-and-lambdamart-fe1e17fac418\">link</a>] LTR is a query reranking Solr plugin. Another comment on this from [<a href=\"https://lucidworks.com/post/abcs-learning-to-rank/\">link</a>] to better summarize LTR, “Learning to rank (LTR) is a class of algorithmic techniques that apply supervised machine learning to solve ranking problems in search relevancy. In other words, it’s what orders query results. Done well, you have happy employees and customers; done poorly, at best you have frustrations, and worse, they will never return.” <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85176643-48621b80-b248-11ea-8060-55991e6eddcf.jpg\" data-is-external-image=\"true\"  alt=\"LTR_modeling\" /></figure></li>\n<li>Automatic Alternative Text [<a href=\"https://www.drupal.org/project/auto_alter\">link</a>] implement AI capabilities into the process <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85311654-c2caaf80-b483-11ea-905f-521f304b6535.jpg\" data-is-external-image=\"true\"  alt=\"ai\" /></figure> \n i. Detecting content\n ii. Identifying faces/geographical features in a given image\n iii. Determining the prevailing colors</li>\n<li>Oxford Common File Layout Specification (OCFL) is coming next year with the release of Fedora 6.x according to Danny Lamb and David Wilcox. This should be available within Islandora as part of upgrading Fedora to 6.x. <blockquote>\n<p>The previously mentioned disadvantages of the Fedora API may be mitigated by a relatedcommunity initiative called the Oxford Common File Layout (OCFL). The OCFL is acommunity-based effort to develop “an application-independent approach to the storage ofdigital information in a structured, transparent, and predictable manner. It is designed topromote long-term object management best practices within digital repositories.” The originalidea for this effort came from a Fedora Camp hosted at the University of Oxford in September2017, so it has roots in the Fedora community even though the OCFL is not dependent onFedora in any way. However, if Fedora were to store repository resources as specified by theOCFL, major upgrades in the future may become much easier. One of the primary motivatinguse cases of the OCFL is to reduce the need for data migrations; both because moving largeamounts of data is time-consuming and because such migrations risk data corruption and loss.The OCFL decouples the structure of files on disk from the application(s) that manage the filesby defining a file and folder hierarchy to which applications must conform. Thus, the files can beleft in place and new software applications can implement the OCFL specification in order tomanage the files. - [<a href=\"https://wiki.lyrasis.org/download/attachments/131533003/Designing%20a%20Migration%20Path%20-%20Final%20Report.pdf\">link</a>]</p>\n</blockquote>\n</li>\n</ol>\n",
-            "author": {
-                "name": "Don Richards"
-            },
-            "tags": [
-                   "tagging",
-                   "solr",
-                   "learn to rank",
-                   "LTR",
-                   "AI"
-            ],
-            "date_published": "2020-06-25T15:25:40-04:00",
-            "date_modified": "2020-06-25T15:25:40-04:00"
+            "date_published": "2020-06-26T13:39:48-04:00",
+            "date_modified": "2020-06-26T13:39:48-04:00"
         }
     ]
 }
