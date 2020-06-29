@@ -20,8 +20,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-06-29T16:09:20-04:00",
-            "date_modified": "2020-06-29T16:09:20-04:00"
+            "date_published": "2020-06-29T16:35:59-04:00",
+            "date_modified": "2020-06-29T16:35:59-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/uploading.html",
@@ -34,8 +34,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-06-29T16:09:20-04:00",
-            "date_modified": "2020-06-29T16:09:20-04:00"
+            "date_published": "2020-06-29T16:35:59-04:00",
+            "date_modified": "2020-06-29T16:35:59-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/step-by-step-setup-ir.html",
@@ -48,8 +48,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-06-29T16:09:20-04:00",
-            "date_modified": "2020-06-29T16:09:20-04:00"
+            "date_published": "2020-06-29T16:35:59-04:00",
+            "date_modified": "2020-06-29T16:35:59-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/book-and-large-image-viewer.html",
@@ -62,15 +62,15 @@
             },
             "tags": [
             ],
-            "date_published": "2020-06-29T16:09:20-04:00",
-            "date_modified": "2020-06-29T16:09:20-04:00"
+            "date_published": "2020-06-29T16:35:59-04:00",
+            "date_modified": "2020-06-29T16:35:59-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/institutional-repository.html",
             "url": "https://donrichards.github.io/migrate_islandora_csv/institutional-repository.html",
             "title": "Institutional Repository",
             "summary": " Drupal for higher education is a large industry. There are several top universities that have been using Drupal for a veriety of acedemic purposes.",
-            "content_html": "<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85573503-f3d1ee00-b603-11ea-9142-52e80f4e8951.png\" data-is-external-image=\"true\"  alt=\"Drupal for higher education\" /></figure></p>\n<p>Drupal for higher education is a large industry. There are several top universities that have been using Drupal for a veriety of acedemic purposes. Here is a small list of a few universities that (as of this writing) are using Drupal.</p>\n<ol>\n<li><a href=\"http://www.ox.ac.uk\">Oxford University</a> Drupal 7.72</li>\n<li><a href=\"https://online-learning.harvard.edu\">Harvard University</a> Drupal 7.69</li>\n<li><a href=\"https://web.mit.edu\">Massachusetts Institute of Technology</a> Drupal 8.x</li>\n<li><a href=\"duke.edu\">Duke University</a> <a href=\"https://researchfunding.duke.edu/CHANGELOG.txt\">Drupal 7.72</a></li>\n<li><a href=\"ucla.edu\">UCLA</a> <a href=\"https://www3.research.ucla.edu/CHANGELOG.txt\">Drupal 7.70</a></li>\n<li><a href=\"https://arizona.edu\">University of Arizona</a> <a href=\"https://rgw.arizona.edu/CHANGELOG.txt\">Drupal 7.72</a></li>\n<li><a href=\"https://www.psu.edu\">Penn State</a> Drupal 7.x &amp; 8.x</li>\n<li><a href=\"https://research.utoronto.ca\">University of Toronto</a> Drupal 8.x</li>\n<li><a href=\"https://www.library.jhu.edu\">Johns Hopkins University</a> Drupal 7.x &amp; 8.x</li>\n</ol>\n<p>With the release of Drupal 8 several universities, venders and volunteers have created and contributed to Drupal module solutions to meet acedemic needs. Here is a list of a few Institutional Repository (IR) &amp; Research Data Management (RDM) related modules currently available for Drupal.</p>\n<ul>\n<li>Google Scholar: Google Scholar(GS) provides a simple way to broadly search for scholarly literature. From one place, you can search across many disciplines and sources: articles, theses, books, abstracts and court opinions, from academic publishers, professional societies, online repositories, universities and other web sites. Google Scholar helps you find relevant work across the world of scholarly research. <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://www.drupal.org/files/project-images/about_scholar.png\" data-is-external-image=\"true\"  alt=\"gs logo\" /></figure></li>\n<li><a href=\"https://www.drupal.org/project/metatag\">Metatag</a>: automatically provide structured metadata, aka “meta tags”, about a website.<figure class=\"post__image\"><img loading=\"lazy\" src=\"https://www.drupal.org/files/images/Meta%20tags%20%7C%20Drupal%207%20test%20site.png\" data-is-external-image=\"true\"  alt=\"metatag screenshot\" /></figure></li>\n<li><a href=\"https://www.drupal.org/project/seo_checklist\">SEO Checklist</a> GS indexing crawlers rely on Googlebot to index a site. All of the typical Google crawler requirements need to be met for GS to index a site. That’s what makes a module like this critical.</li>\n<li><a href=\"https://www.drupal.org/project/linked_data_field\">Linked Data Lookup Field</a>: Supports Library of Congress Subject Headings, Global Research Identifier Database (GRID) entries, and CrossRef Funder identifiers and autocompletes the values out of the box. <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://www.drupal.org/files/project-images/Screen%20Shot%202019-04-30%20at%202.22.31%20PM_0.png\" data-is-external-image=\"true\"  alt=\"Linked Data Lookup Field screenshot\" /></figure></li>\n<li><a href=\"https://github.com/mjordan/persistent_identifiers\">Persistent Identifiers</a>: for minting and persisting persistent identifiers (Handles, DOIs, ARKs, etc.). <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://github.com/mjordan/persistent_identifiers/raw/master/docs/images/mint_checkbox.png\" data-is-external-image=\"true\"  alt=\"mint screenshot\" /></figure></li>\n<li><a href=\"https://www.drupal.org/project/orcid\">ORCID</a>: ORCID integration and allowing users to login with ORCID credentials</li>\n<li><a href=\"https://www.drupal.org/project/user_progress\">User Progress API</a>: The User progress API module was sponsored by the Pennsylvania State University. It has been developed for charting students’ progression throughout a system.</li>\n</ul>\n<p><a href=\"https://www.drupal.org/docs/8/core/modules/workflows/overview\">Drupal Workflows</a> is a core Drupal feature and is well documented. This was complicated in Drupal 7/Islandora 7 but now this process is trivial and is built into Drupal 8.</p>\n<p>Here is a separate page for <a href=\"bibliography-and-citation.html\">Bibliography and Citation</a> </p>\n<p>Here is a separate page for <a href=\"https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html\">OAI-PMH</a> </p>\n<p>Here is a separate page for <a href=\"rights-and-restrictions.html\">Rights and Restrictions</a></p>\n<hr>\n<p>There are Institutional Repository (IR) &amp; Research Data Management (RDM) solutions in production. As of the writing of this there is 1 university running Islandora 8 as an IR in production, <a href=\"https://oaks.kent.edu\">Kent State University</a> and 1 an Islandora 8 RDM portal at <a href=\"https://islandora-rdm.researchspaces.ca\">UPEI</a></p>\n<h3 id=\"institutional-repository-ir-in-production\">Institutional Repository (IR) in production</h3>\n<p><a href=\"https://oaks.kent.edu\">Kent State University</a> migrated from Bepress according to Jonathan Hunt from Catalyst IT in New Zealand.</p>\n<p>Thier repository “formats” according to thier <a href=\"https://oaks.kent.edu/search?s=&amp;\">search</a> include:</p>\n<ul>\n<li>Articles</li>\n<li>Conference Proceedings</li>\n<li>Images</li>\n<li>Text</li>\n<li>Newspapers</li>\n<li>Books</li>\n<li>Book Reviews</li>\n<li>Yearbooks</li>\n<li>Newsletters</li>\n<li>Videos</li>\n<li>Events</li>\n<li>Journals</li>\n<li>Magazines</li>\n<li>Dissertations</li>\n<li>Editorials</li>\n<li>News Articles</li>\n<li>Datasets</li>\n<li>Presentations</li>\n<li><a href=\"https://oaks.kent.edu/esdri2020\">Symposiums</a></li>\n</ul>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85563647-95087680-b5fb-11ea-9f99-5e791c317856.png\" data-is-external-image=\"true\"  alt=\"kent_state\" /></figure></p>\n<p>Thier listing of “format” is a bit misleading. All of the data was migrated from Bepress and alligned with thier format limitations. Several items are PDFs when a different format would be expected.</p>\n<p>The company that migrated Kent State University Catalyst IT also has another Islandora 8 in production “<a href=\"https://canterburystories.nz\">Christ Church City Libraries</a>“ and several more New Zealand sites in beta.</p>\n<h3 id=\"research-data-management-rdm-in-production\">Research Data Management (RDM) in production</h3>\n<p>This project is supported by <a href=\"https://www.canarie.ca/rdm-funding-call-recipients\">CANARIE Awards</a> Research Data Management (RDM) Funding Call 1.</p>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85565717-655a6e00-b5fd-11ea-95ec-e532ab781ac4.png\" data-is-external-image=\"true\"  alt=\"CANARIE_Awards\" /></figure></p>\n<p>Develop features in Islandora 8 and integrations with other services that provides a comprehensive research data management platform that is informed by the <a href=\"https://islandora-rdm.researchspaces.ca/node/4\">FAIR principles</a>. The project seeks to develop integrations with identifier, metadata, authentication, storage, and dissemination systems and services that support the research data lifecycle and FAIR principles - that is making research data Findable, Accessible, Interoperable, and Reusable. The project is an out-of the box profile (with configurable but sensible defaults) for institutions wanting to curate and manage research data over its lifecycle.</p>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85566753-50320f00-b5fe-11ea-9110-ad59539bd930.jpg\" data-is-external-image=\"true\"  alt=\"Islandora RDM Webinar - November 7 2019\" /></figure></p>\n<p>This system created a Drupal content type that represents a research data management plan.  DMPRoadMap is software used by DMPTool in the US, DMPOnline in Europe. In Canada, the DMP Assistant in Canada is moving towards that framework. The draft Tri-Agency Research Data Management Policy highlights the importance of DMPs as a best practices in research data management and this feature provides researchers with a tool to help them meet emerging funding requirements. This content type models a generic funder template and associated guidance modeled on the DMPRoadMap. It is possible to have Conditional fields to provide specific funder templates.</p>\n<p>This module directly integrates ORCID oauth login relating their user profile with thier ORCID ID and giving them the ability to link thier submitted content with ORCID.\n<a href=\"http://drive.google.com/file/d/1N6UzoLoP4dz5ZjP9Biw-_NBB599xrlWt/view\" title=\"Logging in\"><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85570432-570e5100-b601-11ea-9578-f73b3198d24c.png\" data-is-external-image=\"true\"  alt=\"Logging into ORCID\" /></figure></a></p>\n<p>Research Data Management Resources solution created by UPEI “a suite of services for UPEI researchers that includes: a data management planning tool to create a data management plan for a project;  a locally hosted storage service to share research files with colleagues;  a publishing framework to publish and assign a doi to a dataset to be made public; and a preservation/archiving function to steward research data for as long as is necessary.” [link]</p>\n<ul>\n<li>Planning<ul>\n<li>Create a funding proposal using the Research Data Management Planning Tool.</li>\n<li>Share a Draft Planning Document</li>\n<li>Learn more about research data management plans and where to apply for grants.</li>\n</ul>\n</li>\n<li>WorkSpace<ul>\n<li>Create a managed and backed up data workspace, similar to, but more secure than, a Dropbox account.</li>\n<li>Synchronize data on your desktop with your research workspace.</li>\n<li>Create additional workspaces for your research group or projects.</li>\n<li>Collaborate with colleagues off campus by sharing your workspaces.</li>\n</ul>\n</li>\n<li>Publishing<ul>\n<li>Export final datasets from your WorkSpaces into a long-term data repository.</li>\n<li>Automatically assign a Datacite Digital Object Identifier (DOI) to your dataset which provides a persistent identifier and a Datacite metadata record that facilitates both discovery and citation of your dataset.</li>\n<li>Share your data publicly, including assigning an appropriate data sharing license.</li>\n<li>Access metrics for your datasets.</li>\n<li>Sharing your data with specific people or groups.</li>\n</ul>\n</li>\n<li>Archiving<ul>\n<li>Move your valuable research data (including raw data) to the long-term repository, thereby meeting funder mandates for preservation of the data.</li>\n<li>Access and manage your data archive.</li>\n<li>Make an appointment to discuss your data archiving requirements with the Robertson Library.</li>\n</ul>\n</li>\n<li>Finding<ul>\n<li>Search for data produced by UPEI researchers.</li>\n</ul>\n</li>\n</ul>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85612269-b6cb2300-b626-11ea-8574-e2aef1a0d64f.png\" data-is-external-image=\"true\"  alt=\"screenshot-data upei ca-2020 06 24-14_26_02\" /></figure></p>\n<p><a href=\"https://docs.google.com/presentation/d/1h3iAYCkqWcXv4a9nAeZsr5T7AYD0kWJCqzeONXTzljw\">Slides aviables for UPEI</a></p>\n",
+            "content_html": "<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85573503-f3d1ee00-b603-11ea-9142-52e80f4e8951.png\" data-is-external-image=\"true\"  alt=\"Drupal for higher education\" /></figure></p>\n<p>Drupal for higher education is a large industry. There are several top universities that have been using Drupal for a veriety of acedemic purposes. Here is a small list of a few universities that (as of this writing) are using Drupal.</p>\n<ol>\n<li><a href=\"http://www.ox.ac.uk\">Oxford University</a> Drupal 7.72</li>\n<li><a href=\"https://online-learning.harvard.edu\">Harvard University</a> Drupal 7.69</li>\n<li><a href=\"https://web.mit.edu\">Massachusetts Institute of Technology</a> Drupal 8.x</li>\n<li><a href=\"duke.edu\">Duke University</a> <a href=\"https://researchfunding.duke.edu/CHANGELOG.txt\">Drupal 7.72</a></li>\n<li><a href=\"ucla.edu\">UCLA</a> <a href=\"https://www3.research.ucla.edu/CHANGELOG.txt\">Drupal 7.70</a></li>\n<li><a href=\"https://arizona.edu\">University of Arizona</a> <a href=\"https://rgw.arizona.edu/CHANGELOG.txt\">Drupal 7.72</a></li>\n<li><a href=\"https://www.psu.edu\">Penn State</a> Drupal 7.x &amp; 8.x</li>\n<li><a href=\"https://research.utoronto.ca\">University of Toronto</a> Drupal 8.x</li>\n<li><a href=\"https://www.library.jhu.edu\">Johns Hopkins University</a> Drupal 7.x &amp; 8.x</li>\n</ol>\n<p>With the release of Drupal 8 several universities, venders and volunteers have created and contributed to Drupal module solutions to meet acedemic needs. Here is a list of a few Institutional Repository (IR) &amp; Research Data Management (RDM) related modules currently available for Drupal.</p>\n<ul>\n<li>Google Scholar: Google Scholar(GS) provides a simple way to broadly search for scholarly literature. From one place, you can search across many disciplines and sources: articles, theses, books, abstracts and court opinions, from academic publishers, professional societies, online repositories, universities and other web sites. Google Scholar helps you find relevant work across the world of scholarly research. <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://www.drupal.org/files/project-images/about_scholar.png\" data-is-external-image=\"true\"  alt=\"gs logo\" /></figure></li>\n<li><a href=\"https://www.drupal.org/project/metatag\">Metatag</a>: automatically provide structured metadata, aka “meta tags”, about a website.<figure class=\"post__image\"><img loading=\"lazy\" src=\"https://www.drupal.org/files/images/Meta%20tags%20%7C%20Drupal%207%20test%20site.png\" data-is-external-image=\"true\"  alt=\"metatag screenshot\" /></figure></li>\n<li><a href=\"https://www.drupal.org/project/seo_checklist\">SEO Checklist</a> GS indexing crawlers rely on Googlebot to index a site. All of the typical Google crawler requirements need to be met for GS to index a site. That’s what makes a module like this critical.</li>\n<li><a href=\"https://www.drupal.org/project/linked_data_field\">Linked Data Lookup Field</a>: Supports Library of Congress Subject Headings, Global Research Identifier Database (GRID) entries, and CrossRef Funder identifiers and autocompletes the values out of the box. <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://www.drupal.org/files/project-images/Screen%20Shot%202019-04-30%20at%202.22.31%20PM_0.png\" data-is-external-image=\"true\"  alt=\"Linked Data Lookup Field screenshot\" /></figure></li>\n<li><a href=\"https://github.com/mjordan/persistent_identifiers\">Persistent Identifiers</a>: for minting and persisting persistent identifiers (Handles, DOIs, ARKs, etc.). <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://github.com/mjordan/persistent_identifiers/raw/master/docs/images/mint_checkbox.png\" data-is-external-image=\"true\"  alt=\"mint screenshot\" /></figure></li>\n<li><a href=\"https://www.drupal.org/project/orcid\">ORCID</a>: ORCID integration and allowing users to login with ORCID credentials</li>\n<li><a href=\"https://www.drupal.org/project/user_progress\">User Progress API</a>: The User progress API module was sponsored by the Pennsylvania State University. It has been developed for charting students’ progression throughout a system.</li>\n</ul>\n<p><a href=\"https://www.drupal.org/docs/8/core/modules/workflows/overview\">Drupal Workflows</a> is a core Drupal feature and is well documented. This was complicated in Drupal 7/Islandora 7 but now this process is trivial and is built into Drupal 8.</p>\n<p>Here is a separate page for <a href=\"bibliography-and-citation.html\">Bibliography and Citation</a> </p>\n<p>Here is a separate page for <a href=\"https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html\">OAI-PMH</a> </p>\n<p>Here is a separate page for <a href=\"rights-and-restrictions.html\">Rights and Restrictions</a></p>\n<hr>\n<p>There are Institutional Repository (IR) &amp; Research Data Management (RDM) solutions in production. As of the writing of this there is 1 university running Islandora 8 as an IR in production, <a href=\"https://oaks.kent.edu\">Kent State University</a> and 1 an Islandora 8 RDM portal at <a href=\"https://islandora-rdm.researchspaces.ca\">UPEI</a></p>\n<h3 id=\"institutional-repository-ir-in-production\">Institutional Repository (IR) in production</h3>\n<p><a href=\"https://oaks.kent.edu\">Kent State University</a> migrated from Bepress according to Jonathan Hunt from Catalyst IT in New Zealand.</p>\n<p>Thier repository “formats” according to thier <a href=\"https://oaks.kent.edu/search?s=&amp;\">search</a> include:</p>\n<ul>\n<li>Articles</li>\n<li>Conference Proceedings</li>\n<li>Images</li>\n<li>Text</li>\n<li>Newspapers</li>\n<li>Books</li>\n<li>Book Reviews</li>\n<li>Yearbooks</li>\n<li>Newsletters</li>\n<li>Videos</li>\n<li>Events</li>\n<li>Journals</li>\n<li>Magazines</li>\n<li>Dissertations</li>\n<li>Editorials</li>\n<li>News Articles</li>\n<li>Datasets</li>\n<li>Presentations</li>\n<li><a href=\"https://oaks.kent.edu/esdri2020\">Symposiums</a></li>\n</ul>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85563647-95087680-b5fb-11ea-9f99-5e791c317856.png\" data-is-external-image=\"true\"  alt=\"kent_state\" /></figure></p>\n<p>Thier listing of “format” is a bit misleading. All of the data was migrated from Bepress and alligned with thier format limitations. Several items are PDFs when a different format would be expected.</p>\n<p>The company that migrated Kent State University Catalyst IT also has another Islandora 8 in production “<a href=\"https://canterburystories.nz\">Christ Church City Libraries</a>“ and several more New Zealand sites in beta.</p>\n<h3 id=\"research-data-management-rdm-in-production\">Research Data Management (RDM) in production</h3>\n<p>This project is supported by <a href=\"https://www.canarie.ca/rdm-funding-call-recipients\">CANARIE Awards</a> Research Data Management (RDM) Funding Call 1.</p>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85565717-655a6e00-b5fd-11ea-95ec-e532ab781ac4.png\" data-is-external-image=\"true\"  alt=\"CANARIE_Awards\" /></figure></p>\n<p>Develop features in Islandora 8 and integrations with other services that provides a comprehensive research data management platform that is informed by the <a href=\"https://islandora-rdm.researchspaces.ca/node/4\">FAIR principles</a>. The project seeks to develop integrations with identifier, metadata, authentication, storage, and dissemination systems and services that support the research data lifecycle and FAIR principles - that is making research data Findable, Accessible, Interoperable, and Reusable. The project is an out-of the box profile (with configurable but sensible defaults) for institutions wanting to curate and manage research data over its lifecycle.</p>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85566753-50320f00-b5fe-11ea-9110-ad59539bd930.jpg\" data-is-external-image=\"true\"  alt=\"Islandora RDM Webinar - November 7 2019\" /></figure></p>\n<p>This system created a Drupal content type that represents a research data management plan.  DMPRoadMap is software used by DMPTool in the US, DMPOnline in Europe. In Canada, the DMP Assistant in Canada is moving towards that framework. The draft Tri-Agency Research Data Management Policy highlights the importance of DMPs as a best practices in research data management and this feature provides researchers with a tool to help them meet emerging funding requirements. This content type models a generic funder template and associated guidance modeled on the DMPRoadMap. It is possible to have Conditional fields to provide specific funder templates.</p>\n<p>This module directly integrates ORCID oauth login relating their user profile with thier ORCID ID and giving them the ability to link thier submitted content with ORCID.\n<a href=\"http://drive.google.com/file/d/1N6UzoLoP4dz5ZjP9Biw-_NBB599xrlWt/view\" title=\"Logging in\"><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85570432-570e5100-b601-11ea-9578-f73b3198d24c.png\" data-is-external-image=\"true\"  alt=\"Logging into ORCID\" /></figure></a></p>\n<p>Research Data Management Resources solution created by UPEI “a suite of services for UPEI researchers that includes: a data management planning tool to create a data management plan for a project;  a locally hosted storage service to share research files with colleagues;  a publishing framework to publish and assign a doi to a dataset to be made public; and a preservation/archiving function to steward research data for as long as is necessary.” [link]</p>\n<ul>\n<li>Planning<ul>\n<li>Create a funding proposal using the Research Data Management Planning Tool.</li>\n<li>Share a Draft Planning Document</li>\n<li>Learn more about research data management plans and where to apply for grants.</li>\n</ul>\n</li>\n<li>WorkSpace<ul>\n<li>Create a managed and backed up data workspace, similar to, but more secure than, a Dropbox account.</li>\n<li>Synchronize data on your desktop with your research workspace.</li>\n<li>Create additional workspaces for your research group or projects.</li>\n<li>Collaborate with colleagues off campus by sharing your workspaces.</li>\n</ul>\n</li>\n<li>Publishing<ul>\n<li>Export final datasets from your WorkSpaces into a long-term data repository.</li>\n<li>Automatically assign a Datacite Digital Object Identifier (DOI) to your dataset which provides a persistent identifier and a Datacite metadata record that facilitates both discovery and citation of your dataset.</li>\n<li>Share your data publicly, including assigning an appropriate data sharing license.</li>\n<li>Access metrics for your datasets.</li>\n<li>Sharing your data with specific people or groups.</li>\n</ul>\n</li>\n<li>Archiving<ul>\n<li>Move your valuable research data (including raw data) to the long-term repository, thereby meeting funder mandates for preservation of the data.</li>\n<li>Access and manage your data archive.</li>\n<li>Make an appointment to discuss your data archiving requirements with the Robertson Library.</li>\n</ul>\n</li>\n<li>Finding<ul>\n<li>Search for data produced by UPEI researchers.</li>\n</ul>\n</li>\n</ul>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85612269-b6cb2300-b626-11ea-8574-e2aef1a0d64f.png\" data-is-external-image=\"true\"  alt=\"screenshot-data upei ca-2020 06 24-14_26_02\" /></figure></p>\n<p><a href=\"https://docs.google.com/presentation/d/1h3iAYCkqWcXv4a9nAeZsr5T7AYD0kWJCqzeONXTzljw\">Slides aviables for UPEI</a></p>\n<h2 id=\"other-institutional-repository-requirements\">Other Institutional Repository Requirements</h2>\n<ol>\n<li>Supports roles and role types. These are all controls managed by Drupal’s User management along with the core mediation module.<ul>\n<li>Anonymous users</li>\n<li>Submitter: authenticated user; can submit items (objects) to one or more collections</li>\n<li>Collection administrator/Editor - can add/remove submitters to a collection; can approve and publish / reject submissions; can edit item metadata; can withdraw items from public view; can deligate reviewers to submissions through roles.</li>\n<li>Reviewer - can view an item not yet published and provide comments to Collection administrator/Editor.</li>\n<li>Repository administrator - can perform all functions of the collection administrator for the\nentire repository; can add new collections.</li>\n</ul>\n</li>\n<li>Personalized system access for registered users and segregated submission workspace through basic workflow setup can be complished with almost exclusively Drupal core modules.</li>\n<li>Again Drupal’s user management supports assigning multiple roles with users in the system with different permissions</li>\n<li>Ability to upload files over 2 GB via GUI into the system.</li>\n<li>Ability for submitters to upload objects into the system and have that item published by a user with another role and was covered by a previous requirement.<ol start=\"6\">\n<li>Ability to create a metadata only record that refers to an externally hosted object. Depending on the type of content this is mostly built into Drupal core code. When creating a <code>media</code> object this is basically what happens. The next step of either pointing to a local file or a remote resource is fiarly common with content management systems. </li>\n<li>Generates persistent document identification (DOI) for creating permanent links to individual records (CNRI Handles, DOIs). Minting DOIs has been accomplished with the <a href=\"https://github.com/roblib/islandora_rdm/tree/8.x-1.x/islandora_rdm_datacite_doi\">Islandora Research Data Management Platform</a> repository for datacite DOIs. I was told that adapting it for another handler would be simple and is under development (it should be release within the next few weeks).</li>\n<li>There is no documentation or expressed interest from the community (as of yet) in automatic deposits via the SWORD protocol. </li>\n<li>Ability to populate the repository from objects in an ORCID profile could mean a few things. There are several modules and options to look at for possible options. Here’s a couple <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://www.drupal.org/files/styles/grid-3-2x/public/project-images/orcid-logo.png?itok=xP0k1XQs\" data-is-external-image=\"true\"  alt=\"ORCID Importer Logo\" /></figure><ul>\n<li><a href=\"https://www.drupal.org/project/bibcite_import_orcid\">Bibcite Import Orcid</a>: The purpose of this Contrib module is to be able to import publications from ORCID public API into ‘Bibliography &amp; Citation’ module.</li>\n<li><a href=\"https://www.drupal.org/sandbox/joum/3026006\">ORCID Importer</a></li>\n</ul>\n<ul>\n<li>adds a User entity field to store the user’s ORCID</li>\n<li>adds an “Import ORCID data” button to the User’s profile page</li>\n<li>adds an “ORCID Configuration” form for the website using the module where the user can configure the ORCID API integration</li>\n</ul>\n</li>\n</ol>\n</li>\n</ol>\n",
             "author": {
                 "name": "Don Richards"
             },
@@ -91,8 +91,8 @@
                    "Citation",
                    "Bibliography"
             ],
-            "date_published": "2020-06-29T16:09:20-04:00",
-            "date_modified": "2020-06-29T16:09:20-04:00"
+            "date_published": "2020-06-29T16:35:59-04:00",
+            "date_modified": "2020-06-29T16:35:59-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/bibliography-and-citation.html",
@@ -105,8 +105,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-06-29T16:09:20-04:00",
-            "date_modified": "2020-06-29T16:09:20-04:00"
+            "date_published": "2020-06-29T16:35:59-04:00",
+            "date_modified": "2020-06-29T16:35:59-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html",
@@ -119,8 +119,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-06-29T16:09:20-04:00",
-            "date_modified": "2020-06-29T16:09:20-04:00"
+            "date_published": "2020-06-29T16:35:59-04:00",
+            "date_modified": "2020-06-29T16:35:59-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/community-and-sustainability.html",
@@ -147,8 +147,8 @@
                    "Google",
                    "Delta"
             ],
-            "date_published": "2020-06-29T16:09:20-04:00",
-            "date_modified": "2020-06-29T16:09:20-04:00"
+            "date_published": "2020-06-29T16:35:59-04:00",
+            "date_modified": "2020-06-29T16:35:59-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/deployment-options.html",
@@ -169,8 +169,8 @@
                    "VM",
                    "ISLE"
             ],
-            "date_published": "2020-06-29T16:09:20-04:00",
-            "date_modified": "2020-06-29T16:09:20-04:00"
+            "date_published": "2020-06-29T16:35:59-04:00",
+            "date_modified": "2020-06-29T16:35:59-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/technical-infrastructure.html",
@@ -191,8 +191,8 @@
                    "GB",
                    "CPU"
             ],
-            "date_published": "2020-06-29T16:09:20-04:00",
-            "date_modified": "2020-06-29T16:09:20-04:00"
+            "date_published": "2020-06-29T16:35:59-04:00",
+            "date_modified": "2020-06-29T16:35:59-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/rights-and-restrictions.html",
@@ -210,8 +210,8 @@
                    "access",
                    "WebAC"
             ],
-            "date_published": "2020-06-29T16:09:20-04:00",
-            "date_modified": "2020-06-29T16:09:20-04:00"
+            "date_published": "2020-06-29T16:35:59-04:00",
+            "date_modified": "2020-06-29T16:35:59-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/cloud-hosting-solution.html",
@@ -229,8 +229,8 @@
                    "hosting",
                    "cloud"
             ],
-            "date_published": "2020-06-29T16:09:20-04:00",
-            "date_modified": "2020-06-29T16:09:20-04:00"
+            "date_published": "2020-06-29T16:35:59-04:00",
+            "date_modified": "2020-06-29T16:35:59-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/next-level-discoverability-solutions.html",
@@ -248,8 +248,8 @@
                    "LTR",
                    "AI"
             ],
-            "date_published": "2020-06-29T16:09:20-04:00",
-            "date_modified": "2020-06-29T16:09:20-04:00"
+            "date_published": "2020-06-29T16:35:59-04:00",
+            "date_modified": "2020-06-29T16:35:59-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/metadata-and-metadata-sharing.html",
@@ -274,8 +274,8 @@
                    "JSON",
                    "API"
             ],
-            "date_published": "2020-06-29T16:09:20-04:00",
-            "date_modified": "2020-06-29T16:09:20-04:00"
+            "date_published": "2020-06-29T16:35:59-04:00",
+            "date_modified": "2020-06-29T16:35:59-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/preservation.html",
@@ -288,8 +288,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-06-29T16:09:20-04:00",
-            "date_modified": "2020-06-29T16:09:20-04:00"
+            "date_published": "2020-06-29T16:35:59-04:00",
+            "date_modified": "2020-06-29T16:35:59-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/uploading-ingesting-and-migration.html",
@@ -310,8 +310,8 @@
                    "MODS",
                    "CSV"
             ],
-            "date_published": "2020-06-29T16:09:20-04:00",
-            "date_modified": "2020-06-29T16:09:20-04:00"
+            "date_published": "2020-06-29T16:35:59-04:00",
+            "date_modified": "2020-06-29T16:35:59-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/other-content-types.html",
@@ -337,8 +337,8 @@
                    "PDF",
                    "Moore"
             ],
-            "date_published": "2020-06-29T16:09:20-04:00",
-            "date_modified": "2020-06-29T16:09:20-04:00"
+            "date_published": "2020-06-29T16:35:59-04:00",
+            "date_modified": "2020-06-29T16:35:59-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/images-books-and-pages.html",
@@ -362,8 +362,8 @@
                    "Mirador",
                    "BigData"
             ],
-            "date_published": "2020-06-29T16:09:20-04:00",
-            "date_modified": "2020-06-29T16:09:20-04:00"
+            "date_published": "2020-06-29T16:35:59-04:00",
+            "date_modified": "2020-06-29T16:35:59-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/general-content-models.html",
@@ -384,8 +384,8 @@
                    "PCDM",
                    "BigData"
             ],
-            "date_published": "2020-06-29T16:09:20-04:00",
-            "date_modified": "2020-06-29T16:09:20-04:00"
+            "date_published": "2020-06-29T16:35:59-04:00",
+            "date_modified": "2020-06-29T16:35:59-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/content-modeling.html",
@@ -402,8 +402,8 @@
                    "microservice",
                    "content modeling"
             ],
-            "date_published": "2020-06-29T16:09:20-04:00",
-            "date_modified": "2020-06-29T16:09:20-04:00"
+            "date_published": "2020-06-29T16:35:59-04:00",
+            "date_modified": "2020-06-29T16:35:59-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/background.html",
@@ -419,8 +419,8 @@
                    "Drupal 8 ",
                    "Background"
             ],
-            "date_published": "2020-06-29T16:09:20-04:00",
-            "date_modified": "2020-06-29T16:09:20-04:00"
+            "date_published": "2020-06-29T16:35:59-04:00",
+            "date_modified": "2020-06-29T16:35:59-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html",
@@ -434,8 +434,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-06-29T16:09:20-04:00",
-            "date_modified": "2020-06-29T16:09:20-04:00"
+            "date_published": "2020-06-29T16:35:59-04:00",
+            "date_modified": "2020-06-29T16:35:59-04:00"
         }
     ]
 }
