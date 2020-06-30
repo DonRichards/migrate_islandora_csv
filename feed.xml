@@ -17,7 +17,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/ingestingmigrating.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/ingestingmigrating.html</id>
 
-        <updated>2020-06-29T16:35:59-04:00</updated>
+        <updated>2020-06-30T10:44:35-04:00</updated>
             <summary>
                 <![CDATA[
                     During ingests/migrations there are several items that has been covered by different sections of this document. It helps to have a working knowledge of linked&hellip;
@@ -51,7 +51,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/uploading.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/uploading.html</id>
 
-        <updated>2020-06-29T16:35:59-04:00</updated>
+        <updated>2020-06-30T10:44:35-04:00</updated>
             <summary>
                 <![CDATA[
                     Uploading is part of the ingest process but information and modules specific to uploading can be found here. Uploads are not resumable and subject to&hellip;
@@ -66,7 +66,7 @@
 <li><a href="https://www.drupal.org/project/uppy">Uppy File Uploader</a> Uses the chunking, resumable, TUS file transfer protocol to upload files. This is a modular open source JavaScript file uploader.</li>
 <li>Using <a href="https://www.drupal.org/project/flysystem">flysystem</a>‘s ftp and sftp plugins to make files available if you can run an FTP server.</li>
 <li><a href="https://www.drupal.org/project/pfs">Private File System</a>: Private File System provides a way to serve files(i.e. static assets) from the Drupal private file system(private://) based on custom restrictions.</li>
-<li><a href="https://www.drupal.org/project/file_upload_options">File Upload Options</a>: trivial for the document by useful for technical side of the system. This specify what should happen when uploaded files have the same name as existing files. Configured per field, the options are are grouped by entity type.</li>
+<li><a href="https://www.drupal.org/project/file_upload_options">File Upload Options</a>: trivial for the document but useful for technical side of the system. This specifies what should happen when uploaded files have the same name as existing files. Configured per field, the options are are grouped by entity type.</li>
 </ul>
 <h3 id="technical-notes">Technical Notes</h3>
 <p>If you want to upload large (&gt; 1GB) files, the VM provided by the community has some options not set. You’ll need to tune the following settings in your php.ini:</p>
@@ -89,7 +89,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/step-by-step-setup-ir.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/step-by-step-setup-ir.html</id>
 
-        <updated>2020-06-29T16:35:59-04:00</updated>
+        <updated>2020-06-30T10:44:35-04:00</updated>
             <summary>
                 <![CDATA[
                     This will cover these topic The simpliest way to implement a highly customizable submit, review, accept, publish workflow is to leverage Drupal’s Content Moderation. Most&hellip;
@@ -199,7 +199,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/book-and-large-image-viewer.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/book-and-large-image-viewer.html</id>
 
-        <updated>2020-06-29T16:35:59-04:00</updated>
+        <updated>2020-06-30T10:44:35-04:00</updated>
             <summary>
                 <![CDATA[
                     IIIF (International Image Interoperability Framework) is a set of specifications that provides interoperability of image-based collections across platforms. What this means for a repository platform&hellip;
@@ -250,7 +250,7 @@
             <category term="Citation"/>
             <category term="Bibliography"/>
 
-        <updated>2020-06-29T16:35:59-04:00</updated>
+        <updated>2020-06-30T10:44:35-04:00</updated>
             <summary>
                 <![CDATA[
                      Drupal for higher education is a large industry. There are several top universities that have been using Drupal for a veriety of acedemic purposes.
@@ -374,7 +374,7 @@ entire repository; can add new collections.</li>
 <li>Ability to upload files over 2 GB via GUI into the system.</li>
 <li>Ability for submitters to upload objects into the system and have that item published by a user with another role and was covered by a previous requirement.<ol start="6">
 <li>Ability to create a metadata only record that refers to an externally hosted object. Depending on the type of content this is mostly built into Drupal core code. When creating a <code>media</code> object this is basically what happens. The next step of either pointing to a local file or a remote resource is fiarly common with content management systems. </li>
-<li>Generates persistent document identification (DOI) for creating permanent links to individual records (CNRI Handles, DOIs). Minting DOIs has been accomplished with the <a href="https://github.com/roblib/islandora_rdm/tree/8.x-1.x/islandora_rdm_datacite_doi">Islandora Research Data Management Platform</a> repository for datacite DOIs. I was told that adapting it for another handler would be simple and is under development (it should be release within the next few weeks).</li>
+<li>Generates persistent document identification (DOI) for creating permanent links to individual records (CNRI Handles, DOIs). Minting DOIs has been accomplished with the <a href="https://github.com/roblib/islandora_rdm/tree/8.x-1.x/islandora_rdm_datacite_doi">Islandora Research Data Management Platform</a> repository for datacite DOIs. For more information on minting DOIs please see <a href="/oai-pmh-and-doi-minting">OAI-PMH &amp; DOI Minting</a></li>
 <li>There is no documentation or expressed interest from the community (as of yet) in automatic deposits via the SWORD protocol. </li>
 <li>Ability to populate the repository from objects in an ORCID profile could mean a few things. There are several modules and options to look at for possible options. Here’s a couple <figure class="post__image"><img loading="lazy" src="https://www.drupal.org/files/styles/grid-3-2x/public/project-images/orcid-logo.png?itok=xP0k1XQs" data-is-external-image="true"  alt="ORCID Importer Logo" /></figure><ul>
 <li><a href="https://www.drupal.org/project/bibcite_import_orcid">Bibcite Import Orcid</a>: The purpose of this Contrib module is to be able to import publications from ORCID public API into ‘Bibliography &amp; Citation’ module.</li>
@@ -401,7 +401,7 @@ entire repository; can add new collections.</li>
         <link href="https://donrichards.github.io/migrate_islandora_csv/bibliography-and-citation.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/bibliography-and-citation.html</id>
 
-        <updated>2020-06-29T16:35:59-04:00</updated>
+        <updated>2020-06-30T10:44:35-04:00</updated>
             <summary>
                 <![CDATA[
                     Drupal is a very popular and well-known CMS for educational websites. And it’s very important that Drupal has tools to deal with bibliography and citations.
@@ -442,7 +442,7 @@ entire repository; can add new collections.</li>
         <link href="https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html</id>
 
-        <updated>2020-06-29T16:35:59-04:00</updated>
+        <updated>2020-06-30T10:44:35-04:00</updated>
             <summary>
                 <![CDATA[
                     OAI-PMH Persistent Identifiers: Module for minting and persisting persistent identifiers (Handles, DOIs, ARKs, etc.). Persistent identifiers can be minted by a variety of sources, such&hellip;
@@ -458,6 +458,7 @@ entire repository; can add new collections.</li>
   This module provides some common tasks while allowing small amounts of code (specifically Drupal services) to handle the particulars of minting and persisting. In addition, a Drupal site admin might want to mix and match minting and persisting services. Generally speaking, this module&#39;s goal is to allow site admins to select the minters and persisters they want, while helpin developers to write as little code as necessary to create new minter and persister services.</code></pre>
 <p><a href="https://github.com/mjordan/doi_datacite">DataCite DOI Minter</a>: Module that mints DOIs from DataCite via the Persistent Identifiers module. This module allows for both individual and bulk operations. 
 <figure class="post__image"><img loading="lazy" src="https://github.com/mjordan/doi_datacite/raw/master/docs/images/datacite_metadata.png" data-is-external-image="true"  alt="DataCite DOI Minter UI" /></figure></p>
+<p><figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/86127144-70a21380-baad-11ea-8750-6803d0036d19.png" data-is-external-image="true"  alt="persistent IDs test config" /></figure></p>
 
             ]]>
         </content>
@@ -484,7 +485,7 @@ entire repository; can add new collections.</li>
             <category term="Google"/>
             <category term="Delta"/>
 
-        <updated>2020-06-29T16:35:59-04:00</updated>
+        <updated>2020-06-30T10:44:35-04:00</updated>
             <summary>
                 <![CDATA[
                     230+ public sites, 1414 listserv members, 144 GitHub members, 28 Committers, 25+ Contributed Modules, 30+ Foundation members, 12 Interest Groups, 10 Community-led software releases, 19&hellip;
@@ -536,7 +537,7 @@ entire repository; can add new collections.</li>
             <category term="VM"/>
             <category term="ISLE"/>
 
-        <updated>2020-06-29T16:35:59-04:00</updated>
+        <updated>2020-06-30T10:44:35-04:00</updated>
             <summary>
                 <![CDATA[
                     For self hosted soltutions there are 2 basic deployment options; Ansible(a style we’re currently using) or deploying through Docker images. All of these options can&hellip;
@@ -574,7 +575,7 @@ entire repository; can add new collections.</li>
             <category term="GB"/>
             <category term="CPU"/>
 
-        <updated>2020-06-29T16:35:59-04:00</updated>
+        <updated>2020-06-30T10:44:35-04:00</updated>
             <summary>
                 <![CDATA[
                     Drupal 8 completely supports CAS authentication [link].Islandora 8 provides several different reports out-of-the-box. From microservice stats to usage stats. There are several options and are&hellip;
@@ -608,7 +609,7 @@ entire repository; can add new collections.</li>
             <category term="access"/>
             <category term="WebAC"/>
 
-        <updated>2020-06-29T16:35:59-04:00</updated>
+        <updated>2020-06-30T10:44:35-04:00</updated>
             <summary>
                 <![CDATA[
                     Rightsstatements.org is not specifically discussed in the documentation. Although extensive URI integration for controlled access terms is documented on the site, an assessment by the&hellip;
@@ -637,7 +638,7 @@ entire repository; can add new collections.</li>
             <category term="hosting"/>
             <category term="cloud"/>
 
-        <updated>2020-06-29T16:35:59-04:00</updated>
+        <updated>2020-06-30T10:44:35-04:00</updated>
             <summary>
                 <![CDATA[
                     A few solutions are available for vendors to host a solution for a fee.Able to run the stack on a cloud hosting provider like Amazon’s&hellip;
@@ -671,7 +672,7 @@ entire repository; can add new collections.</li>
             <category term="LTR"/>
             <category term="AI"/>
 
-        <updated>2020-06-29T16:35:59-04:00</updated>
+        <updated>2020-06-30T10:44:35-04:00</updated>
             <summary>
                 <![CDATA[
                     A search/discoverability enhancement “Learning to Rank (LTR) is a class of techniques that apply supervised machine learning (ML) to solve ranking problems.“ [link] LTR is&hellip;
@@ -715,7 +716,7 @@ entire repository; can add new collections.</li>
             <category term="JSON"/>
             <category term="API"/>
 
-        <updated>2020-06-29T16:35:59-04:00</updated>
+        <updated>2020-06-30T10:44:35-04:00</updated>
             <summary>
                 <![CDATA[
                     RDF Mapping; “In Islandora, the JSON-LD Module transforms nodes (or media, or taxonomy terms) into the RDF that is synced into Fedora and the Triplestore.
@@ -760,7 +761,7 @@ entire repository; can add new collections.</li>
         <link href="https://donrichards.github.io/migrate_islandora_csv/preservation.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/preservation.html</id>
 
-        <updated>2020-06-29T16:35:59-04:00</updated>
+        <updated>2020-06-30T10:44:35-04:00</updated>
             <summary>
                 <![CDATA[
                     Islandora 8 utilizes Harvard’s File Information Tool Set (FITS), Fixity auditing, bag exporting, and preservation reporting for preservation (Jordan, 2019).Leverages Fedora 5 as the preservation&hellip;
@@ -793,7 +794,7 @@ entire repository; can add new collections.</li>
             <category term="MODS"/>
             <category term="CSV"/>
 
-        <updated>2020-06-29T16:35:59-04:00</updated>
+        <updated>2020-06-30T10:44:35-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/7/migration-middle-format-process.jpg" alt="Typical Drupal 8 migration" />
@@ -805,8 +806,8 @@ entire repository; can add new collections.</li>
                     <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/7/migration-middle-format-process.jpg" alt="Typical Drupal 8 migration" />
                 <ol>
 <li>Supports migration of objects and their associated datastreams from the Fedora 3 instance to Islandora 8. There are a couple of prebuilt solutions including a process that utilizes a Solr query and preconfigured mappings to achieve a full migration. Another technique utilizes the Drupal 8 module “Migrate Islandora CSV” (Lamb, 2019). As the title suggests this module utilizes a CSV file to migrate and can be generated via the Islandora 7x module “Islandora Get CSV” (Jordan, 2020).  </li>
-<li>Islandora a few options for migrating from Islandora 7. There are 2 core migration options that Islandora supports directly; Islandora CSV migration and the migrate 7x claw (a fedora to fedora option). Another option developed was the Islandora workbench.<ul>
-<li>Islandora CSV is the preferred option for it’s simplicity. All of the migration processes in this option are both iterable and reversible. If changes need to be made to the object or it’s metadata the changes can be either updated or rolled back. This is an extremely important fact. This allows for the migration of collections of objects to be migrated with only minimal mappings (if needed). This means all RDF mapping doesn’t have to be complete to migrate the entire collection. RDF is not a flat MODS file that references some URIs. This is a problem with MODS. If a URI was to change, every MODS file must be updated to reflect the new destination. In RDF, the URI is stored and referenced as an entity and not statically in a metadata file. It’s ideal to separate out any value that will be an entity; a subject, person, place, corporation, event, etc. Regardless of the entity type the process of migration includes 3 basic steps; download the source, process it and then save it. <figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/85171208-8d805080-b23c-11ea-8e7a-f5638be0ca3f.png" data-is-external-image="true"  alt="ETL Process" /></figure></li>
+<li>Islandora has a few options for migrating from Islandora 7. There are 2 core migration options that Islandora supports directly; Islandora CSV migration and the migrate 7x claw (a fedora to fedora option). Another option developed was the Islandora workbench.<ul>
+<li>Islandora CSV is the preferred option for it’s simplicity. All of the migration processes in this option are both iterable and reversible. If changes need to be made to the object or it’s metadata the changes can be either updated or rolled back. This is an extremely important feature. This allows for the migration of collections of objects to be migrated with only minimal mappings (if needed). This means all RDF mapping doesn’t have to be complete to migrate the entire collection. RDF is not a flat MODS file that references some URIs. This is a problem with MODS. If a URI was to change, every MODS file must be updated to reflect the new destination. In RDF, the URI is stored and referenced as an entity and not statically in a metadata file. It’s ideal to separate out any value that will be an entity; a subject, person, place, corporation, event, etc. Regardless of the entity type the process of migration includes 3 basic steps; download the source, process it and then save it. <figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/85171208-8d805080-b23c-11ea-8e7a-f5638be0ca3f.png" data-is-external-image="true"  alt="ETL Process" /></figure></li>
 <li>Islandora’s <strong><a href="https://github.com/Islandora-Devops/migrate_7x_claw">migrate_7x_claw</a></strong> module is a Drupal 8 Migrate Plus migration that  pulls content directly from an Islandora 7.x Solr/Fedora server. This module assumes all PIDs are indexed in Solr.<pre><code>       - Currently, the following content models can be migrated over with full functionality:
            * Collection
            * Basic Image
@@ -847,7 +848,7 @@ entire repository; can add new collections.</li>
             <category term="PDF"/>
             <category term="Moore"/>
 
-        <updated>2020-06-29T16:35:59-04:00</updated>
+        <updated>2020-06-30T10:44:35-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/6/Screen-Shot-2020-06-19-at-2.44.27-PM.png" alt="Drupal 8 Add Custom Content type" />
@@ -863,7 +864,7 @@ entire repository; can add new collections.</li>
 <li>Supports the deposit and presentation of PDF objects. PDFs with written text can be utilized to provide searching capabilities on the content of a book or document. Ghostscript can be used on text based PDFs. Images require an OCR utility like Tesseract to extract text. This is built into the default Islandora configuration.</li>
 <li>Supports the deposit and presentation of audio objects. Most of the functionality specific to audio is carried out by Drupal modules. Audio transcript editing/display, playback, and thumbnail generation of the audio’s waveform are all Drupal core and contributed features.</li>
 <li>Supports the deposit and presentation of video objects. Most of the functionality specific to video is carried out by Drupal modules. Video transcript editing/display, thumbnail generation and playback are all Drupal core and contributed features. An Islandora 8 code submission is pending approval for transcripts (Manimjs_drupal, 2020) and an oral history step by step instruction as proof of concept is available (Shaw, 2019).</li>
-<li>Supports the deposit and presentation of oral history objects. The only discernible difference between audio/video objects and oral history objects is the presence of transcripts, transcripts are already part of the audio/video features indicating this is completely covered as well. </li>
+<li>Supports the deposit and presentation of oral history objects. The only discernible difference between audio/video objects and oral history objects is the presence of transcripts. Transcripts are already part of the audio/video features indicating this is completely covered as well. </li>
 </ol>
 
             ]]>
@@ -887,7 +888,7 @@ entire repository; can add new collections.</li>
             <category term="Mirador"/>
             <category term="BigData"/>
 
-        <updated>2020-06-29T16:35:59-04:00</updated>
+        <updated>2020-06-30T10:44:35-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/5/CONTENT-MODELING-DRUPAL8.jpg" alt="Book viewer example" />
@@ -927,7 +928,7 @@ entire repository; can add new collections.</li>
             <category term="PCDM"/>
             <category term="BigData"/>
 
-        <updated>2020-06-29T16:35:59-04:00</updated>
+        <updated>2020-06-30T10:44:35-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/4/PCDM_diagram.jpg" alt="Islandora 8 PCDM diagram" />
@@ -999,7 +1000,7 @@ entire repository; can add new collections.</li>
             <category term="microservice"/>
             <category term="content modeling"/>
 
-        <updated>2020-06-29T16:35:59-04:00</updated>
+        <updated>2020-06-30T10:44:35-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/3/diagram.png" alt="Islandora 8 Architecture" />
@@ -1034,7 +1035,7 @@ entire repository; can add new collections.</li>
             <category term="Drupal 8 "/>
             <category term="Background"/>
 
-        <updated>2020-06-29T16:35:59-04:00</updated>
+        <updated>2020-06-30T10:44:35-04:00</updated>
             <summary>
                 <![CDATA[
                     Islandora 7 is a monolithic application that glues Drupal 6/7 to Fedora 3 with an optional institutional repository (IR) addon. Islandora 7 had several pain&hellip;
@@ -1063,17 +1064,17 @@ Here’s a technical video on Princeton’s content migration to Drupal 8 </p>
         <link href="https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html</id>
 
-        <updated>2020-06-29T16:35:59-04:00</updated>
+        <updated>2020-06-30T10:44:35-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/1/seadragon-zoomed.jpg" alt="" />
-                    There are over 300 universities running Islandora according to the latest survey with 4 currently running a typical digital repository, 1 running an Institutional Repository&hellip;
+                    There are over 300 universities running Islandora 7 according to the latest survey. As of this writing there are four currently running a typical Islandora&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
                     <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/1/seadragon-zoomed.jpg" alt="" />
-                <p>There are over 300 universities running <strong>Islandora</strong> according to the latest survey with <a href="https://github.com/Islandora/documentation/wiki/Islandora-8-Pilot-Projects">4</a> currently running a typical digital repository, 1 running an <a href="https://oaks.kent.edu">Institutional Repository</a> that was migrated from Bepress, and 1 <a href="https://islandora-rdm.researchspaces.ca">Research Data Management platform</a> in production with Islandora 8, including several in beta. These numbers do not include government or private instances which commonly don’t report or aren’t publicly accessible like UTK’s <a href="https://trace.utk.edu">TRACE</a>. </p>
+                <p>There are over 300 universities running <strong>Islandora 7</strong> according to the latest survey. As of this writing there are <a href="https://github.com/Islandora/documentation/wiki/Islandora-8-Pilot-Projects">four</a> currently running a typical Islandora 8 digital repository, one running an <a href="https://oaks.kent.edu">Institutional Repository</a> in 8 that was migrated from Bepress, and one <a href="https://islandora-rdm.researchspaces.ca">Research Data Management platform</a> in production with Islandora 8, including several in beta. These numbers do not include government or private instances which commonly don’t report or aren’t publicly accessible like UTK’s <a href="https://trace.utk.edu">TRACE</a>. </p>
 <h2 id="summary">Summary</h2>
 <p>Here’s a list of all the Islandora features currently shipped with the 1.1.0 release (including some of those that come for free from contributed modules):</p>
 <ul>
@@ -1165,7 +1166,7 @@ Here’s a technical video on Princeton’s content migration to Drupal 8 </p>
 <li>See the<a href="https://github.com/Islandora-CLAW/migrate_islandora_csv"> islandora_migrate_csv</a> module for a detailed tutorial</li>
 </ul>
 </li>
-<li><a href="https://www.drupal.org/docs/user_guide/en/views-concept.html">Views</a>! You can filter, sort, display, and otherwise manipulate lists of content in all kinds of ways. For example:<ul>
+<li><a href="https://www.drupal.org/docs/user_guide/en/views-concept.html">Views</a>! You can filter, sort, display, and otherwise manipulate lists of content in multiple ways. For example:<ul>
 <li>Make a browse by collections page (see <a href="http://future.islandora.ca/collections">this example</a> on the sandbox, which can be customized <a href="http://future.islandora.ca/admin/structure/views/view/islandora_content/edit/page_1?destination=/collections">here</a>).</li>
 <li>Make an image gallery (see <a href="http://future.islandora.ca/node/7">this example</a> on the sandbox, which can be customized <a href="http://future.islandora.ca/admin/structure/views/view/sandbox_members_image_gallery/edit/block_1?destination=/node/7">here</a>)</li>
 <li>Make a slideshow (see <a href="http://future.islandora.ca/">this example</a> on the sandbox, which can be customized <a href="http://future.islandora.ca/admin/structure/views/view/sandbox_slideshow/edit/block_1?destination=/node/6">here</a>) using <a href="https://www.drupal.org/project/views_slideshow">views_slideshow</a>.</li>

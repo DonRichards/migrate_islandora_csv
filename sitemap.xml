@@ -58,11 +58,11 @@
 </url>
 <url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/institutional-repository.html</loc>
-<lastmod>2020-06-29T16:35:44-04:00</lastmod>
+<lastmod>2020-06-30T08:43:18-04:00</lastmod>
 </url>
 <url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html</loc>
-<lastmod>2020-06-29T15:32:33-04:00</lastmod>
+<lastmod>2020-06-30T10:24:20-04:00</lastmod>
 <image:image>
 <image:loc>https://donrichards.github.io/migrate_islandora_csv/media/posts/1/seadragon-zoomed.jpg</image:loc>
 <image:title><![CDATA[]]></image:title>
@@ -78,11 +78,11 @@
 </url>
 <url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html</loc>
-<lastmod>2020-06-23T14:54:40-04:00</lastmod>
+<lastmod>2020-06-30T08:42:04-04:00</lastmod>
 </url>
 <url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/other-content-types.html</loc>
-<lastmod>2020-06-19T14:49:00-04:00</lastmod>
+<lastmod>2020-06-30T10:31:40-04:00</lastmod>
 <image:image>
 <image:loc>https://donrichards.github.io/migrate_islandora_csv/media/posts/6/Screen-Shot-2020-06-19-at-2.44.27-PM.png</image:loc>
 <image:title><![CDATA[Drupal 8 Add Custom Content type]]></image:title>
@@ -101,7 +101,7 @@
 </url>
 <url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/step-by-step-setup-ir.html</loc>
-<lastmod>2020-06-26T16:30:10-04:00</lastmod>
+<lastmod>2020-06-30T09:34:09-04:00</lastmod>
 </url>
 <url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/technical-infrastructure.html</loc>
@@ -109,7 +109,7 @@
 </url>
 <url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/uploading-ingesting-and-migration.html</loc>
-<lastmod>2020-06-29T10:00:43-04:00</lastmod>
+<lastmod>2020-06-30T10:37:04-04:00</lastmod>
 <image:image>
 <image:loc>https://donrichards.github.io/migrate_islandora_csv/media/posts/7/migration-middle-format-process.jpg</image:loc>
 <image:title><![CDATA[Typical Drupal 8 migration]]></image:title>
@@ -117,6 +117,6 @@
 </url>
 <url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/uploading.html</loc>
-<lastmod>2020-06-29T14:52:29-04:00</lastmod>
+<lastmod>2020-06-30T10:39:39-04:00</lastmod>
 </url>
 </urlset>
