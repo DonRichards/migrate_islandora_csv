@@ -10,6 +10,43 @@
     <id>https://donrichards.github.io/migrate_islandora_csv</id>
 
     <entry>
+        <title>MODS to RDF</title>
+        <author>
+            <name>Don Richards</name>
+        </author>
+        <link href="https://donrichards.github.io/migrate_islandora_csv/mods-to-rdf.html"/>
+        <id>https://donrichards.github.io/migrate_islandora_csv/mods-to-rdf.html</id>
+
+        <updated>2020-07-02T10:39:24-04:00</updated>
+            <summary>
+                <![CDATA[
+                    JSON-LD ModuleUsing the RDF mapping configurations provided by the RDF module, the JSON-LD Module exposes the RDF-mapped entity in JSON-LD, through the REST API, at&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <h3 id="json-ld-module">JSON-LD Module</h3>
+<p>Using the RDF mapping configurations provided by the RDF module, the JSON-LD Module exposes the RDF-mapped entity in JSON-LD, through the REST API, at</p>
+<ul>
+<li>Node:  <code>node/[nid]?_format=jsonld</code></li>
+<li>Media: <code>media/[mid]?_format=jsonld</code> </li>
+<li>Terms:  <code>taxonomy/term/[tid]?_format=jsonld</code></li>
+</ul>
+<h3 id="rdf-mappings">RDF Mappings</h3>
+<p>In an out-of-the-box islandora-playbook, the RDF mappings that exist were loaded from config files, and correspond to the <code>rdf.mapping.[...].yml</code> files located in:</p>
+<ul>
+<li>Media terms: <code>/islandora/modules/islandora_core_feature/config/install/</code></li>
+<li>Taxonomy terms: <code>/islandora_defaults/config/install/</code></li>
+<li>Repository_item and the islandora_access vocabulary: <code>/controlled_access_terms/modules/controlled_access_terms_defaults/config/install/</code></li>
+<li>The default corporate_body, family, geo_location, person, resource_type and subject vocabularies: <code>/core/profiles/standard/config/install/ (articles, pages, comments, and tags</code></li>
+</ul>
+<p><strong>Namespaces</strong>
+ldp, ebucore, pcdm, are premis are registered in islandora.module using hook_rdf_namespaces(). To register your own namespaces, you will need to locate create a custom module that implements that hook.</p>
+
+            ]]>
+        </content>
+    </entry>
+    <entry>
         <title>Ingesting/Migrating</title>
         <author>
             <name>Don Richards</name>
@@ -17,7 +54,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/ingestingmigrating.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/ingestingmigrating.html</id>
 
-        <updated>2020-06-30T15:08:34-04:00</updated>
+        <updated>2020-07-02T10:39:24-04:00</updated>
             <summary>
                 <![CDATA[
                     During ingests/migrations there are several items that has been covered by different sections of this document. It helps to have a working knowledge of linked&hellip;
@@ -51,7 +88,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/uploading.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/uploading.html</id>
 
-        <updated>2020-06-30T15:08:34-04:00</updated>
+        <updated>2020-07-02T10:39:24-04:00</updated>
             <summary>
                 <![CDATA[
                     Uploading is part of the ingest process but information and modules specific to uploading can be found here. Uploads are not resumable and subject to&hellip;
@@ -89,7 +126,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/step-by-step-setup-ir.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/step-by-step-setup-ir.html</id>
 
-        <updated>2020-06-30T15:08:34-04:00</updated>
+        <updated>2020-07-02T10:39:24-04:00</updated>
             <summary>
                 <![CDATA[
                     This will cover these topic The simpliest way to implement a highly customizable submit, review, accept, publish workflow is to leverage Drupal’s Content Moderation. Most&hellip;
@@ -101,6 +138,7 @@
 <ul>
 <li>Needed modules</li>
 <li>User groups</li>
+<li>Special Permissions Considerations</li>
 <li>Create a Custom “Thesis” content type</li>
 <li>Moderation Workflow Setup</li>
 <li>Submission process</li>
@@ -122,6 +160,10 @@
 </ul>
 <p>We will set thier permissions later but for now create a user for each of these and add the corresponding roles. </p>
 <p><figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/85894536-eadb4b00-b7c2-11ea-86e5-fd7b0b825b59.png" data-is-external-image="true"  alt="users and roles" /></figure></p>
+<h3 id="special-permissions-considerations">Special Permissions Considerations</h3>
+<p>Repository content should not be immediately accessible to the public. The Drupal 8 module <em>permissions_by_term</em> and the sub-module <em>permissions_by_entity</em> allows us to create a ‘ETD-submission’ term that, when applied to nodes and media will restrict access to them (and files as an extension of media) to permission group members.</p>
+<p>However, access to files will only be checked if they are in a managed filesystem such as the Drupal private filesystem or one provided by a Flysystem adapter (like the Fedora Adapter provided by Islandora 8). When Islandora 8 creates derivate media it places them in the public filesystem by default. This is generally a good idea because it is more performant than other filesystems but then derivatives of restricted items become publicly accessible, which is not what we want. A repository manager can change the derivative actions to save them into either the private of Fedora filesystems, but this comes at a performance cost when accessing files that are publicly accessible.</p>
+<p>Enter <em>file_access_fix</em>. This handy module will check an entity (node, media, etc.) on update to see if it has any referenced files. If so, it will check if the entity is available by Anonymous users and will move the file to the appropriate filesystem, either public or private, based on it’s availability. So, if I create a derivative that is saved in the private filesystem by default, this module will check to see if the media is publicly accessible, if so, it will move it to the more performant public filesystem for me! If I ever decide that the media actually should be restricted, the module will move the file from the public filesystem back to the private one. See more on <a href="https://seth-shaw-unlv.github.io/2020-06-23/permissions_by_term_file_access_fix">Permissions By Entity &amp; File Access Fix</a></p>
 <h3 id="create-custom-types">Create Custom types</h3>
 <p>Create Custom “Thesis, Dissertation, and Supplemental” <strong>media</strong> types and “Thesis, Dissertation” <strong>content</strong> types. Create the media types first. </p>
 <h4 id="create-media-types">Create Media Types</h4>
@@ -180,14 +222,60 @@
 <h3 id="reviewpublication-process">Review/Publication process</h3>
 <p><a href="http://www.youtube.com/watch?v=8R2qiFMU8v8" title="Content Moderation Basics for Drupal 8"><figure class="post__image"><img loading="lazy" src="http://img.youtube.com/vi/8R2qiFMU8v8/0.jpg" data-is-external-image="true"  alt="https://img.youtube.com/vi/8R2qiFMU8v8/hqdefault.jpg" /></figure></a></p>
 <h3 id="google-scholar-indexing">Google Scholar Indexing</h3>
-<p>…</p>
+<p>Google Scholar has many requirements and a few alternatives to those requirements. Mainly the content hosted on your website must consist primarily of scholarly articles - journal papers, conference papers, technical reports, or their drafts, dissertations, pre-prints, post-prints, or abstracts. Content such as news or magazine articles, book reviews, and editorials is not appropriate for Google Scholar. Content must make either the full text of the articles or their complete author-written abstracts freely available above the fold. There are several other restrictions that can be found at <a href="https://scholar.google.com/intl/en/scholar/inclusion.html#overview">Google Scholar Inclusion Guidelines</a></p>
+<h4 id="metatag-google-scholar"><a href="https://www.drupal.org/project/metatag_google_scholar">Metatag Google Scholar</a></h4>
+<p>Currently the <a href="https://www.drupal.org/project/metatag_google_scholar">Metatag Google Scholar</a> along with the <a href="https://www.drupal.org/project/metatag">metatag</a> modules adds the following <em>Highwire Press</em> tags:</p>
+<ul>
+<li>citation_title</li>
+<li>citation_author</li>
+<li>citation_publication_date</li>
+<li>citation_journal_title</li>
+<li>citation_issn</li>
+<li>citation_isbn</li>
+<li>citation_volume</li>
+<li>citation_issue</li>
+<li>citation_firstpage</li>
+<li>citation_lastpage</li>
+<li>citation_dissertation_institution</li>
+<li>citation_technical_report_institution</li>
+<li>citation_technical_report_number</li>
+<li>citation_pdf_url</li>
+</ul>
+<p>Example</p>
+<pre><code class="language-xml">&lt;meta name=&quot;citation_title&quot; content=&quot;The testis isoform of the phosphorylase kinase catalytic subunit (PhK-T) plays a critical role in regulation of glycogen mobilization in developing lung&quot;&gt;
+&lt;meta name=&quot;citation_author&quot; content=&quot;Liu, Li&quot;&gt;
+&lt;meta name=&quot;citation_author&quot; content=&quot;Rannels, Stephen R.&quot;&gt;
+&lt;meta name=&quot;citation_author&quot; content=&quot;Falconieri, Mary&quot;&gt;
+&lt;meta name=&quot;citation_author&quot; content=&quot;Phillips, Karen S.&quot;&gt;
+&lt;meta name=&quot;citation_author&quot; content=&quot;Wolpert, Ellen B.&quot;&gt;
+&lt;meta name=&quot;citation_author&quot; content=&quot;Weaver, Timothy E.&quot;&gt;
+&lt;meta name=&quot;citation_publication_date&quot; content=&quot;1996/05/17&quot;&gt;
+&lt;meta name=&quot;citation_journal_title&quot; content=&quot;Journal of Biological Chemistry&quot;&gt;
+&lt;meta name=&quot;citation_volume&quot; content=&quot;271&quot;&gt;
+&lt;meta name=&quot;citation_issue&quot; content=&quot;20&quot;&gt;
+&lt;meta name=&quot;citation_firstpage&quot; content=&quot;11761&quot;&gt;
+&lt;meta name=&quot;citation_lastpage&quot; content=&quot;11766&quot;&gt;
+&lt;meta name=&quot;citation_pdf_url&quot; content=&quot;http://www.example.com/content/271/20/11761.full.pdf&quot;&gt;</code></pre>
+<p>The title tag, e.g., citation_title or DC.title, must contain the title of the paper. Don’t use it for the title of the journal or a book in which the paper was published, or for the name of your repository. This tag is required for inclusion in Google Scholar.</p>
+<p>The author tag, e.g., citation_author or DC.creator, must contain the authors (and only the actual authors) of the paper. Don’t use it for the author of the website or for contributors other than authors, e.g., thesis advisors. Author names can be listed either as “Smith, John” or as “John Smith”. Put each author name in a separate tag and omit all affiliations, degrees, certifications, etc., from this field. At least one author tag is required for inclusion in Google Scholar.</p>
+<p>The publication date tag, e.g., citation_publication_date or DC.issued, must contain the date of publication, i.e., the date that would normally be cited in references to this paper from other papers. Don’t use it for the date of entry into the repository - that should go into citation_online_date instead. Provide full dates in the “2010/5/12” format if available; or a year alone otherwise. This tag is required for inclusion in Google Scholar.</p>
+<p>For journal and conference papers, provide the remaining bibliographic citation data in the following tags: citation_journal_title or citation_conference_title, citation_issn, citation_isbn, citation_volume, citation_issue, citation_firstpage, and citation_lastpage. Dublin Core equivalents are DC.relation.ispartof for journal and conference titles and the non-standard tags DC.citation.volume, DC.citation.issue, DC.citation.spage (start page), and DC.citation.epage (end page) for the remaining fields. Regardless of the scheme chosen, these fields must contain sufficient information to identify a reference to this paper from another document, which is normally all of: (a) journal or conference name, (b) volume and issue numbers, if applicable, and (c) the number of the first page of the paper in the volume (or issue) in question.</p>
+<p>For theses, dissertations, and technical reports, provide the remaining bibliographic citation data in the following tags: citation_dissertation_institution, citation_technical_report_institution or DC.publisher for the name of the institution and citation_technical_report_number for the number of the technical report. As with journal and conference papers, you need to provide sufficient information to recognize a formal citation to this document from another article.</p>
+<p>For all document types, the guiding principle is to present your article as it would normally be cited in the “References” section of another paper. E.g., citations to technical reports normally include their assigned numbers, so the number of the report should be present in some appropriate field. Likewise, the name of the journal should be written as “Transactions on Magic Realism” or “Trans. Mag. Real.”, not as “Magic Realism, Transactions on” or “T12”. Omission or unusual presentation of key bibliographic fields can lead to mis-identification of your articles.</p>
+<p>All tag values are HTML attributes, so you must escape special characters appropriately. E.g., <meta name="citation_title" content="&quot;Andar com meus sapatos&quot; - uma an&#225;lise cr&#237;tica">. There’s no need to escape characters that are written directly in your webpage’s character encoding, such as Latin diacritics on a page in ISO-8859-1. However, you must still escape the quotes and the angle brackets.</p>
+<p>The “<meta>“ tags normally apply only to the exact page on which they’re provided. If this page shows only the abstract of the paper and you have the full text in a separate file, e.g., in the PDF format, please specify the locations of all full text versions using citation_pdf_url or DC.identifier tags. The content of the tag is the absolute URL of the PDF file; for security reasons, it must refer to a file in the same subdirectory as the HTML abstract.</p>
 <h3 id="sharing--metadata">Sharing  Metadata</h3>
-<p>…</p>
+<p>Please see OAI-PMH </p>
 <h3 id="embargos">Embargos</h3>
 <p>A short demo of the major functionality of the Drupal 8 Embargoes module for the Islandora community, using the Islandora 8 Vagrant virtual machine and Repository Item type nodes.</p>
 <p><a href="http://www.youtube.com/watch?v=5pUi8G8uxcU" title="Embargoes demo for Islandora 8"><figure class="post__image"><img loading="lazy" src="http://img.youtube.com/vi/5pUi8G8uxcU/0.jpg" data-is-external-image="true"  alt="Embargoes demo for Islandora 8" /></figure></a></p>
 <h3 id="tombstoning">Tombstoning</h3>
 <p>…</p>
+<h3 id="other">Other</h3>
+<blockquote>
+<p>Google Scholar’s inclusion requirements, documents larger than 5MB, such as books and long dissertations, should be uploaded to Google Book Search. </p>
+</blockquote>
+<p>Although not common I can’t seem to locate a ready made solution for uploading content from Drupal 8 into Google Book Search’s API. It’s unknown how long this would take and it’s unlikely to be nessisary based on the sizes of the current dissertations currently being hosted in Bepress.</p>
 
             ]]>
         </content>
@@ -200,7 +288,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/book-and-large-image-viewer.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/book-and-large-image-viewer.html</id>
 
-        <updated>2020-06-30T15:08:34-04:00</updated>
+        <updated>2020-07-02T10:39:24-04:00</updated>
             <summary>
                 <![CDATA[
                     IIIF (International Image Interoperability Framework) is a set of specifications that provides interoperability of image-based collections across platforms. What this means for a repository platform&hellip;
@@ -251,7 +339,7 @@
             <category term="Citation"/>
             <category term="Bibliography"/>
 
-        <updated>2020-06-30T15:08:34-04:00</updated>
+        <updated>2020-07-02T10:39:24-04:00</updated>
             <summary>
                 <![CDATA[
                      Drupal for higher education is a large industry. There are several top universities that have been using Drupal for a veriety of acedemic purposes.
@@ -402,7 +490,7 @@ entire repository; can add new collections.</li>
         <link href="https://donrichards.github.io/migrate_islandora_csv/bibliography-and-citation.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/bibliography-and-citation.html</id>
 
-        <updated>2020-06-30T15:08:34-04:00</updated>
+        <updated>2020-07-02T10:39:24-04:00</updated>
             <summary>
                 <![CDATA[
                     Drupal is a very popular and well-known CMS for educational websites. And it’s very important that Drupal has tools to deal with bibliography and citations.
@@ -443,7 +531,7 @@ entire repository; can add new collections.</li>
         <link href="https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html</id>
 
-        <updated>2020-06-30T15:08:34-04:00</updated>
+        <updated>2020-07-02T10:39:24-04:00</updated>
             <summary>
                 <![CDATA[
                     OAI-PMH Persistent Identifiers: Module for minting and persisting persistent identifiers (Handles, DOIs, ARKs, etc.). Persistent identifiers can be minted by a variety of sources, such&hellip;
@@ -486,7 +574,7 @@ entire repository; can add new collections.</li>
             <category term="Google"/>
             <category term="Delta"/>
 
-        <updated>2020-06-30T15:08:34-04:00</updated>
+        <updated>2020-07-02T10:39:24-04:00</updated>
             <summary>
                 <![CDATA[
                     230+ public sites, 1414 listserv members, 144 GitHub members, 28 Committers, 25+ Contributed Modules, 30+ Foundation members, 12 Interest Groups, 10 Community-led software releases, 19&hellip;
@@ -538,7 +626,7 @@ entire repository; can add new collections.</li>
             <category term="VM"/>
             <category term="ISLE"/>
 
-        <updated>2020-06-30T15:08:34-04:00</updated>
+        <updated>2020-07-02T10:39:24-04:00</updated>
             <summary>
                 <![CDATA[
                     For self hosted soltutions there are 2 basic deployment options; Ansible(a style we’re currently using) or deploying through Docker images. All of these options can&hellip;
@@ -576,7 +664,7 @@ entire repository; can add new collections.</li>
             <category term="GB"/>
             <category term="CPU"/>
 
-        <updated>2020-06-30T15:08:34-04:00</updated>
+        <updated>2020-07-02T10:39:24-04:00</updated>
             <summary>
                 <![CDATA[
                     Drupal 8 completely supports CAS authentication [link].Islandora 8 provides several different reports out-of-the-box. From microservice stats to usage stats. There are several options and are&hellip;
@@ -610,7 +698,7 @@ entire repository; can add new collections.</li>
             <category term="access"/>
             <category term="WebAC"/>
 
-        <updated>2020-06-30T15:08:34-04:00</updated>
+        <updated>2020-07-02T10:39:24-04:00</updated>
             <summary>
                 <![CDATA[
                     Rightsstatements.org is not specifically discussed in the documentation. Although extensive URI integration for controlled access terms is documented on the site, an assessment by the&hellip;
@@ -639,7 +727,7 @@ entire repository; can add new collections.</li>
             <category term="hosting"/>
             <category term="cloud"/>
 
-        <updated>2020-06-30T15:08:34-04:00</updated>
+        <updated>2020-07-02T10:39:24-04:00</updated>
             <summary>
                 <![CDATA[
                     A few solutions are available for vendors to host a solution for a fee.Able to run the stack on a cloud hosting provider like Amazon’s&hellip;
@@ -673,7 +761,7 @@ entire repository; can add new collections.</li>
             <category term="LTR"/>
             <category term="AI"/>
 
-        <updated>2020-06-30T15:08:34-04:00</updated>
+        <updated>2020-07-02T10:39:24-04:00</updated>
             <summary>
                 <![CDATA[
                     A search/discoverability enhancement “Learning to Rank (LTR) is a class of techniques that apply supervised machine learning (ML) to solve ranking problems.“ [link] LTR is&hellip;
@@ -717,7 +805,7 @@ entire repository; can add new collections.</li>
             <category term="JSON"/>
             <category term="API"/>
 
-        <updated>2020-06-30T15:08:34-04:00</updated>
+        <updated>2020-07-02T10:39:24-04:00</updated>
             <summary>
                 <![CDATA[
                     RDF Mapping; “In Islandora, the JSON-LD Module transforms nodes (or media, or taxonomy terms) into the RDF that is synced into Fedora and the Triplestore.
@@ -762,7 +850,7 @@ entire repository; can add new collections.</li>
         <link href="https://donrichards.github.io/migrate_islandora_csv/preservation.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/preservation.html</id>
 
-        <updated>2020-06-30T15:08:34-04:00</updated>
+        <updated>2020-07-02T10:39:24-04:00</updated>
             <summary>
                 <![CDATA[
                     Islandora 8 utilizes Harvard’s File Information Tool Set (FITS), Fixity auditing, bag exporting, and preservation reporting for preservation (Jordan, 2019).Leverages Fedora 5 as the preservation&hellip;
@@ -795,7 +883,7 @@ entire repository; can add new collections.</li>
             <category term="MODS"/>
             <category term="CSV"/>
 
-        <updated>2020-06-30T15:08:34-04:00</updated>
+        <updated>2020-07-02T10:39:24-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/7/migration-middle-format-process.jpg" alt="Typical Drupal 8 migration" />
@@ -849,7 +937,7 @@ entire repository; can add new collections.</li>
             <category term="PDF"/>
             <category term="Moore"/>
 
-        <updated>2020-06-30T15:08:34-04:00</updated>
+        <updated>2020-07-02T10:39:24-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/6/Screen-Shot-2020-06-19-at-2.44.27-PM.png" alt="Drupal 8 Add Custom Content type" />
@@ -889,7 +977,7 @@ entire repository; can add new collections.</li>
             <category term="Mirador"/>
             <category term="BigData"/>
 
-        <updated>2020-06-30T15:08:34-04:00</updated>
+        <updated>2020-07-02T10:39:24-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/5/CONTENT-MODELING-DRUPAL8.jpg" alt="Book viewer example" />
@@ -929,7 +1017,7 @@ entire repository; can add new collections.</li>
             <category term="PCDM"/>
             <category term="BigData"/>
 
-        <updated>2020-06-30T15:08:34-04:00</updated>
+        <updated>2020-07-02T10:39:24-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/4/PCDM_diagram.jpg" alt="Islandora 8 PCDM diagram" />
@@ -1001,7 +1089,7 @@ entire repository; can add new collections.</li>
             <category term="microservice"/>
             <category term="content modeling"/>
 
-        <updated>2020-06-30T15:08:34-04:00</updated>
+        <updated>2020-07-02T10:39:24-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/3/diagram.png" alt="Islandora 8 Architecture" />
@@ -1036,7 +1124,7 @@ entire repository; can add new collections.</li>
             <category term="Drupal 8 "/>
             <category term="Background"/>
 
-        <updated>2020-06-30T15:08:34-04:00</updated>
+        <updated>2020-07-02T10:39:24-04:00</updated>
             <summary>
                 <![CDATA[
                     Islandora 7 is a monolithic application that glues Drupal 6/7 to Fedora 3 with an optional institutional repository (IR) addon. Islandora 7 had several pain&hellip;
@@ -1065,7 +1153,7 @@ Here’s a technical video on Princeton’s content migration to Drupal 8 </p>
         <link href="https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html</id>
 
-        <updated>2020-06-30T15:08:34-04:00</updated>
+        <updated>2020-07-02T10:39:24-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/1/seadragon-zoomed.jpg" alt="" />
