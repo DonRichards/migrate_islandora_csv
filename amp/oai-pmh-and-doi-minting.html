@@ -1,4 +1,4 @@
-<!doctype html><html amp lang="en"><head><meta charset="utf-8"><title>OAI-PMH &amp; DOI Minting - Next Generation Digital Repository Solution</title><meta name="description" content="OAI-PMH Persistent Identifiers: Module for minting and persisting persistent identifiers (Handles, DOIs, ARKs, etc.). Persistent identifiers can be minted by a variety of sources, such&hellip;"><link rel="canonical" href="https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html"><meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"><link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet" type="text/css"><script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script><script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script><script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script><script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script><script type="application/ld+json">{"@context":"http://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://donrichards.github.io/migrate_islandora_csv/amp/oai-pmh-and-doi-minting.html"},"headline":"OAI-PMH & DOI Minting","datePublished":"2020-06-23T14:07","dateModified":"2020-06-30T08:42","image":{"@type":"ImageObject","url":"https://donrichards.github.io/migrate_islandora_csv/media/website/8-3.png","height":200,"width":200},"description":"OAI-PMH Persistent Identifiers: Module for minting and persisting persistent identifiers (Handles, DOIs, ARKs, etc.). Persistent identifiers can be minted by a variety of sources, such&hellip;","author":{"@type":"Person","name":"Don Richards"},"publisher":{"@type":"Organization","name":"Don Richards","logo":{"@type":"ImageObject","url":"https://donrichards.github.io/migrate_islandora_csv/media/website/8-3.png","height":200,"width":200}}}</script><style amp-custom>article,
+<!doctype html><html amp lang="en"><head><meta charset="utf-8"><title>OAI-PMH &amp; DOI Minting - Next Generation Digital Repository Solution</title><meta name="description" content="OAI-PMHRepositories can expose or harvest metadata, or both. OAI-PMH specifies six services which can be invoked over HTTP(s). The OAI-DC metadata format is aided by&hellip;"><link rel="canonical" href="https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html"><meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"><link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet" type="text/css"><script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script><script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script><script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script><script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script><script type="application/ld+json">{"@context":"http://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://donrichards.github.io/migrate_islandora_csv/amp/oai-pmh-and-doi-minting.html"},"headline":"OAI-PMH & DOI Minting","datePublished":"2020-06-23T14:07","dateModified":"2020-07-06T14:29","image":{"@type":"ImageObject","url":"https://donrichards.github.io/migrate_islandora_csv/media/website/8-3.png","height":200,"width":200},"description":"OAI-PMHRepositories can expose or harvest metadata, or both. OAI-PMH specifies six services which can be invoked over HTTP(s). The OAI-DC metadata format is aided by&hellip;","author":{"@type":"Person","name":"Don Richards"},"publisher":{"@type":"Organization","name":"Don Richards","logo":{"@type":"ImageObject","url":"https://donrichards.github.io/migrate_islandora_csv/media/website/8-3.png","height":200,"width":200}}}</script><style amp-custom>article,
 aside,
 footer,
 header,
@@ -561,9 +561,121 @@ aside {
 
     /*
  * Put your custom CSS code here (it will be used only in the AMP mode)
- */</style><style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript><script async src="https://cdn.ampproject.org/v0.js"></script><script custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js" async></script><script custom-element="amp-position-observer" src="https://cdn.ampproject.org/v0/amp-position-observer-0.1.js" async></script></head><body class="bg-white"><nav class="navbar wrap-inner" id="top"><div><a on="tap:navbar-sidebar.toggle" class="navbar-sidebar-toggle" title="Menu">Menu</a> <a class="logo" href="https://donrichards.github.io/migrate_islandora_csv/amp/">Next Generation Digital Repository Solution</a></div></nav><main class="wrap-page"><article class="post"><div class="wrap-inner"><header class="post-header"><h1>OAI-PMH &amp; DOI Minting</h1></header><p>OAI-PMH</p><h3 id="doi-minting">DOI Minting</h3><p><a href="https://github.com/mjordan/persistent_identifiers">Persistent Identifiers</a>: Module for minting and persisting persistent identifiers (Handles, DOIs, ARKs, etc.).</p><pre><code class="language-text">  Persistent identifiers can be minted by a variety of sources, such as CrossRef, DataCite, or EZID. Regardless of the specific source, many of the tasks involved in assigning persistent identifiers to Drupal nodes are the same - providing a &quot;Mint Identifier&quot; button in a node edit form, integration into automated workflows, or persisting identifiers to fields on an entity.
-
-  This module provides some common tasks while allowing small amounts of code (specifically Drupal services) to handle the particulars of minting and persisting. In addition, a Drupal site admin might want to mix and match minting and persisting services. Generally speaking, this module&#39;s goal is to allow site admins to select the minters and persisters they want, while helpin developers to write as little code as necessary to create new minter and persister services.</code></pre><p><a href="https://github.com/mjordan/doi_datacite">DataCite DOI Minter</a>: Module that mints DOIs from DataCite via the Persistent Identifiers module. This module allows for both individual and bulk operations.</p><figure class="post__image"><amp-img src="https://github.com/mjordan/doi_datacite/raw/master/docs/images/datacite_metadata.png" data-is-external-image="true" alt="DataCite DOI Minter UI" layout="responsive"></amp-img></figure><p></p><p></p><figure class="post__image"><amp-img src="https://user-images.githubusercontent.com/2738244/86127144-70a21380-baad-11ea-8750-6803d0036d19.png" data-is-external-image="true" alt="persistent IDs test config" layout="responsive"></amp-img></figure><p></p><aside></aside></div></article><nav class="post-pagination wrap-inner"><div class="post-pagination-prev"><span>Prev: </span><a href="https://donrichards.github.io/migrate_islandora_csv/amp/community-and-sustainability.html">Community &amp; Sustainability</a></div><div class="post-pagination-next"><span>Next: </span><a href="https://donrichards.github.io/migrate_islandora_csv/amp/bibliography-and-citation.html">Bibliography &amp; Citation</a></div></nav></main><amp-animation id="showAnim" layout="nodisplay"><script type="application/json">{
+ */</style><style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript><script async src="https://cdn.ampproject.org/v0.js"></script><script custom-element="amp-animation" src="https://cdn.ampproject.org/v0/amp-animation-0.1.js" async></script><script custom-element="amp-position-observer" src="https://cdn.ampproject.org/v0/amp-position-observer-0.1.js" async></script></head><body class="bg-white"><nav class="navbar wrap-inner" id="top"><div><a on="tap:navbar-sidebar.toggle" class="navbar-sidebar-toggle" title="Menu">Menu</a> <a class="logo" href="https://donrichards.github.io/migrate_islandora_csv/amp/">Next Generation Digital Repository Solution</a></div></nav><main class="wrap-page"><article class="post"><div class="wrap-inner"><header class="post-header"><h1>OAI-PMH &amp; DOI Minting</h1></header><h3 id="oai-pmh">OAI-PMH</h3><p>Repositories can expose or harvest metadata, or both. OAI-PMH specifies six services which can be invoked over HTTP(s). The OAI-DC metadata format is aided by the Islandora OAI-PMH module to include the RDF Mapping for the linked agent field (from Islandora Defaults). Including agent links in the OAI-PMH metadata currently requires updating the RDF mapping to include a Dublin Core predicate for that field or any other additional fields. Alternatively, the rest_oai_pmh module also supports defining mappings with the metatag module or creating a custom metadata profile using the Twig templating system. For more information see Islandora 8’s documentation on <a href="https://islandora.github.io/documentation/user-documentation/oai/">OAI-PMH</a></p><p>This is from <a href="https://oaks.kent.edu/oai/request?verb=ListRecords&amp;set=node:10038&amp;metadataPrefix=oai_dc">https://oaks.kent.edu/oai/request…</a></p><pre><code class="language-xml">&lt;OAI-PMH xmlns=&quot;http://www.openarchives.org/OAI/2.0/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd&quot; name=&quot;OAI-PMH&quot;&gt;
+  &lt;responseDate&gt;2020-07-06T18:05:36Z&lt;/responseDate&gt;
+  &lt;request verb=&quot;ListRecords&quot; metadataPrefix=&quot;oai_dc&quot;&gt;https://oaks.kent.edu/oai/request&lt;/request&gt;
+  &lt;ListRecords&gt;
+    &lt;resumptionToken/&gt;
+    &lt;record&gt;
+      &lt;header&gt;
+        &lt;identifier&gt;oai:oaks.kent.edu:node-10039&lt;/identifier&gt;
+        &lt;datestamp&gt;2020-03-17T16:26:06Z&lt;/datestamp&gt;
+        &lt;setSpec&gt;node:10038&lt;/setSpec&gt;
+      &lt;/header&gt;
+      &lt;metadata&gt;
+        &lt;oai_dc
+          xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot;
+          xmlns:oai_dc=&quot;http://www.openarchives.org/OAI/2.0/oai_dc/&quot;
+          xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+          xsi:schemaLocation=&quot;http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd&quot;&gt;
+          &lt;dc:description&gt;https://kent-islandora.s3.us-east-2.amazonaws.com/2020-01/thumbnail.png&lt;/dc:description&gt;
+          &lt;dc:description&gt;
+            &lt;p&gt;Full scan of the&amp;nbsp;&lt;em&gt;Lankenau Fabrics&lt;/em&gt;&amp;nbsp;sample catalog, containing the Fall, 1932 fabric line by the Lankenau Company of New York City.&lt;/p&gt;
+          &lt;/dc:description&gt;
+          &lt;dc:identifier&gt;https://oaks.kent.edu/historical-fashion/lankenau-fabrics&lt;/dc:identifier&gt;
+          &lt;dc:date&gt;1932&lt;/dc:date&gt;
+          &lt;dc:subject&gt;fabric&lt;/dc:subject&gt;
+          &lt;dc:subject&gt;textiles&lt;/dc:subject&gt;
+          &lt;dc:subject&gt;silk&lt;/dc:subject&gt;
+          &lt;dc:subject&gt;tailoring&lt;/dc:subject&gt;
+          &lt;dc:subject&gt;wool&lt;/dc:subject&gt;
+          &lt;dc:subject&gt;flannel&lt;/dc:subject&gt;
+          &lt;dc:subject&gt;corduroy&lt;/dc:subject&gt;
+          &lt;dc:subject&gt;fur fabric&lt;/dc:subject&gt;
+          &lt;dc:subject&gt;tweed&lt;/dc:subject&gt;
+          &lt;dc:subject&gt;mohair&lt;/dc:subject&gt;
+          &lt;dc:subject&gt;twill&lt;/dc:subject&gt;
+          &lt;dc:subject&gt;broadcloth&lt;/dc:subject&gt;
+          &lt;dc:subject&gt;Lankenau&lt;/dc:subject&gt;
+          &lt;dc:subject&gt;New York City&lt;/dc:subject&gt;
+          &lt;dc:subject&gt;New York&lt;/dc:subject&gt;
+          &lt;dc:subject&gt;1932&lt;/dc:subject&gt;
+          &lt;dc:source&gt;Historical Fashion and Textile Books, Brochures and Small Collections&lt;/dc:source&gt;
+          &lt;dc:type&gt;Text&lt;/dc:type&gt;
+          &lt;dc:rights&gt;http://rightsstatements.org/vocab/InC/1.0/&lt;/dc:rights&gt;
+          &lt;dc:title&gt;Lankenau Fabrics&lt;/dc:title&gt;
+        &lt;/oai_dc&gt;
+      &lt;/metadata&gt;
+    &lt;/record&gt;
+    &lt;record&gt;
+      &lt;header&gt;
+        &lt;identifier&gt;oai:oaks.kent.edu:node-10113&lt;/identifier&gt;
+        &lt;datestamp&gt;2020-03-16T14:21:19Z&lt;/datestamp&gt;
+        &lt;setSpec&gt;node:10038&lt;/setSpec&gt;
+      &lt;/header&gt;
+      &lt;metadata&gt;
+        &lt;oai_dc
+          xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot;
+          xmlns:oai_dc=&quot;http://www.openarchives.org/OAI/2.0/oai_dc/&quot;
+          xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+          xsi:schemaLocation=&quot;http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd&quot;&gt;
+          &lt;dc:description&gt;https://kent-islandora.s3.us-east-2.amazonaws.com/node/10113/Madison001.jpg&lt;/dc:description&gt;
+          &lt;dc:description&gt;
+            &lt;p&gt;Full scan of&amp;nbsp;&lt;em&gt;Madison&#39;s Shoulder Measure Coat System, 5th ed. and Encyclopedia of Coat Cutting&lt;/em&gt;, written by J.O. Madison of the Jno. J. Mitchell Co. School of Cutting, and published by the Jno. J. Mitchell Co., in 1893.&lt;/p&gt;
+          &lt;/dc:description&gt;
+          &lt;dc:identifier&gt;https://oaks.kent.edu/historical-fashion/madisons-shoulder-measure-coat-system-5th-ed&lt;/dc:identifier&gt;
+          &lt;dc:date&gt;1893&lt;/dc:date&gt;
+          &lt;dc:subject&gt;tailoring&lt;/dc:subject&gt;
+          &lt;dc:subject&gt;men&#39;s clothing&lt;/dc:subject&gt;
+          &lt;dc:subject&gt;men&#39;s coat&lt;/dc:subject&gt;
+          &lt;dc:subject&gt;measuring&lt;/dc:subject&gt;
+          &lt;dc:subject&gt;coat cutting&lt;/dc:subject&gt;
+          &lt;dc:subject&gt;Fashion Design&lt;/dc:subject&gt;
+          &lt;dc:source&gt;Historical Fashion and Textile Books, Brochures and Small Collections&lt;/dc:source&gt;
+          &lt;dc:type&gt;Text&lt;/dc:type&gt;
+          &lt;dc:rights&gt;http://rightsstatements.org/vocab/NoC-US/1.0/&lt;/dc:rights&gt;
+          &lt;dc:title&gt;Madison&#39;s Shoulder Measure Coat System, 5th ed.&lt;/dc:title&gt;
+        &lt;/oai_dc&gt;
+      &lt;/metadata&gt;
+    &lt;/record&gt;
+    &lt;record&gt;
+      &lt;header&gt;
+        &lt;identifier&gt;oai:oaks.kent.edu:node-10115&lt;/identifier&gt;
+        &lt;datestamp&gt;2020-03-17T16:25:15Z&lt;/datestamp&gt;
+        &lt;setSpec&gt;node:10038&lt;/setSpec&gt;
+      &lt;/header&gt;
+      &lt;metadata&gt;
+        &lt;oai_dc
+          xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot;
+          xmlns:oai_dc=&quot;http://www.openarchives.org/OAI/2.0/oai_dc/&quot;
+          xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+          xsi:schemaLocation=&quot;http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd&quot;&gt;
+          &lt;dc:description&gt;https://kent-islandora.s3.us-east-2.amazonaws.com/node/10115/Forstmann001_0.jpg&lt;/dc:description&gt;
+          &lt;dc:description&gt;
+            &lt;p&gt;Full scan of the&amp;nbsp;&lt;em&gt;Forstmann Woolens Fall 1935&amp;nbsp;&lt;/em&gt;fabric sample catalog, published by the Forstmann Woolen, Co. of Passaic, New Jersey.&lt;/p&gt;
+          &lt;/dc:description&gt;
+          &lt;dc:identifier&gt;https://oaks.kent.edu/historical-fashion/forstmann-woolens-fall-1935&lt;/dc:identifier&gt;
+          &lt;dc:date&gt;1935&lt;/dc:date&gt;
+          &lt;dc:subject&gt;Forstmann&lt;/dc:subject&gt;
+          &lt;dc:subject&gt;Forstmann Woolen Co.&lt;/dc:subject&gt;
+          &lt;dc:subject&gt;Forstmann Woolens&lt;/dc:subject&gt;
+          &lt;dc:subject&gt;wool&lt;/dc:subject&gt;
+          &lt;dc:subject&gt;Woolens&lt;/dc:subject&gt;
+          &lt;dc:subject&gt;textiles&lt;/dc:subject&gt;
+          &lt;dc:subject&gt;fabric&lt;/dc:subject&gt;
+          &lt;dc:subject&gt;Catalog&lt;/dc:subject&gt;
+          &lt;dc:subject&gt;1935&lt;/dc:subject&gt;
+          &lt;dc:subject&gt;Fashion Business&lt;/dc:subject&gt;
+          &lt;dc:subject&gt;Fiber, Textile, and Weaving Arts&lt;/dc:subject&gt;
+          &lt;dc:source&gt;Historical Fashion and Textile Books, Brochures and Small Collections&lt;/dc:source&gt;
+          &lt;dc:type&gt;Text&lt;/dc:type&gt;
+          &lt;dc:rights&gt;http://rightsstatements.org/vocab/NoC-US/1.0/&lt;/dc:rights&gt;
+          &lt;dc:title&gt;Forstmann Woolens, Fall 1935&lt;/dc:title&gt;
+        &lt;/oai_dc&gt;
+      &lt;/metadata&gt;
+    &lt;/record&gt;
+  &lt;/ListRecords&gt;
+&lt;/OAI-PMH&gt;</code></pre><h3 id="doi-minting">DOI Minting</h3><p>There are a few prebuilt modules for minting and persisting persistent identifiers (Handles, DOIs, ARKs, etc.). Minting can be done either during a migration, during a batch ingest or in the UI with one of these modules.</p><p><strong><a href="https://github.com/mjordan/persistent_identifiers">Persistent Identifiers</a></strong>: Module for minting and persisting persistent identifiers (Handles, DOIs, ARKs, etc.).</p><blockquote><p>Persistent identifiers can be minted by a variety of sources, such as CrossRef, DataCite, or EZID. Regardless of the specific source, many of the tasks involved in assigning persistent identifiers to Drupal nodes are the same - providing a “Mint Identifier” button in a node edit form, integration into automated workflows, or persisting identifiers to fields on an entity. This module provides some common tasks while allowing small amounts of code (specifically Drupal services) to handle the particulars of minting and persisting. In addition, a Drupal site admin might want to mix and match minting and persisting services. Generally speaking, this module’s goal is to allow site admins to select the minters and persisters they want, while helpin developers to write as little code as necessary to create new minter and persister services.</p></blockquote><p><strong><a href="https://github.com/mjordan/doi_datacite">DataCite DOI Minter</a></strong>: Module that mints DOIs from DataCite via the Persistent Identifiers module. This module allows for both individual and bulk operations.</p><figure class="post__image"><amp-img src="https://github.com/mjordan/doi_datacite/raw/master/docs/images/datacite_metadata.png" data-is-external-image="true" alt="DataCite DOI Minter UI" layout="responsive"></amp-img></figure><p></p><p></p><figure class="post__image"><amp-img src="https://user-images.githubusercontent.com/2738244/86127144-70a21380-baad-11ea-8750-6803d0036d19.png" data-is-external-image="true" alt="persistent IDs test config" layout="responsive"></amp-img></figure><p></p><aside></aside></div></article><nav class="post-pagination wrap-inner"><div class="post-pagination-prev"><span>Prev: </span><a href="https://donrichards.github.io/migrate_islandora_csv/amp/community-and-sustainability.html">Community &amp; Sustainability</a></div><div class="post-pagination-next"><span>Next: </span><a href="https://donrichards.github.io/migrate_islandora_csv/amp/bibliography-and-citation.html">Bibliography &amp; Citation</a></div></nav></main><amp-animation id="showAnim" layout="nodisplay"><script type="application/json">{
                     "duration": "200ms",
                     "fill": "both",
                     "iterations": "1",

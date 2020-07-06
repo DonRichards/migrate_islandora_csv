@@ -1,4 +1,188 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MODS to RDF - Next Generation Digital Repository Solution</title><meta name="description" content="In Islandora, the JSON-LD Module transforms nodes (or media, or taxonomy terms) into the RDF that is synced into Fedora and the Triplestore. It uses&hellip;"><meta name="generator" content="Publii Open-Source CMS for Static Site"><link rel="canonical" href="https://donrichards.github.io/migrate_islandora_csv/mods-to-rdf.html"><link rel="amphtml" href="https://donrichards.github.io/migrate_islandora_csv/amp/mods-to-rdf.html"><link rel="alternate" type="application/atom+xml" href="https://donrichards.github.io/migrate_islandora_csv/feed.xml"><link rel="alternate" type="application/json" href="https://donrichards.github.io/migrate_islandora_csv/feed.json"><meta property="og:title" content="MODS to RDF"><meta property="og:site_name" content="Next Generation Digital Repository Solution"><meta property="og:description" content="In Islandora, the JSON-LD Module transforms nodes (or media, or taxonomy terms) into the RDF that is synced into Fedora and the Triplestore. It uses&hellip;"><meta property="og:url" content="https://donrichards.github.io/migrate_islandora_csv/mods-to-rdf.html"><meta property="og:type" content="article"><link rel="shortcut icon" href="https://donrichards.github.io/migrate_islandora_csv/media/website/add.ico" type="image/x-icon"><link rel="stylesheet" href="https://donrichards.github.io/migrate_islandora_csv/assets/css/style.css?v=fa120d17505d1b5f3c27b9fc42c7aad2"><link rel="stylesheet" href="https://donrichards.github.io/migrate_islandora_csv/assets/css/prism-default.css?v=9744853d64d710edcae61a3d59a17ee2"><script type="application/ld+json">{"@context":"http://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://donrichards.github.io/migrate_islandora_csv/mods-to-rdf.html"},"headline":"MODS to RDF","datePublished":"2020-07-02T07:31","dateModified":"2020-07-06T10:11","description":"In Islandora, the JSON-LD Module transforms nodes (or media, or taxonomy terms) into the RDF that is synced into Fedora and the Triplestore. It uses&hellip;","author":{"@type":"Person","name":"Don Richards"},"publisher":{"@type":"Organization","name":"Don Richards"}}</script></head><body><header class="header" id="js-header"><a class="logo" href="https://donrichards.github.io/migrate_islandora_csv/">Next Generation Digital Repository Solution </a><a href="https://github.com/donrichards/migrate_islandora_csv/" class="btn btn--outline btn--icon github" aria-label="Github" title="Github"><svg height="22" width="22"><use xlink:href="https://donrichards.github.io/migrate_islandora_csv/assets/svg/svg-map.svg#github"></use></svg> Github</a></header><main><div class="container container--with-sidebar"><div class="sidebar js-sidebar"><nav class="sidebar__menu"><ul class="js-sidebar-menu"><li class="has-submenu"><a href="https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html">Islandora</a><ul><li><a href="https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html">Overview</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/background.html">Background</a></li></ul></li><li class="has-submenu"><a href="https://donrichards.github.io/migrate_islandora_csv/content-modeling.html">Content Modeling</a><ul><li><a href="https://donrichards.github.io/migrate_islandora_csv/content-modeling.html">Content Model Overview</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/general-content-models.html">General Content Modeling</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/images-books-and-pages.html">Images, Books, and Pages</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/other-content-types.html">Other Objects</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/book-and-large-image-viewer.html">Books &amp; Large Image Viewer</a></li></ul></li><li class="has-submenu"><a href="https://donrichards.github.io/migrate_islandora_csv/uploading-ingesting-and-migration.html">Uploading, Ingesting, and Migration</a><ul><li><a href="https://donrichards.github.io/migrate_islandora_csv/uploading-ingesting-and-migration.html">Overview</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/uploading.html">Uploading</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/ingestingmigrating.html">Ingesting &amp; Migrating</a></li></ul></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/preservation.html">Preservation</a></li><li class="active-parent has-submenu"><a href="https://donrichards.github.io/migrate_islandora_csv/metadata-and-metadata-sharing.html">Metadata and Metadata Sharing</a><ul><li class="active"><a href="https://donrichards.github.io/migrate_islandora_csv/mods-to-rdf.html">MODS to RDF Mapping</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html">OIT-PMH &amp; DOI Minting</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/bibliography-and-citation.html">Bibliography &amp; Citation</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/next-level-discoverability-solutions.html">Next Level Discoverability Solutions</a></li></ul></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/rights-and-restrictions.html">Rights &amp; Restrictions</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/technical-infrastructure.html">Technical Infrastructure</a></li><li class="has-submenu"><a href="https://donrichards.github.io/migrate_islandora_csv/deployment-options.html">Deployment Options</a><ul><li><a href="https://donrichards.github.io/migrate_islandora_csv/cas-authentication.html">CAS</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/technical-infrastructure.html">Technical Infrastructure</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/cloud-hosting-solution.html">Cloud Hosting</a></li></ul></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/community-and-sustainability.html">Community &amp; Sustainability</a></li><li class="has-submenu"><a href="https://donrichards.github.io/migrate_islandora_csv/institutional-repository.html">Institutional Repository</a><ul><li><a href="https://donrichards.github.io/migrate_islandora_csv/bibliography-and-citation.html">Bibliography &amp; Citation</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/step-by-step-setup-ir.html">Step by Step Setup (IR)</a></li></ul></li></ul></nav></div><div class="content content--center"><article class="post"><h1>MODS to RDF</h1><div class="post__entry"><p>In Islandora, the JSON-LD Module transforms nodes (or media, or taxonomy terms) into the RDF that is synced into Fedora and the Triplestore. It uses RDF mappings, a concept defined by the RDF Module, and exposes them through the REST API at <code>?_format=jsonld</code>. Functionality can be expanded by RDF schema building schema.org configuration tool (RDF UI).</p><h3 id="tl-dr">TL; DR</h3><p>Islandora 8 used the MODS to <a href="https://wiki.duraspace.org/download/attachments/87460857/MODS-RDF-Mapping-Recommendations_SMIG_v1_2019-01.pdf?api=v2">RDF Mapping Recommendations</a> document from <em>Samvera MODS to RDF Working Group</em> to create initial mappings. All content is serialized into josn-ld. Islandora consist of multiple yaml files for different content types corporate_body, family, geo_location, person, resource_type and subject. Create a mapping for each one of these and the bulk of the work is done. YAML files can iterate over several posibilities and output the one desired RDF value. It directly links and pulls data from several namespace APIs with some configuration. Minting object mappings will need the URI sourced from an external vocabulary, URI for a local object, or a literal value (text string).</p><h3 id="json-ld-module">JSON-LD Module</h3><p>Using the RDF mapping configurations provided by the RDF module, the JSON-LD Module exposes the RDF-mapped entity in JSON-LD, through the REST API, at</p><ul><li>Node: <code>node/[nid]?_format=jsonld</code></li><li>Media: <code>media/[mid]?_format=jsonld</code></li><li>Terms: <code>taxonomy/term/[tid]?_format=jsonld</code></li></ul><h3 id="rdf-mappings">RDF Mappings</h3><p>In an out-of-the-box islandora-playbook, the RDF mappings that exist were loaded from config files, and correspond to the <code>rdf.mapping.[...].yml</code> files located in:</p><ul><li>Media terms: <code>/islandora/modules/islandora_core_feature/config/install/</code></li><li>Taxonomy terms: <code>/islandora_defaults/config/install/</code></li><li>Repository_item and the islandora_access vocabulary: <code>/controlled_access_terms/modules/controlled_access_terms_defaults/config/install/</code></li><li>The default corporate_body, family, geo_location, person, resource_type and subject vocabularies: <code>/core/profiles/standard/config/install/ (articles, pages, comments, and tags)</code></li></ul><p>For a detailed description on how to generate and/or edit RDF mappings <a href="https://islandora.github.io/documentation/islandora/rdf-mapping/#how-to-edit-an-rdf-mapping">link</a></p><p><strong>Namespaces</strong> ldp, ebucore, pcdm, are premis are registered in islandora.module using hook_rdf_namespaces(). To register your own namespaces, you will need to locate create a custom module that implements that hook.</p><h4 id="sample-rdf-mapping">Sample RDF Mapping</h4><pre><code class="language-yml">langcode: en
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MODS to RDF - Next Generation Digital Repository Solution</title><meta name="description" content="TL; DRIslandora 8 used the MODS to RDF Mapping Recommendations document from Samvera MODS to RDF Working Group to create initial mappings. Islandora consist of&hellip;"><meta name="generator" content="Publii Open-Source CMS for Static Site"><link rel="canonical" href="https://donrichards.github.io/migrate_islandora_csv/mods-to-rdf.html"><link rel="amphtml" href="https://donrichards.github.io/migrate_islandora_csv/amp/mods-to-rdf.html"><link rel="alternate" type="application/atom+xml" href="https://donrichards.github.io/migrate_islandora_csv/feed.xml"><link rel="alternate" type="application/json" href="https://donrichards.github.io/migrate_islandora_csv/feed.json"><meta property="og:title" content="MODS to RDF"><meta property="og:site_name" content="Next Generation Digital Repository Solution"><meta property="og:description" content="TL; DRIslandora 8 used the MODS to RDF Mapping Recommendations document from Samvera MODS to RDF Working Group to create initial mappings. Islandora consist of&hellip;"><meta property="og:url" content="https://donrichards.github.io/migrate_islandora_csv/mods-to-rdf.html"><meta property="og:type" content="article"><link rel="shortcut icon" href="https://donrichards.github.io/migrate_islandora_csv/media/website/add.ico" type="image/x-icon"><link rel="stylesheet" href="https://donrichards.github.io/migrate_islandora_csv/assets/css/style.css?v=fa120d17505d1b5f3c27b9fc42c7aad2"><link rel="stylesheet" href="https://donrichards.github.io/migrate_islandora_csv/assets/css/prism-default.css?v=9744853d64d710edcae61a3d59a17ee2"><script type="application/ld+json">{"@context":"http://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://donrichards.github.io/migrate_islandora_csv/mods-to-rdf.html"},"headline":"MODS to RDF","datePublished":"2020-07-02T07:31","dateModified":"2020-07-06T16:30","description":"TL; DRIslandora 8 used the MODS to RDF Mapping Recommendations document from Samvera MODS to RDF Working Group to create initial mappings. Islandora consist of&hellip;","author":{"@type":"Person","name":"Don Richards"},"publisher":{"@type":"Organization","name":"Don Richards"}}</script></head><body><header class="header" id="js-header"><a class="logo" href="https://donrichards.github.io/migrate_islandora_csv/">Next Generation Digital Repository Solution </a><a href="https://github.com/donrichards/migrate_islandora_csv/" class="btn btn--outline btn--icon github" aria-label="Github" title="Github"><svg height="22" width="22"><use xlink:href="https://donrichards.github.io/migrate_islandora_csv/assets/svg/svg-map.svg#github"></use></svg> Github</a></header><main><div class="container container--with-sidebar"><div class="sidebar js-sidebar"><nav class="sidebar__menu"><ul class="js-sidebar-menu"><li class="has-submenu"><a href="https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html">Islandora</a><ul><li><a href="https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html">Overview</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/background.html">Background</a></li></ul></li><li class="has-submenu"><a href="https://donrichards.github.io/migrate_islandora_csv/content-modeling.html">Content Modeling</a><ul><li><a href="https://donrichards.github.io/migrate_islandora_csv/content-modeling.html">Content Model Overview</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/general-content-models.html">General Content Modeling</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/images-books-and-pages.html">Images, Books, and Pages</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/other-content-types.html">Other Objects</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/book-and-large-image-viewer.html">Books &amp; Large Image Viewer</a></li></ul></li><li class="has-submenu"><a href="https://donrichards.github.io/migrate_islandora_csv/uploading-ingesting-and-migration.html">Uploading, Ingesting, and Migration</a><ul><li><a href="https://donrichards.github.io/migrate_islandora_csv/uploading-ingesting-and-migration.html">Overview</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/uploading.html">Uploading</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/ingestingmigrating.html">Ingesting &amp; Migrating</a></li></ul></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/preservation.html">Preservation</a></li><li class="active-parent has-submenu"><a href="https://donrichards.github.io/migrate_islandora_csv/metadata-and-metadata-sharing.html">Metadata and Metadata Sharing</a><ul><li class="active"><a href="https://donrichards.github.io/migrate_islandora_csv/mods-to-rdf.html">MODS to RDF Mapping</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html">OIT-PMH &amp; DOI Minting</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/bibliography-and-citation.html">Bibliography &amp; Citation</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/next-level-discoverability-solutions.html">Next Level Discoverability Solutions</a></li></ul></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/rights-and-restrictions.html">Rights &amp; Restrictions</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/technical-infrastructure.html">Technical Infrastructure</a></li><li class="has-submenu"><a href="https://donrichards.github.io/migrate_islandora_csv/deployment-options.html">Deployment Options</a><ul><li><a href="https://donrichards.github.io/migrate_islandora_csv/cas-authentication.html">CAS</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/technical-infrastructure.html">Technical Infrastructure</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/cloud-hosting-solution.html">Cloud Hosting</a></li></ul></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/community-and-sustainability.html">Community &amp; Sustainability</a></li><li class="has-submenu"><a href="https://donrichards.github.io/migrate_islandora_csv/institutional-repository.html">Institutional Repository</a><ul><li><a href="https://donrichards.github.io/migrate_islandora_csv/bibliography-and-citation.html">Bibliography &amp; Citation</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/step-by-step-setup-ir.html">Step by Step Setup (IR)</a></li></ul></li></ul></nav></div><div class="content content--center"><article class="post"><h1>MODS to RDF</h1><div class="post__entry"><h3 id="tl-dr">TL; DR</h3><p>Islandora 8 used the MODS to <a href="https://wiki.duraspace.org/download/attachments/87460857/MODS-RDF-Mapping-Recommendations_SMIG_v1_2019-01.pdf?api=v2">RDF Mapping Recommendations</a> document from <em>Samvera MODS to RDF Working Group</em> to create initial mappings. Islandora consist of multiple yaml files for different content types corporate_body, family, geo_location, person, resource_type and subject. Create a mapping for each one of these and the bulk of the work is done. YAML files can iterate over several posibilities and output the one desired RDF value. It directly links and pulls data from several namespace APIs with some configuration. Minting object mappings will need the URI sourced from an external vocabulary, URI for a local object, or a literal value (text string). Minting is covered on the <a href="/oai-pmh-and-doi-minting">OAI-PMH and DOI minting</a></p><h3 id="overview">Overview</h3><p>In Islandora, the JSON-LD Module transforms nodes (or media, or taxonomy terms) into the RDF that is synced into Fedora and the Triplestore. It uses RDF mappings, a concept defined by the RDF Module, and exposes them through the REST API at <code>?_format=jsonld</code>. Functionality can be expanded by RDF schema building schema.org configuration tool (RDF UI).</p><h3 id="json-ld-module">JSON-LD Module</h3><p>Using the RDF mapping configurations provided by the RDF module, the JSON-LD Module exposes the RDF-mapped entity in JSON-LD, through the REST API, at</p><ul><li>Node: <code>node/[nid]?_format=jsonld</code></li><li>Media: <code>media/[mid]?_format=jsonld</code></li><li>Terms: <code>taxonomy/term/[tid]?_format=jsonld</code></li></ul><h3 id="rdf-mappings">RDF Mappings</h3><p>In an out-of-the-box islandora-playbook, the RDF mappings that exist were loaded from config files, and correspond to the <code>rdf.mapping.[...].yml</code> files located in:</p><ul><li>Media terms: <code>/islandora/modules/islandora_core_feature/config/install/</code></li><li>Taxonomy terms: <code>/islandora_defaults/config/install/</code></li><li>Repository_item and the islandora_access vocabulary: <code>/controlled_access_terms/modules/controlled_access_terms_defaults/config/install/</code></li><li>The default corporate_body, family, geo_location, person, resource_type and subject vocabularies: <code>/core/profiles/standard/config/install/ (articles, pages, comments, and tags)</code></li></ul><p>For a detailed description on how to generate and/or edit RDF mappings <a href="https://islandora.github.io/documentation/islandora/rdf-mapping/#how-to-edit-an-rdf-mapping">link</a></p><p><strong>Namespaces</strong> ldp, ebucore, pcdm, are premis are registered in islandora.module using hook_rdf_namespaces(). To register your own namespaces, you will need to locate create a custom module that implements that hook.</p><h4 id="sample-mods-for-knoxgardens119">Sample MODS for knoxgardens:119</h4><pre><code class="language-xml">&lt;mods
+  xmlns=&quot;http://www.loc.gov/mods/v3&quot;
+  xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+  xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;
+  xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
+  xsi:schemaLocation=&quot;http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd&quot;&gt;
+  &lt;identifier type=&quot;local&quot;&gt;0012_000463_000218&lt;/identifier&gt;
+  &lt;identifier type=&quot;pid&quot;&gt;knoxgardens:119&lt;/identifier&gt;
+  &lt;identifier type=&quot;slide number&quot;&gt;Slide 5&lt;/identifier&gt;
+  &lt;identifier type=&quot;film number&quot;&gt;Film 93&lt;/identifier&gt;
+  &lt;identifier type=&quot;spc&quot;&gt;record_spc_4493&lt;/identifier&gt;
+  &lt;titleInfo&gt;
+    &lt;title&gt;Guyot, Chapman &amp; Sequoyah&lt;/title&gt;
+  &lt;/titleInfo&gt;
+  &lt;abstract&gt;Glass slide of mountains, Guyot, Chapman &amp; Sequoyah&lt;/abstract&gt;
+  &lt;originInfo&gt;
+    &lt;dateCreated qualifier=&quot;inferred&quot;&gt;1927-1935&lt;/dateCreated&gt;
+    &lt;dateCreated encoding=&quot;edtf&quot; point=&quot;start&quot; qualifier=&quot;inferred&quot; keyDate=&quot;yes&quot;&gt;1930&lt;/dateCreated&gt;
+    &lt;dateCreated encoding=&quot;edtf&quot; point=&quot;end&quot; qualifier=&quot;inferred&quot;&gt;1939&lt;/dateCreated&gt;
+  &lt;/originInfo&gt;
+  &lt;physicalDescription&gt;
+    &lt;form authority=&quot;aat&quot; valueURI=&quot;http://vocab.getty.edu/aat/300134977&quot;&gt;lantern slides&lt;/form&gt;
+    &lt;extent&gt;3 1/4 x 5 inches&lt;/extent&gt;
+    &lt;internetMediaType&gt;image/jp2&lt;/internetMediaType&gt;
+  &lt;/physicalDescription&gt;
+  &lt;name valueURI=&quot;http://id.loc.gov/authorities/names/no2018075078&quot; authority=&quot;naf&quot;&gt;
+    &lt;namePart&gt;Jim Thompson Company&lt;/namePart&gt;
+    &lt;role&gt;
+      &lt;roleTerm authority=&quot;marcrelator&quot; valueURI=&quot;http://id.loc.gov/vocabulary/relators/pht&quot;&gt;Photographer&lt;/roleTerm&gt;
+    &lt;/role&gt;
+  &lt;/name&gt;
+  &lt;subject authority=&quot;lcsh&quot; valueURI=&quot;http://id.loc.gov/authorities/subjects/sh85090290&quot;&gt;
+    &lt;topic&gt;Nature photography&lt;/topic&gt;
+  &lt;/subject&gt;
+  &lt;subject authority=&quot;lcsh&quot; valueURI=&quot;http://id.loc.gov/authorities/subjects/sh85087947&quot;&gt;
+    &lt;topic&gt;Mountains--Tennessee&lt;/topic&gt;
+  &lt;/subject&gt;
+  &lt;subject authority=&quot;lcsh&quot; valueURI=&quot;http://id.loc.gov/authorities/subjects/sh85057008&quot;&gt;
+    &lt;topic&gt;Great Smoky Mountains (N.C. and Tenn.)&lt;/topic&gt;
+  &lt;/subject&gt;
+  &lt;subject authority=&quot;geonames&quot; valueURI=&quot;http://sws.geonames.org/4626066&quot;&gt;
+    &lt;geographic&gt;Great Smoky Mountains&lt;/geographic&gt;
+    &lt;cartographics&gt;
+      &lt;coordinates&gt;35.58343, -83.50822&lt;/coordinates&gt;
+    &lt;/cartographics&gt;
+  &lt;/subject&gt;
+  &lt;note&gt;Mrs. A. C. Bruner donated this collection to the University of Tennessee. Creation dates were inferred from the dates associated with the archival collection and the activity dates of the Jim Thompson Company.&lt;/note&gt;
+  &lt;relatedItem displayLabel=&quot;Project&quot; type=&quot;host&quot;&gt;
+    &lt;titleInfo&gt;
+      &lt;title&gt;Knoxville Garden Slides&lt;/title&gt;
+    &lt;/titleInfo&gt;
+  &lt;/relatedItem&gt;
+  &lt;typeOfResource&gt;still image&lt;/typeOfResource&gt;
+  &lt;relatedItem displayLabel=&quot;Collection&quot; type=&quot;host&quot;&gt;
+    &lt;titleInfo&gt;
+      &lt;title&gt;Knoxville Gardens Slides&lt;/title&gt;
+    &lt;/titleInfo&gt;
+    &lt;identifier&gt;MS.1324&lt;/identifier&gt;
+    &lt;location&gt;
+      &lt;url&gt;https://n2t.net/ark:/87290/v88w3bgf&lt;/url&gt;
+    &lt;/location&gt;
+  &lt;/relatedItem&gt;
+  &lt;location&gt;
+    &lt;physicalLocation valueURI=&quot;http://id.loc.gov/authorities/names/no2014027633&quot;&gt;University of Tennessee, Knoxville. Special Collections&lt;/physicalLocation&gt;
+  &lt;/location&gt;
+  &lt;recordInfo&gt;
+    &lt;recordContentSource valueURI=&quot;http://id.loc.gov/authorities/names/n87808088&quot;&gt;University of Tennessee, Knoxville. Libraries&lt;/recordContentSource&gt;
+    &lt;languageOfCataloging&gt;
+      &lt;languageTerm type=&quot;text&quot; authority=&quot;iso639-2b&quot;&gt;English&lt;/languageTerm&gt;
+    &lt;/languageOfCataloging&gt;
+  &lt;/recordInfo&gt;
+  &lt;accessCondition type=&quot;use and reproduction&quot; xlink:href=&quot;http://rightsstatements.org/vocab/InC/1.0/&quot;&gt;In Copyright&lt;/accessCondition&gt;
+&lt;/mods&gt;</code></pre><h4 id="json-ld-for-this-object">JSON-LD for this object</h4><p>These values may not be correct. I put them in by hand and I’m not experienced with MODS to RDF conversion.</p><pre><code class="language-json">{
+  &quot;@graph&quot;: [{
+    &quot;@id&quot;: &quot;http:\/\/www.utkislandora8testing.com\/node\/3&quot;,
+    &quot;@type&quot;: [&quot;http:\/\/pcdm.org\/models#Object&quot;, &quot;http:\/\/purl.org\/coar\/resource_type\/c_c513&quot;],
+    &quot;http:\/\/schema.org\/author&quot;: [{
+      &quot;@id&quot;: &quot;http:\/\/www.utkislandora8testing.com\/user\/1&quot;
+    }],
+    &quot;http:\/\/purl.org\/dc\/terms\/title&quot;: [{
+      &quot;@value&quot;: &quot;Guyot, Chapman&quot;,
+      &quot;@language&quot;: &quot;en&quot;
+    }],
+    &quot;http:\/\/schema.org\/dateCreated&quot;: [{
+      &quot;@value&quot;: &quot;2020-07-06T18:46:09+00:00&quot;,
+      &quot;@type&quot;: &quot;http:\/\/www.w3.org\/2001\/XMLSchema#dateTime&quot;
+    }],
+    &quot;http:\/\/schema.org\/dateModified&quot;: [{
+      &quot;@value&quot;: &quot;2020-07-06T20:09:15+00:00&quot;,
+      &quot;@type&quot;: &quot;http:\/\/www.w3.org\/2001\/XMLSchema#dateTime&quot;
+    }],
+    &quot;http:\/\/purl.org\/dc\/terms\/description&quot;: [{
+      &quot;@value&quot;: &quot;Glass slide of mountains, Guyot, Chapman &amp; Sequoyah&quot;,
+      &quot;@language&quot;: &quot;en&quot;
+    }],
+    &quot;http:\/\/purl.org\/dc\/terms\/created&quot;: [{
+      &quot;@value&quot;: &quot;1927&quot;,
+      &quot;@type&quot;: &quot;http:\/\/www.w3.org\/2001\/XMLSchema#string&quot;
+    }, {
+      &quot;@value&quot;: &quot;1927&quot;,
+      &quot;@type&quot;: &quot;http:\/\/www.w3.org\/2001\/XMLSchema#gYear&quot;
+    }],
+    &quot;http:\/\/purl.org\/dc\/terms\/extent&quot;: [{
+      &quot;@value&quot;: &quot;1 item&quot;,
+      &quot;@type&quot;: &quot;http:\/\/www.w3.org\/2001\/XMLSchema#string&quot;
+    }],
+    &quot;http:\/\/purl.org\/dc\/terms\/spatial&quot;: [{
+      &quot;@id&quot;: &quot;http:\/\/www.utkislandora8testing.com\/taxonomy\/term\/34&quot;
+    }],
+    &quot;http:\/\/purl.org\/dc\/terms\/identifier&quot;: [{
+      &quot;@value&quot;: &quot;MS.1324&quot;,
+      &quot;@type&quot;: &quot;http:\/\/www.w3.org\/2001\/XMLSchema#string&quot;
+    }, {
+      &quot;@value&quot;: &quot;Slide 5&quot;,
+      &quot;@type&quot;: &quot;http:\/\/www.w3.org\/2001\/XMLSchema#string&quot;
+    }, {
+      &quot;@value&quot;: &quot;Film 93&quot;,
+      &quot;@type&quot;: &quot;http:\/\/www.w3.org\/2001\/XMLSchema#string&quot;
+    }, {
+      &quot;@value&quot;: &quot;record_spc_4493&quot;,
+      &quot;@type&quot;: &quot;http:\/\/www.w3.org\/2001\/XMLSchema#string&quot;
+    }, {
+      &quot;@value&quot;: &quot;0012_000463_000218&quot;,
+      &quot;@type&quot;: &quot;http:\/\/www.w3.org\/2001\/XMLSchema#string&quot;
+    }],
+    &quot;http:\/\/purl.org\/dc\/terms\/subject&quot;: [{
+      &quot;@value&quot;: &quot;Jim Thompson Company&quot;,
+      &quot;@type&quot;: &quot;http:\/\/www.w3.org\/2001\/XMLSchema#string&quot;
+    }, {
+      &quot;@value&quot;: &quot;Photographer&quot;,
+      &quot;@type&quot;: &quot;http:\/\/www.w3.org\/2001\/XMLSchema#string&quot;
+    }, {
+      &quot;@value&quot;: &quot;Nature photography&quot;,
+      &quot;@type&quot;: &quot;http:\/\/www.w3.org\/2001\/XMLSchema#string&quot;
+    }, {
+      &quot;@value&quot;: &quot;Mountains--Tennessee&quot;,
+      &quot;@type&quot;: &quot;http:\/\/www.w3.org\/2001\/XMLSchema#string&quot;
+    }, {
+      &quot;@value&quot;: &quot;Great Smoky Mountains (N.C. and Tenn.)&quot;,
+      &quot;@type&quot;: &quot;http:\/\/www.w3.org\/2001\/XMLSchema#string&quot;
+    }, {
+      &quot;@id&quot;: &quot;http:\/\/www.utkislandora8testing.com\/taxonomy\/term\/31&quot;
+    }, {
+      &quot;@id&quot;: &quot;http:\/\/www.utkislandora8testing.com\/taxonomy\/term\/32&quot;
+    }, {
+      &quot;@id&quot;: &quot;http:\/\/www.utkislandora8testing.com\/taxonomy\/term\/33&quot;
+    }, {
+      &quot;@id&quot;: &quot;http:\/\/www.utkislandora8testing.com\/taxonomy\/term\/34&quot;
+    }],
+    &quot;http:\/\/pcdm.org\/models#memberOf&quot;: [{
+      &quot;@id&quot;: &quot;http:\/\/www.utkislandora8testing.com\/node\/2&quot;
+    }],
+    &quot;http:\/\/www.w3.org\/2004\/02\/skos\/core#note&quot;: [{
+      &quot;@value&quot;: &quot;&lt;p&gt;Mrs. A. C. Bruner donated this collection to the University of Tennessee. Creation dates were inferred from the dates associated with the archival collection and the activity dates of the Jim Thompson Company.&lt;\/p&gt;\r\n&quot;,
+      &quot;@language&quot;: &quot;en&quot;
+    }],
+    &quot;http:\/\/purl.org\/dc\/terms\/type&quot;: [{
+      &quot;@id&quot;: &quot;http:\/\/www.utkislandora8testing.com\/taxonomy\/term\/12&quot;
+    }],
+    &quot;http:\/\/schema.org\/sameAs&quot;: [{
+      &quot;@id&quot;: &quot;http:\/\/www.utkislandora8testing.com\/node\/3&quot;
+    }]
+  }, {
+    &quot;@id&quot;: &quot;http:\/\/www.utkislandora8testing.com\/user\/1&quot;,
+    &quot;@type&quot;: [&quot;http:\/\/schema.org\/Person&quot;]
+  }, {
+    &quot;@id&quot;: [&quot;http:\/\/www.utkislandora8testing.com\/taxonomy\/term\/34&quot;, &quot;http:\/\/www.utkislandora8testing.com\/taxonomy\/term\/34&quot;],
+    &quot;@type&quot;: [&quot;http:\/\/purl.org\/dc\/terms\/Location&quot;, &quot;http:\/\/schema.org\/Place&quot;, &quot;http:\/\/purl.org\/dc\/terms\/Location&quot;, &quot;http:\/\/schema.org\/Place&quot;]
+  }, {
+    &quot;@id&quot;: &quot;http:\/\/www.utkislandora8testing.com\/node\/2&quot;,
+    &quot;@type&quot;: [&quot;http:\/\/pcdm.org\/models#Object&quot;]
+  }, {
+    &quot;@id&quot;: &quot;http:\/\/www.utkislandora8testing.com\/taxonomy\/term\/12&quot;,
+    &quot;@type&quot;: [&quot;http:\/\/schema.org\/Thing&quot;]
+  }, {
+    &quot;@id&quot;: &quot;http:\/\/www.utkislandora8testing.com\/taxonomy\/term\/31&quot;,
+    &quot;@type&quot;: [&quot;http:\/\/schema.org\/Thing&quot;]
+  }, {
+    &quot;@id&quot;: &quot;http:\/\/www.utkislandora8testing.com\/taxonomy\/term\/32&quot;,
+    &quot;@type&quot;: [&quot;http:\/\/schema.org\/Thing&quot;]
+  }, {
+    &quot;@id&quot;: &quot;http:\/\/www.utkislandora8testing.com\/taxonomy\/term\/33&quot;,
+    &quot;@type&quot;: [&quot;http:\/\/schema.org\/Thing&quot;]
+  }]
+}</code></pre><h4 id="sample-rdf-mapping">Sample RDF Mapping</h4><pre><code class="language-yml">langcode: en
 status: true
 dependencies:
   config:

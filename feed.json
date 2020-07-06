@@ -20,22 +20,22 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-06T10:12:11-04:00",
-            "date_modified": "2020-07-06T10:12:11-04:00"
+            "date_published": "2020-07-06T16:31:06-04:00",
+            "date_modified": "2020-07-06T16:31:06-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/mods-to-rdf.html",
             "url": "https://donrichards.github.io/migrate_islandora_csv/mods-to-rdf.html",
             "title": "MODS to RDF",
-            "summary": "In Islandora, the JSON-LD Module transforms nodes (or media, or taxonomy terms) into the RDF that is synced into Fedora and the Triplestore. It uses&hellip;",
-            "content_html": "<p>In Islandora, the JSON-LD Module transforms nodes (or media, or taxonomy terms) into the RDF that is synced into Fedora and the Triplestore. It uses RDF mappings, a concept defined by the RDF Module, and exposes them through the REST API at <code>?_format=jsonld</code>. Functionality can be expanded by RDF schema building schema.org configuration tool (RDF UI).</p>\n<h3 id=\"tl-dr\">TL; DR</h3>\n<p>Islandora 8 used the MODS to <a href=\"https://wiki.duraspace.org/download/attachments/87460857/MODS-RDF-Mapping-Recommendations_SMIG_v1_2019-01.pdf?api=v2\">RDF Mapping Recommendations</a> document from <em>Samvera MODS to RDF Working Group</em> to create initial mappings. All content is serialized into josn-ld. Islandora consist of multiple yaml files for different content types corporate_body, family, geo_location, person, resource_type and subject. Create a mapping for each one of these and the bulk of the work is done. YAML files can iterate over several posibilities and output the one desired RDF value. It directly links and pulls data from several namespace APIs with some configuration. Minting object mappings will need the URI sourced from an external vocabulary, URI for a local object, or a literal value (text string).</p>\n<h3 id=\"json-ld-module\">JSON-LD Module</h3>\n<p>Using the RDF mapping configurations provided by the RDF module, the JSON-LD Module exposes the RDF-mapped entity in JSON-LD, through the REST API, at</p>\n<ul>\n<li>Node:  <code>node/[nid]?_format=jsonld</code></li>\n<li>Media: <code>media/[mid]?_format=jsonld</code> </li>\n<li>Terms:  <code>taxonomy/term/[tid]?_format=jsonld</code></li>\n</ul>\n<h3 id=\"rdf-mappings\">RDF Mappings</h3>\n<p>In an out-of-the-box islandora-playbook, the RDF mappings that exist were loaded from config files, and correspond to the <code>rdf.mapping.[...].yml</code> files located in:</p>\n<ul>\n<li>Media terms: <code>/islandora/modules/islandora_core_feature/config/install/</code></li>\n<li>Taxonomy terms: <code>/islandora_defaults/config/install/</code></li>\n<li>Repository_item and the islandora_access vocabulary: <code>/controlled_access_terms/modules/controlled_access_terms_defaults/config/install/</code></li>\n<li>The default corporate_body, family, geo_location, person, resource_type and subject vocabularies: <code>/core/profiles/standard/config/install/ (articles, pages, comments, and tags)</code></li>\n</ul>\n<p>For a detailed description on how to generate and/or edit RDF mappings <a href=\"https://islandora.github.io/documentation/islandora/rdf-mapping/#how-to-edit-an-rdf-mapping\">link</a></p>\n<p><strong>Namespaces</strong>\nldp, ebucore, pcdm, are premis are registered in islandora.module using hook_rdf_namespaces(). To register your own namespaces, you will need to locate create a custom module that implements that hook.</p>\n<h4 id=\"sample-rdf-mapping\">Sample RDF Mapping</h4>\n<pre><code class=\"language-yml\">langcode: en\nstatus: true\ndependencies:\n  config:\n    - node.type.islandora_object\n  enforced:\n    module:\n      - islandora_defaults\n  module:\n    - node\nid: node.islandora_object\ntargetEntityType: node\nbundle: islandora_object\ntypes:\n  - &#39;pcdm:Object&#39;\nfieldMappings:\n  field_alternative_title:\n    properties:\n      - &#39;dc:alternative&#39;\n  field_edtf_date:\n    properties:\n      - &#39;dc:date&#39;\n    datatype_callback:\n      callable: &#39;Drupal\\controlled_access_terms\\EDTFConverter::dateIso8601Value&#39;\n  field_edtf_date_created:\n    properties:\n      - &#39;dc:created&#39;\n    datatype_callback:\n      callable: &#39;Drupal\\controlled_access_terms\\EDTFConverter::dateIso8601Value&#39;\n  field_edtf_date_issued:\n    properties:\n      - &#39;dc:issued&#39;\n    datatype_callback:\n      callable: &#39;Drupal\\controlled_access_terms\\EDTFConverter::dateIso8601Value&#39;\n  field_description:\n    properties:\n      - &#39;dc:description&#39;\n  field_extent:\n    properties:\n      - &#39;dc:extent&#39;\n  field_identifier:\n    properties:\n      - &#39;dc:identifier&#39;\n  field_member_of:\n    properties:\n      - &#39;pcdm:memberOf&#39;\n    mapping_type: rel\n  field_resource_type:\n    properties:\n      - &#39;dc:type&#39;\n    mapping_type: rel\n  field_rights:\n    properties:\n      - &#39;dc:rights&#39;\n  field_subject:\n    properties:\n      - &#39;dc:subject&#39;\n    mapping_type: rel\n  field_weight:\n    properties:\n      - &#39;co:index&#39;\n  title:\n    properties:\n      - &#39;dc:title&#39;\n  created:\n    properties:\n      - &#39;schema:dateCreated&#39;\n    datatype_callback:\n      callable: &#39;Drupal\\rdf\\CommonDataConverter::dateIso8601Value&#39;\n  changed:\n    properties:\n      - &#39;schema:dateModified&#39;\n    datatype_callback:\n      callable: &#39;Drupal\\rdf\\CommonDataConverter::dateIso8601Value&#39;\n  uid:\n    properties:\n      - &#39;schema:author&#39;\n    mapping_type: rel</code></pre>\n",
+            "summary": "TL; DRIslandora 8 used the MODS to RDF Mapping Recommendations document from Samvera MODS to RDF Working Group to create initial mappings. Islandora consist of&hellip;",
+            "content_html": "<h3 id=\"tl-dr\">TL; DR</h3>\n<p>Islandora 8 used the MODS to <a href=\"https://wiki.duraspace.org/download/attachments/87460857/MODS-RDF-Mapping-Recommendations_SMIG_v1_2019-01.pdf?api=v2\">RDF Mapping Recommendations</a> document from <em>Samvera MODS to RDF Working Group</em> to create initial mappings. Islandora consist of multiple yaml files for different content types corporate_body, family, geo_location, person, resource_type and subject. Create a mapping for each one of these and the bulk of the work is done. YAML files can iterate over several posibilities and output the one desired RDF value. It directly links and pulls data from several namespace APIs with some configuration. Minting object mappings will need the URI sourced from an external vocabulary, URI for a local object, or a literal value (text string). Minting is covered on the <a href=\"/oai-pmh-and-doi-minting\">OAI-PMH and DOI minting</a></p>\n<h3 id=\"overview\">Overview</h3>\n<p>In Islandora, the JSON-LD Module transforms nodes (or media, or taxonomy terms) into the RDF that is synced into Fedora and the Triplestore. It uses RDF mappings, a concept defined by the RDF Module, and exposes them through the REST API at <code>?_format=jsonld</code>. Functionality can be expanded by RDF schema building schema.org configuration tool (RDF UI).</p>\n<h3 id=\"json-ld-module\">JSON-LD Module</h3>\n<p>Using the RDF mapping configurations provided by the RDF module, the JSON-LD Module exposes the RDF-mapped entity in JSON-LD, through the REST API, at</p>\n<ul>\n<li>Node:  <code>node/[nid]?_format=jsonld</code></li>\n<li>Media: <code>media/[mid]?_format=jsonld</code> </li>\n<li>Terms:  <code>taxonomy/term/[tid]?_format=jsonld</code></li>\n</ul>\n<h3 id=\"rdf-mappings\">RDF Mappings</h3>\n<p>In an out-of-the-box islandora-playbook, the RDF mappings that exist were loaded from config files, and correspond to the <code>rdf.mapping.[...].yml</code> files located in:</p>\n<ul>\n<li>Media terms: <code>/islandora/modules/islandora_core_feature/config/install/</code></li>\n<li>Taxonomy terms: <code>/islandora_defaults/config/install/</code></li>\n<li>Repository_item and the islandora_access vocabulary: <code>/controlled_access_terms/modules/controlled_access_terms_defaults/config/install/</code></li>\n<li>The default corporate_body, family, geo_location, person, resource_type and subject vocabularies: <code>/core/profiles/standard/config/install/ (articles, pages, comments, and tags)</code></li>\n</ul>\n<p>For a detailed description on how to generate and/or edit RDF mappings <a href=\"https://islandora.github.io/documentation/islandora/rdf-mapping/#how-to-edit-an-rdf-mapping\">link</a></p>\n<p><strong>Namespaces</strong>\nldp, ebucore, pcdm, are premis are registered in islandora.module using hook_rdf_namespaces(). To register your own namespaces, you will need to locate create a custom module that implements that hook.</p>\n<h4 id=\"sample-mods-for-knoxgardens119\">Sample MODS for knoxgardens:119</h4>\n<pre><code class=\"language-xml\">&lt;mods\n  xmlns=&quot;http://www.loc.gov/mods/v3&quot;\n  xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;\n  xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;\n  xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;\n  xsi:schemaLocation=&quot;http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/mods-3-5.xsd&quot;&gt;\n  &lt;identifier type=&quot;local&quot;&gt;0012_000463_000218&lt;/identifier&gt;\n  &lt;identifier type=&quot;pid&quot;&gt;knoxgardens:119&lt;/identifier&gt;\n  &lt;identifier type=&quot;slide number&quot;&gt;Slide 5&lt;/identifier&gt;\n  &lt;identifier type=&quot;film number&quot;&gt;Film 93&lt;/identifier&gt;\n  &lt;identifier type=&quot;spc&quot;&gt;record_spc_4493&lt;/identifier&gt;\n  &lt;titleInfo&gt;\n    &lt;title&gt;Guyot, Chapman &amp; Sequoyah&lt;/title&gt;\n  &lt;/titleInfo&gt;\n  &lt;abstract&gt;Glass slide of mountains, Guyot, Chapman &amp; Sequoyah&lt;/abstract&gt;\n  &lt;originInfo&gt;\n    &lt;dateCreated qualifier=&quot;inferred&quot;&gt;1927-1935&lt;/dateCreated&gt;\n    &lt;dateCreated encoding=&quot;edtf&quot; point=&quot;start&quot; qualifier=&quot;inferred&quot; keyDate=&quot;yes&quot;&gt;1930&lt;/dateCreated&gt;\n    &lt;dateCreated encoding=&quot;edtf&quot; point=&quot;end&quot; qualifier=&quot;inferred&quot;&gt;1939&lt;/dateCreated&gt;\n  &lt;/originInfo&gt;\n  &lt;physicalDescription&gt;\n    &lt;form authority=&quot;aat&quot; valueURI=&quot;http://vocab.getty.edu/aat/300134977&quot;&gt;lantern slides&lt;/form&gt;\n    &lt;extent&gt;3 1/4 x 5 inches&lt;/extent&gt;\n    &lt;internetMediaType&gt;image/jp2&lt;/internetMediaType&gt;\n  &lt;/physicalDescription&gt;\n  &lt;name valueURI=&quot;http://id.loc.gov/authorities/names/no2018075078&quot; authority=&quot;naf&quot;&gt;\n    &lt;namePart&gt;Jim Thompson Company&lt;/namePart&gt;\n    &lt;role&gt;\n      &lt;roleTerm authority=&quot;marcrelator&quot; valueURI=&quot;http://id.loc.gov/vocabulary/relators/pht&quot;&gt;Photographer&lt;/roleTerm&gt;\n    &lt;/role&gt;\n  &lt;/name&gt;\n  &lt;subject authority=&quot;lcsh&quot; valueURI=&quot;http://id.loc.gov/authorities/subjects/sh85090290&quot;&gt;\n    &lt;topic&gt;Nature photography&lt;/topic&gt;\n  &lt;/subject&gt;\n  &lt;subject authority=&quot;lcsh&quot; valueURI=&quot;http://id.loc.gov/authorities/subjects/sh85087947&quot;&gt;\n    &lt;topic&gt;Mountains--Tennessee&lt;/topic&gt;\n  &lt;/subject&gt;\n  &lt;subject authority=&quot;lcsh&quot; valueURI=&quot;http://id.loc.gov/authorities/subjects/sh85057008&quot;&gt;\n    &lt;topic&gt;Great Smoky Mountains (N.C. and Tenn.)&lt;/topic&gt;\n  &lt;/subject&gt;\n  &lt;subject authority=&quot;geonames&quot; valueURI=&quot;http://sws.geonames.org/4626066&quot;&gt;\n    &lt;geographic&gt;Great Smoky Mountains&lt;/geographic&gt;\n    &lt;cartographics&gt;\n      &lt;coordinates&gt;35.58343, -83.50822&lt;/coordinates&gt;\n    &lt;/cartographics&gt;\n  &lt;/subject&gt;\n  &lt;note&gt;Mrs. A. C. Bruner donated this collection to the University of Tennessee. Creation dates were inferred from the dates associated with the archival collection and the activity dates of the Jim Thompson Company.&lt;/note&gt;\n  &lt;relatedItem displayLabel=&quot;Project&quot; type=&quot;host&quot;&gt;\n    &lt;titleInfo&gt;\n      &lt;title&gt;Knoxville Garden Slides&lt;/title&gt;\n    &lt;/titleInfo&gt;\n  &lt;/relatedItem&gt;\n  &lt;typeOfResource&gt;still image&lt;/typeOfResource&gt;\n  &lt;relatedItem displayLabel=&quot;Collection&quot; type=&quot;host&quot;&gt;\n    &lt;titleInfo&gt;\n      &lt;title&gt;Knoxville Gardens Slides&lt;/title&gt;\n    &lt;/titleInfo&gt;\n    &lt;identifier&gt;MS.1324&lt;/identifier&gt;\n    &lt;location&gt;\n      &lt;url&gt;https://n2t.net/ark:/87290/v88w3bgf&lt;/url&gt;\n    &lt;/location&gt;\n  &lt;/relatedItem&gt;\n  &lt;location&gt;\n    &lt;physicalLocation valueURI=&quot;http://id.loc.gov/authorities/names/no2014027633&quot;&gt;University of Tennessee, Knoxville. Special Collections&lt;/physicalLocation&gt;\n  &lt;/location&gt;\n  &lt;recordInfo&gt;\n    &lt;recordContentSource valueURI=&quot;http://id.loc.gov/authorities/names/n87808088&quot;&gt;University of Tennessee, Knoxville. Libraries&lt;/recordContentSource&gt;\n    &lt;languageOfCataloging&gt;\n      &lt;languageTerm type=&quot;text&quot; authority=&quot;iso639-2b&quot;&gt;English&lt;/languageTerm&gt;\n    &lt;/languageOfCataloging&gt;\n  &lt;/recordInfo&gt;\n  &lt;accessCondition type=&quot;use and reproduction&quot; xlink:href=&quot;http://rightsstatements.org/vocab/InC/1.0/&quot;&gt;In Copyright&lt;/accessCondition&gt;\n&lt;/mods&gt;</code></pre>\n<h4 id=\"json-ld-for-this-object\">JSON-LD for this object</h4>\n<p>These values may not be correct. I put them in by hand and I’m not experienced with MODS to RDF conversion.</p>\n<pre><code class=\"language-json\">{\n  &quot;@graph&quot;: [{\n    &quot;@id&quot;: &quot;http:\\/\\/www.utkislandora8testing.com\\/node\\/3&quot;,\n    &quot;@type&quot;: [&quot;http:\\/\\/pcdm.org\\/models#Object&quot;, &quot;http:\\/\\/purl.org\\/coar\\/resource_type\\/c_c513&quot;],\n    &quot;http:\\/\\/schema.org\\/author&quot;: [{\n      &quot;@id&quot;: &quot;http:\\/\\/www.utkislandora8testing.com\\/user\\/1&quot;\n    }],\n    &quot;http:\\/\\/purl.org\\/dc\\/terms\\/title&quot;: [{\n      &quot;@value&quot;: &quot;Guyot, Chapman&quot;,\n      &quot;@language&quot;: &quot;en&quot;\n    }],\n    &quot;http:\\/\\/schema.org\\/dateCreated&quot;: [{\n      &quot;@value&quot;: &quot;2020-07-06T18:46:09+00:00&quot;,\n      &quot;@type&quot;: &quot;http:\\/\\/www.w3.org\\/2001\\/XMLSchema#dateTime&quot;\n    }],\n    &quot;http:\\/\\/schema.org\\/dateModified&quot;: [{\n      &quot;@value&quot;: &quot;2020-07-06T20:09:15+00:00&quot;,\n      &quot;@type&quot;: &quot;http:\\/\\/www.w3.org\\/2001\\/XMLSchema#dateTime&quot;\n    }],\n    &quot;http:\\/\\/purl.org\\/dc\\/terms\\/description&quot;: [{\n      &quot;@value&quot;: &quot;Glass slide of mountains, Guyot, Chapman &amp; Sequoyah&quot;,\n      &quot;@language&quot;: &quot;en&quot;\n    }],\n    &quot;http:\\/\\/purl.org\\/dc\\/terms\\/created&quot;: [{\n      &quot;@value&quot;: &quot;1927&quot;,\n      &quot;@type&quot;: &quot;http:\\/\\/www.w3.org\\/2001\\/XMLSchema#string&quot;\n    }, {\n      &quot;@value&quot;: &quot;1927&quot;,\n      &quot;@type&quot;: &quot;http:\\/\\/www.w3.org\\/2001\\/XMLSchema#gYear&quot;\n    }],\n    &quot;http:\\/\\/purl.org\\/dc\\/terms\\/extent&quot;: [{\n      &quot;@value&quot;: &quot;1 item&quot;,\n      &quot;@type&quot;: &quot;http:\\/\\/www.w3.org\\/2001\\/XMLSchema#string&quot;\n    }],\n    &quot;http:\\/\\/purl.org\\/dc\\/terms\\/spatial&quot;: [{\n      &quot;@id&quot;: &quot;http:\\/\\/www.utkislandora8testing.com\\/taxonomy\\/term\\/34&quot;\n    }],\n    &quot;http:\\/\\/purl.org\\/dc\\/terms\\/identifier&quot;: [{\n      &quot;@value&quot;: &quot;MS.1324&quot;,\n      &quot;@type&quot;: &quot;http:\\/\\/www.w3.org\\/2001\\/XMLSchema#string&quot;\n    }, {\n      &quot;@value&quot;: &quot;Slide 5&quot;,\n      &quot;@type&quot;: &quot;http:\\/\\/www.w3.org\\/2001\\/XMLSchema#string&quot;\n    }, {\n      &quot;@value&quot;: &quot;Film 93&quot;,\n      &quot;@type&quot;: &quot;http:\\/\\/www.w3.org\\/2001\\/XMLSchema#string&quot;\n    }, {\n      &quot;@value&quot;: &quot;record_spc_4493&quot;,\n      &quot;@type&quot;: &quot;http:\\/\\/www.w3.org\\/2001\\/XMLSchema#string&quot;\n    }, {\n      &quot;@value&quot;: &quot;0012_000463_000218&quot;,\n      &quot;@type&quot;: &quot;http:\\/\\/www.w3.org\\/2001\\/XMLSchema#string&quot;\n    }],\n    &quot;http:\\/\\/purl.org\\/dc\\/terms\\/subject&quot;: [{\n      &quot;@value&quot;: &quot;Jim Thompson Company&quot;,\n      &quot;@type&quot;: &quot;http:\\/\\/www.w3.org\\/2001\\/XMLSchema#string&quot;\n    }, {\n      &quot;@value&quot;: &quot;Photographer&quot;,\n      &quot;@type&quot;: &quot;http:\\/\\/www.w3.org\\/2001\\/XMLSchema#string&quot;\n    }, {\n      &quot;@value&quot;: &quot;Nature photography&quot;,\n      &quot;@type&quot;: &quot;http:\\/\\/www.w3.org\\/2001\\/XMLSchema#string&quot;\n    }, {\n      &quot;@value&quot;: &quot;Mountains--Tennessee&quot;,\n      &quot;@type&quot;: &quot;http:\\/\\/www.w3.org\\/2001\\/XMLSchema#string&quot;\n    }, {\n      &quot;@value&quot;: &quot;Great Smoky Mountains (N.C. and Tenn.)&quot;,\n      &quot;@type&quot;: &quot;http:\\/\\/www.w3.org\\/2001\\/XMLSchema#string&quot;\n    }, {\n      &quot;@id&quot;: &quot;http:\\/\\/www.utkislandora8testing.com\\/taxonomy\\/term\\/31&quot;\n    }, {\n      &quot;@id&quot;: &quot;http:\\/\\/www.utkislandora8testing.com\\/taxonomy\\/term\\/32&quot;\n    }, {\n      &quot;@id&quot;: &quot;http:\\/\\/www.utkislandora8testing.com\\/taxonomy\\/term\\/33&quot;\n    }, {\n      &quot;@id&quot;: &quot;http:\\/\\/www.utkislandora8testing.com\\/taxonomy\\/term\\/34&quot;\n    }],\n    &quot;http:\\/\\/pcdm.org\\/models#memberOf&quot;: [{\n      &quot;@id&quot;: &quot;http:\\/\\/www.utkislandora8testing.com\\/node\\/2&quot;\n    }],\n    &quot;http:\\/\\/www.w3.org\\/2004\\/02\\/skos\\/core#note&quot;: [{\n      &quot;@value&quot;: &quot;&lt;p&gt;Mrs. A. C. Bruner donated this collection to the University of Tennessee. Creation dates were inferred from the dates associated with the archival collection and the activity dates of the Jim Thompson Company.&lt;\\/p&gt;\\r\\n&quot;,\n      &quot;@language&quot;: &quot;en&quot;\n    }],\n    &quot;http:\\/\\/purl.org\\/dc\\/terms\\/type&quot;: [{\n      &quot;@id&quot;: &quot;http:\\/\\/www.utkislandora8testing.com\\/taxonomy\\/term\\/12&quot;\n    }],\n    &quot;http:\\/\\/schema.org\\/sameAs&quot;: [{\n      &quot;@id&quot;: &quot;http:\\/\\/www.utkislandora8testing.com\\/node\\/3&quot;\n    }]\n  }, {\n    &quot;@id&quot;: &quot;http:\\/\\/www.utkislandora8testing.com\\/user\\/1&quot;,\n    &quot;@type&quot;: [&quot;http:\\/\\/schema.org\\/Person&quot;]\n  }, {\n    &quot;@id&quot;: [&quot;http:\\/\\/www.utkislandora8testing.com\\/taxonomy\\/term\\/34&quot;, &quot;http:\\/\\/www.utkislandora8testing.com\\/taxonomy\\/term\\/34&quot;],\n    &quot;@type&quot;: [&quot;http:\\/\\/purl.org\\/dc\\/terms\\/Location&quot;, &quot;http:\\/\\/schema.org\\/Place&quot;, &quot;http:\\/\\/purl.org\\/dc\\/terms\\/Location&quot;, &quot;http:\\/\\/schema.org\\/Place&quot;]\n  }, {\n    &quot;@id&quot;: &quot;http:\\/\\/www.utkislandora8testing.com\\/node\\/2&quot;,\n    &quot;@type&quot;: [&quot;http:\\/\\/pcdm.org\\/models#Object&quot;]\n  }, {\n    &quot;@id&quot;: &quot;http:\\/\\/www.utkislandora8testing.com\\/taxonomy\\/term\\/12&quot;,\n    &quot;@type&quot;: [&quot;http:\\/\\/schema.org\\/Thing&quot;]\n  }, {\n    &quot;@id&quot;: &quot;http:\\/\\/www.utkislandora8testing.com\\/taxonomy\\/term\\/31&quot;,\n    &quot;@type&quot;: [&quot;http:\\/\\/schema.org\\/Thing&quot;]\n  }, {\n    &quot;@id&quot;: &quot;http:\\/\\/www.utkislandora8testing.com\\/taxonomy\\/term\\/32&quot;,\n    &quot;@type&quot;: [&quot;http:\\/\\/schema.org\\/Thing&quot;]\n  }, {\n    &quot;@id&quot;: &quot;http:\\/\\/www.utkislandora8testing.com\\/taxonomy\\/term\\/33&quot;,\n    &quot;@type&quot;: [&quot;http:\\/\\/schema.org\\/Thing&quot;]\n  }]\n}</code></pre>\n<h4 id=\"sample-rdf-mapping\">Sample RDF Mapping</h4>\n<pre><code class=\"language-yml\">langcode: en\nstatus: true\ndependencies:\n  config:\n    - node.type.islandora_object\n  enforced:\n    module:\n      - islandora_defaults\n  module:\n    - node\nid: node.islandora_object\ntargetEntityType: node\nbundle: islandora_object\ntypes:\n  - &#39;pcdm:Object&#39;\nfieldMappings:\n  field_alternative_title:\n    properties:\n      - &#39;dc:alternative&#39;\n  field_edtf_date:\n    properties:\n      - &#39;dc:date&#39;\n    datatype_callback:\n      callable: &#39;Drupal\\controlled_access_terms\\EDTFConverter::dateIso8601Value&#39;\n  field_edtf_date_created:\n    properties:\n      - &#39;dc:created&#39;\n    datatype_callback:\n      callable: &#39;Drupal\\controlled_access_terms\\EDTFConverter::dateIso8601Value&#39;\n  field_edtf_date_issued:\n    properties:\n      - &#39;dc:issued&#39;\n    datatype_callback:\n      callable: &#39;Drupal\\controlled_access_terms\\EDTFConverter::dateIso8601Value&#39;\n  field_description:\n    properties:\n      - &#39;dc:description&#39;\n  field_extent:\n    properties:\n      - &#39;dc:extent&#39;\n  field_identifier:\n    properties:\n      - &#39;dc:identifier&#39;\n  field_member_of:\n    properties:\n      - &#39;pcdm:memberOf&#39;\n    mapping_type: rel\n  field_resource_type:\n    properties:\n      - &#39;dc:type&#39;\n    mapping_type: rel\n  field_rights:\n    properties:\n      - &#39;dc:rights&#39;\n  field_subject:\n    properties:\n      - &#39;dc:subject&#39;\n    mapping_type: rel\n  field_weight:\n    properties:\n      - &#39;co:index&#39;\n  title:\n    properties:\n      - &#39;dc:title&#39;\n  created:\n    properties:\n      - &#39;schema:dateCreated&#39;\n    datatype_callback:\n      callable: &#39;Drupal\\rdf\\CommonDataConverter::dateIso8601Value&#39;\n  changed:\n    properties:\n      - &#39;schema:dateModified&#39;\n    datatype_callback:\n      callable: &#39;Drupal\\rdf\\CommonDataConverter::dateIso8601Value&#39;\n  uid:\n    properties:\n      - &#39;schema:author&#39;\n    mapping_type: rel</code></pre>\n",
             "author": {
                 "name": "Don Richards"
             },
             "tags": [
             ],
-            "date_published": "2020-07-06T10:12:11-04:00",
-            "date_modified": "2020-07-06T10:12:11-04:00"
+            "date_published": "2020-07-06T16:31:06-04:00",
+            "date_modified": "2020-07-06T16:31:06-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/ingestingmigrating.html",
@@ -48,8 +48,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-06T10:12:11-04:00",
-            "date_modified": "2020-07-06T10:12:11-04:00"
+            "date_published": "2020-07-06T16:31:06-04:00",
+            "date_modified": "2020-07-06T16:31:06-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/uploading.html",
@@ -62,8 +62,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-06T10:12:11-04:00",
-            "date_modified": "2020-07-06T10:12:11-04:00"
+            "date_published": "2020-07-06T16:31:06-04:00",
+            "date_modified": "2020-07-06T16:31:06-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/step-by-step-setup-ir.html",
@@ -76,8 +76,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-06T10:12:11-04:00",
-            "date_modified": "2020-07-06T10:12:11-04:00"
+            "date_published": "2020-07-06T16:31:06-04:00",
+            "date_modified": "2020-07-06T16:31:06-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/book-and-large-image-viewer.html",
@@ -90,8 +90,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-06T10:12:11-04:00",
-            "date_modified": "2020-07-06T10:12:11-04:00"
+            "date_published": "2020-07-06T16:31:06-04:00",
+            "date_modified": "2020-07-06T16:31:06-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/institutional-repository.html",
@@ -119,8 +119,8 @@
                    "Citation",
                    "Bibliography"
             ],
-            "date_published": "2020-07-06T10:12:11-04:00",
-            "date_modified": "2020-07-06T10:12:11-04:00"
+            "date_published": "2020-07-06T16:31:06-04:00",
+            "date_modified": "2020-07-06T16:31:06-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/bibliography-and-citation.html",
@@ -133,22 +133,22 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-06T10:12:11-04:00",
-            "date_modified": "2020-07-06T10:12:11-04:00"
+            "date_published": "2020-07-06T16:31:06-04:00",
+            "date_modified": "2020-07-06T16:31:06-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html",
             "url": "https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html",
             "title": "OAI-PMH &amp; DOI Minting",
-            "summary": "OAI-PMH Persistent Identifiers: Module for minting and persisting persistent identifiers (Handles, DOIs, ARKs, etc.). Persistent identifiers can be minted by a variety of sources, such&hellip;",
-            "content_html": "<p>OAI-PMH</p>\n<h3 id=\"doi-minting\">DOI Minting</h3>\n<p><a href=\"https://github.com/mjordan/persistent_identifiers\">Persistent Identifiers</a>: Module for minting and persisting persistent identifiers (Handles, DOIs, ARKs, etc.). </p>\n<pre><code class=\"language-text\">  Persistent identifiers can be minted by a variety of sources, such as CrossRef, DataCite, or EZID. Regardless of the specific source, many of the tasks involved in assigning persistent identifiers to Drupal nodes are the same - providing a &quot;Mint Identifier&quot; button in a node edit form, integration into automated workflows, or persisting identifiers to fields on an entity.\n\n  This module provides some common tasks while allowing small amounts of code (specifically Drupal services) to handle the particulars of minting and persisting. In addition, a Drupal site admin might want to mix and match minting and persisting services. Generally speaking, this module&#39;s goal is to allow site admins to select the minters and persisters they want, while helpin developers to write as little code as necessary to create new minter and persister services.</code></pre>\n<p><a href=\"https://github.com/mjordan/doi_datacite\">DataCite DOI Minter</a>: Module that mints DOIs from DataCite via the Persistent Identifiers module. This module allows for both individual and bulk operations. \n<figure class=\"post__image\"><img loading=\"lazy\" src=\"https://github.com/mjordan/doi_datacite/raw/master/docs/images/datacite_metadata.png\" data-is-external-image=\"true\"  alt=\"DataCite DOI Minter UI\" /></figure></p>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/86127144-70a21380-baad-11ea-8750-6803d0036d19.png\" data-is-external-image=\"true\"  alt=\"persistent IDs test config\" /></figure></p>\n",
+            "summary": "OAI-PMHRepositories can expose or harvest metadata, or both. OAI-PMH specifies six services which can be invoked over HTTP(s). The OAI-DC metadata format is aided by&hellip;",
+            "content_html": "<h3 id=\"oai-pmh\">OAI-PMH</h3>\n<p>Repositories can expose or harvest metadata, or both. OAI-PMH specifies six services which can be invoked over HTTP(s). The OAI-DC metadata format is aided by the Islandora OAI-PMH module to include the RDF Mapping for the linked agent field (from Islandora Defaults). Including agent links in the OAI-PMH metadata currently requires updating the RDF mapping to include a Dublin Core predicate for that field or any other additional fields. Alternatively, the rest_oai_pmh module also supports defining mappings with the metatag module or creating a custom metadata profile using the Twig templating system. For more information see Islandora 8’s documentation on <a href=\"https://islandora.github.io/documentation/user-documentation/oai/\">OAI-PMH</a></p>\n<p>This is from <a href=\"https://oaks.kent.edu/oai/request?verb=ListRecords&amp;set=node:10038&amp;metadataPrefix=oai_dc\">https://oaks.kent.edu/oai/request…</a></p>\n<pre><code class=\"language-xml\">&lt;OAI-PMH xmlns=&quot;http://www.openarchives.org/OAI/2.0/&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:schemaLocation=&quot;http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd&quot; name=&quot;OAI-PMH&quot;&gt;\n  &lt;responseDate&gt;2020-07-06T18:05:36Z&lt;/responseDate&gt;\n  &lt;request verb=&quot;ListRecords&quot; metadataPrefix=&quot;oai_dc&quot;&gt;https://oaks.kent.edu/oai/request&lt;/request&gt;\n  &lt;ListRecords&gt;\n    &lt;resumptionToken/&gt;\n    &lt;record&gt;\n      &lt;header&gt;\n        &lt;identifier&gt;oai:oaks.kent.edu:node-10039&lt;/identifier&gt;\n        &lt;datestamp&gt;2020-03-17T16:26:06Z&lt;/datestamp&gt;\n        &lt;setSpec&gt;node:10038&lt;/setSpec&gt;\n      &lt;/header&gt;\n      &lt;metadata&gt;\n        &lt;oai_dc\n          xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot;\n          xmlns:oai_dc=&quot;http://www.openarchives.org/OAI/2.0/oai_dc/&quot;\n          xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;\n          xsi:schemaLocation=&quot;http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd&quot;&gt;\n          &lt;dc:description&gt;https://kent-islandora.s3.us-east-2.amazonaws.com/2020-01/thumbnail.png&lt;/dc:description&gt;\n          &lt;dc:description&gt;\n            &lt;p&gt;Full scan of the&amp;nbsp;&lt;em&gt;Lankenau Fabrics&lt;/em&gt;&amp;nbsp;sample catalog, containing the Fall, 1932 fabric line by the Lankenau Company of New York City.&lt;/p&gt;\n          &lt;/dc:description&gt;\n          &lt;dc:identifier&gt;https://oaks.kent.edu/historical-fashion/lankenau-fabrics&lt;/dc:identifier&gt;\n          &lt;dc:date&gt;1932&lt;/dc:date&gt;\n          &lt;dc:subject&gt;fabric&lt;/dc:subject&gt;\n          &lt;dc:subject&gt;textiles&lt;/dc:subject&gt;\n          &lt;dc:subject&gt;silk&lt;/dc:subject&gt;\n          &lt;dc:subject&gt;tailoring&lt;/dc:subject&gt;\n          &lt;dc:subject&gt;wool&lt;/dc:subject&gt;\n          &lt;dc:subject&gt;flannel&lt;/dc:subject&gt;\n          &lt;dc:subject&gt;corduroy&lt;/dc:subject&gt;\n          &lt;dc:subject&gt;fur fabric&lt;/dc:subject&gt;\n          &lt;dc:subject&gt;tweed&lt;/dc:subject&gt;\n          &lt;dc:subject&gt;mohair&lt;/dc:subject&gt;\n          &lt;dc:subject&gt;twill&lt;/dc:subject&gt;\n          &lt;dc:subject&gt;broadcloth&lt;/dc:subject&gt;\n          &lt;dc:subject&gt;Lankenau&lt;/dc:subject&gt;\n          &lt;dc:subject&gt;New York City&lt;/dc:subject&gt;\n          &lt;dc:subject&gt;New York&lt;/dc:subject&gt;\n          &lt;dc:subject&gt;1932&lt;/dc:subject&gt;\n          &lt;dc:source&gt;Historical Fashion and Textile Books, Brochures and Small Collections&lt;/dc:source&gt;\n          &lt;dc:type&gt;Text&lt;/dc:type&gt;\n          &lt;dc:rights&gt;http://rightsstatements.org/vocab/InC/1.0/&lt;/dc:rights&gt;\n          &lt;dc:title&gt;Lankenau Fabrics&lt;/dc:title&gt;\n        &lt;/oai_dc&gt;\n      &lt;/metadata&gt;\n    &lt;/record&gt;\n    &lt;record&gt;\n      &lt;header&gt;\n        &lt;identifier&gt;oai:oaks.kent.edu:node-10113&lt;/identifier&gt;\n        &lt;datestamp&gt;2020-03-16T14:21:19Z&lt;/datestamp&gt;\n        &lt;setSpec&gt;node:10038&lt;/setSpec&gt;\n      &lt;/header&gt;\n      &lt;metadata&gt;\n        &lt;oai_dc\n          xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot;\n          xmlns:oai_dc=&quot;http://www.openarchives.org/OAI/2.0/oai_dc/&quot;\n          xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;\n          xsi:schemaLocation=&quot;http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd&quot;&gt;\n          &lt;dc:description&gt;https://kent-islandora.s3.us-east-2.amazonaws.com/node/10113/Madison001.jpg&lt;/dc:description&gt;\n          &lt;dc:description&gt;\n            &lt;p&gt;Full scan of&amp;nbsp;&lt;em&gt;Madison&#39;s Shoulder Measure Coat System, 5th ed. and Encyclopedia of Coat Cutting&lt;/em&gt;, written by J.O. Madison of the Jno. J. Mitchell Co. School of Cutting, and published by the Jno. J. Mitchell Co., in 1893.&lt;/p&gt;\n          &lt;/dc:description&gt;\n          &lt;dc:identifier&gt;https://oaks.kent.edu/historical-fashion/madisons-shoulder-measure-coat-system-5th-ed&lt;/dc:identifier&gt;\n          &lt;dc:date&gt;1893&lt;/dc:date&gt;\n          &lt;dc:subject&gt;tailoring&lt;/dc:subject&gt;\n          &lt;dc:subject&gt;men&#39;s clothing&lt;/dc:subject&gt;\n          &lt;dc:subject&gt;men&#39;s coat&lt;/dc:subject&gt;\n          &lt;dc:subject&gt;measuring&lt;/dc:subject&gt;\n          &lt;dc:subject&gt;coat cutting&lt;/dc:subject&gt;\n          &lt;dc:subject&gt;Fashion Design&lt;/dc:subject&gt;\n          &lt;dc:source&gt;Historical Fashion and Textile Books, Brochures and Small Collections&lt;/dc:source&gt;\n          &lt;dc:type&gt;Text&lt;/dc:type&gt;\n          &lt;dc:rights&gt;http://rightsstatements.org/vocab/NoC-US/1.0/&lt;/dc:rights&gt;\n          &lt;dc:title&gt;Madison&#39;s Shoulder Measure Coat System, 5th ed.&lt;/dc:title&gt;\n        &lt;/oai_dc&gt;\n      &lt;/metadata&gt;\n    &lt;/record&gt;\n    &lt;record&gt;\n      &lt;header&gt;\n        &lt;identifier&gt;oai:oaks.kent.edu:node-10115&lt;/identifier&gt;\n        &lt;datestamp&gt;2020-03-17T16:25:15Z&lt;/datestamp&gt;\n        &lt;setSpec&gt;node:10038&lt;/setSpec&gt;\n      &lt;/header&gt;\n      &lt;metadata&gt;\n        &lt;oai_dc\n          xmlns:dc=&quot;http://purl.org/dc/elements/1.1/&quot;\n          xmlns:oai_dc=&quot;http://www.openarchives.org/OAI/2.0/oai_dc/&quot;\n          xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;\n          xsi:schemaLocation=&quot;http://www.openarchives.org/OAI/2.0/oai_dc/ http://www.openarchives.org/OAI/2.0/oai_dc.xsd&quot;&gt;\n          &lt;dc:description&gt;https://kent-islandora.s3.us-east-2.amazonaws.com/node/10115/Forstmann001_0.jpg&lt;/dc:description&gt;\n          &lt;dc:description&gt;\n            &lt;p&gt;Full scan of the&amp;nbsp;&lt;em&gt;Forstmann Woolens Fall 1935&amp;nbsp;&lt;/em&gt;fabric sample catalog, published by the Forstmann Woolen, Co. of Passaic, New Jersey.&lt;/p&gt;\n          &lt;/dc:description&gt;\n          &lt;dc:identifier&gt;https://oaks.kent.edu/historical-fashion/forstmann-woolens-fall-1935&lt;/dc:identifier&gt;\n          &lt;dc:date&gt;1935&lt;/dc:date&gt;\n          &lt;dc:subject&gt;Forstmann&lt;/dc:subject&gt;\n          &lt;dc:subject&gt;Forstmann Woolen Co.&lt;/dc:subject&gt;\n          &lt;dc:subject&gt;Forstmann Woolens&lt;/dc:subject&gt;\n          &lt;dc:subject&gt;wool&lt;/dc:subject&gt;\n          &lt;dc:subject&gt;Woolens&lt;/dc:subject&gt;\n          &lt;dc:subject&gt;textiles&lt;/dc:subject&gt;\n          &lt;dc:subject&gt;fabric&lt;/dc:subject&gt;\n          &lt;dc:subject&gt;Catalog&lt;/dc:subject&gt;\n          &lt;dc:subject&gt;1935&lt;/dc:subject&gt;\n          &lt;dc:subject&gt;Fashion Business&lt;/dc:subject&gt;\n          &lt;dc:subject&gt;Fiber, Textile, and Weaving Arts&lt;/dc:subject&gt;\n          &lt;dc:source&gt;Historical Fashion and Textile Books, Brochures and Small Collections&lt;/dc:source&gt;\n          &lt;dc:type&gt;Text&lt;/dc:type&gt;\n          &lt;dc:rights&gt;http://rightsstatements.org/vocab/NoC-US/1.0/&lt;/dc:rights&gt;\n          &lt;dc:title&gt;Forstmann Woolens, Fall 1935&lt;/dc:title&gt;\n        &lt;/oai_dc&gt;\n      &lt;/metadata&gt;\n    &lt;/record&gt;\n  &lt;/ListRecords&gt;\n&lt;/OAI-PMH&gt;</code></pre>\n<h3 id=\"doi-minting\">DOI Minting</h3>\n<p>There are a few prebuilt modules for minting and persisting persistent identifiers (Handles, DOIs, ARKs, etc.). Minting can be done either during a migration, during a batch ingest or in the UI with one of these modules.</p>\n<p><strong><a href=\"https://github.com/mjordan/persistent_identifiers\">Persistent Identifiers</a></strong>: Module for minting and persisting persistent identifiers (Handles, DOIs, ARKs, etc.). </p>\n<blockquote>\n<p> Persistent identifiers can be minted by a variety of sources, such as CrossRef, DataCite, or EZID. Regardless of the specific source, many of the tasks involved in assigning persistent identifiers to Drupal nodes are the same - providing a “Mint Identifier” button in a node edit form, integration into automated workflows, or persisting identifiers to fields on an entity.\n This module provides some common tasks while allowing small amounts of code (specifically Drupal services) to handle the particulars of minting and persisting. In addition, a Drupal site admin might want to mix and match minting and persisting services. Generally speaking, this module’s goal is to allow site admins to select the minters and persisters they want, while helpin developers to write as little code as necessary to create new minter and persister services.</p>\n</blockquote>\n<p><strong><a href=\"https://github.com/mjordan/doi_datacite\">DataCite DOI Minter</a></strong>: Module that mints DOIs from DataCite via the Persistent Identifiers module. This module allows for both individual and bulk operations. \n<figure class=\"post__image\"><img loading=\"lazy\" src=\"https://github.com/mjordan/doi_datacite/raw/master/docs/images/datacite_metadata.png\" data-is-external-image=\"true\"  alt=\"DataCite DOI Minter UI\" /></figure></p>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/86127144-70a21380-baad-11ea-8750-6803d0036d19.png\" data-is-external-image=\"true\"  alt=\"persistent IDs test config\" /></figure></p>\n",
             "author": {
                 "name": "Don Richards"
             },
             "tags": [
             ],
-            "date_published": "2020-07-06T10:12:11-04:00",
-            "date_modified": "2020-07-06T10:12:11-04:00"
+            "date_published": "2020-07-06T16:31:06-04:00",
+            "date_modified": "2020-07-06T16:31:06-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/community-and-sustainability.html",
@@ -175,8 +175,8 @@
                    "Google",
                    "Delta"
             ],
-            "date_published": "2020-07-06T10:12:11-04:00",
-            "date_modified": "2020-07-06T10:12:11-04:00"
+            "date_published": "2020-07-06T16:31:06-04:00",
+            "date_modified": "2020-07-06T16:31:06-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/deployment-options.html",
@@ -197,8 +197,8 @@
                    "VM",
                    "ISLE"
             ],
-            "date_published": "2020-07-06T10:12:11-04:00",
-            "date_modified": "2020-07-06T10:12:11-04:00"
+            "date_published": "2020-07-06T16:31:06-04:00",
+            "date_modified": "2020-07-06T16:31:06-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/technical-infrastructure.html",
@@ -219,8 +219,8 @@
                    "GB",
                    "CPU"
             ],
-            "date_published": "2020-07-06T10:12:11-04:00",
-            "date_modified": "2020-07-06T10:12:11-04:00"
+            "date_published": "2020-07-06T16:31:06-04:00",
+            "date_modified": "2020-07-06T16:31:06-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/rights-and-restrictions.html",
@@ -238,8 +238,8 @@
                    "access",
                    "WebAC"
             ],
-            "date_published": "2020-07-06T10:12:11-04:00",
-            "date_modified": "2020-07-06T10:12:11-04:00"
+            "date_published": "2020-07-06T16:31:06-04:00",
+            "date_modified": "2020-07-06T16:31:06-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/cloud-hosting-solution.html",
@@ -257,8 +257,8 @@
                    "hosting",
                    "cloud"
             ],
-            "date_published": "2020-07-06T10:12:11-04:00",
-            "date_modified": "2020-07-06T10:12:11-04:00"
+            "date_published": "2020-07-06T16:31:06-04:00",
+            "date_modified": "2020-07-06T16:31:06-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/next-level-discoverability-solutions.html",
@@ -276,8 +276,8 @@
                    "LTR",
                    "AI"
             ],
-            "date_published": "2020-07-06T10:12:11-04:00",
-            "date_modified": "2020-07-06T10:12:11-04:00"
+            "date_published": "2020-07-06T16:31:06-04:00",
+            "date_modified": "2020-07-06T16:31:06-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/metadata-and-metadata-sharing.html",
@@ -302,8 +302,8 @@
                    "JSON",
                    "API"
             ],
-            "date_published": "2020-07-06T10:12:11-04:00",
-            "date_modified": "2020-07-06T10:12:11-04:00"
+            "date_published": "2020-07-06T16:31:06-04:00",
+            "date_modified": "2020-07-06T16:31:06-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/preservation.html",
@@ -316,8 +316,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-06T10:12:11-04:00",
-            "date_modified": "2020-07-06T10:12:11-04:00"
+            "date_published": "2020-07-06T16:31:06-04:00",
+            "date_modified": "2020-07-06T16:31:06-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/uploading-ingesting-and-migration.html",
@@ -338,8 +338,8 @@
                    "MODS",
                    "CSV"
             ],
-            "date_published": "2020-07-06T10:12:11-04:00",
-            "date_modified": "2020-07-06T10:12:11-04:00"
+            "date_published": "2020-07-06T16:31:06-04:00",
+            "date_modified": "2020-07-06T16:31:06-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/other-content-types.html",
@@ -365,8 +365,8 @@
                    "PDF",
                    "Moore"
             ],
-            "date_published": "2020-07-06T10:12:11-04:00",
-            "date_modified": "2020-07-06T10:12:11-04:00"
+            "date_published": "2020-07-06T16:31:06-04:00",
+            "date_modified": "2020-07-06T16:31:06-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/images-books-and-pages.html",
@@ -390,8 +390,8 @@
                    "Mirador",
                    "BigData"
             ],
-            "date_published": "2020-07-06T10:12:11-04:00",
-            "date_modified": "2020-07-06T10:12:11-04:00"
+            "date_published": "2020-07-06T16:31:06-04:00",
+            "date_modified": "2020-07-06T16:31:06-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/general-content-models.html",
@@ -412,8 +412,8 @@
                    "PCDM",
                    "BigData"
             ],
-            "date_published": "2020-07-06T10:12:11-04:00",
-            "date_modified": "2020-07-06T10:12:11-04:00"
+            "date_published": "2020-07-06T16:31:06-04:00",
+            "date_modified": "2020-07-06T16:31:06-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/content-modeling.html",
@@ -430,8 +430,8 @@
                    "microservice",
                    "content modeling"
             ],
-            "date_published": "2020-07-06T10:12:11-04:00",
-            "date_modified": "2020-07-06T10:12:11-04:00"
+            "date_published": "2020-07-06T16:31:06-04:00",
+            "date_modified": "2020-07-06T16:31:06-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/background.html",
@@ -447,8 +447,8 @@
                    "Drupal 8 ",
                    "Background"
             ],
-            "date_published": "2020-07-06T10:12:11-04:00",
-            "date_modified": "2020-07-06T10:12:11-04:00"
+            "date_published": "2020-07-06T16:31:06-04:00",
+            "date_modified": "2020-07-06T16:31:06-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html",
@@ -462,8 +462,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-06T10:12:11-04:00",
-            "date_modified": "2020-07-06T10:12:11-04:00"
+            "date_published": "2020-07-06T16:31:06-04:00",
+            "date_modified": "2020-07-06T16:31:06-04:00"
         }
     ]
 }
