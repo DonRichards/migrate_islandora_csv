@@ -38,7 +38,7 @@
 </url>
 <url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/general-content-models.html</loc>
-<lastmod>2020-06-19T14:25:04-04:00</lastmod>
+<lastmod>2020-07-07T11:23:13-04:00</lastmod>
 <image:image>
 <image:loc>https://donrichards.github.io/migrate_islandora_csv/media/posts/4/PCDM_diagram.jpg</image:loc>
 <image:title><![CDATA[Islandora 8 PCDM diagram]]></image:title>
@@ -46,7 +46,7 @@
 </url>
 <url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/images-books-and-pages.html</loc>
-<lastmod>2020-06-24T08:27:18-04:00</lastmod>
+<lastmod>2020-07-07T11:22:30-04:00</lastmod>
 <image:image>
 <image:loc>https://donrichards.github.io/migrate_islandora_csv/media/posts/5/CONTENT-MODELING-DRUPAL8.jpg</image:loc>
 <image:title><![CDATA[Book viewer example]]></image:title>
@@ -70,7 +70,7 @@
 </url>
 <url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/metadata-and-metadata-sharing.html</loc>
-<lastmod>2020-06-29T13:21:38-04:00</lastmod>
+<lastmod>2020-07-07T11:46:27-04:00</lastmod>
 </url>
 <url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/mods-to-rdf.html</loc>
@@ -94,6 +94,10 @@
 </url>
 <url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/page/2/</loc>
+</url>
+<url>
+<loc>https://donrichards.github.io/migrate_islandora_csv/pcdm.html</loc>
+<lastmod>2020-07-07T11:39:14-04:00</lastmod>
 </url>
 <url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/preservation.html</loc>
