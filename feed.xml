@@ -10,6 +10,152 @@
     <id>https://donrichards.github.io/migrate_islandora_csv</id>
 
     <entry>
+        <title>Vendors</title>
+        <author>
+            <name>Don Richards</name>
+        </author>
+        <link href="https://donrichards.github.io/migrate_islandora_csv/vendors.html"/>
+        <id>https://donrichards.github.io/migrate_islandora_csv/vendors.html</id>
+
+        <updated>2020-07-08T18:25:25-04:00</updated>
+            <summary>
+                <![CDATA[
+                    Islandora has many vendors and due to the nature of how Islandora 8 operates any vendor capable of supplying services for Drupal 8 content should&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>Islandora has many vendors and due to the nature of how Islandora 8 operates any vendor capable of supplying services for Drupal 8 content should be compatable. </p>
+<hr>
+<h2 id="vendors-official-members">Vendors (official members)</h2>
+<p><a href="http://discoverygarden.ca"><figure class="post__image"><img loading="lazy" src="https://islandora.ca/sites/default/files/inline-images/discgarden_0.png" data-is-external-image="true"  alt="discoverygarden" /></figure></a></p>
+<blockquote>
+<p>Discoverygarden has been implementing Islandora systems for organizations around the world since 2010. We have worked with clients ranging from Universities, Museums, Public Libraries, Law Libraries, Manufacturing, Government, Enterprise, Archives and more.  We offer a full range of services from production installs, training, custom development, metadata mapping, data modelling, support and hosting.  We have also developed a deep expertise in migrating content from other systems and integrating Islandora with a myriad of other systems. For those of you looking for an out of the box solution;  Discoverygarden’s OnDemand Software as a Service provides a quick Islandora environment so you can concentrate on managing your content, while we do the rest.  Every member of the team has a deep understanding of data management and can help at any point of the process, including those still in the very early stages. Our consultants can meet you on site or remotely to analyze your data, your needs, internal workflows and advise you on how to move forward. For more visit discoverygarden.ca or contact us at <a href="mailto:info@discoverygarden.ca">info@discoverygarden.ca</a></p>
+</blockquote>
+<p><a href="http://discoverygarden.ca/">discoverygarden, Inc.</a> | 155 Queen St. Suite 101 | Charlottetown, PE | C1A 4B4 | 902.367.3851 | <a href="mailto:info@discoverygarden.ca">info@discoverygarden.ca</a></p>
+<p><a href="http://www.lyrasis.org"><figure class="post__image"><img loading="lazy" src="https://islandora.ca/sites/default/files/LYR_logo.jpg" data-is-external-image="true"  alt="LYRASIS" /></figure></a></p>
+<blockquote>
+<p>LYRASIS is your trusted non-profit partner for hosting your digital assets in Islandora, a proven and sustainable open source digital asset management solution. Islandora is one component of a suite of open-source hosting services we provide, which includes ArchivesSpace and CollectionSpace. We offer affordable services from a dedicated team of mission-driven professionals who understand your needs and actively contribute to the larger open software community.</p>
+</blockquote>
+<p><a href="http://www.lyrasis.org">LYRASIS</a> | 1438 West Peachtree Street, NW Suite 200 | Atlanta, GA | 30309 | 800.999.8558</p>
+<p><a href="http://born-digital.com"><figure class="post__image"><img loading="lazy" src="https://islandora.ca/sites/default/files/images/born-digital.png" data-is-external-image="true"  alt="Born-Digital" /></figure></a></p>
+<blockquote>
+<p>Born-Digital offers a full suite of sustainable and secure Islandora solutions. We create and manage custom tools which allow archivists, librarians and digital curators to focus on what they do best: preserving, publicizing, and providing public access to their collections.</p>
+</blockquote>
+<blockquote>
+<p>For existing Islandora installs we start with a comprehensive audit, make recommendations for infrastructure and application stability and security, then set up a recurring maintenance and support retainer. We also offer “continuous enhancement” retainers, as well as engage for single custom development projects.</p>
+</blockquote>
+<blockquote>
+<p>For clients interested in an initial install or migration, again we start with an audit of existing systems and digital collections, as well as on-staff capabilities. We present a plan which dovetails with our client’s team, augmenting their expertise and availability. Sometimes we shoulder the full project effort, but we have found that closer to an 80/20 split not only keeps project costs down, but also ensures that our clients are comfortable with their new systems by the time the site launches.</p>
+</blockquote>
+<p><a href="http://born-digital.com">Born-Digital</a> | 84 Russell Street | Hadley, MA | 01035 |413.259.6777 | <a href="mailto:info@born-digital.com">info@born-digital.com</a></p>
+<p><a href="https://www.echidna.ca/islandora"><figure class="post__image"><img loading="lazy" src="https://islandora.ca/sites/default/files/images/digitalechidna.png" data-is-external-image="true"  alt="Digital Echidna" /></figure></a></p>
+<blockquote>
+<p>Essential services to harmonize your digital world.</p>
+</blockquote>
+<blockquote>
+<p>Our speciality is making award-winning front-end experiences in Drupal and bringing Fedora Commons data objects to life with visual interfaces in Islandora. Preserve, curate, and share: our team will work with you to assess and understand the goals of your digital asset repository and the needs of its users to produce an attractive, cohesive, and intuitive user portal with a smart navigational strategy that drives discoverability of content. Our office, which houses over 70 designers, developers, and content specialists is located in central Canada - London, ON - and we serve clients throughout North America. </p>
+</blockquote>
+<blockquote>
+<p>Learn more about Digital Echidna from our client reviews on Clutch.co, visiting our online work portfolio, or checking out our Islandora blog series.  </p>
+</blockquote>
+<p><a href="https://www.echidna.ca/islandora">Digital Echidna</a> | 148 York Street | London, ON | N6A 1A9 | 519.858.9604 | <a href="mailto:andrew@echidna.ca">andrew@echidna.ca</a></p>
+<p><a href="http://agilehumanities.ca"><figure class="post__image"><img loading="lazy" src="https://islandora.ca/sites/default/files/images/agile_logotype_v001.png" data-is-external-image="true"  alt="Agile Humanities Agency" /></figure></a></p>
+<blockquote>
+<p>Agile Humanities Agency draws on a decade of experience with the Islandora platform and its international community. We typically work with clients across the arts, humanities, and social sciences and partner with publishers, galleries, libraries, archives, and museums.</p>
+</blockquote>
+<blockquote>
+<p>We specialize in open-source development and custom design for an array of content management systems, data repositories, and platforms. As a member of the Islandora Foundation, we help to build and maintain the community’s codebase. We also provide ongoing hosting and support services.</p>
+</blockquote>
+<blockquote>
+<p>Our agency practices an iterative, design-driven philosophy, an agile practice that allows us to adapt quickly to user and stakeholder feedback. Our expertise in accessible usability/UX design has proven critical to a client base with complex compliance requirements and specific community standards.</p>
+</blockquote>
+<blockquote>
+<p>We form geographically distributed “agile networks” among clients and rapidly assembled teams of programmers, designers, information and systems architects, and project managers. No agile network is exactly alike; each one is a custom fit. Our networks are global, so we’re accustomed to working across continents, oceans, and time zones. We cultivate a culture of remote collaboration.</p>
+</blockquote>
+<p><a href="http://agilehumanities.ca">Agile Humanities Agency</a> | 889 Queen Street West | Toronto, ON | 416.277.5696 | <a href="mailto:contact@agilehumanities.ca">contact@agilehumanities.ca</a></p>
+<hr>
+<h2 id="vendors-non-members">Vendors (non-members)</h2>
+<p><a href="https://www.catalyst.net.nz/products/islandora"><figure class="post__image"><img loading="lazy" src="https://www.catalyst.net.nz/sites/all/themes/sauce/images/catalyst-logo.svg" data-is-external-image="true"  alt="Catalyst IT Limited" /></figure></a></p>
+<blockquote>
+<p>Catalyst IT Limited has offices in New Zealand, Australia and the UK, Catalyst is a New Zealand owned company. Services include:</p>
+</blockquote>
+<ul>
+<li>Consultancy – consulting from strategic planning through to solution design.</li>
+<li>Systems integration – seamless integration of the best-fit solutions</li>
+<li>Open Source application design and development – analysis, design and implementation of business applications, web enablement of business applications.</li>
+<li>Design - Catalyst’s design and development teams provide a depth of understanding that encompasses the full software development life cycle.</li>
+<li>Training services - Online eLearning systems and provide training expertise across open source technologies.</li>
+<li>Managed hosting – professional 24 x 7 managed hosting.</li>
+<li>Ongoing support - A comprehensive support services to organisations wanting to deploy open source software for business-critical applications.</li>
+</ul>
+<p><a href="https://www.catalyst.net.nz/products/islandora">Catalyst IT Limited</a> | Level 6, Catalyst House 150 Willis St, Wellington 6011 | New Zealand | 64.4.499.2267 | <a href="mailto:enquiries@catalyst.net.nz">enquiries@catalyst.net.nz</a></p>
+
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Quick Reference Material locations</title>
+        <author>
+            <name>Don Richards</name>
+        </author>
+        <link href="https://donrichards.github.io/migrate_islandora_csv/quick-document-design-key.html"/>
+        <id>https://donrichards.github.io/migrate_islandora_csv/quick-document-design-key.html</id>
+
+        <updated>2020-07-08T18:25:25-04:00</updated>
+            <summary>
+                <![CDATA[
+                    Reference Material locationsDiagram a sample image object describing:Object modeling in PCDMData stored in Fedora #4Data stored in MySQL/PostgresData stored elsewhereDocument and diagram migration process of&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <h2 id="reference-material-locations">Reference Material locations</h2>
+<ol>
+<li>Diagram a sample image object describing:<ul>
+<li><a href="/pcdm.html">Object modeling in PCDM</a></li>
+<li><a href="https://donrichards.github.io/migrate_islandora_csv/preservation.html#js-header">Data stored in Fedora</a> #4</li>
+<li><a href="">Data stored in MySQL/Postgres</a></li>
+<li><a href="/how-to-access-specific-data">Data stored elsewhere</a></li>
+</ul>
+</li>
+<li>Document and diagram migration process of our current Fedora 3 instance to the new platform<ul>
+<li><a href="/uploading-ingesting-and-migration.html">Recommend existing tools or utilities to leverage for migration</a></li>
+</ul>
+</li>
+<li>Document potential migration solutions for leveraging our linked-data platform ready metadata<ul>
+<li><a href="/mods-to-rdf.html">Describe how mods:subject/mods:valueURI/[mods:topic] can be leveraged and mapped during migration</a></li>
+<li><a href="/mods-to-rdf.html">Describe how mods:accessCondition/xlink:href can be leveraged and mapped during migrations</a></li>
+<li><a href="/mods-to-rdf.html">Describe how mods:name/mods:valueURI/[mods:namePart] can be leveraged and mapped during migration</a></li>
+</ul>
+</li>
+<li><a href="/mods-to-rdf.html">Document out-of-the-box metadata mapping from MODS to RDF</a></li>
+<li><a href="/oai-pmh-and-doi-minting.html">Document out-of-the-box mapping of our migrated metadata to OAI-PMH</a></li>
+<li>Document potential cloud-hosted solutions<ul>
+<li><a href="/cloud-hosting-solution.html">List potential platforms</a></li>
+<li><a href="/vendors">List contact information</a></li>
+</ul>
+</li>
+<li><a href="/cas-authentication.html">Document potential CAS authentication solution</a></li>
+<li>Document how the project’s community is structured:<ul>
+<li><a href="/background.html">How do you become a partner?</a></li>
+<li><a href="/background.html">How many partners are there?</a></li>
+<li><a href="/background.html">Are there fees involved?</a></li>
+<li><a href="/background.html">How is governance and decision making handled?</a></li>
+</ul>
+</li>
+<li>Document how the platform could be leveraged as an institutional repository:<ul>
+<li><a href="/institutional-repository.html">Are institutions already using it for IR functionality?</a></li>
+<li><a href="/institutional-repository.html">If so, who?</a></li>
+<li><a href="/institutional-repository.html">If possible, describe which of the preferred IR functions are already in place.</a></li>
+</ul>
+</li>
+</ol>
+
+            ]]>
+        </content>
+    </entry>
+    <entry>
         <title>How to access specific data</title>
         <author>
             <name>Don Richards</name>
@@ -17,7 +163,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/how-to-access-specific-data.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/how-to-access-specific-data.html</id>
 
-        <updated>2020-07-08T17:16:39-04:00</updated>
+        <updated>2020-07-08T18:25:25-04:00</updated>
             <summary>
                 <![CDATA[
                     How to find things in FedoraThe map between Drupal URIs and their corresponding Fedora URIs is stored in a service called Gemini. An Islandora “pseudo-field”&hellip;
@@ -63,7 +209,7 @@ Under namespaces (<a href="http://localhost:8080/bigdata/#namespaces">http://loc
             <category term="WebAC"/>
             <category term="PCDM"/>
 
-        <updated>2020-07-08T17:16:39-04:00</updated>
+        <updated>2020-07-08T18:25:25-04:00</updated>
             <summary>
                 <![CDATA[
                     The Portland Common Data Model (PCDM) is a flexible, extensible domain model that is intended to underlie a wide array of repository and DAMS applications.
@@ -153,7 +299,7 @@ Under namespaces (<a href="http://localhost:8080/bigdata/#namespaces">http://loc
         <link href="https://donrichards.github.io/migrate_islandora_csv/cas-authentication.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/cas-authentication.html</id>
 
-        <updated>2020-07-08T17:16:39-04:00</updated>
+        <updated>2020-07-08T18:25:25-04:00</updated>
             <summary>
                 <![CDATA[
                      CAS authentication protocol is required by the university as the primary single-sign-on technology to use with the UTK’s authentication service. Here are some of&hellip;
@@ -183,7 +329,7 @@ Under namespaces (<a href="http://localhost:8080/bigdata/#namespaces">http://loc
         <link href="https://donrichards.github.io/migrate_islandora_csv/mods-to-rdf.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/mods-to-rdf.html</id>
 
-        <updated>2020-07-08T17:16:39-04:00</updated>
+        <updated>2020-07-08T18:25:25-04:00</updated>
             <summary>
                 <![CDATA[
                     TL; DRIslandora 8 used the MODS to RDF Mapping Recommendations document from Samvera MODS to RDF Working Group to create initial mappings. Islandora consist of&hellip;
@@ -493,7 +639,7 @@ fieldMappings:
         <link href="https://donrichards.github.io/migrate_islandora_csv/ingestingmigrating.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/ingestingmigrating.html</id>
 
-        <updated>2020-07-08T17:16:39-04:00</updated>
+        <updated>2020-07-08T18:25:25-04:00</updated>
             <summary>
                 <![CDATA[
                     During ingests/migrations there are several items that has been covered by different sections of this document. It helps to have a working knowledge of linked&hellip;
@@ -531,7 +677,7 @@ fieldMappings:
             <category term="files"/>
             <category term="CSV"/>
 
-        <updated>2020-07-08T17:16:39-04:00</updated>
+        <updated>2020-07-08T18:25:25-04:00</updated>
             <summary>
                 <![CDATA[
                     Uploading is part of the ingest process, information and modules specific to uploading can be found here. This can be done either with the UI&hellip;
@@ -571,7 +717,7 @@ fieldMappings:
         <link href="https://donrichards.github.io/migrate_islandora_csv/step-by-step-setup-ir.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/step-by-step-setup-ir.html</id>
 
-        <updated>2020-07-08T17:16:39-04:00</updated>
+        <updated>2020-07-08T18:25:25-04:00</updated>
             <summary>
                 <![CDATA[
                     This will cover these topic The simpliest way to implement a highly customizable submit, review, accept, publish workflow is to leverage Drupal’s Content Moderation. Most&hellip;
@@ -735,7 +881,7 @@ fieldMappings:
         <link href="https://donrichards.github.io/migrate_islandora_csv/book-and-large-image-viewer.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/book-and-large-image-viewer.html</id>
 
-        <updated>2020-07-08T17:16:39-04:00</updated>
+        <updated>2020-07-08T18:25:25-04:00</updated>
             <summary>
                 <![CDATA[
                     IIIF (International Image Interoperability Framework) is a set of specifications that provides interoperability of image-based collections across platforms. What this means for a repository platform&hellip;
@@ -786,7 +932,7 @@ fieldMappings:
             <category term="Citation"/>
             <category term="Bibliography"/>
 
-        <updated>2020-07-08T17:16:39-04:00</updated>
+        <updated>2020-07-08T18:25:25-04:00</updated>
             <summary>
                 <![CDATA[
                      Drupal for higher education is a large industry. There are several top universities that have been using Drupal for a veriety of acedemic purposes.
@@ -937,7 +1083,7 @@ entire repository; can add new collections.</li>
         <link href="https://donrichards.github.io/migrate_islandora_csv/bibliography-and-citation.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/bibliography-and-citation.html</id>
 
-        <updated>2020-07-08T17:16:39-04:00</updated>
+        <updated>2020-07-08T18:25:25-04:00</updated>
             <summary>
                 <![CDATA[
                     Drupal is a very popular and well-known CMS for educational websites. And it’s very important that Drupal has tools to deal with bibliography and citations.
@@ -978,7 +1124,7 @@ entire repository; can add new collections.</li>
         <link href="https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html</id>
 
-        <updated>2020-07-08T17:16:39-04:00</updated>
+        <updated>2020-07-08T18:25:25-04:00</updated>
             <summary>
                 <![CDATA[
                     OAI-PMHRepositories can expose or harvest metadata, or both. OAI-PMH specifies six services which can be invoked over HTTP(s). The OAI-DC metadata format is aided by&hellip;
@@ -1140,7 +1286,7 @@ entire repository; can add new collections.</li>
             <category term="Google"/>
             <category term="Delta"/>
 
-        <updated>2020-07-08T17:16:39-04:00</updated>
+        <updated>2020-07-08T18:25:25-04:00</updated>
             <summary>
                 <![CDATA[
                     230+ public sites, 1414 listserv members, 144 GitHub members, 28 Committers, 25+ Contributed Modules, 30+ Foundation members, 12 Interest Groups, 10 Community-led software releases, 19&hellip;
@@ -1210,7 +1356,7 @@ entire repository; can add new collections.</li>
             <category term="VM"/>
             <category term="ISLE"/>
 
-        <updated>2020-07-08T17:16:39-04:00</updated>
+        <updated>2020-07-08T18:25:25-04:00</updated>
             <summary>
                 <![CDATA[
                     For self hosted soltutions there are 2 basic deployment options; Ansible(a style we’re currently using) or deploying through Docker images. All of these options can&hellip;
@@ -1248,7 +1394,7 @@ entire repository; can add new collections.</li>
             <category term="GB"/>
             <category term="CPU"/>
 
-        <updated>2020-07-08T17:16:39-04:00</updated>
+        <updated>2020-07-08T18:25:25-04:00</updated>
             <summary>
                 <![CDATA[
                     This page’s layout reflects the PDF template and is intended to be a breif description of each area specified in that document. This is a&hellip;
@@ -1259,6 +1405,7 @@ entire repository; can add new collections.</li>
                 <p>This page’s layout reflects the PDF template and is intended to be a breif description of each area specified in that document.</p>
 <ol>
 <li>Drupal 8 completely supports CAS authentication [<a href="https://www.drupal.org/project/cas">link</a>]. Please see <a href="/cas-authentication">CAS Authentication</a> page for more information.</li>
+<li>Drupal 8 supports various web analytics integrations such as <a href="https://www.drupal.org/project/google_analytics">google analytics</a> and <a href="https://www.drupal.org/project/matomo">Matomo</a>. For privacy reasons, Islandora 8 integrates Matomo web analytics platforms by default and can be accessed here: <a href="http://localhost:8000/matomo">http://localhost:8000/matomo</a>. The default configurations can be found in <a href="http://localhost:8000/admin/config/system/matomo">http://localhost:8000/admin/config/system/matomo</a>. You can login to the Matomo server using username <code>admin</code> and password <code>islandora</code> (by default). For more information see <a href="https://islandora.github.io/documentation/user-documentation/usage-stats/">Usage Stats</a>.The dashboard will look like this: <figure class="post__image"><img loading="lazy" src="https://islandora.github.io/documentation/assets/usage_stats_dashboard.jpg" data-is-external-image="true"  alt="usage stats dashboard" /></figure></li>
 <li>Islandora 8 provides several different reports out-of-the-box. From microservice stats to usage stats. There are several options and are highly configurable. Here is an example of Mark Jordan’s module that provides a collection of graphical reports on various aspects of an Islandora repository. <figure class="post__image"><img loading="lazy" src="https://github.com/mjordan/islandora_repository_reports/raw/master/docs/images/random_pie.png" data-is-external-image="true"  alt="pie chart" /></figure> <figure class="post__image"><img loading="lazy" src="https://github.com/mjordan/islandora_repository_reports/raw/master/docs/images/random_bar.png" data-is-external-image="true"  alt="bar chart" /></figure></li>
 <li>“Supports logging of manual dashboard processes by authenticated users” <strong>I am uncertain as to what this is referring to at this time.</strong></li>
 <li>Like any other web servers, Islandora 8 can be hosted locally. The biggest benefits are leveraging the power of CPU multithreading and large memory size utilization are the most cost effective. However, self hosted hardware costs money to maintain and upgrade. Please see <a href="cloud-hosting-solution.html">Cloud Hosting</a> for other options.</li>
@@ -1379,7 +1526,7 @@ entire repository; can add new collections.</li>
             <category term="access"/>
             <category term="WebAC"/>
 
-        <updated>2020-07-08T17:16:39-04:00</updated>
+        <updated>2020-07-08T18:25:25-04:00</updated>
             <summary>
                 <![CDATA[
                     Rightsstatements.org is not specifically discussed in the documentation. Although extensive URI integration for controlled access terms is documented on the site, an assessment by the&hellip;
@@ -1408,7 +1555,7 @@ entire repository; can add new collections.</li>
             <category term="hosting"/>
             <category term="cloud"/>
 
-        <updated>2020-07-08T17:16:39-04:00</updated>
+        <updated>2020-07-08T18:25:25-04:00</updated>
             <summary>
                 <![CDATA[
                     This study set out to investigate the feasibility of hosting a digital repository system in a managed way in a private cloud environment. The system&hellip;
@@ -1459,7 +1606,7 @@ entire repository; can add new collections.</li>
             <category term="LTR"/>
             <category term="AI"/>
 
-        <updated>2020-07-08T17:16:39-04:00</updated>
+        <updated>2020-07-08T18:25:25-04:00</updated>
             <summary>
                 <![CDATA[
                     A search/discoverability enhancement “Learning to Rank (LTR) is a class of techniques that apply supervised machine learning (ML) to solve ranking problems.“ [link] LTR is&hellip;
@@ -1503,15 +1650,39 @@ entire repository; can add new collections.</li>
             <category term="JSON"/>
             <category term="API"/>
 
-        <updated>2020-07-08T17:16:39-04:00</updated>
+        <updated>2020-07-08T18:25:25-04:00</updated>
             <summary>
                 <![CDATA[
-                    RDF Mapping; “In Islandora, the JSON-LD Module transforms nodes (or media, or taxonomy terms) into the RDF that is synced into Fedora and the Triplestore.
+                    In Islandora 8, metadata is stored in Drupal, in fields attached to entities (nodes or media). This allows us to interact with metadata (add, edit,&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
-                <ol>
+                <p>In Islandora 8, metadata is stored in Drupal, in fields attached to entities (nodes or media). This allows us to interact with metadata (add, edit, remove, display, index in a search engine…) almost entirely using standard Drupal processes. If exporting this metadata to Fedora and/or a triplestore, the values are serialized to RDF using mappings that can be set for each bundle. Islandora 8 digital objects are comprised of Drupal nodes for descriptive metadata, Drupal media for technical metadata, and Drupal files for the binary objects. This section describes how Islandora 8 uses and extends Drupal fields to manage descriptive metadata. For more information on <a href="https://islandora.github.io/documentation/user-documentation/resource-nodes/">Islandora Documentation on resource nodes</a>.</p>
+<h3 id="7x-migration-note-what-about-the-xml">7.x Migration Note: What about the XML?</h3>
+<p>In 7.x, metadata were usually stored using an XML schema such as MODS or DC, as datastreams attached to an object. In Islandora 8, metadata is stored as fields. This means we are breaking out individual elements from a hierarchical structure to being individual independent values. Where some hierarchy or field grouping is necessary, this can be done in Drupal using Paragraphs, a widely-used Drupal contrib module. At the moment (Nov 2019) we are working on the technical challenge of mapping data from paragraphs into RDF in Fedora. The Metadata Interest Group has developed a default mapping (spreadsheet, guidance document) which provides a basic, yet customizable, transform between MODS metadata and Drupal fields in Islandora Defaults. It is suggested that individual institutions customize the mapping to meet their unique needs.</p>
+<p>That said, if keeping the “legacy” XML metadata from 7.x is important to you, it can be attached to an Islandora 8 resource node as a Media entity. However, there is no mechanism in Islandora 8 for editing XML in a user-friendly way.</p>
+<h3 id="content-types">Content Types</h3>
+<p>In Drupal, Nodes come in different sub-types called Content Types (e.g. Article, Basic page, Repository item). Content types contain fields, and configurations for how those fields can be edited or displayed. Each content type is essentially a metadata profile that can be used for a piece of web content, or to describe a digital resource. For each field in a content type, an administrator can configure how data is entered, how it can be displayed, how many values can be stored, and how long the value can be. Some configurations, such as data entry and display, can be changed at any time. Others, such as how long a value can be or what options are available in a select list, cannot be changed once content has been created without first deleting all content of that type. However, fields can be added to existing content types with no consequence.</p>
+<p>Not all content types in your Drupal site need be Islandora “resource nodes”. A “resource node” content type will likely have behaviours (such as syncing to Fedora or causing derivatives to be generated) associated with it. This configuration, and the communication to the user of which content types are and are not considered to be Islandora resource nodes is left to the discretion of the site manager. In Islandora, a “resource node” is usually considered a descriptive record for “a thing”, and is conceptually similar to an “Islandora Object” in 7.x, i.e. a “Fedora Object” in Fedora 3.x and below.</p>
+<h3 id="vocabularies">Vocabularies</h3>
+<p>In Drupal, Taxonomy Vocabularies (or simply Vocabularies) are also entity sub-types that define a set of fields and their configurations. Whereas instances of content types are called nodes, items in a vocabulary are called taxonomy terms (or simply terms). Traditionally, taxonomy terms are used to classify content in Drupal. For instance, the Article content type includes a field field_tags that can refer to terms in the Tags vocabulary.</p>
+<p>Islandora (through the Islandora Core Feature) creates the ‘Islandora Models’ vocabulary which includes the terms ‘Audio’, ‘Binary’, ‘Collection’, ‘Digital Document’, ‘Image’, ‘Page’, ‘Paged Content’, ‘Publication Issue’, and ‘Video’. Islandora Defaults provides contexts that cause certain actions (e.g. derivatives to happen, or blocks to appear) based on which term is used.</p>
+<p>The Controlled Access Terms module provides additional vocabularies: - Corporate Body - Country - Family - Form - Genre - Geographic Location - Language - Person - Resource Types - Subject</p>
+<p>Each of these vocabularies has its own set of fields allowing repositories to further describe them. The Repository Item content type has fields that can reference terms in these vocabularies. See ‘Entity Reference fields’ in the ‘Field Types’ section below.</p>
+<p>The vocabularies provided by default are a starting point, and a repository administrator can create whatever vocabularies are desired.</p>
+<h3 id="field-types">Field Types</h3>
+<p>Fields are where Drupal entities store their data. There are different types of fields including boolean, datetime, entity reference, integer, string, text, and text_with_summary. These field types also have widgets (controlling how data is entered) and formatters (controlling how data is displayed). The Drupal 8 documentation on FieldTypes, FieldWidgets, and FieldFormatters includes a list of the core field types. Modules can provide their own field types, formatters, and widgets. The Controlled Access Terms module provides two additional types for use with Islandora: ETDF, and Typed Relation. These are described below.</p>
+<p>Entity Reference fields are a special type of field built into Drupal that creates a relationship between two entities. The field’s configuration options include which kind of entities can be referenced. The ‘Repository Item’ content type, provided by islandora_defaults, includes several entity reference fields that reference vocabularies defined by the islandora and controlled_access_terms modules.</p>
+<p>The ‘Member Of’ field is an entity reference field, defined by Islandora, which is the Islandora way of imposing a hierarchical order on resource nodes. This can be used to show membership in a collection, for pages that are members of a paged item, and for members of a complex object.</p>
+<h3 id="edtf">EDTF</h3>
+<p>The EDTF field type is for recording dates in Extended Date Time Format, which is a format based off of the hyphenated form of ISO 8601 (e.g. 1991-02-03 or 1991-02-03T10:00:00), but also allows expressions of different granularity and uncertainty. The Default EDTF widget has a validator that only allows strings that conform to the EDTF standard. The Default EDTF formatter allows these date string to be displayed in a variety of human readable ways, including big- or little-endian, and presenting months as numbers, abbreviations, or spelling month names out in full.</p>
+<p>Example of the same EDTF dates displayed using little-endian format: 
+<figure class="post__image"><img loading="lazy" src="https://islandora.github.io/documentation/assets/metadata_edtf_display.png" data-is-external-image="true"  alt="Example EDTF values" /></figure></p>
+<h3 id="typed-relation">Typed Relation</h3>
+<p>A Typed Relation field is an extension of Drupal’s Entity Reference field, which allows the user to qualify the relation. It was created for describing a resource’s contributors (modelled as taxonomy terms or some other Drupal entities) as well as their roles in this resource node (such as ‘author’, ‘illustrator’, or ‘architect’). With only Drupal’s Entity Reference fields, we would need individual fields for ‘author’, ‘illustrator’, ‘architect’, and any other roles that may need to be made available. Using a Typed Relation field, we can have one field for “Contributors” and let the user pick the role from a dropdown list.</p>
+<h3 id="key-features">Key features</h3>
+<ol>
 <li>RDF Mapping; “In Islandora, the JSON-LD Module transforms nodes (or media, or taxonomy terms) into the RDF that is synced into Fedora and the Triplestore. It uses RDF mappings, a concept defined by the RDF Module, and exposes them through the REST API” (RDF Generation, n.d.).  <figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/85457087-a014c580-b56d-11ea-843d-780d6b13cd27.png" data-is-external-image="true"  alt="Mapping" /></figure><ol start="2">
 <li>“The RDF Module is part of Drupal Core, but has no official documentation. The RDF Module embeds RDFa, a form of linked data, within the Drupal-generated HTML when you load the web page for a node, media, or taxonomy term. Official line is that this will allow Google to provide “rich snippets” such as star-ratings, contact info, and business hours.” [<a href="https://islandora.github.io/documentation/islandora/rdf-mapping/">link</a>]</li>
 <li>A custom module rdfui exists, and is installed-but-not-enabled on boxes provisioned by the islandora-playbook. We don’t use it because it is very rudimentary and limited to the schema.org vocabulary. </li>
@@ -1552,7 +1723,7 @@ entire repository; can add new collections.</li>
         <link href="https://donrichards.github.io/migrate_islandora_csv/preservation.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/preservation.html</id>
 
-        <updated>2020-07-08T17:16:39-04:00</updated>
+        <updated>2020-07-08T18:25:25-04:00</updated>
             <summary>
                 <![CDATA[
                     Islandora 8 utilizes Harvard’s File Information Tool Set (FITS), Fixity auditing, bag exporting, and preservation reporting for preservation (Jordan, 2019). a. The migration process currently&hellip;
@@ -1589,17 +1760,23 @@ entire repository; can add new collections.</li>
             <category term="MODS"/>
             <category term="CSV"/>
 
-        <updated>2020-07-08T17:16:39-04:00</updated>
+        <updated>2020-07-08T18:25:25-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/7/migration-middle-format-process.jpg" alt="Typical Drupal 8 migration" />
-                    Supports migration of objects and their associated datastreams from the Fedora 3 instance to Islandora 8. There are a couple of prebuilt solutions including a&hellip;
+                    The Migrate API is the main way to ingest batches of data into Drupal (and because Islandora 8 is Drupal, into Islandora). The Migrate module&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
                     <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/7/migration-middle-format-process.jpg" alt="Typical Drupal 8 migration" />
-                <ol>
+                <p>The Migrate API is the main way to ingest batches of data into Drupal (and because Islandora 8 is Drupal, into Islandora). The Migrate module only provides the framework, it’s up to you to create the rules that take data from a source, through a process (i.e. a mapping) to a destination. A set of these rules is called a “migration”. It has to be set up (as a Configuration Entity, either by importing a YAML file or by installing a Feature) and then it has to be run.</p>
+<p>Once a migration has been run, it will have created (or updated) a bunch of Drupal entities of one type - whether that’s taxonomy terms, nodes, files, etc. Since an Object in Islandora 8 is made up of several different Drupal entities that refer to each other, it’s going to take multiple migrations to create an Islandora object, and it’s important to perform these migrations in a sensible order.</p>
+<p>A basic Islandora object is at minimum: - a file, which holds the actual binary contents of an item - a node, which holds the descriptive metadata for an item and makes it discoverable - a media, which holds technical metadata and references the file and the node, linking the two together.</p>
+<p>A typical migration migrates files and CSV metadata into Islandora using only YAML files. This process transforms data with pipelines of processing plugins and can handle numeric, text, and entity reference fields. It can handle multiple values for fields, and even more complicated things like <code>typed_relation</code> fields. This description only scratches the surface of what can be done with the Migrate API.</p>
+<p>There’s certainly more you can do with Drupal 8’s Migrate API. There’s a plethora of source and processing plugins out there that can handle pretty much anything you throw at it. XML and JSON are fair game. You can also request sources using HTTP, so you can always point it at an existing systems REST API and go from there. If you can’t make the Migrate API’s existing workflow make the necessary changes to your data, you can expand its capabilities by writing your own process plugins. Reading the Drupal.org documentation on the Migrate API would be a good place to start.</p>
+<h3 id=""></h3>
+<ol>
 <li>Supports migration of objects and their associated datastreams from the Fedora 3 instance to Islandora 8. There are a couple of prebuilt solutions including a process that utilizes a Solr query and preconfigured mappings to achieve a full migration. Another technique utilizes the Drupal 8 module “Migrate Islandora CSV” (Lamb, 2019). As the title suggests this module utilizes a CSV file to migrate and can be generated via the Islandora 7x module “Islandora Get CSV” (Jordan, 2020).  </li>
 <li>Islandora has a few options for migrating from Islandora 7. There are 2 core migration options that Islandora supports directly; Islandora CSV migration and the migrate 7x claw (a fedora to fedora option). Another option developed was the Islandora workbench.<ul>
 <li>Islandora CSV is the preferred option for it’s simplicity. All of the migration processes in this option are both iterable and reversible. If changes need to be made to the object or it’s metadata the changes can be either updated or rolled back. This is an extremely important feature. This allows for the migration of collections of objects to be migrated with only minimal mappings (if needed). This means all RDF mapping doesn’t have to be complete to migrate the entire collection. RDF is not a flat MODS file that references some URIs. This is a problem with MODS. If a URI was to change, every MODS file must be updated to reflect the new destination. In RDF, the URI is stored and referenced as an entity and not statically in a metadata file. It’s ideal to separate out any value that will be an entity; a subject, person, place, corporation, event, etc. Regardless of the entity type the process of migration includes 3 basic steps; download the source, process it and then save it. <figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/85171208-8d805080-b23c-11ea-8e7a-f5638be0ca3f.png" data-is-external-image="true"  alt="ETL Process" /></figure></li>
@@ -1643,7 +1820,7 @@ entire repository; can add new collections.</li>
             <category term="PDF"/>
             <category term="Moore"/>
 
-        <updated>2020-07-08T17:16:39-04:00</updated>
+        <updated>2020-07-08T18:25:25-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/6/Screen-Shot-2020-06-19-at-2.44.27-PM.png" alt="Drupal 8 Add Custom Content type" />
@@ -1683,7 +1860,7 @@ entire repository; can add new collections.</li>
             <category term="Mirador"/>
             <category term="BigData"/>
 
-        <updated>2020-07-08T17:16:39-04:00</updated>
+        <updated>2020-07-08T18:25:25-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/5/CONTENT-MODELING-DRUPAL8.jpg" alt="Book viewer example" />
@@ -1723,7 +1900,7 @@ entire repository; can add new collections.</li>
             <category term="PCDM"/>
             <category term="BigData"/>
 
-        <updated>2020-07-08T17:16:39-04:00</updated>
+        <updated>2020-07-08T18:25:25-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/4/PCDM_diagram.jpg" alt="Islandora 8 PCDM diagram" />
@@ -1795,7 +1972,7 @@ entire repository; can add new collections.</li>
             <category term="microservice"/>
             <category term="content modeling"/>
 
-        <updated>2020-07-08T17:16:39-04:00</updated>
+        <updated>2020-07-08T18:25:25-04:00</updated>
             <summary>
                 <![CDATA[
                     Islandora 8’s content modeling is based on ontology with a mix of Drupal’s microservices, context, and action solutions. Islandora objects are referred to as nodes.
@@ -1840,7 +2017,7 @@ entire repository; can add new collections.</li>
             <category term="Drupal 8 "/>
             <category term="Background"/>
 
-        <updated>2020-07-08T17:16:39-04:00</updated>
+        <updated>2020-07-08T18:25:25-04:00</updated>
             <summary>
                 <![CDATA[
                     Islandora 7 is a monolithic application that glues Drupal 6/7 to Fedora 3 with an optional institutional repository (IR) addon. Islandora 7 had several pain&hellip;
@@ -1929,7 +2106,7 @@ The Role of Interest Groups(IGs): <a href="https://islandora.ca/collaborate">htt
         <link href="https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html</id>
 
-        <updated>2020-07-08T17:16:39-04:00</updated>
+        <updated>2020-07-08T18:25:25-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/1/seadragon-zoomed.jpg" alt="" />
@@ -2073,7 +2250,7 @@ The Role of Interest Groups(IGs): <a href="https://islandora.ca/collaborate">htt
 </ul>
 </li>
 </ul>
-<p>[List came from <a href="https://islandora.ca/content/islandora-8-now-available">islandora-8-now-available</a> &amp; <a href="https://www.islandora.ca/content/islandora-8-v110-now-available">islandora-8-v110-now-available</a>]</p>
+<p>[List came from <a href="https://islandora.ca/content/islandora-8-now-available">Islandora 8 Now Available</a> &amp; <a href="https://www.islandora.ca/content/islandora-8-v110-now-available">Islandora 8 v1.1.0 Now Available</a>]</p>
 
             ]]>
         </content>

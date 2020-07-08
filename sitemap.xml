@@ -66,7 +66,7 @@
 </url>
 <url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html</loc>
-<lastmod>2020-07-07T09:07:25-04:00</lastmod>
+<lastmod>2020-07-08T17:23:58-04:00</lastmod>
 <image:image>
 <image:loc>https://donrichards.github.io/migrate_islandora_csv/media/posts/1/seadragon-zoomed.jpg</image:loc>
 <image:title><![CDATA[]]></image:title>
@@ -74,11 +74,11 @@
 </url>
 <url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/metadata-and-metadata-sharing.html</loc>
-<lastmod>2020-07-07T13:06:08-04:00</lastmod>
+<lastmod>2020-07-08T18:13:35-04:00</lastmod>
 </url>
 <url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/mods-to-rdf.html</loc>
-<lastmod>2020-07-06T16:30:53-04:00</lastmod>
+<lastmod>2020-07-08T17:40:19-04:00</lastmod>
 </url>
 <url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/next-level-discoverability-solutions.html</loc>
@@ -108,6 +108,10 @@
 <lastmod>2020-07-08T09:13:23-04:00</lastmod>
 </url>
 <url>
+<loc>https://donrichards.github.io/migrate_islandora_csv/quick-document-design-key.html</loc>
+<lastmod>2020-07-08T18:25:03-04:00</lastmod>
+</url>
+<url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/rights-and-restrictions.html</loc>
 <lastmod>2020-06-24T15:45:40-04:00</lastmod>
 </url>
@@ -117,11 +121,11 @@
 </url>
 <url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/technical-infrastructure.html</loc>
-<lastmod>2020-07-07T13:24:40-04:00</lastmod>
+<lastmod>2020-07-08T17:31:07-04:00</lastmod>
 </url>
 <url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/uploading-ingesting-and-migration.html</loc>
-<lastmod>2020-06-30T10:37:04-04:00</lastmod>
+<lastmod>2020-07-08T18:24:49-04:00</lastmod>
 <image:image>
 <image:loc>https://donrichards.github.io/migrate_islandora_csv/media/posts/7/migration-middle-format-process.jpg</image:loc>
 <image:title><![CDATA[Typical Drupal 8 migration]]></image:title>
@@ -130,5 +134,9 @@
 <url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/uploading.html</loc>
 <lastmod>2020-07-07T14:30:54-04:00</lastmod>
+</url>
+<url>
+<loc>https://donrichards.github.io/migrate_islandora_csv/vendors.html</loc>
+<lastmod>2020-07-08T18:25:09-04:00</lastmod>
 </url>
 </urlset>
