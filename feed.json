@@ -19,9 +19,15 @@
                 "name": "Don Richards"
             },
             "tags": [
+                   "ontology",
+                   "fedora",
+                   "duraspace",
+                   "complex",
+                   "WebAC",
+                   "PCDM"
             ],
-            "date_published": "2020-07-07T11:46:39-04:00",
-            "date_modified": "2020-07-07T11:46:39-04:00"
+            "date_published": "2020-07-08T10:52:04-04:00",
+            "date_modified": "2020-07-08T10:52:04-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/cas-authentication.html",
@@ -34,8 +40,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-07T11:46:39-04:00",
-            "date_modified": "2020-07-07T11:46:39-04:00"
+            "date_published": "2020-07-08T10:52:04-04:00",
+            "date_modified": "2020-07-08T10:52:04-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/mods-to-rdf.html",
@@ -48,8 +54,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-07T11:46:39-04:00",
-            "date_modified": "2020-07-07T11:46:39-04:00"
+            "date_published": "2020-07-08T10:52:04-04:00",
+            "date_modified": "2020-07-08T10:52:04-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/ingestingmigrating.html",
@@ -62,22 +68,26 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-07T11:46:39-04:00",
-            "date_modified": "2020-07-07T11:46:39-04:00"
+            "date_published": "2020-07-08T10:52:04-04:00",
+            "date_modified": "2020-07-08T10:52:04-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/uploading.html",
             "url": "https://donrichards.github.io/migrate_islandora_csv/uploading.html",
             "title": "Uploading",
-            "summary": "Uploading is part of the ingest process but information and modules specific to uploading can be found here. Uploads are not resumable and subject to&hellip;",
-            "content_html": "<p>Uploading is part of the ingest process but information and modules specific to uploading can be found here. Uploads are not resumable and subject to connectivity issues. If you really want to upload large files, you should consider some alternatives such as</p>\n<ul>\n<li>Batch Ingest: The standard way of operating is utilizing the CSV import process. This is primarily through a terminal but offers a highly customizable experience allowing for complex metadata and many other features. For more inforformation please see <a href=\"uploading-ingesting-and-migration.html\">previous</a> section.</li>\n<li>Alan Stanley’s <a href=\"https://github.com/ajstanley/rdm_tus\">TUS</a> module, which will let you upload large files in forms. <a href=\"https://www.drupal.org/files/issues/2020-03-23/tus-422_error-3079433-16.patch\">Patch #16</a> required from Drupal <a href=\"https://www.drupal.org/project/tus/issues/3079433\">422 error</a> page.</li>\n<li><a href=\"https://www.drupal.org/project/uppy\">Uppy File Uploader</a> Uses the chunking, resumable, TUS file transfer protocol to upload files. This is a modular open source JavaScript file uploader.</li>\n<li>Using <a href=\"https://www.drupal.org/project/flysystem\">flysystem</a>‘s ftp and sftp plugins to make files available if you can run an FTP server.</li>\n<li><a href=\"https://www.drupal.org/project/pfs\">Private File System</a>: Private File System provides a way to serve files(i.e. static assets) from the Drupal private file system(private://) based on custom restrictions.</li>\n<li><a href=\"https://www.drupal.org/project/file_upload_options\">File Upload Options</a>: trivial for the document but useful for technical side of the system. This specifies what should happen when uploaded files have the same name as existing files. Configured per field, the options are are grouped by entity type.</li>\n</ul>\n<h3 id=\"technical-notes\">Technical Notes</h3>\n<p>If you want to upload large (&gt; 1GB) files, the VM provided by the community has some options not set. You’ll need to tune the following settings in your php.ini:</p>\n<ul>\n<li>upload_max_filesize – The maximum allowed upload file size.</li>\n<li>post_max_size – The maximum allowed POST data size.</li>\n<li>max_input_time – Maximum allowed input time.</li>\n<li>max_execution_time – The maximum allowed time the scripts are allowed to run.</li>\n</ul>\n<p>However, large file transfer over HTTP still has a host of issues once you properly configure your server. PHP’s integer type is signed and many platforms use 32bit integers, some filesystem functions may return unexpected results for files which are larger than 2GB and could cause <code>filesize</code> to report the UI an incurrate reading. It won’t cause functions to fail just to not report correctly. This is a reported flaw within <a href=\"https://www.php.net/manual/en/function.filesize.php\">PHP</a>. </p>\n",
+            "summary": "Uploading is part of the ingest process, information and modules specific to uploading can be found here. This can be done either with the UI&hellip;",
+            "content_html": "<p>Uploading is part of the ingest process, information and modules specific to uploading can be found here. This can be done either with the UI or through a batch process. </p>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/86825650-a15dec00-c05d-11ea-9771-cd0a86e0f9d4.png\" data-is-external-image=\"true\"  alt=\"Upload through the UI\" /></figure></p>\n<p>Uploads are not resumable and subject to connectivity issues. If you really want to upload large files, you should consider some alternatives such as the following:</p>\n<ul>\n<li>Batch Ingest: The standard way of operating is utilizing the CSV import process. This is primarily through a terminal but offers a highly customizable experience allowing for complex metadata and many other features. For more inforformation please see <a href=\"uploading-ingesting-and-migration.html\">previous</a> section.</li>\n<li>Alan Stanley’s <a href=\"https://github.com/ajstanley/rdm_tus\">TUS</a> module, which will let you upload large files in forms. <a href=\"https://www.drupal.org/files/issues/2020-03-23/tus-422_error-3079433-16.patch\">Patch #16</a> required from Drupal <a href=\"https://www.drupal.org/project/tus/issues/3079433\">422 error</a> page.</li>\n<li><a href=\"https://www.drupal.org/project/uppy\">Uppy File Uploader</a> Uses the chunking, resumable, TUS file transfer protocol to upload files. This is a modular open source JavaScript file uploader.</li>\n<li>Using <a href=\"https://www.drupal.org/project/flysystem\">flysystem</a>‘s ftp and sftp plugins to make files available if you can run an FTP server.</li>\n<li><a href=\"https://www.drupal.org/project/pfs\">Private File System</a>: Private File System provides a way to serve files(i.e. static assets) from the Drupal private file system(private://) based on custom restrictions.</li>\n<li><a href=\"https://www.drupal.org/project/file_upload_options\">File Upload Options</a>: trivial for the document but useful for technical side of the system. This specifies what should happen when uploaded files have the same name as existing files. Configured per field, the options are are grouped by entity type.</li>\n</ul>\n<h3 id=\"technical-notes\">Technical Notes</h3>\n<p>If you want to upload large (&gt; 1GB) files, the VM provided by the community has some options not set. You’ll need to tune the following settings in your php.ini:</p>\n<ul>\n<li>upload_max_filesize – The maximum allowed upload file size.</li>\n<li>post_max_size – The maximum allowed POST data size.</li>\n<li>max_input_time – Maximum allowed input time.</li>\n<li>max_execution_time – The maximum allowed time the scripts are allowed to run.</li>\n</ul>\n<p>However, large file transfer over HTTP still has a host of issues once you properly configure your server. PHP’s integer type is signed and many platforms use 32bit integers, some filesystem functions may return unexpected results for files which are larger than 2GB and could cause <code>filesize</code> to report the UI an incurrate reading. It won’t cause functions to fail just to not report correctly. This is a reported flaw within <a href=\"https://www.php.net/manual/en/function.filesize.php\">PHP</a>. </p>\n",
             "author": {
                 "name": "Don Richards"
             },
             "tags": [
+                   "upload",
+                   "flysystem",
+                   "files",
+                   "CSV"
             ],
-            "date_published": "2020-07-07T11:46:39-04:00",
-            "date_modified": "2020-07-07T11:46:39-04:00"
+            "date_published": "2020-07-08T10:52:04-04:00",
+            "date_modified": "2020-07-08T10:52:04-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/step-by-step-setup-ir.html",
@@ -90,8 +100,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-07T11:46:39-04:00",
-            "date_modified": "2020-07-07T11:46:39-04:00"
+            "date_published": "2020-07-08T10:52:04-04:00",
+            "date_modified": "2020-07-08T10:52:04-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/book-and-large-image-viewer.html",
@@ -104,8 +114,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-07T11:46:39-04:00",
-            "date_modified": "2020-07-07T11:46:39-04:00"
+            "date_published": "2020-07-08T10:52:04-04:00",
+            "date_modified": "2020-07-08T10:52:04-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/institutional-repository.html",
@@ -133,8 +143,8 @@
                    "Citation",
                    "Bibliography"
             ],
-            "date_published": "2020-07-07T11:46:39-04:00",
-            "date_modified": "2020-07-07T11:46:39-04:00"
+            "date_published": "2020-07-08T10:52:04-04:00",
+            "date_modified": "2020-07-08T10:52:04-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/bibliography-and-citation.html",
@@ -147,8 +157,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-07T11:46:39-04:00",
-            "date_modified": "2020-07-07T11:46:39-04:00"
+            "date_published": "2020-07-08T10:52:04-04:00",
+            "date_modified": "2020-07-08T10:52:04-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html",
@@ -161,8 +171,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-07T11:46:39-04:00",
-            "date_modified": "2020-07-07T11:46:39-04:00"
+            "date_published": "2020-07-08T10:52:04-04:00",
+            "date_modified": "2020-07-08T10:52:04-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/community-and-sustainability.html",
@@ -189,8 +199,8 @@
                    "Google",
                    "Delta"
             ],
-            "date_published": "2020-07-07T11:46:39-04:00",
-            "date_modified": "2020-07-07T11:46:39-04:00"
+            "date_published": "2020-07-08T10:52:04-04:00",
+            "date_modified": "2020-07-08T10:52:04-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/deployment-options.html",
@@ -211,15 +221,15 @@
                    "VM",
                    "ISLE"
             ],
-            "date_published": "2020-07-07T11:46:39-04:00",
-            "date_modified": "2020-07-07T11:46:39-04:00"
+            "date_published": "2020-07-08T10:52:04-04:00",
+            "date_modified": "2020-07-08T10:52:04-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/technical-infrastructure.html",
             "url": "https://donrichards.github.io/migrate_islandora_csv/technical-infrastructure.html",
             "title": "Technical Infrastructure",
-            "summary": "This page’s layout reflects the PDF template and is intended to be a breif description of each area specified in that document.Drupal 8 completely supports&hellip;",
-            "content_html": "<p>This page’s layout reflects the PDF template and is intended to be a breif description of each area specified in that document.</p>\n<ol>\n<li>Drupal 8 completely supports CAS authentication [<a href=\"https://www.drupal.org/project/cas\">link</a>]. Please see <a href=\"/cas-authentication\">CAS Authentication</a> page for more information.</li>\n<li>Islandora 8 provides several different reports out-of-the-box. From microservice stats to usage stats. There are several options and are highly configurable. Here is an example of Mark Jordan’s module that provides a collection of graphical reports on various aspects of an Islandora repository. <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://github.com/mjordan/islandora_repository_reports/raw/master/docs/images/random_pie.png\" data-is-external-image=\"true\"  alt=\"pie chart\" /></figure> <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://github.com/mjordan/islandora_repository_reports/raw/master/docs/images/random_bar.png\" data-is-external-image=\"true\"  alt=\"bar chart\" /></figure></li>\n<li>“Supports logging of manual dashboard processes by authenticated users” <strong>I am uncertain as to what this is referring to at this time.</strong></li>\n<li>Like any other web servers, Islandora 8 can be hosted locally. The biggest benefits are leveraging the power of CPU multithreading and large memory size utilization are the most cost effective. However, self hosted hardware costs money to maintain and upgrade. Please see <a href=\"cloud-hosting-solution.html\">Cloud Hosting</a> for other options.</li>\n<li>Another option is using a cloud hosted provider like any one of the numerous options Amazon’s cloud hosting provides. Again please see <a href=\"cloud-hosting-solution.html\">Cloud Hosting</a> for cloud options.</li>\n<li>Another option to include is a decoupled headless version. This solution was recently demonstrated by Discovery Gardens. It allows for all of the management side of development to be done on the Drupal server but the frontend to be a Reactjs solution. This improves speed and allows a much more flexible frontend solution to be applied. This would allow us to develop the entire site’s frontend behavior to be implemented the same way we’ve created the digital collection’s landing page. </li>\n<li>The bare minimum to run Islandora 8 in a virtual machine (<strong>for development</strong>) is 1 CPU core with 4GB of RAM and 8GB of storage. A more comprehensive specification needs to consider applications in the stack with large needs for scalability. “Cantaloupe uses a thread-per-request model, and maintains its own thread pool to carry out certain tasks asynchronously and spread work across processors. Response times will benefit from multiple fast cores.” (Deployment, 2020) Blazegraph has a few complicated tradeoffs for RAM vs harddrive performance for ideal implementations. The configuration they suggest is a 4 core (3.5GHz) system with 16GB RAM on a pair of SSDs. For 1 billion RDF triple is 83.8GB of storage/32GB if in RAM (Bebee, 2020). In conclusion for the infrastructure, the system depends on the desired scalability and performance expected. This is a full content management system with several high performance applications.</li>\n</ol>\n",
+            "summary": "This page’s layout reflects the PDF template and is intended to be a breif description of each area specified in that document. This is a&hellip;",
+            "content_html": "<p>This page’s layout reflects the PDF template and is intended to be a breif description of each area specified in that document.</p>\n<ol>\n<li>Drupal 8 completely supports CAS authentication [<a href=\"https://www.drupal.org/project/cas\">link</a>]. Please see <a href=\"/cas-authentication\">CAS Authentication</a> page for more information.</li>\n<li>Islandora 8 provides several different reports out-of-the-box. From microservice stats to usage stats. There are several options and are highly configurable. Here is an example of Mark Jordan’s module that provides a collection of graphical reports on various aspects of an Islandora repository. <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://github.com/mjordan/islandora_repository_reports/raw/master/docs/images/random_pie.png\" data-is-external-image=\"true\"  alt=\"pie chart\" /></figure> <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://github.com/mjordan/islandora_repository_reports/raw/master/docs/images/random_bar.png\" data-is-external-image=\"true\"  alt=\"bar chart\" /></figure></li>\n<li>“Supports logging of manual dashboard processes by authenticated users” <strong>I am uncertain as to what this is referring to at this time.</strong></li>\n<li>Like any other web servers, Islandora 8 can be hosted locally. The biggest benefits are leveraging the power of CPU multithreading and large memory size utilization are the most cost effective. However, self hosted hardware costs money to maintain and upgrade. Please see <a href=\"cloud-hosting-solution.html\">Cloud Hosting</a> for other options.</li>\n<li>Another option is using a cloud hosted provider like any one of the numerous options Amazon’s cloud hosting provides. Again please see <a href=\"cloud-hosting-solution.html\">Cloud Hosting</a> for cloud options.</li>\n<li>Another option to include is a decoupled headless version. This solution was recently demonstrated by Discovery Gardens. It allows for all of the management side of development to be done on the Drupal server but the frontend to be a Reactjs solution. This improves speed and allows a much more flexible frontend solution to be applied. This would allow us to develop the entire site’s frontend behavior to be implemented the same way we’ve created the digital collection’s landing page. </li>\n<li>The bare minimum to run Islandora 8 in a virtual machine (<strong>for development</strong>) is 1 CPU core with 8GB of RAM and 8GB of storage. A more comprehensive specification needs to consider applications in the stack with large needs for scalability. “Cantaloupe uses a thread-per-request model, and maintains its own thread pool to carry out certain tasks asynchronously and spread work across processors. Response times will benefit from multiple fast cores.” (Deployment, 2020) Blazegraph has a few complicated tradeoffs for RAM vs harddrive performance for ideal implementations. The configuration they suggest is a 4 core (3.5GHz) system with 16GB RAM on a pair of SSDs. For 1 billion RDF triple is 83.8GB of storage/32GB if in RAM (Bebee, 2020). In conclusion for the infrastructure, the system depends on the desired scalability and performance expected. This is a full content management system with several high performance applications. </li>\n</ol>\n<h4 id=\"ram-requirements\">RAM requirements</h4>\n<p>This is a breakdown of the core requirements from a running VM, this is bare requirements and should be discouraged to use such low RAM in awany production server.</p>\n<table>\n<thead>\n<tr>\n<th align=\"left\"><strong>Service</strong></th>\n<th align=\"right\"><strong>Memory (min)</strong></th>\n<th align=\"left\"><strong>Category</strong></th>\n</tr>\n</thead>\n<tbody><tr>\n<td align=\"left\">activemq</td>\n<td align=\"right\">292.10 MiB</td>\n<td align=\"left\">Middleware</td>\n</tr>\n<tr>\n<td align=\"left\">alpaca</td>\n<td align=\"right\">521.10 MiB</td>\n<td align=\"left\">Middleware</td>\n</tr>\n<tr>\n<td align=\"left\">blazegraph</td>\n<td align=\"right\">842.80 MiB</td>\n<td align=\"left\">Read/Write</td>\n</tr>\n<tr>\n<td align=\"left\">cantaloupe</td>\n<td align=\"right\">915.40 MiB</td>\n<td align=\"left\">Read</td>\n</tr>\n<tr>\n<td align=\"left\">crayfits</td>\n<td align=\"right\">53.34 MiB</td>\n<td align=\"left\">Derivative</td>\n</tr>\n<tr>\n<td align=\"left\">drupal</td>\n<td align=\"right\">96.88 MiB</td>\n<td align=\"left\">Read/Write</td>\n</tr>\n<tr>\n<td align=\"left\">fcrepo</td>\n<td align=\"right\">1520.64 MiB</td>\n<td align=\"left\">Read/Write</td>\n</tr>\n<tr>\n<td align=\"left\">fits</td>\n<td align=\"right\">2350.08 MiB</td>\n<td align=\"left\">Derivative</td>\n</tr>\n<tr>\n<td align=\"left\">gemini</td>\n<td align=\"right\">57.82 MiB</td>\n<td align=\"left\">Derivative</td>\n</tr>\n<tr>\n<td align=\"left\">homarus</td>\n<td align=\"right\">50.11 MiB</td>\n<td align=\"left\">Derivative</td>\n</tr>\n<tr>\n<td align=\"left\">houdini</td>\n<td align=\"right\">61.47 MiB</td>\n<td align=\"left\">Derivative</td>\n</tr>\n<tr>\n<td align=\"left\">hypercube</td>\n<td align=\"right\">50.31 MiB</td>\n<td align=\"left\">Derivative</td>\n</tr>\n<tr>\n<td align=\"left\">matomo</td>\n<td align=\"right\">50.03 MiB</td>\n<td align=\"left\">Other</td>\n</tr>\n<tr>\n<td align=\"left\">milliner</td>\n<td align=\"right\">57.00 MiB</td>\n<td align=\"left\">Derivative</td>\n</tr>\n<tr>\n<td align=\"left\">recast</td>\n<td align=\"right\">50.03 MiB</td>\n<td align=\"left\">Derivative</td>\n</tr>\n<tr>\n<td align=\"left\">solr</td>\n<td align=\"right\">260.09 MiB</td>\n<td align=\"left\">Read/Write</td>\n</tr>\n<tr>\n<td align=\"left\">Total</td>\n<td align=\"right\"><strong>7.060 GiB</strong></td>\n<td align=\"left\"></td>\n</tr>\n</tbody></table>\n",
             "author": {
                 "name": "Don Richards"
             },
@@ -233,8 +243,8 @@
                    "GB",
                    "CPU"
             ],
-            "date_published": "2020-07-07T11:46:39-04:00",
-            "date_modified": "2020-07-07T11:46:39-04:00"
+            "date_published": "2020-07-08T10:52:04-04:00",
+            "date_modified": "2020-07-08T10:52:04-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/rights-and-restrictions.html",
@@ -252,8 +262,8 @@
                    "access",
                    "WebAC"
             ],
-            "date_published": "2020-07-07T11:46:39-04:00",
-            "date_modified": "2020-07-07T11:46:39-04:00"
+            "date_published": "2020-07-08T10:52:04-04:00",
+            "date_modified": "2020-07-08T10:52:04-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/cloud-hosting-solution.html",
@@ -271,8 +281,8 @@
                    "hosting",
                    "cloud"
             ],
-            "date_published": "2020-07-07T11:46:39-04:00",
-            "date_modified": "2020-07-07T11:46:39-04:00"
+            "date_published": "2020-07-08T10:52:04-04:00",
+            "date_modified": "2020-07-08T10:52:04-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/next-level-discoverability-solutions.html",
@@ -290,15 +300,15 @@
                    "LTR",
                    "AI"
             ],
-            "date_published": "2020-07-07T11:46:39-04:00",
-            "date_modified": "2020-07-07T11:46:39-04:00"
+            "date_published": "2020-07-08T10:52:04-04:00",
+            "date_modified": "2020-07-08T10:52:04-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/metadata-and-metadata-sharing.html",
             "url": "https://donrichards.github.io/migrate_islandora_csv/metadata-and-metadata-sharing.html",
             "title": "Metadata and Metadata sharing",
             "summary": "RDF Mapping; “In Islandora, the JSON-LD Module transforms nodes (or media, or taxonomy terms) into the RDF that is synced into Fedora and the Triplestore.",
-            "content_html": "<ol>\n<li>RDF Mapping; “In Islandora, the JSON-LD Module transforms nodes (or media, or taxonomy terms) into the RDF that is synced into Fedora and the Triplestore. It uses RDF mappings, a concept defined by the RDF Module, and exposes them through the REST API” (RDF Generation, n.d.).  <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85457087-a014c580-b56d-11ea-843d-780d6b13cd27.png\" data-is-external-image=\"true\"  alt=\"Mapping\" /></figure><ol start=\"2\">\n<li>“The RDF Module is part of Drupal Core, but has no official documentation. The RDF Module embeds RDFa, a form of linked data, within the Drupal-generated HTML when you load the web page for a node, media, or taxonomy term. Official line is that this will allow Google to provide “rich snippets” such as star-ratings, contact info, and business hours.” [<a href=\"https://islandora.github.io/documentation/islandora/rdf-mapping/\">link</a>]</li>\n<li>A custom module rdfui exists, and is installed-but-not-enabled on boxes provisioned by the islandora-playbook. We don’t use it because it is very rudimentary and limited to the schema.org vocabulary. </li>\n<li>URI Mapping with persistent identifiers. With access to an API for minting persistent identifiers (e.g., DataCite, EZID, etc.).  <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://github.com/mjordan/persistent_identifiers/raw/master/docs/images/mint_checkbox.png\" data-is-external-image=\"true\"  alt=\"mint persistent_identifiers\" /></figure> [<a href=\"https://github.com/mjordan/persistent_identifiers\">link</a>]</li>\n<li>The Dupal Schema.org Dataset module recently updated to extend the schema.org metatag module to support schema.org dataset spec. “DOI minting is part of UPEI’s publication workflow, where the system only registers the dataset with Datacite when a curator user ‘publishes’ the dataset, making it public. At that point it sends an XML version of the node fields content to Dataset’s API” [paraphrased from Alexander O’Neill from UPEI via slack chat] <a href=\"https://blogs.lse.ac.uk/impactofsocialsciences/2015/04/23/digital-object-identifiers-stability-for-citations/\"><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://blogsmedia.lse.ac.uk/blogs.dir/9/files/2015/04/doi.png\" data-is-external-image=\"true\"  alt=\"DOI breakdown\" /></figure></a></li>\n</ol>\n</li>\n<li><a href=\"https://www.drupal.org/project/schema_dataset\">Schema.org Dataset</a> This module extends Schema.org Metatag module to display structured data representing datasets as JSON-LD in the head of web pages.</li>\n<li>Migrating metadata (even complex metadata) is a simple process. In controlled_access_terms, we have an understanding of a typed_relation, which is an entity reference coupled with a MARC relator. The migration script expects an associative array that looks like this: <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85176275-7430d180-b247-11ea-9841-a5086a7ea3f7.png\" data-is-external-image=\"true\"  alt=\"associative_array\" /></figure></li>\n</ol>\n<p>This is an example of the JSON output for an imported value. To see any entity’s json value add <code>_?_format=json_</code> at the end of the URL of the entity. <code>_jsonld_</code> will work as well to get the jsonld values as well. Example, <em><a href=\"http://localhost:8000/taxonomy/term/339?_format=json\">http://localhost:8000/taxonomy/term/339?_format=json</a></em> \n<figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85176333-99bddb00-b247-11ea-8ac7-77573747ae3f.png\" data-is-external-image=\"true\"  alt=\"example_json\" /></figure></p>\n<ol start=\"5\">\n<li><p>Although not absolutely essential it is my understanding that taxonomy vocabulary to categorized metadata should be migrated as entities first before the Islandora 7 objects and their metadata. Generating taxonomy from within a node’s migration is limited. For instance, a Subject’s authority has a title, associated authority and a URI. Automatically generating the subject from within the node migration limits to only the title. Whereas a separate migration allows for all 3 fields to be imported and referenced. Here is the list of taxonomy vocabulary list of “_categories_” of metadata.</p>\n<ol>\n<li><strong>Corporate Body,</strong> an organization or group of persons that is identified by a particular name</li>\n<li><strong>Family,</strong> two or more who present themselves as a family</li>\n<li><strong>Genre</strong>,  a category characterizing a particular style</li>\n<li><strong>Geographic Location</strong>, Geographic area</li>\n<li><strong>Islandora access</strong>, Terms used to limit, restrict or coordinate access</li>\n<li><strong>Person</strong>, an individual of the human species.</li>\n<li><strong>Subject</strong>, topics, events, people, and organizations.</li>\n</ol>\n</li>\n<li><p>Attach attribution and license information to media images. If you want to add an image to an article that is licensed under a Creative Commons license, this module lets you add source, author and license terms links to a caption under the image, as per the guidelines published by Creative Commons here: Best practices for attribution. There has been some development to point it to <a href=\"https://rightsstatements.org\">https://rightsstatements.org</a> instead of <a href=\"https://creativecommons.org/licenses/\">https://creativecommons.org/licenses/</a> \n<figure class=\"post__image\"><img loading=\"lazy\" src=\"https://www.drupal.org/files/project-images/Screen%20Shot%202019-01-16%20at%2012.03.18%20PM.png\" data-is-external-image=\"true\"  alt=\"Screenshot of CC\" /></figure></p>\n</li>\n</ol>\n",
+            "content_html": "<ol>\n<li>RDF Mapping; “In Islandora, the JSON-LD Module transforms nodes (or media, or taxonomy terms) into the RDF that is synced into Fedora and the Triplestore. It uses RDF mappings, a concept defined by the RDF Module, and exposes them through the REST API” (RDF Generation, n.d.).  <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85457087-a014c580-b56d-11ea-843d-780d6b13cd27.png\" data-is-external-image=\"true\"  alt=\"Mapping\" /></figure><ol start=\"2\">\n<li>“The RDF Module is part of Drupal Core, but has no official documentation. The RDF Module embeds RDFa, a form of linked data, within the Drupal-generated HTML when you load the web page for a node, media, or taxonomy term. Official line is that this will allow Google to provide “rich snippets” such as star-ratings, contact info, and business hours.” [<a href=\"https://islandora.github.io/documentation/islandora/rdf-mapping/\">link</a>]</li>\n<li>A custom module rdfui exists, and is installed-but-not-enabled on boxes provisioned by the islandora-playbook. We don’t use it because it is very rudimentary and limited to the schema.org vocabulary. </li>\n<li>URI Mapping with persistent identifiers. With access to an API for minting persistent identifiers (e.g., DataCite, EZID, etc.).  <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://github.com/mjordan/persistent_identifiers/raw/master/docs/images/mint_checkbox.png\" data-is-external-image=\"true\"  alt=\"mint persistent_identifiers\" /></figure> [<a href=\"https://github.com/mjordan/persistent_identifiers\">link</a>]</li>\n<li>The Dupal Schema.org Dataset module recently updated to extend the schema.org metatag module to support schema.org dataset spec. “DOI minting is part of UPEI’s publication workflow, where the system only registers the dataset with Datacite when a curator user ‘publishes’ the dataset, making it public. At that point it sends an XML version of the node fields content to Dataset’s API” [paraphrased from Alexander O’Neill from UPEI via slack chat] <a href=\"https://blogs.lse.ac.uk/impactofsocialsciences/2015/04/23/digital-object-identifiers-stability-for-citations/\"><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://blogsmedia.lse.ac.uk/blogs.dir/9/files/2015/04/doi.png\" data-is-external-image=\"true\"  alt=\"DOI breakdown\" /></figure></a></li>\n</ol>\n</li>\n<li><a href=\"https://www.drupal.org/project/schema_dataset\">Schema.org Dataset</a> This module extends Schema.org Metatag module to display structured data representing datasets as JSON-LD in the head of web pages.</li>\n<li>Migrating metadata (even complex metadata) is a simple process. In controlled_access_terms, we have an understanding of a typed_relation, which is an entity reference coupled with a MARC relator. The migration script expects an associative array that looks like this: <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85176275-7430d180-b247-11ea-9841-a5086a7ea3f7.png\" data-is-external-image=\"true\"  alt=\"associative_array\" /></figure></li>\n</ol>\n<p>This is an example of the JSON output for an imported value. To see any entity’s json value add <code>_?_format=json_</code> at the end of the URL of the entity. <code>_jsonld_</code> will work as well to get the jsonld values as well. Example, <em><a href=\"http://localhost:8000/taxonomy/term/339?_format=json\">http://localhost:8000/taxonomy/term/339?_format=json</a></em> \n<figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85176333-99bddb00-b247-11ea-8ac7-77573747ae3f.png\" data-is-external-image=\"true\"  alt=\"example_json\" /></figure></p>\n<ol start=\"5\">\n<li><p>Although not absolutely essential it is my understanding that taxonomy vocabulary to categorized metadata should be migrated as entities first before the Islandora 7 objects and their metadata. Generating taxonomy from within a node’s migration is limited. For instance, a Subject’s authority has a title, associated authority and a URI. Automatically generating the subject from within the node migration limits to only the title. Whereas a separate migration allows for all 3 fields to be imported and referenced. Here is the list of taxonomy vocabulary list of “_categories_” of metadata.</p>\n<ol>\n<li><strong>Corporate Body,</strong> an organization or group of persons that is identified by a particular name</li>\n<li><strong>Family,</strong> two or more who present themselves as a family</li>\n<li><strong>Genre</strong>,  a category characterizing a particular style</li>\n<li><strong>Geographic Location</strong>, Geographic area</li>\n<li><strong>Islandora access</strong>, Terms used to limit, restrict or coordinate access</li>\n<li><strong>Person</strong>, an individual of the human species.</li>\n<li><strong>Subject</strong>, topics, events, people, and organizations.</li>\n</ol>\n</li>\n<li><p>Attach attribution and license information to media images. If you want to add an image to an article that is licensed under a Creative Commons license, this module lets you add source, author and license terms links to a caption under the image, as per the guidelines published by Creative Commons here: Best practices for attribution.\n<figure class=\"post__image\"><img loading=\"lazy\" src=\"https://www.drupal.org/files/project-images/Screen%20Shot%202019-01-16%20at%2012.03.18%20PM.png\" data-is-external-image=\"true\"  alt=\"Screenshot of CC\" /></figure> Another <a href=\"https://github.com/Islandora/documentation/issues/1234#issuecomment-654982007\">solution suggested</a> To create a rights statement taxonomy from  <a href=\"https://rightsstatements.org\">https://rightsstatements.org</a> and then create a formatter that use’s the term’s field_external_authority to create a link on the node’s page with a custom PHP script. This is fairly basic to accomplish the expected behaviors.</p>\n</li>\n</ol>\n",
             "author": {
                 "name": "Don Richards"
             },
@@ -316,22 +326,22 @@
                    "JSON",
                    "API"
             ],
-            "date_published": "2020-07-07T11:46:39-04:00",
-            "date_modified": "2020-07-07T11:46:39-04:00"
+            "date_published": "2020-07-08T10:52:04-04:00",
+            "date_modified": "2020-07-08T10:52:04-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/preservation.html",
             "url": "https://donrichards.github.io/migrate_islandora_csv/preservation.html",
             "title": "Preservation",
-            "summary": "Islandora 8 utilizes Harvard’s File Information Tool Set (FITS), Fixity auditing, bag exporting, and preservation reporting for preservation (Jordan, 2019).Leverages Fedora 5 as the preservation&hellip;",
-            "content_html": "<ol>\n<li>Islandora 8 utilizes Harvard’s File Information Tool Set (FITS), Fixity auditing, bag exporting, and preservation reporting for preservation (Jordan, 2019).</li>\n<li>Leverages Fedora 5 as the preservation layer. <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85175851-6890db00-b246-11ea-92f2-afec89a71145.png\" data-is-external-image=\"true\"  alt=\"sfu_doc\" /></figure> According to SFU’s Library DPF Action Plan in the following snippet [link]</li>\n<li>Supports versioning of binaries within an object. Islandora processes all objects as binary objects into Fedora. <pre><code>   a. The migration process currently does not support migrating old versions of an object. This can be done but will take some custom processing.</code></pre></li>\n<li>Islandora 8 leverages PCDM classes for means to keep the preservation file system layer oganized. <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/5439169/58195794-a6a38000-7c7d-11e9-8050-7b7a6817bd9d.png\" data-is-external-image=\"true\"  alt=\"Islandora Object in Drupal and Fedora as original file\" /></figure></li>\n</ol>\n",
+            "summary": "Islandora 8 utilizes Harvard’s File Information Tool Set (FITS), Fixity auditing, bag exporting, and preservation reporting for preservation (Jordan, 2019). a. The migration process currently&hellip;",
+            "content_html": "<ol>\n<li>Islandora 8 utilizes Harvard’s File Information Tool Set (FITS), Fixity auditing, bag exporting, and preservation reporting for preservation (Jordan, 2019). </li>\n</ol>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/86838548-51d3ec00-c06e-11ea-8afc-1ca2da03141a.png\" data-is-external-image=\"true\"  alt=\"Fixity auditing 1\" /></figure>\n<figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/86838579-5bf5ea80-c06e-11ea-9b4d-e24877201a6c.png\" data-is-external-image=\"true\"  alt=\"Fixity auditing 2\" /></figure></p>\n<ol start=\"2\">\n<li>Leverages Fedora 5 as the preservation layer. <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85175851-6890db00-b246-11ea-92f2-afec89a71145.png\" data-is-external-image=\"true\"  alt=\"sfu_doc\" /></figure> According to SFU’s Library DPF Action Plan in the following snippet [link]</li>\n<li>Supports versioning of binaries within an object. Islandora processes all objects as binary objects into Fedora. <pre><code>   a. The migration process currently does not support migrating old versions of an object. This can be done but will take some custom processing.</code></pre></li>\n<li>Islandora 8 leverages PCDM classes for means to keep the preservation file system layer oganized. <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/5439169/58195794-a6a38000-7c7d-11e9-8050-7b7a6817bd9d.png\" data-is-external-image=\"true\"  alt=\"Islandora Object in Drupal and Fedora as original file\" /></figure></li>\n</ol>\n",
             "author": {
                 "name": "Don Richards"
             },
             "tags": [
             ],
-            "date_published": "2020-07-07T11:46:39-04:00",
-            "date_modified": "2020-07-07T11:46:39-04:00"
+            "date_published": "2020-07-08T10:52:04-04:00",
+            "date_modified": "2020-07-08T10:52:04-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/uploading-ingesting-and-migration.html",
@@ -352,8 +362,8 @@
                    "MODS",
                    "CSV"
             ],
-            "date_published": "2020-07-07T11:46:39-04:00",
-            "date_modified": "2020-07-07T11:46:39-04:00"
+            "date_published": "2020-07-08T10:52:04-04:00",
+            "date_modified": "2020-07-08T10:52:04-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/other-content-types.html",
@@ -379,8 +389,8 @@
                    "PDF",
                    "Moore"
             ],
-            "date_published": "2020-07-07T11:46:39-04:00",
-            "date_modified": "2020-07-07T11:46:39-04:00"
+            "date_published": "2020-07-08T10:52:04-04:00",
+            "date_modified": "2020-07-08T10:52:04-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/images-books-and-pages.html",
@@ -404,15 +414,15 @@
                    "Mirador",
                    "BigData"
             ],
-            "date_published": "2020-07-07T11:46:39-04:00",
-            "date_modified": "2020-07-07T11:46:39-04:00"
+            "date_published": "2020-07-08T10:52:04-04:00",
+            "date_modified": "2020-07-08T10:52:04-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/general-content-models.html",
             "url": "https://donrichards.github.io/migrate_islandora_csv/general-content-models.html",
             "title": "General Content Models",
             "summary": "Islandora 8 is a “complete integration between Drupal resources and a datastore, to manage RDF conversion and asset storage” (Summary, n.d.). Islandora 8 can be&hellip;",
-            "content_html": "<ol>\n<li>Islandora 8 is a “complete integration between Drupal resources and a datastore, to manage RDF conversion and asset storage” (Summary, n.d.). Islandora 8 can be configured to use a variety of datastores but it defaults to Duraspace’s Fedora 5.x Repository. Islandora 8.x-1.x makes use of the Portland Common Data Model (PCDM) as a layer of abstraction over LDPCs to make containment simpler to understand for users; a <em>pcdm:Collection</em> may contain other <em>pcdm:Collections</em> or <em>pcdm:Objects</em> (similar to an Islandora 7.x-1.x collection content model), and a <em>pcdm:Object</em> may contain other <em>pcdm:Objects</em> (similar to the way an Islandora 7.x-1.x compound object has child objects) or <em>pcdm:Files</em> (similar to the way Islandora 7.x-1.x objects have datastreams). (What’s the difference between Islandora 1.x and Islandora 8.x., n.d.). (See Figure 1 below.)</li>\n</ol>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85159103-0bd3f700-b22b-11ea-8e73-ff4125a0e16e.jpg\" data-is-external-image=\"true\"  alt=\"PCDM_diagram\" /></figure></p>\n<ol start=\"2\">\n<li>Islandora uses Blazegraph for querying its triple store. “Blazegraph DB is an ultra high-performance graph database supporting Blueprints and RDF/SPARQL APIs. It supports up to 50 Billion edges on a single node.” (Blazegraph, n.d.). “This replaces Mulgara. Formerly known as BigData. The intended use is solely for maintaining performant support of large Fedora repositories containing millions of objects.” (Replacing Mulgara with Blazegraph for High-Performance Low-Level Storage, n.d.). [summarized <a href=\"https://islandora-collaboration-group.github.io/ISLE/optional-components/blazegraph/\">link</a>]</li>\n</ol>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85165401-c7008e00-b233-11ea-868a-43f0ab5bda63.png\" data-is-external-image=\"true\"  alt=\"Visualized BlazeGraph\" /></figure></p>\n<p>Islandora 8 supports nearly limitless use cases because of how the system is integrated to allow Drupal contributed modules to treat Fedora assets just like Drupal assets. The following are examples of use cases available in Islandora 8 and currently in varying stages of development. As they are active cases, most are not yet completely documented:</p>\n<ul>\n<li>Collections</li>\n<li>Images (Large sized TIff/JP2 &amp; typical size JPG/GIF/BMP) </li>\n<li>Paged content (Paged Content, n.d.)<ul>\n<li>Books (Paged Content, n.d.)</li>\n<li>Scrapbooks (mixed content books)</li>\n<li>Periodicals</li>\n<li>Newspapers</li>\n<li>Serials</li>\n<li>Photographs (with a front &amp; back), like postcards</li>\n<li>Compound</li>\n<li>Etc.</li>\n</ul>\n</li>\n<li>Video, Audio, and Oral History</li>\n<li>PDFs</li>\n<li>Binary files</li>\n<li>Exhibits [personally involved in the generation of this] (Jordan, Keiser-Clark, Richards, van Schaik, Stanley, &amp; Tillay, 2019)</li>\n<li>Scholarly<ul>\n<li>Journal article</li>\n<li>Presentation</li>\n<li>Poster</li>\n<li>Research data (1 set)</li>\n<li>Data Sets (2 or more sets)<ul>\n<li>An example of a Drupal module for datasets can be seen here: <a href=\"https://demo.getdkan.com/dataset/cedcd327-4e5d-43f9-8eb1-c11850fa7c55\">https://demo.getdkan.com/dataset/cedcd327-4e5d-43f9-8eb1-c11850fa7c55</a> (DKAN, n.d.)]</li>\n</ul>\n</li>\n<li>Modeling GIS Data (Mairo, 2019)</li>\n<li>Electronic Theses &amp; Dissertations (ETDs)</li>\n<li>Bibliography &amp; Citations (ADCI Solutions, 2017)</li>\n<li>Orcid (Shen, 2017)</li>\n<li>IRUS Counts (scholarly statistics)</li>\n<li>Utilization of Ontologies (BIBO, COAR, and SPAR) (Lamb, 2017). Currently conceptual, so it’s not certain  how complex it is.</li>\n</ul>\n</li>\n<li>Accessing Islandora with Amazon Alexa (Anez, 2019) </li>\n<li>Islandora Research Management Platform (O’Neill &amp; Stanley, 2020) </li>\n</ul>\n",
+            "content_html": "<ol>\n<li>Islandora 8 is a “complete integration between Drupal resources and a datastore, to manage RDF conversion and asset storage” (Summary, n.d.). Islandora 8 can be configured to use a variety of datastores but it defaults to Duraspace’s Fedora 5.x Repository. Islandora 8.x-1.x makes use of the Portland Common Data Model (PCDM) as a layer of abstraction over LDPCs to make containment simpler to understand for users; a <em>pcdm:Collection</em> may contain other <em>pcdm:Collections</em> or <em>pcdm:Objects</em> (similar to an Islandora 7.x-1.x collection content model), and a <em>pcdm:Object</em> may contain other <em>pcdm:Objects</em> (similar to the way an Islandora 7.x-1.x compound object has child objects) or <em>pcdm:Files</em> (similar to the way Islandora 7.x-1.x objects have datastreams). (What’s the difference between Islandora 1.x and Islandora 8.x., n.d.). (See Figure 1 below.) See <a href=\"/pcdm\">PCDM</a> for more information.</li>\n</ol>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85159103-0bd3f700-b22b-11ea-8e73-ff4125a0e16e.jpg\" data-is-external-image=\"true\"  alt=\"PCDM_diagram\" /></figure></p>\n<ol start=\"2\">\n<li>Islandora uses Blazegraph for querying its triple store. “Blazegraph DB is an ultra high-performance graph database supporting Blueprints and RDF/SPARQL APIs. It supports up to 50 Billion edges on a single node.” (Blazegraph, n.d.). “This replaces Mulgara. Formerly known as BigData. The intended use is solely for maintaining performant support of large Fedora repositories containing millions of objects.” (Replacing Mulgara with Blazegraph for High-Performance Low-Level Storage, n.d.). [summarized <a href=\"https://islandora-collaboration-group.github.io/ISLE/optional-components/blazegraph/\">link</a>]</li>\n</ol>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85165401-c7008e00-b233-11ea-868a-43f0ab5bda63.png\" data-is-external-image=\"true\"  alt=\"Visualized BlazeGraph\" /></figure></p>\n<p>Islandora 8 supports nearly limitless use cases because of how the system is integrated to allow Drupal contributed modules to treat Fedora assets just like Drupal assets. The following are examples of use cases available in Islandora 8 and currently in varying stages of development. As they are active cases, most are not yet completely documented:</p>\n<ul>\n<li>Collections</li>\n<li>Images (Large sized TIff/JP2 &amp; typical size JPG/GIF/BMP) </li>\n<li>Paged content (Paged Content, n.d.)<ul>\n<li>Books (Paged Content, n.d.)</li>\n<li>Scrapbooks (mixed content books)</li>\n<li>Periodicals</li>\n<li>Newspapers</li>\n<li>Serials</li>\n<li>Photographs (with a front &amp; back), like postcards</li>\n<li>Compound</li>\n<li>Etc.</li>\n</ul>\n</li>\n<li>Video, Audio, and Oral History</li>\n<li>PDFs</li>\n<li>Binary files</li>\n<li>Exhibits [personally involved in the generation of this] (Jordan, Keiser-Clark, Richards, van Schaik, Stanley, &amp; Tillay, 2019)</li>\n<li>Scholarly<ul>\n<li>Journal article</li>\n<li>Presentation</li>\n<li>Poster</li>\n<li>Research data (1 set)</li>\n<li>Data Sets (2 or more sets)<ul>\n<li>An example of a Drupal module for datasets can be seen here: <a href=\"https://demo.getdkan.com/dataset/cedcd327-4e5d-43f9-8eb1-c11850fa7c55\">https://demo.getdkan.com/dataset/cedcd327-4e5d-43f9-8eb1-c11850fa7c55</a> (DKAN, n.d.)]</li>\n</ul>\n</li>\n<li>Modeling GIS Data (Mairo, 2019)</li>\n<li>Electronic Theses &amp; Dissertations (ETDs)</li>\n<li>Bibliography &amp; Citations (ADCI Solutions, 2017)</li>\n<li>Orcid (Shen, 2017)</li>\n<li>IRUS Counts (scholarly statistics)</li>\n<li>Utilization of Ontologies (BIBO, COAR, and SPAR) (Lamb, 2017). Currently conceptual, so it’s not certain  how complex it is.</li>\n</ul>\n</li>\n<li>Accessing Islandora with Amazon Alexa (Anez, 2019) </li>\n<li>Islandora Research Management Platform (O’Neill &amp; Stanley, 2020) </li>\n</ul>\n",
             "image": "https://donrichards.github.io/migrate_islandora_csv/media/posts/4/PCDM_diagram.jpg",
             "author": {
                 "name": "Don Richards"
@@ -426,8 +436,8 @@
                    "PCDM",
                    "BigData"
             ],
-            "date_published": "2020-07-07T11:46:39-04:00",
-            "date_modified": "2020-07-07T11:46:39-04:00"
+            "date_published": "2020-07-08T10:52:04-04:00",
+            "date_modified": "2020-07-08T10:52:04-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/content-modeling.html",
@@ -443,25 +453,37 @@
                    "microservice",
                    "content modeling"
             ],
-            "date_published": "2020-07-07T11:46:39-04:00",
-            "date_modified": "2020-07-07T11:46:39-04:00"
+            "date_published": "2020-07-08T10:52:04-04:00",
+            "date_modified": "2020-07-08T10:52:04-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/background.html",
             "url": "https://donrichards.github.io/migrate_islandora_csv/background.html",
             "title": "Background",
             "summary": "Islandora 7 is a monolithic application that glues Drupal 6/7 to Fedora 3 with an optional institutional repository (IR) addon. Islandora 7 had several pain&hellip;",
-            "content_html": "<p>Islandora 7 is a monolithic application that glues Drupal 6/7 to Fedora 3 with an optional institutional repository (IR) addon. Islandora 7 had several pain points, such as workflows, most of which required substantial coding to work around these issues. Although Islandora is  a collection of several Drupal 6/7 modules, it wasn’t written in a way that leveraged much of Drupal’s content management functionality. Fortunately the release of Drupal 8 has remedied this.</p>\n<p>Future upgrades of Drupal versions will look substantially different than before. Gone are the days of major migration planning as Drupal has completely overhauled their application lifecycle. Drupal 9 was released in June 2020 the process of upgrading won’t cause any loss in functionality or any libraries to break; the core is completely backwards compatible. This important feature was adopted  for the new life cycle for all future version releases. It was explained simply by Alex Lopez, “You’ll just get notices advising you to upgrade libraries, function calls, and anything else in your code that would make your module incompatible with a Drupal 10 version. But, theoretically, nothing that would break your module/site.”(2018). A large focus of Drupal core and module development for the 8 release was on specific industries, including but not limited to big data and higher education. “Build a wide range of solutions from university websites, applications, scholarly publishing, and more.” (Drupal for education, 2020).</p>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85065822-db814f80-b17b-11ea-8eb5-4ee294bae8fb.jpg\" data-is-external-image=\"true\"  alt=\"background\" /></figure></p>\n<p>The Drupal 8 release in 2015 had a major overhaul of the code base. This meant that upgrading from Drupal 7 into Drupal 8 broke content libraries, functions, and theming. Drupal 8’s migration is an Extract, Transform, Load (ETL) process as part of its Migrate API. The data can come from a variety of places; a database, CSV, JSON, or REST function, and then transformed, imported, and processed (Migrate API overview, 2019).</p>\n<p>Islandora changed the development approach to align with Drupal 8’s direction. A major focus on Islandora 8 is to build the stack in a way that fully utilizes Drupal 8 and make the contributed modules available. There are so many modules currently  developed and actively managed by other institutions that provide content modeling  and developing metadata has become exceedingly easier. As the need for IRs increases, the number of options available have increased as well making it sometimes difficult to sift through to find the best option for the community. Since these modules are only a couple of years old, many of these lack sufficient documentation or guidance on how to best utilize the modules for a digital or institutional repository. The Islandora community makes every effort to bring content models together by research, community vetting, writing documentation, and creating solutions to help provide a ready made (turnkey) solution. Islandora 8 content is now utilizing Drupal nodes as the primary representation instead of how Islandora 7 overwrote Drupal routing to provide an object and it’s content. Islandora 8 content is Drupal content (stored in Fedora 5) and is completely compatible with 3rd party addons. In almost every cases the Islandora content is treated exactly the same as any other content imported into a base Drupal.</p>\n<h3 id=\"extra\">Extra</h3>\n<p>Technical video walkthrough on Princeton’s content migration into Drupal 8. </p>\n<p><a href=\"http://www.youtube.com/watch?v=0ZJuilHUIVA\" title=\"Drupal 8 &amp; Princeton University\"><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://image.slidesharecdn.com/princeton-university-press-status-aug2017-camp-drupalnorth-170829182326/95/princeton-university-press-to-drupal-8-migration-case-study-by-evolving-web-18-638.jpg\" data-is-external-image=\"true\"  alt=\"Drupal 8 &amp; Princeton University\" /></figure></a></p>\n",
+            "content_html": "<p>Islandora 7 is a monolithic application that glues Drupal 6/7 to Fedora 3 with an optional institutional repository (IR) addon. Islandora 7 had several pain points, such as workflows, most of which required substantial coding to work around these issues. Although Islandora is  a collection of several Drupal 6/7 modules, it wasn’t written in a way that leveraged much of Drupal’s content management functionality. Fortunately the release of Drupal 8 has remedied this.</p>\n<p>Future upgrades of Drupal versions will look substantially different than before. Gone are the days of major migration planning as Drupal has completely overhauled their application lifecycle. Drupal 9 was released in June 2020 the process of upgrading won’t cause any loss in functionality or any libraries to break; the core is completely backwards compatible. This important feature was adopted  for the new life cycle for all future version releases. It was explained simply by Alex Lopez, “You’ll just get notices advising you to upgrade libraries, function calls, and anything else in your code that would make your module incompatible with a Drupal 10 version. But, theoretically, nothing that would break your module/site.”(2018). A large focus of Drupal core and module development for the 8 release was on specific industries, including but not limited to big data and higher education. “Build a wide range of solutions from university websites, applications, scholarly publishing, and more.” (Drupal for education, 2020).</p>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85065822-db814f80-b17b-11ea-8eb5-4ee294bae8fb.jpg\" data-is-external-image=\"true\"  alt=\"background\" /></figure></p>\n<p>The Drupal 8 release in 2015 had a major overhaul of the code base. This meant that upgrading from Drupal 7 into Drupal 8 broke content libraries, functions, and theming. Drupal 8’s migration is an Extract, Transform, Load (ETL) process as part of its Migrate API. The data can come from a variety of places; a database, CSV, JSON, or REST function, and then transformed, imported, and processed (Migrate API overview, 2019).</p>\n<p>Islandora changed the development approach to align with Drupal 8’s direction. A major focus on Islandora 8 is to build the stack in a way that fully utilizes Drupal 8 and make the contributed modules available. There are so many modules currently developed and actively managed by other institutions that provide content modeling  and developing metadata has become exceedingly easier. As the need for IRs increases, the number of options available have increased as well making it sometimes difficult to sift through to find the best option for the community. Since these modules are only a couple of years old, many of these lack sufficient documentation or guidance on how to best utilize the modules for a digital or institutional repository. The Islandora community makes every effort to bring content models together by research, community vetting, writing documentation, and creating solutions to help provide a ready made (turnkey) solution. </p>\n<p>The benefits of using Islandora 8 (i.e. Drupal 8, Solr, and a self-described “bento box” of other technology) include continuing to leverage the Drupal expertise we have in it. Using Drupal 8 for UT Collections would beneficially build on that existing knowledge and infrastructure. Islandora 8 is more closely tied to Drupal 8 than Islandora 7 was to Drupal 7, especially in terms of managing collections and object storage. For example, metadata is no longer just an XML file in Fedora that gets indexed in Solr. With Islandora 8, metadata is actually stored and managed as fields in the Drupal database. The Introduction to Islandora 8 webinar notes that “metadata profiles are created via Drupal content types” and “it can be serialized into other formats (XML, JSON, JSON-LD) on demand”. Batch metadata updates are made possible through Drupal’s Views Bulk Operations by a “Modify Field Values” operation. Metadata display is configurable in the Drupal View associated with the object type. Islandora 8 promises to make good use of Drupal this time around.</p>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://islandora.github.io/documentation/assets/user-intro-bento.png\" data-is-external-image=\"true\"  alt=\"I8 Bento\" /></figure></p>\n<p>Islandora 8 community developers are also proposing interesting ways of integrating IIIF, such as <a href=\"https://github.com/Islandora/documentation/issues/1263\">generating IIIF manifests from Drupal Views</a> results. The downside of continuing to use Drupal for Collections has a steep learning curve for collection owners in Islandora 8, since the level of configuration possibilities has increased dynamically compared to 7, upon first look. Continuing down the Drupal path means that the Collections service must continue to offer collection owners with sufficient Drupal 8 training and support. The question that hangs on Drupal 8 is: <em>will it complicate or simplify collection building for our development team and how long would it take to migrate?</em></p>\n<p>Islandora 8 content is now utilizing Drupal nodes as the primary representation instead of how Islandora 7 overwrote Drupal routing to provide an object and it’s content. Islandora 8 content is Drupal content (stored in Fedora 5) and is completely compatible with 3rd party addons. In almost every cases the Islandora content is treated exactly the same as any other content imported into a base Drupal.</p>\n<h4 id=\"how-do-you-become-a-partner\">How do you become a partner</h4>\n<p>Partners pay $10,000 CAD each year for partner membership.\nMembers pay either $2,000 or $4,000  each year for a standard membership.</p>\n<h4 id=\"how-many-partners-are-there\">How many partners are there</h4>\n<p>As of July 2020 there are 12 partners and 24 members.</p>\n<p><a href=\"https://islandora.ca/installations-map\"><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/86928135-2995cd00-c102-11ea-9245-a295b0de08f0.png\" data-is-external-image=\"true\"  alt=\"map\" /></figure></a></p>\n<p><strong>Partners</strong></p>\n<ul>\n<li>UPEI</li>\n<li>discoverygarden</li>\n<li>LYRASIS</li>\n<li>McMaster University</li>\n<li>Born-Digital</li>\n<li>University of Manitoba</li>\n<li>Florida State University</li>\n<li>Simon Fraser University</li>\n<li>University of Tennessee Knoxville</li>\n<li>Marmot Library Network</li>\n<li>University of Toronto</li>\n<li>Islandora Collaboration Group</li>\n</ul>\n<p><strong>Members</strong></p>\n<ul>\n<li>Agile Humanities</li>\n<li>American Philosophical Society</li>\n<li>Amherst College</li>\n<li>Berklee College of Music</li>\n<li>British Columbia Electronic Library Network</li>\n<li>California Institute of Technology</li>\n<li>Chinese University of Hong Kong</li>\n<li>Delft University</li>\n<li>Digital Echidna</li>\n<li>Florida Virtual Campus</li>\n<li><strong>Johns Hopkins</strong></li>\n<li>Lib4RI</li>\n<li>Leiden University</li>\n<li>Louisiana State University</li>\n<li>Metropolitan New York Library Council (METRO)</li>\n<li>Ontario Colleges Library Service</li>\n<li>PALS</li>\n<li><strong>Smithsonian Institute</strong></li>\n<li>University of Connecticut</li>\n<li>University of Nevada, Las Vegas</li>\n<li>University of Saskatchewan</li>\n<li>University of Texas at Austin</li>\n<li>Tulane University</li>\n<li>York University</li>\n</ul>\n<h4 id=\"are-there-fees-involved\">Are there fees involved</h4>\n<p>“Just a smile”, - Melissa Anez  (Islandora’s Project &amp; Community Manager)</p>\n<h4 id=\"how-is-governance-and-decision-making-handled\">How is governance and decision making handled?</h4>\n<p>By-laws: <a href=\"https://islandora.ca/if/governance\">https://islandora.ca/if/governance</a>\nGoverning group breakdown: <a href=\"https://islandora.ca/if/committees\">https://islandora.ca/if/committees</a>\nThe Role of Interest Groups(IGs): <a href=\"https://islandora.ca/collaborate\">https://islandora.ca/collaborate</a></p>\n<hr>\n<h3 id=\"extra\">Extra</h3>\n<p>Technical video walkthrough on Princeton’s content migration into Drupal 8. </p>\n<p><a href=\"http://www.youtube.com/watch?v=0ZJuilHUIVA\" title=\"Drupal 8 &amp; Princeton University\"><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://image.slidesharecdn.com/princeton-university-press-status-aug2017-camp-drupalnorth-170829182326/95/princeton-university-press-to-drupal-8-migration-case-study-by-evolving-web-18-638.jpg\" data-is-external-image=\"true\"  alt=\"Drupal 8 &amp; Princeton University\" /></figure></a></p>\n<h3 id=\"notes\">Notes</h3>\n<p>Where Do We Go From Here: A Review of Technology Solutions for Providing Access to Digital Collections: <a href=\"https://journal.code4lib.org/articles/15000\">https://journal.code4lib.org/articles/15000</a></p>\n",
             "author": {
                 "name": "Don Richards"
             },
             "tags": [
+                   "video",
+                   "partner",
+                   "membership",
                    "history",
+                   "governance",
+                   "fee",
+                   "decision",
+                   "committee",
+                   "Smithsonian",
+                   "Princeton",
+                   "Interest Group",
+                   "IG",
+                   "ETL",
                    "Drupal 8 ",
                    "Background"
             ],
-            "date_published": "2020-07-07T11:46:39-04:00",
-            "date_modified": "2020-07-07T11:46:39-04:00"
+            "date_published": "2020-07-08T10:52:04-04:00",
+            "date_modified": "2020-07-08T10:52:04-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html",
@@ -475,8 +497,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-07T11:46:39-04:00",
-            "date_modified": "2020-07-07T11:46:39-04:00"
+            "date_published": "2020-07-08T10:52:04-04:00",
+            "date_modified": "2020-07-08T10:52:04-04:00"
         }
     ]
 }
