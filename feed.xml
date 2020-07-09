@@ -17,7 +17,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/vendors.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/vendors.html</id>
 
-        <updated>2020-07-08T18:25:25-04:00</updated>
+        <updated>2020-07-09T12:38:04-04:00</updated>
             <summary>
                 <![CDATA[
                     Islandora has many vendors and due to the nature of how Islandora 8 operates any vendor capable of supplying services for Drupal 8 content should&hellip;
@@ -102,7 +102,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/quick-document-design-key.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/quick-document-design-key.html</id>
 
-        <updated>2020-07-08T18:25:25-04:00</updated>
+        <updated>2020-07-09T12:38:04-04:00</updated>
             <summary>
                 <![CDATA[
                     Reference Material locationsDiagram a sample image object describing:Object modeling in PCDMData stored in Fedora #4Data stored in MySQL/PostgresData stored elsewhereDocument and diagram migration process of&hellip;
@@ -163,7 +163,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/how-to-access-specific-data.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/how-to-access-specific-data.html</id>
 
-        <updated>2020-07-08T18:25:25-04:00</updated>
+        <updated>2020-07-09T12:38:04-04:00</updated>
             <summary>
                 <![CDATA[
                     How to find things in FedoraThe map between Drupal URIs and their corresponding Fedora URIs is stored in a service called Gemini. An Islandora “pseudo-field”&hellip;
@@ -209,7 +209,7 @@ Under namespaces (<a href="http://localhost:8080/bigdata/#namespaces">http://loc
             <category term="WebAC"/>
             <category term="PCDM"/>
 
-        <updated>2020-07-08T18:25:25-04:00</updated>
+        <updated>2020-07-09T12:38:04-04:00</updated>
             <summary>
                 <![CDATA[
                     The Portland Common Data Model (PCDM) is a flexible, extensible domain model that is intended to underlie a wide array of repository and DAMS applications.
@@ -299,7 +299,7 @@ Under namespaces (<a href="http://localhost:8080/bigdata/#namespaces">http://loc
         <link href="https://donrichards.github.io/migrate_islandora_csv/cas-authentication.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/cas-authentication.html</id>
 
-        <updated>2020-07-08T18:25:25-04:00</updated>
+        <updated>2020-07-09T12:38:04-04:00</updated>
             <summary>
                 <![CDATA[
                      CAS authentication protocol is required by the university as the primary single-sign-on technology to use with the UTK’s authentication service. Here are some of&hellip;
@@ -329,7 +329,7 @@ Under namespaces (<a href="http://localhost:8080/bigdata/#namespaces">http://loc
         <link href="https://donrichards.github.io/migrate_islandora_csv/mods-to-rdf.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/mods-to-rdf.html</id>
 
-        <updated>2020-07-08T18:25:25-04:00</updated>
+        <updated>2020-07-09T12:38:04-04:00</updated>
             <summary>
                 <![CDATA[
                     TL; DRIslandora 8 used the MODS to RDF Mapping Recommendations document from Samvera MODS to RDF Working Group to create initial mappings. Islandora consist of&hellip;
@@ -338,7 +338,7 @@ Under namespaces (<a href="http://localhost:8080/bigdata/#namespaces">http://loc
         <content type="html">
             <![CDATA[
                 <h3 id="tl-dr">TL; DR</h3>
-<p>Islandora 8 used the MODS to <a href="https://wiki.duraspace.org/download/attachments/87460857/MODS-RDF-Mapping-Recommendations_SMIG_v1_2019-01.pdf?api=v2">RDF Mapping Recommendations</a> document from <em>Samvera MODS to RDF Working Group</em> to create initial mappings. Islandora consist of multiple yaml files for different content types corporate_body, family, geo_location, person, resource_type and subject. Create a mapping for each one of these and the bulk of the work is done. YAML files can iterate over several posibilities and output the one desired RDF value. It directly links and pulls data from several namespace APIs with some configuration. Minting object mappings will need the URI sourced from an external vocabulary, URI for a local object, or a literal value (text string). Minting is covered on the <a href="/oai-pmh-and-doi-minting">OAI-PMH and DOI minting</a></p>
+<p>Islandora 8 used the MODS to <a href="https://wiki.duraspace.org/download/attachments/87460857/MODS-RDF-Mapping-Recommendations_SMIG_v1_2019-01.pdf?api=v2">RDF Mapping Recommendations</a> document from <em>Samvera MODS to RDF Working Group</em> to create initial mappings. Islandora consist of multiple yaml files for different content types corporate_body, family, geo_location, person, resource_type and subject. Create a mapping for each one of these and the bulk of the work is done. YAML files can iterate over several posibilities and output the one desired RDF value. It directly links and pulls data from several namespace APIs with some configuration. Minting object mappings will need the URI sourced from an external vocabulary, URI for a local object, or a literal value (text string). Minting is covered on the <a href="/oai-pmh-and-doi-minting">OAI-PMH and DOI minting</a>.</p>
 <h3 id="overview">Overview</h3>
 <p>In Islandora, the JSON-LD Module transforms nodes (or media, or taxonomy terms) into the RDF that is synced into Fedora and the Triplestore. It uses RDF mappings, a concept defined by the RDF Module, and exposes them through the REST API at <code>?_format=jsonld</code>. Functionality can be expanded by RDF schema building schema.org configuration tool (RDF UI).</p>
 <h3 id="json-ld-module">JSON-LD Module</h3>
@@ -639,17 +639,18 @@ fieldMappings:
         <link href="https://donrichards.github.io/migrate_islandora_csv/ingestingmigrating.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/ingestingmigrating.html</id>
 
-        <updated>2020-07-08T18:25:25-04:00</updated>
+        <updated>2020-07-09T12:38:04-04:00</updated>
             <summary>
                 <![CDATA[
-                    During ingests/migrations there are several items that has been covered by different sections of this document. It helps to have a working knowledge of linked&hellip;
+                    During ingests/migrations there are several items that have been covered by different sections of this document. It helps to have a working knowledge of linked&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
-                <p>During ingests/migrations there are several items that has been covered by different sections of this document. It helps to have a working knowledge of linked data, RDF, and ontology &amp; vocabulary basics vs repository-specific ontologies to create a comprehensive migration/ingest. Names, files, metadata along with the DOI is important to know how this information should be stored to process it correctly.</p>
-<h3 id="batch">Batch</h3>
-<p><a href="https://islandora.github.io/documentation/technical-documentation/migrate-csv/#ingesting-files">Ingesting Files</a> according to the documentation the Migrate API is the main way to ingest batches of data into Drupal (and because Islandora 8 is Drupal, into Islandora). The Migrate module only provides the framework, it’s up to you to create the rules that take data from a source, through a process (i.e. a mapping) to a destination. A set of these rules is called a “migration”. It has to be set up (as a Configuration Entity, either by importing a YAML file or by installing a Feature) and then it has to be ran. In a nutshell the steps are the following</p>
+                <p>During ingests/migrations there are several items that have been covered by different sections of this document. It helps to have a working knowledge of linked data, RDF, and ontology &amp; vocabulary basics vs repository-specific ontologies to create a comprehensive migration/ingest. Names, files, metadata along with the DOI is important to have a firm understanding of how this information is related to process it correctly.</p>
+<h2 id="batch">Batch</h2>
+<p><a href="https://islandora.github.io/documentation/technical-documentation/migrate-csv/#ingesting-files">Ingesting Files</a> according to the documentation the Migrate API is the main way to ingest batches of data into Drupal (and because Islandora 8 is Drupal, into Islandora). The Migrate module only provides the framework, it’s up to you to create the rules that take data from a source, through a process (i.e. a mapping) to a destination. A set of these rules is called a “migration”. It has to be set up (as a Configuration Entity, either by importing a YAML file or by installing a Feature) and then it has to be ran.</p>
+<p>In a nutshell the steps are the following:</p>
 <ol>
 <li>Create a CSV file.</li>
 <li>Create a yml for each type of entity (person, place, event, university, etc) needing to mint. </li>
@@ -659,8 +660,139 @@ fieldMappings:
 </ol>
 <p><figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/86034395-88738c00-ba08-11ea-8aaa-48bea9d0cc97.png" data-is-external-image="true"  alt="Screenshot of Migrate UI" /></figure></p>
 <p>Althought this process can be done in the admin UI, it’s highly suggested to use drush commands. The UI doesn’t respect order of operations and very little information is given from the admin UI when there is an error.</p>
-<h3 id="single-objects">Single Objects</h3>
-<p>Mint taxonomy Subjects &amp; geograph entities separately.  </p>
+<h2 id="important-notes">Important Notes</h2>
+<h3 id="dates">Dates</h3>
+<p>It’s highly recomended to convert dates to EDTF. EDTF field type is for recording dates in Extended Date Time Format, which is a format based off of the hyphenated form of ISO 8601 (e.g. 1991-02-03 or 1991-02-03T10:00:00), but also allows expressions of different granularity and uncertainty.</p>
+<p><figure class="post__image"><img loading="lazy" src="https://islandora.github.io/documentation/assets/metadata_edtf_valid.png" data-is-external-image="true"  alt="Metadata edtf valid form" /></figure></p>
+<p>This doesn’t have to be done on the original metadata (MODS), it can be done in the transform process of the migration. The configuration for the Default EDTF Widget (including options for extra strict date validation, and allowing date intervals and date sets).</p>
+<p><figure class="post__image"><img loading="lazy" src="https://islandora.github.io/documentation/assets/metadata_edtf_formatters.png" data-is-external-image="true"  alt="EDTF formatter settings" /></figure></p>
+<h3 id="getting-metadata-into-fedora-and-a-triple-store">Getting Metadata into Fedora and a Triple-store</h3>
+<p>The above sections described how Drupal manages and stores metadata, but Islandora 8 provides for pushing that metadata into a Fedora 4+ repository and a triple-store. Islandora does this by using Drupal’s serialization capabilities to provide a JSON-LD serialization that can be ingested by Fedora 4+ repository and triple-stores. In response to actions taken as a result of if-then configurations in Contexts, Islandora sends notifications to the repository and triple-store that an entity available to ingest.</p>
+<p>The JSON-LD module (written for Islandora) takes an entity and its corresponding RDF mapping (a structure defined by the contributed RDF module) to create a JSON-LD serialization. An RDF mapping for a content type, media type, or vocabulary lists its fields and the RDF predicates that should be used for them.</p>
+<p>The JSON-LD serialization for an entity is available by appending ?_format=jsonld to the entity’s URL. This particular syntax takes advantage of the REST API module. Below is an example JSONLD document representing the RDF serialization of a Repository item node created in a standard islandora-playbook based vagrant VM:</p>
+<pre><code class="language-json">{
+  &quot;@graph&quot;:[
+    {
+      &quot;@id&quot;:&quot;http://localhost:8000/node/1&quot;,
+      &quot;@type&quot;:[
+        &quot;http://pcdm.org/models#Object&quot;
+      ],
+      &quot;http://purl.org/dc/terms/title&quot;:[
+        {
+          &quot;@value&quot;:&quot;New York, New York. A large lobster brought in by the New England fishing boat [Fulton Fish Market]&quot;,
+          &quot;@language&quot;:&quot;en&quot;
+        }
+      ],
+      &quot;http://schema.org/author&quot;:[
+        {
+          &quot;@id&quot;:&quot;http://localhost:8000/user/1&quot;
+        }
+      ],
+      &quot;http://schema.org/dateCreated&quot;:[
+        {
+          &quot;@value&quot;:&quot;2019-03-14T19:05:24+00:00&quot;,
+          &quot;@type&quot;:&quot;http://www.w3.org/2001/XMLSchema#dateTime&quot;
+        }
+      ],
+      &quot;http://schema.org/dateModified&quot;:[
+        {
+          &quot;@value&quot;:&quot;2019-03-14T19:20:51+00:00&quot;,
+          &quot;@type&quot;:&quot;http://www.w3.org/2001/XMLSchema#dateTime&quot;
+        }
+      ],
+      &quot;http://purl.org/dc/terms/date&quot;:[
+        {
+          &quot;@value&quot;:&quot;1943-05&quot;,
+          &quot;@type&quot;:&quot;http://www.w3.org/2001/XMLSchema#string&quot;
+        },
+        {
+          &quot;@value&quot;:&quot;1943-05&quot;,
+          &quot;@type&quot;:&quot;http://www.w3.org/2001/XMLSchema#gYearMonth&quot;
+        }
+      ],
+      &quot;http://purl.org/dc/terms/extent&quot;:[
+        {
+          &quot;@value&quot;:&quot;1 negative&quot;,
+          &quot;@type&quot;:&quot;http://www.w3.org/2001/XMLSchema#string&quot;
+        }
+      ],
+      &quot;http://purl.org/dc/terms/identifier&quot;:[
+        {
+          &quot;@value&quot;:&quot;D 630714&quot;,
+          &quot;@type&quot;:&quot;http://www.w3.org/2001/XMLSchema#string&quot;
+        }
+      ],
+      &quot;http://purl.org/dc/terms/type&quot;:[
+        {
+          &quot;@id&quot;:&quot;http://localhost:8000/taxonomy/term/11&quot;
+        }
+      ],
+      &quot;http://purl.org/dc/terms/rights&quot;:[
+        {
+          &quot;@value&quot;:&quot;No known restrictions. For information, see U.S. Farm Security Administration/Office of War Information Black &amp; White Photographs(http://www.loc.gov/rr/print/res/071_fsab.html)&quot;,
+          &quot;@type&quot;:&quot;http://www.w3.org/2001/XMLSchema#string&quot;
+        }
+      ],
+      &quot;http://purl.org/dc/terms/subject&quot;:[
+        {
+          &quot;@id&quot;:&quot;http://localhost:8000/taxonomy/term/26&quot;
+        }
+      ],
+      &quot;http://schema.org/sameAs&quot;:[
+        {
+          &quot;@value&quot;:&quot;http://localhost:8000/node/1&quot;
+        }
+      ]
+    },
+    {
+      &quot;@id&quot;:&quot;http://localhost:8000/user/1&quot;,
+      &quot;@type&quot;:[
+        &quot;http://schema.org/Person&quot;
+      ]
+    },
+    {
+      &quot;@id&quot;:&quot;http://localhost:8000/taxonomy/term/11&quot;,
+      &quot;@type&quot;:[
+        &quot;http://schema.org/Thing&quot;
+      ]
+    },
+    {
+      &quot;@id&quot;:&quot;http://localhost:8000/taxonomy/term/26&quot;,
+      &quot;@type&quot;:[
+        &quot;http://schema.org/Thing&quot;
+      ]
+    }
+  ]
+}</code></pre>
+<h3 id="maintaining-uri-reference--relationships">Maintaining URI reference &amp; relationships</h3>
+<p>Migrating the URI associated with a person, place, event, etc. is an essential requirement for UTK. This process will demonstrate how to retain the URIs we have when we migrate and support complex graph relationships. To take full advantage of this, the taxonomy vocabularies (person, geographic location, subject, event, etc.) needs to be migrated or created first. Once the taxonomy term is migrated, the relationship needs to be specified on the node along with the previously created taxonomy reference URI. <strong>Islandora Defaults</strong> provides a ‘Linked Agent’ field as part of the Repository Item content type, and populates the available relationships from the MARC relators list. By utilizing this, the Entity (for example in this illustration is the person term  <strong>Van Vactor</strong>) and his MARC relator is <strong>Composer</strong>. 
+<figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/86975470-62579580-c146-11ea-8f20-ddc6b53edebe.png" data-is-external-image="true"  alt="vanvactor_example" /></figure></p>
+<p>The list of available relations for this field is configurable at ‘/admin/structure/types/manage/islandora_object/fields/node.islandora_object.field_linked_agent’. If you re-use this existing field on another content type, you can define different available relations for that instance of the field. Relations are defined in the format key|value, and the key is used in the RDF mapping (see below).</p>
+<p><figure class="post__image"><img loading="lazy" src="https://islandora.github.io/documentation/assets/metadata_available_relations_config.png" data-is-external-image="true"  alt="key|value RDF mapping" /></figure></p>
+<p>Unlike other fields, which can be assigned RDF predicates in RDF Mapping yaml files, a typed relation field uses a different predicate depending on the chosen “type”. These predicates are assigned using the ‘keys’ in the key|value configuration. The key must be formated namespace:predicate, e.g. relators:act. The namespace (‘relators’) must be pre-defined in code, using a hook. See the RDF Mapping section of Create / Update a Content Type for more details, including a list of available pre-defined namespaces.</p>
+<p>For more information see <a href="/metadata-and-metadata-sharing#Typed-Relation">Metadata and Metadata Sharing #Typed-Relation</a> and <a href="https://islandora.github.io/documentation/user-documentation/metadata/">Islandora’s Metadata Documentation</a></p>
+<h3 id="single-objects-using-the-ui">Single Objects (using the UI)</h3>
+<p>Before you start ingesting identify all of the entities (taxonomy vocabulary term reference) that needs to be created first (person, events, geographic locations, subjects, etc.) if it doesn’t already exist. You can create them in paralelle while filling out the ingest form. To create a new term go the the category it falls into (person, events, geographic locations, subjects, etc.) and click “List Terms” then “Add Term”. </p>
+<pre><code class="language-json">{
+  &quot;@graph&quot;: [{
+    &quot;@id&quot;: &quot;http://www.utkislandora8testing.com/taxonomy/term/34&quot;,
+    &quot;@type&quot;: [
+      &quot;http://purl.org/dc/terms/Location&quot;,
+      &quot;http://schema.org/Place&quot;
+    ],
+    &quot;http://schema.org/name&quot;: [{
+      &quot;@value&quot;: &quot;Great Smoky Mountains&quot;,
+      &quot;@language&quot;: &quot;en&quot;
+    }],
+    &quot;http://schema.org/dateModified&quot;: [{
+      &quot;@value&quot;: &quot;2020-07-06T20:02:57+00:00&quot;,
+      &quot;@type&quot;: &quot;http://www.w3.org/2001/XMLSchema#dateTime&quot;
+    }],
+    &quot;http://schema.org/sameAs&quot;: [{
+      &quot;@id&quot;: &quot;http://sws.geonames.org/4626066&quot;
+    }]
+  }]
+}</code></pre>
 
             ]]>
         </content>
@@ -677,7 +809,7 @@ fieldMappings:
             <category term="files"/>
             <category term="CSV"/>
 
-        <updated>2020-07-08T18:25:25-04:00</updated>
+        <updated>2020-07-09T12:38:04-04:00</updated>
             <summary>
                 <![CDATA[
                     Uploading is part of the ingest process, information and modules specific to uploading can be found here. This can be done either with the UI&hellip;
@@ -717,7 +849,7 @@ fieldMappings:
         <link href="https://donrichards.github.io/migrate_islandora_csv/step-by-step-setup-ir.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/step-by-step-setup-ir.html</id>
 
-        <updated>2020-07-08T18:25:25-04:00</updated>
+        <updated>2020-07-09T12:38:04-04:00</updated>
             <summary>
                 <![CDATA[
                     This will cover these topic The simpliest way to implement a highly customizable submit, review, accept, publish workflow is to leverage Drupal’s Content Moderation. Most&hellip;
@@ -881,7 +1013,7 @@ fieldMappings:
         <link href="https://donrichards.github.io/migrate_islandora_csv/book-and-large-image-viewer.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/book-and-large-image-viewer.html</id>
 
-        <updated>2020-07-08T18:25:25-04:00</updated>
+        <updated>2020-07-09T12:38:04-04:00</updated>
             <summary>
                 <![CDATA[
                     IIIF (International Image Interoperability Framework) is a set of specifications that provides interoperability of image-based collections across platforms. What this means for a repository platform&hellip;
@@ -932,7 +1064,7 @@ fieldMappings:
             <category term="Citation"/>
             <category term="Bibliography"/>
 
-        <updated>2020-07-08T18:25:25-04:00</updated>
+        <updated>2020-07-09T12:38:04-04:00</updated>
             <summary>
                 <![CDATA[
                      Drupal for higher education is a large industry. There are several top universities that have been using Drupal for a veriety of acedemic purposes.
@@ -1083,7 +1215,7 @@ entire repository; can add new collections.</li>
         <link href="https://donrichards.github.io/migrate_islandora_csv/bibliography-and-citation.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/bibliography-and-citation.html</id>
 
-        <updated>2020-07-08T18:25:25-04:00</updated>
+        <updated>2020-07-09T12:38:04-04:00</updated>
             <summary>
                 <![CDATA[
                     Drupal is a very popular and well-known CMS for educational websites. And it’s very important that Drupal has tools to deal with bibliography and citations.
@@ -1124,7 +1256,7 @@ entire repository; can add new collections.</li>
         <link href="https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html</id>
 
-        <updated>2020-07-08T18:25:25-04:00</updated>
+        <updated>2020-07-09T12:38:04-04:00</updated>
             <summary>
                 <![CDATA[
                     OAI-PMHRepositories can expose or harvest metadata, or both. OAI-PMH specifies six services which can be invoked over HTTP(s). The OAI-DC metadata format is aided by&hellip;
@@ -1286,7 +1418,7 @@ entire repository; can add new collections.</li>
             <category term="Google"/>
             <category term="Delta"/>
 
-        <updated>2020-07-08T18:25:25-04:00</updated>
+        <updated>2020-07-09T12:38:04-04:00</updated>
             <summary>
                 <![CDATA[
                     230+ public sites, 1414 listserv members, 144 GitHub members, 28 Committers, 25+ Contributed Modules, 30+ Foundation members, 12 Interest Groups, 10 Community-led software releases, 19&hellip;
@@ -1356,7 +1488,7 @@ entire repository; can add new collections.</li>
             <category term="VM"/>
             <category term="ISLE"/>
 
-        <updated>2020-07-08T18:25:25-04:00</updated>
+        <updated>2020-07-09T12:38:04-04:00</updated>
             <summary>
                 <![CDATA[
                     For self hosted soltutions there are 2 basic deployment options; Ansible(a style we’re currently using) or deploying through Docker images. All of these options can&hellip;
@@ -1394,7 +1526,7 @@ entire repository; can add new collections.</li>
             <category term="GB"/>
             <category term="CPU"/>
 
-        <updated>2020-07-08T18:25:25-04:00</updated>
+        <updated>2020-07-09T12:38:04-04:00</updated>
             <summary>
                 <![CDATA[
                     This page’s layout reflects the PDF template and is intended to be a breif description of each area specified in that document. This is a&hellip;
@@ -1526,7 +1658,7 @@ entire repository; can add new collections.</li>
             <category term="access"/>
             <category term="WebAC"/>
 
-        <updated>2020-07-08T18:25:25-04:00</updated>
+        <updated>2020-07-09T12:38:04-04:00</updated>
             <summary>
                 <![CDATA[
                     Rightsstatements.org is not specifically discussed in the documentation. Although extensive URI integration for controlled access terms is documented on the site, an assessment by the&hellip;
@@ -1555,7 +1687,7 @@ entire repository; can add new collections.</li>
             <category term="hosting"/>
             <category term="cloud"/>
 
-        <updated>2020-07-08T18:25:25-04:00</updated>
+        <updated>2020-07-09T12:38:04-04:00</updated>
             <summary>
                 <![CDATA[
                     This study set out to investigate the feasibility of hosting a digital repository system in a managed way in a private cloud environment. The system&hellip;
@@ -1606,7 +1738,7 @@ entire repository; can add new collections.</li>
             <category term="LTR"/>
             <category term="AI"/>
 
-        <updated>2020-07-08T18:25:25-04:00</updated>
+        <updated>2020-07-09T12:38:04-04:00</updated>
             <summary>
                 <![CDATA[
                     A search/discoverability enhancement “Learning to Rank (LTR) is a class of techniques that apply supervised machine learning (ML) to solve ranking problems.“ [link] LTR is&hellip;
@@ -1650,7 +1782,7 @@ entire repository; can add new collections.</li>
             <category term="JSON"/>
             <category term="API"/>
 
-        <updated>2020-07-08T18:25:25-04:00</updated>
+        <updated>2020-07-09T12:38:04-04:00</updated>
             <summary>
                 <![CDATA[
                     In Islandora 8, metadata is stored in Drupal, in fields attached to entities (nodes or media). This allows us to interact with metadata (add, edit,&hellip;
@@ -1723,7 +1855,7 @@ entire repository; can add new collections.</li>
         <link href="https://donrichards.github.io/migrate_islandora_csv/preservation.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/preservation.html</id>
 
-        <updated>2020-07-08T18:25:25-04:00</updated>
+        <updated>2020-07-09T12:38:04-04:00</updated>
             <summary>
                 <![CDATA[
                     Islandora 8 utilizes Harvard’s File Information Tool Set (FITS), Fixity auditing, bag exporting, and preservation reporting for preservation (Jordan, 2019). a. The migration process currently&hellip;
@@ -1752,30 +1884,40 @@ entire repository; can add new collections.</li>
         </author>
         <link href="https://donrichards.github.io/migrate_islandora_csv/uploading-ingesting-and-migration.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/uploading-ingesting-and-migration.html</id>
+            <category term="vocabulary"/>
+            <category term="uri"/>
             <category term="upload"/>
+            <category term="taxonomy"/>
+            <category term="relationship"/>
+            <category term="reference"/>
             <category term="migration"/>
             <category term="ingest"/>
             <category term="entity"/>
             <category term="RDF"/>
             <category term="MODS"/>
+            <category term="Linked Agent&#x27;"/>
+            <category term="Islandora Defaults"/>
             <category term="CSV"/>
 
-        <updated>2020-07-08T18:25:25-04:00</updated>
+        <updated>2020-07-09T12:38:04-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/7/migration-middle-format-process.jpg" alt="Typical Drupal 8 migration" />
-                    The Migrate API is the main way to ingest batches of data into Drupal (and because Islandora 8 is Drupal, into Islandora). The Migrate module&hellip;
+                    tl; drIngesting can be done in the UI but there are additional options for ingestion of content with complicated setups and complex metadata. Ingesting either&hellip;
                 ]]>
             </summary>
         <content type="html">
             <![CDATA[
                     <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/7/migration-middle-format-process.jpg" alt="Typical Drupal 8 migration" />
-                <p>The Migrate API is the main way to ingest batches of data into Drupal (and because Islandora 8 is Drupal, into Islandora). The Migrate module only provides the framework, it’s up to you to create the rules that take data from a source, through a process (i.e. a mapping) to a destination. A set of these rules is called a “migration”. It has to be set up (as a Configuration Entity, either by importing a YAML file or by installing a Feature) and then it has to be run.</p>
+                <h2 id="tl-dr">tl; dr</h2>
+<p>Ingesting can be done in the UI but there are additional options for ingestion of content with complicated setups and complex metadata. Ingesting either by batch or UI offers a lot of flexability. There are a few ways to achieve an almost completely lossless migration. This may seem a bit misleading. Not all MODS/DC values can be identically represented in RDF form. In 7.x, metadata was usually stored using an XML schema such as MODS or DC, as datastreams attached to an object. In Islandora 8, metadata is stored as fields. This means we are breaking out individual elements from a hierarchical structure to being individual independent values allowing for a potentially lossless process data migration. Migrating URIs associated with a person, place, event, etc. is done by creating a taxonomy reference URI and asscoiating it with a relationship (for a person Drupal uses a MARC relator) to a node/object. URI graph support relationships in ways that wasn’t avialbe before. Automatically fetching content for DOIs or rights statements can be done. A few options are covered at <a href="/oai-pmh-and-doi-minting.html">OAI-PMH &amp; DOI Minting</a>. If keeping the “legacy” XML metadata from 7.x is important, it can be attached to an Islandora 8 resource node as a Media entity and treated in a simular way as a binary file in 7.x. Either way no metadata is lost. And the only obvious gotcha is there is no mechanism in place for migrating all previous versions of an object maintaining that history. There are custom methods that can be done to achieve this but a discussion needs to happen on weather this is worth the effort.</p>
+<h2 id="overview">Overview</h2>
+<p>The Migrate API is the main way to ingest batches of data into Drupal (and because Islandora 8 is Drupal, into Islandora). The Migrate module only provides the framework, it’s up to you to create the rules that take data from a source, through a process (i.e. a mapping) to a destination. A set of these rules is called a “migration”. It has to be set up (as a Configuration Entity, either by importing a YAML file or by installing a Feature) and then it has to be run.</p>
 <p>Once a migration has been run, it will have created (or updated) a bunch of Drupal entities of one type - whether that’s taxonomy terms, nodes, files, etc. Since an Object in Islandora 8 is made up of several different Drupal entities that refer to each other, it’s going to take multiple migrations to create an Islandora object, and it’s important to perform these migrations in a sensible order.</p>
 <p>A basic Islandora object is at minimum: - a file, which holds the actual binary contents of an item - a node, which holds the descriptive metadata for an item and makes it discoverable - a media, which holds technical metadata and references the file and the node, linking the two together.</p>
 <p>A typical migration migrates files and CSV metadata into Islandora using only YAML files. This process transforms data with pipelines of processing plugins and can handle numeric, text, and entity reference fields. It can handle multiple values for fields, and even more complicated things like <code>typed_relation</code> fields. This description only scratches the surface of what can be done with the Migrate API.</p>
-<p>There’s certainly more you can do with Drupal 8’s Migrate API. There’s a plethora of source and processing plugins out there that can handle pretty much anything you throw at it. XML and JSON are fair game. You can also request sources using HTTP, so you can always point it at an existing systems REST API and go from there. If you can’t make the Migrate API’s existing workflow make the necessary changes to your data, you can expand its capabilities by writing your own process plugins. Reading the Drupal.org documentation on the Migrate API would be a good place to start.</p>
-<h3 id=""></h3>
+<p>There’s certainly more you can do with Drupal 8’s Migrate API. There’s a plethora of source and processing plugins out there that can handle pretty much anything you throw at it. XML and JSON are fair game. You can also request sources using HTTP, so you can always point it at an existing systems REST API and go from there. If you can’t make the Migrate API’s existing workflow make the necessary changes to your data, you can expand its capabilities by writing your own process plugins. Reading the Drupal.org documentation on the Migrate API would be a good place to start or ask the community if someone already has a solution for the challenge you’re facing. </p>
+<h3 id="charter-questions">Charter questions</h3>
 <ol>
 <li>Supports migration of objects and their associated datastreams from the Fedora 3 instance to Islandora 8. There are a couple of prebuilt solutions including a process that utilizes a Solr query and preconfigured mappings to achieve a full migration. Another technique utilizes the Drupal 8 module “Migrate Islandora CSV” (Lamb, 2019). As the title suggests this module utilizes a CSV file to migrate and can be generated via the Islandora 7x module “Islandora Get CSV” (Jordan, 2020).  </li>
 <li>Islandora has a few options for migrating from Islandora 7. There are 2 core migration options that Islandora supports directly; Islandora CSV migration and the migrate 7x claw (a fedora to fedora option). Another option developed was the Islandora workbench.<ul>
@@ -1820,7 +1962,7 @@ entire repository; can add new collections.</li>
             <category term="PDF"/>
             <category term="Moore"/>
 
-        <updated>2020-07-08T18:25:25-04:00</updated>
+        <updated>2020-07-09T12:38:04-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/6/Screen-Shot-2020-06-19-at-2.44.27-PM.png" alt="Drupal 8 Add Custom Content type" />
@@ -1860,7 +2002,7 @@ entire repository; can add new collections.</li>
             <category term="Mirador"/>
             <category term="BigData"/>
 
-        <updated>2020-07-08T18:25:25-04:00</updated>
+        <updated>2020-07-09T12:38:04-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/5/CONTENT-MODELING-DRUPAL8.jpg" alt="Book viewer example" />
@@ -1900,7 +2042,7 @@ entire repository; can add new collections.</li>
             <category term="PCDM"/>
             <category term="BigData"/>
 
-        <updated>2020-07-08T18:25:25-04:00</updated>
+        <updated>2020-07-09T12:38:04-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/4/PCDM_diagram.jpg" alt="Islandora 8 PCDM diagram" />
@@ -1972,7 +2114,7 @@ entire repository; can add new collections.</li>
             <category term="microservice"/>
             <category term="content modeling"/>
 
-        <updated>2020-07-08T18:25:25-04:00</updated>
+        <updated>2020-07-09T12:38:04-04:00</updated>
             <summary>
                 <![CDATA[
                     Islandora 8’s content modeling is based on ontology with a mix of Drupal’s microservices, context, and action solutions. Islandora objects are referred to as nodes.
@@ -2017,7 +2159,7 @@ entire repository; can add new collections.</li>
             <category term="Drupal 8 "/>
             <category term="Background"/>
 
-        <updated>2020-07-08T18:25:25-04:00</updated>
+        <updated>2020-07-09T12:38:04-04:00</updated>
             <summary>
                 <![CDATA[
                     Islandora 7 is a monolithic application that glues Drupal 6/7 to Fedora 3 with an optional institutional repository (IR) addon. Islandora 7 had several pain&hellip;
@@ -2106,7 +2248,7 @@ The Role of Interest Groups(IGs): <a href="https://islandora.ca/collaborate">htt
         <link href="https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html</id>
 
-        <updated>2020-07-08T18:25:25-04:00</updated>
+        <updated>2020-07-09T12:38:04-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/1/seadragon-zoomed.jpg" alt="" />
