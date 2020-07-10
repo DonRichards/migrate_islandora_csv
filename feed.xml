@@ -17,7 +17,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/vendors.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/vendors.html</id>
 
-        <updated>2020-07-09T12:38:04-04:00</updated>
+        <updated>2020-07-10T10:14:28-04:00</updated>
             <summary>
                 <![CDATA[
                     Islandora has many vendors and due to the nature of how Islandora 8 operates any vendor capable of supplying services for Drupal 8 content should&hellip;
@@ -102,7 +102,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/quick-document-design-key.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/quick-document-design-key.html</id>
 
-        <updated>2020-07-09T12:38:04-04:00</updated>
+        <updated>2020-07-10T10:14:28-04:00</updated>
             <summary>
                 <![CDATA[
                     Reference Material locationsDiagram a sample image object describing:Object modeling in PCDMData stored in Fedora #4Data stored in MySQL/PostgresData stored elsewhereDocument and diagram migration process of&hellip;
@@ -163,7 +163,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/how-to-access-specific-data.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/how-to-access-specific-data.html</id>
 
-        <updated>2020-07-09T12:38:04-04:00</updated>
+        <updated>2020-07-10T10:14:28-04:00</updated>
             <summary>
                 <![CDATA[
                     How to find things in FedoraThe map between Drupal URIs and their corresponding Fedora URIs is stored in a service called Gemini. An Islandora “pseudo-field”&hellip;
@@ -209,7 +209,7 @@ Under namespaces (<a href="http://localhost:8080/bigdata/#namespaces">http://loc
             <category term="WebAC"/>
             <category term="PCDM"/>
 
-        <updated>2020-07-09T12:38:04-04:00</updated>
+        <updated>2020-07-10T10:14:28-04:00</updated>
             <summary>
                 <![CDATA[
                     The Portland Common Data Model (PCDM) is a flexible, extensible domain model that is intended to underlie a wide array of repository and DAMS applications.
@@ -299,7 +299,7 @@ Under namespaces (<a href="http://localhost:8080/bigdata/#namespaces">http://loc
         <link href="https://donrichards.github.io/migrate_islandora_csv/cas-authentication.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/cas-authentication.html</id>
 
-        <updated>2020-07-09T12:38:04-04:00</updated>
+        <updated>2020-07-10T10:14:28-04:00</updated>
             <summary>
                 <![CDATA[
                      CAS authentication protocol is required by the university as the primary single-sign-on technology to use with the UTK’s authentication service. Here are some of&hellip;
@@ -329,7 +329,7 @@ Under namespaces (<a href="http://localhost:8080/bigdata/#namespaces">http://loc
         <link href="https://donrichards.github.io/migrate_islandora_csv/mods-to-rdf.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/mods-to-rdf.html</id>
 
-        <updated>2020-07-09T12:38:04-04:00</updated>
+        <updated>2020-07-10T10:14:28-04:00</updated>
             <summary>
                 <![CDATA[
                     TL; DRIslandora 8 used the MODS to RDF Mapping Recommendations document from Samvera MODS to RDF Working Group to create initial mappings. Islandora consist of&hellip;
@@ -638,8 +638,22 @@ fieldMappings:
         </author>
         <link href="https://donrichards.github.io/migrate_islandora_csv/ingestingmigrating.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/ingestingmigrating.html</id>
+            <category term="yml"/>
+            <category term="triple"/>
+            <category term="time"/>
+            <category term="migration"/>
+            <category term="migrate"/>
+            <category term="metadata"/>
+            <category term="ingest"/>
+            <category term="fedora"/>
+            <category term="date"/>
+            <category term="batch"/>
+            <category term="UI"/>
+            <category term="ETL"/>
+            <category term="EDTF"/>
+            <category term="CSV"/>
 
-        <updated>2020-07-09T12:38:04-04:00</updated>
+        <updated>2020-07-10T10:14:28-04:00</updated>
             <summary>
                 <![CDATA[
                     During ingests/migrations there are several items that have been covered by different sections of this document. It helps to have a working knowledge of linked&hellip;
@@ -648,7 +662,7 @@ fieldMappings:
         <content type="html">
             <![CDATA[
                 <p>During ingests/migrations there are several items that have been covered by different sections of this document. It helps to have a working knowledge of linked data, RDF, and ontology &amp; vocabulary basics vs repository-specific ontologies to create a comprehensive migration/ingest. Names, files, metadata along with the DOI is important to have a firm understanding of how this information is related to process it correctly.</p>
-<h2 id="batch">Batch</h2>
+<h2 id="batch-processingmigrating">Batch Processing/Migrating</h2>
 <p><a href="https://islandora.github.io/documentation/technical-documentation/migrate-csv/#ingesting-files">Ingesting Files</a> according to the documentation the Migrate API is the main way to ingest batches of data into Drupal (and because Islandora 8 is Drupal, into Islandora). The Migrate module only provides the framework, it’s up to you to create the rules that take data from a source, through a process (i.e. a mapping) to a destination. A set of these rules is called a “migration”. It has to be set up (as a Configuration Entity, either by importing a YAML file or by installing a Feature) and then it has to be ran.</p>
 <p>In a nutshell the steps are the following:</p>
 <ol>
@@ -660,6 +674,8 @@ fieldMappings:
 </ol>
 <p><figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/86034395-88738c00-ba08-11ea-8aaa-48bea9d0cc97.png" data-is-external-image="true"  alt="Screenshot of Migrate UI" /></figure></p>
 <p>Althought this process can be done in the admin UI, it’s highly suggested to use drush commands. The UI doesn’t respect order of operations and very little information is given from the admin UI when there is an error.</p>
+<p><figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/87075911-0bf26180-c1ef-11ea-91ed-f6e7cfca0140.png" data-is-external-image="true"  alt="migrate status in the terminal" /></figure></p>
+<p><figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/2738244/87076752-2b3dbe80-c1f0-11ea-9db3-974dda17b4f4.png" data-is-external-image="true"  alt="Terminal results from collection import" /></figure></p>
 <h2 id="important-notes">Important Notes</h2>
 <h3 id="dates">Dates</h3>
 <p>It’s highly recomended to convert dates to EDTF. EDTF field type is for recording dates in Extended Date Time Format, which is a format based off of the hyphenated form of ISO 8601 (e.g. 1991-02-03 or 1991-02-03T10:00:00), but also allows expressions of different granularity and uncertainty.</p>
@@ -809,7 +825,7 @@ fieldMappings:
             <category term="files"/>
             <category term="CSV"/>
 
-        <updated>2020-07-09T12:38:04-04:00</updated>
+        <updated>2020-07-10T10:14:28-04:00</updated>
             <summary>
                 <![CDATA[
                     Uploading is part of the ingest process, information and modules specific to uploading can be found here. This can be done either with the UI&hellip;
@@ -849,7 +865,7 @@ fieldMappings:
         <link href="https://donrichards.github.io/migrate_islandora_csv/step-by-step-setup-ir.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/step-by-step-setup-ir.html</id>
 
-        <updated>2020-07-09T12:38:04-04:00</updated>
+        <updated>2020-07-10T10:14:28-04:00</updated>
             <summary>
                 <![CDATA[
                     This will cover these topic The simpliest way to implement a highly customizable submit, review, accept, publish workflow is to leverage Drupal’s Content Moderation. Most&hellip;
@@ -1013,7 +1029,7 @@ fieldMappings:
         <link href="https://donrichards.github.io/migrate_islandora_csv/book-and-large-image-viewer.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/book-and-large-image-viewer.html</id>
 
-        <updated>2020-07-09T12:38:04-04:00</updated>
+        <updated>2020-07-10T10:14:28-04:00</updated>
             <summary>
                 <![CDATA[
                     IIIF (International Image Interoperability Framework) is a set of specifications that provides interoperability of image-based collections across platforms. What this means for a repository platform&hellip;
@@ -1064,7 +1080,7 @@ fieldMappings:
             <category term="Citation"/>
             <category term="Bibliography"/>
 
-        <updated>2020-07-09T12:38:04-04:00</updated>
+        <updated>2020-07-10T10:14:28-04:00</updated>
             <summary>
                 <![CDATA[
                      Drupal for higher education is a large industry. There are several top universities that have been using Drupal for a veriety of acedemic purposes.
@@ -1215,7 +1231,7 @@ entire repository; can add new collections.</li>
         <link href="https://donrichards.github.io/migrate_islandora_csv/bibliography-and-citation.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/bibliography-and-citation.html</id>
 
-        <updated>2020-07-09T12:38:04-04:00</updated>
+        <updated>2020-07-10T10:14:28-04:00</updated>
             <summary>
                 <![CDATA[
                     Drupal is a very popular and well-known CMS for educational websites. And it’s very important that Drupal has tools to deal with bibliography and citations.
@@ -1256,7 +1272,7 @@ entire repository; can add new collections.</li>
         <link href="https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html</id>
 
-        <updated>2020-07-09T12:38:04-04:00</updated>
+        <updated>2020-07-10T10:14:28-04:00</updated>
             <summary>
                 <![CDATA[
                     OAI-PMHRepositories can expose or harvest metadata, or both. OAI-PMH specifies six services which can be invoked over HTTP(s). The OAI-DC metadata format is aided by&hellip;
@@ -1418,7 +1434,7 @@ entire repository; can add new collections.</li>
             <category term="Google"/>
             <category term="Delta"/>
 
-        <updated>2020-07-09T12:38:04-04:00</updated>
+        <updated>2020-07-10T10:14:28-04:00</updated>
             <summary>
                 <![CDATA[
                     230+ public sites, 1414 listserv members, 144 GitHub members, 28 Committers, 25+ Contributed Modules, 30+ Foundation members, 12 Interest Groups, 10 Community-led software releases, 19&hellip;
@@ -1488,7 +1504,7 @@ entire repository; can add new collections.</li>
             <category term="VM"/>
             <category term="ISLE"/>
 
-        <updated>2020-07-09T12:38:04-04:00</updated>
+        <updated>2020-07-10T10:14:28-04:00</updated>
             <summary>
                 <![CDATA[
                     For self hosted soltutions there are 2 basic deployment options; Ansible(a style we’re currently using) or deploying through Docker images. All of these options can&hellip;
@@ -1506,6 +1522,12 @@ entire repository; can add new collections.</li>
 <li>The stack can also be a standard manual development and deployment. Although there is nothing technically wrong with this option, it is generally considered time comsuming to initially setup and generally considered realatively unnessisary. This has historically been Digital Initiative’s pattern of operations.</li>
 </ol>
 <p>All of these options can utilize a continous development (automated deployment) life cycle. </p>
+<h3 id="new-development-workflow-options">New Development Workflow Options</h3>
+<p>Docker Compose and Docker Desktop combined allows developers to deploy applications on Amazon ECS on AWS Fargate. This new functionality streamlines the process of deploying and managing containers in AWS from a local development environment running Docker. This means the act of deploying changes to production can be dramatically sped up.</p>
+<p>Previously, taking a local Compose file and running it on Amazon ECS posed a challenge because of constructs in Amazon ECS that were not part of the Compose specification, but were necessary for the application to run in AWS. For example, in order to run a simple Compose file and deploy to Amazon ECS, a developer would first need to leave the Docker experience and configure an Amazon VPC, Amazon ECS Cluster, and Amazon ECS Task Definition to name just a few of the AWS resources needed. As part of the collaboration, developers can continue to leverage tools like the Docker CLI and Docker Compose without needing to setup those resources in AWS outside of the Docker experience because it is now handled natively. By creating and switching to a new context in Docker, a developer can simply issue an up command via Docker Compose, which will create those resources automatically in AWS. This provides an easy path for developers to deploy and run highly secure and scalable production applications in Amazon ECS.</p>
+<p>While the new process is fully documented on the Docker blog and the GitHub repository, let’s explore the beta experience where we show a simple frontend web application using NGINX talking to a backend written in Go defined in our docker-compose.yaml file. In the beta, users will notice an additional ecs syntax in the docker commands. This is because we will leverage a plugin in the short term but for GA, the experience will be integrated with Docker Desktop and a developer can simply switch contexts to run their applications on Amazon ECS leveraging the Docker commands they are used to. As demonstrated below, the setup is straightforward where a user will define the AWS Profile, ECS cluster name, and the AWS Region where you want to deploy your applications. By simply issuing a docker ecs compose up, the application and the resources needed for it to run will be created in AWS!</p>
+<p><figure class="post__image"><img loading="lazy" src="https://d2908q01vomqb2.cloudfront.net/fe2ef495a1152561572949784c16bf23abb28057/2020/07/04/Docker-ECS-Demo-070420.gif" data-is-external-image="true"  alt="Docker ECS Demo" /></figure></p>
+<p>For more information see <a href="https://www.docker.com/blog/from-docker-straight-to-aws/">From Docker Straight to AWS</a> and <a href="https://github.com/docker/ecs-plugin">Docker CLI plugin for Amazon ECS | Github</a></p>
 
             ]]>
         </content>
@@ -1526,7 +1548,7 @@ entire repository; can add new collections.</li>
             <category term="GB"/>
             <category term="CPU"/>
 
-        <updated>2020-07-09T12:38:04-04:00</updated>
+        <updated>2020-07-10T10:14:28-04:00</updated>
             <summary>
                 <![CDATA[
                     This page’s layout reflects the PDF template and is intended to be a breif description of each area specified in that document. This is a&hellip;
@@ -1658,7 +1680,7 @@ entire repository; can add new collections.</li>
             <category term="access"/>
             <category term="WebAC"/>
 
-        <updated>2020-07-09T12:38:04-04:00</updated>
+        <updated>2020-07-10T10:14:28-04:00</updated>
             <summary>
                 <![CDATA[
                     Rightsstatements.org is not specifically discussed in the documentation. Although extensive URI integration for controlled access terms is documented on the site, an assessment by the&hellip;
@@ -1687,7 +1709,7 @@ entire repository; can add new collections.</li>
             <category term="hosting"/>
             <category term="cloud"/>
 
-        <updated>2020-07-09T12:38:04-04:00</updated>
+        <updated>2020-07-10T10:14:28-04:00</updated>
             <summary>
                 <![CDATA[
                     This study set out to investigate the feasibility of hosting a digital repository system in a managed way in a private cloud environment. The system&hellip;
@@ -1738,7 +1760,7 @@ entire repository; can add new collections.</li>
             <category term="LTR"/>
             <category term="AI"/>
 
-        <updated>2020-07-09T12:38:04-04:00</updated>
+        <updated>2020-07-10T10:14:28-04:00</updated>
             <summary>
                 <![CDATA[
                     A search/discoverability enhancement “Learning to Rank (LTR) is a class of techniques that apply supervised machine learning (ML) to solve ranking problems.“ [link] LTR is&hellip;
@@ -1782,7 +1804,7 @@ entire repository; can add new collections.</li>
             <category term="JSON"/>
             <category term="API"/>
 
-        <updated>2020-07-09T12:38:04-04:00</updated>
+        <updated>2020-07-10T10:14:28-04:00</updated>
             <summary>
                 <![CDATA[
                     In Islandora 8, metadata is stored in Drupal, in fields attached to entities (nodes or media). This allows us to interact with metadata (add, edit,&hellip;
@@ -1855,7 +1877,7 @@ entire repository; can add new collections.</li>
         <link href="https://donrichards.github.io/migrate_islandora_csv/preservation.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/preservation.html</id>
 
-        <updated>2020-07-09T12:38:04-04:00</updated>
+        <updated>2020-07-10T10:14:28-04:00</updated>
             <summary>
                 <![CDATA[
                     Islandora 8 utilizes Harvard’s File Information Tool Set (FITS), Fixity auditing, bag exporting, and preservation reporting for preservation (Jordan, 2019). a. The migration process currently&hellip;
@@ -1899,7 +1921,7 @@ entire repository; can add new collections.</li>
             <category term="Islandora Defaults"/>
             <category term="CSV"/>
 
-        <updated>2020-07-09T12:38:04-04:00</updated>
+        <updated>2020-07-10T10:14:28-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/7/migration-middle-format-process.jpg" alt="Typical Drupal 8 migration" />
@@ -1962,7 +1984,7 @@ entire repository; can add new collections.</li>
             <category term="PDF"/>
             <category term="Moore"/>
 
-        <updated>2020-07-09T12:38:04-04:00</updated>
+        <updated>2020-07-10T10:14:28-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/6/Screen-Shot-2020-06-19-at-2.44.27-PM.png" alt="Drupal 8 Add Custom Content type" />
@@ -2002,7 +2024,7 @@ entire repository; can add new collections.</li>
             <category term="Mirador"/>
             <category term="BigData"/>
 
-        <updated>2020-07-09T12:38:04-04:00</updated>
+        <updated>2020-07-10T10:14:28-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/5/CONTENT-MODELING-DRUPAL8.jpg" alt="Book viewer example" />
@@ -2042,7 +2064,7 @@ entire repository; can add new collections.</li>
             <category term="PCDM"/>
             <category term="BigData"/>
 
-        <updated>2020-07-09T12:38:04-04:00</updated>
+        <updated>2020-07-10T10:14:28-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/4/PCDM_diagram.jpg" alt="Islandora 8 PCDM diagram" />
@@ -2114,7 +2136,7 @@ entire repository; can add new collections.</li>
             <category term="microservice"/>
             <category term="content modeling"/>
 
-        <updated>2020-07-09T12:38:04-04:00</updated>
+        <updated>2020-07-10T10:14:28-04:00</updated>
             <summary>
                 <![CDATA[
                     Islandora 8’s content modeling is based on ontology with a mix of Drupal’s microservices, context, and action solutions. Islandora objects are referred to as nodes.
@@ -2159,7 +2181,7 @@ entire repository; can add new collections.</li>
             <category term="Drupal 8 "/>
             <category term="Background"/>
 
-        <updated>2020-07-09T12:38:04-04:00</updated>
+        <updated>2020-07-10T10:14:28-04:00</updated>
             <summary>
                 <![CDATA[
                     Islandora 7 is a monolithic application that glues Drupal 6/7 to Fedora 3 with an optional institutional repository (IR) addon. Islandora 7 had several pain&hellip;
@@ -2248,7 +2270,7 @@ The Role of Interest Groups(IGs): <a href="https://islandora.ca/collaborate">htt
         <link href="https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html</id>
 
-        <updated>2020-07-09T12:38:04-04:00</updated>
+        <updated>2020-07-10T10:14:28-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/1/seadragon-zoomed.jpg" alt="" />
