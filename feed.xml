@@ -17,7 +17,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/vendors.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/vendors.html</id>
 
-        <updated>2020-07-10T10:14:28-04:00</updated>
+        <updated>2020-07-10T10:48:37-04:00</updated>
             <summary>
                 <![CDATA[
                     Islandora has many vendors and due to the nature of how Islandora 8 operates any vendor capable of supplying services for Drupal 8 content should&hellip;
@@ -102,7 +102,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/quick-document-design-key.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/quick-document-design-key.html</id>
 
-        <updated>2020-07-10T10:14:28-04:00</updated>
+        <updated>2020-07-10T10:48:37-04:00</updated>
             <summary>
                 <![CDATA[
                     Reference Material locationsDiagram a sample image object describing:Object modeling in PCDMData stored in Fedora #4Data stored in MySQL/PostgresData stored elsewhereDocument and diagram migration process of&hellip;
@@ -163,7 +163,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/how-to-access-specific-data.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/how-to-access-specific-data.html</id>
 
-        <updated>2020-07-10T10:14:28-04:00</updated>
+        <updated>2020-07-10T10:48:37-04:00</updated>
             <summary>
                 <![CDATA[
                     How to find things in FedoraThe map between Drupal URIs and their corresponding Fedora URIs is stored in a service called Gemini. An Islandora “pseudo-field”&hellip;
@@ -209,7 +209,7 @@ Under namespaces (<a href="http://localhost:8080/bigdata/#namespaces">http://loc
             <category term="WebAC"/>
             <category term="PCDM"/>
 
-        <updated>2020-07-10T10:14:28-04:00</updated>
+        <updated>2020-07-10T10:48:37-04:00</updated>
             <summary>
                 <![CDATA[
                     The Portland Common Data Model (PCDM) is a flexible, extensible domain model that is intended to underlie a wide array of repository and DAMS applications.
@@ -299,7 +299,7 @@ Under namespaces (<a href="http://localhost:8080/bigdata/#namespaces">http://loc
         <link href="https://donrichards.github.io/migrate_islandora_csv/cas-authentication.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/cas-authentication.html</id>
 
-        <updated>2020-07-10T10:14:28-04:00</updated>
+        <updated>2020-07-10T10:48:37-04:00</updated>
             <summary>
                 <![CDATA[
                      CAS authentication protocol is required by the university as the primary single-sign-on technology to use with the UTK’s authentication service. Here are some of&hellip;
@@ -329,7 +329,7 @@ Under namespaces (<a href="http://localhost:8080/bigdata/#namespaces">http://loc
         <link href="https://donrichards.github.io/migrate_islandora_csv/mods-to-rdf.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/mods-to-rdf.html</id>
 
-        <updated>2020-07-10T10:14:28-04:00</updated>
+        <updated>2020-07-10T10:48:37-04:00</updated>
             <summary>
                 <![CDATA[
                     TL; DRIslandora 8 used the MODS to RDF Mapping Recommendations document from Samvera MODS to RDF Working Group to create initial mappings. Islandora consist of&hellip;
@@ -653,7 +653,7 @@ fieldMappings:
             <category term="EDTF"/>
             <category term="CSV"/>
 
-        <updated>2020-07-10T10:14:28-04:00</updated>
+        <updated>2020-07-10T10:48:37-04:00</updated>
             <summary>
                 <![CDATA[
                     During ingests/migrations there are several items that have been covered by different sections of this document. It helps to have a working knowledge of linked&hellip;
@@ -825,7 +825,7 @@ fieldMappings:
             <category term="files"/>
             <category term="CSV"/>
 
-        <updated>2020-07-10T10:14:28-04:00</updated>
+        <updated>2020-07-10T10:48:37-04:00</updated>
             <summary>
                 <![CDATA[
                     Uploading is part of the ingest process, information and modules specific to uploading can be found here. This can be done either with the UI&hellip;
@@ -865,7 +865,7 @@ fieldMappings:
         <link href="https://donrichards.github.io/migrate_islandora_csv/step-by-step-setup-ir.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/step-by-step-setup-ir.html</id>
 
-        <updated>2020-07-10T10:14:28-04:00</updated>
+        <updated>2020-07-10T10:48:37-04:00</updated>
             <summary>
                 <![CDATA[
                     This will cover these topic The simpliest way to implement a highly customizable submit, review, accept, publish workflow is to leverage Drupal’s Content Moderation. Most&hellip;
@@ -1029,7 +1029,7 @@ fieldMappings:
         <link href="https://donrichards.github.io/migrate_islandora_csv/book-and-large-image-viewer.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/book-and-large-image-viewer.html</id>
 
-        <updated>2020-07-10T10:14:28-04:00</updated>
+        <updated>2020-07-10T10:48:37-04:00</updated>
             <summary>
                 <![CDATA[
                     IIIF (International Image Interoperability Framework) is a set of specifications that provides interoperability of image-based collections across platforms. What this means for a repository platform&hellip;
@@ -1080,7 +1080,7 @@ fieldMappings:
             <category term="Citation"/>
             <category term="Bibliography"/>
 
-        <updated>2020-07-10T10:14:28-04:00</updated>
+        <updated>2020-07-10T10:48:37-04:00</updated>
             <summary>
                 <![CDATA[
                      Drupal for higher education is a large industry. There are several top universities that have been using Drupal for a veriety of acedemic purposes.
@@ -1231,7 +1231,7 @@ entire repository; can add new collections.</li>
         <link href="https://donrichards.github.io/migrate_islandora_csv/bibliography-and-citation.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/bibliography-and-citation.html</id>
 
-        <updated>2020-07-10T10:14:28-04:00</updated>
+        <updated>2020-07-10T10:48:37-04:00</updated>
             <summary>
                 <![CDATA[
                     Drupal is a very popular and well-known CMS for educational websites. And it’s very important that Drupal has tools to deal with bibliography and citations.
@@ -1272,7 +1272,7 @@ entire repository; can add new collections.</li>
         <link href="https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html</id>
 
-        <updated>2020-07-10T10:14:28-04:00</updated>
+        <updated>2020-07-10T10:48:37-04:00</updated>
             <summary>
                 <![CDATA[
                     OAI-PMHRepositories can expose or harvest metadata, or both. OAI-PMH specifies six services which can be invoked over HTTP(s). The OAI-DC metadata format is aided by&hellip;
@@ -1434,7 +1434,7 @@ entire repository; can add new collections.</li>
             <category term="Google"/>
             <category term="Delta"/>
 
-        <updated>2020-07-10T10:14:28-04:00</updated>
+        <updated>2020-07-10T10:48:37-04:00</updated>
             <summary>
                 <![CDATA[
                     230+ public sites, 1414 listserv members, 144 GitHub members, 28 Committers, 25+ Contributed Modules, 30+ Foundation members, 12 Interest Groups, 10 Community-led software releases, 19&hellip;
@@ -1504,7 +1504,7 @@ entire repository; can add new collections.</li>
             <category term="VM"/>
             <category term="ISLE"/>
 
-        <updated>2020-07-10T10:14:28-04:00</updated>
+        <updated>2020-07-10T10:48:37-04:00</updated>
             <summary>
                 <![CDATA[
                     For self hosted soltutions there are 2 basic deployment options; Ansible(a style we’re currently using) or deploying through Docker images. All of these options can&hellip;
@@ -1548,7 +1548,7 @@ entire repository; can add new collections.</li>
             <category term="GB"/>
             <category term="CPU"/>
 
-        <updated>2020-07-10T10:14:28-04:00</updated>
+        <updated>2020-07-10T10:48:37-04:00</updated>
             <summary>
                 <![CDATA[
                     This page’s layout reflects the PDF template and is intended to be a breif description of each area specified in that document. This is a&hellip;
@@ -1560,13 +1560,15 @@ entire repository; can add new collections.</li>
 <ol>
 <li>Drupal 8 completely supports CAS authentication [<a href="https://www.drupal.org/project/cas">link</a>]. Please see <a href="/cas-authentication">CAS Authentication</a> page for more information.</li>
 <li>Drupal 8 supports various web analytics integrations such as <a href="https://www.drupal.org/project/google_analytics">google analytics</a> and <a href="https://www.drupal.org/project/matomo">Matomo</a>. For privacy reasons, Islandora 8 integrates Matomo web analytics platforms by default and can be accessed here: <a href="http://localhost:8000/matomo">http://localhost:8000/matomo</a>. The default configurations can be found in <a href="http://localhost:8000/admin/config/system/matomo">http://localhost:8000/admin/config/system/matomo</a>. You can login to the Matomo server using username <code>admin</code> and password <code>islandora</code> (by default). For more information see <a href="https://islandora.github.io/documentation/user-documentation/usage-stats/">Usage Stats</a>.The dashboard will look like this: <figure class="post__image"><img loading="lazy" src="https://islandora.github.io/documentation/assets/usage_stats_dashboard.jpg" data-is-external-image="true"  alt="usage stats dashboard" /></figure></li>
-<li>Islandora 8 provides several different reports out-of-the-box. From microservice stats to usage stats. There are several options and are highly configurable. Here is an example of Mark Jordan’s module that provides a collection of graphical reports on various aspects of an Islandora repository. <figure class="post__image"><img loading="lazy" src="https://github.com/mjordan/islandora_repository_reports/raw/master/docs/images/random_pie.png" data-is-external-image="true"  alt="pie chart" /></figure> <figure class="post__image"><img loading="lazy" src="https://github.com/mjordan/islandora_repository_reports/raw/master/docs/images/random_bar.png" data-is-external-image="true"  alt="bar chart" /></figure></li>
-<li>“Supports logging of manual dashboard processes by authenticated users” <strong>I am uncertain as to what this is referring to at this time.</strong></li>
-<li>Like any other web servers, Islandora 8 can be hosted locally. The biggest benefits are leveraging the power of CPU multithreading and large memory size utilization are the most cost effective. However, self hosted hardware costs money to maintain and upgrade. Please see <a href="cloud-hosting-solution.html">Cloud Hosting</a> for other options.</li>
-<li>Another option is using a cloud hosted provider like any one of the numerous options Amazon’s cloud hosting provides. Again please see <a href="cloud-hosting-solution.html">Cloud Hosting</a> for cloud options.</li>
-<li>Another option to include is a decoupled headless version. This solution was recently demonstrated by Discovery Gardens. It allows for all of the management side of development to be done on the Drupal server but the frontend to be a Reactjs solution. This improves speed and allows a much more flexible frontend solution to be applied. This would allow us to develop the entire site’s frontend behavior to be implemented the same way we’ve created the digital collection’s landing page. </li>
-<li>The bare minimum to run Islandora 8 in a virtual machine (<strong>for development</strong>) is 1 CPU core with 8GB of RAM and 8GB of storage. A more comprehensive specification needs to consider applications in the stack with large needs for scalability. “Cantaloupe uses a thread-per-request model, and maintains its own thread pool to carry out certain tasks asynchronously and spread work across processors. Response times will benefit from multiple fast cores.” (Deployment, 2020) Blazegraph has a few complicated tradeoffs for RAM vs harddrive performance for ideal implementations. The configuration they suggest is a 4 core (3.5GHz) system with 16GB RAM on a pair of SSDs. For 1 billion RDF triple is 83.8GB of storage/32GB if in RAM (Bebee, 2020). In conclusion for the infrastructure, the system depends on the desired scalability and performance expected. This is a full content management system with several high performance applications. </li>
+<li>Islandora 8 provides several different reports out-of-the-box. From microservice stats to usage stats. There are several options and are highly configurable. Here is an example of Mark Jordan’s module that provides a collection of graphical reports on various aspects of an Islandora repository. <figure class="post__image"><img loading="lazy" src="https://user-images.githubusercontent.com/403918/83357834-c30fd900-a323-11ea-8611-eeb1719c5a8c.png" data-is-external-image="true"  alt="Page example" /></figure> </li>
 </ol>
+<p>This is a report that can be done from either the object, collection, content type, etc. 
+<figure class="post__image"><img loading="lazy" src="https://github.com/mjordan/islandora_repository_reports/raw/master/docs/images/random_pie.png" data-is-external-image="true"  alt="pie chart" /></figure> <figure class="post__image"><img loading="lazy" src="https://github.com/mjordan/islandora_repository_reports/raw/master/docs/images/random_bar.png" data-is-external-image="true"  alt="bar chart" /></figure>
+4. “Supports logging of manual dashboard processes by authenticated users” <strong>I am uncertain as to what this is referring to at this time.</strong>
+5. Like any other web servers, Islandora 8 can be hosted locally. The biggest benefits are leveraging the power of CPU multithreading and large memory size utilization are the most cost effective. However, self hosted hardware costs money to maintain and upgrade. Please see <a href="cloud-hosting-solution.html">Cloud Hosting</a> for other options.
+6. Another option is using a cloud hosted provider like any one of the numerous options Amazon’s cloud hosting provides. Again please see <a href="cloud-hosting-solution.html">Cloud Hosting</a> for cloud options.
+7. Another option to include is a decoupled headless version. This solution was recently demonstrated by Discovery Gardens. It allows for all of the management side of development to be done on the Drupal server but the frontend to be a Reactjs solution. This improves speed and allows a much more flexible frontend solution to be applied. This would allow us to develop the entire site’s frontend behavior to be implemented the same way we’ve created the digital collection’s landing page. 
+8. The bare minimum to run Islandora 8 in a virtual machine (<strong>for development</strong>) is 1 CPU core with 8GB of RAM and 8GB of storage. A more comprehensive specification needs to consider applications in the stack with large needs for scalability. “Cantaloupe uses a thread-per-request model, and maintains its own thread pool to carry out certain tasks asynchronously and spread work across processors. Response times will benefit from multiple fast cores.” (Deployment, 2020) Blazegraph has a few complicated tradeoffs for RAM vs harddrive performance for ideal implementations. The configuration they suggest is a 4 core (3.5GHz) system with 16GB RAM on a pair of SSDs. For 1 billion RDF triple is 83.8GB of storage/32GB if in RAM (Bebee, 2020). In conclusion for the infrastructure, the system depends on the desired scalability and performance expected. This is a full content management system with several high performance applications. </p>
 <h4 id="ram-requirements">RAM requirements</h4>
 <p>This is a breakdown of the core requirements from a running VM, this is bare requirements and should be discouraged to use such low RAM in awany production server.</p>
 <table>
@@ -1680,7 +1682,7 @@ entire repository; can add new collections.</li>
             <category term="access"/>
             <category term="WebAC"/>
 
-        <updated>2020-07-10T10:14:28-04:00</updated>
+        <updated>2020-07-10T10:48:37-04:00</updated>
             <summary>
                 <![CDATA[
                     Rightsstatements.org is not specifically discussed in the documentation. Although extensive URI integration for controlled access terms is documented on the site, an assessment by the&hellip;
@@ -1709,7 +1711,7 @@ entire repository; can add new collections.</li>
             <category term="hosting"/>
             <category term="cloud"/>
 
-        <updated>2020-07-10T10:14:28-04:00</updated>
+        <updated>2020-07-10T10:48:37-04:00</updated>
             <summary>
                 <![CDATA[
                     This study set out to investigate the feasibility of hosting a digital repository system in a managed way in a private cloud environment. The system&hellip;
@@ -1760,7 +1762,7 @@ entire repository; can add new collections.</li>
             <category term="LTR"/>
             <category term="AI"/>
 
-        <updated>2020-07-10T10:14:28-04:00</updated>
+        <updated>2020-07-10T10:48:37-04:00</updated>
             <summary>
                 <![CDATA[
                     A search/discoverability enhancement “Learning to Rank (LTR) is a class of techniques that apply supervised machine learning (ML) to solve ranking problems.“ [link] LTR is&hellip;
@@ -1804,7 +1806,7 @@ entire repository; can add new collections.</li>
             <category term="JSON"/>
             <category term="API"/>
 
-        <updated>2020-07-10T10:14:28-04:00</updated>
+        <updated>2020-07-10T10:48:37-04:00</updated>
             <summary>
                 <![CDATA[
                     In Islandora 8, metadata is stored in Drupal, in fields attached to entities (nodes or media). This allows us to interact with metadata (add, edit,&hellip;
@@ -1877,7 +1879,7 @@ entire repository; can add new collections.</li>
         <link href="https://donrichards.github.io/migrate_islandora_csv/preservation.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/preservation.html</id>
 
-        <updated>2020-07-10T10:14:28-04:00</updated>
+        <updated>2020-07-10T10:48:37-04:00</updated>
             <summary>
                 <![CDATA[
                     Islandora 8 utilizes Harvard’s File Information Tool Set (FITS), Fixity auditing, bag exporting, and preservation reporting for preservation (Jordan, 2019). a. The migration process currently&hellip;
@@ -1921,7 +1923,7 @@ entire repository; can add new collections.</li>
             <category term="Islandora Defaults"/>
             <category term="CSV"/>
 
-        <updated>2020-07-10T10:14:28-04:00</updated>
+        <updated>2020-07-10T10:48:37-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/7/migration-middle-format-process.jpg" alt="Typical Drupal 8 migration" />
@@ -1984,7 +1986,7 @@ entire repository; can add new collections.</li>
             <category term="PDF"/>
             <category term="Moore"/>
 
-        <updated>2020-07-10T10:14:28-04:00</updated>
+        <updated>2020-07-10T10:48:37-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/6/Screen-Shot-2020-06-19-at-2.44.27-PM.png" alt="Drupal 8 Add Custom Content type" />
@@ -2024,7 +2026,7 @@ entire repository; can add new collections.</li>
             <category term="Mirador"/>
             <category term="BigData"/>
 
-        <updated>2020-07-10T10:14:28-04:00</updated>
+        <updated>2020-07-10T10:48:37-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/5/CONTENT-MODELING-DRUPAL8.jpg" alt="Book viewer example" />
@@ -2064,7 +2066,7 @@ entire repository; can add new collections.</li>
             <category term="PCDM"/>
             <category term="BigData"/>
 
-        <updated>2020-07-10T10:14:28-04:00</updated>
+        <updated>2020-07-10T10:48:37-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/4/PCDM_diagram.jpg" alt="Islandora 8 PCDM diagram" />
@@ -2136,7 +2138,7 @@ entire repository; can add new collections.</li>
             <category term="microservice"/>
             <category term="content modeling"/>
 
-        <updated>2020-07-10T10:14:28-04:00</updated>
+        <updated>2020-07-10T10:48:37-04:00</updated>
             <summary>
                 <![CDATA[
                     Islandora 8’s content modeling is based on ontology with a mix of Drupal’s microservices, context, and action solutions. Islandora objects are referred to as nodes.
@@ -2181,7 +2183,7 @@ entire repository; can add new collections.</li>
             <category term="Drupal 8 "/>
             <category term="Background"/>
 
-        <updated>2020-07-10T10:14:28-04:00</updated>
+        <updated>2020-07-10T10:48:37-04:00</updated>
             <summary>
                 <![CDATA[
                     Islandora 7 is a monolithic application that glues Drupal 6/7 to Fedora 3 with an optional institutional repository (IR) addon. Islandora 7 had several pain&hellip;
@@ -2270,7 +2272,7 @@ The Role of Interest Groups(IGs): <a href="https://islandora.ca/collaborate">htt
         <link href="https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html</id>
 
-        <updated>2020-07-10T10:14:28-04:00</updated>
+        <updated>2020-07-10T10:48:37-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/1/seadragon-zoomed.jpg" alt="" />
