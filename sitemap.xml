@@ -29,6 +29,10 @@
 <lastmod>2020-07-08T17:09:42-04:00</lastmod>
 </url>
 <url>
+<loc>https://donrichards.github.io/migrate_islandora_csv/component-overview.html</loc>
+<lastmod>2020-07-15T13:58:26-04:00</lastmod>
+</url>
+<url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/content-modeling.html</loc>
 <lastmod>2020-07-07T09:35:49-04:00</lastmod>
 </url>
@@ -38,7 +42,7 @@
 </url>
 <url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/developer-debugging.html</loc>
-<lastmod>2020-07-13T15:53:51-04:00</lastmod>
+<lastmod>2020-07-15T16:37:38-04:00</lastmod>
 </url>
 <url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/general-content-models.html</loc>
@@ -81,6 +85,10 @@
 </image:image>
 </url>
 <url>
+<loc>https://donrichards.github.io/migrate_islandora_csv/manually-configuring-drupal-89.html</loc>
+<lastmod>2020-07-15T14:05:31-04:00</lastmod>
+</url>
+<url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/metadata-and-metadata-sharing.html</loc>
 <lastmod>2020-07-08T18:13:35-04:00</lastmod>
 </url>
@@ -106,6 +114,9 @@
 </url>
 <url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/page/2/</loc>
+</url>
+<url>
+<loc>https://donrichards.github.io/migrate_islandora_csv/page/3/</loc>
 </url>
 <url>
 <loc>https://donrichards.github.io/migrate_islandora_csv/pcdm.html</loc>

@@ -10,6 +10,246 @@
     <id>https://donrichards.github.io/migrate_islandora_csv</id>
 
     <entry>
+        <title>Manually Configuring Drupal 8/9</title>
+        <author>
+            <name>Don Richards</name>
+        </author>
+        <link href="https://donrichards.github.io/migrate_islandora_csv/manually-configuring-drupal-89.html"/>
+        <id>https://donrichards.github.io/migrate_islandora_csv/manually-configuring-drupal-89.html</id>
+            <category term="settings"/>
+            <category term="flysystem"/>
+            <category term="fedoraAdmin"/>
+            <category term="drupal"/>
+            <category term="configuration"/>
+            <category term="component"/>
+            <category term="JWT"/>
+            <category term="IIIF"/>
+            <category term="Drupal 8 "/>
+
+        <updated>2020-07-15T16:37:54-04:00</updated>
+            <summary>
+                <![CDATA[
+                    After all of the above pieces are in place, installed, configured, started, and otherwise prepared, the last thing we need to do is to finally&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>After all of the above pieces are in place, installed, configured, started, and otherwise prepared, the last thing we need to do is to finally configure the front-end Drupal instance to wire all the installed components together.</p>
+<h2 id="drupal-pre-configuration">Drupal Pre-Configuration</h2>
+<h3 id="settingsphp"><code>settings.php</code></h3>
+<p>!!! notice
+    By default, <code>settings.php</code> is read-only for all users. It should be made writable while this pre-configuration is being done, then set back to <code>444</code> afterwards.</p>
+<p>Some additional settings will need to be established in your default <code>settings.php</code> before Drupal-side configuration can occur.</p>
+<p>The below configuration will establish <code>localhost</code> as a trusted host pattern, but on production sites this will need to be expanded to include the actual host patterns used by the site.</p>
+<p><code>/opt/drupal/web/sites/default/settings.php</code></p>
+<p><strong>Before</strong>:</p>
+<blockquote>
+<p>789 |   ‘driver’ =&gt; ‘pgsql’,</p>
+</blockquote>
+<blockquote>
+<p>790 | );</p>
+</blockquote>
+<p><strong>After</strong>:</p>
+<blockquote>
+<p>789 |   ‘driver’ =&gt; ‘pgsql’,</p>
+</blockquote>
+<blockquote>
+<p>790 | );</p>
+</blockquote>
+<blockquote>
+<p>791 | $settings[‘trusted_host_patterns’] = [</p>
+</blockquote>
+<blockquote>
+<p>792 |   ‘localhost’,</p>
+</blockquote>
+<blockquote>
+<p>793 | ];</p>
+</blockquote>
+<blockquote>
+<p>794 | $settings[‘flysystem’] = [</p>
+</blockquote>
+<blockquote>
+<p>795 |   ‘fedora’ =&gt; [</p>
+</blockquote>
+<blockquote>
+<p>796 |     ‘driver’ =&gt; ‘fedora’,</p>
+</blockquote>
+<blockquote>
+<p>797 |     ‘config’ =&gt; [</p>
+</blockquote>
+<blockquote>
+<p>798 |       ‘root’ =&gt; ‘<a href="http://localhost:8080/fcrepo/rest/&#39;">http://localhost:8080/fcrepo/rest/&#39;</a>,</p>
+</blockquote>
+<blockquote>
+<p>799 |     ],</p>
+</blockquote>
+<blockquote>
+<p>800 |   ],</p>
+</blockquote>
+<blockquote>
+<p>801 | ];</p>
+</blockquote>
+<p>Once this is done, refresh the cache to take hold of the new settings.</p>
+<pre><code class="language-bash">cd /opt/drupal
+drush -y cr</code></pre>
+<h2 id="islandora">Islandora</h2>
+<h3 id="downloading-islandora">Downloading Islandora</h3>
+<p>The Islandora Drupal module contains the core code to create a repository ecosystem in a Drupal environment. It also includes several submodules; of importance to us is <code>islandora_core_feature</code>, which contains the key configurations that turn a Drupal site into an Islandora site.</p>
+<p>Islandora also provides an <a href="https://github.com/Islandora/islandora_defaults"><code>islandora_defaults</code></a> module that contains additional configurations considered an appropriate launching point for configuring a site. We’re going to first enable the <code>islandora_defaults</code> module before doing any wiring on the front-end.</p>
+<p>Take note of some of the other comments in the below bash script for an idea of what the other components are expected, and which may be considered optional.</p>
+<pre><code class="language-bash">cd /opt/drupal
+# This is a convenience piece that will help speed up most of the rest of our
+# process working with Composer and Drupal.
+sudo -u www-data composer require zaporylie/composer-drupal-optimizations:^1.0
+
+# Since islandora_defaults is near the bottom of the dependency chain, requiring
+# it will get most of the modules and libraries we need to deploy a standard
+# Islandora site.
+sudo -u www-data composer require islandora/islandora_defaults:dev-8.x-1.x
+
+# These can be considered important or required depending on your site&#39;s
+# requirements; some of them represent dependencies of Islandora submodules.
+sudo -u www-data composer require drupal/pdf:1.x-dev
+sudo -u www-data composer require drupal/rest_oai_pmh:^1.0
+sudo -u www-data composer require drupal/facets:^1.3
+sudo -u www-data composer require drupal/restui:^1.16
+sudo -u www-data composer require drupal/rdfui:^1.0-beta1
+sudo -u www-data composer require drupal/content_browser:^1.0@alpha
+
+# These tend to be good to enable for a development environment, or just for a
+# higher quality of life when managing Islandora. That being said, devel should
+# NEVER be enabled on a production environment, as it intentionally gives the
+# user tools that compromise the security of a site.
+sudo -u www-data composer require drupal/console:~1.0
+sudo -u www-data composer require drupal/devel:^2.0
+sudo -u www-data composer require drupal/admin_toolbar:^2.0
+
+# Islandora also provides a theme called Carapace designed to work well out of
+# the box with an Islandora site.
+sudo -u www-data composer require islandora/carapace:dev-8.x-3.x</code></pre>
+<h3 id="enabling-downloaded-components">Enabling Downloaded Components</h3>
+<p>Components we’ve now downloaded using <code>composer require</code> can be enabled simultaneously via <code>drush</code>, which will ensure they are installed in the correct dependent order. Enabling <code>islandora_defaults</code> will also ensure all content types and configurations are set up in Islandora. The installation process for all of these modules will likely take some time.</p>
+<p>!!! notice
+    This list of modules assumes that all of the above components were downloaded using <code>composer require</code>; if this is not the case, you may need to pare down this list manually. It also includes <code>devel</code>, which again, should not be enabled on production sites.</p>
+<pre><code class="language-bash">cd /opt/drupal
+drush -y en rdf responsive_image devel syslog serialization basic_auth rest restui search_api_solr search_api_solr_defaults facets content_browser pdf admin_toolbar islandora_defaults controlled_access_terms_defaults islandora_breadcrumbs islandora_iiif islandora_oaipmh
+
+# If Carapace was downloaded, now is the time to enable and set it as well.
+drush -y theme:enable carapace
+drush -y config-set system.theme default carapace
+
+# After all of this, rebuild the cache.
+drush -y cr</code></pre>
+<h3 id="adding-a-jwt-configuration-to-drupal">Adding a JWT Configuration to Drupal</h3>
+<p>To allow our installation to talk to other services via Syn, we need to establish a Drupal-side JWT configuration using the keys we generated at that time.</p>
+<p>Log onto your site as an administrator at <code>/user</code>, then navigate to <code>/admin/config/system/keys/add</code>. Some of the settings here are unimportant, but pay close attention to the <strong>Key type</strong>, which should match the key we created earlier (an RSA key), and the <strong>File location</strong>, which should be the ultimate location of the key we created for Syn on the filesystem, <code>/opt/keys/syn_private.key</code>.</p>
+<p><figure class="post__image"><img loading="lazy" src="../../assets/adding_a_jwt_rsa_key.png" data-is-external-image="true"  alt="Adding a JWT RSA Key" /></figure></p>
+<p>Click <strong>Save</strong> to create the key.</p>
+<p>Once this key is created, navigate to <code>/admin/config/system/jwt</code> to select the key you just created from the list. Note that before the key will show up in the <strong>Private Key</strong> list, you need to select that key’s type in the <strong>Algorithm</strong> section, namely <code>RSASSA-PKCS1-v1_5 using SHA-256 (RS256)</code>.</p>
+<p><figure class="post__image"><img loading="lazy" src="../../assets/configuring_the_jwt_rsa_key_for_use.png" data-is-external-image="true"  alt="Configuring the JWT RSA Key for Use" /></figure></p>
+<p>Click <strong>Save configuration</strong> to establish this as the JWT key configuration.</p>
+<h3 id="configuring-islandora">Configuring Islandora</h3>
+<p>Navigate to the Islandora core configuration page at <code>/admin/config/islandora/core</code> to set up the core configuration to connect to Gemini. Of note here, the <strong>Gemini URL</strong> will need to be established to facilitate the connection to Fedora, and the appropriate <strong>Bundles with Gemini URI pseudo field</strong> types will need to be checked off.</p>
+<p>!!! notice
+    Any other Drupal content types you wish to synchronize with Fedora should also be checked off here.</p>
+<p><figure class="post__image"><img loading="lazy" src="../../assets/configuring_islandora.png" data-is-external-image="true"  alt="Configuring Islandora" /></figure></p>
+<h3 id="configuring-islandora-iiif">Configuring Islandora IIIF</h3>
+<p>Navigate to <code>/admin/config/islandora/iiif</code> to ensure that Islandora IIIF is pointing to our Cantaloupe server.</p>
+<p><figure class="post__image"><img loading="lazy" src="../../assets/configuring_iiif.png" data-is-external-image="true"  alt="Configuring Islandora IIIF" /></figure></p>
+<p>Next, configure Openseadragon by navigating to <code>/admin/config/media/openseadragon</code> and ensuring everything is set up properly.</p>
+<p><figure class="post__image"><img loading="lazy" src="../../assets/configuring_openseadragon.png" data-is-external-image="true"  alt="Configuring Openseadragon" /></figure></p>
+<h3 id="establishing-flysystem-as-the-default-download-method">Establishing Flysystem as the Default Download Method</h3>
+<p>Navigate to <code>/admin/config/media/file-system</code> to set the <strong>Default download method</strong> to the one we created in our <code>settings.php</code>.</p>
+<p><figure class="post__image"><img loading="lazy" src="../../assets/configuring_flysystem_to_use_fedora.png" data-is-external-image="true"  alt="Configuring Flysystem to Use Fedora" /></figure></p>
+<h3 id="giving-the-administrative-user-the-fedoraadmin-role">Giving the Administrative User the <code>fedoraAdmin</code> Role</h3>
+<p>In order for data to be pushed back to Fedora, the site administrative user needs the <code>fedoraAdmin</code> role.</p>
+<pre><code>cd /opt/drupal
+sudo -u www-data drush -y urol &quot;fedoraadmin&quot; islandora</code></pre><h3 id="running-feature-migrations">Running Feature Migrations</h3>
+<p>Finally, to get everything up and running, run the Islandora Core Features and Islandora Defaults migrations.</p>
+<pre><code class="language-bash">cd /opt/drupal
+sudo -u www-data drush -y -l localhost --userid=1 mim --group=islandora</code></pre>
+
+            ]]>
+        </content>
+    </entry>
+    <entry>
+        <title>Component Overview</title>
+        <author>
+            <name>Don Richards</name>
+        </author>
+        <link href="https://donrichards.github.io/migrate_islandora_csv/component-overview.html"/>
+        <id>https://donrichards.github.io/migrate_islandora_csv/component-overview.html</id>
+            <category term="virtualhost"/>
+            <category term="tomcat"/>
+            <category term="syn"/>
+            <category term="sql"/>
+            <category term="solr"/>
+            <category term="php"/>
+            <category term="fedora"/>
+            <category term="drush"/>
+            <category term="drupal"/>
+            <category term="composer"/>
+            <category term="component"/>
+            <category term="cantaloupe"/>
+            <category term="broker"/>
+            <category term="blazegraph"/>
+            <category term="apache"/>
+            <category term="Karaf"/>
+            <category term="File Manage"/>
+            <category term="Crayfish"/>
+            <category term="Alpaca"/>
+            <category term="API"/>
+
+        <updated>2020-07-15T16:37:54-04:00</updated>
+            <summary>
+                <![CDATA[
+                    A functioning Islandora 8 Stack is made up of dozens of components working in synchronization with each other to store information in your repository, manage&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>A functioning Islandora 8 Stack is made up of dozens of components working in synchronization with each other to store information in your repository, manage that information, and disseminate it intelligently to users. Whether running an installation using the provided Ansible playbook or installing the stack manually, it may be helpful to have a brief overview of all the components we’re going to need, in the order we’re going to install them, as well as a brief introduction to each component’s installation and configuration process.</p>
+<p>This list includes four different kinds of components:</p>
+<ul>
+<li>Components which are hard-required (such as Drupal and the Islandora module)</li>
+<li>Components for which defaults are provided but which can be swapped out (such as the software managing databases, or the repository’s storage system)</li>
+<li>Components that can’t easily be swapped out but are not necessarily required (such as using Solr as the site’s internal search engine)</li>
+<li>Components which do not have official alternatives and are not necessarily required, but will likely exist on the vast majority of Islandora 8 installations (such as Alpaca and Crayfish)</li>
+</ul>
+<h2 id="the-webserver-stack---apache-php-and-mysqlpostgresql">The Webserver Stack - Apache, PHP, and MySQL/PostgreSQL</h2>
+<p>Combined together, Apache, PHP, and MySQL/PostgreSQL comprise a LAMP or LAPP server used to provide end-user-facing components - namely, the website.</p>
+<p><strong>Apache</strong> is the webserver that will serve up webpages to the public. It will also manage some internal funcionality provided by Crayfish, and will expose Cantaloupe to the public. We’ll be making changes to the VirtualHost entry, enabling some modules, and modifying the ports configuration. The VirtualHost entry will eventually be modified when we need to expose other services like Cantaloupe to the public.</p>
+<p><strong>PHP</strong> is the runtime interpreter for all the code Drupal and Crayfish need to be processed. By default, installing PHP 7.2 will give us a command-line interpreter, as well as an interpreter for Apache. We’re going to install several PHP modules required and/or useful for the components that make use of PHP.</p>
+<p><strong>MySQL</strong> and <strong>PostgreSQL</strong> are database management systems that we will use to store information for many different components like Drupal and Fedora. By default, the Ansible playbook installs MySQL, though this can be switched to PostgreSQL. The manual installation guide recommends and walks through installing and using PostgreSQL.</p>
+<h2 id="the-front-facing-cdm---composer-drush-and-drupal">The Front-Facing CDM - Composer, Drush, and Drupal</h2>
+<p>Composer will be used to install both Drupal and Drush simultaneously using Islandora’s fork of the <a href="https://github.com/Islandora/drupal-project">drupal-project</a> repository.</p>
+<p><strong>Composer</strong> is an installer and dependency manager for PHP projects. We’re going to need it to install components for any PHP code we need to make use of, including Drupal and Crayfish.</p>
+<p><strong>Drush</strong> and <strong>Drupal</strong> are installed simultaneously using <a href="https://github.com/Islandora/drupal-project">drupal-project</a>. Drupal will serve up webpages and manage Islandora content, and Drush will help us get some things done from the command-line.</p>
+<h2 id="the-web-application-server---tomcat-and-cantaloupe">The Web Application Server - Tomcat and Cantaloupe</h2>
+<p>Several applets will be deployed via their <code>.war</code> files into Tomcat, including Fedora and Cantaloupe.</p>
+<p><strong>Tomcat</strong> serves up webpages and other kinds of content much like Apache, but is specifically designed to deploy Java applications as opposed to running PHP code.</p>
+<p><strong>Cantaloupe</strong> is an image tileserver that Islandora will connect to and use to serve up extremely large images in a way that doesn’t have an adverse effect on the overall system.</p>
+<h2 id="the-back-end-file-management-repository---fedora-syn-and-blazegraph">The Back-End File Management Repository - Fedora, Syn, and Blazegraph</h2>
+<p>Fedora will be installed in its own section, rather than as part of the Tomcat installation, as the installation process is rather involved and requires some authorization pieces to be set up in order to connect them back to Drupal and other components.</p>
+<p><strong>Fedora</strong> is the default backend repository that Islandora content will be synchronized with and stored in. A great deal of configuration will be required to get it up and running, including ensuring a database is created and accessible.</p>
+<p><strong>Syn</strong> is the authorization piece that allows Fedora to connect to other components.</p>
+<p><strong>Blazegraph</strong> will store representative graph data about the repository that can be queried using SPARQL. Some configuration will also be required to link it back to Fedora, as well as to ensure it is being properly indexed.</p>
+<h2 id="the-search-engine---solr-and-search_api_solr">The Search Engine - Solr and search_api_solr</h2>
+<p>The installation of Solr itself is rather straightforward, but a configuration will have to be generated and applied from the Drupal side.</p>
+<p><strong>Solr</strong> will be installed as a standalone application. Nothing of particular importance needs to happen here; the configuration will be applied when <code>search_api_solr</code> is installed.</p>
+<p><strong>search_api_solr</strong> is the Drupal module that implements the Solr API for Drupal-side searches. After installing and configuring the module, the <code>drush solr-gsc</code> command will be used to generate Solr configs, and these configs will be moved to the Solr configuration location.</p>
+<h2 id="the-asynchronous-background-services---crayfish">The Asynchronous Background Services - Crayfish</h2>
+<p><strong>Crayfish</strong> is a series of microservices that perform different asynchronous tasks kicked off by Islandora. It contains a series of submodules that will be installed via Composer. Later, these configured components will be connected to Alpaca.</p>
+<h2 id="the-broker-connecting-everything---karaf-and-alpaca">The Broker Connecting Everything - Karaf and Alpaca</h2>
+<p><strong>Karaf</strong>’s job is similar to Tomcat, except where Tomcat is a web-accessible endpoint for Java applets, Karaf is simply meant to be a container for system-level applets to communicate via its OSGI. Alpaca is one such applet; it will broker messages between Fedora and Drupal, and between Drupal and various derivative generation applications.</p>
+<p><strong>Alpaca</strong> contains Karaf services to manage moving information between Islandora, Fedora, and Blazegraph as well as kicking off derivative services in Crayfish. These will be configured to broker between Drupal and Fedora using an ActiveMQ queue.</p>
+<h2 id="finalized-drupal-configurations">Finalized Drupal Configurations</h2>
+<p><strong>Drupal configuration</strong> exists as a series of .yaml files that can either be created in a feature, or exported from Drupal using the <code>content_sync</code> module. It can also be manually entered in via the UI. We’re going to place configuration in a few different ways; Some content will be synchronized onto the site, and some core configurations from the main Islandora module will need to be run in order to facilitate ingest.</p>
+
+            ]]>
+        </content>
+    </entry>
+    <entry>
         <title>How to run on AWS</title>
         <author>
             <name>Don Richards</name>
@@ -17,7 +257,7 @@
         <link href="https://donrichards.github.io/migrate_islandora_csv/how-to-run-on-aws.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/how-to-run-on-aws.html</id>
 
-        <updated>2020-07-14T17:14:30-04:00</updated>
+        <updated>2020-07-15T16:37:54-04:00</updated>
             <summary>
                 <![CDATA[
                     So prp work is needed to ISLE-dc to run on an AWS server. To speed this up I created a bash script (prep_centos.sh). This script&hellip;
@@ -76,7 +316,7 @@ $ docker-compose logs | grep error</code></pre>
         <link href="https://donrichards.github.io/migrate_islandora_csv/developer-debugging.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/developer-debugging.html</id>
 
-        <updated>2020-07-14T17:14:30-04:00</updated>
+        <updated>2020-07-15T16:37:54-04:00</updated>
             <summary>
                 <![CDATA[
                     There are 2 options for debugging; core debugger and the Migration Devel Full tutorial How to Print Variables using Kint in Drupal 8 $ chmod&hellip;
@@ -151,6 +391,15 @@ $ drush migrate:import pcard00_node --execute-dependencies --migrate-debug --idl
 <pre><code class="language-shell">$ drush migrate:rollback --userid=1 --group=knoxgardens_migrate_islandora_csv -d
 # VS
 $ drush migrate:import --userid=1 --group=knoxgardens_migrate_islandora_csv -d --update</code></pre>
+<h2 id="caches">Caches</h2>
+<pre><code class="language-shell"># Clear Drupal cache
+$ drush cr
+
+# Karaf Cache
+rm -rf /opt/karaf/data/cache/</code></pre>
+<h2 id="extra">Extra</h2>
+<pre><code class="language-shell">#  after running `make` pull all of the latest docker images
+$ docker images | grep -v REPOSITORY | awk &#39;{print $1}&#39; | xargs -L1 docker pull </code></pre>
 
             ]]>
         </content>
@@ -163,7 +412,7 @@ $ drush migrate:import --userid=1 --group=knoxgardens_migrate_islandora_csv -d -
         <link href="https://donrichards.github.io/migrate_islandora_csv/vendors.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/vendors.html</id>
 
-        <updated>2020-07-14T17:14:30-04:00</updated>
+        <updated>2020-07-15T16:37:54-04:00</updated>
             <summary>
                 <![CDATA[
                     Islandora has many vendors and due to the nature of how Islandora 8 operates any vendor capable of supplying services for Drupal 8 content should&hellip;
@@ -248,7 +497,7 @@ $ drush migrate:import --userid=1 --group=knoxgardens_migrate_islandora_csv -d -
         <link href="https://donrichards.github.io/migrate_islandora_csv/quick-document-design-key.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/quick-document-design-key.html</id>
 
-        <updated>2020-07-14T17:14:30-04:00</updated>
+        <updated>2020-07-15T16:37:54-04:00</updated>
             <summary>
                 <![CDATA[
                     Reference Material locationsDiagram a sample image object describing:Object modeling in PCDMData stored in Fedora #4Data stored in MySQL/PostgresData stored elsewhereDocument and diagram migration process of&hellip;
@@ -309,7 +558,7 @@ $ drush migrate:import --userid=1 --group=knoxgardens_migrate_islandora_csv -d -
         <link href="https://donrichards.github.io/migrate_islandora_csv/how-to-access-specific-data.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/how-to-access-specific-data.html</id>
 
-        <updated>2020-07-14T17:14:30-04:00</updated>
+        <updated>2020-07-15T16:37:54-04:00</updated>
             <summary>
                 <![CDATA[
                     How to find things in FedoraThe map between Drupal URIs and their corresponding Fedora URIs is stored in a service called Gemini. An Islandora “pseudo-field”&hellip;
@@ -355,7 +604,7 @@ Under namespaces (<a href="http://localhost:8080/bigdata/#namespaces">http://loc
             <category term="WebAC"/>
             <category term="PCDM"/>
 
-        <updated>2020-07-14T17:14:30-04:00</updated>
+        <updated>2020-07-15T16:37:54-04:00</updated>
             <summary>
                 <![CDATA[
                     The Portland Common Data Model (PCDM) is a flexible, extensible domain model that is intended to underlie a wide array of repository and DAMS applications.
@@ -445,7 +694,7 @@ Under namespaces (<a href="http://localhost:8080/bigdata/#namespaces">http://loc
         <link href="https://donrichards.github.io/migrate_islandora_csv/cas-authentication.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/cas-authentication.html</id>
 
-        <updated>2020-07-14T17:14:30-04:00</updated>
+        <updated>2020-07-15T16:37:54-04:00</updated>
             <summary>
                 <![CDATA[
                      CAS authentication protocol is required by the university as the primary single-sign-on technology to use with the UTK’s authentication service. Here are some of&hellip;
@@ -475,7 +724,7 @@ Under namespaces (<a href="http://localhost:8080/bigdata/#namespaces">http://loc
         <link href="https://donrichards.github.io/migrate_islandora_csv/mods-to-rdf.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/mods-to-rdf.html</id>
 
-        <updated>2020-07-14T17:14:30-04:00</updated>
+        <updated>2020-07-15T16:37:54-04:00</updated>
             <summary>
                 <![CDATA[
                     TL; DRIslandora 8 used the MODS to RDF Mapping Recommendations document from Samvera MODS to RDF Working Group to create initial mappings. Islandora consist of&hellip;
@@ -799,7 +1048,7 @@ fieldMappings:
             <category term="EDTF"/>
             <category term="CSV"/>
 
-        <updated>2020-07-14T17:14:30-04:00</updated>
+        <updated>2020-07-15T16:37:54-04:00</updated>
             <summary>
                 <![CDATA[
                     During ingests/migrations there are several items that have been covered by different sections of this document. It helps to have a working knowledge of linked&hellip;
@@ -971,7 +1220,7 @@ fieldMappings:
             <category term="files"/>
             <category term="CSV"/>
 
-        <updated>2020-07-14T17:14:30-04:00</updated>
+        <updated>2020-07-15T16:37:54-04:00</updated>
             <summary>
                 <![CDATA[
                     Uploading is part of the ingest process, information and modules specific to uploading can be found here. This can be done either with the UI&hellip;
@@ -1011,7 +1260,7 @@ fieldMappings:
         <link href="https://donrichards.github.io/migrate_islandora_csv/step-by-step-setup-ir.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/step-by-step-setup-ir.html</id>
 
-        <updated>2020-07-14T17:14:30-04:00</updated>
+        <updated>2020-07-15T16:37:54-04:00</updated>
             <summary>
                 <![CDATA[
                     This will cover these topic The simpliest way to implement a highly customizable submit, review, accept, publish workflow is to leverage Drupal’s Content Moderation. Most&hellip;
@@ -1175,7 +1424,7 @@ fieldMappings:
         <link href="https://donrichards.github.io/migrate_islandora_csv/book-and-large-image-viewer.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/book-and-large-image-viewer.html</id>
 
-        <updated>2020-07-14T17:14:30-04:00</updated>
+        <updated>2020-07-15T16:37:54-04:00</updated>
             <summary>
                 <![CDATA[
                     IIIF (International Image Interoperability Framework) is a set of specifications that provides interoperability of image-based collections across platforms. What this means for a repository platform&hellip;
@@ -1226,7 +1475,7 @@ fieldMappings:
             <category term="Citation"/>
             <category term="Bibliography"/>
 
-        <updated>2020-07-14T17:14:30-04:00</updated>
+        <updated>2020-07-15T16:37:54-04:00</updated>
             <summary>
                 <![CDATA[
                      Drupal for higher education is a large industry. There are several top universities that have been using Drupal for a veriety of acedemic purposes.
@@ -1377,7 +1626,7 @@ entire repository; can add new collections.</li>
         <link href="https://donrichards.github.io/migrate_islandora_csv/bibliography-and-citation.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/bibliography-and-citation.html</id>
 
-        <updated>2020-07-14T17:14:30-04:00</updated>
+        <updated>2020-07-15T16:37:54-04:00</updated>
             <summary>
                 <![CDATA[
                     Drupal is a very popular and well-known CMS for educational websites. And it’s very important that Drupal has tools to deal with bibliography and citations.
@@ -1418,7 +1667,7 @@ entire repository; can add new collections.</li>
         <link href="https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html</id>
 
-        <updated>2020-07-14T17:14:30-04:00</updated>
+        <updated>2020-07-15T16:37:54-04:00</updated>
             <summary>
                 <![CDATA[
                     OAI-PMHRepositories can expose or harvest metadata, or both. OAI-PMH specifies six services which can be invoked over HTTP(s). The OAI-DC metadata format is aided by&hellip;
@@ -1580,7 +1829,7 @@ entire repository; can add new collections.</li>
             <category term="Google"/>
             <category term="Delta"/>
 
-        <updated>2020-07-14T17:14:30-04:00</updated>
+        <updated>2020-07-15T16:37:54-04:00</updated>
             <summary>
                 <![CDATA[
                     230+ public sites, 1414 listserv members, 144 GitHub members, 28 Committers, 25+ Contributed Modules, 30+ Foundation members, 12 Interest Groups, 10 Community-led software releases, 19&hellip;
@@ -1650,7 +1899,7 @@ entire repository; can add new collections.</li>
             <category term="VM"/>
             <category term="ISLE"/>
 
-        <updated>2020-07-14T17:14:30-04:00</updated>
+        <updated>2020-07-15T16:37:54-04:00</updated>
             <summary>
                 <![CDATA[
                     For self hosted soltutions there are 2 basic deployment options; Ansible(a style we’re currently using) or deploying through Docker images. All of these options can&hellip;
@@ -1694,7 +1943,7 @@ entire repository; can add new collections.</li>
             <category term="GB"/>
             <category term="CPU"/>
 
-        <updated>2020-07-14T17:14:30-04:00</updated>
+        <updated>2020-07-15T16:37:54-04:00</updated>
             <summary>
                 <![CDATA[
                     This page’s layout reflects the PDF template and is intended to be a breif description of each area specified in that document. This is a&hellip;
@@ -1828,7 +2077,7 @@ entire repository; can add new collections.</li>
             <category term="access"/>
             <category term="WebAC"/>
 
-        <updated>2020-07-14T17:14:30-04:00</updated>
+        <updated>2020-07-15T16:37:54-04:00</updated>
             <summary>
                 <![CDATA[
                     Rightsstatements.org is not specifically discussed in the documentation. Although extensive URI integration for controlled access terms is documented on the site, an assessment by the&hellip;
@@ -1857,7 +2106,7 @@ entire repository; can add new collections.</li>
             <category term="hosting"/>
             <category term="cloud"/>
 
-        <updated>2020-07-14T17:14:30-04:00</updated>
+        <updated>2020-07-15T16:37:54-04:00</updated>
             <summary>
                 <![CDATA[
                     This study set out to investigate the feasibility of hosting a digital repository system in a managed way in a private cloud environment. The system&hellip;
@@ -1908,7 +2157,7 @@ entire repository; can add new collections.</li>
             <category term="LTR"/>
             <category term="AI"/>
 
-        <updated>2020-07-14T17:14:30-04:00</updated>
+        <updated>2020-07-15T16:37:54-04:00</updated>
             <summary>
                 <![CDATA[
                     A search/discoverability enhancement “Learning to Rank (LTR) is a class of techniques that apply supervised machine learning (ML) to solve ranking problems.“ [link] LTR is&hellip;
@@ -1952,7 +2201,7 @@ entire repository; can add new collections.</li>
             <category term="JSON"/>
             <category term="API"/>
 
-        <updated>2020-07-14T17:14:30-04:00</updated>
+        <updated>2020-07-15T16:37:54-04:00</updated>
             <summary>
                 <![CDATA[
                     In Islandora 8, metadata is stored in Drupal, in fields attached to entities (nodes or media). This allows us to interact with metadata (add, edit,&hellip;
@@ -2025,7 +2274,7 @@ entire repository; can add new collections.</li>
         <link href="https://donrichards.github.io/migrate_islandora_csv/preservation.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/preservation.html</id>
 
-        <updated>2020-07-14T17:14:30-04:00</updated>
+        <updated>2020-07-15T16:37:54-04:00</updated>
             <summary>
                 <![CDATA[
                     Islandora 8 utilizes Harvard’s File Information Tool Set (FITS), Fixity auditing, bag exporting, and preservation reporting for preservation (Jordan, 2019). a. The migration process currently&hellip;
@@ -2069,7 +2318,7 @@ entire repository; can add new collections.</li>
             <category term="Islandora Defaults"/>
             <category term="CSV"/>
 
-        <updated>2020-07-14T17:14:30-04:00</updated>
+        <updated>2020-07-15T16:37:54-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/7/migration-middle-format-process.jpg" alt="Typical Drupal 8 migration" />
@@ -2132,7 +2381,7 @@ entire repository; can add new collections.</li>
             <category term="PDF"/>
             <category term="Moore"/>
 
-        <updated>2020-07-14T17:14:30-04:00</updated>
+        <updated>2020-07-15T16:37:54-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/6/Screen-Shot-2020-06-19-at-2.44.27-PM.png" alt="Drupal 8 Add Custom Content type" />
@@ -2172,7 +2421,7 @@ entire repository; can add new collections.</li>
             <category term="Mirador"/>
             <category term="BigData"/>
 
-        <updated>2020-07-14T17:14:30-04:00</updated>
+        <updated>2020-07-15T16:37:54-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/5/CONTENT-MODELING-DRUPAL8.jpg" alt="Book viewer example" />
@@ -2212,7 +2461,7 @@ entire repository; can add new collections.</li>
             <category term="PCDM"/>
             <category term="BigData"/>
 
-        <updated>2020-07-14T17:14:30-04:00</updated>
+        <updated>2020-07-15T16:37:54-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/4/PCDM_diagram.jpg" alt="Islandora 8 PCDM diagram" />
@@ -2284,7 +2533,7 @@ entire repository; can add new collections.</li>
             <category term="microservice"/>
             <category term="content modeling"/>
 
-        <updated>2020-07-14T17:14:30-04:00</updated>
+        <updated>2020-07-15T16:37:54-04:00</updated>
             <summary>
                 <![CDATA[
                     Islandora 8’s content modeling is based on ontology with a mix of Drupal’s microservices, context, and action solutions. Islandora objects are referred to as nodes.
@@ -2329,7 +2578,7 @@ entire repository; can add new collections.</li>
             <category term="Drupal 8 "/>
             <category term="Background"/>
 
-        <updated>2020-07-14T17:14:30-04:00</updated>
+        <updated>2020-07-15T16:37:54-04:00</updated>
             <summary>
                 <![CDATA[
                     Islandora 7 is a monolithic application that glues Drupal 6/7 to Fedora 3 with an optional institutional repository (IR) addon. Islandora 7 had several pain&hellip;
@@ -2418,7 +2667,7 @@ The Role of Interest Groups(IGs): <a href="https://islandora.ca/collaborate">htt
         <link href="https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html"/>
         <id>https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html</id>
 
-        <updated>2020-07-14T17:14:30-04:00</updated>
+        <updated>2020-07-15T16:37:54-04:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://donrichards.github.io/migrate_islandora_csv/media/posts/1/seadragon-zoomed.jpg" alt="" />

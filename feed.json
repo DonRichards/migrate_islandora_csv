@@ -10,6 +10,63 @@
     },
     "items": [
         {
+            "id": "https://donrichards.github.io/migrate_islandora_csv/manually-configuring-drupal-89.html",
+            "url": "https://donrichards.github.io/migrate_islandora_csv/manually-configuring-drupal-89.html",
+            "title": "Manually Configuring Drupal 8/9",
+            "summary": "After all of the above pieces are in place, installed, configured, started, and otherwise prepared, the last thing we need to do is to finally&hellip;",
+            "content_html": "<p>After all of the above pieces are in place, installed, configured, started, and otherwise prepared, the last thing we need to do is to finally configure the front-end Drupal instance to wire all the installed components together.</p>\n<h2 id=\"drupal-pre-configuration\">Drupal Pre-Configuration</h2>\n<h3 id=\"settingsphp\"><code>settings.php</code></h3>\n<p>!!! notice\n    By default, <code>settings.php</code> is read-only for all users. It should be made writable while this pre-configuration is being done, then set back to <code>444</code> afterwards.</p>\n<p>Some additional settings will need to be established in your default <code>settings.php</code> before Drupal-side configuration can occur.</p>\n<p>The below configuration will establish <code>localhost</code> as a trusted host pattern, but on production sites this will need to be expanded to include the actual host patterns used by the site.</p>\n<p><code>/opt/drupal/web/sites/default/settings.php</code></p>\n<p><strong>Before</strong>:</p>\n<blockquote>\n<p>789 |   ‘driver’ =&gt; ‘pgsql’,</p>\n</blockquote>\n<blockquote>\n<p>790 | );</p>\n</blockquote>\n<p><strong>After</strong>:</p>\n<blockquote>\n<p>789 |   ‘driver’ =&gt; ‘pgsql’,</p>\n</blockquote>\n<blockquote>\n<p>790 | );</p>\n</blockquote>\n<blockquote>\n<p>791 | $settings[‘trusted_host_patterns’] = [</p>\n</blockquote>\n<blockquote>\n<p>792 |   ‘localhost’,</p>\n</blockquote>\n<blockquote>\n<p>793 | ];</p>\n</blockquote>\n<blockquote>\n<p>794 | $settings[‘flysystem’] = [</p>\n</blockquote>\n<blockquote>\n<p>795 |   ‘fedora’ =&gt; [</p>\n</blockquote>\n<blockquote>\n<p>796 |     ‘driver’ =&gt; ‘fedora’,</p>\n</blockquote>\n<blockquote>\n<p>797 |     ‘config’ =&gt; [</p>\n</blockquote>\n<blockquote>\n<p>798 |       ‘root’ =&gt; ‘<a href=\"http://localhost:8080/fcrepo/rest/&#39;\">http://localhost:8080/fcrepo/rest/&#39;</a>,</p>\n</blockquote>\n<blockquote>\n<p>799 |     ],</p>\n</blockquote>\n<blockquote>\n<p>800 |   ],</p>\n</blockquote>\n<blockquote>\n<p>801 | ];</p>\n</blockquote>\n<p>Once this is done, refresh the cache to take hold of the new settings.</p>\n<pre><code class=\"language-bash\">cd /opt/drupal\ndrush -y cr</code></pre>\n<h2 id=\"islandora\">Islandora</h2>\n<h3 id=\"downloading-islandora\">Downloading Islandora</h3>\n<p>The Islandora Drupal module contains the core code to create a repository ecosystem in a Drupal environment. It also includes several submodules; of importance to us is <code>islandora_core_feature</code>, which contains the key configurations that turn a Drupal site into an Islandora site.</p>\n<p>Islandora also provides an <a href=\"https://github.com/Islandora/islandora_defaults\"><code>islandora_defaults</code></a> module that contains additional configurations considered an appropriate launching point for configuring a site. We’re going to first enable the <code>islandora_defaults</code> module before doing any wiring on the front-end.</p>\n<p>Take note of some of the other comments in the below bash script for an idea of what the other components are expected, and which may be considered optional.</p>\n<pre><code class=\"language-bash\">cd /opt/drupal\n# This is a convenience piece that will help speed up most of the rest of our\n# process working with Composer and Drupal.\nsudo -u www-data composer require zaporylie/composer-drupal-optimizations:^1.0\n\n# Since islandora_defaults is near the bottom of the dependency chain, requiring\n# it will get most of the modules and libraries we need to deploy a standard\n# Islandora site.\nsudo -u www-data composer require islandora/islandora_defaults:dev-8.x-1.x\n\n# These can be considered important or required depending on your site&#39;s\n# requirements; some of them represent dependencies of Islandora submodules.\nsudo -u www-data composer require drupal/pdf:1.x-dev\nsudo -u www-data composer require drupal/rest_oai_pmh:^1.0\nsudo -u www-data composer require drupal/facets:^1.3\nsudo -u www-data composer require drupal/restui:^1.16\nsudo -u www-data composer require drupal/rdfui:^1.0-beta1\nsudo -u www-data composer require drupal/content_browser:^1.0@alpha\n\n# These tend to be good to enable for a development environment, or just for a\n# higher quality of life when managing Islandora. That being said, devel should\n# NEVER be enabled on a production environment, as it intentionally gives the\n# user tools that compromise the security of a site.\nsudo -u www-data composer require drupal/console:~1.0\nsudo -u www-data composer require drupal/devel:^2.0\nsudo -u www-data composer require drupal/admin_toolbar:^2.0\n\n# Islandora also provides a theme called Carapace designed to work well out of\n# the box with an Islandora site.\nsudo -u www-data composer require islandora/carapace:dev-8.x-3.x</code></pre>\n<h3 id=\"enabling-downloaded-components\">Enabling Downloaded Components</h3>\n<p>Components we’ve now downloaded using <code>composer require</code> can be enabled simultaneously via <code>drush</code>, which will ensure they are installed in the correct dependent order. Enabling <code>islandora_defaults</code> will also ensure all content types and configurations are set up in Islandora. The installation process for all of these modules will likely take some time.</p>\n<p>!!! notice\n    This list of modules assumes that all of the above components were downloaded using <code>composer require</code>; if this is not the case, you may need to pare down this list manually. It also includes <code>devel</code>, which again, should not be enabled on production sites.</p>\n<pre><code class=\"language-bash\">cd /opt/drupal\ndrush -y en rdf responsive_image devel syslog serialization basic_auth rest restui search_api_solr search_api_solr_defaults facets content_browser pdf admin_toolbar islandora_defaults controlled_access_terms_defaults islandora_breadcrumbs islandora_iiif islandora_oaipmh\n\n# If Carapace was downloaded, now is the time to enable and set it as well.\ndrush -y theme:enable carapace\ndrush -y config-set system.theme default carapace\n\n# After all of this, rebuild the cache.\ndrush -y cr</code></pre>\n<h3 id=\"adding-a-jwt-configuration-to-drupal\">Adding a JWT Configuration to Drupal</h3>\n<p>To allow our installation to talk to other services via Syn, we need to establish a Drupal-side JWT configuration using the keys we generated at that time.</p>\n<p>Log onto your site as an administrator at <code>/user</code>, then navigate to <code>/admin/config/system/keys/add</code>. Some of the settings here are unimportant, but pay close attention to the <strong>Key type</strong>, which should match the key we created earlier (an RSA key), and the <strong>File location</strong>, which should be the ultimate location of the key we created for Syn on the filesystem, <code>/opt/keys/syn_private.key</code>.</p>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"../../assets/adding_a_jwt_rsa_key.png\" data-is-external-image=\"true\"  alt=\"Adding a JWT RSA Key\" /></figure></p>\n<p>Click <strong>Save</strong> to create the key.</p>\n<p>Once this key is created, navigate to <code>/admin/config/system/jwt</code> to select the key you just created from the list. Note that before the key will show up in the <strong>Private Key</strong> list, you need to select that key’s type in the <strong>Algorithm</strong> section, namely <code>RSASSA-PKCS1-v1_5 using SHA-256 (RS256)</code>.</p>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"../../assets/configuring_the_jwt_rsa_key_for_use.png\" data-is-external-image=\"true\"  alt=\"Configuring the JWT RSA Key for Use\" /></figure></p>\n<p>Click <strong>Save configuration</strong> to establish this as the JWT key configuration.</p>\n<h3 id=\"configuring-islandora\">Configuring Islandora</h3>\n<p>Navigate to the Islandora core configuration page at <code>/admin/config/islandora/core</code> to set up the core configuration to connect to Gemini. Of note here, the <strong>Gemini URL</strong> will need to be established to facilitate the connection to Fedora, and the appropriate <strong>Bundles with Gemini URI pseudo field</strong> types will need to be checked off.</p>\n<p>!!! notice\n    Any other Drupal content types you wish to synchronize with Fedora should also be checked off here.</p>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"../../assets/configuring_islandora.png\" data-is-external-image=\"true\"  alt=\"Configuring Islandora\" /></figure></p>\n<h3 id=\"configuring-islandora-iiif\">Configuring Islandora IIIF</h3>\n<p>Navigate to <code>/admin/config/islandora/iiif</code> to ensure that Islandora IIIF is pointing to our Cantaloupe server.</p>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"../../assets/configuring_iiif.png\" data-is-external-image=\"true\"  alt=\"Configuring Islandora IIIF\" /></figure></p>\n<p>Next, configure Openseadragon by navigating to <code>/admin/config/media/openseadragon</code> and ensuring everything is set up properly.</p>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"../../assets/configuring_openseadragon.png\" data-is-external-image=\"true\"  alt=\"Configuring Openseadragon\" /></figure></p>\n<h3 id=\"establishing-flysystem-as-the-default-download-method\">Establishing Flysystem as the Default Download Method</h3>\n<p>Navigate to <code>/admin/config/media/file-system</code> to set the <strong>Default download method</strong> to the one we created in our <code>settings.php</code>.</p>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"../../assets/configuring_flysystem_to_use_fedora.png\" data-is-external-image=\"true\"  alt=\"Configuring Flysystem to Use Fedora\" /></figure></p>\n<h3 id=\"giving-the-administrative-user-the-fedoraadmin-role\">Giving the Administrative User the <code>fedoraAdmin</code> Role</h3>\n<p>In order for data to be pushed back to Fedora, the site administrative user needs the <code>fedoraAdmin</code> role.</p>\n<pre><code>cd /opt/drupal\nsudo -u www-data drush -y urol &quot;fedoraadmin&quot; islandora</code></pre><h3 id=\"running-feature-migrations\">Running Feature Migrations</h3>\n<p>Finally, to get everything up and running, run the Islandora Core Features and Islandora Defaults migrations.</p>\n<pre><code class=\"language-bash\">cd /opt/drupal\nsudo -u www-data drush -y -l localhost --userid=1 mim --group=islandora</code></pre>\n",
+            "author": {
+                "name": "Don Richards"
+            },
+            "tags": [
+                   "settings",
+                   "flysystem",
+                   "fedoraAdmin",
+                   "drupal",
+                   "configuration",
+                   "component",
+                   "JWT",
+                   "IIIF",
+                   "Drupal 8 "
+            ],
+            "date_published": "2020-07-15T16:37:54-04:00",
+            "date_modified": "2020-07-15T16:37:54-04:00"
+        },
+        {
+            "id": "https://donrichards.github.io/migrate_islandora_csv/component-overview.html",
+            "url": "https://donrichards.github.io/migrate_islandora_csv/component-overview.html",
+            "title": "Component Overview",
+            "summary": "A functioning Islandora 8 Stack is made up of dozens of components working in synchronization with each other to store information in your repository, manage&hellip;",
+            "content_html": "<p>A functioning Islandora 8 Stack is made up of dozens of components working in synchronization with each other to store information in your repository, manage that information, and disseminate it intelligently to users. Whether running an installation using the provided Ansible playbook or installing the stack manually, it may be helpful to have a brief overview of all the components we’re going to need, in the order we’re going to install them, as well as a brief introduction to each component’s installation and configuration process.</p>\n<p>This list includes four different kinds of components:</p>\n<ul>\n<li>Components which are hard-required (such as Drupal and the Islandora module)</li>\n<li>Components for which defaults are provided but which can be swapped out (such as the software managing databases, or the repository’s storage system)</li>\n<li>Components that can’t easily be swapped out but are not necessarily required (such as using Solr as the site’s internal search engine)</li>\n<li>Components which do not have official alternatives and are not necessarily required, but will likely exist on the vast majority of Islandora 8 installations (such as Alpaca and Crayfish)</li>\n</ul>\n<h2 id=\"the-webserver-stack---apache-php-and-mysqlpostgresql\">The Webserver Stack - Apache, PHP, and MySQL/PostgreSQL</h2>\n<p>Combined together, Apache, PHP, and MySQL/PostgreSQL comprise a LAMP or LAPP server used to provide end-user-facing components - namely, the website.</p>\n<p><strong>Apache</strong> is the webserver that will serve up webpages to the public. It will also manage some internal funcionality provided by Crayfish, and will expose Cantaloupe to the public. We’ll be making changes to the VirtualHost entry, enabling some modules, and modifying the ports configuration. The VirtualHost entry will eventually be modified when we need to expose other services like Cantaloupe to the public.</p>\n<p><strong>PHP</strong> is the runtime interpreter for all the code Drupal and Crayfish need to be processed. By default, installing PHP 7.2 will give us a command-line interpreter, as well as an interpreter for Apache. We’re going to install several PHP modules required and/or useful for the components that make use of PHP.</p>\n<p><strong>MySQL</strong> and <strong>PostgreSQL</strong> are database management systems that we will use to store information for many different components like Drupal and Fedora. By default, the Ansible playbook installs MySQL, though this can be switched to PostgreSQL. The manual installation guide recommends and walks through installing and using PostgreSQL.</p>\n<h2 id=\"the-front-facing-cdm---composer-drush-and-drupal\">The Front-Facing CDM - Composer, Drush, and Drupal</h2>\n<p>Composer will be used to install both Drupal and Drush simultaneously using Islandora’s fork of the <a href=\"https://github.com/Islandora/drupal-project\">drupal-project</a> repository.</p>\n<p><strong>Composer</strong> is an installer and dependency manager for PHP projects. We’re going to need it to install components for any PHP code we need to make use of, including Drupal and Crayfish.</p>\n<p><strong>Drush</strong> and <strong>Drupal</strong> are installed simultaneously using <a href=\"https://github.com/Islandora/drupal-project\">drupal-project</a>. Drupal will serve up webpages and manage Islandora content, and Drush will help us get some things done from the command-line.</p>\n<h2 id=\"the-web-application-server---tomcat-and-cantaloupe\">The Web Application Server - Tomcat and Cantaloupe</h2>\n<p>Several applets will be deployed via their <code>.war</code> files into Tomcat, including Fedora and Cantaloupe.</p>\n<p><strong>Tomcat</strong> serves up webpages and other kinds of content much like Apache, but is specifically designed to deploy Java applications as opposed to running PHP code.</p>\n<p><strong>Cantaloupe</strong> is an image tileserver that Islandora will connect to and use to serve up extremely large images in a way that doesn’t have an adverse effect on the overall system.</p>\n<h2 id=\"the-back-end-file-management-repository---fedora-syn-and-blazegraph\">The Back-End File Management Repository - Fedora, Syn, and Blazegraph</h2>\n<p>Fedora will be installed in its own section, rather than as part of the Tomcat installation, as the installation process is rather involved and requires some authorization pieces to be set up in order to connect them back to Drupal and other components.</p>\n<p><strong>Fedora</strong> is the default backend repository that Islandora content will be synchronized with and stored in. A great deal of configuration will be required to get it up and running, including ensuring a database is created and accessible.</p>\n<p><strong>Syn</strong> is the authorization piece that allows Fedora to connect to other components.</p>\n<p><strong>Blazegraph</strong> will store representative graph data about the repository that can be queried using SPARQL. Some configuration will also be required to link it back to Fedora, as well as to ensure it is being properly indexed.</p>\n<h2 id=\"the-search-engine---solr-and-search_api_solr\">The Search Engine - Solr and search_api_solr</h2>\n<p>The installation of Solr itself is rather straightforward, but a configuration will have to be generated and applied from the Drupal side.</p>\n<p><strong>Solr</strong> will be installed as a standalone application. Nothing of particular importance needs to happen here; the configuration will be applied when <code>search_api_solr</code> is installed.</p>\n<p><strong>search_api_solr</strong> is the Drupal module that implements the Solr API for Drupal-side searches. After installing and configuring the module, the <code>drush solr-gsc</code> command will be used to generate Solr configs, and these configs will be moved to the Solr configuration location.</p>\n<h2 id=\"the-asynchronous-background-services---crayfish\">The Asynchronous Background Services - Crayfish</h2>\n<p><strong>Crayfish</strong> is a series of microservices that perform different asynchronous tasks kicked off by Islandora. It contains a series of submodules that will be installed via Composer. Later, these configured components will be connected to Alpaca.</p>\n<h2 id=\"the-broker-connecting-everything---karaf-and-alpaca\">The Broker Connecting Everything - Karaf and Alpaca</h2>\n<p><strong>Karaf</strong>’s job is similar to Tomcat, except where Tomcat is a web-accessible endpoint for Java applets, Karaf is simply meant to be a container for system-level applets to communicate via its OSGI. Alpaca is one such applet; it will broker messages between Fedora and Drupal, and between Drupal and various derivative generation applications.</p>\n<p><strong>Alpaca</strong> contains Karaf services to manage moving information between Islandora, Fedora, and Blazegraph as well as kicking off derivative services in Crayfish. These will be configured to broker between Drupal and Fedora using an ActiveMQ queue.</p>\n<h2 id=\"finalized-drupal-configurations\">Finalized Drupal Configurations</h2>\n<p><strong>Drupal configuration</strong> exists as a series of .yaml files that can either be created in a feature, or exported from Drupal using the <code>content_sync</code> module. It can also be manually entered in via the UI. We’re going to place configuration in a few different ways; Some content will be synchronized onto the site, and some core configurations from the main Islandora module will need to be run in order to facilitate ingest.</p>\n",
+            "author": {
+                "name": "Don Richards"
+            },
+            "tags": [
+                   "virtualhost",
+                   "tomcat",
+                   "syn",
+                   "sql",
+                   "solr",
+                   "php",
+                   "fedora",
+                   "drush",
+                   "drupal",
+                   "composer",
+                   "component",
+                   "cantaloupe",
+                   "broker",
+                   "blazegraph",
+                   "apache",
+                   "Karaf",
+                   "File Manage",
+                   "Crayfish",
+                   "Alpaca",
+                   "API"
+            ],
+            "date_published": "2020-07-15T16:37:54-04:00",
+            "date_modified": "2020-07-15T16:37:54-04:00"
+        },
+        {
             "id": "https://donrichards.github.io/migrate_islandora_csv/how-to-run-on-aws.html",
             "url": "https://donrichards.github.io/migrate_islandora_csv/how-to-run-on-aws.html",
             "title": "How to run on AWS",
@@ -20,22 +77,22 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-14T17:14:30-04:00",
-            "date_modified": "2020-07-14T17:14:30-04:00"
+            "date_published": "2020-07-15T16:37:54-04:00",
+            "date_modified": "2020-07-15T16:37:54-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/developer-debugging.html",
             "url": "https://donrichards.github.io/migrate_islandora_csv/developer-debugging.html",
             "title": "Developer Debugging",
             "summary": "There are 2 options for debugging; core debugger and the Migration Devel Full tutorial How to Print Variables using Kint in Drupal 8 $ chmod&hellip;",
-            "content_html": "<p>There are 2 options for debugging; core debugger and the Migration Devel </p>\n<h2 id=\"add-general-debugging\">Add General Debugging</h2>\n<p>Full tutorial <a href=\"https://www.webwash.net/how-to-print-variables-using-kint-in-drupal-8/\">How to Print Variables using Kint in Drupal 8</a> </p>\n<pre><code class=\"language-shell\">$ chmod 755 /var/www/drupal/web/sites/default\n$ drush -y en devel\n$ drush -y en kint\n\n# Adding the debug service\n$ cp /var/www/drupal/web/sites/default/default.services.yml /var/www/drupal/web/sites/default/services.yml\n        $ Change debug value\n        debug:true\n\n# Adding the debug to the template\n$ nano /var/www/drupal/web/themes/contrib/carapace/templates/generated/page.html.twig\n    Add under the first comment, above the first item:    {{ kint(page) }} \n</code></pre>\n<h2 id=\"install-migrate-devel\">Install Migrate Devel</h2>\n<p>This gives a lot of feedback on a migration failure.</p>\n<pre><code class=\"language-shell\">$ cp /var/www/drupal/\n$ composer require &#39;drupal/migrate_devel:^2.0&#39;\n$ drush en -y    migrate_devel</code></pre>\n<h3 id=\"when-you-modify-a-migration-yml-file\">When you modify a migration YML file</h3>\n<p>This messes up me all the time. So much so I created a <a href=\"https://gist.github.com/DonRichards/ce71c2b18e1567a61ea8fe96b3e8ed70\">script</a> I just have running in the background to force all updates after they’re written. This isn’t absolutely nessisary but I find it useful. </p>\n<pre><code class=\"language-shell\">$ drush -y fim migrate_islandora_csv</code></pre>\n<h3 id=\"typical-migration\">Typical Migration</h3>\n<p>It’s highly suggested to migrate by group so the order of operations work in your favor. This is a typic execution of that. </p>\n<p><em>Remember that the order of operations is important (taxonomy terms like persons and subjects should go first, files, node, and lastly media) if you haven’t previously imported them. This is a problem if the dependencies are properly specified or the <code>--execute-dependencies</code> isn’t added to the import. The <code>-d</code> is for debugging. This will add a little time to the process. And you will need to include <code>--userid=1</code> to this. I have experienced issues not using it.</em></p>\n<pre><code class=\"language-shell\">drush migrate:import --userid=1 --execute-dependencies --group=knoxgardens_migrate_islandora_csv -d</code></pre>\n<h3 id=\"debugging-migration\">Debugging Migration</h3>\n<p>Migrate:import has a lot of options. This is the complete list. I won’t go over most of them. To read more on <a href=\"https://drushcommands.com/drush-8x/migrate/migrate-import/\">drush migrate-import</a></p>\n<pre><code class=\"language-shell\">migrate:import [--all] [--group GROUP] [--tag TAG] [--limit LIMIT] [--feedback FEEDBACK] [--idlist IDLIST] [--idlist-delimiter [IDLIST-DELIMITER]] [--update] [--force] [--continue-on-failure] [--execute-dependencies] [--skip-progress-bar] [--sync] [-h|--help] [-q|--quiet] [-v|vv|vvv|--verbose] [-V|--version] [--ansi] [--no-ansi] [-n|--no-interaction] [-d|--debug] [-y|--yes] [--no] [--remote-host REMOTE-HOST] [--remote-user REMOTE-USER] [-r|--root ROOT] [-l|--uri URI] [--simulate] [--pipe] [-D|--define DEFINE] [--userid USERID] [--migrate-debug [MIGRATE-DEBUG]] [--migrate-debug-pre [MIGRATE-DEBUG-PRE]] [--druplicon] [--notify [NOTIFY]] [--xh-link XH-LINK] [--] &lt;command&gt; [&lt;migration_names&gt;]</code></pre>\n<p>Migration test are done one migration yml at a time by specifying the migration ID. To get a list of installed migrations with the status and group name(s) run migrate status:</p>\n<pre><code class=\"language-shell\">$ drush migrate:status\n &quot;-----------------------------------------------------------------------------------&quot;\n  Group         Migration ID   Status Total  Imported  Unprocessed   Last Imported\n  ----------------------------    ------------   ----  ------  -----  --  -----------\n  pcard00_migrate_islandora_csv   pcard00_file   Idle   4224   6989   0   2020-07-10\n  pcard00_migrate_islandora_csv   pcard00_node   Idle   4224   6991   0   2020-07-10\n  pcard00_migrate_islandora_csv   pcard00_media  Idle   4224   6990   0   2020-07-10\n &quot;-----------------------------------------------------------------------------------&quot;</code></pre>\n<p>To only run against a specific object. Within each of the yml files a <strong>key</strong> is specified. The <strong>key</strong> is saying for each unique one of these iterate through. If the the <strong>key</strong> is to to <code>key: PID</code> and the PID we want to migrate/update is <em>islandora:4223</em> we can the following command. Using a value with special characters gives me some concern so I suggest just adding sequential numbers as the first colunm in the CSV calling it <strong>ID</strong> to avoid possible issues. I have not personally tested using a PID as the key but I’m using it here to illustrate.</p>\n<pre><code class=\"language-shell\">#         id of the yml file   ┐                 ┌ Respect the order of operations\n$ drush migrate:import pcard00_node --execute-dependencies --migrate-debug --idlist=&quot;islandora:4223&quot; --userid=1</code></pre>\n<p>This outputs a <strong>Source</strong> and a <strong>Destination</strong> variables to see how they are mapping. The <strong>Source</strong> is good to see if the values are being read. This is the <strong>Destination</strong>  part of the report.</p>\n<pre><code class=\"language-shell\">...\n...\n^ &quot;---------------------------------------------------------------------&quot;\n^ &quot;|                           $Destination                            |&quot;\n^ &quot;---------------------------------------------------------------------&quot;\n^ array:8 [\n  &quot;circuit_breaker&quot; =&gt; &quot;Page&quot;\n  &quot;name&quot; =&gt; &quot;Night View of Gatlinburg, Tennessee Showing Mount LeConte in the Background (GS-262)&quot;\n  &quot;uid&quot; =&gt; 1\n  &quot;field_media_use&quot; =&gt; &quot;17&quot;\n  &quot;field_media_file&quot; =&gt; &quot;3074&quot;\n  &quot;field_pid&quot; =&gt; &quot;pcard00:108573&quot;\n  &quot;field_media_of&quot; =&gt; &quot;7095&quot;\n  &quot;bundle&quot; =&gt; &quot;image&quot;\n]\n^ &quot;---------------------------------------------------------------------&quot;\n^ &quot;|                       $DestinationIdValues                        |&quot;\n^ &quot;---------------------------------------------------------------------&quot;</code></pre>\n<h2 id=\"rolling-back\">Rolling back</h2>\n<p>This process has a small flaw. The original file is left in the Bigdata log and fills up the VM very quickly. It will eventually remove itself but I haven’t found a simple way to trigger a cron to clear it. The process can be done quickly but there is probably a fast way than I have been doing it. I suggest only rolling back when you have extra files or to remove remove the content entirely. If you plan on just updating, just use the <code>--update</code> switch. </p>\n<pre><code class=\"language-shell\">$ drush migrate:rollback --userid=1 --group=knoxgardens_migrate_islandora_csv -d\n# VS\n$ drush migrate:import --userid=1 --group=knoxgardens_migrate_islandora_csv -d --update</code></pre>\n",
+            "content_html": "<p>There are 2 options for debugging; core debugger and the Migration Devel </p>\n<h2 id=\"add-general-debugging\">Add General Debugging</h2>\n<p>Full tutorial <a href=\"https://www.webwash.net/how-to-print-variables-using-kint-in-drupal-8/\">How to Print Variables using Kint in Drupal 8</a> </p>\n<pre><code class=\"language-shell\">$ chmod 755 /var/www/drupal/web/sites/default\n$ drush -y en devel\n$ drush -y en kint\n\n# Adding the debug service\n$ cp /var/www/drupal/web/sites/default/default.services.yml /var/www/drupal/web/sites/default/services.yml\n        $ Change debug value\n        debug:true\n\n# Adding the debug to the template\n$ nano /var/www/drupal/web/themes/contrib/carapace/templates/generated/page.html.twig\n    Add under the first comment, above the first item:    {{ kint(page) }} \n</code></pre>\n<h2 id=\"install-migrate-devel\">Install Migrate Devel</h2>\n<p>This gives a lot of feedback on a migration failure.</p>\n<pre><code class=\"language-shell\">$ cp /var/www/drupal/\n$ composer require &#39;drupal/migrate_devel:^2.0&#39;\n$ drush en -y    migrate_devel</code></pre>\n<h3 id=\"when-you-modify-a-migration-yml-file\">When you modify a migration YML file</h3>\n<p>This messes up me all the time. So much so I created a <a href=\"https://gist.github.com/DonRichards/ce71c2b18e1567a61ea8fe96b3e8ed70\">script</a> I just have running in the background to force all updates after they’re written. This isn’t absolutely nessisary but I find it useful. </p>\n<pre><code class=\"language-shell\">$ drush -y fim migrate_islandora_csv</code></pre>\n<h3 id=\"typical-migration\">Typical Migration</h3>\n<p>It’s highly suggested to migrate by group so the order of operations work in your favor. This is a typic execution of that. </p>\n<p><em>Remember that the order of operations is important (taxonomy terms like persons and subjects should go first, files, node, and lastly media) if you haven’t previously imported them. This is a problem if the dependencies are properly specified or the <code>--execute-dependencies</code> isn’t added to the import. The <code>-d</code> is for debugging. This will add a little time to the process. And you will need to include <code>--userid=1</code> to this. I have experienced issues not using it.</em></p>\n<pre><code class=\"language-shell\">drush migrate:import --userid=1 --execute-dependencies --group=knoxgardens_migrate_islandora_csv -d</code></pre>\n<h3 id=\"debugging-migration\">Debugging Migration</h3>\n<p>Migrate:import has a lot of options. This is the complete list. I won’t go over most of them. To read more on <a href=\"https://drushcommands.com/drush-8x/migrate/migrate-import/\">drush migrate-import</a></p>\n<pre><code class=\"language-shell\">migrate:import [--all] [--group GROUP] [--tag TAG] [--limit LIMIT] [--feedback FEEDBACK] [--idlist IDLIST] [--idlist-delimiter [IDLIST-DELIMITER]] [--update] [--force] [--continue-on-failure] [--execute-dependencies] [--skip-progress-bar] [--sync] [-h|--help] [-q|--quiet] [-v|vv|vvv|--verbose] [-V|--version] [--ansi] [--no-ansi] [-n|--no-interaction] [-d|--debug] [-y|--yes] [--no] [--remote-host REMOTE-HOST] [--remote-user REMOTE-USER] [-r|--root ROOT] [-l|--uri URI] [--simulate] [--pipe] [-D|--define DEFINE] [--userid USERID] [--migrate-debug [MIGRATE-DEBUG]] [--migrate-debug-pre [MIGRATE-DEBUG-PRE]] [--druplicon] [--notify [NOTIFY]] [--xh-link XH-LINK] [--] &lt;command&gt; [&lt;migration_names&gt;]</code></pre>\n<p>Migration test are done one migration yml at a time by specifying the migration ID. To get a list of installed migrations with the status and group name(s) run migrate status:</p>\n<pre><code class=\"language-shell\">$ drush migrate:status\n &quot;-----------------------------------------------------------------------------------&quot;\n  Group         Migration ID   Status Total  Imported  Unprocessed   Last Imported\n  ----------------------------    ------------   ----  ------  -----  --  -----------\n  pcard00_migrate_islandora_csv   pcard00_file   Idle   4224   6989   0   2020-07-10\n  pcard00_migrate_islandora_csv   pcard00_node   Idle   4224   6991   0   2020-07-10\n  pcard00_migrate_islandora_csv   pcard00_media  Idle   4224   6990   0   2020-07-10\n &quot;-----------------------------------------------------------------------------------&quot;</code></pre>\n<p>To only run against a specific object. Within each of the yml files a <strong>key</strong> is specified. The <strong>key</strong> is saying for each unique one of these iterate through. If the the <strong>key</strong> is to to <code>key: PID</code> and the PID we want to migrate/update is <em>islandora:4223</em> we can the following command. Using a value with special characters gives me some concern so I suggest just adding sequential numbers as the first colunm in the CSV calling it <strong>ID</strong> to avoid possible issues. I have not personally tested using a PID as the key but I’m using it here to illustrate.</p>\n<pre><code class=\"language-shell\">#         id of the yml file   ┐                 ┌ Respect the order of operations\n$ drush migrate:import pcard00_node --execute-dependencies --migrate-debug --idlist=&quot;islandora:4223&quot; --userid=1</code></pre>\n<p>This outputs a <strong>Source</strong> and a <strong>Destination</strong> variables to see how they are mapping. The <strong>Source</strong> is good to see if the values are being read. This is the <strong>Destination</strong>  part of the report.</p>\n<pre><code class=\"language-shell\">...\n...\n^ &quot;---------------------------------------------------------------------&quot;\n^ &quot;|                           $Destination                            |&quot;\n^ &quot;---------------------------------------------------------------------&quot;\n^ array:8 [\n  &quot;circuit_breaker&quot; =&gt; &quot;Page&quot;\n  &quot;name&quot; =&gt; &quot;Night View of Gatlinburg, Tennessee Showing Mount LeConte in the Background (GS-262)&quot;\n  &quot;uid&quot; =&gt; 1\n  &quot;field_media_use&quot; =&gt; &quot;17&quot;\n  &quot;field_media_file&quot; =&gt; &quot;3074&quot;\n  &quot;field_pid&quot; =&gt; &quot;pcard00:108573&quot;\n  &quot;field_media_of&quot; =&gt; &quot;7095&quot;\n  &quot;bundle&quot; =&gt; &quot;image&quot;\n]\n^ &quot;---------------------------------------------------------------------&quot;\n^ &quot;|                       $DestinationIdValues                        |&quot;\n^ &quot;---------------------------------------------------------------------&quot;</code></pre>\n<h2 id=\"rolling-back\">Rolling back</h2>\n<p>This process has a small flaw. The original file is left in the Bigdata log and fills up the VM very quickly. It will eventually remove itself but I haven’t found a simple way to trigger a cron to clear it. The process can be done quickly but there is probably a fast way than I have been doing it. I suggest only rolling back when you have extra files or to remove remove the content entirely. If you plan on just updating, just use the <code>--update</code> switch. </p>\n<pre><code class=\"language-shell\">$ drush migrate:rollback --userid=1 --group=knoxgardens_migrate_islandora_csv -d\n# VS\n$ drush migrate:import --userid=1 --group=knoxgardens_migrate_islandora_csv -d --update</code></pre>\n<h2 id=\"caches\">Caches</h2>\n<pre><code class=\"language-shell\"># Clear Drupal cache\n$ drush cr\n\n# Karaf Cache\nrm -rf /opt/karaf/data/cache/</code></pre>\n<h2 id=\"extra\">Extra</h2>\n<pre><code class=\"language-shell\">#  after running `make` pull all of the latest docker images\n$ docker images | grep -v REPOSITORY | awk &#39;{print $1}&#39; | xargs -L1 docker pull </code></pre>\n",
             "author": {
                 "name": "Don Richards"
             },
             "tags": [
             ],
-            "date_published": "2020-07-14T17:14:30-04:00",
-            "date_modified": "2020-07-14T17:14:30-04:00"
+            "date_published": "2020-07-15T16:37:54-04:00",
+            "date_modified": "2020-07-15T16:37:54-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/vendors.html",
@@ -48,8 +105,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-14T17:14:30-04:00",
-            "date_modified": "2020-07-14T17:14:30-04:00"
+            "date_published": "2020-07-15T16:37:54-04:00",
+            "date_modified": "2020-07-15T16:37:54-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/quick-document-design-key.html",
@@ -62,8 +119,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-14T17:14:30-04:00",
-            "date_modified": "2020-07-14T17:14:30-04:00"
+            "date_published": "2020-07-15T16:37:54-04:00",
+            "date_modified": "2020-07-15T16:37:54-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/how-to-access-specific-data.html",
@@ -76,8 +133,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-14T17:14:30-04:00",
-            "date_modified": "2020-07-14T17:14:30-04:00"
+            "date_published": "2020-07-15T16:37:54-04:00",
+            "date_modified": "2020-07-15T16:37:54-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/pcdm.html",
@@ -96,8 +153,8 @@
                    "WebAC",
                    "PCDM"
             ],
-            "date_published": "2020-07-14T17:14:30-04:00",
-            "date_modified": "2020-07-14T17:14:30-04:00"
+            "date_published": "2020-07-15T16:37:54-04:00",
+            "date_modified": "2020-07-15T16:37:54-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/cas-authentication.html",
@@ -110,8 +167,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-14T17:14:30-04:00",
-            "date_modified": "2020-07-14T17:14:30-04:00"
+            "date_published": "2020-07-15T16:37:54-04:00",
+            "date_modified": "2020-07-15T16:37:54-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/mods-to-rdf.html",
@@ -124,8 +181,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-14T17:14:30-04:00",
-            "date_modified": "2020-07-14T17:14:30-04:00"
+            "date_published": "2020-07-15T16:37:54-04:00",
+            "date_modified": "2020-07-15T16:37:54-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/ingestingmigrating.html",
@@ -152,8 +209,8 @@
                    "EDTF",
                    "CSV"
             ],
-            "date_published": "2020-07-14T17:14:30-04:00",
-            "date_modified": "2020-07-14T17:14:30-04:00"
+            "date_published": "2020-07-15T16:37:54-04:00",
+            "date_modified": "2020-07-15T16:37:54-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/uploading.html",
@@ -170,8 +227,8 @@
                    "files",
                    "CSV"
             ],
-            "date_published": "2020-07-14T17:14:30-04:00",
-            "date_modified": "2020-07-14T17:14:30-04:00"
+            "date_published": "2020-07-15T16:37:54-04:00",
+            "date_modified": "2020-07-15T16:37:54-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/step-by-step-setup-ir.html",
@@ -184,8 +241,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-14T17:14:30-04:00",
-            "date_modified": "2020-07-14T17:14:30-04:00"
+            "date_published": "2020-07-15T16:37:54-04:00",
+            "date_modified": "2020-07-15T16:37:54-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/book-and-large-image-viewer.html",
@@ -198,8 +255,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-14T17:14:30-04:00",
-            "date_modified": "2020-07-14T17:14:30-04:00"
+            "date_published": "2020-07-15T16:37:54-04:00",
+            "date_modified": "2020-07-15T16:37:54-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/institutional-repository.html",
@@ -227,8 +284,8 @@
                    "Citation",
                    "Bibliography"
             ],
-            "date_published": "2020-07-14T17:14:30-04:00",
-            "date_modified": "2020-07-14T17:14:30-04:00"
+            "date_published": "2020-07-15T16:37:54-04:00",
+            "date_modified": "2020-07-15T16:37:54-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/bibliography-and-citation.html",
@@ -241,8 +298,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-14T17:14:30-04:00",
-            "date_modified": "2020-07-14T17:14:30-04:00"
+            "date_published": "2020-07-15T16:37:54-04:00",
+            "date_modified": "2020-07-15T16:37:54-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html",
@@ -255,8 +312,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-14T17:14:30-04:00",
-            "date_modified": "2020-07-14T17:14:30-04:00"
+            "date_published": "2020-07-15T16:37:54-04:00",
+            "date_modified": "2020-07-15T16:37:54-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/community-and-sustainability.html",
@@ -283,8 +340,8 @@
                    "Google",
                    "Delta"
             ],
-            "date_published": "2020-07-14T17:14:30-04:00",
-            "date_modified": "2020-07-14T17:14:30-04:00"
+            "date_published": "2020-07-15T16:37:54-04:00",
+            "date_modified": "2020-07-15T16:37:54-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/deployment-options.html",
@@ -305,8 +362,8 @@
                    "VM",
                    "ISLE"
             ],
-            "date_published": "2020-07-14T17:14:30-04:00",
-            "date_modified": "2020-07-14T17:14:30-04:00"
+            "date_published": "2020-07-15T16:37:54-04:00",
+            "date_modified": "2020-07-15T16:37:54-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/technical-infrastructure.html",
@@ -327,8 +384,8 @@
                    "GB",
                    "CPU"
             ],
-            "date_published": "2020-07-14T17:14:30-04:00",
-            "date_modified": "2020-07-14T17:14:30-04:00"
+            "date_published": "2020-07-15T16:37:54-04:00",
+            "date_modified": "2020-07-15T16:37:54-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/rights-and-restrictions.html",
@@ -346,8 +403,8 @@
                    "access",
                    "WebAC"
             ],
-            "date_published": "2020-07-14T17:14:30-04:00",
-            "date_modified": "2020-07-14T17:14:30-04:00"
+            "date_published": "2020-07-15T16:37:54-04:00",
+            "date_modified": "2020-07-15T16:37:54-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/cloud-hosting-solution.html",
@@ -365,8 +422,8 @@
                    "hosting",
                    "cloud"
             ],
-            "date_published": "2020-07-14T17:14:30-04:00",
-            "date_modified": "2020-07-14T17:14:30-04:00"
+            "date_published": "2020-07-15T16:37:54-04:00",
+            "date_modified": "2020-07-15T16:37:54-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/next-level-discoverability-solutions.html",
@@ -384,8 +441,8 @@
                    "LTR",
                    "AI"
             ],
-            "date_published": "2020-07-14T17:14:30-04:00",
-            "date_modified": "2020-07-14T17:14:30-04:00"
+            "date_published": "2020-07-15T16:37:54-04:00",
+            "date_modified": "2020-07-15T16:37:54-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/metadata-and-metadata-sharing.html",
@@ -410,8 +467,8 @@
                    "JSON",
                    "API"
             ],
-            "date_published": "2020-07-14T17:14:30-04:00",
-            "date_modified": "2020-07-14T17:14:30-04:00"
+            "date_published": "2020-07-15T16:37:54-04:00",
+            "date_modified": "2020-07-15T16:37:54-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/preservation.html",
@@ -424,8 +481,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-14T17:14:30-04:00",
-            "date_modified": "2020-07-14T17:14:30-04:00"
+            "date_published": "2020-07-15T16:37:54-04:00",
+            "date_modified": "2020-07-15T16:37:54-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/uploading-ingesting-and-migration.html",
@@ -453,8 +510,8 @@
                    "Islandora Defaults",
                    "CSV"
             ],
-            "date_published": "2020-07-14T17:14:30-04:00",
-            "date_modified": "2020-07-14T17:14:30-04:00"
+            "date_published": "2020-07-15T16:37:54-04:00",
+            "date_modified": "2020-07-15T16:37:54-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/other-content-types.html",
@@ -480,8 +537,8 @@
                    "PDF",
                    "Moore"
             ],
-            "date_published": "2020-07-14T17:14:30-04:00",
-            "date_modified": "2020-07-14T17:14:30-04:00"
+            "date_published": "2020-07-15T16:37:54-04:00",
+            "date_modified": "2020-07-15T16:37:54-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/images-books-and-pages.html",
@@ -505,8 +562,8 @@
                    "Mirador",
                    "BigData"
             ],
-            "date_published": "2020-07-14T17:14:30-04:00",
-            "date_modified": "2020-07-14T17:14:30-04:00"
+            "date_published": "2020-07-15T16:37:54-04:00",
+            "date_modified": "2020-07-15T16:37:54-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/general-content-models.html",
@@ -527,8 +584,8 @@
                    "PCDM",
                    "BigData"
             ],
-            "date_published": "2020-07-14T17:14:30-04:00",
-            "date_modified": "2020-07-14T17:14:30-04:00"
+            "date_published": "2020-07-15T16:37:54-04:00",
+            "date_modified": "2020-07-15T16:37:54-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/content-modeling.html",
@@ -544,8 +601,8 @@
                    "microservice",
                    "content modeling"
             ],
-            "date_published": "2020-07-14T17:14:30-04:00",
-            "date_modified": "2020-07-14T17:14:30-04:00"
+            "date_published": "2020-07-15T16:37:54-04:00",
+            "date_modified": "2020-07-15T16:37:54-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/background.html",
@@ -573,8 +630,8 @@
                    "Drupal 8 ",
                    "Background"
             ],
-            "date_published": "2020-07-14T17:14:30-04:00",
-            "date_modified": "2020-07-14T17:14:30-04:00"
+            "date_published": "2020-07-15T16:37:54-04:00",
+            "date_modified": "2020-07-15T16:37:54-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html",
@@ -588,8 +645,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-14T17:14:30-04:00",
-            "date_modified": "2020-07-14T17:14:30-04:00"
+            "date_published": "2020-07-15T16:37:54-04:00",
+            "date_modified": "2020-07-15T16:37:54-04:00"
         }
     ]
 }
