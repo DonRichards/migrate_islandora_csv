@@ -1,0 +1,177 @@
+# Uninstall this config when the feature is uninstalled
+dependencies:
+  enforced:
+    module:
+      - migrate_islandora_csv
+
+id: druid_node
+label: Step 2 - Import postcard Nodes
+migration_group: druid_migrate_islandora_csv
+
+source:
+  plugin: csv
+  path: modules/contrib/migrate_islandora_csv/data/druid_migration.csv
+
+  # 1 means you have a header row, 0 means you don't
+  header_row_count: 1
+
+  # Each migration needs a unique key per row in the csv.  Here we're using the file path.
+  keys:
+    - ID
+
+  # You can't enter string literals into a process plugin, but you can give it a constant as a 'source'.
+  constants:
+    display: Open Seadragon
+    # Everything gets created as admin
+    uid: 1
+
+# Set fields using values from the CSV
+process:
+  title: title
+  uid: constants/uid
+
+  # We use the skip_on_empty plugin because
+  # not every row in the CSV has subtitle filled
+  # in.
+  field_alternative_title:
+    plugin: skip_on_empty
+    source: subtitle
+    method: process
+
+  # Dates are EDTF strings
+  field_edtf_date_issued:
+    plugin: skip_on_empty
+    source: date_issued
+    method: process
+
+  # Dates are EDTF strings
+  field_edtf_date_created:
+    plugin: skip_on_empty
+    source: date_accessioned
+    method: process
+
+  field_identifier:
+    plugin: skip_on_empty
+    source: PID
+    method: process
+
+  field_description:
+    plugin: skip_on_empty
+    source: utk_mods_abstract_ms
+    method: process
+
+  field_rights:
+    plugin: skip_on_empty
+    source: rights
+    method: process
+
+  # Make the object an 'Image'
+  field_model:
+    plugin: entity_lookup
+    source: model
+    entity_type: taxonomy_term
+    value_key: name
+    bundle_key: vid
+    bundle: islandora_models
+
+  parent_id:
+    plugin: migration_lookup
+    source: parent_id
+    migration: druid_node
+    no_stub: true
+
+  collection_id:
+    plugin: entity_lookup
+    source: collection
+    entity_type: node
+    value_key: title
+    bundle_key: type
+    bundle: islandora_object
+    ignore_case: true
+    message: 'Failed to find collection object'
+
+  field_member_of:
+    -
+      plugin: concat
+      source:
+        - '@parent_id'
+        - '@collection_id'
+      method: process
+    -
+      plugin: skip_on_empty
+      method: process
+
+  # Split up our pipe-delimited string of
+  # subjects, and generate terms for each.
+  field_subject:
+    -
+      plugin: skip_on_empty
+      source: utk_mods_subject_topic_ms
+      method: process
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: entity_generate
+      entity_type: taxonomy_term
+      value_key: name
+      bundle_key: vid
+      bundle: subject
+
+  languages:
+    -
+      source: languages
+      plugin: skip_on_empty
+      method: process
+    -
+      plugin: explode
+      delimiter: '|'
+    -
+      plugin: str_to_assoc
+      key: 'name'
+
+  languages_creator:
+    plugin: sub_process
+    source: '@languages'
+    process:
+        target_id:
+          plugin: entity_generate
+          source: name
+          entity_type: taxonomy_term
+          value_key: name
+          bundle_key: vid
+          bundle: 'language'
+
+  field_language: '@languages'
+
+  field_weight:
+    plugin: skip_on_empty
+    source: sequence_id
+    method: process
+
+  field_display_hints:
+    -
+      plugin: skip_on_empty
+      source: constants/display
+      method: process
+    -
+      plugin: entity_lookup
+      entity_type: taxonomy_term
+      value_key: name
+      bundle_key: vid
+      bundle: islandora_display
+
+  field_pid:
+    plugin: skip_on_empty
+    source: PID
+    method: process
+
+# We're making nodes
+destination:
+  plugin: 'entity:node'
+  default_bundle: islandora_object
+
+migration_dependencies:
+  required:
+    - migrate_plus.migration.druid_file
+  optional: {  }

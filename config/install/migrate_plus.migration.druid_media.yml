@@ -1,0 +1,97 @@
+# Uninstall this config when the feature is uninstalled
+dependencies:
+  enforced:
+    module:
+      - migrate_islandora_csv
+
+id: druid_media
+label: Step 3 - Import postcard Media
+migration_group: druid_migrate_islandora_csv
+
+source:
+  plugin: csv
+  path: modules/contrib/migrate_islandora_csv/data/druid_migration.csv
+  # 1 means you have a header row, 0 means you don't
+  header_row_count: 1
+
+  # Each migration needs a unique key per row in the csv.  Here we're using the file path.
+  keys:
+    - ID
+
+  # You can't enter string literals into a process plugin, but you can give it a constant as a 'source'.
+  constants:
+
+    # Everything gets created as admin
+    uid: 1
+    type: file
+    model: file
+    media_use: Original File
+
+process:
+  # skip this if it's not an item requring a file
+  circuit_breaker:
+    plugin: skip_on_value
+    source: model
+    method: row
+    value:
+      - 'Collection'
+      - 'collection'
+      - 'Paged Content'
+      - 'paged content'
+
+  filename:
+    -
+      plugin: callback
+      callable: pathinfo
+      source: file
+    -
+      plugin: extract
+      index:
+        - basename
+
+  name: '@filename'
+  uid: constants/uid
+
+
+
+
+  # Make the media an 'Original File'
+  field_media_use:
+    plugin: entity_lookup
+    source: constants/media_use
+    entity_type: taxonomy_term
+    value_key: name
+    bundle_key: vid
+    bundle: islandora_media_use
+
+  # Lookup the migrated file in the file migration.
+  # for an pdf or tif, if it is one
+  field_media_file:
+    plugin: migration_lookup
+    source: file
+    migration: druid_file
+    no_stub: true
+
+  field_pid:
+    plugin: skip_on_empty
+    source: PID
+    method: process
+
+  # Lookup the migrated node in the node migration
+  field_media_of:
+    plugin: migration_lookup
+    source: file
+    migration: druid_node
+    no_stub: true
+
+  #bundle: type
+
+destination:
+  plugin: 'entity:media'
+  default_bundle: file
+
+migration_dependencies:
+  required:
+    - migrate_plus.migration.druid_file
+    - migrate_plus.migration.druid_node
+  optional: {  }

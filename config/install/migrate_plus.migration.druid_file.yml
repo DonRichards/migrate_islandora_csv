@@ -1,0 +1,63 @@
+# Uninstall this config when the feature is uninstalled
+dependencies:
+  enforced:
+    module:
+      - migrate_islandora_csv
+
+id: druid_file
+label: Step 1 - Import postcard Files
+migration_group: druid_migrate_islandora_csv
+
+source:
+  plugin: csv
+  path: 'modules/contrib/migrate_islandora_csv/data/druid_migration.csv'
+  delimiter: ','
+  header_row_count: 1
+
+  keys:
+    - ID
+
+  constants:
+    destination_dir: 'fedora://csv_migration'
+    mime: image/jp2
+    uid: 1
+
+process:
+  circuit_breaker:
+    plugin: skip_on_value
+    source: model
+    method: row
+    value:
+      - 'Collection'
+      - 'collection'
+      - 'Paged Content'
+      - 'paged content'
+
+  filemime: constants/mimetype
+  uid: constants/uid
+
+  filename:
+    -
+      plugin: callback
+      callable: pathinfo
+      source: file
+    -
+      plugin: extract
+      index:
+        - basename
+
+  destination:
+    plugin: concat
+    delimiter: /
+    source:
+      - constants/destination_dir
+      - '@filename'
+  uri:
+    plugin: file_copy
+    source:
+      - file
+      - '@destination'
+
+destination:
+  plugin: 'entity:file'
+  type: file
