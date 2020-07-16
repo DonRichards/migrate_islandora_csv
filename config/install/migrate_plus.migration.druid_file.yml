@@ -19,7 +19,7 @@ source:
 
   constants:
     destination_dir: 'fedora://csv_migration'
-    mime: image/jp2
+    mimetype: image/tif
     uid: 1
 
 process:
@@ -53,7 +53,7 @@ process:
       - constants/destination_dir
       - '@filename'
   uri:
-    plugin: file_copy
+    plugin: download
     source:
       - file
       - '@destination'
