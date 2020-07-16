@@ -19,7 +19,7 @@ source:
 
   constants:
     destination_dir: 'fedora://csv_migration'
-    mime: image/jp2
+    mimetype: image/tiff
     uid: 1
 
 process:
@@ -55,7 +55,7 @@ process:
   uri:
     plugin: file_copy
     source:
-      - file # The source column in the CSV
+      - file
       - '@destination'
 
 destination:
