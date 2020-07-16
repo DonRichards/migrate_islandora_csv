@@ -17,7 +17,7 @@ source:
 
   # Each migration needs a unique key per row in the csv.  Here we're using the file path.
   keys:
-    - file
+    - ID
 
   # You can't enter string literals into a process plugin, but you can give it a constant as a 'source'.
   constants:
@@ -57,7 +57,7 @@ process:
 
   field_identifier:
     plugin: skip_on_empty
-    source: identifier_other
+    source: identifier_spc
     method: process
 
   field_description:
@@ -163,6 +163,11 @@ process:
   field_weight:
     plugin: skip_on_empty
     source: sequence_id
+    method: process
+
+  field_pid:
+    plugin: skip_on_empty
+    source: PID
     method: process
 
 # We're making nodes
