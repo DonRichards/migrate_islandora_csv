@@ -52,9 +52,6 @@ process:
   name: '@filename'
   uid: constants/uid
 
-
-
-
   # Make the media an 'Original File'
   field_media_use:
     plugin: entity_lookup
