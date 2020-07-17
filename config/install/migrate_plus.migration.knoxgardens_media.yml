@@ -30,6 +30,8 @@ source:
 process:
 
   name: file_name
+  field_title: title_transcribed
+  alt: !title_transcribed
   uid: constants/uid
 
   # Make the media an 'Original File'
@@ -47,6 +49,10 @@ process:
     source: file
     migration: knoxgardens_file
     no_stub: true
+
+  field_media_image/alt:
+    plugin: default_value
+    default_value: 'Featured image'
 
   field_media_file:
     -
