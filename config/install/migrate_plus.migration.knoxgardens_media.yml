@@ -17,61 +17,68 @@ source:
 
   # Each migration needs a unique key per row in the csv.  Here we're using the file path.
   keys:
-    - ID
+    - PID
 
   # You can't enter string literals into a process plugin, but you can give it a constant as a 'source'.
   constants:
-    # We're tagging our media as Original Files
-    use: Original File
 
     # Everything gets created as admin
     uid: 1
+    type: file
+    model: file
+    media_use: Original File
 
 process:
+  # skip this if it's not an item requring a file
+  circuit_breaker:
+    plugin: skip_on_value
+    source: model
+    method: row
+    value:
+      - 'Collection'
+      - 'collection'
+      - 'Paged Content'
+      - 'paged content'
 
-  name: file_name
-  field_title: title_transcribed
-  alt: !title_transcribed
+  filename:
+    -
+      plugin: callback
+      callable: pathinfo
+      source: file
+    -
+      plugin: extract
+      index:
+        - basename
+
+  name: '@filename'
   uid: constants/uid
 
   # Make the media an 'Original File'
   field_media_use:
     plugin: entity_lookup
-    source: constants/use
+    source: constants/media_use
     entity_type: taxonomy_term
     value_key: name
     bundle_key: vid
     bundle: islandora_media_use
 
-    # Lookup the migrated file in the file migration.
-  field_media_image:
+  # Lookup the migrated file in the file migration.
+  # for an pdf or tif, if it is one
+  field_media_file:
     plugin: migration_lookup
-    source: file
+    source: PID
     migration: knoxgardens_file
     no_stub: true
 
-  field_media_image/alt:
-    plugin: default_value
-    default_value: 'Featured image'
-
-  field_media_file:
-    -
-      plugin: skip_on_value
-      not_equals: true
-      source: type
-      method: process
-      value:
-        - file
-    -
-      plugin: migration_lookup
-      source: file
-      migration: knoxgardens_file
-      no_stub: true
+  field_pid:
+    plugin: skip_on_empty
+    source: PID
+    method: process
 
   # Lookup the migrated node in the node migration
   field_media_of:
     plugin: migration_lookup
-    source: file
+    source: PID
     migration: knoxgardens_node
     no_stub: true
 

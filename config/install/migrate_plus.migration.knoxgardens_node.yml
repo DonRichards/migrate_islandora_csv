@@ -17,21 +17,18 @@ source:
 
   # Each migration needs a unique key per row in the csv.  Here we're using the file path.
   keys:
-    - ID
+    - PID
 
   # You can't enter string literals into a process plugin, but you can give it a constant as a 'source'.
   constants:
-    # We're tagging our nodes as Images
-    model: Image
-
     display: Open Seadragon
-    collection: Knoxville Garden Slides
+    # Everything gets created as admin
     uid: 1
     promote: 0
 
 # Set fields using values from the CSV
 process:
-  title: title_transcribed
+  title: utk_mods_titleInfo_title_mt
   uid: constants/uid
   promote: constants/promote
 
@@ -40,47 +37,35 @@ process:
   # in.
   field_alternative_title:
     plugin: skip_on_empty
-    source: supplied_title
+    source: fgs_label_mlt
     method: process
 
   # Dates are EDTF strings
   field_edtf_date_issued:
     plugin: skip_on_empty
-    source: date_issued
+    source: fgs_lastModifiedDate_mdt
     method: process
 
   # Dates are EDTF strings
   field_edtf_date_created:
     plugin: skip_on_empty
-    source: date_accessioned
+    source: fgs_createdDate_mt
     method: process
 
   field_identifier:
     plugin: skip_on_empty
-    source: identifier_spc
+    source: PID
     method: process
 
   field_description:
     plugin: skip_on_empty
-    source: description
+    source: utk_mods_abstract_ms
     method: process
 
   field_rights:
     plugin: skip_on_empty
     source: rights
     method: process
-
-  field_display_hints:
-    -
-      plugin: skip_on_empty
-      source: display
-      method: process
-    -
-      plugin: entity_lookup
-      entity_type: taxonomy_term
-      value_key: name
-      bundle_key: vid
-      bundle: islandora_display
 
   # Make the object an 'Image'
   field_model:
@@ -92,10 +77,13 @@ process:
     bundle: islandora_models
 
   parent_id:
-    plugin: migration_lookup
-    source: parent_id
-    migration: knoxgardens_node
-    no_stub: true
+    -
+      plugin: skip_on_empty
+      method: process
+      source: ancestors_ms
+    -
+      plugin: migration_lookup
+      migration: knoxgardens_node
 
   collection_id:
     plugin: entity_lookup
@@ -117,12 +105,13 @@ process:
     -
       plugin: skip_on_empty
       method: process
+
   # Split up our pipe-delimited string of
   # subjects, and generate terms for each.
   field_subject:
     -
       plugin: skip_on_empty
-      source: subjects
+      source: utk_mods_subject_topic_ms
       method: process
     -
       plugin: explode
@@ -164,6 +153,18 @@ process:
     plugin: skip_on_empty
     source: sequence_id
     method: process
+
+  field_display_hints:
+    -
+      plugin: skip_on_empty
+      source: constants/display
+      method: process
+    -
+      plugin: entity_lookup
+      entity_type: taxonomy_term
+      value_key: name
+      bundle_key: vid
+      bundle: islandora_display
 
   field_pid:
     plugin: skip_on_empty

@@ -16,7 +16,7 @@ source:
 
   # Each migration needs a unique key per row in the csv.  Here we're using the file path.
   keys:
-    - ID
+    - PID
 
   # You can't enter string literals into a process plugin, but you can give it a constant as a 'source'.
   constants:
@@ -52,9 +52,6 @@ process:
   name: '@filename'
   uid: constants/uid
 
-
-
-
   # Make the media an 'Original File'
   field_media_use:
     plugin: entity_lookup
@@ -68,7 +65,7 @@ process:
   # for an pdf or tif, if it is one
   field_media_file:
     plugin: migration_lookup
-    source: file
+    source: PID
     migration: pcard00_file
     no_stub: true
 
@@ -80,11 +77,9 @@ process:
   # Lookup the migrated node in the node migration
   field_media_of:
     plugin: migration_lookup
-    source: file
+    source: PID
     migration: pcard00_node
     no_stub: true
-
-  #bundle: type
 
 destination:
   plugin: 'entity:media'

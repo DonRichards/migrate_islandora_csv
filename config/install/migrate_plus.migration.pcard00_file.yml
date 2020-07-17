@@ -15,7 +15,7 @@ source:
   header_row_count: 1
 
   keys:
-    - ID
+    - PID
 
   constants:
     destination_dir: 'fedora://csv_migration'
@@ -47,11 +47,15 @@ process:
         - basename
 
   destination:
-    plugin: concat
-    delimiter: /
-    source:
-      - constants/destination_dir
-      - '@filename'
+    -
+      plugin: concat
+      delimiter: /
+      source:
+        - constants/destination_dir
+        - '@filename'
+    -
+      plugin: urlencode
+
   uri:
     plugin: file_copy
     source:
