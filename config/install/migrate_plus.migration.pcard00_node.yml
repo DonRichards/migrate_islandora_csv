@@ -24,11 +24,13 @@ source:
     display: Open Seadragon
     # Everything gets created as admin
     uid: 1
+    promote: 0
 
 # Set fields using values from the CSV
 process:
   title: title
   uid: constants/uid
+  promote: constants/promote
 
   # We use the skip_on_empty plugin because
   # not every row in the CSV has subtitle filled

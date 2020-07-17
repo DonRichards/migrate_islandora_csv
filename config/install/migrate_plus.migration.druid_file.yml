@@ -15,11 +15,11 @@ source:
   header_row_count: 1
 
   keys:
-    - ID
+    - PID
 
   constants:
     destination_dir: 'fedora://csv_migration'
-    mimetype: image/tif
+    mimetype: image/tiff
     uid: 1
 
 process:

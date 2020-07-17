@@ -17,17 +17,19 @@ source:
 
   # Each migration needs a unique key per row in the csv.  Here we're using the file path.
   keys:
-    - ID
+    - PID
 
   # You can't enter string literals into a process plugin, but you can give it a constant as a 'source'.
   constants:
     display: Open Seadragon
     # Everything gets created as admin
     uid: 1
+    promote: 0
 
 # Set fields using values from the CSV
 process:
-  title: title
+  promote: constants/promote
+  title: utk_mods_titleInfo_title_mt
   uid: constants/uid
 
   # We use the skip_on_empty plugin because
@@ -35,19 +37,19 @@ process:
   # in.
   field_alternative_title:
     plugin: skip_on_empty
-    source: subtitle
+    source: fgs_label_mlt
     method: process
 
   # Dates are EDTF strings
   field_edtf_date_issued:
     plugin: skip_on_empty
-    source: date_issued
+    source: fgs_lastModifiedDate_mdt
     method: process
 
   # Dates are EDTF strings
   field_edtf_date_created:
     plugin: skip_on_empty
-    source: date_accessioned
+    source: fgs_createdDate_mt
     method: process
 
   field_identifier:
@@ -76,7 +78,7 @@ process:
 
   parent_id:
     plugin: migration_lookup
-    source: parent_id
+    source: ancestors_ms
     migration: druid_node
     no_stub: true
 
