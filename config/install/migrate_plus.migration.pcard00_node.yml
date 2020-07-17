@@ -27,7 +27,7 @@ source:
 
 # Set fields using values from the CSV
 process:
-  title: utk_mods_titleInfo_title_mt
+  title: title
   uid: constants/uid
   promote: constants/promote
 
@@ -63,7 +63,7 @@ process:
 
   field_rights:
     plugin: skip_on_empty
-    source: rights
+    source: utk_mods_accessCondition_use_and_reproduction_mt
     method: process
 
   # Make the object an 'Image'
@@ -77,13 +77,9 @@ process:
 
   parent_id:
     -
-      plugin: callback
-      callable: var_dump
-      source: ancestors_ms
-    -
       plugin: skip_on_empty
       method: process
-      source: ancestors_ms
+      source: parent_id
     -
       plugin: migration_lookup
       migration: pcard00_node
@@ -126,37 +122,37 @@ process:
       bundle_key: vid
       bundle: subject
 
-  languages:
-    -
-      source: languages
-      plugin: skip_on_empty
-      method: process
-    -
-      plugin: explode
-      delimiter: '|'
-    -
-      plugin: str_to_assoc
-      key: 'name'
+  # languages:
+  #   -
+  #     source: languages
+  #     plugin: skip_on_empty
+  #     method: process
+  #   -
+  #     plugin: explode
+  #     delimiter: '|'
+  #   -
+  #     plugin: str_to_assoc
+  #     key: 'name'
 
-  languages_creator:
-    plugin: sub_process
-    source: '@languages'
-    process:
-        target_id:
-          plugin: entity_generate
-          source: name
-          entity_type: taxonomy_term
-          value_key: name
-          bundle_key: vid
-          bundle: 'language'
+  # languages_creator:
+  #   plugin: sub_process
+  #   source: '@languages'
+  #   process:
+  #       target_id:
+  #         plugin: entity_generate
+  #         source: name
+  #         entity_type: taxonomy_term
+  #         value_key: name
+  #         bundle_key: vid
+  #         bundle: 'language'
+  #
+  #
+  # field_language: '@languages'
 
-
-  field_language: '@languages'
-
-  field_weight:
-    plugin: skip_on_empty
-    source: sequence_id
-    method: process
+  # field_weight:
+  #   plugin: skip_on_empty
+  #   source: sequence_id
+  #   method: process
 
   field_display_hints:
     -
