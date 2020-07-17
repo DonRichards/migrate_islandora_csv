@@ -28,9 +28,9 @@ source:
 
 # Set fields using values from the CSV
 process:
-  promote: constants/promote
   title: utk_mods_titleInfo_title_mt
   uid: constants/uid
+  promote: constants/promote
 
   # We use the skip_on_empty plugin because
   # not every row in the CSV has subtitle filled
@@ -77,10 +77,17 @@ process:
     bundle: islandora_models
 
   parent_id:
-    plugin: migration_lookup
-    source: ancestors_ms
-    migration: druid_node
-    no_stub: true
+    -
+      plugin: callback
+      callable: var_dump
+      source: ancestors_ms
+    -
+      plugin: skip_on_empty
+      method: process
+      source: ancestors_ms
+    -
+      plugin: migration_lookup
+      migration: druid_node
 
   collection_id:
     plugin: entity_lookup
@@ -112,7 +119,7 @@ process:
       method: process
     -
       plugin: explode
-      delimiter: ','
+      delimiter: '|'
     -
       plugin: entity_generate
       entity_type: taxonomy_term
@@ -143,6 +150,7 @@ process:
           value_key: name
           bundle_key: vid
           bundle: 'language'
+
 
   field_language: '@languages'
 

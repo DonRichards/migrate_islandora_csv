@@ -47,13 +47,17 @@ process:
         - basename
 
   destination:
-    plugin: concat
-    delimiter: /
-    source:
-      - constants/destination_dir
-      - '@filename'
+    -
+      plugin: concat
+      delimiter: /
+      source:
+        - constants/destination_dir
+        - '@filename'
+    -
+      plugin: urlencode
+
   uri:
-    plugin: download
+    plugin: file_copy
     source:
       - file
       - '@destination'

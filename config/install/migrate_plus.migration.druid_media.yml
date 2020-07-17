@@ -65,7 +65,7 @@ process:
   # for an pdf or tif, if it is one
   field_media_file:
     plugin: migration_lookup
-    source: file
+    source: PID
     migration: druid_file
     no_stub: true
 
@@ -77,11 +77,9 @@ process:
   # Lookup the migrated node in the node migration
   field_media_of:
     plugin: migration_lookup
-    source: file
+    source: PID
     migration: druid_node
     no_stub: true
-
-  #bundle: type
 
 destination:
   plugin: 'entity:media'
