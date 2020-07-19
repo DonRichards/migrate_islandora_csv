@@ -28,7 +28,7 @@ source:
 
 # Set fields using values from the CSV
 process:
-  title: utk_mods_titleInfo_title_mt
+  title: title_transcribed
   uid: constants/uid
   promote: constants/promote
 
