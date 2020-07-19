@@ -77,18 +77,9 @@ process:
     bundle_key: vid
     bundle: islandora_models
 
-  parent_id:
-    -
-      plugin: skip_on_empty
-      method: process
-      source: ancestors_ms
-    -
-      plugin: migration_lookup
-      migration: knoxgardens_node
-
   collection_id:
     plugin: entity_lookup
-    source: collection
+    source: digital_collection
     entity_type: node
     value_key: title
     bundle_key: type
@@ -97,15 +88,9 @@ process:
     message: 'Failed to find collection object'
 
   field_member_of:
-    -
-      plugin: concat
-      source:
-        - '@parent_id'
-        - '@collection_id'
-      method: process
-    -
-      plugin: skip_on_empty
-      method: process
+    plugin: skip_on_empty
+    source: '@collection_id'
+    method: process
 
   # Split up our pipe-delimited string of
   # subjects, and generate terms for each.
