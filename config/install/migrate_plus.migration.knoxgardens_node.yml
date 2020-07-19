@@ -25,6 +25,7 @@ source:
     # Everything gets created as admin
     uid: 1
     promote: 0
+    model: file
 
 # Set fields using values from the CSV
 process:
@@ -37,19 +38,19 @@ process:
   # in.
   field_alternative_title:
     plugin: skip_on_empty
-    source: fgs_label_mlt
+    source: supplied_title
     method: process
 
   # Dates are EDTF strings
   field_edtf_date_issued:
     plugin: skip_on_empty
-    source: fgs_lastModifiedDate_mdt
+    source: dateStart
     method: process
 
   # Dates are EDTF strings
   field_edtf_date_created:
     plugin: skip_on_empty
-    source: fgs_createdDate_mt
+    source: dateStart
     method: process
 
   field_identifier:
@@ -59,7 +60,7 @@ process:
 
   field_description:
     plugin: skip_on_empty
-    source: utk_mods_abstract_ms
+    source: abstract
     method: process
 
   field_rights:
@@ -70,7 +71,7 @@ process:
   # Make the object an 'Image'
   field_model:
     plugin: entity_lookup
-    source: model
+    source: constants/model
     entity_type: taxonomy_term
     value_key: name
     bundle_key: vid
@@ -123,36 +124,36 @@ process:
       bundle_key: vid
       bundle: subject
 
-  languages:
-    -
-      source: languages
-      plugin: skip_on_empty
-      method: process
-    -
-      plugin: explode
-      delimiter: '|'
-    -
-      plugin: str_to_assoc
-      key: 'name'
+  # languages:
+  #   -
+  #     source: languages
+  #     plugin: skip_on_empty
+  #     method: process
+  #   -
+  #     plugin: explode
+  #     delimiter: '|'
+  #   -
+  #     plugin: str_to_assoc
+  #     key: 'name'
+  #
+  # languages_creator:
+  #   plugin: sub_process
+  #   source: '@languages'
+  #   process:
+  #       target_id:
+  #         plugin: entity_generate
+  #         source: name
+  #         entity_type: taxonomy_term
+  #         value_key: name
+  #         bundle_key: vid
+  #         bundle: 'language'
+  #
+  # field_language: '@languages'
 
-  languages_creator:
-    plugin: sub_process
-    source: '@languages'
-    process:
-        target_id:
-          plugin: entity_generate
-          source: name
-          entity_type: taxonomy_term
-          value_key: name
-          bundle_key: vid
-          bundle: 'language'
-
-  field_language: '@languages'
-
-  field_weight:
-    plugin: skip_on_empty
-    source: sequence_id
-    method: process
+  # field_weight:
+  #   plugin: skip_on_empty
+  #   source: sequence_id
+  #   method: process
 
   field_display_hints:
     -

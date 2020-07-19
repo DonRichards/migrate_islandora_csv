@@ -5,7 +5,7 @@ dependencies:
       - migrate_islandora_csv
 
 id: druid_media
-label: Step 3 - Import postcard Media
+label: Step 3 - Import druid Media
 migration_group: druid_migrate_islandora_csv
 
 source:
