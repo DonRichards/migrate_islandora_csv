@@ -48,7 +48,7 @@ process:
   # Dates are EDTF strings
   field_edtf_date_created:
     plugin: skip_on_empty
-    source: fgs_createdDate_mt
+    source: utk_mods_originInfo_dateCreated_edtf_date_mt
     method: process
 
   field_identifier:
