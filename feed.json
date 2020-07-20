@@ -29,8 +29,8 @@
                    "IIIF",
                    "Drupal 8 "
             ],
-            "date_published": "2020-07-16T12:29:45-04:00",
-            "date_modified": "2020-07-16T12:29:45-04:00"
+            "date_published": "2020-07-20T18:16:05-04:00",
+            "date_modified": "2020-07-20T18:16:05-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/component-overview.html",
@@ -63,8 +63,8 @@
                    "Alpaca",
                    "API"
             ],
-            "date_published": "2020-07-16T12:29:45-04:00",
-            "date_modified": "2020-07-16T12:29:45-04:00"
+            "date_published": "2020-07-20T18:16:05-04:00",
+            "date_modified": "2020-07-20T18:16:05-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/how-to-run-on-aws.html",
@@ -77,22 +77,22 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-16T12:29:45-04:00",
-            "date_modified": "2020-07-16T12:29:45-04:00"
+            "date_published": "2020-07-20T18:16:05-04:00",
+            "date_modified": "2020-07-20T18:16:05-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/developer-debugging.html",
             "url": "https://donrichards.github.io/migrate_islandora_csv/developer-debugging.html",
             "title": "Developer Debugging",
             "summary": "There are 2 options for debugging; core debugger and the Migration Devel Full tutorial How to Print Variables using Kint in Drupal 8 $ chmod&hellip;",
-            "content_html": "<p>There are 2 options for debugging; core debugger and the Migration Devel </p>\n<h2 id=\"add-general-debugging\">Add General Debugging</h2>\n<p>Full tutorial <a href=\"https://www.webwash.net/how-to-print-variables-using-kint-in-drupal-8/\">How to Print Variables using Kint in Drupal 8</a> </p>\n<pre><code class=\"language-shell\">$ chmod 755 /var/www/drupal/web/sites/default\n$ drush -y en devel\n$ drush -y en kint\n\n# Adding the debug service\n$ cp /var/www/drupal/web/sites/default/default.services.yml /var/www/drupal/web/sites/default/services.yml\n        $ Change debug value\n        debug:true\n\n# Adding the debug to the template\n$ nano /var/www/drupal/web/themes/contrib/carapace/templates/generated/page.html.twig\n    Add under the first comment, above the first item:    {{ kint(page) }} \n</code></pre>\n<h2 id=\"install-migrate-devel\">Install Migrate Devel</h2>\n<p>This gives a lot of feedback on a migration failure.</p>\n<pre><code class=\"language-shell\">$ cp /var/www/drupal/\n$ composer require &#39;drupal/migrate_devel:^2.0&#39;\n$ drush en -y    migrate_devel</code></pre>\n<h3 id=\"when-you-modify-a-migration-yml-file\">When you modify a migration YML file</h3>\n<p>This messes up me all the time. So much so I created a <a href=\"https://gist.github.com/DonRichards/ce71c2b18e1567a61ea8fe96b3e8ed70\">script</a> I just have running in the background to force all updates after they’re written. This isn’t absolutely nessisary but I find it useful. </p>\n<pre><code class=\"language-shell\">$ drush -y fim migrate_islandora_csv</code></pre>\n<h3 id=\"typical-migration\">Typical Migration</h3>\n<p>It’s highly suggested to migrate by group so the order of operations work in your favor. This is a typic execution of that. </p>\n<p><em>Remember that the order of operations is important (taxonomy terms like persons and subjects should go first, files, node, and lastly media) if you haven’t previously imported them. This is a problem if the dependencies are properly specified or the <code>--execute-dependencies</code> isn’t added to the import. The <code>-d</code> is for debugging. This will add a little time to the process. And you will need to include <code>--userid=1</code> to this. I have experienced issues not using it.</em></p>\n<pre><code class=\"language-shell\">drush migrate:import --userid=1 --execute-dependencies --group=knoxgardens_migrate_islandora_csv -d</code></pre>\n<h3 id=\"debugging-migration\">Debugging Migration</h3>\n<p>Migrate:import has a lot of options. This is the complete list. I won’t go over most of them. To read more on <a href=\"https://drushcommands.com/drush-8x/migrate/migrate-import/\">drush migrate-import</a></p>\n<pre><code class=\"language-shell\">migrate:import [--all] [--group GROUP] [--tag TAG] [--limit LIMIT] [--feedback FEEDBACK] [--idlist IDLIST] [--idlist-delimiter [IDLIST-DELIMITER]] [--update] [--force] [--continue-on-failure] [--execute-dependencies] [--skip-progress-bar] [--sync] [-h|--help] [-q|--quiet] [-v|vv|vvv|--verbose] [-V|--version] [--ansi] [--no-ansi] [-n|--no-interaction] [-d|--debug] [-y|--yes] [--no] [--remote-host REMOTE-HOST] [--remote-user REMOTE-USER] [-r|--root ROOT] [-l|--uri URI] [--simulate] [--pipe] [-D|--define DEFINE] [--userid USERID] [--migrate-debug [MIGRATE-DEBUG]] [--migrate-debug-pre [MIGRATE-DEBUG-PRE]] [--druplicon] [--notify [NOTIFY]] [--xh-link XH-LINK] [--] &lt;command&gt; [&lt;migration_names&gt;]</code></pre>\n<p>Migration test are done one migration yml at a time by specifying the migration ID. To get a list of installed migrations with the status and group name(s) run migrate status:</p>\n<pre><code class=\"language-shell\">$ drush migrate:status\n &quot;-----------------------------------------------------------------------------------&quot;\n  Group         Migration ID   Status Total  Imported  Unprocessed   Last Imported\n  ----------------------------    ------------   ----  ------  -----  --  -----------\n  pcard00_migrate_islandora_csv   pcard00_file   Idle   4224   6989   0   2020-07-10\n  pcard00_migrate_islandora_csv   pcard00_node   Idle   4224   6991   0   2020-07-10\n  pcard00_migrate_islandora_csv   pcard00_media  Idle   4224   6990   0   2020-07-10\n &quot;-----------------------------------------------------------------------------------&quot;</code></pre>\n<p>To only run against a specific object. Within each of the yml files a <strong>key</strong> is specified. The <strong>key</strong> is saying for each unique one of these iterate through. If the the <strong>key</strong> is to to <code>key: PID</code> and the PID we want to migrate/update is <em>islandora:4223</em> we can the following command. Using a value with special characters gives me some concern so I suggest just adding sequential numbers as the first colunm in the CSV calling it <strong>ID</strong> to avoid possible issues. I have not personally tested using a PID as the key but I’m using it here to illustrate.</p>\n<pre><code class=\"language-shell\">#         id of the yml file   ┐                 ┌ Respect the order of operations\n$ drush migrate:import pcard00_node --execute-dependencies --migrate-debug --idlist=&quot;islandora:4223&quot; --userid=1</code></pre>\n<p>This outputs a <strong>Source</strong> and a <strong>Destination</strong> variables to see how they are mapping. The <strong>Source</strong> is good to see if the values are being read. This is the <strong>Destination</strong>  part of the report.</p>\n<pre><code class=\"language-shell\">...\n...\n^ &quot;---------------------------------------------------------------------&quot;\n^ &quot;|                           $Destination                            |&quot;\n^ &quot;---------------------------------------------------------------------&quot;\n^ array:8 [\n  &quot;circuit_breaker&quot; =&gt; &quot;Page&quot;\n  &quot;name&quot; =&gt; &quot;Night View of Gatlinburg, Tennessee Showing Mount LeConte in the Background (GS-262)&quot;\n  &quot;uid&quot; =&gt; 1\n  &quot;field_media_use&quot; =&gt; &quot;17&quot;\n  &quot;field_media_file&quot; =&gt; &quot;3074&quot;\n  &quot;field_pid&quot; =&gt; &quot;pcard00:108573&quot;\n  &quot;field_media_of&quot; =&gt; &quot;7095&quot;\n  &quot;bundle&quot; =&gt; &quot;image&quot;\n]\n^ &quot;---------------------------------------------------------------------&quot;\n^ &quot;|                       $DestinationIdValues                        |&quot;\n^ &quot;---------------------------------------------------------------------&quot;</code></pre>\n<h2 id=\"rolling-back\">Rolling back</h2>\n<p>This process has a small flaw. The original file is left in the Bigdata log and fills up the VM very quickly. It will eventually remove itself but I haven’t found a simple way to trigger a cron to clear it. The process can be done quickly but there is probably a fast way than I have been doing it. I suggest only rolling back when you have extra files or to remove remove the content entirely. If you plan on just updating, just use the <code>--update</code> switch. </p>\n<pre><code class=\"language-shell\">$ drush migrate:rollback --userid=1 --group=knoxgardens_migrate_islandora_csv -d\n# VS\n$ drush migrate:import --userid=1 --group=knoxgardens_migrate_islandora_csv -d --update</code></pre>\n<h2 id=\"caches\">Caches</h2>\n<pre><code class=\"language-shell\"># Clear Drupal cache\n$ drush cr\n\n# Karaf Cache\nrm -rf /opt/karaf/data/cache/</code></pre>\n<h2 id=\"extra\">Extra</h2>\n<pre><code class=\"language-shell\">#  after running `make` pull all of the latest docker images\n$ docker images | grep -v REPOSITORY | awk &#39;{print $1}&#39; | xargs -L1 docker pull </code></pre>\n",
+            "content_html": "<p>There are 2 options for debugging; core debugger and the Migration Devel </p>\n<h2 id=\"add-general-debugging\">Add General Debugging</h2>\n<p>Full tutorial <a href=\"https://www.webwash.net/how-to-print-variables-using-kint-in-drupal-8/\">How to Print Variables using Kint in Drupal 8</a> </p>\n<pre><code class=\"language-shell\">$ chmod 755 /var/www/drupal/web/sites/default\n$ drush -y en devel\n$ drush -y en kint\n\n# Adding the debug service\n$ cp /var/www/drupal/web/sites/default/default.services.yml /var/www/drupal/web/sites/default/services.yml\n        $ Change debug value\n        debug:true\n\n# Adding the debug to the template\n$ nano /var/www/drupal/web/themes/contrib/carapace/templates/generated/page.html.twig\n    Add under the first comment, above the first item:    {{ kint(page) }} \n</code></pre>\n<h2 id=\"install-migrate-devel\">Install Migrate Devel</h2>\n<p>This gives a lot of feedback on a migration failure.</p>\n<pre><code class=\"language-shell\">$ cp /var/www/drupal/\n$ composer require &#39;drupal/migrate_devel:^2.0&#39;\n$ drush en -y    migrate_devel</code></pre>\n<h3 id=\"when-you-modify-a-migration-yml-file\">When you modify a migration YML file</h3>\n<p>This messes up me all the time. So much so I created a <a href=\"https://gist.github.com/DonRichards/ce71c2b18e1567a61ea8fe96b3e8ed70\">script</a> I just have running in the background to force all updates after they’re written. This isn’t absolutely nessisary but I find it useful. </p>\n<pre><code class=\"language-shell\">$ drush -y fim migrate_islandora_csv</code></pre>\n<h3 id=\"typical-migration\">Typical Migration</h3>\n<p>It’s highly suggested to migrate by group so the order of operations work in your favor. This is a typic execution of that. </p>\n<p><em>Remember that the order of operations is important (taxonomy terms like persons and subjects should go first, files, node, and lastly media) if you haven’t previously imported them. This is a problem if the dependencies are properly specified or the <code>--execute-dependencies</code> isn’t added to the import. The <code>-d</code> is for debugging. This will add a little time to the process. And you will need to include <code>--userid=1</code> to this. I have experienced issues not using it.</em></p>\n<pre><code class=\"language-shell\">drush migrate:import --userid=1 --execute-dependencies --group=knoxgardens_migrate_islandora_csv -d</code></pre>\n<h3 id=\"debugging-migration\">Debugging Migration</h3>\n<p>Migrate:import has a lot of options. This is the complete list. I won’t go over most of them. To read more on <a href=\"https://drushcommands.com/drush-8x/migrate/migrate-import/\">drush migrate-import</a></p>\n<pre><code class=\"language-shell\">migrate:import [--all] [--group GROUP] [--tag TAG] [--limit LIMIT] [--feedback FEEDBACK] [--idlist IDLIST] [--idlist-delimiter [IDLIST-DELIMITER]] [--update] [--force] [--continue-on-failure] [--execute-dependencies] [--skip-progress-bar] [--sync] [-h|--help] [-q|--quiet] [-v|vv|vvv|--verbose] [-V|--version] [--ansi] [--no-ansi] [-n|--no-interaction] [-d|--debug] [-y|--yes] [--no] [--remote-host REMOTE-HOST] [--remote-user REMOTE-USER] [-r|--root ROOT] [-l|--uri URI] [--simulate] [--pipe] [-D|--define DEFINE] [--userid USERID] [--migrate-debug [MIGRATE-DEBUG]] [--migrate-debug-pre [MIGRATE-DEBUG-PRE]] [--druplicon] [--notify [NOTIFY]] [--xh-link XH-LINK] [--] &lt;command&gt; [&lt;migration_names&gt;]</code></pre>\n<p>Migration test are done one migration yml at a time by specifying the migration ID. To get a list of installed migrations with the status and group name(s) run migrate status:</p>\n<pre><code class=\"language-shell\">$ drush migrate:status\n &quot;-----------------------------------------------------------------------------------&quot;\n  Group         Migration ID   Status Total  Imported  Unprocessed   Last Imported\n  ----------------------------    ------------   ----  ------  -----  --  -----------\n  pcard00_migrate_islandora_csv   pcard00_file   Idle   4224   6989   0   2020-07-10\n  pcard00_migrate_islandora_csv   pcard00_node   Idle   4224   6991   0   2020-07-10\n  pcard00_migrate_islandora_csv   pcard00_media  Idle   4224   6990   0   2020-07-10\n &quot;-----------------------------------------------------------------------------------&quot;</code></pre>\n<p>To only run against a specific object. Within each of the yml files a <strong>key</strong> is specified. The <strong>key</strong> is saying for each unique one of these iterate through. If the the <strong>key</strong> is to to <code>key: PID</code> and the PID we want to migrate/update is <em>islandora:4223</em> we can the following command. Using a value with special characters gives me some concern so I suggest just adding sequential numbers as the first colunm in the CSV calling it <strong>ID</strong> to avoid possible issues. I have not personally tested using a PID as the key but I’m using it here to illustrate.</p>\n<pre><code class=\"language-shell\">#         id of the yml file   ┐                 ┌ Respect the order of operations\n$ drush migrate:import pcard00_node --execute-dependencies --migrate-debug --idlist=&quot;islandora:4223&quot; --userid=1</code></pre>\n<p>This outputs a <strong>Source</strong> and a <strong>Destination</strong> variables to see how they are mapping. The <strong>Source</strong> is good to see if the values are being read. This is the <strong>Destination</strong>  part of the report.</p>\n<pre><code class=\"language-shell\">...\n...\n^ &quot;---------------------------------------------------------------------&quot;\n^ &quot;|                           $Destination                            |&quot;\n^ &quot;---------------------------------------------------------------------&quot;\n^ array:8 [\n  &quot;circuit_breaker&quot; =&gt; &quot;Page&quot;\n  &quot;name&quot; =&gt; &quot;Night View of Gatlinburg, Tennessee Showing Mount LeConte in the Background (GS-262)&quot;\n  &quot;uid&quot; =&gt; 1\n  &quot;field_media_use&quot; =&gt; &quot;17&quot;\n  &quot;field_media_file&quot; =&gt; &quot;3074&quot;\n  &quot;field_pid&quot; =&gt; &quot;pcard00:108573&quot;\n  &quot;field_media_of&quot; =&gt; &quot;7095&quot;\n  &quot;bundle&quot; =&gt; &quot;image&quot;\n]\n^ &quot;---------------------------------------------------------------------&quot;\n^ &quot;|                       $DestinationIdValues                        |&quot;\n^ &quot;---------------------------------------------------------------------&quot;</code></pre>\n<h2 id=\"rolling-back\">Rolling back</h2>\n<p>This process has a small flaw. The original file is left in the Bigdata log and fills up the VM very quickly. It will eventually remove itself but I haven’t found a simple way to trigger a cron to clear it. The process can be done quickly but there is probably a fast way than I have been doing it. I suggest only rolling back when you have extra files or to remove remove the content entirely. If you plan on just updating, just use the <code>--update</code> switch. </p>\n<pre><code class=\"language-shell\">$ drush migrate:rollback --userid=1 --group=knoxgardens_migrate_islandora_csv -d\n# VS\n$ drush migrate:import --userid=1 --group=knoxgardens_migrate_islandora_csv -d --update</code></pre>\n<h2 id=\"caches\">Caches</h2>\n<pre><code class=\"language-shell\"># Clear Drupal cache\n$ drush cr\n\n# Karaf Cache\nrm -rf /opt/karaf/data/cache/\n\n# Migration cache. The migration caches .yml files. If you already ran a migration and updated or added .yml files, you need to rebuild the Drupal 8 cache. Otherwise, Drupal will ignore the changes in the file system.\n\n$ drush sql:query &quot;TRUNCATE druid_mods_file_migration_settings&quot;</code></pre>\n<h2 id=\"extra\">Extra</h2>\n<pre><code class=\"language-shell\">#  after running `make` pull all of the latest docker images\n$ docker images | grep -v REPOSITORY | awk &#39;{print $1}&#39; | xargs -L1 docker pull </code></pre>\n<p>Deleting a migration (rare but it happens). If you’ve previously created a file like <em>druid_mods_file_migration.yml</em> and ran it. That configuration was imported into Drupal’s config. Deleting the module file will not remove it from Drupal’s config. You either need to overwrite it or delete it all together.</p>\n<pre><code class=\"language-shell\">$ drush config:delete your-migration-file-name-without-extension\n\n# example\n$ drush config:delete druid_mods_file_migration</code></pre>\n<h2 id=\"notes\">NOTES</h2>\n<p>Althought there are really straight forward migration tutorials like <a href=\"https://understanddrupal.com/articles/tips-writing-drupal-migrations-and-understanding-their-workflow\">this</a> one. All of the migration content on this and previous pages have been done without leveraging the more powerful part of a Drupal migration, custom PHP code to handle advanced beahviors. Here is an <a href=\"https://agaric.coop/blog/adding-extra-source-properties-drupal-migrations\">example</a> of how to do this. </p>\n",
             "author": {
                 "name": "Don Richards"
             },
             "tags": [
             ],
-            "date_published": "2020-07-16T12:29:45-04:00",
-            "date_modified": "2020-07-16T12:29:45-04:00"
+            "date_published": "2020-07-20T18:16:05-04:00",
+            "date_modified": "2020-07-20T18:16:05-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/vendors.html",
@@ -105,8 +105,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-16T12:29:45-04:00",
-            "date_modified": "2020-07-16T12:29:45-04:00"
+            "date_published": "2020-07-20T18:16:05-04:00",
+            "date_modified": "2020-07-20T18:16:05-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/quick-document-design-key.html",
@@ -119,8 +119,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-16T12:29:45-04:00",
-            "date_modified": "2020-07-16T12:29:45-04:00"
+            "date_published": "2020-07-20T18:16:05-04:00",
+            "date_modified": "2020-07-20T18:16:05-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/how-to-access-specific-data.html",
@@ -133,8 +133,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-16T12:29:45-04:00",
-            "date_modified": "2020-07-16T12:29:45-04:00"
+            "date_published": "2020-07-20T18:16:05-04:00",
+            "date_modified": "2020-07-20T18:16:05-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/pcdm.html",
@@ -153,8 +153,8 @@
                    "WebAC",
                    "PCDM"
             ],
-            "date_published": "2020-07-16T12:29:45-04:00",
-            "date_modified": "2020-07-16T12:29:45-04:00"
+            "date_published": "2020-07-20T18:16:05-04:00",
+            "date_modified": "2020-07-20T18:16:05-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/cas-authentication.html",
@@ -167,8 +167,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-16T12:29:45-04:00",
-            "date_modified": "2020-07-16T12:29:45-04:00"
+            "date_published": "2020-07-20T18:16:05-04:00",
+            "date_modified": "2020-07-20T18:16:05-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/mods-to-rdf.html",
@@ -181,8 +181,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-16T12:29:45-04:00",
-            "date_modified": "2020-07-16T12:29:45-04:00"
+            "date_published": "2020-07-20T18:16:05-04:00",
+            "date_modified": "2020-07-20T18:16:05-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/ingestingmigrating.html",
@@ -209,8 +209,8 @@
                    "EDTF",
                    "CSV"
             ],
-            "date_published": "2020-07-16T12:29:45-04:00",
-            "date_modified": "2020-07-16T12:29:45-04:00"
+            "date_published": "2020-07-20T18:16:05-04:00",
+            "date_modified": "2020-07-20T18:16:05-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/uploading.html",
@@ -227,8 +227,8 @@
                    "files",
                    "CSV"
             ],
-            "date_published": "2020-07-16T12:29:45-04:00",
-            "date_modified": "2020-07-16T12:29:45-04:00"
+            "date_published": "2020-07-20T18:16:05-04:00",
+            "date_modified": "2020-07-20T18:16:05-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/step-by-step-setup-ir.html",
@@ -241,8 +241,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-16T12:29:45-04:00",
-            "date_modified": "2020-07-16T12:29:45-04:00"
+            "date_published": "2020-07-20T18:16:05-04:00",
+            "date_modified": "2020-07-20T18:16:05-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/book-and-large-image-viewer.html",
@@ -255,8 +255,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-16T12:29:45-04:00",
-            "date_modified": "2020-07-16T12:29:45-04:00"
+            "date_published": "2020-07-20T18:16:05-04:00",
+            "date_modified": "2020-07-20T18:16:05-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/institutional-repository.html",
@@ -291,8 +291,8 @@
                    "Citation",
                    "Bibliography"
             ],
-            "date_published": "2020-07-16T12:29:45-04:00",
-            "date_modified": "2020-07-16T12:29:45-04:00"
+            "date_published": "2020-07-20T18:16:05-04:00",
+            "date_modified": "2020-07-20T18:16:05-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/bibliography-and-citation.html",
@@ -305,8 +305,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-16T12:29:45-04:00",
-            "date_modified": "2020-07-16T12:29:45-04:00"
+            "date_published": "2020-07-20T18:16:05-04:00",
+            "date_modified": "2020-07-20T18:16:05-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html",
@@ -319,8 +319,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-16T12:29:45-04:00",
-            "date_modified": "2020-07-16T12:29:45-04:00"
+            "date_published": "2020-07-20T18:16:05-04:00",
+            "date_modified": "2020-07-20T18:16:05-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/community-and-sustainability.html",
@@ -347,8 +347,8 @@
                    "Google",
                    "Delta"
             ],
-            "date_published": "2020-07-16T12:29:45-04:00",
-            "date_modified": "2020-07-16T12:29:45-04:00"
+            "date_published": "2020-07-20T18:16:05-04:00",
+            "date_modified": "2020-07-20T18:16:05-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/deployment-options.html",
@@ -369,8 +369,8 @@
                    "VM",
                    "ISLE"
             ],
-            "date_published": "2020-07-16T12:29:45-04:00",
-            "date_modified": "2020-07-16T12:29:45-04:00"
+            "date_published": "2020-07-20T18:16:05-04:00",
+            "date_modified": "2020-07-20T18:16:05-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/technical-infrastructure.html",
@@ -391,8 +391,8 @@
                    "GB",
                    "CPU"
             ],
-            "date_published": "2020-07-16T12:29:45-04:00",
-            "date_modified": "2020-07-16T12:29:45-04:00"
+            "date_published": "2020-07-20T18:16:05-04:00",
+            "date_modified": "2020-07-20T18:16:05-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/rights-and-restrictions.html",
@@ -410,8 +410,8 @@
                    "access",
                    "WebAC"
             ],
-            "date_published": "2020-07-16T12:29:45-04:00",
-            "date_modified": "2020-07-16T12:29:45-04:00"
+            "date_published": "2020-07-20T18:16:05-04:00",
+            "date_modified": "2020-07-20T18:16:05-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/cloud-hosting-solution.html",
@@ -429,8 +429,8 @@
                    "hosting",
                    "cloud"
             ],
-            "date_published": "2020-07-16T12:29:45-04:00",
-            "date_modified": "2020-07-16T12:29:45-04:00"
+            "date_published": "2020-07-20T18:16:05-04:00",
+            "date_modified": "2020-07-20T18:16:05-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/next-level-discoverability-solutions.html",
@@ -448,15 +448,15 @@
                    "LTR",
                    "AI"
             ],
-            "date_published": "2020-07-16T12:29:45-04:00",
-            "date_modified": "2020-07-16T12:29:45-04:00"
+            "date_published": "2020-07-20T18:16:05-04:00",
+            "date_modified": "2020-07-20T18:16:05-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/metadata-and-metadata-sharing.html",
             "url": "https://donrichards.github.io/migrate_islandora_csv/metadata-and-metadata-sharing.html",
             "title": "Metadata and Metadata sharing",
             "summary": "In Islandora 8, metadata is stored in Drupal, in fields attached to entities (nodes or media). This allows us to interact with metadata (add, edit,&hellip;",
-            "content_html": "<p>In Islandora 8, metadata is stored in Drupal, in fields attached to entities (nodes or media). This allows us to interact with metadata (add, edit, remove, display, index in a search engine…) almost entirely using standard Drupal processes. If exporting this metadata to Fedora and/or a triplestore, the values are serialized to RDF using mappings that can be set for each bundle. Islandora 8 digital objects are comprised of Drupal nodes for descriptive metadata, Drupal media for technical metadata, and Drupal files for the binary objects. This section describes how Islandora 8 uses and extends Drupal fields to manage descriptive metadata. For more information on <a href=\"https://islandora.github.io/documentation/user-documentation/resource-nodes/\">Islandora Documentation on resource nodes</a>.</p>\n<h3 id=\"7x-migration-note-what-about-the-xml\">7.x Migration Note: What about the XML?</h3>\n<p>In 7.x, metadata were usually stored using an XML schema such as MODS or DC, as datastreams attached to an object. In Islandora 8, metadata is stored as fields. This means we are breaking out individual elements from a hierarchical structure to being individual independent values. Where some hierarchy or field grouping is necessary, this can be done in Drupal using Paragraphs, a widely-used Drupal contrib module. At the moment (Nov 2019) we are working on the technical challenge of mapping data from paragraphs into RDF in Fedora. The Metadata Interest Group has developed a default mapping (spreadsheet, guidance document) which provides a basic, yet customizable, transform between MODS metadata and Drupal fields in Islandora Defaults. It is suggested that individual institutions customize the mapping to meet their unique needs.</p>\n<p>That said, if keeping the “legacy” XML metadata from 7.x is important to you, it can be attached to an Islandora 8 resource node as a Media entity. However, there is no mechanism in Islandora 8 for editing XML in a user-friendly way.</p>\n<h3 id=\"content-types\">Content Types</h3>\n<p>In Drupal, Nodes come in different sub-types called Content Types (e.g. Article, Basic page, Repository item). Content types contain fields, and configurations for how those fields can be edited or displayed. Each content type is essentially a metadata profile that can be used for a piece of web content, or to describe a digital resource. For each field in a content type, an administrator can configure how data is entered, how it can be displayed, how many values can be stored, and how long the value can be. Some configurations, such as data entry and display, can be changed at any time. Others, such as how long a value can be or what options are available in a select list, cannot be changed once content has been created without first deleting all content of that type. However, fields can be added to existing content types with no consequence.</p>\n<p>Not all content types in your Drupal site need be Islandora “resource nodes”. A “resource node” content type will likely have behaviours (such as syncing to Fedora or causing derivatives to be generated) associated with it. This configuration, and the communication to the user of which content types are and are not considered to be Islandora resource nodes is left to the discretion of the site manager. In Islandora, a “resource node” is usually considered a descriptive record for “a thing”, and is conceptually similar to an “Islandora Object” in 7.x, i.e. a “Fedora Object” in Fedora 3.x and below.</p>\n<h3 id=\"vocabularies\">Vocabularies</h3>\n<p>In Drupal, Taxonomy Vocabularies (or simply Vocabularies) are also entity sub-types that define a set of fields and their configurations. Whereas instances of content types are called nodes, items in a vocabulary are called taxonomy terms (or simply terms). Traditionally, taxonomy terms are used to classify content in Drupal. For instance, the Article content type includes a field field_tags that can refer to terms in the Tags vocabulary.</p>\n<p>Islandora (through the Islandora Core Feature) creates the ‘Islandora Models’ vocabulary which includes the terms ‘Audio’, ‘Binary’, ‘Collection’, ‘Digital Document’, ‘Image’, ‘Page’, ‘Paged Content’, ‘Publication Issue’, and ‘Video’. Islandora Defaults provides contexts that cause certain actions (e.g. derivatives to happen, or blocks to appear) based on which term is used.</p>\n<p>The Controlled Access Terms module provides additional vocabularies: - Corporate Body - Country - Family - Form - Genre - Geographic Location - Language - Person - Resource Types - Subject</p>\n<p>Each of these vocabularies has its own set of fields allowing repositories to further describe them. The Repository Item content type has fields that can reference terms in these vocabularies. See ‘Entity Reference fields’ in the ‘Field Types’ section below.</p>\n<p>The vocabularies provided by default are a starting point, and a repository administrator can create whatever vocabularies are desired.</p>\n<h3 id=\"field-types\">Field Types</h3>\n<p>Fields are where Drupal entities store their data. There are different types of fields including boolean, datetime, entity reference, integer, string, text, and text_with_summary. These field types also have widgets (controlling how data is entered) and formatters (controlling how data is displayed). The Drupal 8 documentation on FieldTypes, FieldWidgets, and FieldFormatters includes a list of the core field types. Modules can provide their own field types, formatters, and widgets. The Controlled Access Terms module provides two additional types for use with Islandora: ETDF, and Typed Relation. These are described below.</p>\n<p>Entity Reference fields are a special type of field built into Drupal that creates a relationship between two entities. The field’s configuration options include which kind of entities can be referenced. The ‘Repository Item’ content type, provided by islandora_defaults, includes several entity reference fields that reference vocabularies defined by the islandora and controlled_access_terms modules.</p>\n<p>The ‘Member Of’ field is an entity reference field, defined by Islandora, which is the Islandora way of imposing a hierarchical order on resource nodes. This can be used to show membership in a collection, for pages that are members of a paged item, and for members of a complex object.</p>\n<h3 id=\"edtf\">EDTF</h3>\n<p>The EDTF field type is for recording dates in Extended Date Time Format, which is a format based off of the hyphenated form of ISO 8601 (e.g. 1991-02-03 or 1991-02-03T10:00:00), but also allows expressions of different granularity and uncertainty. The Default EDTF widget has a validator that only allows strings that conform to the EDTF standard. The Default EDTF formatter allows these date string to be displayed in a variety of human readable ways, including big- or little-endian, and presenting months as numbers, abbreviations, or spelling month names out in full.</p>\n<p>Example of the same EDTF dates displayed using little-endian format: \n<figure class=\"post__image\"><img loading=\"lazy\" src=\"https://islandora.github.io/documentation/assets/metadata_edtf_display.png\" data-is-external-image=\"true\"  alt=\"Example EDTF values\" /></figure></p>\n<h3 id=\"typed-relation\">Typed Relation</h3>\n<p>A Typed Relation field is an extension of Drupal’s Entity Reference field, which allows the user to qualify the relation. It was created for describing a resource’s contributors (modelled as taxonomy terms or some other Drupal entities) as well as their roles in this resource node (such as ‘author’, ‘illustrator’, or ‘architect’). With only Drupal’s Entity Reference fields, we would need individual fields for ‘author’, ‘illustrator’, ‘architect’, and any other roles that may need to be made available. Using a Typed Relation field, we can have one field for “Contributors” and let the user pick the role from a dropdown list.</p>\n<h3 id=\"key-features\">Key features</h3>\n<ol>\n<li>RDF Mapping; “In Islandora, the JSON-LD Module transforms nodes (or media, or taxonomy terms) into the RDF that is synced into Fedora and the Triplestore. It uses RDF mappings, a concept defined by the RDF Module, and exposes them through the REST API” (RDF Generation, n.d.).  <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85457087-a014c580-b56d-11ea-843d-780d6b13cd27.png\" data-is-external-image=\"true\"  alt=\"Mapping\" /></figure><ol start=\"2\">\n<li>“The RDF Module is part of Drupal Core, but has no official documentation. The RDF Module embeds RDFa, a form of linked data, within the Drupal-generated HTML when you load the web page for a node, media, or taxonomy term. Official line is that this will allow Google to provide “rich snippets” such as star-ratings, contact info, and business hours.” [<a href=\"https://islandora.github.io/documentation/islandora/rdf-mapping/\">link</a>]</li>\n<li>A custom module rdfui exists, and is installed-but-not-enabled on boxes provisioned by the islandora-playbook. We don’t use it because it is very rudimentary and limited to the schema.org vocabulary. </li>\n<li>URI Mapping with persistent identifiers. With access to an API for minting persistent identifiers (e.g., DataCite, EZID, etc.).  <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://github.com/mjordan/persistent_identifiers/raw/master/docs/images/mint_checkbox.png\" data-is-external-image=\"true\"  alt=\"mint persistent_identifiers\" /></figure> [<a href=\"https://github.com/mjordan/persistent_identifiers\">link</a>]</li>\n<li>The Dupal Schema.org Dataset module recently updated to extend the schema.org metatag module to support schema.org dataset spec. “DOI minting is part of UPEI’s publication workflow, where the system only registers the dataset with Datacite when a curator user ‘publishes’ the dataset, making it public. At that point it sends an XML version of the node fields content to Dataset’s API” [paraphrased from Alexander O’Neill from UPEI via slack chat] <a href=\"https://blogs.lse.ac.uk/impactofsocialsciences/2015/04/23/digital-object-identifiers-stability-for-citations/\"><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://blogsmedia.lse.ac.uk/blogs.dir/9/files/2015/04/doi.png\" data-is-external-image=\"true\"  alt=\"DOI breakdown\" /></figure></a></li>\n</ol>\n</li>\n<li><a href=\"https://www.drupal.org/project/schema_dataset\">Schema.org Dataset</a> This module extends Schema.org Metatag module to display structured data representing datasets as JSON-LD in the head of web pages.</li>\n<li>Migrating metadata (even complex metadata) is a simple process. In controlled_access_terms, we have an understanding of a typed_relation, which is an entity reference coupled with a MARC relator. The migration script expects an associative array that looks like this: <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85176275-7430d180-b247-11ea-9841-a5086a7ea3f7.png\" data-is-external-image=\"true\"  alt=\"associative_array\" /></figure></li>\n</ol>\n<p>This is an example of the JSON output for an imported value. To see any entity’s json value add <code>_?_format=json_</code> at the end of the URL of the entity. <code>_jsonld_</code> will work as well to get the jsonld values as well. Example, <em><a href=\"http://localhost:8000/taxonomy/term/339?_format=json\">http://localhost:8000/taxonomy/term/339?_format=json</a></em> \n<figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85176333-99bddb00-b247-11ea-8ac7-77573747ae3f.png\" data-is-external-image=\"true\"  alt=\"example_json\" /></figure></p>\n<ol start=\"5\">\n<li><p>Although not absolutely essential it is my understanding that taxonomy vocabulary to categorized metadata should be migrated as entities first before the Islandora 7 objects and their metadata. Generating taxonomy from within a node’s migration is limited. For instance, a Subject’s authority has a title, associated authority and a URI. Automatically generating the subject from within the node migration limits to only the title. Whereas a separate migration allows for all 3 fields to be imported and referenced. Here is the list of taxonomy vocabulary list of “_categories_” of metadata.</p>\n<ol>\n<li><strong>Corporate Body,</strong> an organization or group of persons that is identified by a particular name</li>\n<li><strong>Family,</strong> two or more who present themselves as a family</li>\n<li><strong>Genre</strong>,  a category characterizing a particular style</li>\n<li><strong>Geographic Location</strong>, Geographic area</li>\n<li><strong>Islandora access</strong>, Terms used to limit, restrict or coordinate access</li>\n<li><strong>Person</strong>, an individual of the human species.</li>\n<li><strong>Subject</strong>, topics, events, people, and organizations.</li>\n</ol>\n</li>\n<li><p>Attach attribution and license information to media images. If you want to add an image to an article that is licensed under a Creative Commons license, this module lets you add source, author and license terms links to a caption under the image, as per the guidelines published by Creative Commons here: Best practices for attribution.\n<figure class=\"post__image\"><img loading=\"lazy\" src=\"https://www.drupal.org/files/project-images/Screen%20Shot%202019-01-16%20at%2012.03.18%20PM.png\" data-is-external-image=\"true\"  alt=\"Screenshot of CC\" /></figure> Another <a href=\"https://github.com/Islandora/documentation/issues/1234#issuecomment-654982007\">solution suggested</a> To create a rights statement taxonomy from  <a href=\"https://rightsstatements.org\">https://rightsstatements.org</a> and then create a formatter that use’s the term’s field_external_authority to create a link on the node’s page with a custom PHP script. This is fairly basic to accomplish the expected behaviors.</p>\n</li>\n</ol>\n",
+            "content_html": "<p>In Islandora 8, metadata is stored in Drupal, in fields attached to entities (nodes or media). This allows us to interact with metadata (add, edit, remove, display, index in a search engine…) almost entirely using standard Drupal processes. If exporting this metadata to Fedora and/or a triplestore, the values are serialized to RDF using mappings that can be set for each bundle. Islandora 8 digital objects are comprised of Drupal nodes for descriptive metadata, Drupal media for technical metadata, and Drupal files for the binary objects. This section describes how Islandora 8 uses and extends Drupal fields to manage descriptive metadata. For more information on <a href=\"https://islandora.github.io/documentation/user-documentation/resource-nodes/\">Islandora Documentation on resource nodes</a>.</p>\n<h3 id=\"7x-migration-note-what-about-the-xml\">7.x Migration Note: What about the XML?</h3>\n<p>In 7.x, metadata were usually stored using an XML schema such as MODS or DC, as datastreams attached to an object. In Islandora 8, metadata is stored as fields. This means we are breaking out individual elements from a hierarchical structure to being individual independent values. Where some hierarchy or field grouping is necessary, this can be done in Drupal using Paragraphs, a widely-used Drupal contrib module. At the moment (Nov 2019) we are working on the technical challenge of mapping data from paragraphs into RDF in Fedora. The Metadata Interest Group has developed a default mapping (spreadsheet, guidance document) which provides a basic, yet customizable, transform between MODS metadata and Drupal fields in Islandora Defaults. It is suggested that individual institutions customize the mapping to meet their unique needs.</p>\n<p>That said, if keeping the “legacy” XML metadata from 7.x is important to you, it can be attached to an Islandora 8 resource node as a Media entity. However, there is no mechanism in Islandora 8 for editing XML in a user-friendly way.</p>\n<h3 id=\"content-types\">Content Types</h3>\n<p>In Drupal, Nodes come in different sub-types called Content Types (e.g. Article, Basic page, Repository item). Content types contain fields, and configurations for how those fields can be edited or displayed. Each content type is essentially a metadata profile that can be used for a piece of web content, or to describe a digital resource. For each field in a content type, an administrator can configure how data is entered, how it can be displayed, how many values can be stored, and how long the value can be. Some configurations, such as data entry and display, can be changed at any time. Others, such as how long a value can be or what options are available in a select list, cannot be changed once content has been created without first deleting all content of that type. However, fields can be added to existing content types with no consequence.</p>\n<p>Not all content types in your Drupal site need be Islandora “resource nodes”. A “resource node” content type will likely have behaviours (such as syncing to Fedora or causing derivatives to be generated) associated with it. This configuration, and the communication to the user of which content types are and are not considered to be Islandora resource nodes is left to the discretion of the site manager. In Islandora, a “resource node” is usually considered a descriptive record for “a thing”, and is conceptually similar to an “Islandora Object” in 7.x, i.e. a “Fedora Object” in Fedora 3.x and below.</p>\n<h3 id=\"vocabularies\">Vocabularies</h3>\n<p>In Drupal, Taxonomy Vocabularies (or simply Vocabularies) are also entity sub-types that define a set of fields and their configurations. Whereas instances of content types are called nodes, items in a vocabulary are called taxonomy terms (or simply terms). Traditionally, taxonomy terms are used to classify content in Drupal. For instance, the Article content type includes a field field_tags that can refer to terms in the Tags vocabulary.</p>\n<p>Islandora (through the Islandora Core Feature) creates the ‘Islandora Models’ vocabulary which includes the terms ‘Audio’, ‘Binary’, ‘Collection’, ‘Digital Document’, ‘Image’, ‘Page’, ‘Paged Content’, ‘Publication Issue’, and ‘Video’. Islandora Defaults provides contexts that cause certain actions (e.g. derivatives to happen, or blocks to appear) based on which term is used.</p>\n<p>The Controlled Access Terms module provides additional vocabularies: - Corporate Body - Country - Family - Form - Genre - Geographic Location - Language - Person - Resource Types - Subject</p>\n<p>Each of these vocabularies has its own set of fields allowing repositories to further describe them. The Repository Item content type has fields that can reference terms in these vocabularies. See ‘Entity Reference fields’ in the ‘Field Types’ section below.</p>\n<p>The vocabularies provided by default are a starting point, and a repository administrator can create whatever vocabularies are desired.</p>\n<p>Vocabularies can also be used to display sets of content. When displaying nodes, both in teaser listings on the Drupal home pages and in full, single-node view, many Drupal themes display the categories applied to the node. If the user selects any category term, Drupal will then display a browsable listing for all nodes tagged with that term. To display content tagged with both terms or with either term is possible. Here are a few <a href=\"https://www.drupal.org/docs/7/organizing-content-with-taxonomies/using-taxonomy-urls-to-display-sets-of-content\">examples</a>.</p>\n<pre><code class=\"language-text\">taxonomy/term/1\ntaxonomy/term/1,2\ntaxonomy/term/1+2 </code></pre>\n<h3 id=\"field-types\">Field Types</h3>\n<p>Fields are where Drupal entities store their data. There are different types of fields including boolean, datetime, entity reference, integer, string, text, and text_with_summary. These field types also have widgets (controlling how data is entered) and formatters (controlling how data is displayed). The Drupal 8 documentation on FieldTypes, FieldWidgets, and FieldFormatters includes a list of the core field types. Modules can provide their own field types, formatters, and widgets. The Controlled Access Terms module provides two additional types for use with Islandora: ETDF, and Typed Relation. These are described below.</p>\n<p>Entity Reference fields are a special type of field built into Drupal that creates a relationship between two entities. The field’s configuration options include which kind of entities can be referenced. The ‘Repository Item’ content type, provided by islandora_defaults, includes several entity reference fields that reference vocabularies defined by the islandora and controlled_access_terms modules.</p>\n<p>The ‘Member Of’ field is an entity reference field, defined by Islandora, which is the Islandora way of imposing a hierarchical order on resource nodes. This can be used to show membership in a collection, for pages that are members of a paged item, and for members of a complex object.</p>\n<h3 id=\"edtf\">EDTF</h3>\n<p>The EDTF field type is for recording dates in Extended Date Time Format, which is a format based off of the hyphenated form of ISO 8601 (e.g. 1991-02-03 or 1991-02-03T10:00:00), but also allows expressions of different granularity and uncertainty. The Default EDTF widget has a validator that only allows strings that conform to the EDTF standard. The Default EDTF formatter allows these date string to be displayed in a variety of human readable ways, including big- or little-endian, and presenting months as numbers, abbreviations, or spelling month names out in full.</p>\n<p>Example of the same EDTF dates displayed using little-endian format: \n<figure class=\"post__image\"><img loading=\"lazy\" src=\"https://islandora.github.io/documentation/assets/metadata_edtf_display.png\" data-is-external-image=\"true\"  alt=\"Example EDTF values\" /></figure></p>\n<h3 id=\"typed-relation\">Typed Relation</h3>\n<p>A Typed Relation field is an extension of Drupal’s Entity Reference field, which allows the user to qualify the relation. It was created for describing a resource’s contributors (modelled as taxonomy terms or some other Drupal entities) as well as their roles in this resource node (such as ‘author’, ‘illustrator’, or ‘architect’). With only Drupal’s Entity Reference fields, we would need individual fields for ‘author’, ‘illustrator’, ‘architect’, and any other roles that may need to be made available. Using a Typed Relation field, we can have one field for “Contributors” and let the user pick the role from a dropdown list.</p>\n<h3 id=\"key-features\">Key features</h3>\n<ol>\n<li>RDF Mapping; “In Islandora, the JSON-LD Module transforms nodes (or media, or taxonomy terms) into the RDF that is synced into Fedora and the Triplestore. It uses RDF mappings, a concept defined by the RDF Module, and exposes them through the REST API” (RDF Generation, n.d.).  <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85457087-a014c580-b56d-11ea-843d-780d6b13cd27.png\" data-is-external-image=\"true\"  alt=\"Mapping\" /></figure><ol start=\"2\">\n<li>“The RDF Module is part of Drupal Core, but has no official documentation. The RDF Module embeds RDFa, a form of linked data, within the Drupal-generated HTML when you load the web page for a node, media, or taxonomy term. Official line is that this will allow Google to provide “rich snippets” such as star-ratings, contact info, and business hours.” [<a href=\"https://islandora.github.io/documentation/islandora/rdf-mapping/\">link</a>]</li>\n<li>A custom module rdfui exists, and is installed-but-not-enabled on boxes provisioned by the islandora-playbook. We don’t use it because it is very rudimentary and limited to the schema.org vocabulary. </li>\n<li>URI Mapping with persistent identifiers. With access to an API for minting persistent identifiers (e.g., DataCite, EZID, etc.).  <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://github.com/mjordan/persistent_identifiers/raw/master/docs/images/mint_checkbox.png\" data-is-external-image=\"true\"  alt=\"mint persistent_identifiers\" /></figure> [<a href=\"https://github.com/mjordan/persistent_identifiers\">link</a>]</li>\n<li>The Dupal Schema.org Dataset module recently updated to extend the schema.org metatag module to support schema.org dataset spec. “DOI minting is part of UPEI’s publication workflow, where the system only registers the dataset with Datacite when a curator user ‘publishes’ the dataset, making it public. At that point it sends an XML version of the node fields content to Dataset’s API” [paraphrased from Alexander O’Neill from UPEI via slack chat] <a href=\"https://blogs.lse.ac.uk/impactofsocialsciences/2015/04/23/digital-object-identifiers-stability-for-citations/\"><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://blogsmedia.lse.ac.uk/blogs.dir/9/files/2015/04/doi.png\" data-is-external-image=\"true\"  alt=\"DOI breakdown\" /></figure></a></li>\n</ol>\n</li>\n<li><a href=\"https://www.drupal.org/project/schema_dataset\">Schema.org Dataset</a> This module extends Schema.org Metatag module to display structured data representing datasets as JSON-LD in the head of web pages.</li>\n<li>Migrating metadata (even complex metadata) is a simple process. In controlled_access_terms, we have an understanding of a typed_relation, which is an entity reference coupled with a MARC relator. The migration script expects an associative array that looks like this: <figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85176275-7430d180-b247-11ea-9841-a5086a7ea3f7.png\" data-is-external-image=\"true\"  alt=\"associative_array\" /></figure></li>\n</ol>\n<p>This is an example of the JSON output for an imported value. To see any entity’s json value add <code>_?_format=json_</code> at the end of the URL of the entity. <code>_jsonld_</code> will work as well to get the jsonld values as well. Example, <em><a href=\"http://localhost:8000/taxonomy/term/339?_format=json\">http://localhost:8000/taxonomy/term/339?_format=json</a></em> \n<figure class=\"post__image\"><img loading=\"lazy\" src=\"https://user-images.githubusercontent.com/2738244/85176333-99bddb00-b247-11ea-8ac7-77573747ae3f.png\" data-is-external-image=\"true\"  alt=\"example_json\" /></figure></p>\n<ol start=\"5\">\n<li><p>Although not absolutely essential it is my understanding that taxonomy vocabulary to categorized metadata should be migrated as entities first before the Islandora 7 objects and their metadata. Generating taxonomy from within a node’s migration is limited. For instance, a Subject’s authority has a title, associated authority and a URI. Automatically generating the subject from within the node migration limits to only the title. Whereas a separate migration allows for all 3 fields to be imported and referenced. Here is the list of taxonomy vocabulary list of “_categories_” of metadata.</p>\n<ol>\n<li><strong>Corporate Body,</strong> an organization or group of persons that is identified by a particular name</li>\n<li><strong>Family,</strong> two or more who present themselves as a family</li>\n<li><strong>Genre</strong>,  a category characterizing a particular style</li>\n<li><strong>Geographic Location</strong>, Geographic area</li>\n<li><strong>Islandora access</strong>, Terms used to limit, restrict or coordinate access</li>\n<li><strong>Person</strong>, an individual of the human species.</li>\n<li><strong>Subject</strong>, topics, events, people, and organizations.</li>\n</ol>\n</li>\n<li><p>Attach attribution and license information to media images. If you want to add an image to an article that is licensed under a Creative Commons license, this module lets you add source, author and license terms links to a caption under the image, as per the guidelines published by Creative Commons here: Best practices for attribution.\n<figure class=\"post__image\"><img loading=\"lazy\" src=\"https://www.drupal.org/files/project-images/Screen%20Shot%202019-01-16%20at%2012.03.18%20PM.png\" data-is-external-image=\"true\"  alt=\"Screenshot of CC\" /></figure> Another <a href=\"https://github.com/Islandora/documentation/issues/1234#issuecomment-654982007\">solution suggested</a> To create a rights statement taxonomy from  <a href=\"https://rightsstatements.org\">https://rightsstatements.org</a> and then create a formatter that use’s the term’s field_external_authority to create a link on the node’s page with a custom PHP script. This is fairly basic to accomplish the expected behaviors.</p>\n</li>\n</ol>\n<h3 id=\"pulling-linked-data-authority-content-from-external-sources\">Pulling Linked Data Authority Content from External sources</h3>\n<p>Just like Samvera’s “Questioning Authority” scripts, Drupal provides several options for keeping its controlled vocabulary and authority terms in sync with 3rd party resources like the Library of Congress, Getty, GeoNames to name a few. Most of which is provided as a turnkey solution that requires not code development, dramatically speeding up development time.\nThe Library of Congress offer a Linked Data Service to pull content for offline use. Although a real time option is avaliable and shown in the <a href=\"/institutional-repository\">IR section</a> of this report, pulling content at regular intervals is ideal. The full LC Subject Headings (LCSH) <a href=\"https://id.loc.gov/download\">export</a> depending on which flavor is up to 430MB in size. A completely manageable size import/update and can be ran occassionally without impact performance. Treating this as a simple migration or cron job activity is fairly painless to setup and maintain. The process is no different than any other content import/migration. Starting with a basic migration template, the fields can be imported and updated easily just ike subject. For an example of migrating taxonomy terms with a CSV see <a href=\"https://github.com/DonRichards/migrate_islandora_csv/blob/dev/config/install/migrate_plus.migration.knoxgardens_subject.yml\">migrate_islandora_csv / migrate_plus.migration.knoxgardens_subject.yml</a>.</p>\n<p>Examples of authorities that are included for management in Islandora 8 include (but are not restricted to):</p>\n<h4 id=\"people\">People</h4>\n<ul>\n<li>Faculty members</li>\n<li>Students</li>\n<li>Alumni</li>\n<li>Historical persons<h4 id=\"organizations\">Organizations</h4>\n</li>\n<li>Universities</li>\n<li>Departments</li>\n<li>Corporations</li>\n<li>Governmental Agencies</li>\n<li>Publishers</li>\n<li>Journals<h4 id=\"events\">Events</h4>\n</li>\n<li>Conferences</li>\n<li>Symposia</li>\n<li>Workshops</li>\n</ul>\n<p>To see more <a href=\"https://github.com/Islandora/controlled_access_terms\">Islandora / Controlled Access Terms </a>, a Drupal 8 module creates vocabularies to represent common named entities in archival description (Corporate Bodies, Families, and Persons) as well as subject terms.</p>\n",
             "author": {
                 "name": "Don Richards"
             },
@@ -474,8 +474,8 @@
                    "JSON",
                    "API"
             ],
-            "date_published": "2020-07-16T12:29:45-04:00",
-            "date_modified": "2020-07-16T12:29:45-04:00"
+            "date_published": "2020-07-20T18:16:05-04:00",
+            "date_modified": "2020-07-20T18:16:05-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/preservation.html",
@@ -488,8 +488,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-16T12:29:45-04:00",
-            "date_modified": "2020-07-16T12:29:45-04:00"
+            "date_published": "2020-07-20T18:16:05-04:00",
+            "date_modified": "2020-07-20T18:16:05-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/uploading-ingesting-and-migration.html",
@@ -517,8 +517,8 @@
                    "Islandora Defaults",
                    "CSV"
             ],
-            "date_published": "2020-07-16T12:29:45-04:00",
-            "date_modified": "2020-07-16T12:29:45-04:00"
+            "date_published": "2020-07-20T18:16:05-04:00",
+            "date_modified": "2020-07-20T18:16:05-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/other-content-types.html",
@@ -544,8 +544,8 @@
                    "PDF",
                    "Moore"
             ],
-            "date_published": "2020-07-16T12:29:45-04:00",
-            "date_modified": "2020-07-16T12:29:45-04:00"
+            "date_published": "2020-07-20T18:16:05-04:00",
+            "date_modified": "2020-07-20T18:16:05-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/images-books-and-pages.html",
@@ -569,8 +569,8 @@
                    "Mirador",
                    "BigData"
             ],
-            "date_published": "2020-07-16T12:29:45-04:00",
-            "date_modified": "2020-07-16T12:29:45-04:00"
+            "date_published": "2020-07-20T18:16:05-04:00",
+            "date_modified": "2020-07-20T18:16:05-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/general-content-models.html",
@@ -591,8 +591,8 @@
                    "PCDM",
                    "BigData"
             ],
-            "date_published": "2020-07-16T12:29:45-04:00",
-            "date_modified": "2020-07-16T12:29:45-04:00"
+            "date_published": "2020-07-20T18:16:05-04:00",
+            "date_modified": "2020-07-20T18:16:05-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/content-modeling.html",
@@ -608,8 +608,8 @@
                    "microservice",
                    "content modeling"
             ],
-            "date_published": "2020-07-16T12:29:45-04:00",
-            "date_modified": "2020-07-16T12:29:45-04:00"
+            "date_published": "2020-07-20T18:16:05-04:00",
+            "date_modified": "2020-07-20T18:16:05-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/background.html",
@@ -637,8 +637,8 @@
                    "Drupal 8 ",
                    "Background"
             ],
-            "date_published": "2020-07-16T12:29:45-04:00",
-            "date_modified": "2020-07-16T12:29:45-04:00"
+            "date_published": "2020-07-20T18:16:05-04:00",
+            "date_modified": "2020-07-20T18:16:05-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html",
@@ -652,8 +652,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-16T12:29:45-04:00",
-            "date_modified": "2020-07-16T12:29:45-04:00"
+            "date_published": "2020-07-20T18:16:05-04:00",
+            "date_modified": "2020-07-20T18:16:05-04:00"
         }
     ]
 }
