@@ -1,4 +1,4 @@
-<!doctype html><html amp lang="en"><head><meta charset="utf-8"><title>MODS to RDF - Next Generation Digital Repository Solution</title><meta name="description" content="TL; DRIslandora 8 used the MODS to RDF Mapping Recommendations document from Samvera MODS to RDF Working Group to create initial mappings. Islandora consist of&hellip;"><link rel="canonical" href="https://donrichards.github.io/migrate_islandora_csv/mods-to-rdf.html"><meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"><link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet" type="text/css"><script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script><script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script><script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script><script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script><script type="application/ld+json">{"@context":"http://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://donrichards.github.io/migrate_islandora_csv/amp/mods-to-rdf.html"},"headline":"MODS to RDF","datePublished":"2020-07-02T07:31","dateModified":"2020-07-23T11:52","image":{"@type":"ImageObject","url":"https://donrichards.github.io/migrate_islandora_csv/media/website/8-3.png","height":200,"width":200},"description":"TL; DRIslandora 8 used the MODS to RDF Mapping Recommendations document from Samvera MODS to RDF Working Group to create initial mappings. Islandora consist of&hellip;","author":{"@type":"Person","name":"Don Richards"},"publisher":{"@type":"Organization","name":"Don Richards","logo":{"@type":"ImageObject","url":"https://donrichards.github.io/migrate_islandora_csv/media/website/8-3.png","height":200,"width":200}}}</script><style amp-custom>article,
+<!doctype html><html amp lang="en"><head><meta charset="utf-8"><title>MODS to RDF - Next Generation Digital Repository Solution</title><meta name="description" content="TL; DRIslandora 8 used the MODS to RDF Mapping Recommendations document from Samvera MODS to RDF Working Group to create initial mappings. Islandora consist of&hellip;"><link rel="canonical" href="https://donrichards.github.io/migrate_islandora_csv/mods-to-rdf.html"><meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1"><link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet" type="text/css"><script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script><script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script><script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script><script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script><script type="application/ld+json">{"@context":"http://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://donrichards.github.io/migrate_islandora_csv/amp/mods-to-rdf.html"},"headline":"MODS to RDF","datePublished":"2020-07-02T07:31","dateModified":"2020-07-24T09:29","image":{"@type":"ImageObject","url":"https://donrichards.github.io/migrate_islandora_csv/media/website/8-3.png","height":200,"width":200},"description":"TL; DRIslandora 8 used the MODS to RDF Mapping Recommendations document from Samvera MODS to RDF Working Group to create initial mappings. Islandora consist of&hellip;","author":{"@type":"Person","name":"Don Richards"},"publisher":{"@type":"Organization","name":"Don Richards","logo":{"@type":"ImageObject","url":"https://donrichards.github.io/migrate_islandora_csv/media/website/8-3.png","height":200,"width":200}}}</script><style amp-custom>article,
 aside,
 footer,
 header,
@@ -745,84 +745,84 @@ aside {
     &quot;@id&quot;: &quot;http:\/\/www.utkislandora8testing.com\/taxonomy\/term\/33&quot;,
     &quot;@type&quot;: [&quot;http:\/\/schema.org\/Thing&quot;]
   }]
-}</code></pre><h4 id="an-example-of-a-custom-rdf-mapping">An example of a custom RDF Mapping</h4><p>Below is an example of an RDF mapping as a .yml (YAML) file. It is the current version of the RDF mapping of the Repository Item (islandora_object) bundle, provided by islandora_defaults and exportable as rdf.mapping.node.islandora_object.yml).</p><p>The top level key types specifies the rdf:type of the resource or content model. field_model, a required field of Islandora objects, also gets mapped to rdf:type through an arcane back-end process. The top level key fieldMappings specifies fields attached to that bundle and their RDF property mappings. One field can be mapped to more than one RDF property. It is a simple flat list. datatype_callback : [needs documentation] mapping_type: rel : [needs documentation]</p><p>To see your current RDF for an Islandora Object go to the Synchronize Export Single item page (/admin/config/development/configuration/single/export) and select <strong>Configuration type</strong>: RDF Mapping <strong>Configuration name</strong>: node.islandora_object</p><p>Looking over this configuration the <code>field_rights</code> properties is set to <code>dc:rights</code>. This means currently the rights statement requires that this field needs to be set for every object/node with this rights statement and if the statement changes all of them requires an edit. Although mostly trivial this isn’t very dynamic and doesn’t really follow the principles of linked data.</p><p>To move the rights statement, show the rights statement and URI link to rightsstatement.org we first need to</p><ul><li>Make a Taxonomy Vocabulary for “Rights Statement”</li><li>Either migrate or add in each “term” like <code>In Copyright</code></li><li>Create a Mapping for the “Rights Statement” vocabulary</li><li>Replace the Rights string field with a with a Rights Entity reference<pre><code class="language-yml">langcode: en
+}</code></pre><h4 id="an-example-of-a-custom-rdf-mapping">An example of a custom RDF Mapping</h4><p>Below is an example of an RDF mapping as a .yml (YAML) file. It is the current version of the RDF mapping of the Repository Item (islandora_object) bundle, provided by islandora_defaults and exportable as rdf.mapping.node.islandora_object.yml).</p><p>The top level key types specifies the rdf:type of the resource or content model. field_model, a required field of Islandora objects, also gets mapped to rdf:type through an arcane back-end process. The top level key fieldMappings specifies fields attached to that bundle and their RDF property mappings. One field can be mapped to more than one RDF property. It is a simple flat list. datatype_callback : [needs documentation] mapping_type: rel : [needs documentation]</p><p>To see your current RDF for an Islandora Object go to the Synchronize Export Single item page (/admin/config/development/configuration/single/export) and select <strong>Configuration type</strong>: RDF Mapping <strong>Configuration name</strong>: node.islandora_object</p><p>Looking over this configuration the <code>field_rights</code> properties is set to <code>dc:rights</code>. This means currently the rights statement requires that this field needs to be set for every object/node with this rights statement and if the statement changes all of them requires an edit. Although mostly trivial this isn’t very dynamic and doesn’t really follow the principles of linked data.</p><pre><code class="language-yml">langcode: en
 status: true
 dependencies:
-config:
-  - node.type.islandora_object
-enforced:
+  config:
+    - node.type.islandora_object
+  enforced:
+    module:
+      - islandora_defaults
   module:
-    - islandora_defaults
-module:
-  - node
+    - node
 id: node.islandora_object
 targetEntityType: node
 bundle: islandora_object
 types:
-- &#39;pcdm:Object&#39;
+  - &#39;pcdm:Object&#39;
 fieldMappings:
-field_alternative_title:
-  properties:
-    - &#39;dc:alternative&#39;
-field_edtf_date:
-  properties:
-    - &#39;dc:date&#39;
-  datatype_callback:
-    callable: &#39;Drupal\controlled_access_terms\EDTFConverter::dateIso8601Value&#39;
-field_edtf_date_created:
-  properties:
-    - &#39;dc:created&#39;
-  datatype_callback:
-    callable: &#39;Drupal\controlled_access_terms\EDTFConverter::dateIso8601Value&#39;
-field_edtf_date_issued:
-  properties:
-    - &#39;dc:issued&#39;
-  datatype_callback:
-    callable: &#39;Drupal\controlled_access_terms\EDTFConverter::dateIso8601Value&#39;
-field_description:
-  properties:
-    - &#39;dc:description&#39;
-field_extent:
-  properties:
-    - &#39;dc:extent&#39;
-field_identifier:
-  properties:
-    - &#39;dc:identifier&#39;
-field_member_of:
-  properties:
-    - &#39;pcdm:memberOf&#39;
-  mapping_type: rel
-field_resource_type:
-  properties:
-    - &#39;dc:type&#39;
-  mapping_type: rel
-field_rights:
-  properties:
-    - &#39;dc:rights&#39;
-field_subject:
-  properties:
-    - &#39;dc:subject&#39;
-  mapping_type: rel
-field_weight:
-  properties:
-    - &#39;co:index&#39;
-title:
-  properties:
-    - &#39;dc:title&#39;
-created:
-  properties:
-    - &#39;schema:dateCreated&#39;
-  datatype_callback:
-    callable: &#39;Drupal\rdf\CommonDataConverter::dateIso8601Value&#39;
-changed:
-  properties:
-    - &#39;schema:dateModified&#39;
-  datatype_callback:
-    callable: &#39;Drupal\rdf\CommonDataConverter::dateIso8601Value&#39;
-uid:
-  properties:
-    - &#39;schema:author&#39;
-  mapping_type: rel</code></pre></li></ul><p>For more information see <a href="https://islandora.github.io/documentation/islandora/rdf-mapping/#structure-of-an-rdf-mapping">Structure of an RDF mapping</a> and more on the mapping of RightsStatesments.org mappings see <a href="https://rightsstatements.org/files/170106requirements_for_the_technical_infrastructure_for_standardized_international_rights_statements_v1.2.pdf">Rightsstatements.org White Paper: Requirements for the Technical Infrastructure for Standardized International Rights Statements</a></p><aside></aside></div></article><nav class="post-pagination wrap-inner"><div class="post-pagination-prev"><span>Prev: </span><a href="https://donrichards.github.io/migrate_islandora_csv/amp/ingestingmigrating.html">Ingesting/Migrating</a></div><div class="post-pagination-next"><span>Next: </span><a href="https://donrichards.github.io/migrate_islandora_csv/amp/cas-authentication.html">CAS Authentication</a></div></nav></main><amp-animation id="showAnim" layout="nodisplay"><script type="application/json">{
+  field_alternative_title:
+    properties:
+      - &#39;dc:alternative&#39;
+  field_edtf_date:
+    properties:
+      - &#39;dc:date&#39;
+    datatype_callback:
+      callable: &#39;Drupal\controlled_access_terms\EDTFConverter::dateIso8601Value&#39;
+  field_edtf_date_created:
+    properties:
+      - &#39;dc:created&#39;
+    datatype_callback:
+      callable: &#39;Drupal\controlled_access_terms\EDTFConverter::dateIso8601Value&#39;
+  field_edtf_date_issued:
+    properties:
+      - &#39;dc:issued&#39;
+    datatype_callback:
+      callable: &#39;Drupal\controlled_access_terms\EDTFConverter::dateIso8601Value&#39;
+  field_description:
+    properties:
+      - &#39;dc:description&#39;
+  field_extent:
+    properties:
+      - &#39;dc:extent&#39;
+  field_identifier:
+    properties:
+      - &#39;dc:identifier&#39;
+  field_member_of:
+    properties:
+      - &#39;pcdm:memberOf&#39;
+    mapping_type: rel
+  field_resource_type:
+    properties:
+      - &#39;dc:type&#39;
+    mapping_type: rel
+  field_rights:
+    properties:
+      - &#39;dc:rights&#39;
+  field_subject:
+    properties:
+      - &#39;dc:subject&#39;
+    mapping_type: rel
+  field_weight:
+    properties:
+      - &#39;co:index&#39;
+  title:
+    properties:
+      - &#39;dc:title&#39;
+  created:
+    properties:
+      - &#39;schema:dateCreated&#39;
+    datatype_callback:
+      callable: &#39;Drupal\rdf\CommonDataConverter::dateIso8601Value&#39;
+  changed:
+    properties:
+      - &#39;schema:dateModified&#39;
+    datatype_callback:
+      callable: &#39;Drupal\rdf\CommonDataConverter::dateIso8601Value&#39;
+  uid:
+    properties:
+      - &#39;schema:author&#39;
+    mapping_type: rel</code></pre><p>To move the rights statement, show the rights statement and URI link to rightsstatement.org we first need to</p><ul><li>Make a Taxonomy Vocabulary for “Rights Statement”</li><li>Either migrate or add in each “term” like <code>In Copyright</code></li><li>Create a Mapping for the “Rights Statement” vocabulary</li><li>Replace the Rights string field with a with a Rights Entity reference</li></ul><p>For more information see <a href="https://islandora.github.io/documentation/islandora/rdf-mapping/#structure-of-an-rdf-mapping">Structure of an RDF mapping</a> and more on the mapping of RightsStatesments.org mappings see <a href="https://rightsstatements.org/files/170106requirements_for_the_technical_infrastructure_for_standardized_international_rights_statements_v1.2.pdf">Rightsstatements.org White Paper: Requirements for the Technical Infrastructure for Standardized International Rights Statements</a></p><aside></aside></div></article><nav class="post-pagination wrap-inner"><div class="post-pagination-prev"><span>Prev: </span><a href="https://donrichards.github.io/migrate_islandora_csv/amp/ingestingmigrating.html">Ingesting/Migrating</a></div><div class="post-pagination-next"><span>Next: </span><a href="https://donrichards.github.io/migrate_islandora_csv/amp/cas-authentication.html">CAS Authentication</a></div></nav></main><amp-animation id="showAnim" layout="nodisplay"><script type="application/json">{
                     "duration": "200ms",
                     "fill": "both",
                     "iterations": "1",
