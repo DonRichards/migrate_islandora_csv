@@ -20,8 +20,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-24T16:35:24-04:00",
-            "date_modified": "2020-07-24T16:35:24-04:00"
+            "date_published": "2020-07-27T17:03:07-04:00",
+            "date_modified": "2020-07-27T17:03:07-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/manually-configuring-drupal-89.html",
@@ -43,8 +43,8 @@
                    "IIIF",
                    "Drupal 8 "
             ],
-            "date_published": "2020-07-24T16:35:24-04:00",
-            "date_modified": "2020-07-24T16:35:24-04:00"
+            "date_published": "2020-07-27T17:03:07-04:00",
+            "date_modified": "2020-07-27T17:03:07-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/component-overview.html",
@@ -77,8 +77,8 @@
                    "Alpaca",
                    "API"
             ],
-            "date_published": "2020-07-24T16:35:24-04:00",
-            "date_modified": "2020-07-24T16:35:24-04:00"
+            "date_published": "2020-07-27T17:03:07-04:00",
+            "date_modified": "2020-07-27T17:03:07-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/how-to-run-on-aws.html",
@@ -91,8 +91,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-24T16:35:24-04:00",
-            "date_modified": "2020-07-24T16:35:24-04:00"
+            "date_published": "2020-07-27T17:03:07-04:00",
+            "date_modified": "2020-07-27T17:03:07-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/developer-debugging.html",
@@ -105,8 +105,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-24T16:35:24-04:00",
-            "date_modified": "2020-07-24T16:35:24-04:00"
+            "date_published": "2020-07-27T17:03:07-04:00",
+            "date_modified": "2020-07-27T17:03:07-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/vendors.html",
@@ -119,8 +119,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-24T16:35:24-04:00",
-            "date_modified": "2020-07-24T16:35:24-04:00"
+            "date_published": "2020-07-27T17:03:07-04:00",
+            "date_modified": "2020-07-27T17:03:07-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/quick-document-design-key.html",
@@ -133,8 +133,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-24T16:35:24-04:00",
-            "date_modified": "2020-07-24T16:35:24-04:00"
+            "date_published": "2020-07-27T17:03:07-04:00",
+            "date_modified": "2020-07-27T17:03:07-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/how-to-access-specific-data.html",
@@ -147,15 +147,15 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-24T16:35:24-04:00",
-            "date_modified": "2020-07-24T16:35:24-04:00"
+            "date_published": "2020-07-27T17:03:07-04:00",
+            "date_modified": "2020-07-27T17:03:07-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/pcdm.html",
             "url": "https://donrichards.github.io/migrate_islandora_csv/pcdm.html",
             "title": "PCDM",
             "summary": "The Portland Common Data Model (PCDM) is a flexible, extensible domain model that is intended to underlie a wide array of repository and DAMS applications.",
-            "content_html": "<p>The Portland Common Data Model (PCDM) is a flexible, extensible domain model that is intended to underlie a wide array of repository and DAMS applications. The primary objective of this model is to establish a framework that developers of tools (e.g., Samvera-based engines, such as Hyrax, Hyku, Sufia, and Avalon; Islandora; custom Fedora sites) can use for working with models in a general way, allowing adopters to easily use custom models with any tool. Given this interoperability goal, the initial work has been focused on structural metadata and access control, since these are the key actionable metadata.</p>\n<p>To encourage adoption, this model must support the most complex use cases, which include rich hierarchies of inter-related collections and works, but also elegantly support the simplest use cases, such as a single user-contributed file with a few fields of metadata. It must provide a compact interface that tool developers can easily implement, but also be extensible enough for adopters to customize to their local needs.</p>\n<p>As the community migrates to Fedora 5, much of our metadata is migrating to RDF. This model encourages linked data best practices, such as using URIs to identify all resources, using widely-used vocabularies where possible, and subclassing existing classes and properties when creating new terms.</p>\n<p><a href=\"https://github.com/duraspace/pcdm\">Source Ontology</a></p>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://raw.githubusercontent.com/wiki/duraspace/pcdm/images/coll-object-file.png\" data-is-external-image=\"true\"  alt=\"pcdm flowchart\" /></figure></p>\n<p>See a full breakdown at <a href=\"https://github.com/duraspace/pcdm/wiki#:~:text=The%20Portland%20Common%20Data%20Model,of%20repository%20and%20DAMS%20applications.\">duraspace/pcdm/wiki</a></p>\n<h3 id=\"namespaces\">Namespaces</h3>\n<table>\n<thead>\n<tr>\n<th align=\"center\">Prefix</th>\n<th align=\"center\">URI</th>\n</tr>\n</thead>\n<tbody><tr>\n<td align=\"center\">acl</td>\n<td align=\"center\"><a href=\"http://www.w3.org/ns/auth/acl#\">http://www.w3.org/ns/auth/acl#</a></td>\n</tr>\n<tr>\n<td align=\"center\">dc</td>\n<td align=\"center\"><a href=\"http://purl.org/dc/elements/1.1/\">http://purl.org/dc/elements/1.1/</a></td>\n</tr>\n<tr>\n<td align=\"center\">dcterms</td>\n<td align=\"center\"><a href=\"http://purl.org/dc/terms/\">http://purl.org/dc/terms/</a></td>\n</tr>\n<tr>\n<td align=\"center\">pcdm</td>\n<td align=\"center\"><a href=\"http://pcdm.org/models#\">http://pcdm.org/models#</a></td>\n</tr>\n<tr>\n<td align=\"center\">foaf</td>\n<td align=\"center\"><a href=\"http://xmlns.com/foaf/0.1/\">http://xmlns.com/foaf/0.1/</a></td>\n</tr>\n<tr>\n<td align=\"center\">gen</td>\n<td align=\"center\"><a href=\"http://www.w3.org/2006/gen/ont#\">http://www.w3.org/2006/gen/ont#</a></td>\n</tr>\n<tr>\n<td align=\"center\">iana</td>\n<td align=\"center\"><a href=\"http://www.iana.org/assignments/relation/\">http://www.iana.org/assignments/relation/</a> (see note)</td>\n</tr>\n<tr>\n<td align=\"center\">ldp</td>\n<td align=\"center\"><a href=\"http://www.w3.org/ns/ldp#\">http://www.w3.org/ns/ldp#</a></td>\n</tr>\n<tr>\n<td align=\"center\">ore</td>\n<td align=\"center\"><a href=\"http://www.openarchives.org/ore/terms/\">http://www.openarchives.org/ore/terms/</a></td>\n</tr>\n<tr>\n<td align=\"center\">rdfs</td>\n<td align=\"center\"><a href=\"http://www.w3.org/2000/01/rdf-schema#\">http://www.w3.org/2000/01/rdf-schema#</a></td>\n</tr>\n</tbody></table>\n<h3 id=\"core-classes\">Core Classes</h3>\n<p><a href=\"https://github.com/duraspace/pcdm/wiki#pcdmobject\">pcdm:Object</a></p>\n<ul>\n<li>An Object is an intellectual entity, sometimes called a “work”, “digital object”, etc. Objects have descriptive metadata, access metadata, may contain files and other Objects as member “parts” or “components”. Each level of a work is therefore represented by an Object instance, and is capable of standing on its own, being linked to from Collections and other Objects. Member Objects can be ordered using the ORE Proxy class.</li>\n</ul>\n<p><a href=\"https://github.com/duraspace/pcdm/wiki#pcdmcollection\">pcdm:Collection</a></p>\n<ul>\n<li>A Collection is a group of resources. Collections have descriptive metadata, access metadata, and may link to Objects and/or Collections. By default, member Objects and Collections are an unordered set, but can be ordered using the ORE Proxy class.</li>\n</ul>\n<p><a href=\"https://github.com/duraspace/pcdm/wiki#pcdmfile\">pcdm:File</a></p>\n<ul>\n<li>A File is a sequence of binary data and is described by some accompanying metadata. The metadata typically includes at least basic technical metadata (size, content type, modification date, etc.), but can also include properties related to preservation, digitization process, provenance, etc. Files MUST be contained by exactly one Object.</li>\n</ul>\n<h3 id=\"webacl\">WebACL</h3>\n<p>WebACLs comes with Fedora 5 but is not recomended. Drupal permission management is more robust and is the suggested option for access control. </p>\n",
+            "content_html": "<p>The Portland Common Data Model (PCDM) is a flexible, extensible domain model that is intended to underlie a wide array of repository and DAMS applications. The primary objective of this model is to establish a framework that developers of tools (e.g., Samvera-based engines, such as Hyrax, Hyku, Sufia, and Avalon; Islandora; custom Fedora sites) can use for working with models in a general way, allowing adopters to easily use custom models with any tool. Given this interoperability goal, the initial work has been focused on structural metadata and access control, since these are the key actionable metadata.</p>\n<p>To encourage adoption, this model must support the most complex use cases, which include rich hierarchies of inter-related collections and works, but also elegantly support the simplest use cases, such as a single user-contributed file with a few fields of metadata. It must provide a compact interface that tool developers can easily implement, but also be extensible enough for adopters to customize to their local needs.</p>\n<p>As the community migrates to Fedora 5, much of our metadata is migrating to RDF. This model encourages linked data best practices, such as using URIs to identify all resources, using widely-used vocabularies where possible, and subclassing existing classes and properties when creating new terms.</p>\n<p><a href=\"https://github.com/duraspace/pcdm\">Source Ontology</a></p>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://raw.githubusercontent.com/wiki/duraspace/pcdm/images/coll-object-file.png\" data-is-external-image=\"true\"  alt=\"pcdm flowchart\" /></figure></p>\n<p>See a full breakdown at <a href=\"https://github.com/duraspace/pcdm/wiki#:~:text=The%20Portland%20Common%20Data%20Model,of%20repository%20and%20DAMS%20applications.\">duraspace/pcdm/wiki</a></p>\n<h3 id=\"namespaces\">Namespaces</h3>\n<table>\n<thead>\n<tr>\n<th align=\"center\">Prefix</th>\n<th align=\"center\">URI</th>\n</tr>\n</thead>\n<tbody><tr>\n<td align=\"center\">acl</td>\n<td align=\"center\"><a href=\"http://www.w3.org/ns/auth/acl#\">http://www.w3.org/ns/auth/acl#</a></td>\n</tr>\n<tr>\n<td align=\"center\">dc</td>\n<td align=\"center\"><a href=\"http://purl.org/dc/elements/1.1/\">http://purl.org/dc/elements/1.1/</a></td>\n</tr>\n<tr>\n<td align=\"center\">dcterms</td>\n<td align=\"center\"><a href=\"http://purl.org/dc/terms/\">http://purl.org/dc/terms/</a></td>\n</tr>\n<tr>\n<td align=\"center\">pcdm</td>\n<td align=\"center\"><a href=\"http://pcdm.org/models#\">http://pcdm.org/models#</a></td>\n</tr>\n<tr>\n<td align=\"center\">foaf</td>\n<td align=\"center\"><a href=\"http://xmlns.com/foaf/0.1/\">http://xmlns.com/foaf/0.1/</a></td>\n</tr>\n<tr>\n<td align=\"center\">gen</td>\n<td align=\"center\"><a href=\"http://www.w3.org/2006/gen/ont#\">http://www.w3.org/2006/gen/ont#</a></td>\n</tr>\n<tr>\n<td align=\"center\">iana</td>\n<td align=\"center\"><a href=\"http://www.iana.org/assignments/relation/\">http://www.iana.org/assignments/relation/</a> (see note)</td>\n</tr>\n<tr>\n<td align=\"center\">ldp</td>\n<td align=\"center\"><a href=\"http://www.w3.org/ns/ldp#\">http://www.w3.org/ns/ldp#</a></td>\n</tr>\n<tr>\n<td align=\"center\">ore</td>\n<td align=\"center\"><a href=\"http://www.openarchives.org/ore/terms/\">http://www.openarchives.org/ore/terms/</a></td>\n</tr>\n<tr>\n<td align=\"center\">rdfs</td>\n<td align=\"center\"><a href=\"http://www.w3.org/2000/01/rdf-schema#\">http://www.w3.org/2000/01/rdf-schema#</a></td>\n</tr>\n</tbody></table>\n<h3 id=\"core-classes\">Core Classes</h3>\n<p><a href=\"https://github.com/duraspace/pcdm/wiki#pcdmobject\">pcdm:Object</a></p>\n<ul>\n<li>An Object is an intellectual entity, sometimes called a “work”, “digital object”, etc. Objects have descriptive metadata, access metadata, may contain files and other Objects as member “parts” or “components”. Each level of a work is therefore represented by an Object instance, and is capable of standing on its own, being linked to from Collections and other Objects. Member Objects can be ordered using the ORE Proxy class.</li>\n</ul>\n<p><a href=\"https://github.com/duraspace/pcdm/wiki#pcdmcollection\">pcdm:Collection</a></p>\n<ul>\n<li>A Collection is a group of resources. Collections have descriptive metadata, access metadata, and may link to Objects and/or Collections. By default, member Objects and Collections are an unordered set, but can be ordered using the ORE Proxy class.</li>\n</ul>\n<p><a href=\"https://github.com/duraspace/pcdm/wiki#pcdmfile\">pcdm:File</a></p>\n<ul>\n<li>A File is a sequence of binary data and is described by some accompanying metadata. The metadata typically includes at least basic technical metadata (size, content type, modification date, etc.), but can also include properties related to preservation, digitization process, provenance, etc. Files MUST be contained by exactly one Object.</li>\n</ul>\n<h3 id=\"webacl\">WebACL</h3>\n<p>WebACLs comes with Fedora 5 but is not recomended. Drupal permission management is more robust and is the suggested option for access control. </p>\n<h3 id=\"performance\">Performance</h3>\n<p>Islandora stores all the files for a book in a flat manner, one big flat repository. The relationships are stored and called via SQL for performance and Drupal functionality. So unlike other platforms that load the parent and all of the nested children before displaying the object, Islandora quickly loads the parent object first and then pages through 10 children at a time. </p>\n",
             "author": {
                 "name": "Don Richards"
             },
@@ -167,8 +167,8 @@
                    "WebAC",
                    "PCDM"
             ],
-            "date_published": "2020-07-24T16:35:24-04:00",
-            "date_modified": "2020-07-24T16:35:24-04:00"
+            "date_published": "2020-07-27T17:03:07-04:00",
+            "date_modified": "2020-07-27T17:03:07-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/cas-authentication.html",
@@ -181,8 +181,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-24T16:35:24-04:00",
-            "date_modified": "2020-07-24T16:35:24-04:00"
+            "date_published": "2020-07-27T17:03:07-04:00",
+            "date_modified": "2020-07-27T17:03:07-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/mods-to-rdf.html",
@@ -195,8 +195,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-24T16:35:24-04:00",
-            "date_modified": "2020-07-24T16:35:24-04:00"
+            "date_published": "2020-07-27T17:03:07-04:00",
+            "date_modified": "2020-07-27T17:03:07-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/ingestingmigrating.html",
@@ -223,8 +223,8 @@
                    "EDTF",
                    "CSV"
             ],
-            "date_published": "2020-07-24T16:35:24-04:00",
-            "date_modified": "2020-07-24T16:35:24-04:00"
+            "date_published": "2020-07-27T17:03:07-04:00",
+            "date_modified": "2020-07-27T17:03:07-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/uploading.html",
@@ -241,8 +241,8 @@
                    "files",
                    "CSV"
             ],
-            "date_published": "2020-07-24T16:35:24-04:00",
-            "date_modified": "2020-07-24T16:35:24-04:00"
+            "date_published": "2020-07-27T17:03:07-04:00",
+            "date_modified": "2020-07-27T17:03:07-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/step-by-step-setup-ir.html",
@@ -255,8 +255,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-24T16:35:24-04:00",
-            "date_modified": "2020-07-24T16:35:24-04:00"
+            "date_published": "2020-07-27T17:03:07-04:00",
+            "date_modified": "2020-07-27T17:03:07-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/book-and-large-image-viewer.html",
@@ -269,8 +269,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-24T16:35:24-04:00",
-            "date_modified": "2020-07-24T16:35:24-04:00"
+            "date_published": "2020-07-27T17:03:07-04:00",
+            "date_modified": "2020-07-27T17:03:07-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/institutional-repository.html",
@@ -305,8 +305,8 @@
                    "Citation",
                    "Bibliography"
             ],
-            "date_published": "2020-07-24T16:35:24-04:00",
-            "date_modified": "2020-07-24T16:35:24-04:00"
+            "date_published": "2020-07-27T17:03:07-04:00",
+            "date_modified": "2020-07-27T17:03:07-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/bibliography-and-citation.html",
@@ -319,8 +319,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-24T16:35:24-04:00",
-            "date_modified": "2020-07-24T16:35:24-04:00"
+            "date_published": "2020-07-27T17:03:07-04:00",
+            "date_modified": "2020-07-27T17:03:07-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html",
@@ -333,8 +333,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-24T16:35:24-04:00",
-            "date_modified": "2020-07-24T16:35:24-04:00"
+            "date_published": "2020-07-27T17:03:07-04:00",
+            "date_modified": "2020-07-27T17:03:07-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/community-and-sustainability.html",
@@ -361,8 +361,8 @@
                    "Google",
                    "Delta"
             ],
-            "date_published": "2020-07-24T16:35:24-04:00",
-            "date_modified": "2020-07-24T16:35:24-04:00"
+            "date_published": "2020-07-27T17:03:07-04:00",
+            "date_modified": "2020-07-27T17:03:07-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/deployment-options.html",
@@ -383,8 +383,8 @@
                    "VM",
                    "ISLE"
             ],
-            "date_published": "2020-07-24T16:35:24-04:00",
-            "date_modified": "2020-07-24T16:35:24-04:00"
+            "date_published": "2020-07-27T17:03:07-04:00",
+            "date_modified": "2020-07-27T17:03:07-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/technical-infrastructure.html",
@@ -396,6 +396,7 @@
                 "name": "Don Richards"
             },
             "tags": [
+                   "memory",
                    "infrastructure",
                    "hardware",
                    "decoupled",
@@ -405,8 +406,8 @@
                    "GB",
                    "CPU"
             ],
-            "date_published": "2020-07-24T16:35:24-04:00",
-            "date_modified": "2020-07-24T16:35:24-04:00"
+            "date_published": "2020-07-27T17:03:07-04:00",
+            "date_modified": "2020-07-27T17:03:07-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/rights-and-restrictions.html",
@@ -424,8 +425,8 @@
                    "access",
                    "WebAC"
             ],
-            "date_published": "2020-07-24T16:35:24-04:00",
-            "date_modified": "2020-07-24T16:35:24-04:00"
+            "date_published": "2020-07-27T17:03:07-04:00",
+            "date_modified": "2020-07-27T17:03:07-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/cloud-hosting-solution.html",
@@ -443,8 +444,8 @@
                    "hosting",
                    "cloud"
             ],
-            "date_published": "2020-07-24T16:35:24-04:00",
-            "date_modified": "2020-07-24T16:35:24-04:00"
+            "date_published": "2020-07-27T17:03:07-04:00",
+            "date_modified": "2020-07-27T17:03:07-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/next-level-discoverability-solutions.html",
@@ -462,8 +463,8 @@
                    "LTR",
                    "AI"
             ],
-            "date_published": "2020-07-24T16:35:24-04:00",
-            "date_modified": "2020-07-24T16:35:24-04:00"
+            "date_published": "2020-07-27T17:03:07-04:00",
+            "date_modified": "2020-07-27T17:03:07-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/metadata-and-metadata-sharing.html",
@@ -488,8 +489,8 @@
                    "JSON",
                    "API"
             ],
-            "date_published": "2020-07-24T16:35:24-04:00",
-            "date_modified": "2020-07-24T16:35:24-04:00"
+            "date_published": "2020-07-27T17:03:07-04:00",
+            "date_modified": "2020-07-27T17:03:07-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/preservation.html",
@@ -502,8 +503,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-24T16:35:24-04:00",
-            "date_modified": "2020-07-24T16:35:24-04:00"
+            "date_published": "2020-07-27T17:03:07-04:00",
+            "date_modified": "2020-07-27T17:03:07-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/uploading-ingesting-and-migration.html",
@@ -531,8 +532,8 @@
                    "Islandora Defaults",
                    "CSV"
             ],
-            "date_published": "2020-07-24T16:35:24-04:00",
-            "date_modified": "2020-07-24T16:35:24-04:00"
+            "date_published": "2020-07-27T17:03:07-04:00",
+            "date_modified": "2020-07-27T17:03:07-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/other-content-types.html",
@@ -558,8 +559,8 @@
                    "PDF",
                    "Moore"
             ],
-            "date_published": "2020-07-24T16:35:24-04:00",
-            "date_modified": "2020-07-24T16:35:24-04:00"
+            "date_published": "2020-07-27T17:03:07-04:00",
+            "date_modified": "2020-07-27T17:03:07-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/images-books-and-pages.html",
@@ -583,8 +584,8 @@
                    "Mirador",
                    "BigData"
             ],
-            "date_published": "2020-07-24T16:35:24-04:00",
-            "date_modified": "2020-07-24T16:35:24-04:00"
+            "date_published": "2020-07-27T17:03:07-04:00",
+            "date_modified": "2020-07-27T17:03:07-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/general-content-models.html",
@@ -605,8 +606,8 @@
                    "PCDM",
                    "BigData"
             ],
-            "date_published": "2020-07-24T16:35:24-04:00",
-            "date_modified": "2020-07-24T16:35:24-04:00"
+            "date_published": "2020-07-27T17:03:07-04:00",
+            "date_modified": "2020-07-27T17:03:07-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/content-modeling.html",
@@ -622,8 +623,8 @@
                    "microservice",
                    "content modeling"
             ],
-            "date_published": "2020-07-24T16:35:24-04:00",
-            "date_modified": "2020-07-24T16:35:24-04:00"
+            "date_published": "2020-07-27T17:03:07-04:00",
+            "date_modified": "2020-07-27T17:03:07-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/background.html",
@@ -651,23 +652,23 @@
                    "Drupal 8 ",
                    "Background"
             ],
-            "date_published": "2020-07-24T16:35:24-04:00",
-            "date_modified": "2020-07-24T16:35:24-04:00"
+            "date_published": "2020-07-27T17:03:07-04:00",
+            "date_modified": "2020-07-27T17:03:07-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html",
             "url": "https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html",
             "title": "Islandora 8 Overview",
-            "summary": "This is an assessment of the current state of Islandora 8, communities involved in its development and maintainence as well as the avaliable features. This&hellip;",
-            "content_html": "<p>This is an assessment of the current state of Islandora 8, communities involved in its development and maintainence as well as the avaliable features. This was written from a developer’s perspective with limited knowledge on metadata requirements. There are over 300 universities running <strong>Islandora 7</strong> according to the latest survey. As of this writing there are <a href=\"https://github.com/Islandora/documentation/wiki/Islandora-8-Pilot-Projects\">four</a> instances of Islandora 8 digital repositories in production, one running an <a href=\"https://oaks.kent.edu\">Institutional Repository</a> that was migrated from Bepress, one <a href=\"https://islandora-rdm.researchspaces.ca\">Research Data Management platform</a>, and several not counted that are currently in beta. These numbers do not include government or private instances which commonly don’t report or aren’t publicly accessible like UTK’s <a href=\"https://trace.utk.edu\">TRACE</a>. </p>\n<p>Islandora 8 is build on Drupal. Drupal propularity has grown in the last fews years with <a href=\"/institutional-repository\">higher education institutions</a> like Oxford University, Harvard University, Massachusetts Institute of Technology, Duke University, UCLA, University of Arizona, Penn State, Johns Hopkins University to name drop a few. As this assessment illustrates Islandora 8 is a full featured digital repository, it’s realatively simple to migrate content into it, migration of metadata is argueably lossless, it can be maintained by a fairly small development team, most actions require almost no coding making it highly sustainable to  future proofing upgrades and several large active communitees. Islandora is a mature platform with hundreds of professionals collaberating daily to develop a sustainable platform with the goal to allign repository content with generally accepted archive standards and meets the needs of hundreds of universities around the world. Islandora 8 uses Drupal so closely that almost any Drupal 8 module can be applied to any Islandora 8 content. This opens new options for the digital repository like using ultra high-performance graph database for highly complex relationship queries and machine learning technology for image identification and search results improvements.</p>\n<h2 id=\"summary\">Summary</h2>\n<p>Here’s a list of all the Islandora features currently shipped with the 1.1.0 release (including some of those that come for free from contributed modules):</p>\n<ul>\n<li>Model content using core Drupal entities and fields</li>\n<li>Out of the box support for<ul>\n<li>Collections</li>\n<li>Images</li>\n<li>Books</li>\n<li>Newspapers</li>\n<li>Audio</li>\n<li>Video</li>\n<li>PDF</li>\n<li>Binaries</li>\n</ul>\n</li>\n<li>Control how content is displayed using the UI</li>\n<li>Configure forms for content using the UI</li>\n<li>Categorize content using taxonomy terms</li>\n<li>Expandable file storage<ul>\n<li>Drupal’s public file system</li>\n<li>Multiple private file systems using <a href=\"https://www.drupal.org/project/flysystem\">flysystem</a> (check this link for a full list of supported adapters)</li>\n<li>Fedora Commons Repository</li>\n<li>Local or networked storage</li>\n<li>Allows for SFTP</li>\n<li>AWS S3 storage</li>\n<li>and more…</li>\n</ul>\n</li>\n<li>REST API<ul>\n<li>Basic CRUD operations with Drupal REST and JSON</li>\n<li>Read-only JSONLD serialization</li>\n<li>Extensive use of Link headers for discoverability</li>\n<li>Add files to objects with PUT</li>\n</ul>\n</li>\n<li>Solr search (<a href=\"https://www.drupal.org/project/search_api_solr\">using search_api_solr</a>)<ul>\n<li>Configure search index through the UI or through yml configuration files</li>\n</ul>\n</li>\n<li>Custom viewers<ul>\n<li>Openseadragon</li>\n<li>PDF.js using the <a href=\"https://www.drupal.org/project/pdf\">pdf</a> module</li>\n<li>Other options are avialable but are not shipped with Islandora 8 out of the box</li>\n</ul>\n</li>\n<li>Custom field types<ul>\n<li>Extended Date Time Format (EDTF)</li>\n<li>Typed Relation</li>\n<li>Authority Link</li>\n</ul>\n</li>\n<li>Custom entities for:<ul>\n<li>People</li>\n<li>Families</li>\n<li>Organizations</li>\n<li>Locations</li>\n<li>Subjects</li>\n</ul>\n</li>\n<li>Derivatives<ul>\n<li>Convert / transform images (or just use<a href=\"https://www.drupal.org/docs/user_guide/en/structure-image-style-create.html\"> Drupal image styles</a>!)</li>\n<li>Extract images from PDFs</li>\n<li>Extract images from Video</li>\n<li>Convert audio formats</li>\n<li>Convert video formats</li>\n<li>All derivative operations have forms and can be configured through the UI</li>\n</ul>\n</li>\n<li>Access control<ul>\n<li>Hide content from users and search with the <a href=\"https://www.drupal.org/project/permissions_by_term\">permissions_by_term</a> module</li>\n<li>Hide sensitive fields from users using the <a href=\"https://www.drupal.org/project/field_permissions\">field_permissions</a> module</li>\n</ul>\n</li>\n<li>Control repository events through the UI using the<a href=\"https://www.drupal.org/project/context\"> context</a> module<ul>\n<li>Index RDF in Fedora</li>\n<li>Index RDF in a Triplestore</li>\n<li>Derivatives</li>\n<li>Switching themes</li>\n<li>Switching displays/viewers</li>\n<li>Switching forms</li>\n<li>And much much more….</li>\n</ul>\n</li>\n<li>Multi-lingual support<ul>\n<li>Translated content is included in metadata and indexed in both Fedora and the Triplestore with proper language tags</li>\n<li>The user interface can be translated to languages other than English</li>\n</ul>\n</li>\n<li>Bulk ingest using CSVs<ul>\n<li>See the<a href=\"https://github.com/Islandora-CLAW/migrate_islandora_csv\"> islandora_migrate_csv</a> module for a detailed tutorial</li>\n</ul>\n</li>\n<li><a href=\"https://www.drupal.org/docs/user_guide/en/views-concept.html\">Views</a>! You can filter, sort, display, and otherwise manipulate lists of content in multiple ways. For example:<ul>\n<li>Make a browse by collections page (see <a href=\"http://future.islandora.ca/collections\">this example</a> on the sandbox, which can be customized <a href=\"http://future.islandora.ca/admin/structure/views/view/islandora_content/edit/page_1?destination=/collections\">here</a>).</li>\n<li>Make an image gallery (see <a href=\"http://future.islandora.ca/node/7\">this example</a> on the sandbox, which can be customized <a href=\"http://future.islandora.ca/admin/structure/views/view/sandbox_members_image_gallery/edit/block_1?destination=/node/7\">here</a>)</li>\n<li>Make a slideshow (see <a href=\"http://future.islandora.ca/\">this example</a> on the sandbox, which can be customized <a href=\"http://future.islandora.ca/admin/structure/views/view/sandbox_slideshow/edit/block_1?destination=/node/6\">here</a>) using <a href=\"https://www.drupal.org/project/views_slideshow\">views_slideshow</a>.</li>\n<li>Put pins on a Google map using the <a href=\"https://www.drupal.org/project/geolocation\">geolocation</a> module</li>\n<li>Execute actions in bulk on views results using the <a href=\"https://www.drupal.org/project/views_bulk_operations\">views_bulk_operations</a> module</li>\n<li>Re-index content</li>\n<li>Re-generate derivatives</li>\n<li>And everything else you can do with Drupal actions (pretty much anything!)</li>\n<li>Bulk edit metadata using <a href=\"https://www.drupal.org/project/views_bulk_edit\">views_bulk_edit</a> (see <a href=\"http://future.islandora.ca/islandora-batch-edit\">this example</a> on the sandbox, which can be customized <a href=\"http://future.islandora.ca/admin/structure/views/view/islandora_batch_edit/edit/page_1?destination=/islandora-batch-edit\">here</a>)</li>\n</ul>\n</li>\n<li>Paged Content<ul>\n<li>Order sequences of content using a weight field</li>\n<li>Generate IIIF manifests for presenting paged content</li>\n<li>View paged content with the Openseadragon viewer</li>\n</ul>\n</li>\n<li>Extracted Text<ul>\n<li>Extract text from both TIFFs and PDFs</li>\n<li>Extracted text can be indexed in Solr</li>\n</ul>\n</li>\n<li>FITS Derivatives<ul>\n<li>FITS XML is generated for new file uploads</li>\n</ul>\n</li>\n<li>Versioning<ul>\n<li>Drupal revisions create Memento versions in Fedora</li>\n</ul>\n</li>\n<li>OAI-PMH Endpoint<ul>\n<li>Configurable using views</li>\n</ul>\n</li>\n<li>Better Search / Discovery<ul>\n<li>Default configuration for search indexing</li>\n<li>Default configuration for faceting</li>\n</ul>\n</li>\n</ul>\n<p>[List came from <a href=\"https://islandora.ca/content/islandora-8-now-available\">Islandora 8 Now Available</a> &amp; <a href=\"https://www.islandora.ca/content/islandora-8-v110-now-available\">Islandora 8 v1.1.0 Now Available</a>]</p>\n",
+            "summary": "This is an assessment of the current state of Islandora 8, communities involved in its development and maintenance as well as the available features. This&hellip;",
+            "content_html": "<p>This is an assessment of the current state of Islandora 8, communities involved in its development and maintenance as well as the available features. This was written from a developer’s perspective with limited knowledge on metadata requirements. There are over 300 universities running <strong>Islandora 7</strong> according to the latest survey according to Melissa Anez from the Islandora Foundation. As of this writing there are <a href=\"https://github.com/Islandora/documentation/wiki/Islandora-8-Pilot-Projects\">four</a> instances of Islandora 8 digital repositories in production; one running an <a href=\"https://oaks.kent.edu\">Institutional Repository</a> that was migrated from Bepress, one <a href=\"https://islandora-rdm.researchspaces.ca\">Research Data Management platform</a>, and several not counted that are currently in beta. These numbers do not include government or private instances which commonly don’t report or aren’t publicly accessible like UTK’s <a href=\"https://trace.utk.edu\">TRACE</a>. </p>\n<p>Islandora 8 is built on Drupal. Drupal’s popularity has grown in the last fews years with multiple <a href=\"/institutional-repository\">higher education institutions</a> adopting it, like Oxford University, Harvard University, Massachusetts Institute of Technology, Duke University, UCLA, University of Arizona, Penn State, Johns Hopkins University to name drop a few. As this assessment illustrates Islandora 8 is a full featured digital repository, it’s relatively simple to migrate content into it, migration of metadata is arguably lossless, it can be maintained by a fairly small development team, most actions require almost no coding making it highly sustainable to  future proofing upgrades and several large active communitees. Islandora is a mature platform with hundreds of professionals collaborating daily to develop a sustainable platform with the goal to align repository content with generally accepted archive standards and meet the needs of hundreds of universities around the world. Islandora 8 uses Drupal so closely that almost any Drupal 8 module can be applied to any Islandora 8 content. This opens new options for the digital repository like using ultra high-performance graph databases for highly complex relationship queries and machine learning technology for image identification and search results improvements.</p>\n<h2 id=\"summary\">Summary</h2>\n<p>Here’s a list of all the Islandora features currently shipped with the 1.1.0 release (including some of those that come for free from contributed modules):</p>\n<ul>\n<li>Model content using core Drupal entities and fields</li>\n<li>Out of the box support for<ul>\n<li>Collections</li>\n<li>Images</li>\n<li>Books</li>\n<li>Newspapers</li>\n<li>Audio</li>\n<li>Video</li>\n<li>PDF</li>\n<li>Binaries</li>\n</ul>\n</li>\n<li>Control how content is displayed using the UI</li>\n<li>Configure forms for content using the UI</li>\n<li>Categorize content using taxonomy terms</li>\n<li>Expandable file storage<ul>\n<li>Drupal’s public file system</li>\n<li>Multiple private file systems using <a href=\"https://www.drupal.org/project/flysystem\">flysystem</a> (check this link for a full list of supported adapters)</li>\n<li>Fedora Commons Repository</li>\n<li>Local or networked storage</li>\n<li>Allows for SFTP</li>\n<li>AWS S3 storage</li>\n<li>and more…</li>\n</ul>\n</li>\n<li>REST API<ul>\n<li>Basic CRUD operations with Drupal REST and JSON</li>\n<li>Read-only JSONLD serialization</li>\n<li>Extensive use of Link headers for discoverability</li>\n<li>Add files to objects with PUT</li>\n</ul>\n</li>\n<li>Solr search (<a href=\"https://www.drupal.org/project/search_api_solr\">using search_api_solr</a>)<ul>\n<li>Configure search index through the UI or through YML configuration files</li>\n</ul>\n</li>\n<li>Custom viewers<ul>\n<li>Openseadragon</li>\n<li>PDF.js using the <a href=\"https://www.drupal.org/project/pdf\">pdf</a> module</li>\n<li>Other options are available but are not shipped with Islandora 8 out of the box</li>\n</ul>\n</li>\n<li>Custom field types<ul>\n<li>Extended Date Time Format (EDTF)</li>\n<li>Typed Relation</li>\n<li>Authority Link</li>\n</ul>\n</li>\n<li>Custom entities for:<ul>\n<li>People</li>\n<li>Families</li>\n<li>Organizations</li>\n<li>Locations</li>\n<li>Subjects</li>\n</ul>\n</li>\n<li>Derivatives<ul>\n<li>Convert / transform images (or just use<a href=\"https://www.drupal.org/docs/user_guide/en/structure-image-style-create.html\"> Drupal image styles</a>!)</li>\n<li>Extract images from PDFs</li>\n<li>Extract images from Video</li>\n<li>Convert audio formats</li>\n<li>Convert video formats</li>\n<li>All derivative operations have forms and can be configured through the UI</li>\n</ul>\n</li>\n<li>Access control<ul>\n<li>Hide content from users and search with the <a href=\"https://www.drupal.org/project/permissions_by_term\">permissions_by_term</a> module</li>\n<li>Hide sensitive fields from users using the <a href=\"https://www.drupal.org/project/field_permissions\">field_permissions</a> module</li>\n</ul>\n</li>\n<li>Control repository events through the UI using the<a href=\"https://www.drupal.org/project/context\"> context</a> module<ul>\n<li>Index RDF in Fedora</li>\n<li>Index RDF in a Triplestore</li>\n<li>Derivatives</li>\n<li>Switching themes</li>\n<li>Switching displays/viewers</li>\n<li>Switching forms</li>\n<li>And much much more….</li>\n</ul>\n</li>\n<li>Multi-lingual support<ul>\n<li>Translated content is included in metadata and indexed in both Fedora and the Triplestore with proper language tags</li>\n<li>The user interface can be translated to languages other than English</li>\n</ul>\n</li>\n<li>Bulk ingest using CSVs<ul>\n<li>See the<a href=\"https://github.com/Islandora-CLAW/migrate_islandora_csv\"> islandora_migrate_csv</a> module for a detailed tutorial</li>\n</ul>\n</li>\n<li><a href=\"https://www.drupal.org/docs/user_guide/en/views-concept.html\">Views</a>! You can filter, sort, display, and otherwise manipulate lists of content in multiple ways. For example:<ul>\n<li>Make a browse by collections page (see <a href=\"http://future.islandora.ca/collections\">this example</a> on the sandbox, which can be customized <a href=\"http://future.islandora.ca/admin/structure/views/view/islandora_content/edit/page_1?destination=/collections\">here</a>)</li>\n<li>Make an image gallery (see <a href=\"http://future.islandora.ca/node/7\">this example</a> on the sandbox, which can be customized <a href=\"http://future.islandora.ca/admin/structure/views/view/sandbox_members_image_gallery/edit/block_1?destination=/node/7\">here</a>)</li>\n<li>Make a slideshow (see <a href=\"http://future.islandora.ca/\">this example</a> on the sandbox, which can be customized <a href=\"http://future.islandora.ca/admin/structure/views/view/sandbox_slideshow/edit/block_1?destination=/node/6\">here</a>) using <a href=\"https://www.drupal.org/project/views_slideshow\">views_slideshow</a></li>\n<li>Put pins on a Google map using the <a href=\"https://www.drupal.org/project/geolocation\">geolocation</a> module</li>\n<li>Execute actions in bulk on views results using the <a href=\"https://www.drupal.org/project/views_bulk_operations\">views_bulk_operations</a> module</li>\n<li>Re-index content</li>\n<li>Re-generate derivatives</li>\n<li>And everything else you can do with Drupal actions (pretty much anything!)</li>\n<li>Bulk edit metadata using <a href=\"https://www.drupal.org/project/views_bulk_edit\">views_bulk_edit</a> (see <a href=\"http://future.islandora.ca/islandora-batch-edit\">this example</a> on the sandbox, which can be customized <a href=\"http://future.islandora.ca/admin/structure/views/view/islandora_batch_edit/edit/page_1?destination=/islandora-batch-edit\">here</a>)</li>\n</ul>\n</li>\n<li>Paged Content<ul>\n<li>Order sequences of content using a weight field</li>\n<li>Generate IIIF manifests for presenting paged content</li>\n<li>View paged content with the Openseadragon viewer</li>\n</ul>\n</li>\n<li>Extracted Text<ul>\n<li>Extract text from both TIFFs and PDFs</li>\n<li>Extracted text can be indexed in Solr</li>\n</ul>\n</li>\n<li>FITS Derivatives<ul>\n<li>FITS XML is generated for new file uploads</li>\n</ul>\n</li>\n<li>Versioning<ul>\n<li>Drupal revisions create Memento versions in Fedora</li>\n</ul>\n</li>\n<li>OAI-PMH Endpoint<ul>\n<li>Configurable using views</li>\n</ul>\n</li>\n<li>Better Search / Discovery<ul>\n<li>Default configuration for search indexing</li>\n<li>Default configuration for faceting</li>\n</ul>\n</li>\n</ul>\n<p>[List came from <a href=\"https://islandora.ca/content/islandora-8-now-available\">Islandora 8 Now Available</a> &amp; <a href=\"https://www.islandora.ca/content/islandora-8-v110-now-available\">Islandora 8 v1.1.0 Now Available</a>]</p>\n",
             "image": "https://donrichards.github.io/migrate_islandora_csv/media/posts/1/seadragon-zoomed.jpg",
             "author": {
                 "name": "Don Richards"
             },
             "tags": [
             ],
-            "date_published": "2020-07-24T16:35:24-04:00",
-            "date_modified": "2020-07-24T16:35:24-04:00"
+            "date_published": "2020-07-27T17:03:07-04:00",
+            "date_modified": "2020-07-27T17:03:07-04:00"
         }
     ]
 }
