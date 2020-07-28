@@ -1,4 +1,288 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MODS to RDF - Next Generation Digital Repository Solution</title><meta name="description" content="TL; DRIslandora 8 used the MODS to RDF Mapping Recommendations document from Samvera MODS to RDF Working Group to create initial mappings. Islandora consist of&hellip;"><meta name="generator" content="Publii Open-Source CMS for Static Site"><link rel="canonical" href="https://donrichards.github.io/migrate_islandora_csv/mods-to-rdf.html"><link rel="amphtml" href="https://donrichards.github.io/migrate_islandora_csv/amp/mods-to-rdf.html"><link rel="alternate" type="application/atom+xml" href="https://donrichards.github.io/migrate_islandora_csv/feed.xml"><link rel="alternate" type="application/json" href="https://donrichards.github.io/migrate_islandora_csv/feed.json"><meta property="og:title" content="MODS to RDF"><meta property="og:site_name" content="Next Generation Digital Repository Solution"><meta property="og:description" content="TL; DRIslandora 8 used the MODS to RDF Mapping Recommendations document from Samvera MODS to RDF Working Group to create initial mappings. Islandora consist of&hellip;"><meta property="og:url" content="https://donrichards.github.io/migrate_islandora_csv/mods-to-rdf.html"><meta property="og:type" content="article"><link rel="shortcut icon" href="https://donrichards.github.io/migrate_islandora_csv/media/website/add.ico" type="image/x-icon"><link rel="stylesheet" href="https://donrichards.github.io/migrate_islandora_csv/assets/css/style.css?v=16a64c46666bea60947fd47410df672e"><link rel="stylesheet" href="https://donrichards.github.io/migrate_islandora_csv/assets/css/prism-default.css?v=9744853d64d710edcae61a3d59a17ee2"><link rel="stylesheet" href="https://donrichards.github.io/migrate_islandora_csv/assets/css/docsearch.css?v=0407a7a131feaf753e76cd9d86149dc2"><script type="application/ld+json">{"@context":"http://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://donrichards.github.io/migrate_islandora_csv/mods-to-rdf.html"},"headline":"MODS to RDF","datePublished":"2020-07-02T07:31","dateModified":"2020-07-24T11:49","description":"TL; DRIslandora 8 used the MODS to RDF Mapping Recommendations document from Samvera MODS to RDF Working Group to create initial mappings. Islandora consist of&hellip;","author":{"@type":"Person","name":"Don Richards"},"publisher":{"@type":"Organization","name":"Don Richards"}}</script></head><body><header class="header" id="js-header"><a class="logo" href="https://donrichards.github.io/migrate_islandora_csv/">Next Generation Digital Repository Solution </a><a href="https://github.com/donrichards/migrate_islandora_csv/" class="btn btn--outline btn--icon github" aria-label="Github" title="Github"><svg height="22" width="22"><use xlink:href="https://donrichards.github.io/migrate_islandora_csv/assets/svg/svg-map.svg#github"></use></svg> Github</a></header><main><div class="container container--with-sidebar"><div class="sidebar js-sidebar"><form action="https://donrichards.github.io/migrate_islandora_csv/search.html" class="sidebar__search"><input type="search" placeholder="search..." aria-label="Search" id="docsearch-input" class="js-search"></form><nav class="sidebar__menu"><ul class="js-sidebar-menu"><li class="has-submenu"><a href="https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html">Islandora</a><ul><li><a href="https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html">Overview</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/background.html">Background</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/community-and-sustainability.html">Community &amp; Sustainability</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/vendors.html">Vendors</a></li></ul></li><li class="has-submenu"><a href="https://donrichards.github.io/migrate_islandora_csv/content-modeling.html">Content Modeling</a><ul><li><a href="https://donrichards.github.io/migrate_islandora_csv/content-modeling.html">Content Model Overview</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/general-content-models.html">General Content Modeling</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/pcdm.html">PCDM</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/images-books-and-pages.html">Images, Books, and Pages</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/other-content-types.html">Other Objects</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/book-and-large-image-viewer.html">Books &amp; Large Image Viewer</a></li></ul></li><li class="has-submenu"><a href="https://donrichards.github.io/migrate_islandora_csv/uploading-ingesting-and-migration.html">Uploading, Ingesting, and Migration</a><ul><li><a href="https://donrichards.github.io/migrate_islandora_csv/uploading-ingesting-and-migration.html">Overview</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/uploading.html">Uploading</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/ingestingmigrating.html">Ingesting &amp; Migrating</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/developer-debugging.html">Developer Debugging</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/access-restrictions.html">Access Restriction</a></li></ul></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/preservation.html">Preservation</a></li><li class="active-parent has-submenu"><a href="https://donrichards.github.io/migrate_islandora_csv/metadata-and-metadata-sharing.html">Metadata and Metadata Sharing</a><ul><li class="active"><a href="https://donrichards.github.io/migrate_islandora_csv/mods-to-rdf.html">MODS to RDF Mapping</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html">OAI-PMH &amp; DOI Minting</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/bibliography-and-citation.html">Bibliography &amp; Citation</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/rights-and-restrictions.html">Rights &amp; Restrictions</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/next-level-discoverability-solutions.html">Next Level Discoverability Solutions</a></li></ul></li><li class="has-submenu"><a href="https://donrichards.github.io/migrate_islandora_csv/technical-infrastructure.html">Technical Infrastructure</a><ul><li><a href="https://donrichards.github.io/migrate_islandora_csv/technical-infrastructure.html">Technical Infrastructure</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/how-to-access-specific-data.html">How to access specific data</a></li></ul></li><li class="has-submenu"><a href="https://donrichards.github.io/migrate_islandora_csv/deployment-options.html">Deployment Options</a><ul><li><a href="https://donrichards.github.io/migrate_islandora_csv/cloud-hosting-solution.html">Cloud Hosting</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/cas-authentication.html">CAS</a></li></ul></li><li class="has-submenu"><a href="https://donrichards.github.io/migrate_islandora_csv/institutional-repository.html">Institutional Repository</a><ul><li><a href="https://donrichards.github.io/migrate_islandora_csv/bibliography-and-citation.html">Bibliography &amp; Citation</a></li><li><a href="https://donrichards.github.io/migrate_islandora_csv/step-by-step-setup-ir.html">Step by Step Setup (IR)</a></li></ul></li><li class="red has-submenu"><a href="https://donrichards.github.io/migrate_islandora_csv/quick-document-design-key.html">PDF&#x27;s Quick Reference Material Locations</a><ul><li class="red"><a href="https://donrichards.github.io/migrate_islandora_csv/developer-debugging.html">Developer Debugging</a></li></ul></li></ul></nav></div><div class="content content--center"><article class="post"><h1>MODS to RDF</h1><div class="post__entry"><h3 id="tl-dr">TL; DR</h3><p>Islandora 8 used the MODS to <a href="https://wiki.duraspace.org/download/attachments/87460857/MODS-RDF-Mapping-Recommendations_SMIG_v1_2019-01.pdf?api=v2">RDF Mapping Recommendations</a> document from <em>Samvera MODS to RDF Working Group</em> to create initial mappings. Islandora consist of multiple yaml files for different content types corporate_body, family, geo_location, person, resource_type and subject. Create a mapping for each one of these and the bulk of the work is done. YAML files can iterate over several posibilities and output the one desired RDF value. It directly links and pulls data from several namespace APIs with some configuration. Minting object mappings will need the URI sourced from an external vocabulary, URI for a local object, or a literal value (text string). Minting is covered on the <a href="/oai-pmh-and-doi-minting">OAI-PMH and DOI minting</a>.</p><h3 id="overview">Overview</h3><p>In Islandora, the JSON-LD Module transforms nodes (or media, or taxonomy terms) into the RDF that is synced into Fedora and the Triplestore. It uses RDF mappings, a concept defined by the RDF Module, and exposes them through the REST API at <code>?_format=jsonld</code>. Functionality can be expanded by RDF schema building schema.org configuration tool (RDF UI).</p><h3 id="json-ld-module">JSON-LD Module</h3><p>Using the RDF mapping configurations provided by the RDF module, the JSON-LD Module exposes the RDF-mapped entity in JSON-LD, through the REST API, at</p><ul><li>Node: <code>node/[nid]?_format=jsonld</code></li><li>Media: <code>media/[mid]?_format=jsonld</code></li><li>Terms: <code>taxonomy/term/[tid]?_format=jsonld</code></li></ul><h3 id="rdf-mappings">RDF Mappings</h3><p>In an out-of-the-box islandora-playbook, the RDF mappings that exist were loaded from config files, and correspond to the <code>rdf.mapping.[...].yml</code> files located in:</p><ul><li>Media terms: <code>/islandora/modules/islandora_core_feature/config/install/</code></li><li>Taxonomy terms: <code>/islandora_defaults/config/install/</code></li><li>Repository_item and the islandora_access vocabulary: <code>/controlled_access_terms/modules/controlled_access_terms_defaults/config/install/</code></li><li>The default corporate_body, family, geo_location, person, resource_type and subject vocabularies: <code>/core/profiles/standard/config/install/ (articles, pages, comments, and tags)</code></li></ul><p>For a detailed description on how to generate and/or edit RDF mappings <a href="https://islandora.github.io/documentation/islandora/rdf-mapping/#how-to-edit-an-rdf-mapping">link</a></p><p><strong>Namespaces</strong> ldp, ebucore, pcdm, are premis are registered in islandora.module using hook_rdf_namespaces(). To register your own namespaces, you will need to locate create a custom module that implements that hook.</p><h4 id="sample-mods-for-knoxgardens119">Sample MODS for knoxgardens:119</h4><pre><code class="language-xml">&lt;mods
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>MODS to RDF - Next Generation Digital Repository Solution </title>
+        <meta name="description" content="TL; DRIslandora 8 used the MODS to RDF Mapping Recommendations document from Samvera MODS to RDF Working Group to create initial mappings. Islandora consist of&hellip;" />
+        
+        <meta name="generator" content="Publii Open-Source CMS for Static Site" />
+        <link rel="canonical" href="https://donrichards.github.io/migrate_islandora_csv/mods-to-rdf.html">
+        <link rel="amphtml" href="https://donrichards.github.io/migrate_islandora_csv/amp/mods-to-rdf.html">
+        <link rel="alternate" type="application/atom+xml" href="https://donrichards.github.io/migrate_islandora_csv/feed.xml" />
+<link rel="alternate" type="application/json" href="https://donrichards.github.io/migrate_islandora_csv/feed.json" />
+
+        <meta property="og:title" content="MODS to RDF" /><meta property="og:site_name" content="Next Generation Digital Repository Solution" /><meta property="og:description" content="TL; DRIslandora 8 used the MODS to RDF Mapping Recommendations document from Samvera MODS to RDF Working Group to create initial mappings. Islandora consist of&hellip;" /><meta property="og:url" content="https://donrichards.github.io/migrate_islandora_csv/mods-to-rdf.html" /><meta property="og:type" content="article" />
+	        <link rel="shortcut icon" href="https://donrichards.github.io/migrate_islandora_csv/media/website/add.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="https://donrichards.github.io/migrate_islandora_csv/assets/css/style.css?v=16a64c46666bea60947fd47410df672e">
+                <link rel="stylesheet" href="https://donrichards.github.io/migrate_islandora_csv/assets/css/prism-default.css?v=9744853d64d710edcae61a3d59a17ee2">
+                       <link rel="stylesheet" href="https://donrichards.github.io/migrate_islandora_csv/assets/css/docsearch.css?v=0407a7a131feaf753e76cd9d86149dc2">
+        <script type="application/ld+json">{"@context":"http://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"https://donrichards.github.io/migrate_islandora_csv/mods-to-rdf.html"},"headline":"MODS to RDF","datePublished":"2020-07-02T07:31","dateModified":"2020-07-28T15:34","description":"TL; DRIslandora 8 used the MODS to RDF Mapping Recommendations document from Samvera MODS to RDF Working Group to create initial mappings. Islandora consist of&hellip;","author":{"@type":"Person","name":"Don Richards"},"publisher":{"@type":"Organization","name":"Don Richards"}}</script>
+        
+        
+    </head>
+    <body>
+        <header class="header" id="js-header">
+   <a class="logo" href="https://donrichards.github.io/migrate_islandora_csv/">
+         Next Generation Digital Repository Solution
+   </a>
+      <a
+         href="https://github.com/donrichards/migrate_islandora_csv/"
+         class="btn btn--outline btn--icon github"
+         aria-label="Github"
+         title="Github">
+          
+         <svg height="22" width="22">
+            <use xlink:href="https://donrichards.github.io/migrate_islandora_csv/assets/svg/svg-map.svg#github"></use>
+         </svg>
+          
+         Github
+      </a>
+</header><main>
+    <div class="container container--with-sidebar">
+        <div class="sidebar js-sidebar">	
+          
+             <form action="https://donrichards.github.io/migrate_islandora_csv/search.html" class="sidebar__search">
+                 <input
+                     type="search"               
+                     placeholder="search..."
+                     aria-label="Search" 
+                     id="docsearch-input" 
+                     class="js-search"/>
+             </form>
+          
+             <nav class="sidebar__menu">
+                 <ul class="js-sidebar-menu">
+                        <li class="has-submenu">
+                              <a href="https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html" >
+                                 Islandora
+                              </a>
+                              <ul>
+                                    <li>
+                                          <a href="https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html" >
+                                             Overview
+                                          </a>
+                                    </li>
+                                    <li>
+                                          <a href="https://donrichards.github.io/migrate_islandora_csv/background.html" >
+                                             Background
+                                          </a>
+                                    </li>
+                                    <li>
+                                          <a href="https://donrichards.github.io/migrate_islandora_csv/community-and-sustainability.html" >
+                                             Community &amp; Sustainability
+                                          </a>
+                                    </li>
+                                    <li>
+                                          <a href="https://donrichards.github.io/migrate_islandora_csv/vendors.html" >
+                                             Vendors
+                                          </a>
+                                    </li>
+                              </ul>
+                        </li>
+                        <li class="has-submenu">
+                              <a href="https://donrichards.github.io/migrate_islandora_csv/content-modeling.html" >
+                                 Content Modeling
+                              </a>
+                              <ul>
+                                    <li>
+                                          <a href="https://donrichards.github.io/migrate_islandora_csv/content-modeling.html" >
+                                             Content Model Overview
+                                          </a>
+                                    </li>
+                                    <li>
+                                          <a href="https://donrichards.github.io/migrate_islandora_csv/general-content-models.html" >
+                                             General Content Modeling
+                                          </a>
+                                    </li>
+                                    <li>
+                                          <a href="https://donrichards.github.io/migrate_islandora_csv/pcdm.html" >
+                                             PCDM
+                                          </a>
+                                    </li>
+                                    <li>
+                                          <a href="https://donrichards.github.io/migrate_islandora_csv/images-books-and-pages.html" >
+                                             Images, Books, and Pages
+                                          </a>
+                                    </li>
+                                    <li>
+                                          <a href="https://donrichards.github.io/migrate_islandora_csv/other-content-types.html" >
+                                             Other Objects
+                                          </a>
+                                    </li>
+                                    <li>
+                                          <a href="https://donrichards.github.io/migrate_islandora_csv/book-and-large-image-viewer.html" >
+                                             Books &amp; Large Image Viewer
+                                          </a>
+                                    </li>
+                              </ul>
+                        </li>
+                        <li class="has-submenu">
+                              <a href="https://donrichards.github.io/migrate_islandora_csv/uploading-ingesting-and-migration.html" >
+                                 Uploading, Ingesting, and Migration
+                              </a>
+                              <ul>
+                                    <li>
+                                          <a href="https://donrichards.github.io/migrate_islandora_csv/uploading-ingesting-and-migration.html" >
+                                             Overview
+                                          </a>
+                                    </li>
+                                    <li>
+                                          <a href="https://donrichards.github.io/migrate_islandora_csv/uploading.html" >
+                                             Uploading
+                                          </a>
+                                    </li>
+                                    <li>
+                                          <a href="https://donrichards.github.io/migrate_islandora_csv/ingestingmigrating.html" >
+                                             Ingesting &amp; Migrating
+                                          </a>
+                                    </li>
+                                    <li>
+                                          <a href="https://donrichards.github.io/migrate_islandora_csv/developer-debugging.html" >
+                                             Developer Debugging
+                                          </a>
+                                    </li>
+                                    <li>
+                                          <a href="https://donrichards.github.io/migrate_islandora_csv/access-restrictions.html" >
+                                             Access Restriction
+                                          </a>
+                                    </li>
+                              </ul>
+                        </li>
+                        <li>
+                              <a href="https://donrichards.github.io/migrate_islandora_csv/preservation.html" >
+                                 Preservation
+                              </a>
+                        </li>
+                        <li class="active-parent has-submenu">
+                              <a href="https://donrichards.github.io/migrate_islandora_csv/metadata-and-metadata-sharing.html" >
+                                 Metadata and Metadata Sharing
+                              </a>
+                              <ul>
+                                    <li class="active">
+                                          <a href="https://donrichards.github.io/migrate_islandora_csv/mods-to-rdf.html" >
+                                             MODS to RDF Mapping
+                                          </a>
+                                    </li>
+                                    <li>
+                                          <a href="https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html" >
+                                             OAI-PMH &amp; DOI Minting
+                                          </a>
+                                    </li>
+                                    <li>
+                                          <a href="https://donrichards.github.io/migrate_islandora_csv/bibliography-and-citation.html" >
+                                             Bibliography &amp; Citation
+                                          </a>
+                                    </li>
+                                    <li>
+                                          <a href="https://donrichards.github.io/migrate_islandora_csv/rights-and-restrictions.html" >
+                                             Rights &amp; Restrictions
+                                          </a>
+                                    </li>
+                                    <li>
+                                          <a href="https://donrichards.github.io/migrate_islandora_csv/next-level-discoverability-solutions.html" >
+                                             Next Level Discoverability Solutions
+                                          </a>
+                                    </li>
+                              </ul>
+                        </li>
+                        <li class="has-submenu">
+                              <a href="https://donrichards.github.io/migrate_islandora_csv/technical-infrastructure.html" >
+                                 Technical Infrastructure
+                              </a>
+                              <ul>
+                                    <li>
+                                          <a href="https://donrichards.github.io/migrate_islandora_csv/technical-infrastructure.html" >
+                                             Technical Infrastructure
+                                          </a>
+                                    </li>
+                                    <li>
+                                          <a href="https://donrichards.github.io/migrate_islandora_csv/how-to-access-specific-data.html" >
+                                             How to access specific data
+                                          </a>
+                                    </li>
+                              </ul>
+                        </li>
+                        <li class="has-submenu">
+                              <a href="https://donrichards.github.io/migrate_islandora_csv/deployment-options.html" >
+                                 Deployment Options
+                              </a>
+                              <ul>
+                                    <li>
+                                          <a href="https://donrichards.github.io/migrate_islandora_csv/cloud-hosting-solution.html" >
+                                             Cloud Hosting
+                                          </a>
+                                    </li>
+                                    <li>
+                                          <a href="https://donrichards.github.io/migrate_islandora_csv/cas-authentication.html" >
+                                             CAS
+                                          </a>
+                                    </li>
+                              </ul>
+                        </li>
+                        <li class="has-submenu">
+                              <a href="https://donrichards.github.io/migrate_islandora_csv/institutional-repository.html" >
+                                 Institutional Repository
+                              </a>
+                              <ul>
+                                    <li>
+                                          <a href="https://donrichards.github.io/migrate_islandora_csv/bibliography-and-citation.html" >
+                                             Bibliography &amp; Citation
+                                          </a>
+                                    </li>
+                                    <li>
+                                          <a href="https://donrichards.github.io/migrate_islandora_csv/step-by-step-setup-ir.html" >
+                                             Step by Step Setup (IR)
+                                          </a>
+                                    </li>
+                              </ul>
+                        </li>
+                        <li class="red has-submenu">
+                              <a href="https://donrichards.github.io/migrate_islandora_csv/quick-document-design-key.html" >
+                                 PDF&#x27;s Quick Reference Material Locations
+                              </a>
+                              <ul>
+                                    <li class="red">
+                                          <a href="https://donrichards.github.io/migrate_islandora_csv/developer-debugging.html" >
+                                             Developer Debugging
+                                          </a>
+                                    </li>
+                              </ul>
+                        </li>
+                 </ul>
+             </nav>
+        </div>
+     <div class="content content--center ">   
+            <article class="post">
+               <h1>
+                  MODS to RDF
+               </h1>
+                     <div class="post__entry">
+                        <h3 id="tl-dr">TL; DR</h3>
+<p>Islandora 8 used the MODS to <a href="https://wiki.duraspace.org/download/attachments/87460857/MODS-RDF-Mapping-Recommendations_SMIG_v1_2019-01.pdf?api=v2">RDF Mapping Recommendations</a> document from <em>Samvera MODS to RDF Working Group</em> to create initial mappings. Islandora consist of multiple yaml files for different content types corporate_body, family, geo_location, person, resource_type and subject. Create a mapping for each one of these and the bulk of the work is done. YAML files can iterate over several posibilities and output the one desired RDF value. It directly links and pulls data from several namespace APIs with some configuration. Minting object mappings will need the URI sourced from an external vocabulary, URI for a local object, or a literal value (text string). Minting is covered on the <a href="/oai-pmh-and-doi-minting">OAI-PMH and DOI minting</a>.</p>
+<h3 id="overview">Overview</h3>
+<p>In Islandora, the JSON-LD Module transforms nodes (or media, or taxonomy terms) into the RDF that is synced into Fedora and the Triplestore. It uses RDF mappings, a concept defined by the RDF Module, and exposes them through the REST API at <code>?_format=jsonld</code>. Functionality can be expanded by RDF schema building schema.org configuration tool (RDF UI).</p>
+<h3 id="json-ld-module">JSON-LD Module</h3>
+<p>Using the RDF mapping configurations provided by the RDF module, the JSON-LD Module exposes the RDF-mapped entity in JSON-LD, through the REST API, at</p>
+<ul>
+<li>Node:  <code>node/[nid]?_format=jsonld</code></li>
+<li>Media: <code>media/[mid]?_format=jsonld</code> </li>
+<li>Terms:  <code>taxonomy/term/[tid]?_format=jsonld</code></li>
+</ul>
+<h3 id="rdf-mappings">RDF Mappings</h3>
+<p>In an out-of-the-box islandora-playbook, the RDF mappings that exist were loaded from config files, and correspond to the <code>rdf.mapping.[...].yml</code> files located in:</p>
+<ul>
+<li>Media terms: <code>/islandora/modules/islandora_core_feature/config/install/</code></li>
+<li>Taxonomy terms: <code>/islandora_defaults/config/install/</code></li>
+<li>Repository_item and the islandora_access vocabulary: <code>/controlled_access_terms/modules/controlled_access_terms_defaults/config/install/</code></li>
+<li>The default corporate_body, family, geo_location, person, resource_type and subject vocabularies: <code>/core/profiles/standard/config/install/ (articles, pages, comments, and tags)</code></li>
+</ul>
+<p>For a detailed description on how to generate and/or edit RDF mappings <a href="https://islandora.github.io/documentation/islandora/rdf-mapping/#how-to-edit-an-rdf-mapping">link</a></p>
+<p><strong>Namespaces</strong>
+ldp, ebucore, pcdm, are premis are registered in islandora.module using hook_rdf_namespaces(). To register your own namespaces, you will need to locate create a custom module that implements that hook.</p>
+<h4 id="sample-mods-for-knoxgardens119">Sample MODS for knoxgardens:119</h4>
+<pre><code class="language-xml">&lt;mods
   xmlns=&quot;http://www.loc.gov/mods/v3&quot;
   xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
   xmlns:xlink=&quot;http://www.w3.org/1999/xlink&quot;
@@ -70,7 +354,10 @@
     &lt;/languageOfCataloging&gt;
   &lt;/recordInfo&gt;
   &lt;accessCondition type=&quot;use and reproduction&quot; xlink:href=&quot;http://rightsstatements.org/vocab/InC/1.0/&quot;&gt;In Copyright&lt;/accessCondition&gt;
-&lt;/mods&gt;</code></pre><h4 id="json-ld-for-this-object">JSON-LD for this object</h4><p>These values may not be correct. I put them in by hand and I’m not experienced with MODS to RDF conversion.</p><pre><code class="language-json">{
+&lt;/mods&gt;</code></pre>
+<h4 id="json-ld-for-this-object">JSON-LD for this object</h4>
+<p>These values may not be correct. I put them in by hand and I’m not experienced with MODS to RDF conversion.</p>
+<pre><code class="language-json">{
   &quot;@graph&quot;: [{
     &quot;@id&quot;: &quot;http:\/\/www.utkislandora8testing.com\/node\/3&quot;,
     &quot;@type&quot;: [&quot;http:\/\/pcdm.org\/models#Object&quot;, &quot;http:\/\/purl.org\/coar\/resource_type\/c_c513&quot;],
@@ -182,7 +469,18 @@
     &quot;@id&quot;: &quot;http:\/\/www.utkislandora8testing.com\/taxonomy\/term\/33&quot;,
     &quot;@type&quot;: [&quot;http:\/\/schema.org\/Thing&quot;]
   }]
-}</code></pre><h4 id="an-example-of-a-custom-rdf-mapping">An example of a custom RDF Mapping</h4><p>Below is an example of an RDF mapping as a .yml (YAML) file. It is the current version of the RDF mapping of the Repository Item (islandora_object) bundle, provided by islandora_defaults and exportable as rdf.mapping.node.islandora_object.yml).</p><p>The top level key types specifies the rdf:type of the resource or content model. field_model, a required field of Islandora objects, also gets mapped to rdf:type through an arcane back-end process. The top level key fieldMappings specifies fields attached to that bundle and their RDF property mappings. One field can be mapped to more than one RDF property. It is a simple flat list. datatype_callback : [needs documentation] mapping_type: rel : [needs documentation]</p><p>To see your current RDF for an Islandora Object go to the Synchronize Export Single item page (/admin/config/development/configuration/single/export) and select <strong>Configuration type</strong>: RDF Mapping <strong>Configuration name</strong>: node.islandora_object</p><p>Looking over this configuration the <code>field_rights</code> properties is set to <code>dc:rights</code>. This means currently the rights statement requires that this field needs to be set for every object/node with this rights statement and if the statement changes all of them requires an edit. Although mostly trivial this isn’t very dynamic and doesn’t really follow the principles of linked data.</p><pre><code class="language-yml">langcode: en
+}</code></pre>
+<h4 id="an-example-of-a-custom-rdf-mapping">An example of a custom RDF Mapping</h4>
+<p>Below is an example of an RDF mapping as a .yml (YAML) file. It is the current version of the RDF mapping of the Repository Item (islandora_object) bundle, provided by islandora_defaults and exportable as rdf.mapping.node.islandora_object.yml).</p>
+<p>The top level key types specifies the rdf:type of the resource or content model. field_model, a required field of Islandora objects, also gets mapped to rdf:type through an arcane back-end process.
+The top level key fieldMappings specifies fields attached to that bundle and their RDF property mappings. One field can be mapped to more than one RDF property. It is a simple flat list.
+datatype_callback : [needs documentation]
+mapping_type: rel : [needs documentation]</p>
+<p>To see your current RDF for an Islandora Object go to the Synchronize Export Single item page (/admin/config/development/configuration/single/export) and select 
+<strong>Configuration type</strong>: RDF Mapping
+<strong>Configuration name</strong>: node.islandora_object</p>
+<p>Looking over this configuration the <code>field_rights</code> properties is set to <code>dc:rights</code>. This means currently the rights statement requires that this field needs to be set for every object/node with this rights statement and if the statement changes all of them requires an edit. Although mostly trivial this isn’t very dynamic and doesn’t really follow the principles of linked data. </p>
+<pre><code class="language-yml">langcode: en
 status: true
 dependencies:
   config:
@@ -259,13 +557,198 @@ fieldMappings:
   uid:
     properties:
       - &#39;schema:author&#39;
-    mapping_type: rel</code></pre><h3 id="how-to-create-a-custom-vocab">How to create a custom vocab</h3><p>Moving the <strong>rights statement</strong> in it’s own taxonomy vocabularly adds the ability to show the rights statement and URI link to rightsstatement.org. To accomplish this:</p><ul><li>Make a Taxonomy Vocabulary for “Rights Statement”</li><li>Either migrate or add in each “term” like <code>In Copyright</code> giving it an authority link, name and description.</li><li>Create a mapping for the “Rights Statement” vocabulary by importing via a <strong>single Import</strong> configuration page.</li><li>Replace the Rights string field with a with a Rights <strong>Entity Reference</strong> pointing to the new vocab.</li></ul><p>For more information see <a href="https://islandora.github.io/documentation/islandora/rdf-mapping/#structure-of-an-rdf-mapping">Structure of an RDF mapping</a> and more on the mapping of RightsStatesments.org mappings see <a href="https://rightsstatements.org/files/170106requirements_for_the_technical_infrastructure_for_standardized_international_rights_statements_v1.2.pdf">Rightsstatements.org White Paper: Requirements for the Technical Infrastructure for Standardized International Rights Statements</a></p><footer><div class="post__footer"></div><nav><ul class="post__nav"><li class="post__nav-prev">Prev: <a href="https://donrichards.github.io/migrate_islandora_csv/ingestingmigrating.html" rel="prev" title="Ingesting/Migrating">Ingesting/Migrating</a></li><li class="post__nav-next">Next: <a href="https://donrichards.github.io/migrate_islandora_csv/cas-authentication.html" rel="next" title="CAS Authentication">CAS Authentication</a></li></ul></nav></footer></div></article></div></div></main><footer class="footer"><div><a class="footer__logo" href="https://donrichards.github.io/migrate_islandora_csv/">Next Generation Digital Repository Solution</a></div><div><div class="footer__copy">For more information <a href="https://islandora.github.io/documentation/"></a></div><div class="footer__social"></div></div></footer><script>window.publiiThemeMenuConfig = {    
+    mapping_type: rel</code></pre>
+<p><figure class="post__image"><img loading="lazy" src="" data-is-external-image="true" https://user-images.githubusercontent.com/2738244/88700608-f037f800-d0d6-11ea-8965-e7a0e36a576d.png"" alt="Screenshot of fields mappings" /></figure></p>
+<h3 id="how-to-create-a-custom-vocab">How to create a custom vocab</h3>
+<p>Moving the <strong>rights statement</strong> in it’s own taxonomy vocabularly adds the ability to show the rights statement and URI link to rightsstatement.org. To accomplish this:</p>
+<ul>
+<li>Make a Taxonomy Vocabulary for “Rights Statement”</li>
+<li>Either migrate or add in each “term” like <code>In Copyright</code> giving it an authority link, name and description.</li>
+<li>Create a mapping for the “Rights Statement” vocabulary by importing via a <strong>single Import</strong> configuration page. </li>
+<li>Replace the Rights string field with a with a Rights <strong>Entity Reference</strong> pointing to the new vocab.</li>
+</ul>
+<p>For more information see <a href="https://islandora.github.io/documentation/islandora/rdf-mapping/#structure-of-an-rdf-mapping">Structure of an RDF mapping</a> and more on the mapping of RightsStatesments.org mappings see <a href="https://rightsstatements.org/files/170106requirements_for_the_technical_infrastructure_for_standardized_international_rights_statements_v1.2.pdf">Rightsstatements.org White Paper: Requirements for the Technical Infrastructure for Standardized International Rights Statements</a></p>
+<h3 id="advanced">Advanced</h3>
+<p>A solution for handling rights statement. Using a link field that includes the URI of the rights statement as the link value and the term for the link label with a drop-down list of available rights statement. Another solution with the JSON-LD uses the URL for the rights statement instead of a taxonomy-term surrogate URL. Another option is to create a rights statement taxonomy and then create a formatter that use’s the term’s field_external_authority, or whatever the URI field is, to create a link on the node’s page:</p>
+<pre><code class="language-php">&lt;?php
+namespace Drupal\islandora_local\Plugin\Field\FieldFormatter;
+use Drupal\Core\Field\FieldItemListInterface;
+use Drupal\Core\Field\Plugin\Field\FieldFormatter\EntityReferenceFormatterBase;
+use Drupal\link\LinkItemInterface;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Plugin implementation of the &#39;LinkedEntityLink&#39;.
+ *
+ * @FieldFormatter(
+ *   id = &quot;linked_entity_link&quot;,
+ *   label = @Translation(&quot;Linked Entity Link&quot;),
+ *   field_types = {
+ *     &quot;entity_reference&quot;
+ *   }
+ * )
+ */
+class LinkedEntityLink extends EntityReferenceFormatterBase {
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function defaultSettings() {
+    return [
+      &#39;link_field&#39; =&gt; &#39;&#39;,
+    ] + parent::defaultSettings();
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function settingsForm(array $form, FormStateInterface $form_state) {
+    $settings = $this-&gt;getSettings();
+    $link_fields = [];
+    foreach (\Drupal::entityManager()-&gt;getFieldMap() as $entity_type =&gt; $fields) {
+      foreach ($fields as $field_name =&gt; $field_info) {
+        if ($field_info[&#39;type&#39;] === &#39;link&#39;) {
+          $link_fields[$field_name] = $field_name;
+        }
+      }
+    }
+    $element[&#39;link_field&#39;] = [
+      &#39;#type&#39; =&gt; &#39;select&#39;,
+      &#39;#title&#39; =&gt; t(&#39;Link Field&#39;),
+      &#39;#options&#39; =&gt; $link_fields,
+      &#39;#required&#39; =&gt; TRUE,
+      &#39;#default_value&#39; =&gt; $settings[&#39;link_field&#39;],
+    ];
+    return $element;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function viewElements(FieldItemListInterface $items, $langcode) {
+    $element = [];
+    foreach ($this-&gt;getEntitiesToView($items, $langcode) as $delta =&gt; $entity) {
+      try {
+        $field = $entity-&gt;get($this-&gt;getSetting(&#39;link_field&#39;));
+
+        if (!empty($field)) {
+          foreach ($entity-&gt;get(&#39;field_project_site_url&#39;) as $delta2 =&gt; $item) {
+            $link_title = $entity-&gt;label();
+            $url = $this-&gt;buildUrl($item);
+
+            $element[$delta] = [
+              &#39;#type&#39; =&gt; &#39;link&#39;,
+              &#39;#title&#39; =&gt; $link_title,
+            ];
+            $element[$delta][&#39;#url&#39;] = $url;
+            if (!empty($item-&gt;_attributes)) {
+              $element[$delta][&#39;#options&#39;] += [
+                &#39;attributes&#39; =&gt; [],
+              ];
+              $element[$delta][&#39;#options&#39;][&#39;attributes&#39;] += $item-&gt;_attributes;
+
+              // Unset field item attributes since they have been included in the
+              // formatter output and should not be rendered in the field template.
+              unset($item-&gt;_attributes);
+            }
+          }
+        }
+        else {
+          $element[$delta] = $entity-&gt;toLink()-&gt;toRenderable();
+        }
+      }
+      catch (\InvalidArgumentException $e) {
+        \Drupal::logger(&#39;islandora_local&#39;)-&gt;warning(&#39;LinkedEntityLink attempted to use an invalid field: &#39; . $e-&gt;getMessage());
+        $element[$delta] = $entity-&gt;toLink()-&gt;toRenderable();
+      }
+    }
+
+    return $element;
+
+  }
+
+  /**
+   * Builds the \Drupal\Core\Url object for a link field item.
+   *
+   * Stolen from Drupal\link\Plugin\Field\FieldFormatter, which we don&#39;t extend.
+   *
+   * @param \Drupal\link\LinkItemInterface $item
+   *   The link field item being rendered.
+   *
+   * @return \Drupal\Core\Url
+   *   A Url object.
+   */
+  protected function buildUrl(LinkItemInterface $item) {
+    $url = $item
+      -&gt;getUrl() ?: Url::fromRoute(&#39;&lt;none&gt;&#39;);
+    $options = $item-&gt;options;
+    $options += $url
+      -&gt;getOptions();
+
+    $url
+      -&gt;setOptions($options);
+    return $url;
+  }
+}</code></pre>
+<p>This can redirect users to the relevant site instead of to the taxonomy term page.</p>
+<p><a href="https://www.drupal.org/project/media_attribution">Media Attribution</a></p>
+<p>Another solution attaching an attribution to media includes a list of CC licenses in a taxonomy vocabulary that gets bulk-loaded on installation from a YML file. This module is an easy way to bulk load licenses. It needs to specify the short name, long description, image URL and license definition URL in the YML file to include it or create one when the module is installed.</p>
+
+                           <footer>
+                                 <div class="post__footer">
+                                 </div>
+                                    <nav>
+                                       <ul class="post__nav">
+                                             <li class="post__nav-prev">
+                                                Prev: 
+                                                <a href="https://donrichards.github.io/migrate_islandora_csv/ingestingmigrating.html" rel="prev" title="Ingesting/Migrating">
+                                                   Ingesting/Migrating
+                                                </a>
+                                             </li>
+                                             <li class="post__nav-next">
+                                                Next: 
+                                                <a href="https://donrichards.github.io/migrate_islandora_csv/cas-authentication.html" rel="next" title="CAS Authentication">
+                                                   CAS Authentication
+                                                </a>
+                                             </li>
+                                       </ul>
+                                    </nav>
+                           </footer>
+                     </div>
+                  </article>
+         
+      </div>
+   </div>
+</main>
+<footer class="footer">
+   <div>
+      <a class="footer__logo" href="https://donrichards.github.io/migrate_islandora_csv/">
+            Next Generation Digital Repository Solution
+      </a>
+   </div>
+   <div>
+      <div class="footer__copy">
+         For more information <a href="https://islandora.github.io/documentation/"></a>
+      </div>
+      <div class="footer__social">
+      </div>
+   </div>
+</footer>
+
+
+<script>
+   window.publiiThemeMenuConfig = {    
         mobileMenuMode: 'sidebar',
         animationSpeed: 300,
         submenuWidth: 'auto',
         doubleClickTime: 500,
         mobileMenuExpandableSubmenus: true
-   };</script><script defer="defer" src="https://donrichards.github.io/migrate_islandora_csv/assets/js/scripts.min.js?v=fe8e4c5e655cb81dbff1ee359a0b8f92"></script><script>var images = document.querySelectorAll('img[loading]');
+   };
+</script>
+<script defer src="https://donrichards.github.io/migrate_islandora_csv/assets/js/scripts.min.js?v=fe8e4c5e655cb81dbff1ee359a0b8f92"></script>
+
+    <script>        
+        var images = document.querySelectorAll('img[loading]');
 
         for (var i = 0; i < images.length; i++) {
             if (images[i].complete) {
@@ -275,11 +758,32 @@ fieldMappings:
                     this.classList.add('is-loaded');
                 }, false);
             }
-        }</script><script defer="defer" src="https://donrichards.github.io/migrate_islandora_csv/assets/js/prism.js?v=277309e26a038bf312a7e8aa239cfbd8"></script><script defer="defer" src="https://donrichards.github.io/migrate_islandora_csv/assets/js/prism-line-numbers.min.js?v=13275d3ac10d7028cf6a6f5da276f68c"></script><script defer="defer" src="https://donrichards.github.io/migrate_islandora_csv/assets/js/prism-copy-to-clipboard.min.js?v=fabfc3fd9af83cda5208ba2e9f9ed238"></script><script src="https://donrichards.github.io/migrate_islandora_csv/assets/js/docsearch.min.js?v=9db7c9eaa8e736ce16840e5bbc02047b"></script><script>docsearch({
+        }
+    </script>
+
+        <script defer src="https://donrichards.github.io/migrate_islandora_csv/assets/js/prism.js?v=277309e26a038bf312a7e8aa239cfbd8"></script>
+        <script defer src="https://donrichards.github.io/migrate_islandora_csv/assets/js/prism-line-numbers.min.js?v=13275d3ac10d7028cf6a6f5da276f68c"></script>
+        <script defer src="https://donrichards.github.io/migrate_islandora_csv/assets/js/prism-copy-to-clipboard.min.js?v=fabfc3fd9af83cda5208ba2e9f9ed238"></script>
+
+        <script src="https://donrichards.github.io/migrate_islandora_csv/assets/js/docsearch.min.js?v=9db7c9eaa8e736ce16840e5bbc02047b"></script>
+        <script>
+                docsearch({
                         apiKey: '2e185d125fc3636674585c446905cd8e',
                         indexName: 'donrichards_migrate_islandora_csv',
                         inputSelector: '#docsearch-input',
                         debug: false
-                });</script><script defer="defer" src="https://donrichards.github.io/migrate_islandora_csv/assets/js/quicklink.umd.js?v=61daff262ce6be0813e6b1b0341274d4"></script><script>window.addEventListener('load', () =>{
+                });
+        </script>
+
+   <script defer src="https://donrichards.github.io/migrate_islandora_csv/assets/js/quicklink.umd.js?v=61daff262ce6be0813e6b1b0341274d4"></script>
+   <script>
+      window.addEventListener('load', () =>{
          quicklink();
-      });</script></body></html>
+      });
+   </script>
+
+
+
+
+</body>
+</html>
