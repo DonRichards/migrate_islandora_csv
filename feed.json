@@ -22,8 +22,8 @@
                    "side by side",
                    "compare"
             ],
-            "date_published": "2020-07-29T14:57:59-04:00",
-            "date_modified": "2020-07-29T14:57:59-04:00"
+            "date_published": "2020-07-29T15:21:10-04:00",
+            "date_modified": "2020-07-29T15:21:10-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/access-restrictions.html",
@@ -36,8 +36,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-29T14:57:59-04:00",
-            "date_modified": "2020-07-29T14:57:59-04:00"
+            "date_published": "2020-07-29T15:21:10-04:00",
+            "date_modified": "2020-07-29T15:21:10-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/manually-configuring-drupal-89.html",
@@ -59,8 +59,8 @@
                    "IIIF",
                    "Drupal 8 "
             ],
-            "date_published": "2020-07-29T14:57:59-04:00",
-            "date_modified": "2020-07-29T14:57:59-04:00"
+            "date_published": "2020-07-29T15:21:10-04:00",
+            "date_modified": "2020-07-29T15:21:10-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/component-overview.html",
@@ -93,8 +93,8 @@
                    "Alpaca",
                    "API"
             ],
-            "date_published": "2020-07-29T14:57:59-04:00",
-            "date_modified": "2020-07-29T14:57:59-04:00"
+            "date_published": "2020-07-29T15:21:10-04:00",
+            "date_modified": "2020-07-29T15:21:10-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/how-to-run-on-aws.html",
@@ -107,22 +107,33 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-29T14:57:59-04:00",
-            "date_modified": "2020-07-29T14:57:59-04:00"
+            "date_published": "2020-07-29T15:21:10-04:00",
+            "date_modified": "2020-07-29T15:21:10-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/developer-debugging.html",
             "url": "https://donrichards.github.io/migrate_islandora_csv/developer-debugging.html",
             "title": "Developer Debugging",
             "summary": "There are 2 options for debugging; core debugger and the Migration Devel Full tutorial How to Print Variables using Kint in Drupal 8 $ chmod&hellip;",
-            "content_html": "<p>There are 2 options for debugging; core debugger and the Migration Devel </p>\n<h2 id=\"add-general-debugging\">Add General Debugging</h2>\n<p>Full tutorial <a href=\"https://www.webwash.net/how-to-print-variables-using-kint-in-drupal-8/\">How to Print Variables using Kint in Drupal 8</a> </p>\n<pre><code class=\"language-shell\">$ chmod 755 /var/www/drupal/web/sites/default\n$ drush -y en devel\n$ drush -y en kint\n\n# Adding the debug service\n$ cp /var/www/drupal/web/sites/default/default.services.yml /var/www/drupal/web/sites/default/services.yml\n        $ Change debug value\n        debug:true\n\n# Adding the debug to the template\n$ nano /var/www/drupal/web/themes/contrib/carapace/templates/generated/page.html.twig\n    Add under the first comment, above the first item:    {{ kint(page) }} \n</code></pre>\n<h2 id=\"install-migrate-devel\">Install Migrate Devel</h2>\n<p>This gives a lot of feedback on a migration failure.</p>\n<pre><code class=\"language-shell\">$ cp /var/www/drupal/\n$ composer require &#39;drupal/migrate_devel:^2.0&#39;\n$ drush en -y    migrate_devel</code></pre>\n<h3 id=\"when-you-modify-a-migration-yml-file\">When you modify a migration YML file</h3>\n<p>This messes up me all the time. So much so I created a <a href=\"https://gist.github.com/DonRichards/ce71c2b18e1567a61ea8fe96b3e8ed70\">script</a> I just have running in the background to force all updates after they’re written. This isn’t absolutely nessisary but I find it useful. </p>\n<pre><code class=\"language-shell\">$ drush -y fim migrate_islandora_csv</code></pre>\n<h3 id=\"typical-migration\">Typical Migration</h3>\n<p>It’s highly suggested to migrate by group so the order of operations work in your favor. This is a typic execution of that. </p>\n<p><em>Remember that the order of operations is important (taxonomy terms like persons and subjects should go first, files, node, and lastly media) if you haven’t previously imported them. This is a problem if the dependencies are properly specified or the <code>--execute-dependencies</code> isn’t added to the import. The <code>-d</code> is for debugging. This will add a little time to the process. And you will need to include <code>--userid=1</code> to this. I have experienced issues not using it.</em></p>\n<pre><code class=\"language-shell\">drush migrate:import --userid=1 --execute-dependencies --group=knoxgardens_migrate_islandora_csv -d</code></pre>\n<h3 id=\"debugging-migration\">Debugging Migration</h3>\n<p>Migrate:import has a lot of options. This is the complete list. I won’t go over most of them. To read more on <a href=\"https://drushcommands.com/drush-8x/migrate/migrate-import/\">drush migrate-import</a></p>\n<pre><code class=\"language-shell\">migrate:import [--all] [--group GROUP] [--tag TAG] [--limit LIMIT] [--feedback FEEDBACK] [--idlist IDLIST] [--idlist-delimiter [IDLIST-DELIMITER]] [--update] [--force] [--continue-on-failure] [--execute-dependencies] [--skip-progress-bar] [--sync] [-h|--help] [-q|--quiet] [-v|vv|vvv|--verbose] [-V|--version] [--ansi] [--no-ansi] [-n|--no-interaction] [-d|--debug] [-y|--yes] [--no] [--remote-host REMOTE-HOST] [--remote-user REMOTE-USER] [-r|--root ROOT] [-l|--uri URI] [--simulate] [--pipe] [-D|--define DEFINE] [--userid USERID] [--migrate-debug [MIGRATE-DEBUG]] [--migrate-debug-pre [MIGRATE-DEBUG-PRE]] [--druplicon] [--notify [NOTIFY]] [--xh-link XH-LINK] [--] &lt;command&gt; [&lt;migration_names&gt;]</code></pre>\n<p>Migration test are done one migration yml at a time by specifying the migration ID. To get a list of installed migrations with the status and group name(s) run migrate status:</p>\n<pre><code class=\"language-shell\">$ drush migrate:status\n &quot;-----------------------------------------------------------------------------------&quot;\n  Group         Migration ID   Status Total  Imported  Unprocessed   Last Imported\n  ----------------------------    ------------   ----  ------  -----  --  -----------\n  pcard00_migrate_islandora_csv   pcard00_file   Idle   4224   6989   0   2020-07-10\n  pcard00_migrate_islandora_csv   pcard00_node   Idle   4224   6991   0   2020-07-10\n  pcard00_migrate_islandora_csv   pcard00_media  Idle   4224   6990   0   2020-07-10\n &quot;-----------------------------------------------------------------------------------&quot;</code></pre>\n<p>To only run against a specific object. Within each of the yml files a <strong>key</strong> is specified. The <strong>key</strong> is saying for each unique one of these iterate through. If the the <strong>key</strong> is to to <code>key: PID</code> and the PID we want to migrate/update is <em>islandora:4223</em> we can the following command. Using a value with special characters gives me some concern so I suggest just adding sequential numbers as the first colunm in the CSV calling it <strong>ID</strong> to avoid possible issues. I have not personally tested using a PID as the key but I’m using it here to illustrate.</p>\n<pre><code class=\"language-shell\">#         id of the yml file   ┐                 ┌ Respect the order of operations\n$ drush migrate:import pcard00_node --execute-dependencies --migrate-debug --idlist=&quot;islandora:4223&quot; --userid=1</code></pre>\n<p>This outputs a <strong>Source</strong> and a <strong>Destination</strong> variables to see how they are mapping. The <strong>Source</strong> is good to see if the values are being read. This is the <strong>Destination</strong>  part of the report.</p>\n<pre><code class=\"language-shell\">...\n...\n^ &quot;---------------------------------------------------------------------&quot;\n^ &quot;|                           $Destination                            |&quot;\n^ &quot;---------------------------------------------------------------------&quot;\n^ array:8 [\n  &quot;circuit_breaker&quot; =&gt; &quot;Page&quot;\n  &quot;name&quot; =&gt; &quot;Night View of Gatlinburg, Tennessee Showing Mount LeConte in the Background (GS-262)&quot;\n  &quot;uid&quot; =&gt; 1\n  &quot;field_media_use&quot; =&gt; &quot;17&quot;\n  &quot;field_media_file&quot; =&gt; &quot;3074&quot;\n  &quot;field_pid&quot; =&gt; &quot;pcard00:108573&quot;\n  &quot;field_media_of&quot; =&gt; &quot;7095&quot;\n  &quot;bundle&quot; =&gt; &quot;image&quot;\n]\n^ &quot;---------------------------------------------------------------------&quot;\n^ &quot;|                       $DestinationIdValues                        |&quot;\n^ &quot;---------------------------------------------------------------------&quot;</code></pre>\n<h2 id=\"rolling-back\">Rolling back</h2>\n<p>This process has a small flaw. The original file is left in the Bigdata log and fills up the VM very quickly. It will eventually remove itself but I haven’t found a simple way to trigger a cron to clear it. The process can be done quickly but there is probably a fast way than I have been doing it. I suggest only rolling back when you have extra files or to remove remove the content entirely. If you plan on just updating, just use the <code>--update</code> switch. </p>\n<pre><code class=\"language-shell\">$ drush migrate:rollback --userid=1 --group=knoxgardens_migrate_islandora_csv -d\n# VS\n$ drush migrate:import --userid=1 --group=knoxgardens_migrate_islandora_csv -d --update</code></pre>\n<h2 id=\"caches\">Caches</h2>\n<pre><code class=\"language-shell\"># Clear Drupal cache\n$ drush cr\n\n# Karaf Cache\nrm -rf /opt/karaf/data/cache/\n\n# Migration cache. The migration caches .yml files. If you already ran a migration and updated or added .yml files, you need to rebuild the Drupal 8 cache. Otherwise, Drupal will ignore the changes in the file system.\n\n$ drush sql:query &quot;TRUNCATE druid_mods_file_migration_settings&quot;</code></pre>\n<h2 id=\"extra\">Extra</h2>\n<pre><code class=\"language-shell\">#  after running `make` pull all of the latest docker images\n$ docker images | grep -v REPOSITORY | awk &#39;{print $1}&#39; | xargs -L1 docker pull </code></pre>\n<p>Deleting a migration (rare but it happens). If you’ve previously created a file like <em>druid_mods_file_migration.yml</em> and ran it. That configuration was imported into Drupal’s config. Deleting the module file will not remove it from Drupal’s config. You either need to overwrite it or delete it all together.</p>\n<pre><code class=\"language-shell\">$ drush config:delete your-migration-file-name-without-extension\n\n# example\n$ drush config:delete druid_mods_file_migration</code></pre>\n<h2 id=\"notes\">NOTES</h2>\n<p>Althought there are really straight forward migration tutorials like <a href=\"https://understanddrupal.com/articles/tips-writing-drupal-migrations-and-understanding-their-workflow\">this</a> one. All of the migration content on this and previous pages have been done without leveraging the more powerful part of a Drupal migration, custom PHP code to handle advanced beahviors. Here is an <a href=\"https://agaric.coop/blog/adding-extra-source-properties-drupal-migrations\">example</a> of how to do this. </p>\n",
+            "content_html": "<p>There are 2 options for debugging; core debugger and the Migration Devel </p>\n<h2 id=\"add-general-debugging\">Add General Debugging</h2>\n<p>Full tutorial <a href=\"https://www.webwash.net/how-to-print-variables-using-kint-in-drupal-8/\">How to Print Variables using Kint in Drupal 8</a> </p>\n<pre><code class=\"language-shell\">$ chmod 755 /var/www/drupal/web/sites/default\n$ drush -y en devel\n$ drush -y en kint\n\n# Adding the debug service\n$ cp /var/www/drupal/web/sites/default/default.services.yml /var/www/drupal/web/sites/default/services.yml\n        $ Change debug value\n        debug:true\n\n# Adding the debug to the template\n$ nano /var/www/drupal/web/themes/contrib/carapace/templates/generated/page.html.twig\n    Add under the first comment, above the first item:    {{ kint(page) }} \n</code></pre>\n<h2 id=\"install-migrate-devel\">Install Migrate Devel</h2>\n<p>This gives a lot of feedback on a migration failure.</p>\n<pre><code class=\"language-shell\">$ cp /var/www/drupal/\n$ composer require &#39;drupal/migrate_devel:^2.0&#39;\n$ drush en -y    migrate_devel</code></pre>\n<h3 id=\"when-you-modify-a-migration-yml-file\">When you modify a migration YML file</h3>\n<p>This messes up me all the time. So much so I created a <a href=\"https://gist.github.com/DonRichards/ce71c2b18e1567a61ea8fe96b3e8ed70\">script</a> I just have running in the background to force all updates after they’re written. This isn’t absolutely nessisary but I find it useful. </p>\n<pre><code class=\"language-shell\">$ drush -y fim migrate_islandora_csv</code></pre>\n<h3 id=\"typical-migration\">Typical Migration</h3>\n<p>It’s highly suggested to migrate by group so the order of operations work in your favor. This is a typic execution of that. </p>\n<p><em>Remember that the order of operations is important (taxonomy terms like persons and subjects should go first, files, node, and lastly media) if you haven’t previously imported them. This is a problem if the dependencies are properly specified or the <code>--execute-dependencies</code> isn’t added to the import. The <code>-d</code> is for debugging. This will add a little time to the process. And you will need to include <code>--userid=1</code> to this. I have experienced issues not using it.</em></p>\n<pre><code class=\"language-shell\">drush migrate:import --userid=1 --execute-dependencies --group=knoxgardens_migrate_islandora_csv -d</code></pre>\n<h3 id=\"debugging-migration\">Debugging Migration</h3>\n<p>Migrate:import has a lot of options. This is the complete list. I won’t go over most of them. To read more on <a href=\"https://drushcommands.com/drush-8x/migrate/migrate-import/\">drush migrate-import</a></p>\n<pre><code class=\"language-shell\">migrate:import [--all] [--group GROUP] [--tag TAG] [--limit LIMIT] [--feedback FEEDBACK] [--idlist IDLIST] [--idlist-delimiter [IDLIST-DELIMITER]] [--update] [--force] [--continue-on-failure] [--execute-dependencies] [--skip-progress-bar] [--sync] [-h|--help] [-q|--quiet] [-v|vv|vvv|--verbose] [-V|--version] [--ansi] [--no-ansi] [-n|--no-interaction] [-d|--debug] [-y|--yes] [--no] [--remote-host REMOTE-HOST] [--remote-user REMOTE-USER] [-r|--root ROOT] [-l|--uri URI] [--simulate] [--pipe] [-D|--define DEFINE] [--userid USERID] [--migrate-debug [MIGRATE-DEBUG]] [--migrate-debug-pre [MIGRATE-DEBUG-PRE]] [--druplicon] [--notify [NOTIFY]] [--xh-link XH-LINK] [--] &lt;command&gt; [&lt;migration_names&gt;]</code></pre>\n<p>Migration test are done one migration yml at a time by specifying the migration ID. To get a list of installed migrations with the status and group name(s) run migrate status:</p>\n<pre><code class=\"language-shell\">$ drush migrate:status\n &quot;-----------------------------------------------------------------------------------&quot;\n  Group         Migration ID   Status Total  Imported  Unprocessed   Last Imported\n  ----------------------------    ------------   ----  ------  -----  --  -----------\n  pcard00_migrate_islandora_csv   pcard00_file   Idle   4224   6989   0   2020-07-10\n  pcard00_migrate_islandora_csv   pcard00_node   Idle   4224   6991   0   2020-07-10\n  pcard00_migrate_islandora_csv   pcard00_media  Idle   4224   6990   0   2020-07-10\n &quot;-----------------------------------------------------------------------------------&quot;</code></pre>\n<p>To only run against a specific object. Within each of the yml files a <strong>key</strong> is specified. The <strong>key</strong> is saying for each unique one of these iterate through. If the the <strong>key</strong> is to to <code>key: PID</code> and the PID we want to migrate/update is <em>islandora:4223</em> we can the following command. Using a value with special characters gives me some concern so I suggest just adding sequential numbers as the first colunm in the CSV calling it <strong>ID</strong> to avoid possible issues. I have not personally tested using a PID as the key but I’m using it here to illustrate.</p>\n<pre><code class=\"language-shell\">#         id of the yml file   ┐                 ┌ Respect the order of operations\n$ drush migrate:import pcard00_node --execute-dependencies --migrate-debug --idlist=&quot;islandora:4223&quot; --userid=1</code></pre>\n<p>This outputs a <strong>Source</strong> and a <strong>Destination</strong> variables to see how they are mapping. The <strong>Source</strong> is good to see if the values are being read. This is the <strong>Destination</strong>  part of the report.</p>\n<pre><code class=\"language-shell\">...\n...\n^ &quot;---------------------------------------------------------------------&quot;\n^ &quot;|                           $Destination                            |&quot;\n^ &quot;---------------------------------------------------------------------&quot;\n^ array:8 [\n  &quot;circuit_breaker&quot; =&gt; &quot;Page&quot;\n  &quot;name&quot; =&gt; &quot;Night View of Gatlinburg, Tennessee Showing Mount LeConte in the Background (GS-262)&quot;\n  &quot;uid&quot; =&gt; 1\n  &quot;field_media_use&quot; =&gt; &quot;17&quot;\n  &quot;field_media_file&quot; =&gt; &quot;3074&quot;\n  &quot;field_pid&quot; =&gt; &quot;pcard00:108573&quot;\n  &quot;field_media_of&quot; =&gt; &quot;7095&quot;\n  &quot;bundle&quot; =&gt; &quot;image&quot;\n]\n^ &quot;---------------------------------------------------------------------&quot;\n^ &quot;|                       $DestinationIdValues                        |&quot;\n^ &quot;---------------------------------------------------------------------&quot;</code></pre>\n<h2 id=\"rolling-back\">Rolling back</h2>\n<p>This process has a small flaw. The original file is left in the Bigdata log and fills up the VM very quickly. It will eventually remove itself but I haven’t found a simple way to trigger a cron to clear it. The process can be done quickly but there is probably a fast way than I have been doing it. I suggest only rolling back when you have extra files or to remove remove the content entirely. If you plan on just updating, just use the <code>--update</code> switch. </p>\n<pre><code class=\"language-shell\">$ drush migrate:rollback --userid=1 --group=knoxgardens_migrate_islandora_csv -d\n# VS\n$ drush migrate:import --userid=1 --group=knoxgardens_migrate_islandora_csv -d --update</code></pre>\n<h2 id=\"caches\">Caches</h2>\n<pre><code class=\"language-shell\"># Clear Drupal cache\n$ drush cr\n\n# Karaf Cache\nrm -rf /opt/karaf/data/cache/\n\n# Migration cache. The migration caches .yml files. If you already ran a migration and updated or added .yml files, you need to rebuild the Drupal 8 cache. Otherwise, Drupal will ignore the changes in the file system.\n\n$ drush sql:query &quot;TRUNCATE druid_mods_file_migration_settings&quot;</code></pre>\n<h2 id=\"extra\">Extra</h2>\n<pre><code class=\"language-shell\">#  after running `make` pull all of the latest docker images\n$ docker images | grep -v REPOSITORY | awk &#39;{print $1}&#39; | xargs -L1 docker pull </code></pre>\n<p>Deleting a migration (rare but it happens). If you’ve previously created a file like <em>druid_mods_file_migration.yml</em> and ran it. That configuration was imported into Drupal’s config. Deleting the module file will not remove it from Drupal’s config. You either need to overwrite it or delete it all together.</p>\n<pre><code class=\"language-shell\">$ drush config:delete your-migration-file-name-without-extension\n\n# example\n$ drush config:delete druid_mods_file_migration</code></pre>\n<h2 id=\"notes\">NOTES</h2>\n<p>Althought there are really straight forward migration tutorials like <a href=\"https://understanddrupal.com/articles/tips-writing-drupal-migrations-and-understanding-their-workflow\">this</a> one. All of the migration content on this and previous pages have been done without leveraging the more powerful part of a Drupal migration, custom PHP code to handle advanced beahviors. Here is an <a href=\"https://agaric.coop/blog/adding-extra-source-properties-drupal-migrations\">example</a> of how to do this.</p>\n<h2 id=\"migration\">Migration</h2>\n<ul>\n<li><a href=\"https://agaric.coop/blog/migrating-csv-files-drupal\">Migrating CSV files into Drupal</a> tutorial.</li>\n<li><a href=\"https://agaric.coop/blog/tips-writing-drupal-migrations-and-understanding-their-workflow\">Tips for writing Drupal migrations and understanding their workflow</a></li>\n<li><a href=\"https://github.com/dinarcon/ud_migrations\">Advanced Migration Examples</a></li>\n</ul>\n",
             "author": {
                 "name": "Don Richards"
             },
             "tags": [
+                   "tutorial",
+                   "rollback",
+                   "migration",
+                   "migrating",
+                   "migrate",
+                   "kint",
+                   "import",
+                   "developer",
+                   "devel",
+                   "debugging",
+                   "cache"
             ],
-            "date_published": "2020-07-29T14:57:59-04:00",
-            "date_modified": "2020-07-29T14:57:59-04:00"
+            "date_published": "2020-07-29T15:21:10-04:00",
+            "date_modified": "2020-07-29T15:21:10-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/vendors.html",
@@ -135,8 +146,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-29T14:57:59-04:00",
-            "date_modified": "2020-07-29T14:57:59-04:00"
+            "date_published": "2020-07-29T15:21:10-04:00",
+            "date_modified": "2020-07-29T15:21:10-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/quick-document-design-key.html",
@@ -149,8 +160,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-29T14:57:59-04:00",
-            "date_modified": "2020-07-29T14:57:59-04:00"
+            "date_published": "2020-07-29T15:21:10-04:00",
+            "date_modified": "2020-07-29T15:21:10-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/how-to-access-specific-data.html",
@@ -163,8 +174,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-29T14:57:59-04:00",
-            "date_modified": "2020-07-29T14:57:59-04:00"
+            "date_published": "2020-07-29T15:21:10-04:00",
+            "date_modified": "2020-07-29T15:21:10-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/pcdm.html",
@@ -183,8 +194,8 @@
                    "WebAC",
                    "PCDM"
             ],
-            "date_published": "2020-07-29T14:57:59-04:00",
-            "date_modified": "2020-07-29T14:57:59-04:00"
+            "date_published": "2020-07-29T15:21:10-04:00",
+            "date_modified": "2020-07-29T15:21:10-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/cas-authentication.html",
@@ -197,8 +208,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-29T14:57:59-04:00",
-            "date_modified": "2020-07-29T14:57:59-04:00"
+            "date_published": "2020-07-29T15:21:10-04:00",
+            "date_modified": "2020-07-29T15:21:10-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/mods-to-rdf.html",
@@ -211,8 +222,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-29T14:57:59-04:00",
-            "date_modified": "2020-07-29T14:57:59-04:00"
+            "date_published": "2020-07-29T15:21:10-04:00",
+            "date_modified": "2020-07-29T15:21:10-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/ingestingmigrating.html",
@@ -239,8 +250,8 @@
                    "EDTF",
                    "CSV"
             ],
-            "date_published": "2020-07-29T14:57:59-04:00",
-            "date_modified": "2020-07-29T14:57:59-04:00"
+            "date_published": "2020-07-29T15:21:10-04:00",
+            "date_modified": "2020-07-29T15:21:10-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/uploading.html",
@@ -257,8 +268,8 @@
                    "files",
                    "CSV"
             ],
-            "date_published": "2020-07-29T14:57:59-04:00",
-            "date_modified": "2020-07-29T14:57:59-04:00"
+            "date_published": "2020-07-29T15:21:10-04:00",
+            "date_modified": "2020-07-29T15:21:10-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/step-by-step-setup-ir.html",
@@ -271,8 +282,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-29T14:57:59-04:00",
-            "date_modified": "2020-07-29T14:57:59-04:00"
+            "date_published": "2020-07-29T15:21:10-04:00",
+            "date_modified": "2020-07-29T15:21:10-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/book-and-large-image-viewer.html",
@@ -285,8 +296,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-29T14:57:59-04:00",
-            "date_modified": "2020-07-29T14:57:59-04:00"
+            "date_published": "2020-07-29T15:21:10-04:00",
+            "date_modified": "2020-07-29T15:21:10-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/institutional-repository.html",
@@ -321,8 +332,8 @@
                    "Citation",
                    "Bibliography"
             ],
-            "date_published": "2020-07-29T14:57:59-04:00",
-            "date_modified": "2020-07-29T14:57:59-04:00"
+            "date_published": "2020-07-29T15:21:10-04:00",
+            "date_modified": "2020-07-29T15:21:10-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/bibliography-and-citation.html",
@@ -335,8 +346,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-29T14:57:59-04:00",
-            "date_modified": "2020-07-29T14:57:59-04:00"
+            "date_published": "2020-07-29T15:21:10-04:00",
+            "date_modified": "2020-07-29T15:21:10-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html",
@@ -349,8 +360,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-29T14:57:59-04:00",
-            "date_modified": "2020-07-29T14:57:59-04:00"
+            "date_published": "2020-07-29T15:21:10-04:00",
+            "date_modified": "2020-07-29T15:21:10-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/community-and-sustainability.html",
@@ -377,8 +388,8 @@
                    "Google",
                    "Delta"
             ],
-            "date_published": "2020-07-29T14:57:59-04:00",
-            "date_modified": "2020-07-29T14:57:59-04:00"
+            "date_published": "2020-07-29T15:21:10-04:00",
+            "date_modified": "2020-07-29T15:21:10-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/deployment-options.html",
@@ -399,8 +410,8 @@
                    "VM",
                    "ISLE"
             ],
-            "date_published": "2020-07-29T14:57:59-04:00",
-            "date_modified": "2020-07-29T14:57:59-04:00"
+            "date_published": "2020-07-29T15:21:10-04:00",
+            "date_modified": "2020-07-29T15:21:10-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/technical-infrastructure.html",
@@ -422,8 +433,8 @@
                    "GB",
                    "CPU"
             ],
-            "date_published": "2020-07-29T14:57:59-04:00",
-            "date_modified": "2020-07-29T14:57:59-04:00"
+            "date_published": "2020-07-29T15:21:10-04:00",
+            "date_modified": "2020-07-29T15:21:10-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/rights-and-restrictions.html",
@@ -441,8 +452,8 @@
                    "access",
                    "WebAC"
             ],
-            "date_published": "2020-07-29T14:57:59-04:00",
-            "date_modified": "2020-07-29T14:57:59-04:00"
+            "date_published": "2020-07-29T15:21:10-04:00",
+            "date_modified": "2020-07-29T15:21:10-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/cloud-hosting-solution.html",
@@ -460,8 +471,8 @@
                    "hosting",
                    "cloud"
             ],
-            "date_published": "2020-07-29T14:57:59-04:00",
-            "date_modified": "2020-07-29T14:57:59-04:00"
+            "date_published": "2020-07-29T15:21:10-04:00",
+            "date_modified": "2020-07-29T15:21:10-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/next-level-discoverability-solutions.html",
@@ -479,8 +490,8 @@
                    "LTR",
                    "AI"
             ],
-            "date_published": "2020-07-29T14:57:59-04:00",
-            "date_modified": "2020-07-29T14:57:59-04:00"
+            "date_published": "2020-07-29T15:21:10-04:00",
+            "date_modified": "2020-07-29T15:21:10-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/metadata-and-metadata-sharing.html",
@@ -505,8 +516,8 @@
                    "JSON",
                    "API"
             ],
-            "date_published": "2020-07-29T14:57:59-04:00",
-            "date_modified": "2020-07-29T14:57:59-04:00"
+            "date_published": "2020-07-29T15:21:10-04:00",
+            "date_modified": "2020-07-29T15:21:10-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/preservation.html",
@@ -519,8 +530,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-29T14:57:59-04:00",
-            "date_modified": "2020-07-29T14:57:59-04:00"
+            "date_published": "2020-07-29T15:21:10-04:00",
+            "date_modified": "2020-07-29T15:21:10-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/uploading-ingesting-and-migration.html",
@@ -548,8 +559,8 @@
                    "Islandora Defaults",
                    "CSV"
             ],
-            "date_published": "2020-07-29T14:57:59-04:00",
-            "date_modified": "2020-07-29T14:57:59-04:00"
+            "date_published": "2020-07-29T15:21:10-04:00",
+            "date_modified": "2020-07-29T15:21:10-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/other-content-types.html",
@@ -575,8 +586,8 @@
                    "PDF",
                    "Moore"
             ],
-            "date_published": "2020-07-29T14:57:59-04:00",
-            "date_modified": "2020-07-29T14:57:59-04:00"
+            "date_published": "2020-07-29T15:21:10-04:00",
+            "date_modified": "2020-07-29T15:21:10-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/images-books-and-pages.html",
@@ -600,8 +611,8 @@
                    "Mirador",
                    "BigData"
             ],
-            "date_published": "2020-07-29T14:57:59-04:00",
-            "date_modified": "2020-07-29T14:57:59-04:00"
+            "date_published": "2020-07-29T15:21:10-04:00",
+            "date_modified": "2020-07-29T15:21:10-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/general-content-models.html",
@@ -622,8 +633,8 @@
                    "PCDM",
                    "BigData"
             ],
-            "date_published": "2020-07-29T14:57:59-04:00",
-            "date_modified": "2020-07-29T14:57:59-04:00"
+            "date_published": "2020-07-29T15:21:10-04:00",
+            "date_modified": "2020-07-29T15:21:10-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/content-modeling.html",
@@ -639,8 +650,8 @@
                    "microservice",
                    "content modeling"
             ],
-            "date_published": "2020-07-29T14:57:59-04:00",
-            "date_modified": "2020-07-29T14:57:59-04:00"
+            "date_published": "2020-07-29T15:21:10-04:00",
+            "date_modified": "2020-07-29T15:21:10-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/background.html",
@@ -668,8 +679,8 @@
                    "Drupal 8 ",
                    "Background"
             ],
-            "date_published": "2020-07-29T14:57:59-04:00",
-            "date_modified": "2020-07-29T14:57:59-04:00"
+            "date_published": "2020-07-29T15:21:10-04:00",
+            "date_modified": "2020-07-29T15:21:10-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html",
@@ -683,8 +694,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-29T14:57:59-04:00",
-            "date_modified": "2020-07-29T14:57:59-04:00"
+            "date_published": "2020-07-29T15:21:10-04:00",
+            "date_modified": "2020-07-29T15:21:10-04:00"
         }
     ]
 }
