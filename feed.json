@@ -10,6 +10,30 @@
     },
     "items": [
         {
+            "id": "https://donrichards.github.io/migrate_islandora_csv/datasets.html",
+            "url": "https://donrichards.github.io/migrate_islandora_csv/datasets.html",
+            "title": "Datasets",
+            "summary": "Building a dataset repository is generally possible it would wise to use ready made solutions. An Open Data Catalog built on Drupal 8 Upload data&hellip;",
+            "content_html": "<p>Building a dataset repository is generally possible it would wise to use ready made solutions. </p>\n<h2 id=\"dkan2\"><a href=\"https://github.com/getdkan/dkan\">DKAN2</a></h2>\n<p>An Open Data Catalog built on Drupal 8</p>\n<h3 id=\"features\">Features</h3>\n<ul>\n<li>Harvesting of data from external catalogs that provide a data.json</li>\n<li>Dataset metadata and resources</li>\n<li>Web service API endpoints that allow third party applications to work with the datasets</li>\n<li>Integration with a decoupled <a href=\"https://github.com/getdkan/data-catalog-frontend\">REACT front end</a></li>\n<li>A datastore to store CSV files and make them queryable through an SQL endpoint.</li>\n</ul>\n<blockquote>\n<p><strong>Upload data and metadata</strong>: Use APIs or our metadata entry user interface to add datasets or resources to your platform. Our entry options not only make it easy to add datasets to the platform, they also validate your submissions against the Project Open Data metadata schema, ensuring standards-compliance from the very start. Changing or replacing the schema is already an option for developers who want to get their hands dirty. We plan to support other common standards out-of-the-box in the near future, and eventually, any standard you’d like.\n<strong>Harvesting</strong>: Bring data from other online sources to appear seamlessly in your own portal, and keep them up to date with the source material with nightly updates. The new system can currently harvest any source that offers a data.json endpoint, with more kinds of harvesting coming soon. We’ve also engineered our harvest feature to easily migrate your existing data into the platform at the very start. \n<strong>Search</strong>: Users can search by keyword and topic (with more options coming soon) using a beautiful, intuitive interface, and they can preview that data to make sure it’s exactly what they need to change the world.</p>\n</blockquote>\n<ul>\n<li><a href=\"https://medium.com/dkan-blog/dkan-v2-is-here-aee0acf69c1e\">Overview Article</a></li>\n</ul>\n<h2 id=\"quadstat\"><a href=\"https://www.drupal.org/project/quadstat\">Quadstat</a></h2>\n<p><a href=\"https://www.drupal.org/project/quadstat\">Quadstat</a> with <a href=\"https://github.com/mleibman/SlickGrid\">Slickgrid</a> is a Drupal-based statistical web application framework and a basic dataset repository. Site administrators can create apps that interact with user-imported datasets using R statistical software. Because the content management system is Drupal, Quadstat gets all the features and security of Drupal core and also thousands of contributed modules. </p>\n<p><figure class=\"post__image\"><img loading=\"lazy\" src=\"https://www.drupal.org/files/Screen%20Shot%202017-04-19%20at%205.05.15%20PM.png\" data-is-external-image=\"true\"  alt=\"Example of QUADSTAT interface\" /></figure></p>\n<p>Quadstat is a Drupal-based statistical web application framework. Site administrators can create apps that interact with user-imported datasets using R.</p>\n<p>The <a href=\"http://www.picostat.com\">Picostat</a> website was built with Quadstat. The site has added a number of additional features for commercial use.</p>\n<p><strong>NOTE</strong>: Quadstat is only available as an Amazon Machine Image (AMI) on <em>AWS</em>.</p>\n<p>For more information <a href=\"https://www.drupal.org/docs/8/modules/quadstat/quadstat-user-guide\">Quadstat Documentation</a></p>\n",
+            "author": {
+                "name": "Don Richards"
+            },
+            "tags": [
+                   "stats",
+                   "statistical",
+                   "quadstat",
+                   "metadata",
+                   "harvesting",
+                   "dkan",
+                   "datastore",
+                   "dataset",
+                   "data set",
+                   "BigData"
+            ],
+            "date_published": "2020-07-30T13:48:39-04:00",
+            "date_modified": "2020-07-30T13:48:39-04:00"
+        },
+        {
             "id": "https://donrichards.github.io/migrate_islandora_csv/7-to-8-side-by-side.html",
             "url": "https://donrichards.github.io/migrate_islandora_csv/7-to-8-side-by-side.html",
             "title": "7 to 8 Side by Side",
@@ -22,8 +46,8 @@
                    "side by side",
                    "compare"
             ],
-            "date_published": "2020-07-30T09:55:23-04:00",
-            "date_modified": "2020-07-30T09:55:23-04:00"
+            "date_published": "2020-07-30T13:48:39-04:00",
+            "date_modified": "2020-07-30T13:48:39-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/access-restrictions.html",
@@ -36,8 +60,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-30T09:55:23-04:00",
-            "date_modified": "2020-07-30T09:55:23-04:00"
+            "date_published": "2020-07-30T13:48:39-04:00",
+            "date_modified": "2020-07-30T13:48:39-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/manually-configuring-drupal-89.html",
@@ -59,8 +83,8 @@
                    "IIIF",
                    "Drupal 8 "
             ],
-            "date_published": "2020-07-30T09:55:23-04:00",
-            "date_modified": "2020-07-30T09:55:23-04:00"
+            "date_published": "2020-07-30T13:48:39-04:00",
+            "date_modified": "2020-07-30T13:48:39-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/component-overview.html",
@@ -93,8 +117,8 @@
                    "Alpaca",
                    "API"
             ],
-            "date_published": "2020-07-30T09:55:23-04:00",
-            "date_modified": "2020-07-30T09:55:23-04:00"
+            "date_published": "2020-07-30T13:48:39-04:00",
+            "date_modified": "2020-07-30T13:48:39-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/how-to-run-on-aws.html",
@@ -107,8 +131,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-30T09:55:23-04:00",
-            "date_modified": "2020-07-30T09:55:23-04:00"
+            "date_published": "2020-07-30T13:48:39-04:00",
+            "date_modified": "2020-07-30T13:48:39-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/developer-debugging.html",
@@ -132,8 +156,8 @@
                    "debugging",
                    "cache"
             ],
-            "date_published": "2020-07-30T09:55:23-04:00",
-            "date_modified": "2020-07-30T09:55:23-04:00"
+            "date_published": "2020-07-30T13:48:39-04:00",
+            "date_modified": "2020-07-30T13:48:39-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/vendors.html",
@@ -146,8 +170,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-30T09:55:23-04:00",
-            "date_modified": "2020-07-30T09:55:23-04:00"
+            "date_published": "2020-07-30T13:48:39-04:00",
+            "date_modified": "2020-07-30T13:48:39-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/quick-document-design-key.html",
@@ -160,8 +184,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-30T09:55:23-04:00",
-            "date_modified": "2020-07-30T09:55:23-04:00"
+            "date_published": "2020-07-30T13:48:39-04:00",
+            "date_modified": "2020-07-30T13:48:39-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/how-to-access-specific-data.html",
@@ -174,8 +198,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-30T09:55:23-04:00",
-            "date_modified": "2020-07-30T09:55:23-04:00"
+            "date_published": "2020-07-30T13:48:39-04:00",
+            "date_modified": "2020-07-30T13:48:39-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/pcdm.html",
@@ -194,8 +218,8 @@
                    "WebAC",
                    "PCDM"
             ],
-            "date_published": "2020-07-30T09:55:23-04:00",
-            "date_modified": "2020-07-30T09:55:23-04:00"
+            "date_published": "2020-07-30T13:48:39-04:00",
+            "date_modified": "2020-07-30T13:48:39-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/cas-authentication.html",
@@ -208,8 +232,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-30T09:55:23-04:00",
-            "date_modified": "2020-07-30T09:55:23-04:00"
+            "date_published": "2020-07-30T13:48:39-04:00",
+            "date_modified": "2020-07-30T13:48:39-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/mods-to-rdf.html",
@@ -222,8 +246,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-30T09:55:23-04:00",
-            "date_modified": "2020-07-30T09:55:23-04:00"
+            "date_published": "2020-07-30T13:48:39-04:00",
+            "date_modified": "2020-07-30T13:48:39-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/ingestingmigrating.html",
@@ -250,8 +274,8 @@
                    "EDTF",
                    "CSV"
             ],
-            "date_published": "2020-07-30T09:55:23-04:00",
-            "date_modified": "2020-07-30T09:55:23-04:00"
+            "date_published": "2020-07-30T13:48:39-04:00",
+            "date_modified": "2020-07-30T13:48:39-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/uploading.html",
@@ -268,8 +292,8 @@
                    "files",
                    "CSV"
             ],
-            "date_published": "2020-07-30T09:55:23-04:00",
-            "date_modified": "2020-07-30T09:55:23-04:00"
+            "date_published": "2020-07-30T13:48:39-04:00",
+            "date_modified": "2020-07-30T13:48:39-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/step-by-step-setup-ir.html",
@@ -282,8 +306,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-30T09:55:23-04:00",
-            "date_modified": "2020-07-30T09:55:23-04:00"
+            "date_published": "2020-07-30T13:48:39-04:00",
+            "date_modified": "2020-07-30T13:48:39-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/book-and-large-image-viewer.html",
@@ -296,8 +320,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-30T09:55:23-04:00",
-            "date_modified": "2020-07-30T09:55:23-04:00"
+            "date_published": "2020-07-30T13:48:39-04:00",
+            "date_modified": "2020-07-30T13:48:39-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/institutional-repository.html",
@@ -332,8 +356,8 @@
                    "Citation",
                    "Bibliography"
             ],
-            "date_published": "2020-07-30T09:55:23-04:00",
-            "date_modified": "2020-07-30T09:55:23-04:00"
+            "date_published": "2020-07-30T13:48:39-04:00",
+            "date_modified": "2020-07-30T13:48:39-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/bibliography-and-citation.html",
@@ -346,8 +370,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-30T09:55:23-04:00",
-            "date_modified": "2020-07-30T09:55:23-04:00"
+            "date_published": "2020-07-30T13:48:39-04:00",
+            "date_modified": "2020-07-30T13:48:39-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/oai-pmh-and-doi-minting.html",
@@ -360,8 +384,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-30T09:55:23-04:00",
-            "date_modified": "2020-07-30T09:55:23-04:00"
+            "date_published": "2020-07-30T13:48:39-04:00",
+            "date_modified": "2020-07-30T13:48:39-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/community-and-sustainability.html",
@@ -388,8 +412,8 @@
                    "Google",
                    "Delta"
             ],
-            "date_published": "2020-07-30T09:55:23-04:00",
-            "date_modified": "2020-07-30T09:55:23-04:00"
+            "date_published": "2020-07-30T13:48:39-04:00",
+            "date_modified": "2020-07-30T13:48:39-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/deployment-options.html",
@@ -410,8 +434,8 @@
                    "VM",
                    "ISLE"
             ],
-            "date_published": "2020-07-30T09:55:23-04:00",
-            "date_modified": "2020-07-30T09:55:23-04:00"
+            "date_published": "2020-07-30T13:48:39-04:00",
+            "date_modified": "2020-07-30T13:48:39-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/technical-infrastructure.html",
@@ -433,8 +457,8 @@
                    "GB",
                    "CPU"
             ],
-            "date_published": "2020-07-30T09:55:23-04:00",
-            "date_modified": "2020-07-30T09:55:23-04:00"
+            "date_published": "2020-07-30T13:48:39-04:00",
+            "date_modified": "2020-07-30T13:48:39-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/rights-and-restrictions.html",
@@ -452,8 +476,8 @@
                    "access",
                    "WebAC"
             ],
-            "date_published": "2020-07-30T09:55:23-04:00",
-            "date_modified": "2020-07-30T09:55:23-04:00"
+            "date_published": "2020-07-30T13:48:39-04:00",
+            "date_modified": "2020-07-30T13:48:39-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/cloud-hosting-solution.html",
@@ -471,8 +495,8 @@
                    "hosting",
                    "cloud"
             ],
-            "date_published": "2020-07-30T09:55:23-04:00",
-            "date_modified": "2020-07-30T09:55:23-04:00"
+            "date_published": "2020-07-30T13:48:39-04:00",
+            "date_modified": "2020-07-30T13:48:39-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/next-level-discoverability-solutions.html",
@@ -490,8 +514,8 @@
                    "LTR",
                    "AI"
             ],
-            "date_published": "2020-07-30T09:55:23-04:00",
-            "date_modified": "2020-07-30T09:55:23-04:00"
+            "date_published": "2020-07-30T13:48:39-04:00",
+            "date_modified": "2020-07-30T13:48:39-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/metadata-and-metadata-sharing.html",
@@ -516,8 +540,8 @@
                    "JSON",
                    "API"
             ],
-            "date_published": "2020-07-30T09:55:23-04:00",
-            "date_modified": "2020-07-30T09:55:23-04:00"
+            "date_published": "2020-07-30T13:48:39-04:00",
+            "date_modified": "2020-07-30T13:48:39-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/preservation.html",
@@ -530,8 +554,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-30T09:55:23-04:00",
-            "date_modified": "2020-07-30T09:55:23-04:00"
+            "date_published": "2020-07-30T13:48:39-04:00",
+            "date_modified": "2020-07-30T13:48:39-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/uploading-ingesting-and-migration.html",
@@ -559,8 +583,8 @@
                    "Islandora Defaults",
                    "CSV"
             ],
-            "date_published": "2020-07-30T09:55:23-04:00",
-            "date_modified": "2020-07-30T09:55:23-04:00"
+            "date_published": "2020-07-30T13:48:39-04:00",
+            "date_modified": "2020-07-30T13:48:39-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/other-content-types.html",
@@ -586,8 +610,8 @@
                    "PDF",
                    "Moore"
             ],
-            "date_published": "2020-07-30T09:55:23-04:00",
-            "date_modified": "2020-07-30T09:55:23-04:00"
+            "date_published": "2020-07-30T13:48:39-04:00",
+            "date_modified": "2020-07-30T13:48:39-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/images-books-and-pages.html",
@@ -611,8 +635,8 @@
                    "Mirador",
                    "BigData"
             ],
-            "date_published": "2020-07-30T09:55:23-04:00",
-            "date_modified": "2020-07-30T09:55:23-04:00"
+            "date_published": "2020-07-30T13:48:39-04:00",
+            "date_modified": "2020-07-30T13:48:39-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/general-content-models.html",
@@ -633,8 +657,8 @@
                    "PCDM",
                    "BigData"
             ],
-            "date_published": "2020-07-30T09:55:23-04:00",
-            "date_modified": "2020-07-30T09:55:23-04:00"
+            "date_published": "2020-07-30T13:48:39-04:00",
+            "date_modified": "2020-07-30T13:48:39-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/content-modeling.html",
@@ -650,8 +674,8 @@
                    "microservice",
                    "content modeling"
             ],
-            "date_published": "2020-07-30T09:55:23-04:00",
-            "date_modified": "2020-07-30T09:55:23-04:00"
+            "date_published": "2020-07-30T13:48:39-04:00",
+            "date_modified": "2020-07-30T13:48:39-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/background.html",
@@ -679,8 +703,8 @@
                    "Drupal 8 ",
                    "Background"
             ],
-            "date_published": "2020-07-30T09:55:23-04:00",
-            "date_modified": "2020-07-30T09:55:23-04:00"
+            "date_published": "2020-07-30T13:48:39-04:00",
+            "date_modified": "2020-07-30T13:48:39-04:00"
         },
         {
             "id": "https://donrichards.github.io/migrate_islandora_csv/islandora-8-overview.html",
@@ -694,8 +718,8 @@
             },
             "tags": [
             ],
-            "date_published": "2020-07-30T09:55:23-04:00",
-            "date_modified": "2020-07-30T09:55:23-04:00"
+            "date_published": "2020-07-30T13:48:39-04:00",
+            "date_modified": "2020-07-30T13:48:39-04:00"
         }
     ]
 }
